@@ -29,11 +29,19 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            nroClienteTxt = new TextBox();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
             button1 = new Button();
+            cuentaCorrienteLstView = new ListView();
+            Nro_Cliente = new ColumnHeader();
+            Nro_Guia = new ColumnHeader();
+            Sub_Total = new ColumnHeader();
+            Total = new ColumnHeader();
+            button2 = new Button();
+            button3 = new Button();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -45,21 +53,21 @@
             label1.TabIndex = 0;
             label1.Text = "Nro. de Cliente: ";
             // 
-            // textBox1
+            // nroClienteTxt
             // 
-            textBox1.Location = new Point(143, 41);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(154, 27);
-            textBox1.TabIndex = 1;
+            nroClienteTxt.Location = new Point(143, 41);
+            nroClienteTxt.Name = "nroClienteTxt";
+            nroClienteTxt.Size = new Size(154, 27);
+            nroClienteTxt.TabIndex = 1;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(nroClienteTxt);
             groupBox1.Location = new Point(29, 26);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(428, 133);
+            groupBox1.Size = new Size(428, 99);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
@@ -67,9 +75,12 @@
             // 
             // groupBox2
             // 
-            groupBox2.Location = new Point(29, 193);
+            groupBox2.Controls.Add(button3);
+            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(cuentaCorrienteLstView);
+            groupBox2.Location = new Point(29, 145);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(428, 227);
+            groupBox2.Size = new Size(759, 293);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "Cuenta Corriente";
@@ -83,6 +94,33 @@
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
             // 
+            // cuentaCorrienteLstView
+            // 
+            cuentaCorrienteLstView.Columns.AddRange(new ColumnHeader[] { Nro_Cliente, Nro_Guia, Sub_Total, Total });
+            cuentaCorrienteLstView.Location = new Point(24, 41);
+            cuentaCorrienteLstView.Name = "cuentaCorrienteLstView";
+            cuentaCorrienteLstView.Size = new Size(685, 135);
+            cuentaCorrienteLstView.TabIndex = 2;
+            cuentaCorrienteLstView.UseCompatibleStateImageBehavior = false;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(24, 200);
+            button2.Name = "button2";
+            button2.Size = new Size(151, 29);
+            button2.TabIndex = 3;
+            button2.Text = "Generar Factura";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(24, 249);
+            button3.Name = "button3";
+            button3.Size = new Size(151, 29);
+            button3.TabIndex = 4;
+            button3.Text = "Descargar Factura";
+            button3.UseVisualStyleBackColor = true;
+            // 
             // Facturas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -94,15 +132,23 @@
             Text = "Facturas";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox nroClienteTxt;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private Button button1;
+        private ListView cuentaCorrienteLstView;
+        private ColumnHeader Nro_Cliente;
+        private ColumnHeader Nro_Guia;
+        private ColumnHeader Sub_Total;
+        private ColumnHeader Total;
+        private Button button3;
+        private Button button2;
     }
 }

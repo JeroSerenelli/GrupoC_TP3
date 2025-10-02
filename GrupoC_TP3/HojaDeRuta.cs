@@ -61,5 +61,10 @@ namespace GrupoC_TP3
         {
 
         }
+
+        private void TablaDatosHDRdataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

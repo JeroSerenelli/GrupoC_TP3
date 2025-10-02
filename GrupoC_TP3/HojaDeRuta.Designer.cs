@@ -32,44 +32,44 @@
             label3 = new Label();
             label4 = new Label();
             groupBox1 = new GroupBox();
-            NumeroDeTramite = new Label();
-            NumeroHDRTxt = new TextBox();
-            RegistrarAdmisionEncomiendasBox2 = new GroupBox();
-            folderBrowserDialog1 = new FolderBrowserDialog();
-            CancelarRegistroEncomiendaBTN = new Button();
+            LimpiarBusquedaHDR = new Button();
             TablaDatosHDRdataGridView1 = new DataGridView();
             Numero = new DataGridViewTextBoxColumn();
             Fecha = new DataGridViewTextBoxColumn();
             Titulo = new DataGridViewTextBoxColumn();
-            LimpiarBusquedaHDR = new Button();
-            groupBox2 = new GroupBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label5 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            groupBox3 = new GroupBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
+            NumeroHDRTxt = new TextBox();
+            NumeroDeTramite = new Label();
+            RegistrarAdmisionEncomiendasBox2 = new GroupBox();
+            button2 = new Button();
+            button1 = new Button();
             dataGridView1 = new DataGridView();
             Nro_Encomienda = new DataGridViewTextBoxColumn();
             Cliente = new DataGridViewTextBoxColumn();
             Fecha_Ingreso_Encomienda = new DataGridViewTextBoxColumn();
             Cantidad_Encomienda = new DataGridViewTextBoxColumn();
             Peso_Encomienda = new DataGridViewTextBoxColumn();
-            button1 = new Button();
-            button2 = new Button();
+            groupBox3 = new GroupBox();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            groupBox2 = new GroupBox();
+            dateTimePicker1 = new DateTimePicker();
+            label5 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            CancelarRegistroEncomiendaBTN = new Button();
+            folderBrowserDialog1 = new FolderBrowserDialog();
             groupBox1.SuspendLayout();
-            RegistrarAdmisionEncomiendasBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)TablaDatosHDRdataGridView1).BeginInit();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
+            RegistrarAdmisionEncomiendasBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // BuscarHDR
@@ -118,6 +118,50 @@
             groupBox1.Text = "Busqueda de Hoja de Ruta";
             groupBox1.Enter += groupBox1_Enter;
             // 
+            // LimpiarBusquedaHDR
+            // 
+            LimpiarBusquedaHDR.AccessibleName = "Limpiar";
+            LimpiarBusquedaHDR.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LimpiarBusquedaHDR.Location = new Point(410, 26);
+            LimpiarBusquedaHDR.Name = "LimpiarBusquedaHDR";
+            LimpiarBusquedaHDR.Size = new Size(74, 32);
+            LimpiarBusquedaHDR.TabIndex = 15;
+            LimpiarBusquedaHDR.Text = "Limpiar";
+            LimpiarBusquedaHDR.UseVisualStyleBackColor = true;
+            // 
+            // TablaDatosHDRdataGridView1
+            // 
+            TablaDatosHDRdataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaDatosHDRdataGridView1.Columns.AddRange(new DataGridViewColumn[] { Numero, Fecha, Titulo });
+            TablaDatosHDRdataGridView1.Location = new Point(51, 74);
+            TablaDatosHDRdataGridView1.Name = "TablaDatosHDRdataGridView1";
+            TablaDatosHDRdataGridView1.Size = new Size(343, 54);
+            TablaDatosHDRdataGridView1.TabIndex = 14;
+            TablaDatosHDRdataGridView1.CellContentClick += TablaDatosHDRdataGridView1_CellContentClick;
+            // 
+            // Numero
+            // 
+            Numero.HeaderText = "Numero";
+            Numero.Name = "Numero";
+            // 
+            // Fecha
+            // 
+            Fecha.HeaderText = "Fecha";
+            Fecha.Name = "Fecha";
+            // 
+            // Titulo
+            // 
+            Titulo.HeaderText = "Titulo";
+            Titulo.Name = "Titulo";
+            // 
+            // NumeroHDRTxt
+            // 
+            NumeroHDRTxt.AccessibleName = "NumeroDeTramiteTxt";
+            NumeroHDRTxt.Location = new Point(161, 28);
+            NumeroHDRTxt.Name = "NumeroHDRTxt";
+            NumeroHDRTxt.Size = new Size(143, 27);
+            NumeroHDRTxt.TabIndex = 12;
+            // 
             // NumeroDeTramite
             // 
             NumeroDeTramite.AccessibleName = "NumeroDeTramite";
@@ -128,14 +172,6 @@
             NumeroDeTramite.Size = new Size(115, 17);
             NumeroDeTramite.TabIndex = 12;
             NumeroDeTramite.Text = "NumeroDeTramite";
-            // 
-            // NumeroHDRTxt
-            // 
-            NumeroHDRTxt.AccessibleName = "NumeroDeTramiteTxt";
-            NumeroHDRTxt.Location = new Point(161, 28);
-            NumeroHDRTxt.Name = "NumeroHDRTxt";
-            NumeroHDRTxt.Size = new Size(143, 27);
-            NumeroHDRTxt.TabIndex = 12;
             // 
             // RegistrarAdmisionEncomiendasBox2
             // 
@@ -155,176 +191,27 @@
             RegistrarAdmisionEncomiendasBox2.Text = "Registrar Encomiendas";
             RegistrarAdmisionEncomiendasBox2.Enter += groupBox2_Enter;
             // 
-            // CancelarRegistroEncomiendaBTN
+            // button2
             // 
-            CancelarRegistroEncomiendaBTN.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CancelarRegistroEncomiendaBTN.Location = new Point(690, 424);
-            CancelarRegistroEncomiendaBTN.Name = "CancelarRegistroEncomiendaBTN";
-            CancelarRegistroEncomiendaBTN.Size = new Size(85, 30);
-            CancelarRegistroEncomiendaBTN.TabIndex = 6;
-            CancelarRegistroEncomiendaBTN.Text = "Cancelar";
-            CancelarRegistroEncomiendaBTN.UseVisualStyleBackColor = true;
+            button2.BackColor = SystemColors.MenuHighlight;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.Control;
+            button2.Location = new Point(593, 424);
+            button2.Name = "button2";
+            button2.Size = new Size(85, 30);
+            button2.TabIndex = 13;
+            button2.Text = "Confirmar";
+            button2.UseVisualStyleBackColor = false;
             // 
-            // TablaDatosHDRdataGridView1
+            // button1
             // 
-            TablaDatosHDRdataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TablaDatosHDRdataGridView1.Columns.AddRange(new DataGridViewColumn[] { Numero, Fecha, Titulo });
-            TablaDatosHDRdataGridView1.Location = new Point(51, 74);
-            TablaDatosHDRdataGridView1.Name = "TablaDatosHDRdataGridView1";
-            TablaDatosHDRdataGridView1.Size = new Size(343, 54);
-            TablaDatosHDRdataGridView1.TabIndex = 14;
-            // 
-            // Numero
-            // 
-            Numero.HeaderText = "Numero";
-            Numero.Name = "Numero";
-            // 
-            // Fecha
-            // 
-            Fecha.HeaderText = "Fecha";
-            Fecha.Name = "Fecha";
-            // 
-            // Titulo
-            // 
-            Titulo.HeaderText = "Titulo";
-            Titulo.Name = "Titulo";
-            // 
-            // LimpiarBusquedaHDR
-            // 
-            LimpiarBusquedaHDR.AccessibleName = "Limpiar";
-            LimpiarBusquedaHDR.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LimpiarBusquedaHDR.Location = new Point(410, 26);
-            LimpiarBusquedaHDR.Name = "LimpiarBusquedaHDR";
-            LimpiarBusquedaHDR.Size = new Size(74, 32);
-            LimpiarBusquedaHDR.TabIndex = 15;
-            LimpiarBusquedaHDR.Text = "Limpiar";
-            LimpiarBusquedaHDR.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(dateTimePicker1);
-            groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(label1);
-            groupBox2.Controls.Add(textBox2);
-            groupBox2.Controls.Add(textBox1);
-            groupBox2.Location = new Point(44, 27);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(658, 128);
-            groupBox2.TabIndex = 9;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Datos de la encomienda";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(30, 80);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(174, 28);
-            textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(231, 80);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(182, 28);
-            textBox2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(30, 45);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 20);
-            label1.TabIndex = 3;
-            label1.Text = "Numero de Encomienda";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(231, 45);
-            label2.Name = "label2";
-            label2.Size = new Size(57, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Cliente";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(458, 45);
-            label5.Name = "label5";
-            label5.Size = new Size(138, 20);
-            label5.TabIndex = 5;
-            label5.Text = "Fecha de Admision";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(446, 80);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 28);
-            dateTimePicker1.TabIndex = 6;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(label8);
-            groupBox3.Controls.Add(label7);
-            groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(textBox5);
-            groupBox3.Controls.Add(textBox4);
-            groupBox3.Controls.Add(textBox3);
-            groupBox3.Location = new Point(44, 194);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(658, 100);
-            groupBox3.TabIndex = 10;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Detalle de la encomienda";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(30, 66);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(174, 28);
-            textBox3.TabIndex = 0;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(231, 66);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(182, 28);
-            textBox4.TabIndex = 1;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(446, 66);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(200, 28);
-            textBox5.TabIndex = 2;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(30, 43);
-            label6.Name = "label6";
-            label6.Size = new Size(88, 20);
-            label6.TabIndex = 3;
-            label6.Text = "Descripcion";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(231, 43);
-            label7.Name = "label7";
-            label7.Size = new Size(73, 20);
-            label7.TabIndex = 4;
-            label7.Text = "Cantidad";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(446, 43);
-            label8.Name = "label8";
-            label8.Size = new Size(40, 20);
-            label8.TabIndex = 5;
-            label8.Text = "Peso";
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(502, 424);
+            button1.Name = "button1";
+            button1.Size = new Size(85, 30);
+            button1.TabIndex = 12;
+            button1.Text = "Agregar";
+            button1.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -360,27 +247,141 @@
             Peso_Encomienda.HeaderText = "Peso";
             Peso_Encomienda.Name = "Peso_Encomienda";
             // 
-            // button1
+            // groupBox3
             // 
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(502, 424);
-            button1.Name = "button1";
-            button1.Size = new Size(85, 30);
-            button1.TabIndex = 12;
-            button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = true;
+            groupBox3.Controls.Add(label8);
+            groupBox3.Controls.Add(label7);
+            groupBox3.Controls.Add(label6);
+            groupBox3.Controls.Add(textBox5);
+            groupBox3.Controls.Add(textBox4);
+            groupBox3.Controls.Add(textBox3);
+            groupBox3.Location = new Point(44, 194);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(658, 100);
+            groupBox3.TabIndex = 10;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Detalle de la encomienda";
             // 
-            // button2
+            // label8
             // 
-            button2.BackColor = SystemColors.MenuHighlight;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(593, 424);
-            button2.Name = "button2";
-            button2.Size = new Size(85, 30);
-            button2.TabIndex = 13;
-            button2.Text = "Confirmar";
-            button2.UseVisualStyleBackColor = false;
+            label8.AutoSize = true;
+            label8.Location = new Point(446, 43);
+            label8.Name = "label8";
+            label8.Size = new Size(40, 20);
+            label8.TabIndex = 5;
+            label8.Text = "Peso";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(231, 43);
+            label7.Name = "label7";
+            label7.Size = new Size(73, 20);
+            label7.TabIndex = 4;
+            label7.Text = "Cantidad";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(30, 43);
+            label6.Name = "label6";
+            label6.Size = new Size(88, 20);
+            label6.TabIndex = 3;
+            label6.Text = "Descripcion";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(446, 66);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(200, 28);
+            textBox5.TabIndex = 2;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(231, 66);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(182, 28);
+            textBox4.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(30, 66);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(174, 28);
+            textBox3.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(dateTimePicker1);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(label1);
+            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(textBox1);
+            groupBox2.Location = new Point(44, 27);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(658, 128);
+            groupBox2.TabIndex = 9;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Datos de la encomienda";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(446, 80);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 28);
+            dateTimePicker1.TabIndex = 6;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(458, 45);
+            label5.Name = "label5";
+            label5.Size = new Size(138, 20);
+            label5.TabIndex = 5;
+            label5.Text = "Fecha de Admision";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(231, 45);
+            label2.Name = "label2";
+            label2.Size = new Size(57, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Cliente";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(30, 45);
+            label1.Name = "label1";
+            label1.Size = new Size(174, 20);
+            label1.TabIndex = 3;
+            label1.Text = "Numero de Encomienda";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(231, 80);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(182, 28);
+            textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(30, 80);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(174, 28);
+            textBox1.TabIndex = 0;
+            // 
+            // CancelarRegistroEncomiendaBTN
+            // 
+            CancelarRegistroEncomiendaBTN.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CancelarRegistroEncomiendaBTN.Location = new Point(690, 424);
+            CancelarRegistroEncomiendaBTN.Name = "CancelarRegistroEncomiendaBTN";
+            CancelarRegistroEncomiendaBTN.Size = new Size(85, 30);
+            CancelarRegistroEncomiendaBTN.TabIndex = 6;
+            CancelarRegistroEncomiendaBTN.Text = "Cancelar";
+            CancelarRegistroEncomiendaBTN.UseVisualStyleBackColor = true;
             // 
             // HojaDeRuta
             // 
@@ -395,13 +396,13 @@
             Text = "HojaDeRuta";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            RegistrarAdmisionEncomiendasBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)TablaDatosHDRdataGridView1).EndInit();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            RegistrarAdmisionEncomiendasBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

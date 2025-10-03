@@ -167,7 +167,7 @@
             label14.Size = new Size(50, 15);
             label14.TabIndex = 13;
             label14.Text = "Destino:";
-            label14.Click += this.label14_Click;
+            //label14.Click += this.label14_Click;
             // 
             // textBoxNombreSolicitante
             // 

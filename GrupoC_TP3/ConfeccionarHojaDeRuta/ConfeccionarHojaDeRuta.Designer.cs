@@ -50,18 +50,18 @@
             NumerodeGuiaRetiro = new ColumnHeader();
             OrigenRetiro = new ColumnHeader();
             DestinoRetiro = new ColumnHeader();
-            this.AgregarRetiro = new Button();
-            this.Transportebutton = new Button();
+//            this.AgregarRetiro = new Button();
+           // this.Transportebutton = new Button();
             EntregacheckBox = new CheckBox();
             EntregaGroupBox1 = new GroupBox();
-            this.AgregarEntregabutton = new Button();
+           // this.AgregarEntregabutton = new Button();
             listView3 = new ListView();
-            this.NumeroGuiaEntrega = new ColumnHeader();
-            this.OrigenEntrega1 = new ColumnHeader();
+            //this.NumeroGuiaEntrega = new ColumnHeader();
+          //  this.OrigenEntrega1 = new ColumnHeader();
             DestinoEntrega1 = new ColumnHeader();
             comboBox4 = new ComboBox();
-            this.NumeroGuia = new Label();
-            this.DestinoEntregatextBox1 = new TextBox();
+          //  this.NumeroGuia = new Label();
+           // this.DestinoEntregatextBox1 = new TextBox();
             OrigenEntregatextBox2 = new TextBox();
             label10 = new Label();
             OrigenEntrega = new Label();
@@ -112,7 +112,7 @@
             // 
             RetirogroupBox1.Controls.Add(ListadoChoferesRetirocomboBox6);
             RetirogroupBox1.Controls.Add(label8);
-            RetirogroupBox1.Controls.Add(this.AgregarRetiro);
+            //RetirogroupBox1.Controls.Add(this.AgregarRetiro);
             RetirogroupBox1.Controls.Add(listView2);
             RetirogroupBox1.Controls.Add(comboBox2);
             RetirogroupBox1.Controls.Add(label5);
@@ -129,7 +129,7 @@
             // 
             // TransportegroupBox1
             // 
-            TransportegroupBox1.Controls.Add(this.Transportebutton);
+          //  TransportegroupBox1.Controls.Add(this.Transportebutton);
             TransportegroupBox1.Controls.Add(listView1);
             TransportegroupBox1.Controls.Add(comboBox3);
             TransportegroupBox1.Controls.Add(label7);
@@ -277,21 +277,22 @@
             // 
             // AgregarRetiro
             // 
-            this.AgregarRetiro.Location = new Point(542, 123);
+            /*this.AgregarRetiro.Location = new Point(542, 123);
             this.AgregarRetiro.Name = "AgregarRetiro";
             this.AgregarRetiro.Size = new Size(75, 23);
             this.AgregarRetiro.TabIndex = 11;
             this.AgregarRetiro.Text = "Agregar";
             this.AgregarRetiro.UseVisualStyleBackColor = true;
-            // 
+            */// 
             // Transportebutton
             // 
-            this.Transportebutton.Location = new Point(542, 135);
+            /*this.Transportebutton.Location = new Point(542, 135);
             this.Transportebutton.Name = "Transportebutton";
             this.Transportebutton.Size = new Size(75, 23);
             this.Transportebutton.TabIndex = 12;
             this.Transportebutton.Text = "Agregar";
             this.Transportebutton.UseVisualStyleBackColor = true;
+            */
             // 
             // EntregacheckBox
             // 
@@ -307,11 +308,11 @@
             // 
             EntregaGroupBox1.Controls.Add(ListadoChoferesEntregacomboBox5);
             EntregaGroupBox1.Controls.Add(ListadoChoferesEntregalabel6);
-            EntregaGroupBox1.Controls.Add(this.AgregarEntregabutton);
+            //EntregaGroupBox1.Controls.Add(this.AgregarEntregabutton);
             EntregaGroupBox1.Controls.Add(listView3);
             EntregaGroupBox1.Controls.Add(comboBox4);
-            EntregaGroupBox1.Controls.Add(this.NumeroGuia);
-            EntregaGroupBox1.Controls.Add(this.DestinoEntregatextBox1);
+           // EntregaGroupBox1.Controls.Add(this.NumeroGuia);
+            //EntregaGroupBox1.Controls.Add(this.DestinoEntregatextBox1);
             EntregaGroupBox1.Controls.Add(OrigenEntregatextBox2);
             EntregaGroupBox1.Controls.Add(label10);
             EntregaGroupBox1.Controls.Add(OrigenEntrega);
@@ -324,16 +325,16 @@
             // 
             // AgregarEntregabutton
             // 
-            this.AgregarEntregabutton.Location = new Point(542, 132);
+           /* this.AgregarEntregabutton.Location = new Point(542, 132);
             this.AgregarEntregabutton.Name = "AgregarEntregabutton";
             this.AgregarEntregabutton.Size = new Size(75, 23);
             this.AgregarEntregabutton.TabIndex = 11;
             this.AgregarEntregabutton.Text = "Agregar";
             this.AgregarEntregabutton.UseVisualStyleBackColor = true;
-            // 
+            */// 
             // listView3
             // 
-            listView3.Columns.AddRange(new ColumnHeader[] { this.NumeroGuiaEntrega, this.OrigenEntrega1, DestinoEntrega1, ChoferesEntrega });
+            //listView3.Columns.AddRange(new ColumnHeader[] { this.NumeroGuiaEntrega, this.OrigenEntrega1, DestinoEntrega1, ChoferesEntrega });
             listView3.GridLines = true;
             listView3.Location = new Point(42, 102);
             listView3.Name = "listView3";
@@ -344,7 +345,7 @@
             // 
             // NumeroGuiaEntrega
             // 
-            this.NumeroGuiaEntrega.Text = "Numero de Guia";
+            /*this.NumeroGuiaEntrega.Text = "Numero de Guia";
             this.NumeroGuiaEntrega.Width = 100;
             // 
             // OrigenEntrega1
@@ -352,7 +353,7 @@
             this.OrigenEntrega1.Text = "Origen";
             this.OrigenEntrega1.TextAlign = HorizontalAlignment.Center;
             this.OrigenEntrega1.Width = 100;
-            // 
+            */// 
             // DestinoEntrega1
             // 
             DestinoEntrega1.Text = "Destino";
@@ -369,7 +370,7 @@
             // 
             // NumeroGuia
             // 
-            this.NumeroGuia.AutoSize = true;
+            /*this.NumeroGuia.AutoSize = true;
             this.NumeroGuia.Location = new Point(42, 66);
             this.NumeroGuia.Name = "NumeroGuia";
             this.NumeroGuia.Size = new Size(98, 15);
@@ -382,7 +383,7 @@
             this.DestinoEntregatextBox1.Name = "DestinoEntregatextBox1";
             this.DestinoEntregatextBox1.Size = new Size(177, 23);
             this.DestinoEntregatextBox1.TabIndex = 3;
-            // 
+            */// 
             // OrigenEntregatextBox2
             // 
             OrigenEntregatextBox2.Location = new Point(172, 24);

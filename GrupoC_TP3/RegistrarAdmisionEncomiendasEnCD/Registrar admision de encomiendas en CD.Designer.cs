@@ -308,7 +308,7 @@
             NumeroDeEncomienda.Size = new Size(122, 20);
             NumeroDeEncomienda.TabIndex = 3;
             NumeroDeEncomienda.Text = "Numero de Guia";
-            NumeroDeEncomienda.Click += this.NumeroDeEncomienda_Click;
+//          NumeroDeEncomienda.Click += this.NumeroDeEncomienda_Click;
             // 
             // ClienteDatoEncomiendaTextBox
             // 

@@ -46,9 +46,7 @@
             label3 = new Label();
             label1 = new Label();
             TransportegroupBox1 = new GroupBox();
-            listView1 = new ListView();
-            NumerodeGuia = new ColumnHeader();
-            Chofer = new ColumnHeader();
+            AgregarTransporteButton = new Button();
             comboBox3 = new ComboBox();
             label7 = new Label();
             ListadoChofereTransportecomboBox1 = new ComboBox();
@@ -57,7 +55,6 @@
             EntregaGroupBox1 = new GroupBox();
             ListadoChoferesEntregacomboBox5 = new ComboBox();
             ListadoChoferesEntregalabel6 = new Label();
-            listView3 = new ListView();
             comboBox4 = new ComboBox();
             OrigenEntregatextBox2 = new TextBox();
             label10 = new Label();
@@ -66,7 +63,24 @@
             Confirmarbutton1 = new Button();
             Cancelarbutton1 = new Button();
             ChoferesEntrega = new ColumnHeader();
-            AgregarTransporteButton = new Button();
+            AgregarEntregaButton = new Button();
+            AgregarRetirobutton = new Button();
+            DestinoEntregatextBox = new TextBox();
+            DestinoTransportetextBox = new TextBox();
+            OrigenTransportetextBox = new TextBox();
+            DestinoTransporte = new Label();
+            OrigenTransporte = new Label();
+            listView1 = new ListView();
+            GuiaEntrega = new ColumnHeader();
+            OrigenEntrega1 = new ColumnHeader();
+            DestinoEntrega = new ColumnHeader();
+            ChoferEntrega = new ColumnHeader();
+            listView3 = new ListView();
+            NumeroGuiaTransporte = new ColumnHeader();
+            OrigenTransporte2 = new ColumnHeader();
+            DestinoTransporte2 = new ColumnHeader();
+            ChoferTransporte = new ColumnHeader();
+            NumerodeGuia = new Label();
             RetirogroupBox1.SuspendLayout();
             TransportegroupBox1.SuspendLayout();
             EntregaGroupBox1.SuspendLayout();
@@ -104,6 +118,7 @@
             // 
             // RetirogroupBox1
             // 
+            RetirogroupBox1.Controls.Add(AgregarRetirobutton);
             RetirogroupBox1.Controls.Add(ListadoChoferesRetirocomboBox6);
             RetirogroupBox1.Controls.Add(label8);
             RetirogroupBox1.Controls.Add(listView2);
@@ -167,7 +182,7 @@
             // 
             // ChoferesRetiro
             // 
-            ChoferesRetiro.Text = "Choferes";
+            ChoferesRetiro.Text = "Chofer";
             ChoferesRetiro.TextAlign = HorizontalAlignment.Center;
             ChoferesRetiro.Width = 100;
             // 
@@ -222,8 +237,12 @@
             // 
             // TransportegroupBox1
             // 
+            TransportegroupBox1.Controls.Add(listView3);
+            TransportegroupBox1.Controls.Add(OrigenTransporte);
+            TransportegroupBox1.Controls.Add(DestinoTransporte);
+            TransportegroupBox1.Controls.Add(OrigenTransportetextBox);
+            TransportegroupBox1.Controls.Add(DestinoTransportetextBox);
             TransportegroupBox1.Controls.Add(AgregarTransporteButton);
-            TransportegroupBox1.Controls.Add(listView1);
             TransportegroupBox1.Controls.Add(comboBox3);
             TransportegroupBox1.Controls.Add(label7);
             TransportegroupBox1.Controls.Add(ListadoChofereTransportecomboBox1);
@@ -235,32 +254,20 @@
             TransportegroupBox1.TabStop = false;
             TransportegroupBox1.Text = "Transporte";
             // 
-            // listView1
+            // AgregarTransporteButton
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumerodeGuia, Chofer });
-            listView1.GridLines = true;
-            listView1.Location = new Point(42, 99);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(204, 87);
-            listView1.TabIndex = 9;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
-            // NumerodeGuia
-            // 
-            NumerodeGuia.Text = "Numero de Guia";
-            NumerodeGuia.Width = 100;
-            // 
-            // Chofer
-            // 
-            Chofer.Text = "Chofer";
-            Chofer.TextAlign = HorizontalAlignment.Center;
-            Chofer.Width = 100;
+            AgregarTransporteButton.Location = new Point(554, 139);
+            AgregarTransporteButton.Name = "AgregarTransporteButton";
+            AgregarTransporteButton.Size = new Size(75, 35);
+            AgregarTransporteButton.TabIndex = 10;
+            AgregarTransporteButton.Text = "Agregar";
+            AgregarTransporteButton.UseVisualStyleBackColor = true;
+            AgregarTransporteButton.Click += button3_Click;
             // 
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(156, 34);
+            comboBox3.Location = new Point(158, 53);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(151, 23);
             comboBox3.TabIndex = 8;
@@ -268,7 +275,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(42, 42);
+            label7.Location = new Point(44, 61);
             label7.Name = "label7";
             label7.Size = new Size(98, 15);
             label7.TabIndex = 2;
@@ -277,7 +284,7 @@
             // ListadoChofereTransportecomboBox1
             // 
             ListadoChofereTransportecomboBox1.FormattingEnabled = true;
-            ListadoChofereTransportecomboBox1.Location = new Point(510, 34);
+            ListadoChofereTransportecomboBox1.Location = new Point(512, 53);
             ListadoChofereTransportecomboBox1.Name = "ListadoChofereTransportecomboBox1";
             ListadoChofereTransportecomboBox1.Size = new Size(171, 23);
             ListadoChofereTransportecomboBox1.TabIndex = 1;
@@ -285,7 +292,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(382, 37);
+            label4.Location = new Point(364, 56);
             label4.Name = "label4";
             label4.Size = new Size(109, 15);
             label4.TabIndex = 0;
@@ -303,9 +310,12 @@
             // 
             // EntregaGroupBox1
             // 
+            EntregaGroupBox1.Controls.Add(NumerodeGuia);
+            EntregaGroupBox1.Controls.Add(listView1);
+            EntregaGroupBox1.Controls.Add(DestinoEntregatextBox);
+            EntregaGroupBox1.Controls.Add(AgregarEntregaButton);
             EntregaGroupBox1.Controls.Add(ListadoChoferesEntregacomboBox5);
             EntregaGroupBox1.Controls.Add(ListadoChoferesEntregalabel6);
-            EntregaGroupBox1.Controls.Add(listView3);
             EntregaGroupBox1.Controls.Add(comboBox4);
             EntregaGroupBox1.Controls.Add(OrigenEntregatextBox2);
             EntregaGroupBox1.Controls.Add(label10);
@@ -333,16 +343,6 @@
             ListadoChoferesEntregalabel6.Size = new Size(109, 15);
             ListadoChoferesEntregalabel6.TabIndex = 13;
             ListadoChoferesEntregalabel6.Text = "Listado de choferes";
-            // 
-            // listView3
-            // 
-            listView3.GridLines = true;
-            listView3.Location = new Point(42, 102);
-            listView3.Name = "listView3";
-            listView3.Size = new Size(406, 98);
-            listView3.TabIndex = 10;
-            listView3.UseCompatibleStateImageBehavior = false;
-            listView3.View = View.Details;
             // 
             // comboBox4
             // 
@@ -407,15 +407,140 @@
             ChoferesEntrega.TextAlign = HorizontalAlignment.Center;
             ChoferesEntrega.Width = 100;
             // 
-            // AgregarTransporteButton
+            // AgregarEntregaButton
             // 
-            AgregarTransporteButton.Location = new Point(514, 149);
-            AgregarTransporteButton.Name = "AgregarTransporteButton";
-            AgregarTransporteButton.Size = new Size(75, 23);
-            AgregarTransporteButton.TabIndex = 10;
-            AgregarTransporteButton.Text = "Agregar";
-            AgregarTransporteButton.UseVisualStyleBackColor = true;
-            AgregarTransporteButton.Click += button3_Click;
+            AgregarEntregaButton.Location = new Point(554, 153);
+            AgregarEntregaButton.Name = "AgregarEntregaButton";
+            AgregarEntregaButton.Size = new Size(75, 31);
+            AgregarEntregaButton.TabIndex = 15;
+            AgregarEntregaButton.Text = "Agregar";
+            AgregarEntregaButton.UseVisualStyleBackColor = true;
+            // 
+            // AgregarRetirobutton
+            // 
+            AgregarRetirobutton.Location = new Point(554, 143);
+            AgregarRetirobutton.Name = "AgregarRetirobutton";
+            AgregarRetirobutton.Size = new Size(75, 29);
+            AgregarRetirobutton.TabIndex = 17;
+            AgregarRetirobutton.Text = "Agregar";
+            AgregarRetirobutton.UseVisualStyleBackColor = true;
+            // 
+            // DestinoEntregatextBox
+            // 
+            DestinoEntregatextBox.Location = new Point(492, 25);
+            DestinoEntregatextBox.Name = "DestinoEntregatextBox";
+            DestinoEntregatextBox.Size = new Size(171, 23);
+            DestinoEntregatextBox.TabIndex = 16;
+            // 
+            // DestinoTransportetextBox
+            // 
+            DestinoTransportetextBox.Location = new Point(512, 22);
+            DestinoTransportetextBox.Name = "DestinoTransportetextBox";
+            DestinoTransportetextBox.Size = new Size(171, 23);
+            DestinoTransportetextBox.TabIndex = 11;
+            // 
+            // OrigenTransportetextBox
+            // 
+            OrigenTransportetextBox.Location = new Point(158, 22);
+            OrigenTransportetextBox.Name = "OrigenTransportetextBox";
+            OrigenTransportetextBox.Size = new Size(151, 23);
+            OrigenTransportetextBox.TabIndex = 12;
+            // 
+            // DestinoTransporte
+            // 
+            DestinoTransporte.AutoSize = true;
+            DestinoTransporte.Location = new Point(379, 30);
+            DestinoTransporte.Name = "DestinoTransporte";
+            DestinoTransporte.Size = new Size(47, 15);
+            DestinoTransporte.TabIndex = 13;
+            DestinoTransporte.Text = "Destino";
+            // 
+            // OrigenTransporte
+            // 
+            OrigenTransporte.AutoSize = true;
+            OrigenTransporte.Location = new Point(48, 30);
+            OrigenTransporte.Name = "OrigenTransporte";
+            OrigenTransporte.Size = new Size(43, 15);
+            OrigenTransporte.TabIndex = 14;
+            OrigenTransporte.Text = "Origen";
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { GuiaEntrega, OrigenEntrega1, DestinoEntrega, ChoferEntrega });
+            listView1.GridLines = true;
+            listView1.Location = new Point(40, 92);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(410, 92);
+            listView1.TabIndex = 17;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // GuiaEntrega
+            // 
+            GuiaEntrega.Text = "Numero  de guia";
+            GuiaEntrega.Width = 100;
+            // 
+            // OrigenEntrega1
+            // 
+            OrigenEntrega1.Text = "Origen";
+            OrigenEntrega1.TextAlign = HorizontalAlignment.Center;
+            OrigenEntrega1.Width = 100;
+            // 
+            // DestinoEntrega
+            // 
+            DestinoEntrega.Text = "Destino";
+            DestinoEntrega.TextAlign = HorizontalAlignment.Center;
+            DestinoEntrega.Width = 100;
+            // 
+            // ChoferEntrega
+            // 
+            ChoferEntrega.Text = "Chofer";
+            ChoferEntrega.TextAlign = HorizontalAlignment.Center;
+            ChoferEntrega.Width = 100;
+            // 
+            // listView3
+            // 
+            listView3.Columns.AddRange(new ColumnHeader[] { NumeroGuiaTransporte, OrigenTransporte2, DestinoTransporte2, ChoferTransporte });
+            listView3.GridLines = true;
+            listView3.Location = new Point(42, 102);
+            listView3.Name = "listView3";
+            listView3.Size = new Size(406, 97);
+            listView3.TabIndex = 15;
+            listView3.UseCompatibleStateImageBehavior = false;
+            listView3.View = View.Details;
+            // 
+            // NumeroGuiaTransporte
+            // 
+            NumeroGuiaTransporte.Text = "Numero de Guia";
+            NumeroGuiaTransporte.Width = 100;
+            // 
+            // OrigenTransporte2
+            // 
+            OrigenTransporte2.Text = "Origen";
+            OrigenTransporte2.TextAlign = HorizontalAlignment.Center;
+            OrigenTransporte2.Width = 100;
+            // 
+            // DestinoTransporte2
+            // 
+            DestinoTransporte2.Text = "Destino";
+            DestinoTransporte2.TextAlign = HorizontalAlignment.Center;
+            DestinoTransporte2.Width = 100;
+            // 
+            // ChoferTransporte
+            // 
+            ChoferTransporte.Text = "Chofer";
+            ChoferTransporte.TextAlign = HorizontalAlignment.Center;
+            ChoferTransporte.Width = 100;
+            // 
+            // NumerodeGuia
+            // 
+            NumerodeGuia.AutoSize = true;
+            NumerodeGuia.Location = new Point(42, 63);
+            NumerodeGuia.Name = "NumerodeGuia";
+            NumerodeGuia.Size = new Size(94, 15);
+            NumerodeGuia.TabIndex = 18;
+            NumerodeGuia.Text = "Numero de Guia";
+            NumerodeGuia.TextAlign = ContentAlignment.TopRight;
             // 
             // ConfeccionarHojaDeRuta
             // 
@@ -460,11 +585,8 @@
         private Label label5;
         private TextBox DestinoRetirotextBox2;
         private Label label7;
-        private ListView listView1;
-        private ColumnHeader NumerodeGuia;
         private ColumnHeader Origen;
         private ColumnHeader Destino;
-        private ColumnHeader Chofer;
         private ComboBox comboBox3;
         private ListView listView2;
         private ColumnHeader NumerodeGuiaRetiro;
@@ -475,8 +597,6 @@
         private CheckBox EntregacheckBox;
         private GroupBox EntregaGroupBox1;
         private Button button2;
-        private ListView listView3;
-        private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader DestinoEntrega1;
         private ComboBox comboBox4;
@@ -494,5 +614,23 @@
         private ColumnHeader ChoferesRetiro;
         private ColumnHeader ChoferesEntrega;
         private Button AgregarTransporteButton;
+        private Button AgregarRetirobutton;
+        private Label OrigenTransporte;
+        private Label DestinoTransporte;
+        private TextBox OrigenTransportetextBox;
+        private TextBox DestinoTransportetextBox;
+        private TextBox DestinoEntregatextBox;
+        private Button AgregarEntregaButton;
+        private ListView listView3;
+        private ColumnHeader NumeroGuiaTransporte;
+        private ColumnHeader OrigenTransporte2;
+        private ColumnHeader DestinoTransporte2;
+        private ColumnHeader ChoferTransporte;
+        private ListView listView1;
+        private ColumnHeader GuiaEntrega;
+        private ColumnHeader OrigenEntrega1;
+        private ColumnHeader DestinoEntrega;
+        private ColumnHeader ChoferEntrega;
+        private Label NumerodeGuia;
     }
 }

@@ -56,6 +56,9 @@
             folderBrowserDialog1 = new FolderBrowserDialog();
             Tamaño = new Label();
             ListadoTamañoPaquete = new ComboBox();
+            label1 = new Label();
+            CalcularTarifa = new Button();
+            label2 = new Label();
             RegistrarAdmisionEncomiendasBox2.SuspendLayout();
             DetalleEncomienda.SuspendLayout();
             DatoEncomiendas.SuspendLayout();
@@ -72,6 +75,9 @@
             // 
             // RegistrarAdmisionEncomiendasBox2
             // 
+            RegistrarAdmisionEncomiendasBox2.Controls.Add(label2);
+            RegistrarAdmisionEncomiendasBox2.Controls.Add(CalcularTarifa);
+            RegistrarAdmisionEncomiendasBox2.Controls.Add(label1);
             RegistrarAdmisionEncomiendasBox2.Controls.Add(listView1);
             RegistrarAdmisionEncomiendasBox2.Controls.Add(button2);
             RegistrarAdmisionEncomiendasBox2.Controls.Add(button1);
@@ -82,7 +88,7 @@
             RegistrarAdmisionEncomiendasBox2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             RegistrarAdmisionEncomiendasBox2.Location = new Point(12, 12);
             RegistrarAdmisionEncomiendasBox2.Name = "RegistrarAdmisionEncomiendasBox2";
-            RegistrarAdmisionEncomiendasBox2.Size = new Size(775, 471);
+            RegistrarAdmisionEncomiendasBox2.Size = new Size(780, 529);
             RegistrarAdmisionEncomiendasBox2.TabIndex = 12;
             RegistrarAdmisionEncomiendasBox2.TabStop = false;
             RegistrarAdmisionEncomiendasBox2.Text = "Registrar Encomiendas";
@@ -95,7 +101,7 @@
             listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
             listView1.Location = new Point(50, 311);
             listView1.Name = "listView1";
-            listView1.Size = new Size(465, 107);
+            listView1.Size = new Size(467, 107);
             listView1.TabIndex = 14;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -133,7 +139,7 @@
             button2.BackColor = SystemColors.HighlightText;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(593, 424);
+            button2.Location = new Point(592, 493);
             button2.Name = "button2";
             button2.Size = new Size(85, 30);
             button2.TabIndex = 13;
@@ -143,7 +149,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(490, 424);
+            button1.Location = new Point(490, 493);
             button1.Name = "button1";
             button1.Size = new Size(85, 30);
             button1.TabIndex = 12;
@@ -273,7 +279,7 @@
             // CancelarRegistroEncomiendaBTN
             // 
             CancelarRegistroEncomiendaBTN.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CancelarRegistroEncomiendaBTN.Location = new Point(684, 424);
+            CancelarRegistroEncomiendaBTN.Location = new Point(683, 493);
             CancelarRegistroEncomiendaBTN.Name = "CancelarRegistroEncomiendaBTN";
             CancelarRegistroEncomiendaBTN.Size = new Size(85, 30);
             CancelarRegistroEncomiendaBTN.TabIndex = 6;
@@ -297,16 +303,44 @@
             ListadoTamañoPaquete.Size = new Size(183, 28);
             ListadoTamañoPaquete.TabIndex = 7;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(50, 435);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 20);
+            label1.TabIndex = 15;
+            label1.Text = "Cálculo de tarifas y cargos";
+            // 
+            // CalcularTarifa
+            // 
+            CalcularTarifa.Location = new Point(260, 430);
+            CalcularTarifa.Name = "CalcularTarifa";
+            CalcularTarifa.Size = new Size(91, 31);
+            CalcularTarifa.TabIndex = 16;
+            CalcularTarifa.Text = "Caclular";
+            CalcularTarifa.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(50, 472);
+            label2.Name = "label2";
+            label2.Size = new Size(95, 20);
+            label2.TabIndex = 17;
+            label2.Text = "Total: $XXXX";
+            // 
             // RegistrarEncomiendas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(810, 492);
+            ClientSize = new Size(813, 553);
             Controls.Add(RegistrarAdmisionEncomiendasBox2);
             Controls.Add(label3);
             Name = "RegistrarEncomiendas";
             Text = "Registrar Encomiendas";
             RegistrarAdmisionEncomiendasBox2.ResumeLayout(false);
+            RegistrarAdmisionEncomiendasBox2.PerformLayout();
             DetalleEncomienda.ResumeLayout(false);
             DetalleEncomienda.PerformLayout();
             DatoEncomiendas.ResumeLayout(false);
@@ -344,5 +378,8 @@
         private TextBox PesoDetalleEncomiendaTextBox;
         private Label Tamaño;
         private ComboBox ListadoTamañoPaquete;
+        private Label label2;
+        private Button CalcularTarifa;
+        private Label label1;
     }
 }

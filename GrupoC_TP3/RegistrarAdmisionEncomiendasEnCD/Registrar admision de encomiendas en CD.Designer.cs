@@ -89,7 +89,7 @@
             RegistrarAdmisionEncomiendasBox2.Location = new Point(12, 12);
             RegistrarAdmisionEncomiendasBox2.Name = "RegistrarAdmisionEncomiendasBox2";
             RegistrarAdmisionEncomiendasBox2.Size = new Size(780, 529);
-            RegistrarAdmisionEncomiendasBox2.TabIndex = 12;
+            RegistrarAdmisionEncomiendasBox2.TabIndex = 5;
             RegistrarAdmisionEncomiendasBox2.TabStop = false;
             RegistrarAdmisionEncomiendasBox2.Text = "Registrar Encomiendas";
             RegistrarAdmisionEncomiendasBox2.Enter += groupBox2_Enter;
@@ -97,7 +97,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(50, 472);
+            label2.Location = new Point(50, 484);
             label2.Name = "label2";
             label2.Size = new Size(95, 20);
             label2.TabIndex = 17;
@@ -106,7 +106,7 @@
             // CalcularTarifa
             // 
             CalcularTarifa.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CalcularTarifa.Location = new Point(260, 430);
+            CalcularTarifa.Location = new Point(260, 438);
             CalcularTarifa.Name = "CalcularTarifa";
             CalcularTarifa.Size = new Size(91, 31);
             CalcularTarifa.TabIndex = 16;
@@ -116,7 +116,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(50, 435);
+            label1.Location = new Point(50, 442);
             label1.Name = "label1";
             label1.Size = new Size(190, 20);
             label1.TabIndex = 15;
@@ -126,10 +126,12 @@
             // 
             listView1.AccessibleName = "ListadoDetalleEncomienda";
             listView1.Columns.AddRange(new ColumnHeader[] { Numero, ClienteRegistrarEncomienda, FechaRegistrarEncomienda, CantidadRegistroEncomienda, PesoRegistroEncomienda });
+            listView1.GridLines = true;
+            listViewItem1.StateImageIndex = 0;
             listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
             listView1.Location = new Point(50, 311);
             listView1.Name = "listView1";
-            listView1.Size = new Size(467, 107);
+            listView1.Size = new Size(465, 121);
             listView1.TabIndex = 14;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;

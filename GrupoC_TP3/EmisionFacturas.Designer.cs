@@ -35,8 +35,7 @@
             razonSocialList = new ListView();
             RazonSocialColumn = new ColumnHeader();
             cuitColumn = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
+            domicilioFiscal = new ColumnHeader();
             button1 = new Button();
             groupBox2 = new GroupBox();
             button3 = new Button();
@@ -93,25 +92,29 @@
             // 
             // razonSocialList
             // 
-            razonSocialList.Columns.AddRange(new ColumnHeader[] { RazonSocialColumn, cuitColumn, columnHeader3, columnHeader4 });
+            razonSocialList.Columns.AddRange(new ColumnHeader[] { RazonSocialColumn, cuitColumn, domicilioFiscal });
             razonSocialList.Location = new Point(22, 90);
             razonSocialList.Name = "razonSocialList";
             razonSocialList.Size = new Size(499, 81);
             razonSocialList.TabIndex = 5;
             razonSocialList.UseCompatibleStateImageBehavior = false;
+            razonSocialList.View = View.Details;
             razonSocialList.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
             // RazonSocialColumn
             // 
             RazonSocialColumn.Text = "Razon Social";
+            RazonSocialColumn.Width = 120;
             // 
             // cuitColumn
             // 
             cuitColumn.Text = "CUIT";
+            cuitColumn.Width = 120;
             // 
-            // columnHeader3
+            // domicilioFiscal
             // 
-            columnHeader3.Text = "Domicilio Fiscal";
+            domicilioFiscal.Text = "Domicilio Fiscal";
+            domicilioFiscal.Width = 120;
             // 
             // button1
             // 
@@ -132,7 +135,7 @@
             groupBox2.Size = new Size(759, 294);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Cuenta Corriente";
+            groupBox2.Text = "Pedidos a Facturar";
             // 
             // button3
             // 
@@ -160,12 +163,13 @@
             cuentaCorrienteLstView.Size = new Size(685, 171);
             cuentaCorrienteLstView.TabIndex = 2;
             cuentaCorrienteLstView.UseCompatibleStateImageBehavior = false;
+            cuentaCorrienteLstView.View = View.Details;
             // 
             // EmisionFacturas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(831, 548);
+            ClientSize = new Size(805, 536);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "EmisionFacturas";
@@ -193,8 +197,7 @@
         private ListView razonSocialList;
         private ColumnHeader RazonSocialColumn;
         private ColumnHeader cuitColumn;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
+        private ColumnHeader domicilioFiscal;
         private Button button4;
     }
 }

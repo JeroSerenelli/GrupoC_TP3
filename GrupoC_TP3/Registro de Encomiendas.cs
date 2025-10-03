@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrupoC_TP3
 {
-    public partial class HojaDeRuta : Form
+    public partial class RegistrarEncomiendas : Form
     {
-        public HojaDeRuta()
+        public RegistrarEncomiendas()
         {
             InitializeComponent();
         }

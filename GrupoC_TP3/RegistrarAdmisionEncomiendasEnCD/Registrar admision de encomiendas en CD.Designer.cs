@@ -31,6 +31,9 @@
             ListViewItem listViewItem1 = new ListViewItem("");
             label3 = new Label();
             RegistrarAdmisionEncomiendasBox2 = new GroupBox();
+            label2 = new Label();
+            CalcularTarifa = new Button();
+            label1 = new Label();
             listView1 = new ListView();
             Numero = new ColumnHeader();
             ClienteRegistrarEncomienda = new ColumnHeader();
@@ -40,6 +43,8 @@
             button2 = new Button();
             button1 = new Button();
             DetalleEncomienda = new GroupBox();
+            ListadoTamañoPaquete = new ComboBox();
+            Tamaño = new Label();
             PesoDetalleEncomienda = new Label();
             CantidadDetalleEncomienda = new Label();
             DescripcionDetalleEncomienda = new Label();
@@ -54,11 +59,6 @@
             NumeroEncomiendaDatoTextBox = new TextBox();
             CancelarRegistroEncomiendaBTN = new Button();
             folderBrowserDialog1 = new FolderBrowserDialog();
-            Tamaño = new Label();
-            ListadoTamañoPaquete = new ComboBox();
-            label1 = new Label();
-            CalcularTarifa = new Button();
-            label2 = new Label();
             RegistrarAdmisionEncomiendasBox2.SuspendLayout();
             DetalleEncomienda.SuspendLayout();
             DatoEncomiendas.SuspendLayout();
@@ -93,6 +93,34 @@
             RegistrarAdmisionEncomiendasBox2.TabStop = false;
             RegistrarAdmisionEncomiendasBox2.Text = "Registrar Encomiendas";
             RegistrarAdmisionEncomiendasBox2.Enter += groupBox2_Enter;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(50, 472);
+            label2.Name = "label2";
+            label2.Size = new Size(95, 20);
+            label2.TabIndex = 17;
+            label2.Text = "Total: $XXXX";
+            // 
+            // CalcularTarifa
+            // 
+            CalcularTarifa.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CalcularTarifa.Location = new Point(260, 430);
+            CalcularTarifa.Name = "CalcularTarifa";
+            CalcularTarifa.Size = new Size(91, 31);
+            CalcularTarifa.TabIndex = 16;
+            CalcularTarifa.Text = "Caclular";
+            CalcularTarifa.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(50, 435);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 20);
+            label1.TabIndex = 15;
+            label1.Text = "Cálculo de tarifas y cargos";
             // 
             // listView1
             // 
@@ -171,6 +199,23 @@
             DetalleEncomienda.TabIndex = 10;
             DetalleEncomienda.TabStop = false;
             DetalleEncomienda.Text = "Detalle de la encomienda";
+            // 
+            // ListadoTamañoPaquete
+            // 
+            ListadoTamañoPaquete.FormattingEnabled = true;
+            ListadoTamañoPaquete.Location = new Point(242, 66);
+            ListadoTamañoPaquete.Name = "ListadoTamañoPaquete";
+            ListadoTamañoPaquete.Size = new Size(183, 28);
+            ListadoTamañoPaquete.TabIndex = 7;
+            // 
+            // Tamaño
+            // 
+            Tamaño.AutoSize = true;
+            Tamaño.Location = new Point(242, 43);
+            Tamaño.Name = "Tamaño";
+            Tamaño.Size = new Size(65, 20);
+            Tamaño.TabIndex = 6;
+            Tamaño.Text = "Tamaño";
             // 
             // PesoDetalleEncomienda
             // 
@@ -285,50 +330,6 @@
             CancelarRegistroEncomiendaBTN.TabIndex = 6;
             CancelarRegistroEncomiendaBTN.Text = "Cancelar";
             CancelarRegistroEncomiendaBTN.UseVisualStyleBackColor = true;
-            // 
-            // Tamaño
-            // 
-            Tamaño.AutoSize = true;
-            Tamaño.Location = new Point(242, 43);
-            Tamaño.Name = "Tamaño";
-            Tamaño.Size = new Size(65, 20);
-            Tamaño.TabIndex = 6;
-            Tamaño.Text = "Tamaño";
-            // 
-            // ListadoTamañoPaquete
-            // 
-            ListadoTamañoPaquete.FormattingEnabled = true;
-            ListadoTamañoPaquete.Location = new Point(242, 66);
-            ListadoTamañoPaquete.Name = "ListadoTamañoPaquete";
-            ListadoTamañoPaquete.Size = new Size(183, 28);
-            ListadoTamañoPaquete.TabIndex = 7;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(50, 435);
-            label1.Name = "label1";
-            label1.Size = new Size(190, 20);
-            label1.TabIndex = 15;
-            label1.Text = "Cálculo de tarifas y cargos";
-            // 
-            // CalcularTarifa
-            // 
-            CalcularTarifa.Location = new Point(260, 430);
-            CalcularTarifa.Name = "CalcularTarifa";
-            CalcularTarifa.Size = new Size(91, 31);
-            CalcularTarifa.TabIndex = 16;
-            CalcularTarifa.Text = "Caclular";
-            CalcularTarifa.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(50, 472);
-            label2.Name = "label2";
-            label2.Size = new Size(95, 20);
-            label2.TabIndex = 17;
-            label2.Text = "Total: $XXXX";
             // 
             // RegistrarEncomiendas
             // 

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem2 = new ListViewItem("");
+            ListViewItem listViewItem1 = new ListViewItem("");
             label3 = new Label();
             RegistrarAdmisionEncomiendasBox2 = new GroupBox();
             listView1 = new ListView();
@@ -45,7 +45,6 @@
             DescripcionDetalleEncomienda = new Label();
             PesoDetalleEncomiendaTextBox = new TextBox();
             CantidadDetalleEncomiendaTextBox = new TextBox();
-            DescripcionDetalleEncomiendaTextBox = new TextBox();
             DatoEncomiendas = new GroupBox();
             FechaDatoEncomiendaDateTimePicker1 = new DateTimePicker();
             FechaDatoEncomienda = new Label();
@@ -55,6 +54,8 @@
             NumeroEncomiendaDatoTextBox = new TextBox();
             CancelarRegistroEncomiendaBTN = new Button();
             folderBrowserDialog1 = new FolderBrowserDialog();
+            Tamaño = new Label();
+            ListadoTamañoPaquete = new ComboBox();
             RegistrarAdmisionEncomiendasBox2.SuspendLayout();
             DetalleEncomienda.SuspendLayout();
             DatoEncomiendas.SuspendLayout();
@@ -91,7 +92,7 @@
             // 
             listView1.AccessibleName = "ListadoDetalleEncomienda";
             listView1.Columns.AddRange(new ColumnHeader[] { Numero, ClienteRegistrarEncomienda, FechaRegistrarEncomienda, CantidadRegistroEncomienda, PesoRegistroEncomienda });
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem2 });
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
             listView1.Location = new Point(50, 311);
             listView1.Name = "listView1";
             listView1.Size = new Size(465, 107);
@@ -142,7 +143,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(502, 424);
+            button1.Location = new Point(490, 424);
             button1.Name = "button1";
             button1.Size = new Size(85, 30);
             button1.TabIndex = 12;
@@ -151,12 +152,13 @@
             // 
             // DetalleEncomienda
             // 
+            DetalleEncomienda.Controls.Add(ListadoTamañoPaquete);
+            DetalleEncomienda.Controls.Add(Tamaño);
             DetalleEncomienda.Controls.Add(PesoDetalleEncomienda);
             DetalleEncomienda.Controls.Add(CantidadDetalleEncomienda);
             DetalleEncomienda.Controls.Add(DescripcionDetalleEncomienda);
             DetalleEncomienda.Controls.Add(PesoDetalleEncomiendaTextBox);
             DetalleEncomienda.Controls.Add(CantidadDetalleEncomiendaTextBox);
-            DetalleEncomienda.Controls.Add(DescripcionDetalleEncomiendaTextBox);
             DetalleEncomienda.Location = new Point(44, 194);
             DetalleEncomienda.Name = "DetalleEncomienda";
             DetalleEncomienda.Size = new Size(658, 100);
@@ -176,7 +178,7 @@
             // CantidadDetalleEncomienda
             // 
             CantidadDetalleEncomienda.AutoSize = true;
-            CantidadDetalleEncomienda.Location = new Point(231, 43);
+            CantidadDetalleEncomienda.Location = new Point(36, 43);
             CantidadDetalleEncomienda.Name = "CantidadDetalleEncomienda";
             CantidadDetalleEncomienda.Size = new Size(73, 20);
             CantidadDetalleEncomienda.TabIndex = 4;
@@ -187,10 +189,8 @@
             DescripcionDetalleEncomienda.AutoSize = true;
             DescripcionDetalleEncomienda.Location = new Point(30, 43);
             DescripcionDetalleEncomienda.Name = "DescripcionDetalleEncomienda";
-            DescripcionDetalleEncomienda.Size = new Size(88, 20);
+            DescripcionDetalleEncomienda.Size = new Size(0, 20);
             DescripcionDetalleEncomienda.TabIndex = 3;
-            DescripcionDetalleEncomienda.Text = "Descripcion";
-            DescripcionDetalleEncomienda.Click += this.label6_Click;
             // 
             // PesoDetalleEncomiendaTextBox
             // 
@@ -198,21 +198,13 @@
             PesoDetalleEncomiendaTextBox.Name = "PesoDetalleEncomiendaTextBox";
             PesoDetalleEncomiendaTextBox.Size = new Size(200, 28);
             PesoDetalleEncomiendaTextBox.TabIndex = 2;
-            PesoDetalleEncomiendaTextBox.TextChanged += this.PesoDetalleEncomiendaTextBox_TextChanged;
             // 
             // CantidadDetalleEncomiendaTextBox
             // 
-            CantidadDetalleEncomiendaTextBox.Location = new Point(231, 66);
+            CantidadDetalleEncomiendaTextBox.Location = new Point(36, 66);
             CantidadDetalleEncomiendaTextBox.Name = "CantidadDetalleEncomiendaTextBox";
             CantidadDetalleEncomiendaTextBox.Size = new Size(182, 28);
             CantidadDetalleEncomiendaTextBox.TabIndex = 1;
-            // 
-            // DescripcionDetalleEncomiendaTextBox
-            // 
-            DescripcionDetalleEncomiendaTextBox.Location = new Point(30, 66);
-            DescripcionDetalleEncomiendaTextBox.Name = "DescripcionDetalleEncomiendaTextBox";
-            DescripcionDetalleEncomiendaTextBox.Size = new Size(174, 28);
-            DescripcionDetalleEncomiendaTextBox.TabIndex = 0;
             // 
             // DatoEncomiendas
             // 
@@ -288,6 +280,23 @@
             CancelarRegistroEncomiendaBTN.Text = "Cancelar";
             CancelarRegistroEncomiendaBTN.UseVisualStyleBackColor = true;
             // 
+            // Tamaño
+            // 
+            Tamaño.AutoSize = true;
+            Tamaño.Location = new Point(242, 43);
+            Tamaño.Name = "Tamaño";
+            Tamaño.Size = new Size(65, 20);
+            Tamaño.TabIndex = 6;
+            Tamaño.Text = "Tamaño";
+            // 
+            // ListadoTamañoPaquete
+            // 
+            ListadoTamañoPaquete.FormattingEnabled = true;
+            ListadoTamañoPaquete.Location = new Point(242, 66);
+            ListadoTamañoPaquete.Name = "ListadoTamañoPaquete";
+            ListadoTamañoPaquete.Size = new Size(183, 28);
+            ListadoTamañoPaquete.TabIndex = 7;
+            // 
             // RegistrarEncomiendas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -317,7 +326,6 @@
         private GroupBox DetalleEncomienda;
         private TextBox textBox;
         private TextBox CantidadDetalleEncomiendaTextBox;
-        private TextBox DescripcionDetalleEncomiendaTextBox;
         private DateTimePicker FechaDatoEncomiendaDateTimePicker1;
         private Label FechaDatoEncomienda;
         private Label ClienteDatoEncomienda;
@@ -334,5 +342,7 @@
         private ColumnHeader CantidadRegistroEncomienda;
         private ColumnHeader PesoRegistroEncomienda;
         private TextBox PesoDetalleEncomiendaTextBox;
+        private Label Tamaño;
+        private ComboBox ListadoTamañoPaquete;
     }
 }

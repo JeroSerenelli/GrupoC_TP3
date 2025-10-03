@@ -1,6 +1,6 @@
 ﻿namespace GrupoC_TP3.ResultadoCostosVsVentas
 {
-    partial class ResultadoCostoVsVentasForm
+    partial class ResultadoCostosVsVentasForm
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrupoC_TP3.ResultadoCostosVsVentas
 {
-    public partial class ResultadoCostoVsVentasForm : Form
+    public partial class ResultadoCostosVsVentasForm : Form
     {
-        public ResultadoCostoVsVentasForm()
+        public ResultadoCostosVsVentasForm()
         {
             InitializeComponent();
         }

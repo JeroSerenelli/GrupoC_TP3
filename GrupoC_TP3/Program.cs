@@ -12,6 +12,7 @@ namespace GrupoC_TP3
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            Application.Run(new EncomiendasARetirar());
         }
     }
 }

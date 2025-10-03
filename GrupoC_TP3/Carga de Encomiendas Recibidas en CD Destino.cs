@@ -16,5 +16,10 @@ namespace GrupoC_TP3
         {
             InitializeComponent();
         }
+
+        private void Tabla_Encomiendas_Recibidas_en_CD_Destino_DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

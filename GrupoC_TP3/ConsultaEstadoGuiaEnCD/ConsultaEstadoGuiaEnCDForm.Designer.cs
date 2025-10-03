@@ -37,8 +37,8 @@
             NumeroGuia = new ColumnHeader();
             Origen = new ColumnHeader();
             Destino = new ColumnHeader();
-            EstadoEncomienda = new ColumnHeader();
             Destinatario = new ColumnHeader();
+            EstadoEncomienda = new ColumnHeader();
             label3 = new Label();
             SuspendLayout();
             // 
@@ -112,17 +112,17 @@
             Destino.Text = "Destino";
             Destino.Width = 120;
             // 
-            // EstadoEncomienda
-            // 
-            EstadoEncomienda.DisplayIndex = 3;
-            EstadoEncomienda.Text = "Estado de Encomienda";
-            EstadoEncomienda.Width = 150;
-            // 
             // Destinatario
             // 
             Destinatario.DisplayIndex = 4;
             Destinatario.Text = "Destinatario";
             Destinatario.Width = 120;
+            // 
+            // EstadoEncomienda
+            // 
+            EstadoEncomienda.DisplayIndex = 3;
+            EstadoEncomienda.Text = "Estado de Encomienda";
+            EstadoEncomienda.Width = 150;
             // 
             // label3
             // 
@@ -130,9 +130,9 @@
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(214, 27);
             label3.Name = "label3";
-            label3.Size = new Size(260, 15);
+            label3.Size = new Size(269, 15);
             label3.TabIndex = 6;
-            label3.Text = "Transportes Unicos Terrestres Argentinos S.A.";
+            label3.Text = "Transportes Urbanos Terrestres Argentinos S.A.";
             label3.Click += label3_Click;
             // 
             // ConsultaEstadoGuiaEnCDForm

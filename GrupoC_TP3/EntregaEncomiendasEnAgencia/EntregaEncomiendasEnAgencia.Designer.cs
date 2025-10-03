@@ -41,16 +41,18 @@
             Estado_Encomienda = new ColumnHeader();
             buttonImprimir = new Button();
             buttonConfirmar = new Button();
-            label2 = new Label();
-            label3 = new Label();
             label4 = new Label();
             buttonLimpiar = new Button();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 64);
+            label1.Location = new Point(9, 26);
             label1.Name = "label1";
             label1.Size = new Size(67, 15);
             label1.TabIndex = 0;
@@ -59,16 +61,16 @@
             // 
             // textBoxNumeroDeGuia
             // 
-            textBoxNumeroDeGuia.Location = new Point(85, 61);
+            textBoxNumeroDeGuia.Location = new Point(82, 23);
             textBoxNumeroDeGuia.Name = "textBoxNumeroDeGuia";
             textBoxNumeroDeGuia.Size = new Size(192, 23);
             textBoxNumeroDeGuia.TabIndex = 1;
             // 
             // buttonConsultar
             // 
-            buttonConsultar.Location = new Point(283, 61);
+            buttonConsultar.Location = new Point(280, 24);
             buttonConsultar.Name = "buttonConsultar";
-            buttonConsultar.Size = new Size(75, 23);
+            buttonConsultar.Size = new Size(122, 23);
             buttonConsultar.TabIndex = 2;
             buttonConsultar.Text = "Consultar";
             buttonConsultar.UseVisualStyleBackColor = true;
@@ -80,9 +82,9 @@
             listViewEncomiendasARetirarAgencia.Columns.AddRange(new ColumnHeader[] { Numero_Guia, DNI_Destinatario, Nombre, Apellido, Destino, Recibo_Firmado, Estado_Encomienda });
             listViewEncomiendasARetirarAgencia.FullRowSelect = true;
             listViewEncomiendasARetirarAgencia.GridLines = true;
-            listViewEncomiendasARetirarAgencia.Location = new Point(12, 149);
+            listViewEncomiendasARetirarAgencia.Location = new Point(4, 41);
             listViewEncomiendasARetirarAgencia.Name = "listViewEncomiendasARetirarAgencia";
-            listViewEncomiendasARetirarAgencia.Size = new Size(606, 97);
+            listViewEncomiendasARetirarAgencia.Size = new Size(598, 97);
             listViewEncomiendasARetirarAgencia.TabIndex = 3;
             listViewEncomiendasARetirarAgencia.UseCompatibleStateImageBehavior = false;
             listViewEncomiendasARetirarAgencia.View = View.Details;
@@ -122,7 +124,7 @@
             // 
             // buttonImprimir
             // 
-            buttonImprimir.Location = new Point(12, 275);
+            buttonImprimir.Location = new Point(4, 144);
             buttonImprimir.Name = "buttonImprimir";
             buttonImprimir.Size = new Size(75, 23);
             buttonImprimir.TabIndex = 4;
@@ -132,33 +134,12 @@
             // 
             // buttonConfirmar
             // 
-            buttonConfirmar.Location = new Point(102, 275);
+            buttonConfirmar.Location = new Point(85, 144);
             buttonConfirmar.Name = "buttonConfirmar";
             buttonConfirmar.Size = new Size(75, 23);
             buttonConfirmar.TabIndex = 5;
             buttonConfirmar.Text = "Confirmar";
             buttonConfirmar.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            label2.Location = new Point(12, 118);
-            label2.Name = "label2";
-            label2.Size = new Size(151, 20);
-            label2.TabIndex = 6;
-            label2.Text = "Encomienda a Retirar";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            label3.Location = new Point(12, 28);
-            label3.Name = "label3";
-            label3.Size = new Size(173, 20);
-            label3.TabIndex = 7;
-            label3.Text = "Parametros de Busqueda";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -173,31 +154,52 @@
             // 
             // buttonLimpiar
             // 
-            buttonLimpiar.Location = new Point(364, 60);
+            buttonLimpiar.Location = new Point(408, 24);
             buttonLimpiar.Name = "buttonLimpiar";
-            buttonLimpiar.Size = new Size(75, 23);
+            buttonLimpiar.Size = new Size(122, 23);
             buttonLimpiar.TabIndex = 9;
-            buttonLimpiar.Text = "Limpiar";
+            buttonLimpiar.Text = "Nueva Consulta";
             buttonLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(buttonLimpiar);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(textBoxNumeroDeGuia);
+            groupBox1.Controls.Add(buttonConsultar);
+            groupBox1.Location = new Point(12, 42);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(536, 73);
+            groupBox1.TabIndex = 10;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Parametro de Consulta";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(buttonConfirmar);
+            groupBox2.Controls.Add(buttonImprimir);
+            groupBox2.Controls.Add(listViewEncomiendasARetirarAgencia);
+            groupBox2.Location = new Point(12, 121);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(608, 219);
+            groupBox2.TabIndex = 11;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Encomiendas a Retirar";
             // 
             // EncomiendasARetirar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(624, 352);
-            Controls.Add(buttonLimpiar);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
             Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(buttonConfirmar);
-            Controls.Add(buttonImprimir);
-            Controls.Add(listViewEncomiendasARetirarAgencia);
-            Controls.Add(buttonConsultar);
-            Controls.Add(textBoxNumeroDeGuia);
-            Controls.Add(label1);
             Name = "EncomiendasARetirar";
             Text = "Entrega de Encomiendas";
             Load += Form2_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -217,9 +219,9 @@
         private ColumnHeader Destino;
         private ColumnHeader Recibo_Firmado;
         private ColumnHeader Estado_Encomienda;
-        private Label label2;
-        private Label label3;
         private Label label4;
         private Button buttonLimpiar;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
     }
 }

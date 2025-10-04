@@ -453,13 +453,13 @@
             label6.AutoSize = true;
             label6.Location = new Point(6, 207);
             label6.Name = "label6";
-            label6.Size = new Size(110, 15);
+            label6.Size = new Size(127, 15);
             label6.TabIndex = 37;
-            label6.Text = "Codigo Postal Caja:";
+            label6.Text = "Codigo Postal Destino:";
             // 
             // textBoxCodPostDestino
             // 
-            textBoxCodPostDestino.Location = new Point(120, 203);
+            textBoxCodPostDestino.Location = new Point(139, 203);
             textBoxCodPostDestino.Name = "textBoxCodPostDestino";
             textBoxCodPostDestino.Size = new Size(73, 23);
             textBoxCodPostDestino.TabIndex = 38;

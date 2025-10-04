@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewGroup listViewGroup2 = new ListViewGroup("ListViewGroup", HorizontalAlignment.Left);
+            ListViewGroup listViewGroup8 = new ListViewGroup("ListViewGroup", HorizontalAlignment.Left);
             groupBox1 = new GroupBox();
             Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton = new Button();
             Actualizar_Estado_Guia_a_Despachar_CD_Origen_ComboBox = new ComboBox();
@@ -44,11 +44,13 @@
             Hoja_Ruta_a_Despachar_CD_Origen_TextBox = new TextBox();
             Ingreso_HDR_a_Despachar_CD_Origen_Boton = new Button();
             Validar_HDR_a_Despachar_CD_Origen_Boton = new Button();
+            label2 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton);
             groupBox1.Controls.Add(Actualizar_Estado_Guia_a_Despachar_CD_Origen_ComboBox);
             groupBox1.Controls.Add(Encomiendas_HDR_a_Despachar_CD_Orgien_listView);
@@ -64,27 +66,27 @@
             // 
             // Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton
             // 
-            Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton.Location = new Point(6, 298);
+            Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton.Location = new Point(170, 289);
             Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton.Name = "Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton";
             Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton.Size = new Size(150, 29);
             Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton.TabIndex = 11;
-            Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton.Text = "Actualizar Estado";
+            Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton.Text = "Actualizar";
             Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton.UseVisualStyleBackColor = true;
             // 
             // Actualizar_Estado_Guia_a_Despachar_CD_Origen_ComboBox
             // 
             Actualizar_Estado_Guia_a_Despachar_CD_Origen_ComboBox.FormattingEnabled = true;
-            Actualizar_Estado_Guia_a_Despachar_CD_Origen_ComboBox.Location = new Point(6, 255);
+            Actualizar_Estado_Guia_a_Despachar_CD_Origen_ComboBox.Location = new Point(6, 289);
             Actualizar_Estado_Guia_a_Despachar_CD_Origen_ComboBox.Name = "Actualizar_Estado_Guia_a_Despachar_CD_Origen_ComboBox";
-            Actualizar_Estado_Guia_a_Despachar_CD_Origen_ComboBox.Size = new Size(150, 28);
+            Actualizar_Estado_Guia_a_Despachar_CD_Origen_ComboBox.Size = new Size(158, 28);
             Actualizar_Estado_Guia_a_Despachar_CD_Origen_ComboBox.TabIndex = 10;
             // 
             // Encomiendas_HDR_a_Despachar_CD_Orgien_listView
             // 
             Encomiendas_HDR_a_Despachar_CD_Orgien_listView.Columns.AddRange(new ColumnHeader[] { Selecionar, Nro_HDR, Nro_Guia, Estado_Encomienda, Nombre_Destinatario, Apellido_Destinatario, Destino });
-            listViewGroup2.Header = "ListViewGroup";
-            listViewGroup2.Name = "listViewGroup1";
-            Encomiendas_HDR_a_Despachar_CD_Orgien_listView.Groups.AddRange(new ListViewGroup[] { listViewGroup2 });
+            listViewGroup8.Header = "ListViewGroup";
+            listViewGroup8.Name = "listViewGroup1";
+            Encomiendas_HDR_a_Despachar_CD_Orgien_listView.Groups.AddRange(new ListViewGroup[] { listViewGroup8 });
             Encomiendas_HDR_a_Despachar_CD_Orgien_listView.Location = new Point(6, 109);
             Encomiendas_HDR_a_Despachar_CD_Orgien_listView.Name = "Encomiendas_HDR_a_Despachar_CD_Orgien_listView";
             Encomiendas_HDR_a_Despachar_CD_Orgien_listView.Size = new Size(798, 121);
@@ -161,6 +163,15 @@
             Validar_HDR_a_Despachar_CD_Origen_Boton.Text = "Validar";
             Validar_HDR_a_Despachar_CD_Origen_Boton.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 254);
+            label2.Name = "label2";
+            label2.Size = new Size(129, 20);
+            label2.TabIndex = 13;
+            label2.Text = "Seleccione Estado";
+            // 
             // CargaHojasdeRutaaDespacharenCDOrigen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -192,5 +203,6 @@
         private TextBox Hoja_Ruta_a_Despachar_CD_Origen_TextBox;
         private Button Ingreso_HDR_a_Despachar_CD_Origen_Boton;
         private Button Validar_HDR_a_Despachar_CD_Origen_Boton;
+        private Label label2;
     }
 }

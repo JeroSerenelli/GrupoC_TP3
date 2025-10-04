@@ -8,28 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrupoC_TP3
+namespace GrupoC_TP3.CU15_ValidarHDRenCDDestino
 {
     public partial class CargaHojasdeRutaRecibidasenCDDestino : Form
     {
         public CargaHojasdeRutaRecibidasenCDDestino()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

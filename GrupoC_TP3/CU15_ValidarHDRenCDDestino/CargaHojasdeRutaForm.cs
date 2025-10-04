@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrupoC_TP3
 {
-    public partial class Carga_de_hojas_de_ruta_recibidas_en_CD_de_destino : Form
+    public partial class CargaHojasdeRutaRecibidasenCDDestino : Form
     {
-        public Carga_de_hojas_de_ruta_recibidas_en_CD_de_destino()
+        public CargaHojasdeRutaRecibidasenCDDestino()
         {
             InitializeComponent();
         }

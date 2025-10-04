@@ -31,5 +31,10 @@ namespace GrupoC_TP3
         {
 
         }
+
+        private void cuentaCorrienteLstView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,5 +41,15 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

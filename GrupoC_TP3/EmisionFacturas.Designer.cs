@@ -52,18 +52,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 44);
+            label1.Location = new Point(19, 33);
             label1.Name = "label1";
-            label1.Size = new Size(97, 20);
+            label1.Size = new Size(76, 15);
             label1.TabIndex = 0;
             label1.Text = "Razon Social:";
             label1.Click += label1_Click;
             // 
             // razonSocialTxt
             // 
-            razonSocialTxt.Location = new Point(143, 41);
+            razonSocialTxt.Location = new Point(125, 31);
+            razonSocialTxt.Margin = new Padding(3, 2, 3, 2);
             razonSocialTxt.Name = "razonSocialTxt";
-            razonSocialTxt.Size = new Size(154, 27);
+            razonSocialTxt.Size = new Size(135, 23);
             razonSocialTxt.TabIndex = 1;
             // 
             // groupBox1
@@ -73,9 +74,11 @@
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(razonSocialTxt);
-            groupBox1.Location = new Point(29, 26);
+            groupBox1.Location = new Point(25, 20);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(759, 195);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(664, 146);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
@@ -83,9 +86,10 @@
             // 
             // button4
             // 
-            button4.Location = new Point(545, 90);
+            button4.Location = new Point(477, 68);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(118, 61);
+            button4.Size = new Size(103, 46);
             button4.TabIndex = 6;
             button4.Text = "Mostrar Movimientos";
             button4.UseVisualStyleBackColor = true;
@@ -93,9 +97,10 @@
             // razonSocialList
             // 
             razonSocialList.Columns.AddRange(new ColumnHeader[] { RazonSocialColumn, cuitColumn, domicilioFiscal });
-            razonSocialList.Location = new Point(22, 90);
+            razonSocialList.Location = new Point(19, 68);
+            razonSocialList.Margin = new Padding(3, 2, 3, 2);
             razonSocialList.Name = "razonSocialList";
-            razonSocialList.Size = new Size(499, 81);
+            razonSocialList.Size = new Size(437, 62);
             razonSocialList.TabIndex = 5;
             razonSocialList.UseCompatibleStateImageBehavior = false;
             razonSocialList.View = View.Details;
@@ -118,9 +123,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(317, 39);
+            button1.Location = new Point(277, 29);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(82, 22);
             button1.TabIndex = 2;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
@@ -130,27 +136,31 @@
             groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(cuentaCorrienteLstView);
-            groupBox2.Location = new Point(29, 227);
+            groupBox2.Location = new Point(25, 170);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(759, 294);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(664, 220);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "Pedidos a Facturar";
             // 
             // button3
             // 
-            button3.Location = new Point(251, 234);
+            button3.Location = new Point(220, 176);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(209, 29);
+            button3.Size = new Size(183, 22);
             button3.TabIndex = 4;
             button3.Text = "Descargar Comprobante";
             button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(22, 234);
+            button2.Location = new Point(19, 176);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(209, 29);
+            button2.Size = new Size(183, 22);
             button2.TabIndex = 3;
             button2.Text = "Emitir Factura";
             button2.UseVisualStyleBackColor = true;
@@ -158,20 +168,42 @@
             // cuentaCorrienteLstView
             // 
             cuentaCorrienteLstView.Columns.AddRange(new ColumnHeader[] { Nro_Cliente, Nro_Guia, Sub_Total, Total });
-            cuentaCorrienteLstView.Location = new Point(24, 41);
+            cuentaCorrienteLstView.Location = new Point(21, 31);
+            cuentaCorrienteLstView.Margin = new Padding(3, 2, 3, 2);
             cuentaCorrienteLstView.Name = "cuentaCorrienteLstView";
-            cuentaCorrienteLstView.Size = new Size(685, 171);
+            cuentaCorrienteLstView.Size = new Size(600, 129);
             cuentaCorrienteLstView.TabIndex = 2;
             cuentaCorrienteLstView.UseCompatibleStateImageBehavior = false;
             cuentaCorrienteLstView.View = View.Details;
+            cuentaCorrienteLstView.SelectedIndexChanged += cuentaCorrienteLstView_SelectedIndexChanged;
+            // 
+            // Nro_Cliente
+            // 
+            Nro_Cliente.Text = "Numero de Cliente";
+            Nro_Cliente.Width = 120;
+            // 
+            // Nro_Guia
+            // 
+            Nro_Guia.Text = "Numero de Guia";
+            Nro_Guia.Width = 120;
+            // 
+            // Sub_Total
+            // 
+            Sub_Total.Text = "Sub Total";
+            Sub_Total.Width = 100;
+            // 
+            // Total
+            // 
+            Total.Text = "Total";
             // 
             // EmisionFacturas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(805, 536);
+            ClientSize = new Size(704, 402);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EmisionFacturas";
             Text = "Emision de Facutras";
             groupBox1.ResumeLayout(false);

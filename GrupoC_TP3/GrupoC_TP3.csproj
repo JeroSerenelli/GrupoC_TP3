@@ -23,8 +23,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="CU11_ConfeccionarHDRdeRetirodeEncomiendas\" />
-  </ItemGroup>
-
 </Project>

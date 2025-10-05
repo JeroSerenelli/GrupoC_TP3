@@ -16,5 +16,10 @@ namespace GrupoC_TP3.CU14_ValidarHDRenCDOrigen
         {
             InitializeComponent();
         }
+
+        private void Actualizar_Estado_Guia_a_Despachar_CD_Origen_Boton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

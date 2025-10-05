@@ -51,5 +51,10 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
         {
 
         }
+
+        private void buttonNuevaSolicitudLimpiar_Click(object sender, EventArgs e)
+        {
+      
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace GrupoC_TP3.CU15_ValidarHDRenCDDestino
         {
             InitializeComponent();
         }
+
+        private void Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

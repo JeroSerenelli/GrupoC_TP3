@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewGroup listViewGroup3 = new ListViewGroup("ListViewGroup", HorizontalAlignment.Left);
+            ListViewGroup listViewGroup1 = new ListViewGroup("ListViewGroup", HorizontalAlignment.Left);
             groupBox1 = new GroupBox();
+            label2 = new Label();
             Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton = new Button();
             Actualizar_Estado_Guia_Recibida_CD_Destino_ComboBox = new ComboBox();
             Encomiendas_HDR_Recibidas_CD_Destino_listView = new ListView();
@@ -44,7 +45,6 @@
             Hoja_Ruta_Recibida_CD_Destino_TextBox = new TextBox();
             Ingreso_HDR_Recibida_CD_Destino_Boton = new Button();
             Validar_HDR_Recibida_CD_Destino_Boton = new Button();
-            label2 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,39 +57,54 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(Hoja_Ruta_Recibida_CD_Destino_TextBox);
             groupBox1.Controls.Add(Ingreso_HDR_Recibida_CD_Destino_Boton);
-            groupBox1.Location = new Point(12, 12);
+            groupBox1.Location = new Point(10, 9);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(810, 415);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(709, 311);
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Hoja de Ruta";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(5, 191);
+            label2.Name = "label2";
+            label2.Size = new Size(101, 15);
+            label2.TabIndex = 12;
+            label2.Text = "Seleccione Estado";
+            // 
             // Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton
             // 
-            Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton.Location = new Point(170, 290);
+            Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton.Location = new Point(149, 218);
+            Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton.Margin = new Padding(3, 2, 3, 2);
             Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton.Name = "Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton";
-            Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton.Size = new Size(150, 29);
+            Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton.Size = new Size(131, 22);
             Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton.TabIndex = 11;
             Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton.Text = "Actualizar";
             Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton.UseVisualStyleBackColor = true;
+            Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton.Click += Actualizar_Estado_Guia_Recibidas_CD_Destino_Boton_Click;
             // 
             // Actualizar_Estado_Guia_Recibida_CD_Destino_ComboBox
             // 
             Actualizar_Estado_Guia_Recibida_CD_Destino_ComboBox.FormattingEnabled = true;
-            Actualizar_Estado_Guia_Recibida_CD_Destino_ComboBox.Location = new Point(6, 290);
+            Actualizar_Estado_Guia_Recibida_CD_Destino_ComboBox.Location = new Point(5, 218);
+            Actualizar_Estado_Guia_Recibida_CD_Destino_ComboBox.Margin = new Padding(3, 2, 3, 2);
             Actualizar_Estado_Guia_Recibida_CD_Destino_ComboBox.Name = "Actualizar_Estado_Guia_Recibida_CD_Destino_ComboBox";
-            Actualizar_Estado_Guia_Recibida_CD_Destino_ComboBox.Size = new Size(158, 28);
+            Actualizar_Estado_Guia_Recibida_CD_Destino_ComboBox.Size = new Size(139, 23);
             Actualizar_Estado_Guia_Recibida_CD_Destino_ComboBox.TabIndex = 10;
             // 
             // Encomiendas_HDR_Recibidas_CD_Destino_listView
             // 
             Encomiendas_HDR_Recibidas_CD_Destino_listView.Columns.AddRange(new ColumnHeader[] { Selecionar, Nro_HDR, Nro_Guia, Estado_Encomienda, Nombre_Destinatario, Apellido_Destinatario, Destino });
-            listViewGroup3.Header = "ListViewGroup";
-            listViewGroup3.Name = "listViewGroup1";
-            Encomiendas_HDR_Recibidas_CD_Destino_listView.Groups.AddRange(new ListViewGroup[] { listViewGroup3 });
-            Encomiendas_HDR_Recibidas_CD_Destino_listView.Location = new Point(6, 109);
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "listViewGroup1";
+            Encomiendas_HDR_Recibidas_CD_Destino_listView.Groups.AddRange(new ListViewGroup[] { listViewGroup1 });
+            Encomiendas_HDR_Recibidas_CD_Destino_listView.Location = new Point(5, 82);
+            Encomiendas_HDR_Recibidas_CD_Destino_listView.Margin = new Padding(3, 2, 3, 2);
             Encomiendas_HDR_Recibidas_CD_Destino_listView.Name = "Encomiendas_HDR_Recibidas_CD_Destino_listView";
-            Encomiendas_HDR_Recibidas_CD_Destino_listView.Size = new Size(798, 121);
+            Encomiendas_HDR_Recibidas_CD_Destino_listView.Size = new Size(699, 92);
             Encomiendas_HDR_Recibidas_CD_Destino_listView.TabIndex = 9;
             Encomiendas_HDR_Recibidas_CD_Destino_listView.UseCompatibleStateImageBehavior = false;
             Encomiendas_HDR_Recibidas_CD_Destino_listView.View = View.Details;
@@ -132,53 +147,48 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 75);
+            label1.Location = new Point(5, 56);
             label1.Name = "label1";
-            label1.Size = new Size(244, 20);
+            label1.Size = new Size(195, 15);
             label1.TabIndex = 6;
             label1.Text = "Seleccione una o mas encomiendas";
             // 
             // Hoja_Ruta_Recibida_CD_Destino_TextBox
             // 
-            Hoja_Ruta_Recibida_CD_Destino_TextBox.Location = new Point(6, 26);
+            Hoja_Ruta_Recibida_CD_Destino_TextBox.Location = new Point(5, 20);
+            Hoja_Ruta_Recibida_CD_Destino_TextBox.Margin = new Padding(3, 2, 3, 2);
             Hoja_Ruta_Recibida_CD_Destino_TextBox.Name = "Hoja_Ruta_Recibida_CD_Destino_TextBox";
-            Hoja_Ruta_Recibida_CD_Destino_TextBox.Size = new Size(158, 27);
+            Hoja_Ruta_Recibida_CD_Destino_TextBox.Size = new Size(139, 23);
             Hoja_Ruta_Recibida_CD_Destino_TextBox.TabIndex = 1;
             // 
             // Ingreso_HDR_Recibida_CD_Destino_Boton
             // 
-            Ingreso_HDR_Recibida_CD_Destino_Boton.Location = new Point(170, 24);
+            Ingreso_HDR_Recibida_CD_Destino_Boton.Location = new Point(149, 18);
+            Ingreso_HDR_Recibida_CD_Destino_Boton.Margin = new Padding(3, 2, 3, 2);
             Ingreso_HDR_Recibida_CD_Destino_Boton.Name = "Ingreso_HDR_Recibida_CD_Destino_Boton";
-            Ingreso_HDR_Recibida_CD_Destino_Boton.Size = new Size(150, 29);
+            Ingreso_HDR_Recibida_CD_Destino_Boton.Size = new Size(131, 22);
             Ingreso_HDR_Recibida_CD_Destino_Boton.TabIndex = 2;
             Ingreso_HDR_Recibida_CD_Destino_Boton.Text = "Ingresar";
             Ingreso_HDR_Recibida_CD_Destino_Boton.UseVisualStyleBackColor = true;
             // 
             // Validar_HDR_Recibida_CD_Destino_Boton
             // 
-            Validar_HDR_Recibida_CD_Destino_Boton.Location = new Point(18, 448);
+            Validar_HDR_Recibida_CD_Destino_Boton.Location = new Point(16, 336);
+            Validar_HDR_Recibida_CD_Destino_Boton.Margin = new Padding(3, 2, 3, 2);
             Validar_HDR_Recibida_CD_Destino_Boton.Name = "Validar_HDR_Recibida_CD_Destino_Boton";
-            Validar_HDR_Recibida_CD_Destino_Boton.Size = new Size(150, 29);
+            Validar_HDR_Recibida_CD_Destino_Boton.Size = new Size(131, 22);
             Validar_HDR_Recibida_CD_Destino_Boton.TabIndex = 8;
             Validar_HDR_Recibida_CD_Destino_Boton.Text = "Validar";
             Validar_HDR_Recibida_CD_Destino_Boton.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(6, 255);
-            label2.Name = "label2";
-            label2.Size = new Size(129, 20);
-            label2.TabIndex = 12;
-            label2.Text = "Seleccione Estado";
-            // 
             // CargaHojasdeRutaRecibidasenCDDestino
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(842, 502);
+            ClientSize = new Size(737, 376);
             Controls.Add(groupBox1);
             Controls.Add(Validar_HDR_Recibida_CD_Destino_Boton);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CargaHojasdeRutaRecibidasenCDDestino";
             Text = "Carga de Hojas de Ruta";
             groupBox1.ResumeLayout(false);

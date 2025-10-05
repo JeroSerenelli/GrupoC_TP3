@@ -60,6 +60,8 @@
             label18 = new Label();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            textBox1 = new TextBox();
+            label21 = new Label();
             groupBox3 = new GroupBox();
             comboBox1 = new ComboBox();
             comboBoxCentroDistDestino = new ComboBox();
@@ -71,8 +73,6 @@
             textBoxCodPostDestino = new TextBox();
             label5 = new Label();
             textBoxCodPostOrigen = new TextBox();
-            textBox1 = new TextBox();
-            label21 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -294,6 +294,7 @@
             buttonNuevaSolicitudLimpiar.TabIndex = 33;
             buttonNuevaSolicitudLimpiar.Text = "Nueva Solicitud";
             buttonNuevaSolicitudLimpiar.UseVisualStyleBackColor = true;
+            buttonNuevaSolicitudLimpiar.Click += buttonNuevaSolicitudLimpiar_Click;
             // 
             // comboBoxTipoCaja
             // 
@@ -365,6 +366,22 @@
             groupBox2.TabIndex = 39;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Destinatario";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(139, 100);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(197, 23);
+            textBox1.TabIndex = 25;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(6, 103);
+            label21.Name = "label21";
+            label21.Size = new Size(127, 15);
+            label21.TabIndex = 24;
+            label21.Text = "Domicilio Destinatario:";
             // 
             // groupBox3
             // 
@@ -480,22 +497,6 @@
             textBoxCodPostOrigen.Size = new Size(74, 23);
             textBoxCodPostOrigen.TabIndex = 36;
             textBoxCodPostOrigen.TextChanged += textBox1_TextChanged;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(139, 100);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(197, 23);
-            textBox1.TabIndex = 25;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(6, 103);
-            label21.Name = "label21";
-            label21.Size = new Size(127, 15);
-            label21.TabIndex = 24;
-            label21.Text = "Domicilio Destinatario:";
             // 
             // RegistrarImposicionRetiroPorDomicilioForm
             // 

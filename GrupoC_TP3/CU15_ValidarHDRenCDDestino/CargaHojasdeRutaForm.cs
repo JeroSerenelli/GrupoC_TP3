@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrupoC_TP3
+namespace GrupoC_TP3.CU15_ValidarHDRenCDDestino
 {
-    public partial class Validacion_de_Encomiendas_Recibidas_en_CD_Destino : Form
+    public partial class CargaHojasdeRutaRecibidasenCDDestino : Form
     {
-        public Validacion_de_Encomiendas_Recibidas_en_CD_Destino()
+        public CargaHojasdeRutaRecibidasenCDDestino()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

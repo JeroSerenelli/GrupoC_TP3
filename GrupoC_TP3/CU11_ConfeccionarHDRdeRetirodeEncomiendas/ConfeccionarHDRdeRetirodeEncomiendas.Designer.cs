@@ -39,7 +39,6 @@
             ClienteHDRRetiro = new ColumnHeader();
             OrigenHDRRetiro = new ColumnHeader();
             DestinoHDRRetiro = new ColumnHeader();
-            CantidaddePaquetesHDRRetiro = new ColumnHeader();
             TelefonoHDRRetiro = new ColumnHeader();
             GenerarHDRRetirobutton = new Button();
             ImprimirHDRRetiroButton = new Button();
@@ -111,11 +110,11 @@
             // 
             // ListadoEncomendasEntregalistView
             // 
-            ListadoEncomendasEntregalistView.Columns.AddRange(new ColumnHeader[] { NumeroDeEncomiendaHDRRetiro, ClienteHDRRetiro, OrigenHDRRetiro, DestinoHDRRetiro, CantidaddePaquetesHDRRetiro, TelefonoHDRRetiro });
+            ListadoEncomendasEntregalistView.Columns.AddRange(new ColumnHeader[] { NumeroDeEncomiendaHDRRetiro, ClienteHDRRetiro, OrigenHDRRetiro, DestinoHDRRetiro, TelefonoHDRRetiro });
             ListadoEncomendasEntregalistView.GridLines = true;
-            ListadoEncomendasEntregalistView.Location = new Point(6, 40);
+            ListadoEncomendasEntregalistView.Location = new Point(52, 42);
             ListadoEncomendasEntregalistView.Name = "ListadoEncomendasEntregalistView";
-            ListadoEncomendasEntregalistView.Size = new Size(735, 86);
+            ListadoEncomendasEntregalistView.Size = new Size(614, 86);
             ListadoEncomendasEntregalistView.TabIndex = 5;
             ListadoEncomendasEntregalistView.UseCompatibleStateImageBehavior = false;
             ListadoEncomendasEntregalistView.View = View.Details;
@@ -139,11 +138,6 @@
             // 
             DestinoHDRRetiro.Text = "Destino";
             DestinoHDRRetiro.Width = 120;
-            // 
-            // CantidaddePaquetesHDRRetiro
-            // 
-            CantidaddePaquetesHDRRetiro.Text = "N° de paquetes";
-            CantidaddePaquetesHDRRetiro.Width = 120;
             // 
             // TelefonoHDRRetiro
             // 
@@ -221,7 +215,6 @@
         private ColumnHeader ClienteHDRRetiro;
         private ColumnHeader OrigenHDRRetiro;
         private ColumnHeader DestinoHDRRetiro;
-        private ColumnHeader CantidaddePaquetesHDRRetiro;
         private ColumnHeader TelefonoHDRRetiro;
         private Button BuscarRetiroButton;
         private ComboBox EstadoRetiroComboBox;

@@ -41,7 +41,7 @@
             NumerodeEncomiendaTransporte = new ColumnHeader();
             CDOrigenTransporte = new ColumnHeader();
             CDDestinoTransporte = new ColumnHeader();
-            NumeroDePaquetesTransporte = new ColumnHeader();
+            ClienteTransporte = new ColumnHeader();
             GenerarHDRButton = new Button();
             ImprimirHDRTransporteButton = new Button();
             BuscarEncomiendasTransporteButton = new Button();
@@ -112,7 +112,7 @@
             // 
             // ListaEncomiendasTransportelistView
             // 
-            ListaEncomiendasTransportelistView.Columns.AddRange(new ColumnHeader[] { NumerodeEncomiendaTransporte, CDOrigenTransporte, CDDestinoTransporte, NumeroDePaquetesTransporte });
+            ListaEncomiendasTransportelistView.Columns.AddRange(new ColumnHeader[] { NumerodeEncomiendaTransporte, CDOrigenTransporte, CDDestinoTransporte, ClienteTransporte });
             ListaEncomiendasTransportelistView.GridLines = true;
             ListaEncomiendasTransportelistView.Location = new Point(32, 51);
             ListaEncomiendasTransportelistView.Name = "ListaEncomiendasTransportelistView";
@@ -160,10 +160,10 @@
             CDDestinoTransporte.Text = "CD Destino";
             CDDestinoTransporte.Width = 150;
             // 
-            // NumeroDePaquetesTransporte
+            // ClienteTransporte
             // 
-            NumeroDePaquetesTransporte.Text = "N° de paquetes";
-            NumeroDePaquetesTransporte.Width = 150;
+            ClienteTransporte.Text = "Cliente";
+            ClienteTransporte.Width = 150;
             // 
             // GenerarHDRButton
             // 
@@ -258,7 +258,7 @@
         private ColumnHeader NumerodeEncomiendaTransporte;
         private ColumnHeader CDOrigenTransporte;
         private ColumnHeader CDDestinoTransporte;
-        private ColumnHeader NumeroDePaquetesTransporte;
+        private ColumnHeader ClienteTransporte;
         private Label EstadoTransporteLabel;
         private Label CDDestinoTransporteLabel;
         private Label CDOrigenTransporteLabel;

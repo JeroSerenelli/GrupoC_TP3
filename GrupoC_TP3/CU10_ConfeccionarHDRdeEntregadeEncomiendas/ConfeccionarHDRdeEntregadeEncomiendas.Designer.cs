@@ -39,7 +39,6 @@
             OrigenHDREntrega = new ColumnHeader();
             DestinoHDREntrega = new ColumnHeader();
             TelefonoHDREntrega = new ColumnHeader();
-            CantidaddePaquetesHDREntrega = new ColumnHeader();
             BuscarEncomiendaEntregaButton = new Button();
             GenerarHDREntregaButton = new Button();
             ImprimirHDREntregaButton = new Button();
@@ -104,11 +103,11 @@
             // 
             // ListaHDREntregaListView
             // 
-            ListaHDREntregaListView.Columns.AddRange(new ColumnHeader[] { NumerodeEncomiendasHDREntrega, ClienteHDREntrega, OrigenHDREntrega, DestinoHDREntrega, TelefonoHDREntrega, CantidaddePaquetesHDREntrega });
+            ListaHDREntregaListView.Columns.AddRange(new ColumnHeader[] { NumerodeEncomiendasHDREntrega, ClienteHDREntrega, OrigenHDREntrega, DestinoHDREntrega, TelefonoHDREntrega });
             ListaHDREntregaListView.GridLines = true;
             ListaHDREntregaListView.Location = new Point(24, 22);
             ListaHDREntregaListView.Name = "ListaHDREntregaListView";
-            ListaHDREntregaListView.Size = new Size(604, 97);
+            ListaHDREntregaListView.Size = new Size(500, 97);
             ListaHDREntregaListView.TabIndex = 4;
             ListaHDREntregaListView.UseCompatibleStateImageBehavior = false;
             ListaHDREntregaListView.View = View.Details;
@@ -137,11 +136,6 @@
             // 
             TelefonoHDREntrega.Text = "Telefono";
             TelefonoHDREntrega.Width = 100;
-            // 
-            // CantidaddePaquetesHDREntrega
-            // 
-            CantidaddePaquetesHDREntrega.Text = "N° de paquetes";
-            CantidaddePaquetesHDREntrega.Width = 100;
             // 
             // BuscarEncomiendaEntregaButton
             // 
@@ -239,7 +233,6 @@
         private ColumnHeader OrigenHDREntrega;
         private ColumnHeader DestinoHDREntrega;
         private ColumnHeader TelefonoHDREntrega;
-        private ColumnHeader CantidaddePaquetesHDREntrega;
         private DateTimePicker FechaEntregaDateTimePicker1;
         private Label FechaEntregaLabel;
         private GroupBox groupBox2;

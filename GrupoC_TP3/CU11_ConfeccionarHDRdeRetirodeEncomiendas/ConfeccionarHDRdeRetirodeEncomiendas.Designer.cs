@@ -28,173 +28,209 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            label1 = new Label();
-            comboBox1 = new ComboBox();
-            label2 = new Label();
-            comboBox2 = new ComboBox();
-            button1 = new Button();
-            listView1 = new ListView();
+            BusquedaRetiroGroupBox = new GroupBox();
+            MetodoDeEntregarRetiroLabel = new Label();
+            MetodoEntregaRetiroComboBox = new ComboBox();
+            EntregaRetiroLabel = new Label();
+            EstadoRetiroComboBox = new ComboBox();
+            BuscarRetiroButton = new Button();
+            ListadoEncomendasEntregalistView = new ListView();
             NumeroDeEncomiendaHDRRetiro = new ColumnHeader();
             ClienteHDRRetiro = new ColumnHeader();
             OrigenHDRRetiro = new ColumnHeader();
             DestinoHDRRetiro = new ColumnHeader();
             CantidaddePaquetesHDRRetiro = new ColumnHeader();
             TelefonoHDRRetiro = new ColumnHeader();
-            button2 = new Button();
-            button3 = new Button();
-            groupBox1.SuspendLayout();
+            GenerarHDRRetirobutton = new Button();
+            ImprimirHDRRetiroButton = new Button();
+            ListadoRetirogroupBox = new GroupBox();
+            FechaRetiroLabel = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            BusquedaRetiroGroupBox.SuspendLayout();
+            ListadoRetirogroupBox.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
+            // BusquedaRetiroGroupBox
             // 
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(listView1);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(comboBox2);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(32, 30);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(679, 337);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Confeccionar Hoja de Ruta de Retiro de Encomiendas";
+            BusquedaRetiroGroupBox.Controls.Add(dateTimePicker1);
+            BusquedaRetiroGroupBox.Controls.Add(FechaRetiroLabel);
+            BusquedaRetiroGroupBox.Controls.Add(BuscarRetiroButton);
+            BusquedaRetiroGroupBox.Controls.Add(EstadoRetiroComboBox);
+            BusquedaRetiroGroupBox.Controls.Add(EntregaRetiroLabel);
+            BusquedaRetiroGroupBox.Controls.Add(MetodoEntregaRetiroComboBox);
+            BusquedaRetiroGroupBox.Controls.Add(MetodoDeEntregarRetiroLabel);
+            BusquedaRetiroGroupBox.Location = new Point(24, 49);
+            BusquedaRetiroGroupBox.Name = "BusquedaRetiroGroupBox";
+            BusquedaRetiroGroupBox.Size = new Size(749, 192);
+            BusquedaRetiroGroupBox.TabIndex = 0;
+            BusquedaRetiroGroupBox.TabStop = false;
+            BusquedaRetiroGroupBox.Text = "Buscar Encomiendas";
             // 
-            // label1
+            // MetodoDeEntregarRetiroLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(52, 57);
-            label1.Name = "label1";
-            label1.Size = new Size(108, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Metodo de Entrega";
+            MetodoDeEntregarRetiroLabel.AutoSize = true;
+            MetodoDeEntregarRetiroLabel.Location = new Point(52, 57);
+            MetodoDeEntregarRetiroLabel.Name = "MetodoDeEntregarRetiroLabel";
+            MetodoDeEntregarRetiroLabel.Size = new Size(108, 15);
+            MetodoDeEntregarRetiroLabel.TabIndex = 0;
+            MetodoDeEntregarRetiroLabel.Text = "Metodo de Entrega";
             // 
-            // comboBox1
+            // MetodoEntregaRetiroComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(183, 54);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(173, 23);
-            comboBox1.TabIndex = 1;
+            MetodoEntregaRetiroComboBox.FormattingEnabled = true;
+            MetodoEntregaRetiroComboBox.Location = new Point(183, 54);
+            MetodoEntregaRetiroComboBox.Name = "MetodoEntregaRetiroComboBox";
+            MetodoEntregaRetiroComboBox.Size = new Size(200, 23);
+            MetodoEntregaRetiroComboBox.TabIndex = 1;
             // 
-            // label2
+            // EntregaRetiroLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(52, 100);
-            label2.Name = "label2";
-            label2.Size = new Size(42, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Estado";
+            EntregaRetiroLabel.AutoSize = true;
+            EntregaRetiroLabel.Location = new Point(52, 100);
+            EntregaRetiroLabel.Name = "EntregaRetiroLabel";
+            EntregaRetiroLabel.Size = new Size(42, 15);
+            EntregaRetiroLabel.TabIndex = 2;
+            EntregaRetiroLabel.Text = "Estado";
             // 
-            // comboBox2
+            // EstadoRetiroComboBox
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(183, 94);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(173, 23);
-            comboBox2.TabIndex = 3;
+            EstadoRetiroComboBox.FormattingEnabled = true;
+            EstadoRetiroComboBox.Location = new Point(183, 94);
+            EstadoRetiroComboBox.Name = "EstadoRetiroComboBox";
+            EstadoRetiroComboBox.Size = new Size(200, 23);
+            EstadoRetiroComboBox.TabIndex = 3;
             // 
-            // button1
+            // BuscarRetiroButton
             // 
-            button1.Location = new Point(460, 91);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 33);
-            button1.TabIndex = 4;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            BuscarRetiroButton.Location = new Point(629, 153);
+            BuscarRetiroButton.Name = "BuscarRetiroButton";
+            BuscarRetiroButton.Size = new Size(112, 33);
+            BuscarRetiroButton.TabIndex = 4;
+            BuscarRetiroButton.Text = "Buscar";
+            BuscarRetiroButton.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // ListadoEncomendasEntregalistView
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroDeEncomiendaHDRRetiro, ClienteHDRRetiro, OrigenHDRRetiro, DestinoHDRRetiro, CantidaddePaquetesHDRRetiro, TelefonoHDRRetiro });
-            listView1.GridLines = true;
-            listView1.Location = new Point(35, 155);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(608, 86);
-            listView1.TabIndex = 5;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            ListadoEncomendasEntregalistView.Columns.AddRange(new ColumnHeader[] { NumeroDeEncomiendaHDRRetiro, ClienteHDRRetiro, OrigenHDRRetiro, DestinoHDRRetiro, CantidaddePaquetesHDRRetiro, TelefonoHDRRetiro });
+            ListadoEncomendasEntregalistView.GridLines = true;
+            ListadoEncomendasEntregalistView.Location = new Point(6, 40);
+            ListadoEncomendasEntregalistView.Name = "ListadoEncomendasEntregalistView";
+            ListadoEncomendasEntregalistView.Size = new Size(735, 86);
+            ListadoEncomendasEntregalistView.TabIndex = 5;
+            ListadoEncomendasEntregalistView.UseCompatibleStateImageBehavior = false;
+            ListadoEncomendasEntregalistView.View = View.Details;
             // 
             // NumeroDeEncomiendaHDRRetiro
             // 
             NumeroDeEncomiendaHDRRetiro.Text = "Numero de encomienda";
-            NumeroDeEncomiendaHDRRetiro.Width = 100;
+            NumeroDeEncomiendaHDRRetiro.Width = 150;
             // 
             // ClienteHDRRetiro
             // 
             ClienteHDRRetiro.Text = "Cliente";
-            ClienteHDRRetiro.Width = 100;
+            ClienteHDRRetiro.Width = 120;
             // 
             // OrigenHDRRetiro
             // 
             OrigenHDRRetiro.Text = "Origen";
-            OrigenHDRRetiro.Width = 100;
+            OrigenHDRRetiro.Width = 120;
             // 
             // DestinoHDRRetiro
             // 
             DestinoHDRRetiro.Text = "Destino";
-            DestinoHDRRetiro.Width = 100;
+            DestinoHDRRetiro.Width = 120;
             // 
             // CantidaddePaquetesHDRRetiro
             // 
             CantidaddePaquetesHDRRetiro.Text = "N° de paquetes";
-            CantidaddePaquetesHDRRetiro.Width = 100;
+            CantidaddePaquetesHDRRetiro.Width = 120;
             // 
             // TelefonoHDRRetiro
             // 
             TelefonoHDRRetiro.Text = "Telefono";
             TelefonoHDRRetiro.Width = 100;
             // 
-            // button2
+            // GenerarHDRRetirobutton
             // 
-            button2.Location = new Point(52, 277);
-            button2.Name = "button2";
-            button2.Size = new Size(130, 38);
-            button2.TabIndex = 6;
-            button2.Text = "Generar Hoja de Ruta ";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            GenerarHDRRetirobutton.Location = new Point(467, 163);
+            GenerarHDRRetirobutton.Name = "GenerarHDRRetirobutton";
+            GenerarHDRRetirobutton.Size = new Size(130, 38);
+            GenerarHDRRetirobutton.TabIndex = 6;
+            GenerarHDRRetirobutton.Text = "Generar Hoja de Ruta ";
+            GenerarHDRRetirobutton.UseVisualStyleBackColor = true;
+            GenerarHDRRetirobutton.Click += button2_Click;
             // 
-            // button3
+            // ImprimirHDRRetiroButton
             // 
-            button3.Location = new Point(475, 277);
-            button3.Name = "button3";
-            button3.Size = new Size(97, 38);
-            button3.TabIndex = 7;
-            button3.Text = "Imprimir";
-            button3.UseVisualStyleBackColor = true;
+            ImprimirHDRRetiroButton.Location = new Point(644, 163);
+            ImprimirHDRRetiroButton.Name = "ImprimirHDRRetiroButton";
+            ImprimirHDRRetiroButton.Size = new Size(97, 38);
+            ImprimirHDRRetiroButton.TabIndex = 7;
+            ImprimirHDRRetiroButton.Text = "Imprimir";
+            ImprimirHDRRetiroButton.UseVisualStyleBackColor = true;
+            // 
+            // ListadoRetirogroupBox
+            // 
+            ListadoRetirogroupBox.Controls.Add(ImprimirHDRRetiroButton);
+            ListadoRetirogroupBox.Controls.Add(ListadoEncomendasEntregalistView);
+            ListadoRetirogroupBox.Controls.Add(GenerarHDRRetirobutton);
+            ListadoRetirogroupBox.Location = new Point(24, 306);
+            ListadoRetirogroupBox.Name = "ListadoRetirogroupBox";
+            ListadoRetirogroupBox.Size = new Size(749, 207);
+            ListadoRetirogroupBox.TabIndex = 1;
+            ListadoRetirogroupBox.TabStop = false;
+            ListadoRetirogroupBox.Text = "Generar Hoja de Ruta";
+            // 
+            // FechaRetiroLabel
+            // 
+            FechaRetiroLabel.AutoSize = true;
+            FechaRetiroLabel.Location = new Point(56, 153);
+            FechaRetiroLabel.Name = "FechaRetiroLabel";
+            FechaRetiroLabel.Size = new Size(38, 15);
+            FechaRetiroLabel.TabIndex = 5;
+            FechaRetiroLabel.Text = "Fecha";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(183, 147);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 6;
             // 
             // ConfeccionarHDRdeRetirodeEncomiendas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(groupBox1);
+            ClientSize = new Size(839, 662);
+            Controls.Add(ListadoRetirogroupBox);
+            Controls.Add(BusquedaRetiroGroupBox);
             Name = "ConfeccionarHDRdeRetirodeEncomiendas";
             Text = "Confeccionar Hoja de Ruta de Retiro de Encomiendas";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            BusquedaRetiroGroupBox.ResumeLayout(false);
+            BusquedaRetiroGroupBox.PerformLayout();
+            ListadoRetirogroupBox.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private GroupBox groupBox1;
-        private Button button2;
-        private ListView listView1;
+        private GroupBox BusquedaRetiroGroupBox;
+        private Button GenerarHDRRetirobutton;
+        private ListView ListadoEncomendasEntregalistView;
         private ColumnHeader NumeroDeEncomiendaHDRRetiro;
         private ColumnHeader ClienteHDRRetiro;
         private ColumnHeader OrigenHDRRetiro;
         private ColumnHeader DestinoHDRRetiro;
         private ColumnHeader CantidaddePaquetesHDRRetiro;
         private ColumnHeader TelefonoHDRRetiro;
-        private Button button1;
-        private ComboBox comboBox2;
-        private Label label2;
-        private ComboBox comboBox1;
-        private Label label1;
-        private Button button3;
+        private Button BuscarRetiroButton;
+        private ComboBox EstadoRetiroComboBox;
+        private Label EntregaRetiroLabel;
+        private ComboBox MetodoEntregaRetiroComboBox;
+        private Label MetodoDeEntregarRetiroLabel;
+        private Button ImprimirHDRRetiroButton;
+        private DateTimePicker dateTimePicker1;
+        private Label FechaRetiroLabel;
+        private GroupBox ListadoRetirogroupBox;
     }
 }

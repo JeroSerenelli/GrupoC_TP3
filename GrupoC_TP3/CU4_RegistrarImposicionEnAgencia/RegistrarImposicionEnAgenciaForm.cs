@@ -30,5 +30,10 @@ namespace GrupoC_TP3.RegistrarImposicionEnAgencia
         {
 
         }
+
+        private void textBoxNombreSolicitante_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

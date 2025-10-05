@@ -31,5 +31,10 @@ namespace GrupoC_TP3.ConsultaEstadoGuiaEnCD
         {
 
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

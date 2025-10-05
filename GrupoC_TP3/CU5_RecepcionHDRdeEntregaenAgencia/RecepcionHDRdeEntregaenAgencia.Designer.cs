@@ -53,9 +53,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(308, 31);
+            label3.Location = new Point(270, 23);
             label3.Name = "label3";
-            label3.Size = new Size(342, 20);
+            label3.Size = new Size(269, 15);
             label3.TabIndex = 8;
             label3.Text = "Transportes Urbanos Terrestres Argentinos S.A.";
             // 
@@ -63,9 +63,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(401, 4);
+            label1.Location = new Point(351, 3);
             label1.Name = "label1";
-            label1.Size = new Size(84, 25);
+            label1.Size = new Size(67, 20);
             label1.TabIndex = 7;
             label1.Text = "TUTASA";
             // 
@@ -76,18 +76,21 @@
             groupBox1.Controls.Add(textBox2);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(textBox1);
-            groupBox1.Location = new Point(26, 76);
+            groupBox1.Location = new Point(23, 57);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(442, 215);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(387, 161);
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de Hoja de ruta y de agencia";
             // 
             // button1
             // 
-            button1.Location = new Point(312, 164);
+            button1.Location = new Point(273, 123);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(96, 35);
+            button1.Size = new Size(84, 26);
             button1.TabIndex = 4;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
@@ -95,41 +98,45 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(20, 117);
+            label4.Location = new Point(18, 88);
             label4.Name = "label4";
-            label4.Size = new Size(140, 20);
+            label4.Size = new Size(111, 15);
             label4.TabIndex = 3;
             label4.Text = "Número de agencia";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(20, 140);
+            textBox2.Location = new Point(18, 105);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(240, 27);
+            textBox2.Size = new Size(210, 23);
             textBox2.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(20, 46);
+            label2.Location = new Point(18, 34);
             label2.Name = "label2";
-            label2.Size = new Size(168, 20);
+            label2.Size = new Size(133, 15);
             label2.TabIndex = 1;
             label2.Text = "Número de hoja de ruta";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(20, 69);
+            textBox1.Location = new Point(18, 52);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(240, 27);
+            textBox1.Size = new Size(210, 23);
             textBox1.TabIndex = 0;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(listView1);
-            groupBox2.Location = new Point(26, 325);
+            groupBox2.Location = new Point(23, 244);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(738, 238);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(646, 178);
             groupBox2.TabIndex = 10;
             groupBox2.TabStop = false;
             groupBox2.Text = "Listado de encomiendas";
@@ -137,9 +144,10 @@
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { NroHojaderuta, NrodeGuia, Cliente, TamañoEncomienda, Estado });
-            listView1.Location = new Point(33, 38);
+            listView1.Location = new Point(29, 28);
+            listView1.Margin = new Padding(3, 2, 3, 2);
             listView1.Name = "listView1";
-            listView1.Size = new Size(675, 182);
+            listView1.Size = new Size(591, 138);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -171,33 +179,36 @@
             // 
             // button2
             // 
-            button2.Location = new Point(738, 603);
+            button2.Location = new Point(646, 452);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(110, 28);
+            button2.Size = new Size(96, 21);
             button2.TabIndex = 11;
             button2.Text = "Confirmar";
             button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(858, 603);
+            button3.Location = new Point(751, 452);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(110, 28);
+            button3.Size = new Size(96, 21);
             button3.TabIndex = 12;
             button3.Text = "Cancelar";
             button3.UseVisualStyleBackColor = true;
             // 
             // RecepcionHDRdeEntregaenAgencia
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(980, 643);
+            ClientSize = new Size(858, 482);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label3);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "RecepcionHDRdeEntregaenAgencia";
             Text = "Hojas de ruta de entrega";
             groupBox1.ResumeLayout(false);

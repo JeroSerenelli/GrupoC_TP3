@@ -41,15 +41,17 @@
             RazonSocial = new ColumnHeader();
             cuitColumn = new ColumnHeader();
             nombreSolicitante = new ColumnHeader();
+            apellidoSolicitante = new ColumnHeader();
             button1 = new Button();
             groupBox2 = new GroupBox();
             cuentaCorrienteLstView = new ListView();
-            Nro_Cliente = new ColumnHeader();
-            Nro_Guia = new ColumnHeader();
-            Sub_Total = new ColumnHeader();
-            Total = new ColumnHeader();
+            Nro_ClienteHeader = new ColumnHeader();
+            TipoDeOperacionHeader = new ColumnHeader();
+            MontoHeader = new ColumnHeader();
             fileSystemWatcher1 = new FileSystemWatcher();
-            apellidoSolicitante = new ColumnHeader();
+            label4 = new Label();
+            FechaHeader = new ColumnHeader();
+            SaldoHeader = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
@@ -84,7 +86,7 @@
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(razonSocialTxt);
-            groupBox1.Location = new Point(29, 26);
+            groupBox1.Location = new Point(29, 34);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(721, 261);
             groupBox1.TabIndex = 2;
@@ -171,6 +173,11 @@
             nombreSolicitante.Text = "Nombre Solicitante";
             nombreSolicitante.Width = 160;
             // 
+            // apellidoSolicitante
+            // 
+            apellidoSolicitante.Text = "Apellido Solicitante";
+            apellidoSolicitante.Width = 160;
+            // 
             // button1
             // 
             button1.Location = new Point(317, 34);
@@ -183,7 +190,7 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(cuentaCorrienteLstView);
-            groupBox2.Location = new Point(29, 293);
+            groupBox2.Location = new Point(29, 301);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(721, 217);
             groupBox2.TabIndex = 3;
@@ -192,7 +199,7 @@
             // 
             // cuentaCorrienteLstView
             // 
-            cuentaCorrienteLstView.Columns.AddRange(new ColumnHeader[] { Nro_Cliente, Nro_Guia, Sub_Total, Total });
+            cuentaCorrienteLstView.Columns.AddRange(new ColumnHeader[] { Nro_ClienteHeader, FechaHeader, TipoDeOperacionHeader, MontoHeader, SaldoHeader });
             cuentaCorrienteLstView.Location = new Point(22, 42);
             cuentaCorrienteLstView.Name = "cuentaCorrienteLstView";
             cuentaCorrienteLstView.Size = new Size(682, 153);
@@ -200,21 +207,52 @@
             cuentaCorrienteLstView.UseCompatibleStateImageBehavior = false;
             cuentaCorrienteLstView.View = View.Details;
             // 
+            // Nro_ClienteHeader
+            // 
+            Nro_ClienteHeader.Text = "Número de Cliente";
+            Nro_ClienteHeader.Width = 150;
+            // 
+            // TipoDeOperacionHeader
+            // 
+            TipoDeOperacionHeader.Text = "Tipo de Operación";
+            TipoDeOperacionHeader.Width = 150;
+            // 
+            // MontoHeader
+            // 
+            MontoHeader.Text = "Monto";
+            MontoHeader.Width = 100;
+            // 
             // fileSystemWatcher1
             // 
             fileSystemWatcher1.EnableRaisingEvents = true;
             fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // apellidoSolicitante
+            // label4
             // 
-            apellidoSolicitante.Text = "Apellido Solicitante";
-            apellidoSolicitante.Width = 160;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label4.Location = new Point(493, 12);
+            label4.Name = "label4";
+            label4.Size = new Size(242, 37);
+            label4.TabIndex = 9;
+            label4.Text = "TUTASA Agencias";
+            // 
+            // FechaHeader
+            // 
+            FechaHeader.Text = "Fecha";
+            FechaHeader.Width = 80;
+            // 
+            // SaldoHeader
+            // 
+            SaldoHeader.Text = "Saldo";
+            SaldoHeader.Width = 140;
             // 
             // Facturas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(777, 519);
+            Controls.Add(label4);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Facturas";
@@ -224,6 +262,7 @@
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -234,10 +273,9 @@
         private GroupBox groupBox2;
         private Button button1;
         private ListView cuentaCorrienteLstView;
-        private ColumnHeader Nro_Cliente;
-        private ColumnHeader Nro_Guia;
-        private ColumnHeader Sub_Total;
-        private ColumnHeader Total;
+        private ColumnHeader Nro_ClienteHeader;
+        private ColumnHeader TipoDeOperacionHeader;
+        private ColumnHeader MontoHeader;
         private ListView razonSocialList;
         private ColumnHeader RazonSocial;
         private ColumnHeader cuitColumn;
@@ -250,5 +288,8 @@
         private Label label3;
         private FileSystemWatcher fileSystemWatcher1;
         private ColumnHeader apellidoSolicitante;
+        private Label label4;
+        private ColumnHeader FechaHeader;
+        private ColumnHeader SaldoHeader;
     }
 }

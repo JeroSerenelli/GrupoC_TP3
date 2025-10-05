@@ -480,6 +480,7 @@
             buttonGenerarNumeroGuia.TabIndex = 42;
             buttonGenerarNumeroGuia.Text = "Generar Numero de Guia";
             buttonGenerarNumeroGuia.UseVisualStyleBackColor = true;
+            buttonGenerarNumeroGuia.Click += buttonGenerarNumeroGuia_Click;
             // 
             // checkBoxEntregaEnDomicilio
             // 

@@ -11,9 +11,9 @@ namespace GrupoC_TP3
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new EncomiendasARetirar());
             Application.Run(new ConsultaEstadoGuiaEnCD.ConsultaEstadoGuiaEnCDForm());
             Application.Run(new RegistrarImposicionRetiroPorDomicilio.RegistrarImposicionRetiroPorDomicilioForm());
+            Application.Run(new RegistrarImposicionEnAgencia.RegistrarImposicionEnAgenciaForm());
         }
     }
 }

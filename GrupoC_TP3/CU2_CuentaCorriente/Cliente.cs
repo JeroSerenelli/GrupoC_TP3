@@ -8,5 +8,6 @@ namespace GrupoC_TP3.CU2_CuentaCorriente
 {
     internal class Cliente
     {
+
     }
 }

@@ -16,5 +16,10 @@ namespace GrupoC_TP3.ResultadoCostosVsVentas
         {
             InitializeComponent();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

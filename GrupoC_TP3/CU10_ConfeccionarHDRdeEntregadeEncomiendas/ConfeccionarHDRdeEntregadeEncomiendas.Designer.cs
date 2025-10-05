@@ -173,7 +173,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(groupBox1);
             Name = "ConfeccionarHDRdeEntregadeEncomiendas";
-            Text = "ConfeccionarHDRdeEntregadeEncomiendas";
+            Text = "Confeccionar Hoja de Ruta de Entrega de Encomiendas";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrupoC_TP3.ConfeccionarHojaDeRuta
 {
-    public partial class ConfeccionarHojaDeRuta : Form
+    public partial class ConfeccionarHDRdeTransportedeMediayLargaDistancia : Form
     {
-        public ConfeccionarHojaDeRuta()
+        public ConfeccionarHDRdeTransportedeMediayLargaDistancia()
         {
             InitializeComponent();
         }

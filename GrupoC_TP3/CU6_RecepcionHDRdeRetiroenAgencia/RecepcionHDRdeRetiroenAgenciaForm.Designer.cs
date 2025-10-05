@@ -28,65 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button3 = new Button();
-            button2 = new Button();
-            groupBox2 = new GroupBox();
-            listView1 = new ListView();
+            Cancelar_Button = new Button();
+            Confirmar_Button = new Button();
+            ListadodeEncomiendas_Groupbox = new GroupBox();
+            ListadodeEncomiendas_Listview = new ListView();
             NroHojaderuta = new ColumnHeader();
             NrodeGuia = new ColumnHeader();
             Cliente = new ColumnHeader();
             TamañoEncomienda = new ColumnHeader();
             Estado = new ColumnHeader();
-            groupBox1 = new GroupBox();
-            button1 = new Button();
-            label4 = new Label();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            textBox1 = new TextBox();
+            DatosdeHDRydeAgencia_Groupbox = new GroupBox();
+            Buscar_Button = new Button();
+            NumerodeAgencia_Label = new Label();
+            NumerodeAgencia_Textbox = new TextBox();
+            NumerodeHDR_Label = new Label();
+            NumerodeHDR_Textbox = new TextBox();
             label3 = new Label();
             label1 = new Label();
-            groupBox2.SuspendLayout();
-            groupBox1.SuspendLayout();
+            ListadodeEncomiendas_Groupbox.SuspendLayout();
+            DatosdeHDRydeAgencia_Groupbox.SuspendLayout();
             SuspendLayout();
             // 
-            // button3
+            // Cancelar_Button
             // 
-            button3.Location = new Point(851, 607);
-            button3.Name = "button3";
-            button3.Size = new Size(110, 28);
-            button3.TabIndex = 18;
-            button3.Text = "Cancelar";
-            button3.UseVisualStyleBackColor = true;
+            Cancelar_Button.Location = new Point(851, 607);
+            Cancelar_Button.Name = "Cancelar_Button";
+            Cancelar_Button.Size = new Size(110, 28);
+            Cancelar_Button.TabIndex = 18;
+            Cancelar_Button.Text = "Cancelar";
+            Cancelar_Button.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // Confirmar_Button
             // 
-            button2.Location = new Point(731, 607);
-            button2.Name = "button2";
-            button2.Size = new Size(110, 28);
-            button2.TabIndex = 17;
-            button2.Text = "Confirmar";
-            button2.UseVisualStyleBackColor = true;
+            Confirmar_Button.Location = new Point(731, 607);
+            Confirmar_Button.Name = "Confirmar_Button";
+            Confirmar_Button.Size = new Size(110, 28);
+            Confirmar_Button.TabIndex = 17;
+            Confirmar_Button.Text = "Confirmar";
+            Confirmar_Button.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // ListadodeEncomiendas_Groupbox
             // 
-            groupBox2.Controls.Add(listView1);
-            groupBox2.Location = new Point(19, 329);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(738, 237);
-            groupBox2.TabIndex = 16;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Listado de encomiendas";
+            ListadodeEncomiendas_Groupbox.Controls.Add(ListadodeEncomiendas_Listview);
+            ListadodeEncomiendas_Groupbox.Location = new Point(19, 329);
+            ListadodeEncomiendas_Groupbox.Name = "ListadodeEncomiendas_Groupbox";
+            ListadodeEncomiendas_Groupbox.Size = new Size(738, 237);
+            ListadodeEncomiendas_Groupbox.TabIndex = 16;
+            ListadodeEncomiendas_Groupbox.TabStop = false;
+            ListadodeEncomiendas_Groupbox.Text = "Listado de encomiendas";
             // 
-            // listView1
+            // ListadodeEncomiendas_Listview
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NroHojaderuta, NrodeGuia, Cliente, TamañoEncomienda, Estado });
-            listView1.GridLines = true;
-            listView1.Location = new Point(33, 37);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(675, 183);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            ListadodeEncomiendas_Listview.Columns.AddRange(new ColumnHeader[] { NroHojaderuta, NrodeGuia, Cliente, TamañoEncomienda, Estado });
+            ListadodeEncomiendas_Listview.GridLines = true;
+            ListadodeEncomiendas_Listview.Location = new Point(33, 37);
+            ListadodeEncomiendas_Listview.Name = "ListadodeEncomiendas_Listview";
+            ListadodeEncomiendas_Listview.Size = new Size(675, 183);
+            ListadodeEncomiendas_Listview.TabIndex = 0;
+            ListadodeEncomiendas_Listview.UseCompatibleStateImageBehavior = false;
+            ListadodeEncomiendas_Listview.View = View.Details;
             // 
             // NroHojaderuta
             // 
@@ -113,60 +113,60 @@
             Estado.Text = "Estado";
             Estado.Width = 130;
             // 
-            // groupBox1
+            // DatosdeHDRydeAgencia_Groupbox
             // 
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Location = new Point(19, 80);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(442, 215);
-            groupBox1.TabIndex = 15;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Datos de Hoja de ruta y de agencia";
+            DatosdeHDRydeAgencia_Groupbox.Controls.Add(Buscar_Button);
+            DatosdeHDRydeAgencia_Groupbox.Controls.Add(NumerodeAgencia_Label);
+            DatosdeHDRydeAgencia_Groupbox.Controls.Add(NumerodeAgencia_Textbox);
+            DatosdeHDRydeAgencia_Groupbox.Controls.Add(NumerodeHDR_Label);
+            DatosdeHDRydeAgencia_Groupbox.Controls.Add(NumerodeHDR_Textbox);
+            DatosdeHDRydeAgencia_Groupbox.Location = new Point(19, 80);
+            DatosdeHDRydeAgencia_Groupbox.Name = "DatosdeHDRydeAgencia_Groupbox";
+            DatosdeHDRydeAgencia_Groupbox.Size = new Size(442, 215);
+            DatosdeHDRydeAgencia_Groupbox.TabIndex = 15;
+            DatosdeHDRydeAgencia_Groupbox.TabStop = false;
+            DatosdeHDRydeAgencia_Groupbox.Text = "Datos de Hoja de ruta y de agencia";
             // 
-            // button1
+            // Buscar_Button
             // 
-            button1.Location = new Point(312, 164);
-            button1.Name = "button1";
-            button1.Size = new Size(96, 35);
-            button1.TabIndex = 4;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            Buscar_Button.Location = new Point(312, 164);
+            Buscar_Button.Name = "Buscar_Button";
+            Buscar_Button.Size = new Size(96, 35);
+            Buscar_Button.TabIndex = 4;
+            Buscar_Button.Text = "Buscar";
+            Buscar_Button.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // NumerodeAgencia_Label
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(21, 117);
-            label4.Name = "label4";
-            label4.Size = new Size(140, 20);
-            label4.TabIndex = 3;
-            label4.Text = "Número de agencia";
+            NumerodeAgencia_Label.AutoSize = true;
+            NumerodeAgencia_Label.Location = new Point(21, 117);
+            NumerodeAgencia_Label.Name = "NumerodeAgencia_Label";
+            NumerodeAgencia_Label.Size = new Size(140, 20);
+            NumerodeAgencia_Label.TabIndex = 3;
+            NumerodeAgencia_Label.Text = "Número de agencia";
             // 
-            // textBox2
+            // NumerodeAgencia_Textbox
             // 
-            textBox2.Location = new Point(21, 140);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(239, 27);
-            textBox2.TabIndex = 2;
+            NumerodeAgencia_Textbox.Location = new Point(21, 140);
+            NumerodeAgencia_Textbox.Name = "NumerodeAgencia_Textbox";
+            NumerodeAgencia_Textbox.Size = new Size(239, 27);
+            NumerodeAgencia_Textbox.TabIndex = 2;
             // 
-            // label2
+            // NumerodeHDR_Label
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(21, 45);
-            label2.Name = "label2";
-            label2.Size = new Size(168, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Número de hoja de ruta";
+            NumerodeHDR_Label.AutoSize = true;
+            NumerodeHDR_Label.Location = new Point(21, 45);
+            NumerodeHDR_Label.Name = "NumerodeHDR_Label";
+            NumerodeHDR_Label.Size = new Size(168, 20);
+            NumerodeHDR_Label.TabIndex = 1;
+            NumerodeHDR_Label.Text = "Número de hoja de ruta";
             // 
-            // textBox1
+            // NumerodeHDR_Textbox
             // 
-            textBox1.Location = new Point(21, 69);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(239, 27);
-            textBox1.TabIndex = 0;
+            NumerodeHDR_Textbox.Location = new Point(21, 69);
+            NumerodeHDR_Textbox.Name = "NumerodeHDR_Textbox";
+            NumerodeHDR_Textbox.Size = new Size(239, 27);
+            NumerodeHDR_Textbox.TabIndex = 0;
             // 
             // label3
             // 
@@ -193,38 +193,38 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(981, 643);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(Cancelar_Button);
+            Controls.Add(Confirmar_Button);
+            Controls.Add(ListadodeEncomiendas_Groupbox);
+            Controls.Add(DatosdeHDRydeAgencia_Groupbox);
             Controls.Add(label3);
             Controls.Add(label1);
             Name = "RecepcionHDRdeRetiroenAgenciaForm";
             Text = "Hoja de ruta de retiro";
-            groupBox2.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            ListadodeEncomiendas_Groupbox.ResumeLayout(false);
+            DatosdeHDRydeAgencia_Groupbox.ResumeLayout(false);
+            DatosdeHDRydeAgencia_Groupbox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button3;
-        private Button button2;
-        private GroupBox groupBox2;
-        private ListView listView1;
+        private Button Cancelar_Button;
+        private Button Confirmar_Button;
+        private GroupBox ListadodeEncomiendas_Groupbox;
+        private ListView ListadodeEncomiendas_Listview;
         private ColumnHeader NroHojaderuta;
         private ColumnHeader NrodeGuia;
         private ColumnHeader Cliente;
         private ColumnHeader TamañoEncomienda;
         private ColumnHeader Estado;
-        private GroupBox groupBox1;
-        private Button button1;
-        private Label label4;
-        private TextBox textBox2;
-        private Label label2;
-        private TextBox textBox1;
+        private GroupBox DatosdeHDRydeAgencia_Groupbox;
+        private Button Buscar_Button;
+        private Label NumerodeAgencia_Label;
+        private TextBox NumerodeAgencia_Textbox;
+        private Label NumerodeHDR_Label;
+        private TextBox NumerodeHDR_Textbox;
         private Label label3;
         private Label label1;
     }

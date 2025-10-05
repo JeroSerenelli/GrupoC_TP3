@@ -32,20 +32,19 @@
             label1 = new Label();
             label2 = new Label();
             groupBox1 = new GroupBox();
-            label3 = new Label();
+            button1 = new Button();
             textBox1 = new TextBox();
+            label3 = new Label();
             listView1 = new ListView();
             NumeroEncomiendasAdmision = new ColumnHeader();
             ClienteAdmision = new ColumnHeader();
             TamañoAdmision = new ColumnHeader();
             PesoAdmision = new ColumnHeader();
-            CantidadPaqueteAdmision = new ColumnHeader();
             EstadoAdmision = new ColumnHeader();
-            button1 = new Button();
             groupBox2 = new GroupBox();
-            label4 = new Label();
-            comboBox1 = new ComboBox();
             button2 = new Button();
+            comboBox1 = new ComboBox();
+            label4 = new Label();
             button3 = new Button();
             button4 = new Button();
             groupBox1.SuspendLayout();
@@ -81,6 +80,22 @@
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             // 
+            // button1
+            // 
+            button1.Location = new Point(591, 39);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 3;
+            button1.Text = "Buscar";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(223, 31);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(188, 23);
+            textBox1.TabIndex = 1;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -90,20 +105,13 @@
             label3.TabIndex = 0;
             label3.Text = "Numero de la encomienda";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(223, 31);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(188, 23);
-            textBox1.TabIndex = 1;
-            // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroEncomiendasAdmision, ClienteAdmision, TamañoAdmision, PesoAdmision, CantidadPaqueteAdmision, EstadoAdmision });
+            listView1.Columns.AddRange(new ColumnHeader[] { NumeroEncomiendasAdmision, ClienteAdmision, TamañoAdmision, PesoAdmision, EstadoAdmision });
             listView1.GridLines = true;
-            listView1.Location = new Point(6, 32);
+            listView1.Location = new Point(52, 31);
             listView1.Name = "listView1";
-            listView1.Size = new Size(660, 100);
+            listView1.Size = new Size(542, 100);
             listView1.TabIndex = 2;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -128,24 +136,10 @@
             PesoAdmision.Text = "Peso";
             PesoAdmision.Width = 100;
             // 
-            // CantidadPaqueteAdmision
-            // 
-            CantidadPaqueteAdmision.Text = "Cantidad de Paquetes";
-            CantidadPaqueteAdmision.Width = 120;
-            // 
             // EstadoAdmision
             // 
             EstadoAdmision.Text = "Estado";
             EstadoAdmision.Width = 100;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(591, 39);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -159,14 +153,14 @@
             groupBox2.TabIndex = 5;
             groupBox2.TabStop = false;
             // 
-            // label4
+            // button2
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(52, 164);
-            label4.Name = "label4";
-            label4.Size = new Size(42, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Validar";
+            button2.Location = new Point(574, 160);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 5;
+            button2.Text = "Modificar";
+            button2.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -177,14 +171,14 @@
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 4;
             // 
-            // button2
+            // label4
             // 
-            button2.Location = new Point(574, 160);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 5;
-            button2.Text = "Modificar";
-            button2.UseVisualStyleBackColor = true;
+            label4.AutoSize = true;
+            label4.Location = new Point(52, 164);
+            label4.Name = "label4";
+            label4.Size = new Size(42, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Validar";
             // 
             // button3
             // 
@@ -239,7 +233,6 @@
         private ColumnHeader ClienteAdmision;
         private ColumnHeader TamañoAdmision;
         private ColumnHeader PesoAdmision;
-        private ColumnHeader CantidadPaqueteAdmision;
         private ColumnHeader EstadoAdmision;
         private GroupBox groupBox2;
         private Button button2;

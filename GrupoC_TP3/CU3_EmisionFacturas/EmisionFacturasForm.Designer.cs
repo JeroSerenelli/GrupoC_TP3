@@ -44,6 +44,7 @@
             Nro_Guia = new ColumnHeader();
             EstadoEncomienda = new ColumnHeader();
             Total = new ColumnHeader();
+            label4 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -72,7 +73,7 @@
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(razonSocialTxt);
-            groupBox1.Location = new Point(29, 27);
+            groupBox1.Location = new Point(29, 39);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(759, 195);
             groupBox1.TabIndex = 2;
@@ -133,7 +134,7 @@
             // 
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(PedidosAFacturarListView);
-            groupBox2.Location = new Point(29, 227);
+            groupBox2.Location = new Point(29, 239);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(759, 293);
             groupBox2.TabIndex = 3;
@@ -176,11 +177,22 @@
             Total.DisplayIndex = 1;
             Total.Text = "Total";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label4.Location = new Point(493, 12);
+            label4.Name = "label4";
+            label4.Size = new Size(242, 37);
+            label4.TabIndex = 9;
+            label4.Text = "TUTASA Agencias";
+            // 
             // EmisionFacturasForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(805, 536);
+            Controls.Add(label4);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "EmisionFacturasForm";
@@ -190,6 +202,7 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -210,5 +223,6 @@
         private Button button4;
         private ColumnHeader apellidoSolicitante;
         private ColumnHeader EstadoEncomienda;
+        private Label label4;
     }
 }

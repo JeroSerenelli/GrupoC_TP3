@@ -32,15 +32,15 @@ namespace GrupoC_TP3
             TutasaTitulo = new Label();
             TutasaSubText = new Label();
             HDRfletBox = new GroupBox();
+            FechaHDRFletlabel1 = new Label();
+            HDRFLetdateTimePicker = new DateTimePicker();
+            FletAsiglabel = new Label();
+            FletAsigtextBox = new TextBox();
             buttonBuscarHDRFlet = new Button();
             TipoHDRFletText = new Label();
             TipoHDRFlettextBox = new TextBox();
             NumHDRFlet = new Label();
             NumHDRFlettextBox1 = new TextBox();
-            FletAsiglabel = new Label();
-            FletAsigtextBox = new TextBox();
-            HDRFLetdateTimePicker = new DateTimePicker();
-            FechaHDRFletlabel1 = new Label();
             ListadoEncoHDRFletgroupBox2 = new GroupBox();
             ListadoEncoHDRFletlistView1 = new ListView();
             Numerohojaderuta = new ColumnHeader();
@@ -56,9 +56,9 @@ namespace GrupoC_TP3
             // 
             TutasaTitulo.AutoSize = true;
             TutasaTitulo.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TutasaTitulo.Location = new Point(338, 9);
+            TutasaTitulo.Location = new Point(386, 12);
             TutasaTitulo.Name = "TutasaTitulo";
-            TutasaTitulo.Size = new Size(67, 20);
+            TutasaTitulo.Size = new Size(84, 25);
             TutasaTitulo.TabIndex = 8;
             TutasaTitulo.Text = "TUTASA";
             // 
@@ -66,9 +66,9 @@ namespace GrupoC_TP3
             // 
             TutasaSubText.AutoSize = true;
             TutasaSubText.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TutasaSubText.Location = new Point(243, 29);
+            TutasaSubText.Location = new Point(278, 39);
             TutasaSubText.Name = "TutasaSubText";
-            TutasaSubText.Size = new Size(269, 15);
+            TutasaSubText.Size = new Size(342, 20);
             TutasaSubText.TabIndex = 9;
             TutasaSubText.Text = "Transportes Urbanos Terrestres Argentinos S.A.";
             // 
@@ -83,21 +83,51 @@ namespace GrupoC_TP3
             HDRfletBox.Controls.Add(TipoHDRFlettextBox);
             HDRfletBox.Controls.Add(NumHDRFlet);
             HDRfletBox.Controls.Add(NumHDRFlettextBox1);
-            HDRfletBox.Location = new Point(18, 58);
-            HDRfletBox.Margin = new Padding(3, 2, 3, 2);
+            HDRfletBox.Location = new Point(21, 77);
             HDRfletBox.Name = "HDRfletBox";
-            HDRfletBox.Padding = new Padding(3, 2, 3, 2);
-            HDRfletBox.Size = new Size(494, 267);
+            HDRfletBox.Size = new Size(565, 372);
             HDRfletBox.TabIndex = 10;
             HDRfletBox.TabStop = false;
             HDRfletBox.Text = "Datos de Hoja de ruta";
             // 
+            // FechaHDRFletlabel1
+            // 
+            FechaHDRFletlabel1.AutoSize = true;
+            FechaHDRFletlabel1.Location = new Point(21, 260);
+            FechaHDRFletlabel1.Name = "FechaHDRFletlabel1";
+            FechaHDRFletlabel1.Size = new Size(152, 20);
+            FechaHDRFletlabel1.TabIndex = 11;
+            FechaHDRFletlabel1.Text = "Fecha de hoja de ruta";
+            // 
+            // HDRFLetdateTimePicker
+            // 
+            HDRFLetdateTimePicker.Location = new Point(21, 284);
+            HDRFLetdateTimePicker.Margin = new Padding(3, 4, 3, 4);
+            HDRFLetdateTimePicker.Name = "HDRFLetdateTimePicker";
+            HDRFLetdateTimePicker.Size = new Size(239, 27);
+            HDRFLetdateTimePicker.TabIndex = 7;
+            // 
+            // FletAsiglabel
+            // 
+            FletAsiglabel.AutoSize = true;
+            FletAsiglabel.Location = new Point(21, 189);
+            FletAsiglabel.Name = "FletAsiglabel";
+            FletAsiglabel.Size = new Size(120, 20);
+            FletAsiglabel.TabIndex = 6;
+            FletAsiglabel.Text = "Fletero asignado";
+            // 
+            // FletAsigtextBox
+            // 
+            FletAsigtextBox.Location = new Point(21, 212);
+            FletAsigtextBox.Name = "FletAsigtextBox";
+            FletAsigtextBox.Size = new Size(239, 27);
+            FletAsigtextBox.TabIndex = 5;
+            // 
             // buttonBuscarHDRFlet
             // 
-            buttonBuscarHDRFlet.Location = new Point(388, 237);
-            buttonBuscarHDRFlet.Margin = new Padding(3, 2, 3, 2);
+            buttonBuscarHDRFlet.Location = new Point(443, 316);
             buttonBuscarHDRFlet.Name = "buttonBuscarHDRFlet";
-            buttonBuscarHDRFlet.Size = new Size(84, 26);
+            buttonBuscarHDRFlet.Size = new Size(96, 35);
             buttonBuscarHDRFlet.TabIndex = 4;
             buttonBuscarHDRFlet.Text = "Buscar";
             buttonBuscarHDRFlet.UseVisualStyleBackColor = true;
@@ -105,78 +135,41 @@ namespace GrupoC_TP3
             // TipoHDRFletText
             // 
             TipoHDRFletText.AutoSize = true;
-            TipoHDRFletText.Location = new Point(18, 87);
+            TipoHDRFletText.Location = new Point(21, 116);
             TipoHDRFletText.Name = "TipoHDRFletText";
-            TipoHDRFletText.Size = new Size(113, 15);
+            TipoHDRFletText.Size = new Size(144, 20);
             TipoHDRFletText.TabIndex = 3;
             TipoHDRFletText.Text = "Tipo de hoja de ruta";
             // 
             // TipoHDRFlettextBox
             // 
-            TipoHDRFlettextBox.Location = new Point(18, 105);
-            TipoHDRFlettextBox.Margin = new Padding(3, 2, 3, 2);
+            TipoHDRFlettextBox.Location = new Point(21, 140);
             TipoHDRFlettextBox.Name = "TipoHDRFlettextBox";
-            TipoHDRFlettextBox.Size = new Size(210, 23);
+            TipoHDRFlettextBox.Size = new Size(239, 27);
             TipoHDRFlettextBox.TabIndex = 2;
             // 
             // NumHDRFlet
             // 
             NumHDRFlet.AutoSize = true;
-            NumHDRFlet.Location = new Point(18, 33);
+            NumHDRFlet.Location = new Point(21, 44);
             NumHDRFlet.Name = "NumHDRFlet";
-            NumHDRFlet.Size = new Size(133, 15);
+            NumHDRFlet.Size = new Size(168, 20);
             NumHDRFlet.TabIndex = 1;
             NumHDRFlet.Text = "Número de hoja de ruta";
             // 
             // NumHDRFlettextBox1
             // 
-            NumHDRFlettextBox1.Location = new Point(18, 52);
-            NumHDRFlettextBox1.Margin = new Padding(3, 2, 3, 2);
+            NumHDRFlettextBox1.Location = new Point(21, 69);
             NumHDRFlettextBox1.Name = "NumHDRFlettextBox1";
-            NumHDRFlettextBox1.Size = new Size(210, 23);
+            NumHDRFlettextBox1.Size = new Size(239, 27);
             NumHDRFlettextBox1.TabIndex = 0;
-            // 
-            // FletAsiglabel
-            // 
-            FletAsiglabel.AutoSize = true;
-            FletAsiglabel.Location = new Point(18, 142);
-            FletAsiglabel.Name = "FletAsiglabel";
-            FletAsiglabel.Size = new Size(94, 15);
-            FletAsiglabel.TabIndex = 6;
-            FletAsiglabel.Text = "Fletero asignado";
-            // 
-            // FletAsigtextBox
-            // 
-            FletAsigtextBox.Location = new Point(18, 159);
-            FletAsigtextBox.Margin = new Padding(3, 2, 3, 2);
-            FletAsigtextBox.Name = "FletAsigtextBox";
-            FletAsigtextBox.Size = new Size(210, 23);
-            FletAsigtextBox.TabIndex = 5;
-            // 
-            // HDRFLetdateTimePicker
-            // 
-            HDRFLetdateTimePicker.Location = new Point(18, 213);
-            HDRFLetdateTimePicker.Name = "HDRFLetdateTimePicker";
-            HDRFLetdateTimePicker.Size = new Size(210, 23);
-            HDRFLetdateTimePicker.TabIndex = 7;
-            // 
-            // FechaHDRFletlabel1
-            // 
-            FechaHDRFletlabel1.AutoSize = true;
-            FechaHDRFletlabel1.Location = new Point(18, 195);
-            FechaHDRFletlabel1.Name = "FechaHDRFletlabel1";
-            FechaHDRFletlabel1.Size = new Size(120, 15);
-            FechaHDRFletlabel1.TabIndex = 11;
-            FechaHDRFletlabel1.Text = "Fecha de hoja de ruta";
             // 
             // ListadoEncoHDRFletgroupBox2
             // 
             ListadoEncoHDRFletgroupBox2.Controls.Add(ListadoEncoHDRFletlistView1);
-            ListadoEncoHDRFletgroupBox2.Location = new Point(18, 341);
-            ListadoEncoHDRFletgroupBox2.Margin = new Padding(3, 2, 3, 2);
+            ListadoEncoHDRFletgroupBox2.Location = new Point(21, 455);
             ListadoEncoHDRFletgroupBox2.Name = "ListadoEncoHDRFletgroupBox2";
-            ListadoEncoHDRFletgroupBox2.Padding = new Padding(3, 2, 3, 2);
-            ListadoEncoHDRFletgroupBox2.Size = new Size(576, 178);
+            ListadoEncoHDRFletgroupBox2.Size = new Size(658, 237);
             ListadoEncoHDRFletgroupBox2.TabIndex = 11;
             ListadoEncoHDRFletgroupBox2.TabStop = false;
             ListadoEncoHDRFletgroupBox2.Text = "Listado de encomiendas";
@@ -184,15 +177,15 @@ namespace GrupoC_TP3
             // ListadoEncoHDRFletlistView1
             // 
             ListadoEncoHDRFletlistView1.Columns.AddRange(new ColumnHeader[] { Numerohojaderuta, Numerodeguia, Cliente, Estado });
+            ListadoEncoHDRFletlistView1.GridLines = true;
             ListadoEncoHDRFletlistView1.LabelEdit = true;
-            ListadoEncoHDRFletlistView1.Location = new Point(29, 28);
-            ListadoEncoHDRFletlistView1.Margin = new Padding(3, 2, 3, 2);
+            ListadoEncoHDRFletlistView1.Location = new Point(33, 37);
             ListadoEncoHDRFletlistView1.Name = "ListadoEncoHDRFletlistView1";
-            ListadoEncoHDRFletlistView1.Size = new Size(525, 138);
+            ListadoEncoHDRFletlistView1.Size = new Size(524, 183);
             ListadoEncoHDRFletlistView1.TabIndex = 0;
             ListadoEncoHDRFletlistView1.UseCompatibleStateImageBehavior = false;
             ListadoEncoHDRFletlistView1.View = View.Details;
-            ListadoEncoHDRFletlistView1.SelectedIndexChanged += this.ListadoEncoHDRFletlistView1_SelectedIndexChanged;
+            ListadoEncoHDRFletlistView1.SelectedIndexChanged += ListadoEncoHDRFletlistView1_SelectedIndexChanged;
             // 
             // Numerohojaderuta
             // 
@@ -216,26 +209,26 @@ namespace GrupoC_TP3
             // 
             // buttonConfirHDRFlet
             // 
-            buttonConfirHDRFlet.Location = new Point(723, 517);
-            buttonConfirHDRFlet.Margin = new Padding(3, 2, 3, 2);
+            buttonConfirHDRFlet.Location = new Point(826, 689);
             buttonConfirHDRFlet.Name = "buttonConfirHDRFlet";
-            buttonConfirHDRFlet.Size = new Size(96, 21);
+            buttonConfirHDRFlet.Size = new Size(110, 28);
             buttonConfirHDRFlet.TabIndex = 12;
             buttonConfirHDRFlet.Text = "Confirmar";
             buttonConfirHDRFlet.UseVisualStyleBackColor = true;
             // 
             // RendicionHDRRendFletero
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(831, 549);
+            ClientSize = new Size(950, 732);
             Controls.Add(buttonConfirHDRFlet);
             Controls.Add(ListadoEncoHDRFletgroupBox2);
             Controls.Add(HDRfletBox);
             Controls.Add(TutasaSubText);
             Controls.Add(TutasaTitulo);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "RendicionHDRRendFletero";
-            Text = "RendicionHDRRendFletero";
+            Text = "Hojas de rutas rendidas";
             Load += RendicionHDRRendFletero_Load;
             HDRfletBox.ResumeLayout(false);
             HDRfletBox.PerformLayout();

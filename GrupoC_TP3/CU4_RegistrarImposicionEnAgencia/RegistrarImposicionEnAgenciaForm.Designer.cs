@@ -43,7 +43,7 @@
             textBoxApellidoDestinatario = new TextBox();
             groupBox1 = new GroupBox();
             textBoxCUITCUIL = new TextBox();
-            label1 = new Label();
+            labelNombreSolicitante = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -199,7 +199,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(textBoxCUITCUIL);
-            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(labelNombreSolicitante);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label4);
@@ -220,14 +220,15 @@
             textBoxCUITCUIL.Size = new Size(256, 23);
             textBoxCUITCUIL.TabIndex = 20;
             // 
-            // label1
+            // labelNombreSolicitante
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(7, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(112, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre Solicitante:";
+            labelNombreSolicitante.AutoSize = true;
+            labelNombreSolicitante.Location = new Point(7, 30);
+            labelNombreSolicitante.Name = "labelNombreSolicitante";
+            labelNombreSolicitante.Size = new Size(112, 15);
+            labelNombreSolicitante.TabIndex = 0;
+            labelNombreSolicitante.Text = "Nombre Solicitante:";
+            labelNombreSolicitante.Click += label1_Click;
             // 
             // label2
             // 
@@ -482,6 +483,7 @@
             buttonGenerarNumeroGuia.TabIndex = 42;
             buttonGenerarNumeroGuia.Text = "Generar Numero de Guia";
             buttonGenerarNumeroGuia.UseVisualStyleBackColor = true;
+            buttonGenerarNumeroGuia.Click += buttonGenerarNumeroGuia_Click;
             // 
             // checkBoxEntregaEnDomicilio
             // 
@@ -559,7 +561,7 @@
         private TextBox textBoxApellidoDestinatario;
         private GroupBox groupBox1;
         private TextBox textBoxCUITCUIL;
-        private Label label1;
+        private Label labelNombreSolicitante;
         private Label label2;
         private Label label3;
         private Label label4;

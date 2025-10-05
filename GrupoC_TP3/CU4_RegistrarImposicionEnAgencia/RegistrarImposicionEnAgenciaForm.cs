@@ -16,5 +16,19 @@ namespace GrupoC_TP3.RegistrarImposicionEnAgencia
         {
             InitializeComponent();
         }
+
+        private void buttonGenerarNumeroGuia_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxNombreDestinatario.Text))
+            {
+                MessageBox.Show("El campo Nombre Solicitante no debe estar vacio. Por favor revise e intente de nuevo.");
+                return;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

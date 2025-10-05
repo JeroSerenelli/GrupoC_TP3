@@ -19,11 +19,7 @@ namespace GrupoC_TP3.CU9_RegistrarImposicionEnCD
 
         private void buttonGenerarNumeroGuia_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxNombreDestinatario.Text));
-            {
-                MessageBox.Show("El campo" + textBoxNombreDestinatario.Text + " no debe estar vacio. Por favor revise e intente de nuevo.");
-                return;
-            }
+         
         }
     }
 }

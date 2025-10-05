@@ -1,4 +1,5 @@
-﻿namespace GrupoC_TP3
+﻿
+namespace GrupoC_TP3
 {
     partial class RendicionHDRRendFletero
     {
@@ -90,7 +91,6 @@
             HDRfletBox.TabIndex = 10;
             HDRfletBox.TabStop = false;
             HDRfletBox.Text = "Datos de Hoja de ruta";
-            HDRfletBox.Enter += this.groupBox1_Enter;
             // 
             // buttonBuscarHDRFlet
             // 
@@ -242,6 +242,11 @@
             ListadoEncoHDRFletgroupBox2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void ListadoEncoHDRFletlistView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

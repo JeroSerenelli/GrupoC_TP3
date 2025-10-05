@@ -30,15 +30,15 @@
         {
             textBox1 = new TextBox();
             listView1 = new ListView();
+            nroGuia = new ColumnHeader();
+            origenEncomienda = new ColumnHeader();
+            destinoEncomienda = new ColumnHeader();
+            estadoEncomienda = new ColumnHeader();
             comboBox1 = new ComboBox();
             button1 = new Button();
             button2 = new Button();
             label2 = new Label();
             label1 = new Label();
-            nroGuia = new ColumnHeader();
-            origenEncomienda = new ColumnHeader();
-            destinoEncomienda = new ColumnHeader();
-            estadoEncomienda = new ColumnHeader();
             SuspendLayout();
             // 
             // textBox1
@@ -56,6 +56,22 @@
             listView1.Size = new Size(552, 152);
             listView1.TabIndex = 2;
             listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // nroGuia
+            // 
+            nroGuia.Text = "Nro. de Guía";
+            // 
+            // origenEncomienda
+            // 
+            origenEncomienda.Text = "Origen";
+            // 
+            // destinoEncomienda
+            // 
+            destinoEncomienda.Text = "Destino";
+            // 
+            // estadoEncomienda
+            // 
+            estadoEncomienda.Text = "Estado";
             // 
             // comboBox1
             // 
@@ -103,22 +119,6 @@
             label1.Text = "Estado:";
             label1.Click += label1_Click;
             // 
-            // nroGuia
-            // 
-            nroGuia.Text = "Nro. de Guía";
-            // 
-            // origenEncomienda
-            // 
-            origenEncomienda.Text = "Origen";
-            // 
-            // destinoEncomienda
-            // 
-            destinoEncomienda.Text = "Destino";
-            // 
-            // estadoEncomienda
-            // 
-            estadoEncomienda.Text = "Estado";
-            // 
             // ImposicionAgencia
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -132,7 +132,7 @@
             Controls.Add(listView1);
             Controls.Add(textBox1);
             Name = "ImposicionAgencia";
-            Text = "Imposicion en Agencia";
+            Text = "CU4: Imposicion en Agencia";
             Load += ImposicionAgencia_Load;
             ResumeLayout(false);
             PerformLayout();

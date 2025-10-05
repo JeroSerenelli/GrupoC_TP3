@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrupoC_TP3
 {
-    public partial class EmisionFacturas : Form
+    public partial class EmisionFacturasForm : Form
     {
-        public EmisionFacturas()
+        public EmisionFacturasForm()
         {
             InitializeComponent();
         }
@@ -33,6 +33,11 @@ namespace GrupoC_TP3
         }
 
         private void cuentaCorrienteLstView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmisionFacturas_Load(object sender, EventArgs e)
         {
 
         }

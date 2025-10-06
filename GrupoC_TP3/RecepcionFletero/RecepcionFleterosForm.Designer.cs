@@ -306,7 +306,7 @@
             // listView4
             // 
             listView4.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader8 });
-            listView4.Location = new Point(8, 22);
+            listView4.Location = new Point(6, 22);
             listView4.Name = "listView4";
             listView4.Size = new Size(207, 91);
             listView4.TabIndex = 0;

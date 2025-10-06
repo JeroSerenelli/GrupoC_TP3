@@ -35,14 +35,12 @@
             buttonLimpiar = new Button();
             listView1 = new ListView();
             NumeroGuia = new ColumnHeader();
-            OrigenCaja = new ColumnHeader();
-            DestinoCaja = new ColumnHeader();
-            NombreDestinatario = new ColumnHeader();
             EstadoEncomienda = new ColumnHeader();
             label3 = new Label();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
-            ApellidoDestinatario = new ColumnHeader();
+            columnHeader1 = new ColumnHeader();
+            button1 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -51,7 +49,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(370, 9);
+            label1.Location = new Point(224, 9);
             label1.Name = "label1";
             label1.Size = new Size(67, 20);
             label1.TabIndex = 0;
@@ -94,10 +92,10 @@
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroGuia, OrigenCaja, DestinoCaja, NombreDestinatario, ApellidoDestinatario, EstadoEncomienda });
+            listView1.Columns.AddRange(new ColumnHeader[] { NumeroGuia, EstadoEncomienda, columnHeader1 });
             listView1.Location = new Point(6, 22);
             listView1.Name = "listView1";
-            listView1.Size = new Size(777, 228);
+            listView1.Size = new Size(419, 131);
             listView1.TabIndex = 5;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -106,21 +104,6 @@
             // 
             NumeroGuia.Text = "N° de Guia";
             NumeroGuia.Width = 100;
-            // 
-            // OrigenCaja
-            // 
-            OrigenCaja.Text = "Origen Caja";
-            OrigenCaja.Width = 120;
-            // 
-            // DestinoCaja
-            // 
-            DestinoCaja.Text = "Destino Caja";
-            DestinoCaja.Width = 120;
-            // 
-            // NombreDestinatario
-            // 
-            NombreDestinatario.Text = "Nombre Destinatario";
-            NombreDestinatario.Width = 140;
             // 
             // EstadoEncomienda
             // 
@@ -131,7 +114,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(288, 29);
+            label3.Location = new Point(130, 29);
             label3.Name = "label3";
             label3.Size = new Size(269, 15);
             label3.TabIndex = 6;
@@ -143,7 +126,7 @@
             groupBox1.Controls.Add(listView1);
             groupBox1.Location = new Point(12, 158);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(789, 262);
+            groupBox1.Size = new Size(450, 182);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Resultados de Consulta";
@@ -160,16 +143,26 @@
             groupBox2.Text = "Parametros de Consulta";
             groupBox2.Enter += groupBox2_Enter;
             // 
-            // ApellidoDestinatario
+            // columnHeader1
             // 
-            ApellidoDestinatario.Text = "Apellido Destinatario";
-            ApellidoDestinatario.Width = 140;
+            columnHeader1.Text = "Ultima Actualizacion";
+            columnHeader1.Width = 150;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(365, 376);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 9;
+            button1.Text = "Aceptar";
+            button1.UseVisualStyleBackColor = true;
             // 
             // ConsultaEstadoGuiaEnCDForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(809, 431);
+            ClientSize = new Size(469, 413);
+            Controls.Add(button1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label3);
@@ -195,13 +188,11 @@
         private Button buttonLimpiar;
         private ListView listView1;
         private ColumnHeader NumeroGuia;
-        private ColumnHeader OrigenCaja;
-        private ColumnHeader DestinoCaja;
-        private ColumnHeader NombreDestinatario;
         private ColumnHeader EstadoEncomienda;
         private Label label3;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private ColumnHeader ApellidoDestinatario;
+        private ColumnHeader columnHeader1;
+        private Button button1;
     }
 }

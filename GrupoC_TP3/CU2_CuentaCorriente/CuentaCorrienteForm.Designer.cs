@@ -37,21 +37,15 @@
             dateTimePicker2 = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
             button4 = new Button();
-            razonSocialList = new ListView();
-            RazonSocial = new ColumnHeader();
-            cuitColumn = new ColumnHeader();
-            nombreSolicitante = new ColumnHeader();
-            apellidoSolicitante = new ColumnHeader();
             button1 = new Button();
             groupBox2 = new GroupBox();
             cuentaCorrienteLstView = new ListView();
             Nro_ClienteHeader = new ColumnHeader();
+            FechaHeader = new ColumnHeader();
             TipoDeOperacionHeader = new ColumnHeader();
             MontoHeader = new ColumnHeader();
-            fileSystemWatcher1 = new FileSystemWatcher();
-            label4 = new Label();
-            FechaHeader = new ColumnHeader();
             SaldoHeader = new ColumnHeader();
+            fileSystemWatcher1 = new FileSystemWatcher();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
@@ -60,18 +54,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 39);
+            label1.Location = new Point(19, 29);
             label1.Name = "label1";
-            label1.Size = new Size(97, 20);
+            label1.Size = new Size(66, 15);
             label1.TabIndex = 0;
-            label1.Text = "Razon Social:";
+            label1.Text = "CUIT/CUIL:";
             label1.Click += label1_Click;
             // 
             // razonSocialTxt
             // 
-            razonSocialTxt.Location = new Point(143, 36);
+            razonSocialTxt.Location = new Point(125, 27);
+            razonSocialTxt.Margin = new Padding(3, 2, 3, 2);
             razonSocialTxt.Name = "razonSocialTxt";
-            razonSocialTxt.Size = new Size(154, 27);
+            razonSocialTxt.Size = new Size(135, 23);
             razonSocialTxt.TabIndex = 1;
             // 
             // groupBox1
@@ -82,13 +77,14 @@
             groupBox1.Controls.Add(dateTimePicker2);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(razonSocialList);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(razonSocialTxt);
-            groupBox1.Location = new Point(29, 34);
+            groupBox1.Location = new Point(25, 26);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(721, 261);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(631, 127);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
@@ -97,92 +93,66 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(22, 233);
+            label3.Location = new Point(21, 92);
             label3.Name = "label3";
-            label3.Size = new Size(107, 20);
+            label3.Size = new Size(86, 15);
             label3.TabIndex = 13;
             label3.Text = "Fin de Periodo:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(17, 194);
+            label2.Location = new Point(17, 63);
             label2.Name = "label2";
-            label2.Size = new Size(120, 20);
+            label2.Size = new Size(96, 15);
             label2.TabIndex = 12;
             label2.Text = "Incio de Periodo:";
             label2.Click += label2_Click;
             // 
             // dateTimePicker3
             // 
-            dateTimePicker3.Location = new Point(490, 240);
+            dateTimePicker3.Location = new Point(431, 97);
+            dateTimePicker3.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(8, 27);
+            dateTimePicker3.Size = new Size(8, 23);
             dateTimePicker3.TabIndex = 11;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(143, 189);
+            dateTimePicker2.Location = new Point(127, 59);
+            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 27);
+            dateTimePicker2.Size = new Size(219, 23);
             dateTimePicker2.TabIndex = 10;
             dateTimePicker2.Value = new DateTime(2025, 9, 2, 0, 0, 0, 0);
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(143, 228);
+            dateTimePicker1.Location = new Point(127, 88);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.Size = new Size(219, 23);
             dateTimePicker1.TabIndex = 9;
             dateTimePicker1.Value = new DateTime(2025, 10, 2, 0, 0, 0, 0);
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // button4
             // 
-            button4.Location = new Point(409, 189);
+            button4.Location = new Point(360, 59);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(142, 66);
+            button4.Size = new Size(124, 50);
             button4.TabIndex = 6;
             button4.Text = "Mostrar Cuenta Corriente";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // razonSocialList
-            // 
-            razonSocialList.Columns.AddRange(new ColumnHeader[] { RazonSocial, cuitColumn, nombreSolicitante, apellidoSolicitante });
-            razonSocialList.Location = new Point(22, 90);
-            razonSocialList.Name = "razonSocialList";
-            razonSocialList.Size = new Size(682, 81);
-            razonSocialList.TabIndex = 5;
-            razonSocialList.UseCompatibleStateImageBehavior = false;
-            razonSocialList.View = View.Details;
-            razonSocialList.SelectedIndexChanged += listView1_SelectedIndexChanged;
-            // 
-            // RazonSocial
-            // 
-            RazonSocial.Text = "Razon Social";
-            RazonSocial.Width = 120;
-            // 
-            // cuitColumn
-            // 
-            cuitColumn.Text = "CUIT/CUIL";
-            cuitColumn.Width = 120;
-            // 
-            // nombreSolicitante
-            // 
-            nombreSolicitante.Text = "Nombre Solicitante";
-            nombreSolicitante.Width = 160;
-            // 
-            // apellidoSolicitante
-            // 
-            apellidoSolicitante.Text = "Apellido Solicitante";
-            apellidoSolicitante.Width = 160;
-            // 
             // button1
             // 
-            button1.Location = new Point(317, 34);
+            button1.Location = new Point(277, 26);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(82, 22);
             button1.TabIndex = 2;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
@@ -190,9 +160,11 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(cuentaCorrienteLstView);
-            groupBox2.Location = new Point(29, 301);
+            groupBox2.Location = new Point(25, 168);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(721, 217);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(631, 163);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "Cuenta Corriente";
@@ -200,17 +172,23 @@
             // cuentaCorrienteLstView
             // 
             cuentaCorrienteLstView.Columns.AddRange(new ColumnHeader[] { Nro_ClienteHeader, FechaHeader, TipoDeOperacionHeader, MontoHeader, SaldoHeader });
-            cuentaCorrienteLstView.Location = new Point(22, 42);
+            cuentaCorrienteLstView.Location = new Point(19, 32);
+            cuentaCorrienteLstView.Margin = new Padding(3, 2, 3, 2);
             cuentaCorrienteLstView.Name = "cuentaCorrienteLstView";
-            cuentaCorrienteLstView.Size = new Size(682, 153);
+            cuentaCorrienteLstView.Size = new Size(597, 116);
             cuentaCorrienteLstView.TabIndex = 2;
             cuentaCorrienteLstView.UseCompatibleStateImageBehavior = false;
             cuentaCorrienteLstView.View = View.Details;
             // 
             // Nro_ClienteHeader
             // 
-            Nro_ClienteHeader.Text = "Número de Cliente";
+            Nro_ClienteHeader.Text = "CUIT/CUIL";
             Nro_ClienteHeader.Width = 150;
+            // 
+            // FechaHeader
+            // 
+            FechaHeader.Text = "Fecha";
+            FechaHeader.Width = 80;
             // 
             // TipoDeOperacionHeader
             // 
@@ -222,39 +200,24 @@
             MontoHeader.Text = "Monto";
             MontoHeader.Width = 100;
             // 
-            // fileSystemWatcher1
-            // 
-            fileSystemWatcher1.EnableRaisingEvents = true;
-            fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label4.Location = new Point(493, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(242, 37);
-            label4.TabIndex = 9;
-            label4.Text = "TUTASA Agencias";
-            // 
-            // FechaHeader
-            // 
-            FechaHeader.Text = "Fecha";
-            FechaHeader.Width = 80;
-            // 
             // SaldoHeader
             // 
             SaldoHeader.Text = "Saldo";
             SaldoHeader.Width = 140;
             // 
+            // fileSystemWatcher1
+            // 
+            fileSystemWatcher1.EnableRaisingEvents = true;
+            fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // Facturas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(777, 519);
-            Controls.Add(label4);
+            ClientSize = new Size(668, 340);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Facturas";
             Text = "CU2: Estado de Cuenta Corriente";
             groupBox1.ResumeLayout(false);
@@ -262,7 +225,6 @@
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -276,10 +238,6 @@
         private ColumnHeader Nro_ClienteHeader;
         private ColumnHeader TipoDeOperacionHeader;
         private ColumnHeader MontoHeader;
-        private ListView razonSocialList;
-        private ColumnHeader RazonSocial;
-        private ColumnHeader cuitColumn;
-        private ColumnHeader nombreSolicitante;
         private Button button4;
         private Label label2;
         private DateTimePicker dateTimePicker3;
@@ -287,8 +245,6 @@
         private DateTimePicker dateTimePicker1;
         private Label label3;
         private FileSystemWatcher fileSystemWatcher1;
-        private ColumnHeader apellidoSolicitante;
-        private Label label4;
         private ColumnHeader FechaHeader;
         private ColumnHeader SaldoHeader;
     }

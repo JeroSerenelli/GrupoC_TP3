@@ -1,3 +1,6 @@
+using GrupoC_TP3.CU10_ConfeccionarHDRdeEntregadeEncomiendas;
+using GrupoC_TP3.CU11_ConfeccionarHDRdeRetirodeEncomiendas;
+
 namespace GrupoC_TP3
 {
     internal static class Program
@@ -16,6 +19,11 @@ namespace GrupoC_TP3
             Application.Run(new RegistrarImposicionEnAgencia.RegistrarImposicionEnAgenciaForm());
             Application.Run(new ConsultaEstadoGuiaEnCD.ConsultaEstadoGuiaEnCDForm());
             Application.Run(new ConsultaEstadoGuiaTelefonica.ConsultaEstadoGuiaTelefonicaForm());
+            Application.Run(new ResultadoCostosVsVentas.ResultadoCostosVsVentasForm());
+            Application.Run(new ConfeccionarHojaDeRuta.ConfeccionarHDRdeTransportedeMediayLargaDistancia());
+            Application.Run(new ConfeccionarHDRdeEntregadeEncomiendas());
+            Application.Run(new ConfeccionarHDRdeRetirodeEncomiendas());
+            
         }
     }
 }

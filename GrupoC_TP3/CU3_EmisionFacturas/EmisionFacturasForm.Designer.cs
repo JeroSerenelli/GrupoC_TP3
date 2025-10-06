@@ -31,20 +31,12 @@
             label1 = new Label();
             razonSocialTxt = new TextBox();
             groupBox1 = new GroupBox();
-            button4 = new Button();
-            razonSocialList = new ListView();
-            RazonSocialColumn = new ColumnHeader();
-            cuitColumn = new ColumnHeader();
-            nombreSolicitante = new ColumnHeader();
-            apellidoSolicitante = new ColumnHeader();
             button1 = new Button();
             groupBox2 = new GroupBox();
             button2 = new Button();
             PedidosAFacturarListView = new ListView();
             Nro_Guia = new ColumnHeader();
-            EstadoEncomienda = new ColumnHeader();
             Total = new ColumnHeader();
-            label4 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -52,80 +44,42 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 44);
+            label1.Location = new Point(19, 33);
             label1.Name = "label1";
-            label1.Size = new Size(97, 20);
+            label1.Size = new Size(66, 15);
             label1.TabIndex = 0;
-            label1.Text = "Razon Social:";
+            label1.Text = "CUIT/CUIL:";
             label1.Click += label1_Click;
             // 
             // razonSocialTxt
             // 
-            razonSocialTxt.Location = new Point(143, 41);
+            razonSocialTxt.Location = new Point(125, 31);
+            razonSocialTxt.Margin = new Padding(3, 2, 3, 2);
             razonSocialTxt.Name = "razonSocialTxt";
-            razonSocialTxt.Size = new Size(154, 27);
+            razonSocialTxt.Size = new Size(135, 23);
             razonSocialTxt.TabIndex = 1;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(razonSocialList);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(razonSocialTxt);
-            groupBox1.Location = new Point(29, 39);
+            groupBox1.Location = new Point(25, 29);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(759, 195);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(370, 84);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cliente";
             groupBox1.Enter += groupBox1_Enter;
             // 
-            // button4
-            // 
-            button4.Location = new Point(591, 91);
-            button4.Name = "button4";
-            button4.Size = new Size(133, 61);
-            button4.TabIndex = 6;
-            button4.Text = "Mostrar Pedidos Sin Facturar";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // razonSocialList
-            // 
-            razonSocialList.Columns.AddRange(new ColumnHeader[] { RazonSocialColumn, cuitColumn, nombreSolicitante, apellidoSolicitante });
-            razonSocialList.Location = new Point(22, 91);
-            razonSocialList.Name = "razonSocialList";
-            razonSocialList.Size = new Size(563, 81);
-            razonSocialList.TabIndex = 5;
-            razonSocialList.UseCompatibleStateImageBehavior = false;
-            razonSocialList.View = View.Details;
-            razonSocialList.SelectedIndexChanged += listView1_SelectedIndexChanged;
-            // 
-            // RazonSocialColumn
-            // 
-            RazonSocialColumn.Text = "Razon Social";
-            RazonSocialColumn.Width = 120;
-            // 
-            // cuitColumn
-            // 
-            cuitColumn.Text = "CUIT";
-            cuitColumn.Width = 120;
-            // 
-            // nombreSolicitante
-            // 
-            nombreSolicitante.Text = "Nombre Solicitante";
-            nombreSolicitante.Width = 160;
-            // 
-            // apellidoSolicitante
-            // 
-            apellidoSolicitante.Text = "Apellido Solicitante";
-            apellidoSolicitante.Width = 160;
-            // 
             // button1
             // 
-            button1.Location = new Point(317, 39);
+            button1.Location = new Point(277, 29);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(82, 22);
             button1.TabIndex = 2;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
@@ -134,28 +88,32 @@
             // 
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(PedidosAFacturarListView);
-            groupBox2.Location = new Point(29, 239);
+            groupBox2.Location = new Point(25, 117);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(759, 293);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(370, 231);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "Pedidos a Facturar";
             // 
             // button2
             // 
-            button2.Location = new Point(22, 235);
+            button2.Location = new Point(19, 176);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(209, 29);
+            button2.Size = new Size(183, 22);
             button2.TabIndex = 3;
             button2.Text = "Emitir Factura";
             button2.UseVisualStyleBackColor = true;
             // 
             // PedidosAFacturarListView
             // 
-            PedidosAFacturarListView.Columns.AddRange(new ColumnHeader[] { Nro_Guia, EstadoEncomienda, Total });
-            PedidosAFacturarListView.Location = new Point(24, 41);
+            PedidosAFacturarListView.Columns.AddRange(new ColumnHeader[] { Nro_Guia, Total });
+            PedidosAFacturarListView.Location = new Point(21, 31);
+            PedidosAFacturarListView.Margin = new Padding(3, 2, 3, 2);
             PedidosAFacturarListView.Name = "PedidosAFacturarListView";
-            PedidosAFacturarListView.Size = new Size(685, 171);
+            PedidosAFacturarListView.Size = new Size(214, 129);
             PedidosAFacturarListView.TabIndex = 2;
             PedidosAFacturarListView.UseCompatibleStateImageBehavior = false;
             PedidosAFacturarListView.View = View.Details;
@@ -166,35 +124,18 @@
             Nro_Guia.Text = "Numero de Guia";
             Nro_Guia.Width = 140;
             // 
-            // EstadoEncomienda
-            // 
-            EstadoEncomienda.DisplayIndex = 2;
-            EstadoEncomienda.Text = "Estado Encomienda";
-            EstadoEncomienda.Width = 180;
-            // 
             // Total
             // 
-            Total.DisplayIndex = 1;
             Total.Text = "Total";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label4.Location = new Point(493, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(242, 37);
-            label4.TabIndex = 9;
-            label4.Text = "TUTASA Agencias";
             // 
             // EmisionFacturasForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(805, 536);
-            Controls.Add(label4);
+            ClientSize = new Size(425, 377);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EmisionFacturasForm";
             Text = "CU3: Emision de Facutras";
             Load += EmisionFacturas_Load;
@@ -202,7 +143,6 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -216,13 +156,5 @@
         private ColumnHeader Nro_Guia;
         private ColumnHeader Total;
         private Button button2;
-        private ListView razonSocialList;
-        private ColumnHeader RazonSocialColumn;
-        private ColumnHeader cuitColumn;
-        private ColumnHeader nombreSolicitante;
-        private Button button4;
-        private ColumnHeader apellidoSolicitante;
-        private ColumnHeader EstadoEncomienda;
-        private Label label4;
     }
 }

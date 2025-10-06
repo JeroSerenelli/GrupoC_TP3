@@ -32,21 +32,20 @@
             label1 = new Label();
             label2 = new Label();
             groupBox1 = new GroupBox();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            listView1 = new ListView();
+            BuscarEncomiendaTransporteButton = new Button();
+            NumeroEncomiendaAdmisionTextBox = new TextBox();
+            NumeroEncomiendaTransporteLabel = new Label();
+            ListaEncomiendasListView = new ListView();
             NumeroEncomiendasAdmision = new ColumnHeader();
             ClienteAdmision = new ColumnHeader();
             TamañoAdmision = new ColumnHeader();
             PesoAdmision = new ColumnHeader();
             EstadoAdmision = new ColumnHeader();
             groupBox2 = new GroupBox();
-            button2 = new Button();
-            comboBox1 = new ComboBox();
+            MofigicarEstadoTransporteButton = new Button();
+            ValidarAdmisionComboBox = new ComboBox();
             label4 = new Label();
-            button3 = new Button();
-            button4 = new Button();
+            ConfirmarAdmisionButton = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -71,50 +70,50 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(BuscarEncomiendaTransporteButton);
+            groupBox1.Controls.Add(NumeroEncomiendaAdmisionTextBox);
+            groupBox1.Controls.Add(NumeroEncomiendaTransporteLabel);
             groupBox1.Location = new Point(32, 84);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(686, 87);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             // 
-            // button1
+            // BuscarEncomiendaTransporteButton
             // 
-            button1.Location = new Point(591, 39);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            BuscarEncomiendaTransporteButton.Location = new Point(591, 39);
+            BuscarEncomiendaTransporteButton.Name = "BuscarEncomiendaTransporteButton";
+            BuscarEncomiendaTransporteButton.Size = new Size(75, 23);
+            BuscarEncomiendaTransporteButton.TabIndex = 3;
+            BuscarEncomiendaTransporteButton.Text = "Buscar";
+            BuscarEncomiendaTransporteButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // NumeroEncomiendaAdmisionTextBox
             // 
-            textBox1.Location = new Point(223, 31);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(188, 23);
-            textBox1.TabIndex = 1;
+            NumeroEncomiendaAdmisionTextBox.Location = new Point(223, 31);
+            NumeroEncomiendaAdmisionTextBox.Name = "NumeroEncomiendaAdmisionTextBox";
+            NumeroEncomiendaAdmisionTextBox.Size = new Size(188, 23);
+            NumeroEncomiendaAdmisionTextBox.TabIndex = 1;
             // 
-            // label3
+            // NumeroEncomiendaTransporteLabel
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(26, 39);
-            label3.Name = "label3";
-            label3.Size = new Size(148, 15);
-            label3.TabIndex = 0;
-            label3.Text = "Numero de la encomienda";
+            NumeroEncomiendaTransporteLabel.AutoSize = true;
+            NumeroEncomiendaTransporteLabel.Location = new Point(26, 39);
+            NumeroEncomiendaTransporteLabel.Name = "NumeroEncomiendaTransporteLabel";
+            NumeroEncomiendaTransporteLabel.Size = new Size(148, 15);
+            NumeroEncomiendaTransporteLabel.TabIndex = 0;
+            NumeroEncomiendaTransporteLabel.Text = "Numero de la encomienda";
             // 
-            // listView1
+            // ListaEncomiendasListView
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroEncomiendasAdmision, ClienteAdmision, TamañoAdmision, PesoAdmision, EstadoAdmision });
-            listView1.GridLines = true;
-            listView1.Location = new Point(52, 31);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(542, 100);
-            listView1.TabIndex = 2;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            ListaEncomiendasListView.Columns.AddRange(new ColumnHeader[] { NumeroEncomiendasAdmision, ClienteAdmision, TamañoAdmision, PesoAdmision, EstadoAdmision });
+            ListaEncomiendasListView.GridLines = true;
+            ListaEncomiendasListView.Location = new Point(52, 31);
+            ListaEncomiendasListView.Name = "ListaEncomiendasListView";
+            ListaEncomiendasListView.Size = new Size(542, 100);
+            ListaEncomiendasListView.TabIndex = 2;
+            ListaEncomiendasListView.UseCompatibleStateImageBehavior = false;
+            ListaEncomiendasListView.View = View.Details;
             // 
             // NumeroEncomiendasAdmision
             // 
@@ -143,33 +142,33 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(comboBox1);
+            groupBox2.Controls.Add(MofigicarEstadoTransporteButton);
+            groupBox2.Controls.Add(ValidarAdmisionComboBox);
             groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(listView1);
+            groupBox2.Controls.Add(ListaEncomiendasListView);
             groupBox2.Location = new Point(32, 204);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(686, 203);
             groupBox2.TabIndex = 5;
             groupBox2.TabStop = false;
             // 
-            // button2
+            // MofigicarEstadoTransporteButton
             // 
-            button2.Location = new Point(574, 160);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 5;
-            button2.Text = "Modificar";
-            button2.UseVisualStyleBackColor = true;
+            MofigicarEstadoTransporteButton.Location = new Point(591, 161);
+            MofigicarEstadoTransporteButton.Name = "MofigicarEstadoTransporteButton";
+            MofigicarEstadoTransporteButton.Size = new Size(75, 23);
+            MofigicarEstadoTransporteButton.TabIndex = 5;
+            MofigicarEstadoTransporteButton.Text = "Modificar";
+            MofigicarEstadoTransporteButton.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // ValidarAdmisionComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Aprobar", "Modificar" });
-            comboBox1.Location = new Point(123, 161);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 4;
+            ValidarAdmisionComboBox.FormattingEnabled = true;
+            ValidarAdmisionComboBox.Items.AddRange(new object[] { "Aprobar", "Modificar" });
+            ValidarAdmisionComboBox.Location = new Point(123, 161);
+            ValidarAdmisionComboBox.Name = "ValidarAdmisionComboBox";
+            ValidarAdmisionComboBox.Size = new Size(121, 23);
+            ValidarAdmisionComboBox.TabIndex = 4;
             // 
             // label4
             // 
@@ -180,31 +179,21 @@
             label4.TabIndex = 3;
             label4.Text = "Validar";
             // 
-            // button3
+            // ConfirmarAdmisionButton
             // 
-            button3.Location = new Point(523, 438);
-            button3.Name = "button3";
-            button3.Size = new Size(91, 36);
-            button3.TabIndex = 6;
-            button3.Text = "Confirmar";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(634, 438);
-            button4.Name = "button4";
-            button4.Size = new Size(84, 36);
-            button4.TabIndex = 7;
-            button4.Text = "Cancelar";
-            button4.UseVisualStyleBackColor = true;
+            ConfirmarAdmisionButton.Location = new Point(623, 455);
+            ConfirmarAdmisionButton.Name = "ConfirmarAdmisionButton";
+            ConfirmarAdmisionButton.Size = new Size(75, 26);
+            ConfirmarAdmisionButton.TabIndex = 6;
+            ConfirmarAdmisionButton.Text = "Confirmar";
+            ConfirmarAdmisionButton.UseVisualStyleBackColor = true;
             // 
             // RegistrarEncomiendas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(730, 609);
-            Controls.Add(button4);
-            Controls.Add(button3);
+            ClientSize = new Size(730, 502);
+            Controls.Add(ConfirmarAdmisionButton);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label2);
@@ -225,20 +214,19 @@
         private Label label1;
         private Label label2;
         private GroupBox groupBox1;
-        private Label label3;
-        private Button button1;
-        private TextBox textBox1;
-        private ListView listView1;
+        private Label NumeroEncomiendaTransporteLabel;
+        private Button BuscarEncomiendaTransporteButton;
+        private TextBox NumeroEncomiendaAdmisionTextBox;
+        private ListView ListaEncomiendasListView;
         private ColumnHeader NumeroEncomiendasAdmision;
         private ColumnHeader ClienteAdmision;
         private ColumnHeader TamañoAdmision;
         private ColumnHeader PesoAdmision;
         private ColumnHeader EstadoAdmision;
         private GroupBox groupBox2;
-        private Button button2;
-        private ComboBox comboBox1;
+        private Button MofigicarEstadoTransporteButton;
+        private ComboBox ValidarAdmisionComboBox;
         private Label label4;
-        private Button button3;
-        private Button button4;
+        private Button ConfirmarAdmisionButton;
     }
 }

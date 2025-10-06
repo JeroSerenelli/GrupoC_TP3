@@ -46,7 +46,7 @@
             ImprimirHDRTransporteButton = new Button();
             BuscarEncomiendasTransporteButton = new Button();
             GenerarHDRGroupBox = new GroupBox();
-            dateTimePicker1 = new DateTimePicker();
+            FechaTransporteDateTimePicker = new DateTimePicker();
             FechaTransporteLabel = new Label();
             groupBox1BuscarEncomiendas.SuspendLayout();
             GenerarHDRGroupBox.SuspendLayout();
@@ -67,7 +67,7 @@
             // groupBox1BuscarEncomiendas
             // 
             groupBox1BuscarEncomiendas.Controls.Add(FechaTransporteLabel);
-            groupBox1BuscarEncomiendas.Controls.Add(dateTimePicker1);
+            groupBox1BuscarEncomiendas.Controls.Add(FechaTransporteDateTimePicker);
             groupBox1BuscarEncomiendas.Controls.Add(BuscarEncomiendasTransporteButton);
             groupBox1BuscarEncomiendas.Controls.Add(EstadoTransporteComboBox);
             groupBox1BuscarEncomiendas.Controls.Add(CDDestinoTransportecomboBox);
@@ -205,12 +205,12 @@
             GenerarHDRGroupBox.TabStop = false;
             GenerarHDRGroupBox.Text = "Generar Hoja de Ruta";
             // 
-            // dateTimePicker1
+            // FechaTransporteDateTimePicker
             // 
-            dateTimePicker1.Location = new Point(305, 212);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 10;
+            FechaTransporteDateTimePicker.Location = new Point(305, 212);
+            FechaTransporteDateTimePicker.Name = "FechaTransporteDateTimePicker";
+            FechaTransporteDateTimePicker.Size = new Size(200, 23);
+            FechaTransporteDateTimePicker.TabIndex = 10;
             // 
             // FechaTransporteLabel
             // 
@@ -265,6 +265,6 @@
         private Button BuscarEncomiendasTransporteButton;
         private GroupBox GenerarHDRGroupBox;
         private Label FechaTransporteLabel;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker FechaTransporteDateTimePicker;
     }
 }

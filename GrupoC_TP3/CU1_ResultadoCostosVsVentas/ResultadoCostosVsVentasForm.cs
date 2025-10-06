@@ -21,5 +21,15 @@ namespace GrupoC_TP3.ResultadoCostosVsVentas
         {
 
         }
+
+        private void razonSocialTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

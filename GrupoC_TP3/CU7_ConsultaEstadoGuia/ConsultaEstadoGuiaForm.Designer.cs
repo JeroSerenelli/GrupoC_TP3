@@ -1,6 +1,6 @@
 ﻿namespace GrupoC_TP3.ConsultaEstadoGuiaEnCD
 {
-    partial class ConsultaEstadoGuiaEnCDForm
+    partial class ConsultaEstadoGuiaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,14 @@
         {
             label1 = new Label();
             label2 = new Label();
-            textBoxNumeroGuiaConsultaEnCD = new TextBox();
+            textBoxNumeroGuiaConsulta = new TextBox();
             buttonBuscar = new Button();
-            buttonLimpiar = new Button();
             listView1 = new ListView();
-            NumeroGuia = new ColumnHeader();
             EstadoEncomienda = new ColumnHeader();
+            columnHeader1 = new ColumnHeader();
             label3 = new Label();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
-            columnHeader1 = new ColumnHeader();
             button1 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -49,7 +47,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(224, 9);
+            label1.Location = new Point(185, 3);
             label1.Name = "label1";
             label1.Size = new Size(67, 20);
             label1.TabIndex = 0;
@@ -64,35 +62,26 @@
             label2.TabIndex = 1;
             label2.Text = "Numero de Guia:";
             // 
-            // textBoxNumeroGuiaConsultaEnCD
+            // textBoxNumeroGuiaConsulta
             // 
-            textBoxNumeroGuiaConsultaEnCD.Location = new Point(112, 22);
-            textBoxNumeroGuiaConsultaEnCD.Name = "textBoxNumeroGuiaConsultaEnCD";
-            textBoxNumeroGuiaConsultaEnCD.Size = new Size(248, 23);
-            textBoxNumeroGuiaConsultaEnCD.TabIndex = 2;
+            textBoxNumeroGuiaConsulta.Location = new Point(112, 22);
+            textBoxNumeroGuiaConsulta.Name = "textBoxNumeroGuiaConsulta";
+            textBoxNumeroGuiaConsulta.Size = new Size(248, 23);
+            textBoxNumeroGuiaConsulta.TabIndex = 2;
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(18, 118);
+            buttonBuscar.Location = new Point(336, 66);
             buttonBuscar.Name = "buttonBuscar";
-            buttonBuscar.Size = new Size(134, 23);
+            buttonBuscar.Size = new Size(80, 27);
             buttonBuscar.TabIndex = 3;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = true;
             buttonBuscar.Click += buttonBuscar_Click;
             // 
-            // buttonLimpiar
-            // 
-            buttonLimpiar.Location = new Point(158, 118);
-            buttonLimpiar.Name = "buttonLimpiar";
-            buttonLimpiar.Size = new Size(133, 23);
-            buttonLimpiar.TabIndex = 4;
-            buttonLimpiar.Text = "Nueva Busqueda";
-            buttonLimpiar.UseVisualStyleBackColor = true;
-            // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroGuia, EstadoEncomienda, columnHeader1 });
+            listView1.Columns.AddRange(new ColumnHeader[] { EstadoEncomienda, columnHeader1 });
             listView1.Location = new Point(6, 22);
             listView1.Name = "listView1";
             listView1.Size = new Size(419, 131);
@@ -100,21 +89,21 @@
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
             // 
-            // NumeroGuia
-            // 
-            NumeroGuia.Text = "N° de Guia";
-            NumeroGuia.Width = 100;
-            // 
             // EstadoEncomienda
             // 
             EstadoEncomienda.Text = "Estado de Encomienda";
             EstadoEncomienda.Width = 150;
             // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Ultima Actualizacion";
+            columnHeader1.Width = 150;
+            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(130, 29);
+            label3.Location = new Point(91, 23);
             label3.Name = "label3";
             label3.Size = new Size(269, 15);
             label3.TabIndex = 6;
@@ -133,43 +122,37 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBoxNumeroGuiaConsultaEnCD);
+            groupBox2.Controls.Add(textBoxNumeroGuiaConsulta);
             groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(buttonBuscar);
             groupBox2.Location = new Point(18, 53);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(419, 59);
+            groupBox2.Size = new Size(422, 99);
             groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
             groupBox2.Text = "Parametros de Consulta";
             groupBox2.Enter += groupBox2_Enter;
             // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Ultima Actualizacion";
-            columnHeader1.Width = 150;
-            // 
             // button1
             // 
-            button1.Location = new Point(365, 376);
+            button1.Location = new Point(382, 357);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 9;
             button1.Text = "Aceptar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // ConsultaEstadoGuiaEnCDForm
+            // ConsultaEstadoGuiaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(469, 413);
+            ClientSize = new Size(467, 387);
             Controls.Add(button1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label3);
-            Controls.Add(buttonLimpiar);
-            Controls.Add(buttonBuscar);
             Controls.Add(label1);
-            Name = "ConsultaEstadoGuiaEnCDForm";
+            Name = "ConsultaEstadoGuiaForm";
             Text = "Consulta de Estado de Guia";
             Load += ConsultaEstadoGuiaEnCDForm_Load;
             groupBox1.ResumeLayout(false);
@@ -183,11 +166,9 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBoxNumeroGuiaConsultaEnCD;
+        private TextBox textBoxNumeroGuiaConsulta;
         private Button buttonBuscar;
-        private Button buttonLimpiar;
         private ListView listView1;
-        private ColumnHeader NumeroGuia;
         private ColumnHeader EstadoEncomienda;
         private Label label3;
         private GroupBox groupBox1;

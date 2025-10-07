@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.ConsultaEstadoGuiaEnCD
 {
-    internal class ConsultaEstadoGuiaTelefonicaModel
+    internal class ConsultaEstadoGuiaModel
     {
     }
 }

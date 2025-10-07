@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrupoC_TP3.ConsultaEstadoGuiaEnCD
 {
-    public partial class ConsultaEstadoGuiaEnCDForm : Form
+    public partial class ConsultaEstadoGuiaForm : Form
     {
-        public ConsultaEstadoGuiaEnCDForm()
+        public ConsultaEstadoGuiaForm()
         {
             InitializeComponent();
         }

@@ -16,5 +16,10 @@ namespace GrupoC_TP3.Gestion_de_Centro_de_Distribucion
         {
             InitializeComponent();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

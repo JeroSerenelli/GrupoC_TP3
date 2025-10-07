@@ -1,103 +1,91 @@
 ﻿using GrupoC_TP3.CU2_CuentaCorriente;
-using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
+using GrupoC_TP3.CU4_RegistrarImposicionEnAgencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
-
-public partial class RegistrarImposicionEnAgenciaForm : Form
+namespace GrupoC_TP3.RegistrarImposicionEnAgencia
 {
-    private readonly RegistrarImposicionEnAgenciaModel modelo = new();
-    public RegistrarImposicionEnAgenciaForm()
+    public partial class RegistrarImposicionEnAgenciaForm : Form
     {
-        InitializeComponent();
-    }
-
-
-    /*private void RegistrarImposicionEnAgenciaForm_Load(object sender, EventArgs e)
-    {
-        foreach(var cliente in modelo.GenerarClientes)
+        public RegistrarImposicionEnAgenciaForm()
         {
-            Client
-        }
-    }*/
-
-    private void buttonGenerarNumeroGuia_Click(object sender, EventArgs e)
-    {
-        modelo.CrearEncomienda(new Encomienda
-        {
-            Provincia = comboBoxProvincia.Text,
-            NumeroGuia = long.Parse(textBoxCodigoAgencia.Text),
-            
-        });
-
-
-    }
-
-    private void label1_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void textBoxNombreSolicitante_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void button1_Click(object sender, EventArgs e)
-    {
-        if(!long.TryParse(textBoxCUITCUIL.Text, out long val)) 
-        {
-            MessageBox.Show("Ingreso invalido");
-            return;
+            InitializeComponent();
         }
 
-        modelo.ValidarCliente(new ValidarCliente
+        private void buttonGenerarNumeroGuia_Click(object sender, EventArgs e)
         {
-            CUITCUIL = val,
+            //Validaciones Datos Solicitante 
+            //Validaciones Nombre Solicitante
+            if (string.IsNullOrEmpty(textBoxNombreDestinatario.Text))
+            {
+                // JFS. Agregar Nro de Alerta (tiene que estar tmb en caso de uso)
 
-        });
-        
-             
-        
-    }
+                MessageBox.Show("El campo Nombre Solicitante no debe estar vacio. Por favor revise e intente de nuevo.");
+                return;
+            }
+            ;
 
-    private void label10_Click(object sender, EventArgs e)
-    {
 
-    }
 
-    private void label21_Click(object sender, EventArgs e)
-    {
+            if (string.IsNullOrEmpty(textBoxNombreDestinatario.Text))
+            {
+                // JFS. Agregar Nro de Alerta (tiene que estar tmb en caso de uso)
 
-    }
+                MessageBox.Show("El campo Nombre Solicitante no debe estar vacio. Por favor revise e intente de nuevo.");
+                return;
+            }
+            ;
 
-    private void textBoxDomicilioDestinatario_TextChanged(object sender, EventArgs e)
-    {
 
-    }
 
-    private void buttonNuevaSolicitudLimpiar_Click(object sender, EventArgs e)
-    {
 
-    }
+        }
 
-    private void label17_Click(object sender, EventArgs e)
-    {
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-    }
+        }
 
-    private void textBoxCUITCUIL_TextChanged_1(object sender, EventArgs e)
-    {
-        //string CUITCUIL = textBoxCUITCUIL.Text;
+        private void textBoxNombreSolicitante_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxDomicilioDestinatario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonNuevaSolicitudLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

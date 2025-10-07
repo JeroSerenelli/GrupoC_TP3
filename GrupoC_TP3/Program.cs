@@ -14,7 +14,6 @@ namespace GrupoC_TP3
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new ConsultaEstadoGuiaEnCD.ConsultaEstadoGuiaEnCDForm());
-            Application.Run(new CU2_RegistrarImposicionEnAgencia.RegistrarImposicionEnAgenciaForm());
         }
     }
 }

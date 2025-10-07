@@ -411,13 +411,7 @@
             groupBox4.Text = "Informacion Destino";
             // 
             // textBox1
-            // 
-            textBox1.Location = new Point(108, 67);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(220, 27);
-            textBox1.TabIndex = 47;
-            textBox1.TextChanged += this.textBox1_TextChanged;
+            //            
             // 
             // label1
             // 
@@ -427,7 +421,6 @@
             label1.Size = new Size(77, 20);
             label1.TabIndex = 46;
             label1.Text = "Localidad:";
-            label1.Click += this.label1_Click_1;
             // 
             // RegistrarImposicionEnAgenciaForm
             // 

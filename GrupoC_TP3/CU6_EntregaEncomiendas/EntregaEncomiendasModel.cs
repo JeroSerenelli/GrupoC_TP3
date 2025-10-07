@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia
 {
-    internal class EntregaEncomiendasenAgenciaModel
+    internal class EntregaEncomiendasModel
     {
     }
 }

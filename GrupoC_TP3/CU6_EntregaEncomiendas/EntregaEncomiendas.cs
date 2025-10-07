@@ -66,6 +66,11 @@ namespace GrupoC_TP3
         {
 
         }
+
+        private void textBoxNumeroDeGuia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

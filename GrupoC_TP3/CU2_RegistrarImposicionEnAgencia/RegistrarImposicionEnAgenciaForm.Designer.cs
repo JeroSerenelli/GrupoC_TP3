@@ -64,6 +64,8 @@
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             label1 = new Label();
+            textBox1 = new TextBox();
+            label2 = new Label();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -72,7 +74,7 @@
             // 
             // buttonNuevaSolicitudLimpiar
             // 
-            buttonNuevaSolicitudLimpiar.Location = new Point(397, 564);
+            buttonNuevaSolicitudLimpiar.Location = new Point(401, 629);
             buttonNuevaSolicitudLimpiar.Name = "buttonNuevaSolicitudLimpiar";
             buttonNuevaSolicitudLimpiar.Size = new Size(86, 23);
             buttonNuevaSolicitudLimpiar.TabIndex = 45;
@@ -105,7 +107,7 @@
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(textBoxNombreDestinatario);
             groupBox2.Controls.Add(textBoxApellidoDestinatario);
-            groupBox2.Location = new Point(14, 422);
+            groupBox2.Location = new Point(16, 477);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(384, 111);
             groupBox2.TabIndex = 50;
@@ -162,7 +164,7 @@
             // 
             // textBoxDomicilioDestinatario
             // 
-            textBoxDomicilioDestinatario.Location = new Point(126, 135);
+            textBoxDomicilioDestinatario.Location = new Point(127, 169);
             textBoxDomicilioDestinatario.Name = "textBoxDomicilioDestinatario";
             textBoxDomicilioDestinatario.Size = new Size(246, 23);
             textBoxDomicilioDestinatario.TabIndex = 25;
@@ -171,7 +173,7 @@
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(13, 143);
+            label21.Location = new Point(11, 173);
             label21.Name = "label21";
             label21.Size = new Size(61, 15);
             label21.TabIndex = 24;
@@ -251,7 +253,7 @@
             groupBox3.Controls.Add(label12);
             groupBox3.Controls.Add(textBoxCantidadCajas);
             groupBox3.Controls.Add(comboBoxTipoCaja);
-            groupBox3.Location = new Point(14, 331);
+            groupBox3.Location = new Point(16, 376);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(384, 85);
             groupBox3.TabIndex = 51;
@@ -329,7 +331,7 @@
             // 
             // textBoxNumeroDeGuia
             // 
-            textBoxNumeroDeGuia.Location = new Point(192, 564);
+            textBoxNumeroDeGuia.Location = new Point(196, 629);
             textBoxNumeroDeGuia.Name = "textBoxNumeroDeGuia";
             textBoxNumeroDeGuia.ReadOnly = true;
             textBoxNumeroDeGuia.Size = new Size(170, 23);
@@ -337,7 +339,7 @@
             // 
             // buttonGenerarNumeroGuia
             // 
-            buttonGenerarNumeroGuia.Location = new Point(12, 564);
+            buttonGenerarNumeroGuia.Location = new Point(16, 629);
             buttonGenerarNumeroGuia.Name = "buttonGenerarNumeroGuia";
             buttonGenerarNumeroGuia.Size = new Size(174, 23);
             buttonGenerarNumeroGuia.TabIndex = 42;
@@ -365,6 +367,8 @@
             // 
             // groupBox4
             // 
+            groupBox4.Controls.Add(textBox1);
+            groupBox4.Controls.Add(label2);
             groupBox4.Controls.Add(comboBox2);
             groupBox4.Controls.Add(comboBox1);
             groupBox4.Controls.Add(label1);
@@ -372,12 +376,12 @@
             groupBox4.Controls.Add(textBoxDomicilioDestinatario);
             groupBox4.Controls.Add(comboBoxMetodoEntrega);
             groupBox4.Controls.Add(label14);
-            groupBox4.Controls.Add(label21);
             groupBox4.Controls.Add(textBoxCodPostDestino);
             groupBox4.Controls.Add(label6);
+            groupBox4.Controls.Add(label21);
             groupBox4.Location = new Point(14, 156);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(384, 169);
+            groupBox4.Size = new Size(384, 214);
             groupBox4.TabIndex = 55;
             groupBox4.TabStop = false;
             groupBox4.Text = "Informacion Destino";
@@ -407,11 +411,27 @@
             label1.TabIndex = 46;
             label1.Text = "Localidad:";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(127, 136);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(246, 23);
+            textBox1.TabIndex = 50;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(11, 140);
+            label2.Name = "label2";
+            label2.Size = new Size(69, 15);
+            label2.TabIndex = 49;
+            label2.Text = "CD Destino:";
+            // 
             // RegistrarImposicionEnAgenciaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(499, 596);
+            ClientSize = new Size(499, 664);
             Controls.Add(groupBox4);
             Controls.Add(textBoxCodigoAgencia);
             Controls.Add(label22);
@@ -476,5 +496,7 @@
         private Label label1;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
+        private TextBox textBox1;
+        private Label label2;
     }
 }

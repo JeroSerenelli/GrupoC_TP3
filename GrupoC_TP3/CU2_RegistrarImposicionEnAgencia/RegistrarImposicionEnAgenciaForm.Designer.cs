@@ -446,7 +446,7 @@
             Controls.Add(textBoxNumeroDeGuia);
             Controls.Add(buttonGenerarNumeroGuia);
             Name = "RegistrarImposicionEnAgenciaForm";
-            Text = "Imposicion - Agencias TUTASA";
+            Text = "Imposicion - Agencias";
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);

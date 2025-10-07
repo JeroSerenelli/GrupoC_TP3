@@ -28,24 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ListViewItem listViewItem2 = new ListViewItem("");
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            comboBoxFletero = new ComboBox();
             buttonBuscarFletero = new Button();
+            comboBoxFletero = new ComboBox();
+            label1 = new Label();
             groupBox2 = new GroupBox();
-            listView1 = new ListView();
-            NumeroHDR = new ColumnHeader();
-            GuiaAsociada = new ColumnHeader();
-            EstadoHDR = new ColumnHeader();
-            buttonCumplir = new Button();
             buttonImprimirDetalle = new Button();
-            groupBox3 = new GroupBox();
-            button1 = new Button();
-            button2 = new Button();
-            listView2 = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
+            listView1 = new ListView();
             groupBox4 = new GroupBox();
             groupBox5 = new GroupBox();
             button3 = new Button();
@@ -54,15 +44,17 @@
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
-            button5 = new Button();
             buttonAsignarHDR = new Button();
             listView4 = new ListView();
             columnHeader7 = new ColumnHeader();
             columnHeader8 = new ColumnHeader();
             button6 = new Button();
+            label17 = new Label();
+            label18 = new Label();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox5.SuspendLayout();
             SuspendLayout();
@@ -72,12 +64,29 @@
             groupBox1.Controls.Add(buttonBuscarFletero);
             groupBox1.Controls.Add(comboBoxFletero);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(12, 43);
+            groupBox1.Location = new Point(12, 76);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(394, 78);
+            groupBox1.Size = new Size(348, 103);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Busqueda de Fletero";
+            // 
+            // buttonBuscarFletero
+            // 
+            buttonBuscarFletero.Location = new Point(263, 74);
+            buttonBuscarFletero.Name = "buttonBuscarFletero";
+            buttonBuscarFletero.Size = new Size(75, 23);
+            buttonBuscarFletero.TabIndex = 2;
+            buttonBuscarFletero.Text = "Buscar";
+            buttonBuscarFletero.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxFletero
+            // 
+            comboBoxFletero.FormattingEnabled = true;
+            comboBoxFletero.Location = new Point(121, 40);
+            comboBoxFletero.Name = "comboBoxFletero";
+            comboBoxFletero.Size = new Size(217, 23);
+            comboBoxFletero.TabIndex = 1;
             // 
             // label1
             // 
@@ -88,39 +97,33 @@
             label1.TabIndex = 0;
             label1.Text = "Nombre Fletero:";
             // 
-            // comboBoxFletero
-            // 
-            comboBoxFletero.FormattingEnabled = true;
-            comboBoxFletero.Location = new Point(121, 40);
-            comboBoxFletero.Name = "comboBoxFletero";
-            comboBoxFletero.Size = new Size(121, 23);
-            comboBoxFletero.TabIndex = 1;
-            // 
-            // buttonBuscarFletero
-            // 
-            buttonBuscarFletero.Location = new Point(263, 39);
-            buttonBuscarFletero.Name = "buttonBuscarFletero";
-            buttonBuscarFletero.Size = new Size(75, 23);
-            buttonBuscarFletero.TabIndex = 2;
-            buttonBuscarFletero.Text = "Buscar";
-            buttonBuscarFletero.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(groupBox3);
             groupBox2.Controls.Add(buttonImprimirDetalle);
-            groupBox2.Controls.Add(buttonCumplir);
             groupBox2.Controls.Add(listView1);
-            groupBox2.Location = new Point(13, 138);
+            groupBox2.Location = new Point(13, 192);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(362, 184);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Hojas de Ruta Asignadas";
             // 
+            // buttonImprimirDetalle
+            // 
+            buttonImprimirDetalle.Location = new Point(256, 155);
+            buttonImprimirDetalle.Name = "buttonImprimirDetalle";
+            buttonImprimirDetalle.Size = new Size(100, 23);
+            buttonImprimirDetalle.TabIndex = 2;
+            buttonImprimirDetalle.Text = "Imprimir Detalle";
+            buttonImprimirDetalle.UseVisualStyleBackColor = true;
+            // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroHDR, GuiaAsociada, EstadoHDR });
+            listView1.CheckBoxes = true;
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            listView1.FullRowSelect = true;
+            listViewItem2.StateImageIndex = 0;
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem2 });
             listView1.Location = new Point(8, 22);
             listView1.Name = "listView1";
             listView1.Size = new Size(329, 91);
@@ -128,104 +131,14 @@
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
             // 
-            // NumeroHDR
-            // 
-            NumeroHDR.Text = "Hoja de Ruta";
-            NumeroHDR.Width = 100;
-            // 
-            // GuiaAsociada
-            // 
-            GuiaAsociada.Text = "Numero Guia";
-            GuiaAsociada.Width = 100;
-            // 
-            // EstadoHDR
-            // 
-            EstadoHDR.Text = "Estado Hoja de Ruta";
-            EstadoHDR.Width = 120;
-            // 
-            // buttonCumplir
-            // 
-            buttonCumplir.Location = new Point(116, 155);
-            buttonCumplir.Name = "buttonCumplir";
-            buttonCumplir.Size = new Size(115, 23);
-            buttonCumplir.TabIndex = 1;
-            buttonCumplir.Text = "Marcar Cumplida";
-            buttonCumplir.UseVisualStyleBackColor = true;
-            buttonCumplir.Click += button1_Click;
-            // 
-            // buttonImprimirDetalle
-            // 
-            buttonImprimirDetalle.Location = new Point(237, 155);
-            buttonImprimirDetalle.Name = "buttonImprimirDetalle";
-            buttonImprimirDetalle.Size = new Size(100, 23);
-            buttonImprimirDetalle.TabIndex = 2;
-            buttonImprimirDetalle.Text = "Imprimir Detalle";
-            buttonImprimirDetalle.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(button1);
-            groupBox3.Controls.Add(button2);
-            groupBox3.Controls.Add(listView2);
-            groupBox3.Location = new Point(6, 184);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(393, 184);
-            groupBox3.TabIndex = 3;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Hojas de Ruta Asignadas";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(287, 155);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Imprimir Detalle";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(166, 155);
-            button2.Name = "button2";
-            button2.Size = new Size(115, 23);
-            button2.TabIndex = 1;
-            button2.Text = "Marcar Cumplida";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // listView2
-            // 
-            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
-            listView2.Location = new Point(8, 22);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(379, 91);
-            listView2.TabIndex = 0;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Hoja de Ruta";
-            columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Numero Guia";
-            columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Estado Hoja de Ruta";
-            columnHeader3.Width = 120;
-            // 
             // groupBox4
             // 
             groupBox4.Controls.Add(groupBox5);
-            groupBox4.Controls.Add(button5);
             groupBox4.Controls.Add(buttonAsignarHDR);
             groupBox4.Controls.Add(listView4);
-            groupBox4.Location = new Point(392, 138);
+            groupBox4.Location = new Point(392, 192);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(419, 184);
+            groupBox4.Size = new Size(333, 184);
             groupBox4.TabIndex = 4;
             groupBox4.TabStop = false;
             groupBox4.Text = "Asignar Hoja de Ruta";
@@ -285,18 +198,9 @@
             columnHeader6.Text = "Estado Hoja de Ruta";
             columnHeader6.Width = 120;
             // 
-            // button5
-            // 
-            button5.Location = new Point(287, 155);
-            button5.Name = "button5";
-            button5.Size = new Size(100, 23);
-            button5.TabIndex = 2;
-            button5.Text = "Imprimir Detalle";
-            button5.UseVisualStyleBackColor = true;
-            // 
             // buttonAsignarHDR
             // 
-            buttonAsignarHDR.Location = new Point(166, 155);
+            buttonAsignarHDR.Location = new Point(205, 155);
             buttonAsignarHDR.Name = "buttonAsignarHDR";
             buttonAsignarHDR.Size = new Size(115, 23);
             buttonAsignarHDR.TabIndex = 1;
@@ -308,7 +212,7 @@
             listView4.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader8 });
             listView4.Location = new Point(6, 22);
             listView4.Name = "listView4";
-            listView4.Size = new Size(207, 91);
+            listView4.Size = new Size(314, 91);
             listView4.TabIndex = 0;
             listView4.UseCompatibleStateImageBehavior = false;
             listView4.View = View.Details;
@@ -325,18 +229,50 @@
             // 
             // button6
             // 
-            button6.Location = new Point(702, 385);
+            button6.Location = new Point(610, 418);
             button6.Name = "button6";
             button6.Size = new Size(115, 23);
             button6.TabIndex = 4;
             button6.Text = "Aceptar";
             button6.UseVisualStyleBackColor = true;
             // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.Location = new Point(241, 37);
+            label17.Name = "label17";
+            label17.Size = new Size(269, 15);
+            label17.TabIndex = 64;
+            label17.Text = "Transportes Urbanos Terrestres Argentinos S.A.";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label18.Location = new Point(339, 17);
+            label18.Name = "label18";
+            label18.Size = new Size(67, 20);
+            label18.TabIndex = 63;
+            label18.Text = "TUTASA";
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Hoja de Ruta";
+            columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Numero de Guia";
+            columnHeader2.Width = 120;
+            // 
             // RecepcionFleterosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(829, 414);
+            ClientSize = new Size(742, 453);
+            Controls.Add(label17);
+            Controls.Add(label18);
             Controls.Add(button6);
             Controls.Add(groupBox4);
             Controls.Add(groupBox2);
@@ -346,10 +282,10 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox5.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -360,18 +296,7 @@
         private Label label1;
         private GroupBox groupBox2;
         private Button buttonImprimirDetalle;
-        private Button buttonCumplir;
         private ListView listView1;
-        private ColumnHeader NumeroHDR;
-        private ColumnHeader GuiaAsociada;
-        private ColumnHeader EstadoHDR;
-        private GroupBox groupBox3;
-        private Button button1;
-        private Button button2;
-        private ListView listView2;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
         private GroupBox groupBox4;
         private GroupBox groupBox5;
         private Button button3;
@@ -380,11 +305,14 @@
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
-        private Button button5;
         private Button buttonAsignarHDR;
         private ListView listView4;
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader8;
         private Button button6;
+        private Label label17;
+        private Label label18;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
     }
 }

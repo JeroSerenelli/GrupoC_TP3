@@ -77,5 +77,15 @@ namespace GrupoC_TP3.RegistrarImposicionEnAgencia
         {
 
         }
+
+        private void buttonNuevaSolicitudLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

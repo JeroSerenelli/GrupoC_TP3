@@ -71,7 +71,7 @@
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(336, 66);
+            buttonBuscar.Location = new Point(280, 66);
             buttonBuscar.Name = "buttonBuscar";
             buttonBuscar.Size = new Size(80, 27);
             buttonBuscar.TabIndex = 3;
@@ -127,7 +127,7 @@
             groupBox2.Controls.Add(buttonBuscar);
             groupBox2.Location = new Point(18, 53);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(422, 99);
+            groupBox2.Size = new Size(371, 99);
             groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
             groupBox2.Text = "Parametros de Consulta";

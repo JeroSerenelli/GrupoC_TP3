@@ -1,4 +1,4 @@
-﻿namespace GrupoC_TP3.RegistrarImposicionEnAgencia
+﻿namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 {
     partial class RegistrarImposicionEnAgenciaForm
     {
@@ -61,11 +61,11 @@
             label22 = new Label();
             textBoxCodigoAgencia = new TextBox();
             groupBox4 = new GroupBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            label1 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
+            comboBox2 = new ComboBox();
+            label1 = new Label();
+            comboBoxProvincia = new ComboBox();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -367,10 +367,10 @@
             // 
             // groupBox4
             // 
+            groupBox4.Controls.Add(comboBoxProvincia);
             groupBox4.Controls.Add(textBox1);
             groupBox4.Controls.Add(label2);
             groupBox4.Controls.Add(comboBox2);
-            groupBox4.Controls.Add(comboBox1);
             groupBox4.Controls.Add(label1);
             groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(textBoxDomicilioDestinatario);
@@ -385,31 +385,6 @@
             groupBox4.TabIndex = 55;
             groupBox4.TabStop = false;
             groupBox4.Text = "Informacion Destino";
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(126, 45);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 48;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(126, 19);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 47;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(9, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(61, 15);
-            label1.TabIndex = 46;
-            label1.Text = "Localidad:";
             // 
             // textBox1
             // 
@@ -426,6 +401,31 @@
             label2.Size = new Size(69, 15);
             label2.TabIndex = 49;
             label2.Text = "CD Destino:";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(126, 45);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 48;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(9, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(61, 15);
+            label1.TabIndex = 46;
+            label1.Text = "Localidad:";
+            // 
+            // comboBoxProvincia
+            // 
+            comboBoxProvincia.FormattingEnabled = true;
+            comboBoxProvincia.Location = new Point(127, 18);
+            comboBoxProvincia.Name = "comboBoxProvincia";
+            comboBoxProvincia.Size = new Size(121, 23);
+            comboBoxProvincia.TabIndex = 51;
             // 
             // RegistrarImposicionEnAgenciaForm
             // 
@@ -495,8 +495,8 @@
         private GroupBox groupBox4;
         private Label label1;
         private ComboBox comboBox2;
-        private ComboBox comboBox1;
         private TextBox textBox1;
         private Label label2;
+        private ComboBox comboBoxProvincia;
     }
 }

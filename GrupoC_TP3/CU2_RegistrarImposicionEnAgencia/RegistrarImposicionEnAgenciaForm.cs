@@ -1,5 +1,4 @@
 ﻿using GrupoC_TP3.CU2_CuentaCorriente;
-using GrupoC_TP3.CU4_RegistrarImposicionEnAgencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,40 +9,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrupoC_TP3.RegistrarImposicionEnAgencia
+namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 {
     public partial class RegistrarImposicionEnAgenciaForm : Form
     {
+        private readonly RegistrarImposicionEnAgenciaModel modelo = new();
         public RegistrarImposicionEnAgenciaForm()
         {
             InitializeComponent();
         }
 
+
+        /*private void RegistrarImposicionEnAgenciaForm_Load(object sender, EventArgs e)
+        {
+            foreach(var cliente in modelo.GenerarClientes)
+            {
+                Client
+            }
+        }*/
+
         private void buttonGenerarNumeroGuia_Click(object sender, EventArgs e)
         {
-            //Validaciones Datos Solicitante 
-            //Validaciones Nombre Solicitante
-            if (string.IsNullOrEmpty(textBoxNombreDestinatario.Text))
+            modelo.CrearEncomienda(new Encomienda
             {
-                // JFS. Agregar Nro de Alerta (tiene que estar tmb en caso de uso)
+                Provincia = comboBoxProvincia.Text,
+                NumeroGuia = long.Parse(textBoxCodigoAgencia.Text),
 
-                MessageBox.Show("El campo Nombre Solicitante no debe estar vacio. Por favor revise e intente de nuevo.");
-                return;
-            }
-            ;
-
-
-
-            if (string.IsNullOrEmpty(textBoxNombreDestinatario.Text))
-            {
-                // JFS. Agregar Nro de Alerta (tiene que estar tmb en caso de uso)
-
-                MessageBox.Show("El campo Nombre Solicitante no debe estar vacio. Por favor revise e intente de nuevo.");
-                return;
-            }
-            ;
-
-
+            });
 
 
         }
@@ -60,6 +52,19 @@ namespace GrupoC_TP3.RegistrarImposicionEnAgencia
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!long.TryParse(textBoxCUITCUIL.Text, out long val))
+            {
+                MessageBox.Show("Ingreso invalido");
+                return;
+            }
+
+            modelo.ValidarCliente(new ValidarCliente
+            {
+                CUITCUIL = val,
+
+            });
+
+
 
         }
 
@@ -87,5 +92,12 @@ namespace GrupoC_TP3.RegistrarImposicionEnAgencia
         {
 
         }
+
+        private void textBoxCUITCUIL_TextChanged_1(object sender, EventArgs e)
+        {
+            //string CUITCUIL = textBoxCUITCUIL.Text;
+
+        }
     }
-}
+
+    }

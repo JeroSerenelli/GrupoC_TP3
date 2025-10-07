@@ -29,12 +29,12 @@ namespace GrupoC_TP3
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (var cliente in clientes)
+            /*foreach (var cliente in clientes)
             {
                 var listItem = new ListViewItem();
                 listItem.Text = cliente.RazonSocial;
-                listItem.SubItems.Items.add(cliente.CUITCUIL)
-            }
+                listItem.SubItems.Items.add(cliente.CUITCUIL);
+            }*/
         }
 
         private void button4_Click(object sender, EventArgs e)

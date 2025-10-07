@@ -1,5 +1,7 @@
 
 
+using GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio;
+
 namespace GrupoC_TP3
 {
     internal static class Program
@@ -13,7 +15,7 @@ namespace GrupoC_TP3
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            //Application.Run(new ConsultaEstadoGuiaEnCD.ConsultaEstadoGuiaEnCDForm());
+            Application.Run(new RegistrarImposicionRetiroPorDomicilioForm());
         }
     }
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrupoC_TP3.CU2_CuentaCorriente
+namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 {
-    internal class CuentaCorrienteModel
+    internal class ValidarCliente
     {
-       
+        public long CUITCUIL { get; set; }
     }
 }

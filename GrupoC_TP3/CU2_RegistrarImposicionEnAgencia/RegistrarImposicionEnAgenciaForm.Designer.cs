@@ -1,7 +1,8 @@
-﻿namespace GrupoC_TP3.RegistrarImposicionEnAgencia
+﻿namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 {
     partial class RegistrarImposicionEnAgenciaForm
     {
+        
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -41,8 +42,8 @@
             textBoxDomicilioDestinatario = new TextBox();
             label21 = new Label();
             groupBox1 = new GroupBox();
-            button1 = new Button();
             textBoxCUITCUIL = new TextBox();
+            buttonValidarCliente = new Button();
             label4 = new Label();
             label17 = new Label();
             label18 = new Label();
@@ -61,11 +62,11 @@
             label22 = new Label();
             textBoxCodigoAgencia = new TextBox();
             groupBox4 = new GroupBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            label1 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
+            comboBox2 = new ComboBox();
+            comboBoxProvincia = new ComboBox();
+            label1 = new Label();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -116,7 +117,7 @@
             // 
             // textBoxDNIDestinatario
             // 
-            textBoxDNIDestinatario.Location = new Point(54, 74);
+            textBoxDNIDestinatario.Location = new Point(139, 71);
             textBoxDNIDestinatario.Name = "textBoxDNIDestinatario";
             textBoxDNIDestinatario.Size = new Size(211, 23);
             textBoxDNIDestinatario.TabIndex = 23;
@@ -182,8 +183,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(textBoxCUITCUIL);
+            groupBox1.Controls.Add(buttonValidarCliente);
             groupBox1.Controls.Add(label4);
             groupBox1.Location = new Point(12, 65);
             groupBox1.Name = "groupBox1";
@@ -192,22 +193,23 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Solicitante";
             // 
-            // button1
-            // 
-            button1.Location = new Point(281, 56);
-            button1.Name = "button1";
-            button1.Size = new Size(93, 23);
-            button1.TabIndex = 54;
-            button1.Text = "Validar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // textBoxCUITCUIL
             // 
-            textBoxCUITCUIL.Location = new Point(96, 25);
+            textBoxCUITCUIL.Location = new Point(79, 28);
             textBoxCUITCUIL.Name = "textBoxCUITCUIL";
-            textBoxCUITCUIL.Size = new Size(278, 23);
-            textBoxCUITCUIL.TabIndex = 20;
+            textBoxCUITCUIL.Size = new Size(292, 23);
+            textBoxCUITCUIL.TabIndex = 55;
+            textBoxCUITCUIL.TextChanged += textBoxCUITCUIL_TextChanged_1;
+            // 
+            // buttonValidarCliente
+            // 
+            buttonValidarCliente.Location = new Point(281, 56);
+            buttonValidarCliente.Name = "buttonValidarCliente";
+            buttonValidarCliente.Size = new Size(93, 23);
+            buttonValidarCliente.TabIndex = 54;
+            buttonValidarCliente.Text = "Validar";
+            buttonValidarCliente.UseVisualStyleBackColor = true;
+            buttonValidarCliente.Click += button1_Click;
             // 
             // label4
             // 
@@ -370,7 +372,7 @@
             groupBox4.Controls.Add(textBox1);
             groupBox4.Controls.Add(label2);
             groupBox4.Controls.Add(comboBox2);
-            groupBox4.Controls.Add(comboBox1);
+            groupBox4.Controls.Add(comboBoxProvincia);
             groupBox4.Controls.Add(label1);
             groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(textBoxDomicilioDestinatario);
@@ -386,34 +388,9 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Informacion Destino";
             // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(126, 45);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 48;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(126, 19);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 47;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(9, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(61, 15);
-            label1.TabIndex = 46;
-            label1.Text = "Localidad:";
-            // 
             // textBox1
             // 
-            textBox1.Location = new Point(127, 136);
+            textBox1.Location = new Point(126, 136);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(246, 23);
             textBox1.TabIndex = 50;
@@ -426,6 +403,33 @@
             label2.Size = new Size(69, 15);
             label2.TabIndex = 49;
             label2.Text = "CD Destino:";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "General San Martin", "Villa La Angostura", "General Pico" });
+            comboBox2.Location = new Point(126, 45);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 48;
+            // 
+            // comboBoxProvincia
+            // 
+            comboBoxProvincia.FormattingEnabled = true;
+            comboBoxProvincia.Items.AddRange(new object[] { "Buenos Aires", "La Pampa", "Catamarca" });
+            comboBoxProvincia.Location = new Point(126, 19);
+            comboBoxProvincia.Name = "comboBoxProvincia";
+            comboBoxProvincia.Size = new Size(121, 23);
+            comboBoxProvincia.TabIndex = 47;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(9, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(61, 15);
+            label1.TabIndex = 46;
+            label1.Text = "Localidad:";
             // 
             // RegistrarImposicionEnAgenciaForm
             // 
@@ -473,7 +477,6 @@
         private TextBox textBoxNombreDestinatario;
         private TextBox textBoxApellidoDestinatario;
         private GroupBox groupBox1;
-        private TextBox textBoxCUITCUIL;
         private Label label4;
         private Label label17;
         private Label label18;
@@ -491,12 +494,13 @@
         private Button buttonGenerarNumeroGuia;
         private Label label22;
         private TextBox textBoxCodigoAgencia;
-        private Button button1;
+        private Button buttonValidarCliente;
         private GroupBox groupBox4;
         private Label label1;
         private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxProvincia;
         private TextBox textBox1;
         private Label label2;
+        private TextBox textBoxCUITCUIL;
     }
 }

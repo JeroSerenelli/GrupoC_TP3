@@ -1,4 +1,4 @@
-﻿namespace GrupoC_TP3.ResultadoCostosVsVentas
+﻿namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
 {
     partial class ResultadoCostosVsVentasForm
     {
@@ -33,7 +33,7 @@
             label2 = new Label();
             IniciodateTimePicker = new DateTimePicker();
             FindateTimePicker = new DateTimePicker();
-            button1 = new Button();
+            buttonBuscar = new Button();
             groupBox2 = new GroupBox();
             listView1 = new ListView();
             columnHeader1 = new ColumnHeader();
@@ -52,7 +52,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(IniciodateTimePicker);
             groupBox1.Controls.Add(FindateTimePicker);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(buttonBuscar);
             groupBox1.Location = new Point(25, 62);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
@@ -91,6 +91,7 @@
             IniciodateTimePicker.Size = new Size(219, 23);
             IniciodateTimePicker.TabIndex = 10;
             IniciodateTimePicker.Value = new DateTime(2025, 9, 2, 0, 0, 0, 0);
+            IniciodateTimePicker.ValueChanged += IniciodateTimePicker_ValueChanged;
             // 
             // FindateTimePicker
             // 
@@ -101,19 +102,19 @@
             FindateTimePicker.Name = "FindateTimePicker";
             FindateTimePicker.ShowUpDown = true;
             FindateTimePicker.Size = new Size(219, 23);
-            FindateTimePicker.TabIndex = 9;
+            FindateTimePicker.TabIndex = 10;
             FindateTimePicker.Value = new DateTime(2025, 10, 2, 0, 0, 0, 0);
             // 
-            // button1
+            // buttonBuscar
             // 
-            button1.Location = new Point(388, 83);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 22);
-            button1.TabIndex = 2;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonBuscar.Location = new Point(388, 83);
+            buttonBuscar.Margin = new Padding(3, 2, 3, 2);
+            buttonBuscar.Name = "buttonBuscar";
+            buttonBuscar.Size = new Size(82, 22);
+            buttonBuscar.TabIndex = 2;
+            buttonBuscar.Text = "Buscar";
+            buttonBuscar.UseVisualStyleBackColor = true;
+            buttonBuscar.Click += buttonBuscar_Click_1;
             // 
             // groupBox2
             // 
@@ -202,7 +203,7 @@
         private Label label2;
         private DateTimePicker IniciodateTimePicker;
         private DateTimePicker FindateTimePicker;
-        private Button button1;
+        private Button buttonBuscar;
         private GroupBox groupBox2;
         private ListView listView1;
         private ColumnHeader columnHeader1;

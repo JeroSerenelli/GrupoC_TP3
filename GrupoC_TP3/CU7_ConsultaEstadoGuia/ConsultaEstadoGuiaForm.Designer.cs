@@ -131,7 +131,6 @@
             groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
             groupBox2.Text = "Parametros de Consulta";
-            groupBox2.Enter += groupBox2_Enter;
             // 
             // button1
             // 

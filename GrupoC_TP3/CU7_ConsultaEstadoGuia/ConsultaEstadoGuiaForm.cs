@@ -1,4 +1,4 @@
-﻿using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
+﻿using GrupoC_TP3.CU7_ConsultaEstadoGuia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +13,10 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 {
     public partial class ConsultaEstadoGuiaForm : Form
     {
+        private ConsultaEstadoGuiaModel modelo = new();
+
+        public Guia guias;
+
         public ConsultaEstadoGuiaForm()
         {
             InitializeComponent();
@@ -28,11 +32,11 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 
         }
 
-        private void buttonBuscar_Click(object sender, EventArgs e)
+        private void buttonBuscar_Click(object sender, EventArgs e, Guia guia)
         {
             if (string.IsNullOrEmpty(textBoxNumeroGuiaConsulta.Text))
             {
-                MessageBox.Show("Para realizar una busqueda, ingrese un numero de guia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                MessageBox.Show("Para realizar una busqueda, ingrese un numero de guia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -40,11 +44,47 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
             {
                 MessageBox.Show("El numero de guia ingresado es invalido, por favor revise", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-               
-        }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+            foreach (var Guias in modelo.Guias) 
+            {
+                if (Guias.NumeroGuia == numeroGuiaConsulta)
+                {
+                    var listItem = new ListViewItem();
+                    listItem.Text = Guias.NumeroGuia.ToString();
+                    listItem.SubItems.Add(Guias.EstadoGuia.ToString());
+                    listView1.Items.Add(listItem);
+                }
+
+            }
+            
+
+
+        }
+        private void buttonBuscar_Click(object sender, EventArgs e)
         {
+            listView1.Items.Clear();
+
+            if (string.IsNullOrEmpty(textBoxNumeroGuiaConsulta.Text))
+            {
+                MessageBox.Show("Para realizar una busqueda, ingrese un numero de guia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!long.TryParse(textBoxNumeroGuiaConsulta.Text, out long numeroGuiaConsulta))
+            {
+                MessageBox.Show("El numero de guia ingresado es invalido, por favor revise", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            foreach (var Guias in modelo.Guias)
+            {
+                if (Guias.NumeroGuia == numeroGuiaConsulta)
+                {
+                    var listItem = new ListViewItem();
+                    listItem.Text = Guias.EstadoGuia.ToString();
+                    listItem.SubItems.Add(Guias.UltActualizacion.ToString());
+                    listView1.Items.Add(listItem);
+                }
+            }
 
         }
     }

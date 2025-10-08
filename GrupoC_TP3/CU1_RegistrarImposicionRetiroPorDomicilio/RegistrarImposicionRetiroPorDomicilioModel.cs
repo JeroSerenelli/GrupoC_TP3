@@ -28,8 +28,8 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
     //};
 
     
-    internal void ImponerEncomienda(EncomiendasImpuestas nuevaEncomienda)
-    {
+    //internal void ImponerEncomienda(EncomiendasImpuestas nuevaEncomienda)
+   // {
         /*Sigue validando*/
         //DNI unico en los almacenes?
 
@@ -38,4 +38,4 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
         /*Por ejemplo, lo graba en un almacen.*/
 
     }
-}
+

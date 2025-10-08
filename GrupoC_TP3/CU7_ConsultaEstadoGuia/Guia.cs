@@ -8,8 +8,10 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 {
     public class Guia
     {
-        public int NumeroGuia { get; set; }
+        public long? NumeroGuia { get; set; } = null;
         public string EstadoGuia { get; set; }
         public string UltActualizacion { get; set; }
     }
+    
+
 }

@@ -14,7 +14,7 @@ using static GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio.ProvinciaLocal
 
 namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
 {
-    public partial class RegistrarImposicionRetiroPorDomicilioForm : Form
+    /*public partial class RegistrarImposicionRetiroPorDomicilioForm : Form
     {
         private RegistrarImposicionRetiroPorDomicilioModel modelo = new();
 
@@ -200,7 +200,7 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
 
             /*FORMULARIO: Valida TIPO y el rango de ser necesario.*/
 
-            var nuevaEncomienda = new EncomiendasImpuestas
+            /*var nuevaEncomienda = new EncomiendasImpuestas
             {
 
             };
@@ -233,4 +233,5 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
 
         
     }
+}*/
 }

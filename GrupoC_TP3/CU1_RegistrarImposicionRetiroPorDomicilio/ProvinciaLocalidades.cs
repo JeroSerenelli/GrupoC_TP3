@@ -13,7 +13,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             public Dictionary<string, List<string>> ProvinciasYLocalidades { get; }
             public Dictionary<string, string> CodigoPostalCentroDistribucion { get; }
 
-            public Ubicacion()
+            /*public Ubicacion()
             {
                 ProvinciasYLocalidades = new Dictionary<string, List<string>>
                 {
@@ -47,7 +47,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 public string ObtenerCentroDistribucion(string codigoPostal)
                 {
                     
-                }
+                }*/
             }
 
             
@@ -55,8 +55,4 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
         }
 
     }
-
-
-    
-}
     

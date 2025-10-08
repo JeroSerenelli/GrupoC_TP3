@@ -32,6 +32,12 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 MessageBox.Show("El campo CUIT/CUIL no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            //VALIDAMOS QUE TENGA SOLO NUMEROS
+            if (!textBoxCUITCUIL.Text.ToString().All(char.IsDigit))
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe contener solo numeros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             var Cuil = long.Parse(textBoxCUITCUIL.Text);
             /* //VALIDAMOS QUE SEA ENTERO Y QUE TENGA 11 DIGITOS
@@ -52,23 +58,14 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            //VALIDAMOS QUE TENGA SOLO NUMEROS
-            if (!Cuil.ToString().All(char.IsDigit))
-            {
-                MessageBox.Show("El campo CUIT/CUIL debe contener solo numeros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+          
             //MOSTRAMOS UN MENSJAE DE VALIDACION CORRECTA
             MessageBox.Show("CUIT/CUIL valido.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
         }
 
-        private void buttonValidarCuil_click(object sender, EventArgs e)
-        {
 
-
-        }
         private void buttonGenerarNumeroGuia_Click(object sender, EventArgs e)
         {
 
@@ -154,6 +151,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
         }
 
+        // ACA HACEMOS QUE EL BOTON VALIDE
         private void buttonValidarCuil_Click_1(object sender, EventArgs e)
         {
             Validar();
@@ -163,6 +161,9 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
         {
 
         }
+
+
+        //ACA PODEMOS VER DE AGREGAR LA LISTA Y VINCULARLAS
 
         private void RegistrarImposicionEnCDForm_Load(object sender, EventArgs e)
         {

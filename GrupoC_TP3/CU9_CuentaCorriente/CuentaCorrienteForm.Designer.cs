@@ -30,12 +30,19 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            comboBox1 = new ComboBox();
             label3 = new Label();
             label2 = new Label();
             dateTimePicker2 = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
             button1 = new Button();
             groupBox2 = new GroupBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label7 = new Label();
+            label6 = new Label();
+            label8 = new Label();
             cuentaCorrienteLstView = new ListView();
             FechaHeader = new ColumnHeader();
             MontoHeader = new ColumnHeader();
@@ -43,13 +50,6 @@
             fileSystemWatcher1 = new FileSystemWatcher();
             label4 = new Label();
             label5 = new Label();
-            comboBox1 = new ComboBox();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
@@ -60,7 +60,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(19, 29);
             label1.Name = "label1";
-            label1.Size = new Size(66, 15);
+            label1.Size = new Size(65, 15);
             label1.TabIndex = 0;
             label1.Text = "CUIT/CUIL:";
             label1.Click += label1_Click;
@@ -81,8 +81,16 @@
             groupBox1.Size = new Size(362, 163);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Busqueda de cliente";
+            groupBox1.Text = "Búsqueda de Cliente";
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(127, 26);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(219, 23);
+            comboBox1.TabIndex = 14;
             // 
             // label3
             // 
@@ -150,6 +158,57 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Cuenta Corriente";
             // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(423, 66);
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(180, 23);
+            textBox3.TabIndex = 19;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(423, 35);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(180, 23);
+            textBox2.TabIndex = 18;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(59, 35);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(230, 23);
+            textBox1.TabIndex = 17;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(318, 69);
+            label7.Name = "label7";
+            label7.Size = new Size(86, 15);
+            label7.TabIndex = 16;
+            label7.Text = "Fin de Periodo:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(6, 38);
+            label6.Name = "label6";
+            label6.Size = new Size(47, 15);
+            label6.TabIndex = 15;
+            label6.Text = "Cliente:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(318, 38);
+            label8.Name = "label8";
+            label8.Size = new Size(99, 15);
+            label8.TabIndex = 15;
+            label8.Text = "Inicio de Periodo:";
+            // 
             // cuentaCorrienteLstView
             // 
             cuentaCorrienteLstView.Columns.AddRange(new ColumnHeader[] { FechaHeader, MontoHeader, SaldoHeader });
@@ -200,65 +259,6 @@
             label5.Size = new Size(67, 20);
             label5.TabIndex = 9;
             label5.Text = "TUTASA";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(127, 26);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(219, 23);
-            comboBox1.TabIndex = 14;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(6, 38);
-            label6.Name = "label6";
-            label6.Size = new Size(47, 15);
-            label6.TabIndex = 15;
-            label6.Text = "Cliente:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(318, 69);
-            label7.Name = "label7";
-            label7.Size = new Size(86, 15);
-            label7.TabIndex = 16;
-            label7.Text = "Fin de Periodo:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(318, 38);
-            label8.Name = "label8";
-            label8.Size = new Size(99, 15);
-            label8.TabIndex = 15;
-            label8.Text = "Inicio de Periodo:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(59, 35);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(230, 23);
-            textBox1.TabIndex = 17;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(423, 35);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(180, 23);
-            textBox2.TabIndex = 18;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(423, 66);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(180, 23);
-            textBox3.TabIndex = 19;
             // 
             // Facturas
             // 

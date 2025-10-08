@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem2 = new ListViewItem("");
+            ListViewItem listViewItem1 = new ListViewItem("");
             groupBox1 = new GroupBox();
             buttonBuscarFletero = new Button();
             comboBoxFletero = new ComboBox();
@@ -36,6 +36,8 @@
             groupBox2 = new GroupBox();
             buttonImprimirDetalle = new Button();
             listView1 = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
             groupBox4 = new GroupBox();
             groupBox5 = new GroupBox();
             button3 = new Button();
@@ -51,8 +53,6 @@
             button6 = new Button();
             label17 = new Label();
             label18 = new Label();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -69,7 +69,8 @@
             groupBox1.Size = new Size(348, 103);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Busqueda de Fletero";
+            groupBox1.Text = "Búsqueda de Fletero";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // buttonBuscarFletero
             // 
@@ -122,14 +123,24 @@
             listView1.CheckBoxes = true;
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
             listView1.FullRowSelect = true;
-            listViewItem2.StateImageIndex = 0;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem2 });
+            listViewItem1.StateImageIndex = 0;
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
             listView1.Location = new Point(8, 22);
             listView1.Name = "listView1";
             listView1.Size = new Size(329, 91);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Hoja de Ruta";
+            columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Número de Guía";
+            columnHeader2.Width = 120;
             // 
             // groupBox4
             // 
@@ -224,7 +235,7 @@
             // 
             // columnHeader8
             // 
-            columnHeader8.Text = "Numero Guia";
+            columnHeader8.Text = "Número de Guía";
             columnHeader8.Width = 100;
             // 
             // button6
@@ -255,16 +266,6 @@
             label18.Size = new Size(67, 20);
             label18.TabIndex = 63;
             label18.Text = "TUTASA";
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Hoja de Ruta";
-            columnHeader1.Width = 120;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Numero de Guia";
-            columnHeader2.Width = 120;
             // 
             // RecepcionFleterosForm
             // 

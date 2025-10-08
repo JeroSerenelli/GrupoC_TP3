@@ -21,5 +21,10 @@ namespace GrupoC_TP3.RecepcionFletero
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

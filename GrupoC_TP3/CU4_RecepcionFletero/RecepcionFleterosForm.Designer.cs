@@ -1,6 +1,6 @@
-﻿namespace GrupoC_TP3.RecepcionFletero
+﻿namespace GrupoC_TP3.CU4_RecepcionFletero
 {
-    partial class RecepcionFleterosForm
+    partial class RecepcionFleterosForm : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem("");
+            ListViewItem listViewItem5 = new ListViewItem("");
             groupBox1 = new GroupBox();
             buttonBuscarFletero = new Button();
             comboBoxFletero = new ComboBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
             buttonImprimirDetalle = new Button();
-            listView1 = new ListView();
+            listViewHojasDeRutaAsignadas = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             groupBox4 = new GroupBox();
@@ -46,8 +46,8 @@
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
-            buttonAsignarHDR = new Button();
-            listView4 = new ListView();
+            buttonAsignarHojaDeRuta = new Button();
+            listViewAsignarHojaDeRuta = new ListView();
             columnHeader7 = new ColumnHeader();
             columnHeader8 = new ColumnHeader();
             button6 = new Button();
@@ -80,6 +80,7 @@
             buttonBuscarFletero.TabIndex = 2;
             buttonBuscarFletero.Text = "Buscar";
             buttonBuscarFletero.UseVisualStyleBackColor = true;
+            buttonBuscarFletero.Click += buttonBuscarFleteroClick;
             // 
             // comboBoxFletero
             // 
@@ -101,7 +102,7 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(buttonImprimirDetalle);
-            groupBox2.Controls.Add(listView1);
+            groupBox2.Controls.Add(listViewHojasDeRutaAsignadas);
             groupBox2.Location = new Point(13, 192);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(362, 184);
@@ -117,20 +118,21 @@
             buttonImprimirDetalle.TabIndex = 2;
             buttonImprimirDetalle.Text = "Imprimir Detalle";
             buttonImprimirDetalle.UseVisualStyleBackColor = true;
+            buttonImprimirDetalle.Click += buttonImprimirDetalleClick;
             // 
-            // listView1
+            // listViewHojasDeRutaAsignadas
             // 
-            listView1.CheckBoxes = true;
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
-            listView1.FullRowSelect = true;
-            listViewItem1.StateImageIndex = 0;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
-            listView1.Location = new Point(8, 22);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(329, 91);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listViewHojasDeRutaAsignadas.CheckBoxes = true;
+            listViewHojasDeRutaAsignadas.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            listViewHojasDeRutaAsignadas.FullRowSelect = true;
+            listViewItem5.StateImageIndex = 0;
+            listViewHojasDeRutaAsignadas.Items.AddRange(new ListViewItem[] { listViewItem5 });
+            listViewHojasDeRutaAsignadas.Location = new Point(8, 22);
+            listViewHojasDeRutaAsignadas.Name = "listViewHojasDeRutaAsignadas";
+            listViewHojasDeRutaAsignadas.Size = new Size(329, 91);
+            listViewHojasDeRutaAsignadas.TabIndex = 0;
+            listViewHojasDeRutaAsignadas.UseCompatibleStateImageBehavior = false;
+            listViewHojasDeRutaAsignadas.View = View.Details;
             // 
             // columnHeader1
             // 
@@ -145,8 +147,8 @@
             // groupBox4
             // 
             groupBox4.Controls.Add(groupBox5);
-            groupBox4.Controls.Add(buttonAsignarHDR);
-            groupBox4.Controls.Add(listView4);
+            groupBox4.Controls.Add(buttonAsignarHojaDeRuta);
+            groupBox4.Controls.Add(listViewAsignarHojaDeRuta);
             groupBox4.Location = new Point(392, 192);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(333, 184);
@@ -209,24 +211,25 @@
             columnHeader6.Text = "Estado Hoja de Ruta";
             columnHeader6.Width = 120;
             // 
-            // buttonAsignarHDR
+            // buttonAsignarHojaDeRuta
             // 
-            buttonAsignarHDR.Location = new Point(205, 155);
-            buttonAsignarHDR.Name = "buttonAsignarHDR";
-            buttonAsignarHDR.Size = new Size(115, 23);
-            buttonAsignarHDR.TabIndex = 1;
-            buttonAsignarHDR.Text = "Asignar";
-            buttonAsignarHDR.UseVisualStyleBackColor = true;
+            buttonAsignarHojaDeRuta.Location = new Point(205, 155);
+            buttonAsignarHojaDeRuta.Name = "buttonAsignarHojaDeRuta";
+            buttonAsignarHojaDeRuta.Size = new Size(115, 23);
+            buttonAsignarHojaDeRuta.TabIndex = 1;
+            buttonAsignarHojaDeRuta.Text = "Asignar";
+            buttonAsignarHojaDeRuta.UseVisualStyleBackColor = true;
+            buttonAsignarHojaDeRuta.Click += buttonAsignarHojaDeRutaClick;
             // 
-            // listView4
+            // listViewAsignarHojaDeRuta
             // 
-            listView4.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader8 });
-            listView4.Location = new Point(6, 22);
-            listView4.Name = "listView4";
-            listView4.Size = new Size(314, 91);
-            listView4.TabIndex = 0;
-            listView4.UseCompatibleStateImageBehavior = false;
-            listView4.View = View.Details;
+            listViewAsignarHojaDeRuta.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader8 });
+            listViewAsignarHojaDeRuta.Location = new Point(6, 22);
+            listViewAsignarHojaDeRuta.Name = "listViewAsignarHojaDeRuta";
+            listViewAsignarHojaDeRuta.Size = new Size(314, 91);
+            listViewAsignarHojaDeRuta.TabIndex = 0;
+            listViewAsignarHojaDeRuta.UseCompatibleStateImageBehavior = false;
+            listViewAsignarHojaDeRuta.View = View.Details;
             // 
             // columnHeader7
             // 
@@ -246,6 +249,7 @@
             button6.TabIndex = 4;
             button6.Text = "Aceptar";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += buttonAceptarRecepcionClick;
             // 
             // label17
             // 
@@ -297,7 +301,7 @@
         private Label label1;
         private GroupBox groupBox2;
         private Button buttonImprimirDetalle;
-        private ListView listView1;
+        private ListView listViewHojasDeRutaAsignadas;
         private GroupBox groupBox4;
         private GroupBox groupBox5;
         private Button button3;
@@ -306,8 +310,8 @@
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
-        private Button buttonAsignarHDR;
-        private ListView listView4;
+        private Button buttonAsignarHojaDeRuta;
+        private ListView listViewAsignarHojaDeRuta;
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader8;
         private Button button6;

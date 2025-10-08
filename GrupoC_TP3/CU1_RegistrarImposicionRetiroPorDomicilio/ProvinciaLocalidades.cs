@@ -13,16 +13,8 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             public Dictionary<string, List<string>> ProvinciasYLocalidades { get; }
             public Dictionary<string, string> CodigoPostalCentroDistribucion { get; }
 
-            /*public Ubicacion()
+            public Ubicacion()
             {
-                ProvinciasYLocalidades = new Dictionary<string, List<string>>
-                {
-                    { "Buenos Aires", new List<string> { "La Plata", "Mar del Plata", "Bahía Blanca" } },
-                    { "Córdoba", new List<string> { "Córdoba Capital", "Villa María", "Río Cuarto" } },
-                    { "Santa Fe", new List<string> { "Rosario", "Santa Fe Capital", "Rafaela" } },
-
-                };
-
                 ProvinciasYLocalidades = new Dictionary<string, List<string>>
                 {
                     { "Buenos Aires", new List<string> { "La Plata", "Mar del Plata", "Bahía Blanca" } },
@@ -43,16 +35,19 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                     { "3000", "Centro Santa Fe Capital" },
                     { "2300", "Centro Rafaela" }
                 };
-
-                public string ObtenerCentroDistribucion(string codigoPostal)
-                {
-                    
-                }*/
             }
 
-            
+            public string ObtenerCentroDistribucion(string codigoPostal)
+            {
+                if (CodigoPostalCentroDistribucion.TryGetValue(codigoPostal, out string centro))
+                {
+                    return centro;
+                }
+                return "Centro de distribución no encontrado";
+            }
 
         }
 
-    }
-    
+
+    }            
+}

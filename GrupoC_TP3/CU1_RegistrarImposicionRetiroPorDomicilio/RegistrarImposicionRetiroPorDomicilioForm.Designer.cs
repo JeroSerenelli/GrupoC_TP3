@@ -1,11 +1,11 @@
 ﻿namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
-{ }
-    /*partial class RegistrarImposicionRetiroPorDomicilioForm
-    {*/
+{ 
+    partial class RegistrarImposicionRetiroPorDomicilioForm
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        /*private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -40,7 +40,7 @@
             label14 = new Label();
             textBoxCodPostDestino = new TextBox();
             label6 = new Label();
-            label21 = new Label();
+            labelDomicilioDestino = new Label();
             label13 = new Label();
             label12 = new Label();
             textBoxCantidadCajas = new TextBox();
@@ -59,13 +59,13 @@
             textBoxNumeroDeGuia = new TextBox();
             buttonGenerarNumeroGuia = new Button();
             groupBox1 = new GroupBox();
-            button1 = new Button();
+            ValidarCUIT = new Button();
             textBoxCUITCUIL = new TextBox();
             label4 = new Label();
             groupBox3 = new GroupBox();
             label18 = new Label();
             groupBox5 = new GroupBox();
-            textBoxCDOrigen = new TextBox();
+            labelCdOrigen = new Label();
             cmbBoxProvRetiro = new ComboBox();
             label3 = new Label();
             label20 = new Label();
@@ -132,7 +132,7 @@
             groupBox4.Controls.Add(label14);
             groupBox4.Controls.Add(textBoxCodPostDestino);
             groupBox4.Controls.Add(label6);
-            groupBox4.Controls.Add(label21);
+            groupBox4.Controls.Add(labelDomicilioDestino);
             groupBox4.Location = new Point(16, 203);
             groupBox4.Margin = new Padding(3, 4, 3, 4);
             groupBox4.Name = "groupBox4";
@@ -166,7 +166,6 @@
             textBoxDomicilioDestinatario.Name = "textBoxDomicilioDestinatario";
             textBoxDomicilioDestinatario.Size = new Size(281, 27);
             textBoxDomicilioDestinatario.TabIndex = 25;
-     
             // 
             // comboBoxMetodoEntrega
             // 
@@ -177,6 +176,7 @@
             comboBoxMetodoEntrega.Name = "comboBoxMetodoEntrega";
             comboBoxMetodoEntrega.Size = new Size(171, 28);
             comboBoxMetodoEntrega.TabIndex = 45;
+            comboBoxMetodoEntrega.SelectedIndexChanged += comboBoxMetodoEntrega_SelectedIndexChanged;
             // 
             // label14
             // 
@@ -194,7 +194,7 @@
             textBoxCodPostDestino.Name = "textBoxCodPostDestino";
             textBoxCodPostDestino.Size = new Size(138, 27);
             textBoxCodPostDestino.TabIndex = 38;
-         
+            textBoxCodPostDestino.TextChanged += textBoxCodPostDestino_TextChanged;
             // 
             // label6
             // 
@@ -205,14 +205,14 @@
             label6.TabIndex = 37;
             label6.Text = "Codigo Postal:";
             // 
-            // label21
+            // labelDomicilioDestino
             // 
-            label21.AutoSize = true;
-            label21.Location = new Point(13, 231);
-            label21.Name = "label21";
-            label21.Size = new Size(77, 20);
-            label21.TabIndex = 24;
-            label21.Text = "Domicilio:";
+            labelDomicilioDestino.AutoSize = true;
+            labelDomicilioDestino.Location = new Point(13, 231);
+            labelDomicilioDestino.Name = "labelDomicilioDestino";
+            labelDomicilioDestino.Size = new Size(77, 20);
+            labelDomicilioDestino.TabIndex = 24;
+            labelDomicilioDestino.Text = "Domicilio:";
             // 
             // label13
             // 
@@ -376,7 +376,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(ValidarCUIT);
             groupBox1.Controls.Add(textBoxCUITCUIL);
             groupBox1.Controls.Add(label4);
             groupBox1.Location = new Point(14, 81);
@@ -388,15 +388,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Solicitante";
             // 
-            // button1
+            // ValidarCUIT
             // 
-            button1.Location = new Point(321, 75);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(106, 31);
-            button1.TabIndex = 54;
-            button1.Text = "Validar";
-            button1.UseVisualStyleBackColor = true;
+            ValidarCUIT.Location = new Point(321, 75);
+            ValidarCUIT.Margin = new Padding(3, 4, 3, 4);
+            ValidarCUIT.Name = "ValidarCUIT";
+            ValidarCUIT.Size = new Size(106, 31);
+            ValidarCUIT.TabIndex = 54;
+            ValidarCUIT.Text = "Validar";
+            ValidarCUIT.UseVisualStyleBackColor = true;
+            ValidarCUIT.Click += ValidarCUIT_Click;
             // 
             // textBoxCUITCUIL
             // 
@@ -442,7 +443,7 @@
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(textBoxCDOrigen);
+            groupBox5.Controls.Add(labelCdOrigen);
             groupBox5.Controls.Add(cmbBoxProvRetiro);
             groupBox5.Controls.Add(label3);
             groupBox5.Controls.Add(label20);
@@ -461,13 +462,13 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Datos Retiro";
             // 
-            // textBoxCDOrigen
+            // labelCdOrigen
             // 
-            textBoxCDOrigen.Location = new Point(141, 156);
-            textBoxCDOrigen.Margin = new Padding(3, 4, 3, 4);
-            textBoxCDOrigen.Name = "textBoxCDOrigen";
-            textBoxCDOrigen.Size = new Size(281, 27);
-            textBoxCDOrigen.TabIndex = 60;
+            labelCdOrigen.AutoSize = true;
+            labelCdOrigen.Location = new Point(141, 161);
+            labelCdOrigen.Name = "labelCdOrigen";
+            labelCdOrigen.Size = new Size(0, 20);
+            labelCdOrigen.TabIndex = 60;
             // 
             // cmbBoxProvRetiro
             // 
@@ -522,6 +523,7 @@
             textBoxCpRetiro.Name = "textBoxCpRetiro";
             textBoxCpRetiro.Size = new Size(138, 27);
             textBoxCpRetiro.TabIndex = 55;
+            textBoxCpRetiro.TextChanged += textBoxCpRetiro_TextChanged;
             // 
             // label5
             // 
@@ -596,7 +598,7 @@
         private Label label14;
         private TextBox textBoxCodPostDestino;
         private Label label6;
-        private Label label21;
+        private Label labelDomicilioDestino;
         private Label label13;
         private Label label12;
         private TextBox textBoxCantidadCajas;
@@ -615,13 +617,12 @@
         private TextBox textBoxNumeroDeGuia;
         private Button buttonGenerarNumeroGuia;
         private GroupBox groupBox1;
-        private Button button1;
+        private Button ValidarCUIT;
         private TextBox textBoxCUITCUIL;
         private Label label4;
         private GroupBox groupBox3;
         private Label label18;
         private GroupBox groupBox5;
-        private TextBox textBoxCDOrigen;
         private ComboBox cmbBoxProvRetiro;
         private Label label3;
         private Label label20;
@@ -632,5 +633,6 @@
         private Label label11;
         private TextBox textBoxDomicilioRetiro;
         private Label labelCdDestino;
+        private Label labelCdOrigen;
     }
-}*/
+}

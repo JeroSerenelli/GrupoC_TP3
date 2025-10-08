@@ -17,11 +17,11 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
     {
         private readonly RegistrarImposicionEnAgenciaModel modelo = new();
 
-        private Ubicacion ubicacion;
-        public RegistrarImposicionEnAgenciaForm()
-        {
-            InitializeComponent();
-        }
+        //private Ubicacion ubicacion;
+        ////public RegistrarImposicionEnAgenciaForm()
+        ////{
+        //    InitializeComponent();
+        //}
 
 
         private void RegistrarImposicionEnAgenciaForm_Load(object sender, EventArgs e)
@@ -31,16 +31,16 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
      
         private void cmbBoxProvDst_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string provinciaSeleccionada = cmbBoxProvDst.Text;
+            //string provinciaSeleccionada = cmbBoxProvDst.Text;
 
-            // Limpiar combo de localidad
-            cmbBoxLocalidadDst.DataSource = null;
+            //// Limpiar combo de localidad
+            //cmbBoxLocalidadDst.DataSource = null;
 
-            if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
-            {
-                cmbBoxLocalidadDst.Enabled = true;
-                cmbBoxLocalidadDst.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
-            }
+            //if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
+            //{
+            //    cmbBoxLocalidadDst.Enabled = true;
+            //    cmbBoxLocalidadDst.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
+            //}
         }
 
         private void buttonGenerarNumeroGuia_Click(object sender, EventArgs e)

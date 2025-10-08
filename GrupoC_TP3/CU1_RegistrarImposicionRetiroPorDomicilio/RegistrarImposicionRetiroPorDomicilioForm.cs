@@ -1,4 +1,5 @@
 ﻿using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
+using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
 using GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,11 @@ using static GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio.ProvinciaLocal
 
 namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
 {
-    /*public partial class RegistrarImposicionRetiroPorDomicilioForm : Form
+    public partial class RegistrarImposicionRetiroPorDomicilioForm : Form
     {
         private RegistrarImposicionRetiroPorDomicilioModel modelo = new();
 
-        //private object provinciasLocalidades; // por sugerencia del debugger
+        private object provinciasLocalidades; // por sugerencia del debugger
         private Ubicacion ubicacion;
 
 
@@ -33,18 +34,9 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
             cmbBoxLocalidadDst.Enabled = false; // hasata que no elija la provincia de destino
 
             cmbBoxProvRetiro.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
-            cmbBoxProvRetiro.
-
-
-
-            labelCdDestino.Text = "TBD";
-
-            string cpDestino = textBoxCodPostDestino.Text;
-
-            if (CodigoPostalCentroDistribucion.TryGetValue(cpDestino, out string centro))
-            {
-                labelCdDestino.Text = centro;
-            }
+            cmbBoxProvRetiro.SelectedIndex = -1;
+            cmbBoxLocalidadRetiro.SelectedIndex = -1;
+            cmbBoxLocalidadRetiro.Enabled = false; // hasata que no elija la provincia de destino
 
 
 
@@ -64,11 +56,17 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
 
             string limpio = textBoxCUITCUIL.Text.Replace("-", "");
 
-            if (limpio.Length != 11 || limpio.All(char.IsDigit)) // Lvl 1 & 2 - Valido que sean numeros y que contenga 11 digitos
+            if (!int.TryParse(limpio, out int salida)) // Lvl 1 & 2 - Valido que sean numeros y que contenga 11 digitos
             {
-                MessageBox.Show("Ingrese un CUIT/CUIL valido. Debe user el formato '23-34512120-6'.", "CUIT/CUIL Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El valor ingresado no es un numero. Ingrese su CUIT/CUIL (Ej:'23-34512120-6').", "CUIT/CUIL Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            //if (limpio.Length != 11)
+            //{
+            //    MessageBox.Show("Ingrese un CUIT/CUIL valido. Debe user el formato '23-34512120-6'.", "CUIT/CUIL Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
 
             //Informacion Destino
@@ -101,17 +99,10 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
             }
 
 
-            if (!int.TryParse(textBoxCodPostDestino.Text, out int cpDestino)) //Lvl 1
-            {
-                MessageBox.Show("El codigo postal ingresado no es un numero entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-
             // Val - Domicilio
             if (string.IsNullOrEmpty(textBoxDomicilioDestinatario.Text)) //Lvl 0
             {
-                MessageBox.Show("Seleccione una Provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese el domicilio del destinatario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -176,34 +167,47 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
             }
 
 
-            // Val - CD Origen
-            if (string.IsNullOrEmpty(textBoxCDOrigen.Text)) //Lvl 0
+            // Val - Domicilio de Retiro
+            if (string.IsNullOrEmpty(textBoxDomicilioRetiro.Text)) //Lvl 0
             {
-                MessageBox.Show("Ingrese un centro de distribucion.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese el domicilio de retiro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Val - Domicilio
-            if (string.IsNullOrEmpty(textBoxDomicilioRetiro.Text)) //Lvl 0
+            // Datos Destinatario
+            // Val - Nombre
+            if (string.IsNullOrEmpty(textBoxNombreDestinatario.Text)) //Lvl 0
             {
-                MessageBox.Show("Seleccione una Provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese el nombre del destinatario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Val - Codigo Postal
-            if (string.IsNullOrEmpty(textBoxDomicilioRetiro.Text)) //Lvl 0
+            // Val - Apellido
+            if (string.IsNullOrEmpty(textBoxApellidoDestinatario.Text)) //Lvl 0
             {
-                MessageBox.Show("Seleccione una Provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese el apellido del destinatario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            // Val - DNI
+            if (string.IsNullOrEmpty(textBoxDNIDestinatario.Text)) //Lvl 0
+            {
+                MessageBox.Show("Ingrese un DNI válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
 
 
             /*FORMULARIO: Valida TIPO y el rango de ser necesario.*/
 
-            /*var nuevaEncomienda = new EncomiendasImpuestas
-            {
 
-            };
+
+
+            //var nuevaEncomienda = new EncomiendasImpuestas
+            //{
+
+            //};
 
             //RegistrarImposicionRetiroPorDomicilioModel.ImponerEncomienda(nuevaEncomienda);
 
@@ -216,22 +220,91 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
             string provinciaSeleccionada = cmbBoxProvDst.Text;
 
             // Limpiar combo de localidad
-            cmbBoxLocalidadDst.DataSource = null;
+            cmbBoxLocalidadRetiro.DataSource = null;
 
             if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
             {
-                cmbBoxLocalidadDst.Enabled = true;
-                cmbBoxLocalidadDst.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
+                cmbBoxLocalidadRetiro.Enabled = true;
+                cmbBoxLocalidadRetiro.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
             }
 
         }
 
         private void cmbBoxProvRetiro_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string provinciaSeleccionada = cmbBoxProvRetiro.Text;
+
+            // Limpiar combo de localidad
+            cmbBoxLocalidadRetiro.DataSource = null;
+
+            if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
+            {
+                cmbBoxLocalidadRetiro.Enabled = true;
+                cmbBoxLocalidadRetiro.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
+            }
+        }
+
+        private void textBoxCpRetiro_TextChanged(object sender, EventArgs e)
+        {
+            //Obtengo CD Origen
+            string codigoPostal1 = textBoxCpRetiro.Text.Trim();
+            Ubicacion ubicacion1 = new Ubicacion();
+            string centro1 = ubicacion.ObtenerCentroDistribucion(codigoPostal1);
+            labelCdOrigen.Text = centro1;
+        }
+
+
+        private void textBoxCodPostDestino_TextChanged(object sender, EventArgs e)
+        {
+            //Obtengo CD Destino
+            string codigoPostal = textBoxCpRetiro.Text.Trim();
+            Ubicacion ubicacion = new Ubicacion();
+            string centro = ubicacion.ObtenerCentroDistribucion(codigoPostal);
+            labelCdDestino.Text = centro;
+
 
         }
 
-        
+
+
+        private void comboBoxMetodoEntrega_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxMetodoEntrega.Text == "Retiro en CD Destino")
+            {
+                labelDomicilioDestino.Visible = false;
+                textBoxDomicilioDestinatario.Visible = false;
+
+            }
+            else
+            {
+                labelDomicilioDestino.Visible = true;
+                textBoxDomicilioDestinatario.Visible = true;
+            }
+
+
+
+        }
+
+        private void ValidarCUIT_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxCUITCUIL.Text))
+            {
+                MessageBox.Show("Ingrese un CUIT/CUIL de cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(textBoxCUITCUIL.Text, out int clienteValido))
+            {
+                MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            modelo.Clientes(new Clientes
+            {
+                CUITCUIL = clienteValido,
+            });
+
+            buttonGenerarNumeroGuia.Enabled = true;
+        }
     }
-}*/
 }
+    

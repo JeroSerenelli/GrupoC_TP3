@@ -1,4 +1,4 @@
-﻿namespace GrupoC_TP3.CU9_RegistrarImposicionEnCD
+﻿namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 {
     partial class RegistrarImposicionEnCDForm
     {
@@ -33,7 +33,7 @@
             comboBox1 = new ComboBox();
             label1 = new Label();
             groupBox4 = new GroupBox();
-            textBox1 = new TextBox();
+            textBoxCDDestino = new TextBox();
             label10 = new Label();
             textBoxDomicilioDestinatario = new TextBox();
             comboBoxMetodoEntrega = new ComboBox();
@@ -59,7 +59,7 @@
             textBoxNumeroDeGuia = new TextBox();
             buttonGenerarNumeroGuia = new Button();
             groupBox1 = new GroupBox();
-            button1 = new Button();
+            buttonValidarCuil = new Button();
             textBoxCUITCUIL = new TextBox();
             label4 = new Label();
             groupBox3 = new GroupBox();
@@ -96,6 +96,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 47;
+            comboBox1.SelectedValueChanged += comboBox1_SelectedValueChanged;
             // 
             // label1
             // 
@@ -108,7 +109,7 @@
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(textBox1);
+            groupBox4.Controls.Add(textBoxCDDestino);
             groupBox4.Controls.Add(label2);
             groupBox4.Controls.Add(comboBox2);
             groupBox4.Controls.Add(comboBox1);
@@ -127,12 +128,12 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Informacion Destino";
             // 
-            // textBox1
+            // textBoxCDDestino
             // 
-            textBox1.Location = new Point(127, 136);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(246, 23);
-            textBox1.TabIndex = 50;
+            textBoxCDDestino.Location = new Point(127, 136);
+            textBoxCDDestino.Name = "textBoxCDDestino";
+            textBoxCDDestino.Size = new Size(246, 23);
+            textBoxCDDestino.TabIndex = 50;
             // 
             // label10
             // 
@@ -207,7 +208,7 @@
             label12.AutoSize = true;
             label12.Location = new Point(6, 56);
             label12.Name = "label12";
-            label12.Size = new Size(76, 15);
+            label12.Size = new Size(75, 15);
             label12.TabIndex = 11;
             label12.Text = "Tipo de Caja:";
             // 
@@ -226,6 +227,7 @@
             buttonNuevaSolicitudLimpiar.TabIndex = 59;
             buttonNuevaSolicitudLimpiar.Text = "Aceptar";
             buttonNuevaSolicitudLimpiar.UseVisualStyleBackColor = true;
+            buttonNuevaSolicitudLimpiar.Click += buttonNuevaSolicitudLimpiar_Click;
             // 
             // label15
             // 
@@ -344,7 +346,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(buttonValidarCuil);
             groupBox1.Controls.Add(textBoxCUITCUIL);
             groupBox1.Controls.Add(label4);
             groupBox1.Location = new Point(10, 65);
@@ -354,14 +356,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Solicitante";
             // 
-            // button1
+            // buttonValidarCuil
             // 
-            button1.Location = new Point(281, 56);
-            button1.Name = "button1";
-            button1.Size = new Size(93, 23);
-            button1.TabIndex = 54;
-            button1.Text = "Validar";
-            button1.UseVisualStyleBackColor = true;
+            buttonValidarCuil.Location = new Point(281, 56);
+            buttonValidarCuil.Name = "buttonValidarCuil";
+            buttonValidarCuil.Size = new Size(93, 23);
+            buttonValidarCuil.TabIndex = 54;
+            buttonValidarCuil.Text = "Validar";
+            buttonValidarCuil.UseVisualStyleBackColor = true;
+            buttonValidarCuil.Click += buttonValidarCuil_Click_1;
             // 
             // textBoxCUITCUIL
             // 
@@ -375,7 +378,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(10, 28);
             label4.Name = "label4";
-            label4.Size = new Size(66, 15);
+            label4.Size = new Size(65, 15);
             label4.TabIndex = 3;
             label4.Text = "CUIT/CUIL:";
             // 
@@ -440,6 +443,7 @@
             Controls.Add(label18);
             Name = "RegistrarImposicionEnCDForm";
             Text = "Imposicion - Centro Distribucion";
+            Load += RegistrarImposicionEnCDForm_Load;
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -459,7 +463,7 @@
         private ComboBox comboBox1;
         private Label label1;
         private GroupBox groupBox4;
-        private TextBox textBox1;
+        private TextBox textBoxCDDestino;
         private Label label10;
         private TextBox textBoxDomicilioDestinatario;
         private ComboBox comboBoxMetodoEntrega;
@@ -485,7 +489,7 @@
         private TextBox textBoxNumeroDeGuia;
         private Button buttonGenerarNumeroGuia;
         private GroupBox groupBox1;
-        private Button button1;
+        private Button buttonValidarCuil;
         private TextBox textBoxCUITCUIL;
         private Label label4;
         private GroupBox groupBox3;

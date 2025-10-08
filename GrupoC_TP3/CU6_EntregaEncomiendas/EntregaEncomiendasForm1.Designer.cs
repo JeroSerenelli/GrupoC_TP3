@@ -31,18 +31,18 @@
             label17 = new Label();
             label18 = new Label();
             groupBox2 = new GroupBox();
+            labelNombre = new Label();
+            labelApellido = new Label();
             label3 = new Label();
             label2 = new Label();
             buttonConfirmar = new Button();
             listViewEncomiendasARetirarAgencia = new ListView();
             nroGuia = new ColumnHeader();
+            columnEstado = new ColumnHeader();
             groupBox1 = new GroupBox();
             label1 = new Label();
-            textBoxNumeroDeGuia = new TextBox();
+            textBoxDNI = new TextBox();
             buttonConsultar = new Button();
-            labelApellido = new Label();
-            label4 = new Label();
-            columnEstado = new ColumnHeader();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -69,7 +69,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(labelNombre);
             groupBox2.Controls.Add(labelApellido);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label2);
@@ -83,6 +83,24 @@
             groupBox2.TabIndex = 70;
             groupBox2.TabStop = false;
             groupBox2.Text = "Encomiendas a Retirar";
+            // 
+            // labelNombre
+            // 
+            labelNombre.AutoSize = true;
+            labelNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNombre.Location = new Point(85, 36);
+            labelNombre.Name = "labelNombre";
+            labelNombre.Size = new Size(0, 20);
+            labelNombre.TabIndex = 52;
+            // 
+            // labelApellido
+            // 
+            labelApellido.AutoSize = true;
+            labelApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelApellido.Location = new Point(85, 74);
+            labelApellido.Name = "labelApellido";
+            labelApellido.Size = new Size(0, 20);
+            labelApellido.TabIndex = 51;
             // 
             // label3
             // 
@@ -131,10 +149,15 @@
             nroGuia.Text = "Numero de Guia";
             nroGuia.Width = 150;
             // 
+            // columnEstado
+            // 
+            columnEstado.Text = "Estado";
+            columnEstado.Width = 120;
+            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(textBoxNumeroDeGuia);
+            groupBox1.Controls.Add(textBoxDNI);
             groupBox1.Controls.Add(buttonConsultar);
             groupBox1.Location = new Point(38, 101);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
@@ -154,13 +177,13 @@
             label1.TabIndex = 0;
             label1.Text = "DNI:";
             // 
-            // textBoxNumeroDeGuia
+            // textBoxDNI
             // 
-            textBoxNumeroDeGuia.Location = new Point(51, 31);
-            textBoxNumeroDeGuia.Margin = new Padding(3, 4, 3, 4);
-            textBoxNumeroDeGuia.Name = "textBoxNumeroDeGuia";
-            textBoxNumeroDeGuia.Size = new Size(249, 27);
-            textBoxNumeroDeGuia.TabIndex = 1;
+            textBoxDNI.Location = new Point(51, 31);
+            textBoxDNI.Margin = new Padding(3, 4, 3, 4);
+            textBoxDNI.Name = "textBoxDNI";
+            textBoxDNI.Size = new Size(249, 27);
+            textBoxDNI.TabIndex = 1;
             // 
             // buttonConsultar
             // 
@@ -172,29 +195,6 @@
             buttonConsultar.Text = "Consultar";
             buttonConsultar.UseVisualStyleBackColor = true;
             buttonConsultar.Click += buttonConsultar_Click;
-            // 
-            // labelApellido
-            // 
-            labelApellido.AutoSize = true;
-            labelApellido.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelApellido.Location = new Point(85, 74);
-            labelApellido.Name = "labelApellido";
-            labelApellido.Size = new Size(0, 20);
-            labelApellido.TabIndex = 51;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(85, 36);
-            label4.Name = "label4";
-            label4.Size = new Size(0, 20);
-            label4.TabIndex = 52;
-            // 
-            // columnEstado
-            // 
-            columnEstado.Text = "Estado";
-            columnEstado.Width = 120;
             // 
             // EntregaEncomiendasForm1
             // 
@@ -227,10 +227,10 @@
         private ColumnHeader nroGuia;
         private GroupBox groupBox1;
         private Label label1;
-        private TextBox textBoxNumeroDeGuia;
+        private TextBox textBoxDNI;
         private Button buttonConsultar;
         private Label labelApellido;
-        private Label label4;
+        private Label labelNombre;
         private ColumnHeader columnEstado;
     }
 }

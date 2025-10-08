@@ -298,10 +298,10 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
                 MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            modelo.Clientes(new Clientes
-            {
-                CUITCUIL = clienteValido,
-            });
+            //modelo.Clientes(new Clientes
+            //{
+            //    CUITCUIL = clienteValido,
+            //});
 
             buttonGenerarNumeroGuia.Enabled = true;
         }

@@ -33,7 +33,7 @@
             cmbBoxProvDst = new ComboBox();
             label1 = new Label();
             groupBox4 = new GroupBox();
-            textBoxCdDestino = new TextBox();
+            labelCdDestino = new Label();
             label10 = new Label();
             textBoxDomicilioDestinatario = new TextBox();
             comboBoxMetodoEntrega = new ComboBox();
@@ -65,27 +65,21 @@
             groupBox3 = new GroupBox();
             label18 = new Label();
             groupBox5 = new GroupBox();
-            textBox2 = new TextBox();
-            comboBox4 = new ComboBox();
+            textBoxCDOrigen = new TextBox();
+            cmbBoxProvRetiro = new ComboBox();
             label3 = new Label();
             label20 = new Label();
-            comboBox3 = new ComboBox();
+            cmbBoxLocalidadRetiro = new ComboBox();
             label19 = new Label();
-            textBox4 = new TextBox();
+            textBoxCpRetiro = new TextBox();
             label5 = new Label();
             label11 = new Label();
-            textBox3 = new TextBox();
-            groupBox6 = new GroupBox();
-            label22 = new Label();
-            label23 = new Label();
-            textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
+            textBoxDomicilioRetiro = new TextBox();
             groupBox4.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox5.SuspendLayout();
-            groupBox6.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -105,7 +99,6 @@
             cmbBoxLocalidadDst.Name = "cmbBoxLocalidadDst";
             cmbBoxLocalidadDst.Size = new Size(184, 28);
             cmbBoxLocalidadDst.TabIndex = 48;
-            
             // 
             // cmbBoxProvDst
             // 
@@ -128,7 +121,7 @@
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(textBoxCdDestino);
+            groupBox4.Controls.Add(labelCdDestino);
             groupBox4.Controls.Add(label2);
             groupBox4.Controls.Add(cmbBoxLocalidadDst);
             groupBox4.Controls.Add(cmbBoxProvDst);
@@ -149,13 +142,13 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Informacion Destino";
             // 
-            // textBoxCdDestino
+            // labelCdDestino
             // 
-            textBoxCdDestino.Location = new Point(145, 181);
-            textBoxCdDestino.Margin = new Padding(3, 4, 3, 4);
-            textBoxCdDestino.Name = "textBoxCdDestino";
-            textBoxCdDestino.Size = new Size(281, 27);
-            textBoxCdDestino.TabIndex = 50;
+            labelCdDestino.AutoSize = true;
+            labelCdDestino.Location = new Point(144, 187);
+            labelCdDestino.Name = "labelCdDestino";
+            labelCdDestino.Size = new Size(0, 20);
+            labelCdDestino.TabIndex = 55;
             // 
             // label10
             // 
@@ -173,6 +166,7 @@
             textBoxDomicilioDestinatario.Name = "textBoxDomicilioDestinatario";
             textBoxDomicilioDestinatario.Size = new Size(281, 27);
             textBoxDomicilioDestinatario.TabIndex = 25;
+     
             // 
             // comboBoxMetodoEntrega
             // 
@@ -200,6 +194,7 @@
             textBoxCodPostDestino.Name = "textBoxCodPostDestino";
             textBoxCodPostDestino.Size = new Size(138, 27);
             textBoxCodPostDestino.TabIndex = 38;
+         
             // 
             // label6
             // 
@@ -289,7 +284,7 @@
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(textBoxNombreDestinatario);
             groupBox2.Controls.Add(textBoxApellidoDestinatario);
-            groupBox2.Location = new Point(462, 501);
+            groupBox2.Location = new Point(462, 499);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 4, 3, 4);
@@ -433,7 +428,7 @@
             groupBox3.Size = new Size(439, 113);
             groupBox3.TabIndex = 65;
             groupBox3.TabStop = false;
-            groupBox3.Text = "Datos Encomienda (Opcion 1)";
+            groupBox3.Text = "Datos Encomienda";
             // 
             // label18
             // 
@@ -447,16 +442,16 @@
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(textBox2);
-            groupBox5.Controls.Add(comboBox4);
+            groupBox5.Controls.Add(textBoxCDOrigen);
+            groupBox5.Controls.Add(cmbBoxProvRetiro);
             groupBox5.Controls.Add(label3);
             groupBox5.Controls.Add(label20);
-            groupBox5.Controls.Add(comboBox3);
+            groupBox5.Controls.Add(cmbBoxLocalidadRetiro);
             groupBox5.Controls.Add(label19);
-            groupBox5.Controls.Add(textBox4);
+            groupBox5.Controls.Add(textBoxCpRetiro);
             groupBox5.Controls.Add(label5);
             groupBox5.Controls.Add(label11);
-            groupBox5.Controls.Add(textBox3);
+            groupBox5.Controls.Add(textBoxDomicilioRetiro);
             groupBox5.Location = new Point(462, 203);
             groupBox5.Margin = new Padding(3, 4, 3, 4);
             groupBox5.Name = "groupBox5";
@@ -466,22 +461,23 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Datos Retiro";
             // 
-            // textBox2
+            // textBoxCDOrigen
             // 
-            textBox2.Location = new Point(141, 156);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(281, 27);
-            textBox2.TabIndex = 60;
+            textBoxCDOrigen.Location = new Point(141, 156);
+            textBoxCDOrigen.Margin = new Padding(3, 4, 3, 4);
+            textBoxCDOrigen.Name = "textBoxCDOrigen";
+            textBoxCDOrigen.Size = new Size(281, 27);
+            textBoxCDOrigen.TabIndex = 60;
             // 
-            // comboBox4
+            // cmbBoxProvRetiro
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(138, 43);
-            comboBox4.Margin = new Padding(3, 4, 3, 4);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(138, 28);
-            comboBox4.TabIndex = 57;
+            cmbBoxProvRetiro.FormattingEnabled = true;
+            cmbBoxProvRetiro.Location = new Point(138, 43);
+            cmbBoxProvRetiro.Margin = new Padding(3, 4, 3, 4);
+            cmbBoxProvRetiro.Name = "cmbBoxProvRetiro";
+            cmbBoxProvRetiro.Size = new Size(138, 28);
+            cmbBoxProvRetiro.TabIndex = 57;
+            cmbBoxProvRetiro.SelectedIndexChanged += cmbBoxProvRetiro_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -501,14 +497,14 @@
             label20.TabIndex = 52;
             label20.Text = "Domicilio de Retiro:";
             // 
-            // comboBox3
+            // cmbBoxLocalidadRetiro
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(138, 77);
-            comboBox3.Margin = new Padding(3, 4, 3, 4);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(138, 28);
-            comboBox3.TabIndex = 58;
+            cmbBoxLocalidadRetiro.FormattingEnabled = true;
+            cmbBoxLocalidadRetiro.Location = new Point(138, 77);
+            cmbBoxLocalidadRetiro.Margin = new Padding(3, 4, 3, 4);
+            cmbBoxLocalidadRetiro.Name = "cmbBoxLocalidadRetiro";
+            cmbBoxLocalidadRetiro.Size = new Size(138, 28);
+            cmbBoxLocalidadRetiro.TabIndex = 58;
             // 
             // label19
             // 
@@ -519,13 +515,13 @@
             label19.TabIndex = 54;
             label19.Text = "Codigo Postal:";
             // 
-            // textBox4
+            // textBoxCpRetiro
             // 
-            textBox4.Location = new Point(141, 119);
-            textBox4.Margin = new Padding(3, 4, 3, 4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(138, 27);
-            textBox4.TabIndex = 55;
+            textBoxCpRetiro.Location = new Point(141, 119);
+            textBoxCpRetiro.Margin = new Padding(3, 4, 3, 4);
+            textBoxCpRetiro.Name = "textBoxCpRetiro";
+            textBoxCpRetiro.Size = new Size(138, 27);
+            textBoxCpRetiro.TabIndex = 55;
             // 
             // label5
             // 
@@ -545,71 +541,19 @@
             label11.TabIndex = 51;
             label11.Text = "Provincia:";
             // 
-            // textBox3
+            // textBoxDomicilioRetiro
             // 
-            textBox3.Location = new Point(141, 200);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(281, 27);
-            textBox3.TabIndex = 53;
-            // 
-            // groupBox6
-            // 
-            groupBox6.Controls.Add(label22);
-            groupBox6.Controls.Add(label23);
-            groupBox6.Controls.Add(textBox1);
-            groupBox6.Controls.Add(comboBox1);
-            groupBox6.Location = new Point(12, 620);
-            groupBox6.Margin = new Padding(3, 4, 3, 4);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Padding = new Padding(3, 4, 3, 4);
-            groupBox6.Size = new Size(439, 113);
-            groupBox6.TabIndex = 66;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "Datos Encomienda (Opcion 2)";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(7, 37);
-            label22.Name = "label22";
-            label22.Size = new Size(111, 20);
-            label22.TabIndex = 10;
-            label22.Text = "Cantidad Cajas:";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(7, 76);
-            label23.Name = "label23";
-            label23.Size = new Size(96, 20);
-            label23.TabIndex = 11;
-            label23.Text = "Tipo de Caja:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(123, 33);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(105, 27);
-            textBox1.TabIndex = 24;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "S", "M", "L", "XL" });
-            comboBox1.Location = new Point(123, 67);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(105, 28);
-            comboBox1.TabIndex = 34;
+            textBoxDomicilioRetiro.Location = new Point(141, 200);
+            textBoxDomicilioRetiro.Margin = new Padding(3, 4, 3, 4);
+            textBoxDomicilioRetiro.Name = "textBoxDomicilioRetiro";
+            textBoxDomicilioRetiro.Size = new Size(281, 27);
+            textBoxDomicilioRetiro.TabIndex = 53;
             // 
             // RegistrarImposicionRetiroPorDomicilioForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(920, 806);
-            Controls.Add(groupBox6);
             Controls.Add(groupBox5);
             Controls.Add(groupBox4);
             Controls.Add(buttonNuevaSolicitudLimpiar);
@@ -635,8 +579,6 @@
             groupBox3.PerformLayout();
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
-            groupBox6.ResumeLayout(false);
-            groupBox6.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -648,7 +590,6 @@
         private ComboBox cmbBoxProvDst;
         private Label label1;
         private GroupBox groupBox4;
-        private TextBox textBoxCdDestino;
         private Label label10;
         private TextBox textBoxDomicilioDestinatario;
         private ComboBox comboBoxMetodoEntrega;
@@ -680,20 +621,16 @@
         private GroupBox groupBox3;
         private Label label18;
         private GroupBox groupBox5;
-        private TextBox textBox2;
-        private ComboBox comboBox4;
+        private TextBox textBoxCDOrigen;
+        private ComboBox cmbBoxProvRetiro;
         private Label label3;
         private Label label20;
-        private ComboBox comboBox3;
+        private ComboBox cmbBoxLocalidadRetiro;
         private Label label19;
-        private TextBox textBox4;
+        private TextBox textBoxCpRetiro;
         private Label label5;
         private Label label11;
-        private TextBox textBox3;
-        private GroupBox groupBox6;
-        private Label label22;
-        private Label label23;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
+        private TextBox textBoxDomicilioRetiro;
+        private Label labelCdDestino;
     }
 }

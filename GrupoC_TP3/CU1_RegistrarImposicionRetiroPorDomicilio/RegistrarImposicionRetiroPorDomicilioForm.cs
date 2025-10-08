@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
+using GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +16,11 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
 {
     public partial class RegistrarImposicionRetiroPorDomicilioForm : Form
     {
+        private RegistrarImposicionRetiroPorDomicilioModel modelo = new();
+
         //private object provinciasLocalidades; // por sugerencia del debugger
         private Ubicacion ubicacion;
+
 
         public RegistrarImposicionRetiroPorDomicilioForm()
         {
@@ -25,48 +30,24 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
             cmbBoxProvDst.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
             cmbBoxProvDst.SelectedIndex = -1;
             cmbBoxLocalidadDst.SelectedIndex = -1;
-            cmbBoxLocalidadDst.Enabled = false; // hasata que no elija la provincia
-            //cmbBoxProvDst.SelectedIndexChanged += cmbBoxLocalidadDst_SelectedIndexChanged;
+            cmbBoxLocalidadDst.Enabled = false; // hasata que no elija la provincia de destino
 
-        }
+            cmbBoxProvRetiro.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
+            cmbBoxProvRetiro.
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+            labelCdDestino.Text = "TBD";
 
-        }
+            string cpDestino = textBoxCodPostDestino.Text;
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
+            if (CodigoPostalCentroDistribucion.TryGetValue(cpDestino, out string centro))
+            {
+                labelCdDestino.Text = centro;
+            }
 
-        }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBoxDestinoEncomienda_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonNuevaSolicitudLimpiar_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -89,17 +70,19 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
+
+            //Informacion Destino
             // Val - Provincia
             if (string.IsNullOrEmpty(cmbBoxProvDst.Text)) //Lvl 0
             {
-                MessageBox.Show("Seleccione una provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione una provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //E01 
                 return;
             }
 
             // Val - Localidad
             if (string.IsNullOrEmpty(cmbBoxLocalidadDst.Text)) //Lvl 0
             {
-                MessageBox.Show("Seleccione una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //E01
                 return;
             }
 
@@ -139,8 +122,9 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
+            //Datos Encomienda
             // Val - Cant. Cajas
-            // Que pasa si estamos mandando varias cajas, es deir 1 de tipo S, 2 tipo M, etc.?? 
+            ////// Que pasa si estamos mandando varias cajas, es deir 1 de tipo S, 2 tipo M, etc.?? 
 
             if (string.IsNullOrEmpty(textBoxCantidadCajas.Text)) //Lvl 0
             {
@@ -148,13 +132,84 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
+            if (!int.TryParse(textBoxCantidadCajas.Text, out int cajas)) //Lvl 1
+            {
+                MessageBox.Show("Debe ingresar un número en el campo 'Cantidad de Cajas'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //Val - Tipo de Caja 
+            if (string.IsNullOrEmpty(comboBoxTipoCaja.Text)) //Lvl 0
+            {
+                MessageBox.Show("Seleccione el tipo de caja.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //Datos Retiro
+
+            // Val - Provincia
+            if (string.IsNullOrEmpty(cmbBoxProvRetiro.Text)) //Lvl 0
+            {
+                MessageBox.Show("Seleccione una provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Val - Localidad
+            if (string.IsNullOrEmpty(cmbBoxLocalidadRetiro.Text)) //Lvl 0
+            {
+                MessageBox.Show("Seleccione una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Val - Codigo Postal
+            if (string.IsNullOrEmpty(textBoxCpRetiro.Text)) //Lvl 0
+            {
+                MessageBox.Show("Ingrese un código postal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
 
+            if (!int.TryParse(textBoxCpRetiro.Text, out int cpRetiro)) //Lvl 1
+            {
+                MessageBox.Show("El codigo postal ingresado no es un numero entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+
+            // Val - CD Origen
+            if (string.IsNullOrEmpty(textBoxCDOrigen.Text)) //Lvl 0
+            {
+                MessageBox.Show("Ingrese un centro de distribucion.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Val - Domicilio
+            if (string.IsNullOrEmpty(textBoxDomicilioRetiro.Text)) //Lvl 0
+            {
+                MessageBox.Show("Seleccione una Provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Val - Codigo Postal
+            if (string.IsNullOrEmpty(textBoxDomicilioRetiro.Text)) //Lvl 0
+            {
+                MessageBox.Show("Seleccione una Provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            /*FORMULARIO: Valida TIPO y el rango de ser necesario.*/
+
+            var nuevaEncomienda = new EncomiendasImpuestas
+            {
+
+            };
+
+            //RegistrarImposicionRetiroPorDomicilioModel.ImponerEncomienda(nuevaEncomienda);
 
         }
 
-        
+
 
         private void cmbBoxProvDst_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -170,5 +225,12 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
             }
 
         }
+
+        private void cmbBoxProvRetiro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

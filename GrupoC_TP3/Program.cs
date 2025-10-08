@@ -16,7 +16,8 @@ namespace GrupoC_TP3
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new RegistrarImposicionRetiroPorDomicilioForm());
-            Application.Run(new CU2_RegistrarImposicionEnAgencia.RegistrarImposicionEnAgenciaForm());
+            //Application.Run(new CU2_RegistrarImposicionEnAgencia.RegistrarImposicionEnAgenciaForm());
+
         }
     }
 }

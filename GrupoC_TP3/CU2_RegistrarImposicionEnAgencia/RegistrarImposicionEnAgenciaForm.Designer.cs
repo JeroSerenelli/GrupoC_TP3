@@ -41,7 +41,7 @@
             textBoxDomicilioDestinatario = new TextBox();
             label21 = new Label();
             groupBox1 = new GroupBox();
-            button1 = new Button();
+            buttonValidar = new Button();
             textBoxCUITCUIL = new TextBox();
             label4 = new Label();
             label17 = new Label();
@@ -56,16 +56,15 @@
             label6 = new Label();
             textBoxCodPostDestino = new TextBox();
             label14 = new Label();
-            textBoxNumeroDeGuia = new TextBox();
             buttonGenerarNumeroGuia = new Button();
             label22 = new Label();
             textBoxCodigoAgencia = new TextBox();
             groupBox4 = new GroupBox();
+            cmbBoxProvDst = new ComboBox();
             textBox1 = new TextBox();
             label2 = new Label();
-            comboBox2 = new ComboBox();
+            cmbBoxLocalidadDst = new ComboBox();
             label1 = new Label();
-            comboBoxProvincia = new ComboBox();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -80,7 +79,6 @@
             buttonNuevaSolicitudLimpiar.TabIndex = 45;
             buttonNuevaSolicitudLimpiar.Text = "Aceptar";
             buttonNuevaSolicitudLimpiar.UseVisualStyleBackColor = true;
-            buttonNuevaSolicitudLimpiar.Click += buttonNuevaSolicitudLimpiar_Click;
             // 
             // label15
             // 
@@ -168,7 +166,6 @@
             textBoxDomicilioDestinatario.Name = "textBoxDomicilioDestinatario";
             textBoxDomicilioDestinatario.Size = new Size(246, 23);
             textBoxDomicilioDestinatario.TabIndex = 25;
-            textBoxDomicilioDestinatario.TextChanged += textBoxDomicilioDestinatario_TextChanged;
             // 
             // label21
             // 
@@ -178,11 +175,10 @@
             label21.Size = new Size(61, 15);
             label21.TabIndex = 24;
             label21.Text = "Domicilio:";
-            label21.Click += label21_Click;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(buttonValidar);
             groupBox1.Controls.Add(textBoxCUITCUIL);
             groupBox1.Controls.Add(label4);
             groupBox1.Location = new Point(12, 65);
@@ -192,15 +188,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Solicitante";
             // 
-            // button1
+            // buttonValidar
             // 
-            button1.Location = new Point(281, 56);
-            button1.Name = "button1";
-            button1.Size = new Size(93, 23);
-            button1.TabIndex = 54;
-            button1.Text = "Validar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonValidar.Location = new Point(281, 56);
+            buttonValidar.Name = "buttonValidar";
+            buttonValidar.Size = new Size(93, 23);
+            buttonValidar.TabIndex = 54;
+            buttonValidar.Text = "Validar";
+            buttonValidar.UseVisualStyleBackColor = true;
+            buttonValidar.Click += buttonValidar_Click;
             // 
             // textBoxCUITCUIL
             // 
@@ -227,7 +223,6 @@
             label17.Size = new Size(269, 15);
             label17.TabIndex = 48;
             label17.Text = "Transportes Urbanos Terrestres Argentinos S.A.";
-            label17.Click += label17_Click;
             // 
             // label18
             // 
@@ -302,7 +297,6 @@
             label10.Size = new Size(111, 15);
             label10.TabIndex = 39;
             label10.Text = "Metodo de Entrega:";
-            label10.Click += label10_Click;
             // 
             // label6
             // 
@@ -329,21 +323,13 @@
             label14.TabIndex = 13;
             label14.Text = "Provincia:";
             // 
-            // textBoxNumeroDeGuia
-            // 
-            textBoxNumeroDeGuia.Location = new Point(196, 629);
-            textBoxNumeroDeGuia.Name = "textBoxNumeroDeGuia";
-            textBoxNumeroDeGuia.ReadOnly = true;
-            textBoxNumeroDeGuia.Size = new Size(170, 23);
-            textBoxNumeroDeGuia.TabIndex = 44;
-            // 
             // buttonGenerarNumeroGuia
             // 
-            buttonGenerarNumeroGuia.Location = new Point(16, 629);
+            buttonGenerarNumeroGuia.Location = new Point(300, 629);
             buttonGenerarNumeroGuia.Name = "buttonGenerarNumeroGuia";
-            buttonGenerarNumeroGuia.Size = new Size(174, 23);
+            buttonGenerarNumeroGuia.Size = new Size(95, 23);
             buttonGenerarNumeroGuia.TabIndex = 42;
-            buttonGenerarNumeroGuia.Text = "Generar Numero de Guia";
+            buttonGenerarNumeroGuia.Text = "Generar Guia";
             buttonGenerarNumeroGuia.UseVisualStyleBackColor = true;
             buttonGenerarNumeroGuia.Click += buttonGenerarNumeroGuia_Click;
             // 
@@ -358,7 +344,7 @@
             // 
             // textBoxCodigoAgencia
             // 
-            textBoxCodigoAgencia.Location = new Point(98, 6);
+            textBoxCodigoAgencia.Location = new Point(108, 6);
             textBoxCodigoAgencia.Name = "textBoxCodigoAgencia";
             textBoxCodigoAgencia.ReadOnly = true;
             textBoxCodigoAgencia.Size = new Size(36, 23);
@@ -367,10 +353,10 @@
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(comboBoxProvincia);
+            groupBox4.Controls.Add(cmbBoxProvDst);
             groupBox4.Controls.Add(textBox1);
             groupBox4.Controls.Add(label2);
-            groupBox4.Controls.Add(comboBox2);
+            groupBox4.Controls.Add(cmbBoxLocalidadDst);
             groupBox4.Controls.Add(label1);
             groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(textBoxDomicilioDestinatario);
@@ -385,6 +371,15 @@
             groupBox4.TabIndex = 55;
             groupBox4.TabStop = false;
             groupBox4.Text = "Informacion Destino";
+            // 
+            // cmbBoxProvDst
+            // 
+            cmbBoxProvDst.FormattingEnabled = true;
+            cmbBoxProvDst.Location = new Point(127, 18);
+            cmbBoxProvDst.Name = "cmbBoxProvDst";
+            cmbBoxProvDst.Size = new Size(121, 23);
+            cmbBoxProvDst.TabIndex = 51;
+            cmbBoxProvDst.SelectedIndexChanged += cmbBoxProvDst_SelectedIndexChanged;
             // 
             // textBox1
             // 
@@ -402,13 +397,13 @@
             label2.TabIndex = 49;
             label2.Text = "CD Destino:";
             // 
-            // comboBox2
+            // cmbBoxLocalidadDst
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(126, 45);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 48;
+            cmbBoxLocalidadDst.FormattingEnabled = true;
+            cmbBoxLocalidadDst.Location = new Point(126, 45);
+            cmbBoxLocalidadDst.Name = "cmbBoxLocalidadDst";
+            cmbBoxLocalidadDst.Size = new Size(121, 23);
+            cmbBoxLocalidadDst.TabIndex = 48;
             // 
             // label1
             // 
@@ -418,14 +413,6 @@
             label1.Size = new Size(61, 15);
             label1.TabIndex = 46;
             label1.Text = "Localidad:";
-            // 
-            // comboBoxProvincia
-            // 
-            comboBoxProvincia.FormattingEnabled = true;
-            comboBoxProvincia.Location = new Point(127, 18);
-            comboBoxProvincia.Name = "comboBoxProvincia";
-            comboBoxProvincia.Size = new Size(121, 23);
-            comboBoxProvincia.TabIndex = 51;
             // 
             // RegistrarImposicionEnAgenciaForm
             // 
@@ -443,7 +430,6 @@
             Controls.Add(label18);
             Controls.Add(label16);
             Controls.Add(groupBox3);
-            Controls.Add(textBoxNumeroDeGuia);
             Controls.Add(buttonGenerarNumeroGuia);
             Name = "RegistrarImposicionEnAgenciaForm";
             Text = "Imposicion - Agencias";
@@ -487,16 +473,15 @@
         private Label label12;
         private Label label14;
         private TextBox textBoxCantidadCajas;
-        private TextBox textBoxNumeroDeGuia;
         private Button buttonGenerarNumeroGuia;
         private Label label22;
         private TextBox textBoxCodigoAgencia;
-        private Button button1;
+        private Button buttonValidar;
         private GroupBox groupBox4;
         private Label label1;
-        private ComboBox comboBox2;
+        private ComboBox cmbBoxLocalidadDst;
         private TextBox textBox1;
         private Label label2;
-        private ComboBox comboBoxProvincia;
+        private ComboBox cmbBoxProvDst;
     }
 }

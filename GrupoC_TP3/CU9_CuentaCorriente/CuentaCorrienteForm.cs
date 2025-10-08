@@ -51,31 +51,5 @@ namespace GrupoC_TP3
         {
 
         }
-
-        private void buttonBuscarClienteClick(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(comboBoxCuitCuil.Text))
-            {
-                MessageBox.Show("Debe ingresar o seleccionar un CUIT/CUIL.", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!System.Text.RegularExpressions.Regex.IsMatch(
-                comboBoxCuitCuil.Text.Trim(), @"^\d{2}-\d{8}-\d$"))
-            {
-                MessageBox.Show("El CUIT/CUIL debe tener el formato XX-XXXXXXXX-X.", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (dateTimePickerFin.Value.Date < dateTimePickerInicio.Value.Date)
-            {
-                MessageBox.Show("La fecha de fin no puede ser menor que la fecha de inicio.", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-        }
     }
 }

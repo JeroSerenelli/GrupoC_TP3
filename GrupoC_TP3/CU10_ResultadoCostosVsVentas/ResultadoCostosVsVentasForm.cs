@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrupoC_TP3.ResultadoCostosVsVentas
+namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
 {
     public partial class ResultadoCostosVsVentasForm : Form
     {
@@ -17,19 +17,25 @@ namespace GrupoC_TP3.ResultadoCostosVsVentas
             InitializeComponent();
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void razonSocialTxt_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        private void IniciodateTimePicker_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonBuscar_Click_1(object sender, EventArgs e)
+        {
+
+            if (IniciodateTimePicker.Value > FindateTimePicker.Value)
+            {
+                MessageBox.Show("La fecha de inicio no puede ser superior a la fecha de fin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

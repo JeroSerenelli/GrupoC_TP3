@@ -1,4 +1,4 @@
-﻿namespace GrupoC_TP3.ConsultaEstadoGuiaEnCD
+﻿namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 {
     partial class ConsultaEstadoGuiaForm
     {
@@ -34,7 +34,7 @@
             buttonBuscar = new Button();
             listView1 = new ListView();
             EstadoEncomienda = new ColumnHeader();
-            columnHeader1 = new ColumnHeader();
+            UltimaActualizacion = new ColumnHeader();
             label3 = new Label();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
@@ -81,7 +81,7 @@
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { EstadoEncomienda, columnHeader1 });
+            listView1.Columns.AddRange(new ColumnHeader[] { EstadoEncomienda, UltimaActualizacion });
             listView1.Location = new Point(6, 22);
             listView1.Name = "listView1";
             listView1.Size = new Size(419, 131);
@@ -94,10 +94,10 @@
             EstadoEncomienda.Text = "Estado de Encomienda";
             EstadoEncomienda.Width = 150;
             // 
-            // columnHeader1
+            // UltimaActualizacion
             // 
-            columnHeader1.Text = "Ultima Actualizacion";
-            columnHeader1.Width = 150;
+            UltimaActualizacion.Text = "Ultima Actualizacion";
+            UltimaActualizacion.Width = 150;
             // 
             // label3
             // 
@@ -173,7 +173,7 @@
         private Label label3;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private ColumnHeader columnHeader1;
+        private ColumnHeader UltimaActualizacion;
         private Button button1;
     }
 }

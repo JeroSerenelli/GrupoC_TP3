@@ -38,7 +38,7 @@
             textBoxDomicilioDestinatario = new TextBox();
             comboBoxMetodoEntrega = new ComboBox();
             label14 = new Label();
-            textBoxCodPostDestino = new TextBox();
+            textBoxCPDestino = new TextBox();
             label6 = new Label();
             labelDomicilioDestino = new Label();
             label13 = new Label();
@@ -130,7 +130,7 @@
             groupBox4.Controls.Add(textBoxDomicilioDestinatario);
             groupBox4.Controls.Add(comboBoxMetodoEntrega);
             groupBox4.Controls.Add(label14);
-            groupBox4.Controls.Add(textBoxCodPostDestino);
+            groupBox4.Controls.Add(textBoxCPDestino);
             groupBox4.Controls.Add(label6);
             groupBox4.Controls.Add(labelDomicilioDestino);
             groupBox4.Location = new Point(16, 203);
@@ -187,14 +187,14 @@
             label14.TabIndex = 13;
             label14.Text = "Provincia:";
             // 
-            // textBoxCodPostDestino
+            // textBoxCPDestino
             // 
-            textBoxCodPostDestino.Location = new Point(144, 140);
-            textBoxCodPostDestino.Margin = new Padding(3, 4, 3, 4);
-            textBoxCodPostDestino.Name = "textBoxCodPostDestino";
-            textBoxCodPostDestino.Size = new Size(138, 27);
-            textBoxCodPostDestino.TabIndex = 38;
-            textBoxCodPostDestino.TextChanged += textBoxCodPostDestino_TextChanged;
+            textBoxCPDestino.Location = new Point(144, 140);
+            textBoxCPDestino.Margin = new Padding(3, 4, 3, 4);
+            textBoxCPDestino.Name = "textBoxCPDestino";
+            textBoxCPDestino.Size = new Size(138, 27);
+            textBoxCPDestino.TabIndex = 38;
+            textBoxCPDestino.TextChanged += textBoxCodPostDestino_TextChanged;
             // 
             // label6
             // 
@@ -596,7 +596,7 @@
         private TextBox textBoxDomicilioDestinatario;
         private ComboBox comboBoxMetodoEntrega;
         private Label label14;
-        private TextBox textBoxCodPostDestino;
+        private TextBox textBoxCPDestino;
         private Label label6;
         private Label labelDomicilioDestino;
         private Label label13;

@@ -92,7 +92,7 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
             }
 
             // Val - Codigo Postal
-            if (string.IsNullOrEmpty(textBoxCodPostDestino.Text)) //Lvl 0
+            if (string.IsNullOrEmpty(textBoxCPDestino.Text)) //Lvl 0
             {
                 MessageBox.Show("Ingrese un código postal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -257,7 +257,8 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
         private void textBoxCodPostDestino_TextChanged(object sender, EventArgs e)
         {
             //Obtengo CD Destino
-            string codigoPostal = textBoxCpRetiro.Text.Trim();
+            string codigoPostal = textBoxCPDestino.Text.Trim();
+
             Ubicacion ubicacion = new Ubicacion();
             string centro = ubicacion.ObtenerCentroDistribucion(codigoPostal);
             labelCdDestino.Text = centro;
@@ -298,10 +299,10 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
                 MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            modelo.Clientes(new Clientes
-            {
-                CUITCUIL = clienteValido,
-            });
+            //modelo.Clientes(new Clientes
+            //{
+            //    CUITCUIL = clienteValido,
+            //});
 
             buttonGenerarNumeroGuia.Enabled = true;
         }

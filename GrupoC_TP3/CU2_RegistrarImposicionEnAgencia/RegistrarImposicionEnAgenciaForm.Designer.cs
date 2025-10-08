@@ -375,6 +375,7 @@
             // cmbBoxProvDst
             // 
             cmbBoxProvDst.FormattingEnabled = true;
+            cmbBoxProvDst.Items.AddRange(new object[] { "Buenos Aires", "La Pampa" });
             cmbBoxProvDst.Location = new Point(127, 18);
             cmbBoxProvDst.Name = "cmbBoxProvDst";
             cmbBoxProvDst.Size = new Size(121, 23);
@@ -400,6 +401,7 @@
             // cmbBoxLocalidadDst
             // 
             cmbBoxLocalidadDst.FormattingEnabled = true;
+            cmbBoxLocalidadDst.Items.AddRange(new object[] { "Gral. San Martin", "Villa 31" });
             cmbBoxLocalidadDst.Location = new Point(126, 45);
             cmbBoxLocalidadDst.Name = "cmbBoxLocalidadDst";
             cmbBoxLocalidadDst.Size = new Size(121, 23);

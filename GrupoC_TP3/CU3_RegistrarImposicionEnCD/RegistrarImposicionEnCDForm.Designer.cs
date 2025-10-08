@@ -96,6 +96,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 47;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.SelectedValueChanged += comboBox1_SelectedValueChanged;
             // 
             // label1
@@ -134,6 +135,7 @@
             textBoxCDDestino.Name = "textBoxCDDestino";
             textBoxCDDestino.Size = new Size(246, 23);
             textBoxCDDestino.TabIndex = 50;
+            textBoxCDDestino.Leave += textBoxCDDestino_Leave;
             // 
             // label10
             // 
@@ -150,6 +152,7 @@
             textBoxDomicilioDestinatario.Name = "textBoxDomicilioDestinatario";
             textBoxDomicilioDestinatario.Size = new Size(246, 23);
             textBoxDomicilioDestinatario.TabIndex = 25;
+            textBoxDomicilioDestinatario.Leave += textBoxDomicilioDestinatario_Leave;
             // 
             // comboBoxMetodoEntrega
             // 
@@ -175,6 +178,7 @@
             textBoxCodPostDestino.Name = "textBoxCodPostDestino";
             textBoxCodPostDestino.Size = new Size(121, 23);
             textBoxCodPostDestino.TabIndex = 38;
+            textBoxCodPostDestino.Leave += textBoxCodPostDestino_Leave_1;
             // 
             // label6
             // 
@@ -208,7 +212,7 @@
             label12.AutoSize = true;
             label12.Location = new Point(6, 56);
             label12.Name = "label12";
-            label12.Size = new Size(75, 15);
+            label12.Size = new Size(76, 15);
             label12.TabIndex = 11;
             label12.Text = "Tipo de Caja:";
             // 
@@ -275,6 +279,7 @@
             textBoxDNIDestinatario.Name = "textBoxDNIDestinatario";
             textBoxDNIDestinatario.Size = new Size(211, 23);
             textBoxDNIDestinatario.TabIndex = 23;
+            textBoxDNIDestinatario.Leave += textBoxDNIDestinatario_Leave;
             // 
             // label8
             // 
@@ -309,6 +314,7 @@
             textBoxNombreDestinatario.Name = "textBoxNombreDestinatario";
             textBoxNombreDestinatario.Size = new Size(211, 23);
             textBoxNombreDestinatario.TabIndex = 21;
+            textBoxNombreDestinatario.Leave += textBoxNombreDestinatario_Leave;
             // 
             // textBoxApellidoDestinatario
             // 
@@ -316,6 +322,7 @@
             textBoxApellidoDestinatario.Name = "textBoxApellidoDestinatario";
             textBoxApellidoDestinatario.Size = new Size(211, 23);
             textBoxApellidoDestinatario.TabIndex = 22;
+            textBoxApellidoDestinatario.Leave += textBoxApellidoDestinatario_Leave;
             // 
             // label17
             // 
@@ -343,6 +350,7 @@
             buttonGenerarNumeroGuia.TabIndex = 56;
             buttonGenerarNumeroGuia.Text = "Generar Numero de Guia";
             buttonGenerarNumeroGuia.UseVisualStyleBackColor = true;
+            buttonGenerarNumeroGuia.Click += buttonGenerarNumeroGuia_Click_1;
             // 
             // groupBox1
             // 
@@ -378,7 +386,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(10, 28);
             label4.Name = "label4";
-            label4.Size = new Size(65, 15);
+            label4.Size = new Size(66, 15);
             label4.TabIndex = 3;
             label4.Text = "CUIT/CUIL:";
             // 

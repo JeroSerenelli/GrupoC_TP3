@@ -10,8 +10,8 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
     {
         public class Ubicacion
         {
-            public Dictionary<string, List<string>> ProvinciasYLocalidades { get; }
-            public Dictionary<string, string> CodigoPostalCentroDistribucion { get; }
+            public Dictionary<string, List<string>> ProvinciasYLocalidades { get; set; }
+            public Dictionary<string, string> CodigoPostalCentroDistribucion { get; set; }
 
             public Ubicacion()
             {
@@ -43,7 +43,11 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 {
                     return centro;
                 }
-                return "Centro de distribución no encontrado";
+                else
+                {
+                    return "Centro de distribución no encontrado";
+                }
+                    
             }
 
         }

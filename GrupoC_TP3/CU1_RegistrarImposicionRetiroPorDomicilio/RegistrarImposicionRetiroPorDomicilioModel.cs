@@ -59,5 +59,6 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
             /*Por ejemplo, lo graba en un almacen.*/
 
         }
+    }
 }
 

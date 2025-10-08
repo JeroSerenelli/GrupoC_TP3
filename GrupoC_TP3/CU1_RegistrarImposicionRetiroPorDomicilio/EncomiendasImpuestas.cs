@@ -49,6 +49,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
         public string ApellidoDestinatario { get; set; }
         public int DNIDestinatario { get; set;  }
 
+        
 
         public EncomiendasImpuestas(int CUITCUIL, string provDestino, string localidadDestino, string metodoEntrega, int cpDestino, string cdDestino, string domicilioDestinatario, int cantCajas, string tipoCaja, string provinciaRetiro, string localidadRetiro, int cpRetiro, string cdOrigen, string domicilioRetiro, string nombreDestinatario, string apellidoDestinatario, int dniDestinatario)
         {
@@ -78,6 +79,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
         }
 
+        List<EncomiendasImpuestas> encomienda = new List<EncomiendasImpuestas> ();
 
 
     }

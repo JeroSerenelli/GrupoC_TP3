@@ -32,7 +32,7 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 
         }
 
-        private void buttonBuscar_Click(object sender, EventArgs e, Guia guia)
+        /*private void buttonBuscar_Click(object sender, EventArgs e, Guia guia)
         {
             if (string.IsNullOrEmpty(textBoxNumeroGuiaConsulta.Text))
             {
@@ -59,7 +59,8 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
             
 
 
-        }
+        }*/
+
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
@@ -84,6 +85,13 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
                     listItem.SubItems.Add(Guias.UltActualizacion.ToString());
                     listView1.Items.Add(listItem);
                 }
+
+                /*else
+                {
+                    MessageBox.Show("El numero de guia ingresado no corresponde a una encomienda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                    //Cuando busco uno que existe, tambien aparece. 
+                }*/
             }
 
         }

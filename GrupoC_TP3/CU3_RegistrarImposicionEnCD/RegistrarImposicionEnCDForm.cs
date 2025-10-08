@@ -324,6 +324,9 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             ValidarDNI();
         }
 
-       
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

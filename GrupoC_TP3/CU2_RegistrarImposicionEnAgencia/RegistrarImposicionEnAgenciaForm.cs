@@ -18,10 +18,10 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
         private readonly RegistrarImposicionEnAgenciaModel modelo = new();
 
         //private Ubicacion ubicacion;
-        ////public RegistrarImposicionEnAgenciaForm()
-        ////{
-        //    InitializeComponent();
-        //}
+        public RegistrarImposicionEnAgenciaForm()
+        {
+            InitializeComponent();
+        }
 
 
         private void RegistrarImposicionEnAgenciaForm_Load(object sender, EventArgs e)

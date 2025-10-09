@@ -53,9 +53,11 @@
             groupBox1.Controls.Add(dateTimePickerInicio);
             groupBox1.Controls.Add(dateTimePickerFin);
             groupBox1.Controls.Add(buttonBuscar);
-            groupBox1.Location = new Point(29, 83);
+            groupBox1.Location = new Point(25, 62);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(544, 145);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(476, 109);
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
             groupBox1.Text = "Periodo de busqueda";
@@ -63,18 +65,18 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(14, 71);
+            label3.Location = new Point(12, 53);
             label3.Name = "label3";
-            label3.Size = new Size(107, 20);
+            label3.Size = new Size(86, 15);
             label3.TabIndex = 13;
             label3.Text = "Fin de Periodo:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(9, 32);
+            label2.Location = new Point(8, 24);
             label2.Name = "label2";
-            label2.Size = new Size(120, 20);
+            label2.Size = new Size(96, 15);
             label2.TabIndex = 12;
             label2.Text = "Incio de Periodo:";
             // 
@@ -82,10 +84,11 @@
             // 
             dateTimePickerInicio.CustomFormat = "MMMM yyyy";
             dateTimePickerInicio.Format = DateTimePickerFormat.Custom;
-            dateTimePickerInicio.Location = new Point(135, 27);
+            dateTimePickerInicio.Location = new Point(118, 20);
+            dateTimePickerInicio.Margin = new Padding(3, 2, 3, 2);
             dateTimePickerInicio.Name = "dateTimePickerInicio";
             dateTimePickerInicio.ShowUpDown = true;
-            dateTimePickerInicio.Size = new Size(250, 27);
+            dateTimePickerInicio.Size = new Size(219, 23);
             dateTimePickerInicio.TabIndex = 10;
             dateTimePickerInicio.Value = new DateTime(2025, 9, 2, 0, 0, 0, 0);
             dateTimePickerInicio.ValueChanged += IniciodateTimePicker_ValueChanged;
@@ -94,18 +97,20 @@
             // 
             dateTimePickerFin.CustomFormat = "MMMM yyyy";
             dateTimePickerFin.Format = DateTimePickerFormat.Custom;
-            dateTimePickerFin.Location = new Point(135, 65);
+            dateTimePickerFin.Location = new Point(118, 49);
+            dateTimePickerFin.Margin = new Padding(3, 2, 3, 2);
             dateTimePickerFin.Name = "dateTimePickerFin";
             dateTimePickerFin.ShowUpDown = true;
-            dateTimePickerFin.Size = new Size(250, 27);
+            dateTimePickerFin.Size = new Size(219, 23);
             dateTimePickerFin.TabIndex = 10;
             dateTimePickerFin.Value = new DateTime(2025, 10, 2, 0, 0, 0, 0);
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(443, 111);
+            buttonBuscar.Location = new Point(388, 83);
+            buttonBuscar.Margin = new Padding(3, 2, 3, 2);
             buttonBuscar.Name = "buttonBuscar";
-            buttonBuscar.Size = new Size(94, 29);
+            buttonBuscar.Size = new Size(82, 22);
             buttonBuscar.TabIndex = 2;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = true;
@@ -114,9 +119,11 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(listViewResultados);
-            groupBox2.Location = new Point(29, 249);
+            groupBox2.Location = new Point(25, 187);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(544, 163);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(476, 122);
             groupBox2.TabIndex = 12;
             groupBox2.TabStop = false;
             groupBox2.Text = "Estado de Resultados";
@@ -124,10 +131,10 @@
             // listViewResultados
             // 
             listViewResultados.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
-            listViewResultados.Location = new Point(9, 27);
-            listViewResultados.Margin = new Padding(3, 4, 3, 4);
+            listViewResultados.GridLines = true;
+            listViewResultados.Location = new Point(8, 20);
             listViewResultados.Name = "listViewResultados";
-            listViewResultados.Size = new Size(524, 128);
+            listViewResultados.Size = new Size(459, 97);
             listViewResultados.TabIndex = 0;
             listViewResultados.UseCompatibleStateImageBehavior = false;
             listViewResultados.View = View.Details;
@@ -156,9 +163,9 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(144, 39);
+            label17.Location = new Point(126, 29);
             label17.Name = "label17";
-            label17.Size = new Size(342, 20);
+            label17.Size = new Size(269, 15);
             label17.TabIndex = 50;
             label17.Text = "Transportes Urbanos Terrestres Argentinos S.A.";
             // 
@@ -166,21 +173,22 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.Location = new Point(238, 12);
+            label18.Location = new Point(208, 9);
             label18.Name = "label18";
-            label18.Size = new Size(84, 25);
+            label18.Size = new Size(67, 20);
             label18.TabIndex = 49;
             label18.Text = "TUTASA";
             // 
             // ResultadoCostosVsVentasForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(627, 453);
+            ClientSize = new Size(549, 340);
             Controls.Add(label17);
             Controls.Add(label18);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ResultadoCostosVsVentasForm";
             Text = "Estado de Resultados";
             groupBox1.ResumeLayout(false);

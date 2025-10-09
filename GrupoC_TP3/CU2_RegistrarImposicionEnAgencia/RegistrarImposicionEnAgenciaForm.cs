@@ -74,11 +74,16 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                 MessageBox.Show("Ingrese un Codigo Postal numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (string.IsNullOrEmpty(textBoxDomicilioDestinatario.Text))
+
+            if (comboBoxMetodoEntrega.Text == "Entrega en Domicilio")
             {
-                MessageBox.Show("Seleccione un domicilio de destino", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (string.IsNullOrEmpty(textBoxDomicilioDestinatario.Text))
+                {
+                    MessageBox.Show("Seleccione un domicilio de destino", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
+            
             if (string.IsNullOrEmpty(textBoxCantidadCajas.Text))
             {
                 MessageBox.Show("Seleccione una cantidad de cajas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -165,23 +170,23 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 
             string limpio = textBoxCUITCUIL.Text.Replace("-", "");
 
-            if (!int.TryParse(limpio, out int clienteValido)) //Lvl 1
+            if (!long.TryParse(limpio, out long validarCliente)) //Lvl 1
             {
                 MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             //SEA POSITIVO 
-            if (clienteValido <= 0) //Lvl 2
+            if (validarCliente <= 0) //Lvl 2
             {
                 MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //textBoxDNIDestinatario.Focus();
                 return;
             }
             //SEA DE 8 DIGITOS
-            if (clienteValido.ToString().Length != 1)
+            if (validarCliente.ToString().Length != 11)
             {
-                MessageBox.Show("El campo CUIT/CUIL debe tener 1 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El campo CUIT/CUIL debe tener 11 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //textBoxDNIDestinatario.Focus();
                 return;
             }
@@ -190,7 +195,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 
             modelo.ValidarCliente(new ValidarCliente
             {
-                CUITCUIL = clienteValido,
+                CUITCUIL = validarCliente,
             });
 
             buttonGenerarNumeroGuia.Enabled = true;

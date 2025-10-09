@@ -8,7 +8,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 {
     internal class RegistrarImposicionEnAgenciaModel
     {
-        private long[] listaClientes = new long[] { 12345678910, 99999999 };
+        private long[] listaClientes = new long[] { 12345678910, 99999999999 };
         public List<Cliente> Clientes { get; } = new()
     {
         new Cliente { CUITCUIL = 20378401861},
@@ -20,13 +20,13 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 
             if (!listaClientes.Contains(validarCliente.CUITCUIL))
             {
-                MessageBox.Show("El cliente no se encuentra registrado");
+                MessageBox.Show("El cliente no se encuentra registrado", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             else
             {
-                MessageBox.Show("Cliente valido - puede continuar con la operacion");
+                MessageBox.Show("Cliente valido - puede continuar con la operacion", "Cliente valido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 

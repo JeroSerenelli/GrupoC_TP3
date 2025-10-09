@@ -82,9 +82,10 @@
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { EstadoEncomienda, UltimaActualizacion });
-            listView1.Location = new Point(6, 22);
+            listView1.GridLines = true;
+            listView1.Location = new Point(38, 22);
             listView1.Name = "listView1";
-            listView1.Size = new Size(419, 131);
+            listView1.Size = new Size(304, 131);
             listView1.TabIndex = 5;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -113,9 +114,9 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(listView1);
-            groupBox1.Location = new Point(12, 158);
+            groupBox1.Location = new Point(18, 158);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(450, 182);
+            groupBox1.Size = new Size(371, 182);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Resultados de Consulta";
@@ -134,7 +135,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(382, 357);
+            button1.Location = new Point(380, 352);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 9;

@@ -156,17 +156,36 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
         }
         private void buttonValidar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxCUITCUIL.Text))
+            // Validacion - CUIT/CUIL
+            if (string.IsNullOrEmpty(textBoxCUITCUIL.Text)) //Lvl 0
             {
                 MessageBox.Show("Ingrese un CUIT/CUIL de cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!long.TryParse(textBoxCUITCUIL.Text, out long clienteValido))
+            string limpio = textBoxCUITCUIL.Text.Replace("-", "");
+
+            if (!int.TryParse(limpio, out int clienteValido)) //Lvl 1
             {
                 MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            //SEA POSITIVO 
+            if (clienteValido <= 0) //Lvl 2
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //textBoxDNIDestinatario.Focus();
+                return;
+            }
+            //SEA DE 8 DIGITOS
+            if (clienteValido.ToString().Length != 1)
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe tener 1 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //textBoxDNIDestinatario.Focus();
+                return;
+            }
+
 
 
             modelo.ValidarCliente(new ValidarCliente

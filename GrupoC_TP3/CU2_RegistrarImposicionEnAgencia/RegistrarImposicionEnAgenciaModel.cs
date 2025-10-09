@@ -8,7 +8,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 {
     internal class RegistrarImposicionEnAgenciaModel
     {
-        private long[] listaClientes = new long[] { 123456789, 99999999 };
+        private long[] listaClientes = new long[] { 12345678910, 99999999 };
         public List<Cliente> Clientes { get; } = new()
     {
         new Cliente { CUITCUIL = 20378401861},

@@ -62,6 +62,22 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
                 MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            //SEA POSITIVO 
+            if (clienteValido <= 0) //Lvl 2
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //textBoxDNIDestinatario.Focus();
+                return;
+            }
+            //SEA DE 8 DIGITOS
+            if (clienteValido.ToString().Length != 1)
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe tener 1 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //textBoxDNIDestinatario.Focus();
+                return;
+            }
+
             //Informacion Destino
             // Val - Provincia
             if (string.IsNullOrEmpty(cmbBoxProvDestino.Text)) //Lvl 0
@@ -106,9 +122,13 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
 
 
             // Val - Domicilio
-            if (string.IsNullOrEmpty(textBoxDomicilioDestinatario.Text)) //Lvl 0
+            if (comboBoxMetodoEntrega.Text == "Entrega en Domicilio")
             {
-                MessageBox.Show("Ingrese el domicilio del destinatario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (string.IsNullOrEmpty(textBoxDomicilioDestinatario.Text)) //Lvl 0
+                {
+                    MessageBox.Show("Ingrese el domicilio del destinatario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 return;
             }
  
@@ -208,6 +228,27 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
+            if (!int.TryParse(textBoxDNIDestinatario.Text, out int DNI))
+            {
+                MessageBox.Show("El campo DNI debe ser un numero entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //textBoxDNIDestinatario.Focus();
+                return;
+            }
+            //SEA POSITIVO
+            if (DNI <= 0)
+            {
+                MessageBox.Show("El campo DNI debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //textBoxDNIDestinatario.Focus();
+                return;
+            }
+            //SEA DE 8 DIGITOS
+            if (DNI.ToString().Length != 8)
+            {
+                MessageBox.Show("El campo DNI debe tener 8 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //textBoxDNIDestinatario.Focus();
+                return;
+            }
+
             modelo.CrearEncomienda(new Encomienda
             {
 
@@ -303,6 +344,7 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
         private void ValidarCUIT_Click(object sender, EventArgs e)
         {
             // Validacion - CUIT/CUIL
+            // Validacion - CUIT/CUIL
             if (string.IsNullOrEmpty(textBoxCUITCUIL.Text)) //Lvl 0
             {
                 MessageBox.Show("Ingrese un CUIT/CUIL de cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -316,6 +358,22 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
                 MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            //SEA POSITIVO 
+            if (clienteValido <= 0) //Lvl 2
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //textBoxDNIDestinatario.Focus();
+                return;
+            }
+            //SEA DE 8 DIGITOS
+            if (clienteValido.ToString().Length != 1)
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe tener 1 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //textBoxDNIDestinatario.Focus();
+                return;
+            }
+
 
             //modelo.cliente(new Clientes
             //{

@@ -53,27 +53,6 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
 
             CargarListView(filtrados);
             
-
-            //foreach (var Resultado in modelo.Resultados1)
-            //{
-            //    var listItem = new ListViewItem();
-            //    listItem.Text = Resultado.EmpresaTransporte;
-            //    listItem.SubItems.Add(Resultado.Venta.ToString());
-            //    listItem.SubItems.Add(Resultado.Costo.ToString());
-            //    listItem.SubItems.Add(Resultado.ResultadoCV.ToString());
-            //    listViewResultados.Items.Add(listItem);
-
-
-
-
-            //    //    /*else
-            //    //    {
-            //    //        MessageBox.Show("El numero de guia ingresado no corresponde a una encomienda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    //        return;
-            //    //        //Cuando busco uno que existe, tambien aparece. 
-            //    //    }*/
-            //    //}
-            //}
         }
 
 

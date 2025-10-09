@@ -16,14 +16,25 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             new HojasDeRutaAsignadas { Fletero = "Daniel", HojaDeRuta = "6256", NroGuia = "17399", Estado = "No Cumplido"},
             new HojasDeRutaAsignadas { Fletero = "Osvaldo",HojaDeRuta = "6257", NroGuia = "17400", Estado = "No Cumplido"},
         };
-
-        public List<HojasDeRutaPorAsignar> Transportistas { get; } = new()
-        {
-            new HojasDeRutaPorAsignar { Fletero = "", HojaDeRuta = "6258", NroGuia = "17401" },
-            new HojasDeRutaPorAsignar { Fletero = "", HojaDeRuta = "6259", NroGuia = "17402" },
-            new HojasDeRutaPorAsignar { Fletero = "", HojaDeRuta = "6260", NroGuia = "17403" },
-            new HojasDeRutaPorAsignar { Fletero = "", HojaDeRuta = "6261", NroGuia = "17404" },
-        };
+        public Dictionary<string, List<HojasDeRutaPorAsignar>> PorAsignarPorFletero { get; } = new()
+{
+    { "Juan", new List<HojasDeRutaPorAsignar> {
+        new() { Fletero = "", HojaDeRuta = "7001", NroGuia = "20001" },
+        new() { Fletero = "", HojaDeRuta = "7002", NroGuia = "20002" },
+    }},
+    { "Pedro", new List<HojasDeRutaPorAsignar> {
+        new() { Fletero = "", HojaDeRuta = "7101", NroGuia = "21001" },
+        new() { Fletero = "", HojaDeRuta = "7102", NroGuia = "21002" },
+    }},
+    { "Daniel", new List<HojasDeRutaPorAsignar> {
+        new() { Fletero = "", HojaDeRuta = "7201", NroGuia = "22001" },
+    }},
+    { "Osvaldo", new List<HojasDeRutaPorAsignar> {
+        new() { Fletero = "", HojaDeRuta = "7301", NroGuia = "23001" },
+        new() { Fletero = "", HojaDeRuta = "7302", NroGuia = "23002" },
+        new() { Fletero = "", HojaDeRuta = "7303", NroGuia = "23003" },
+    }},
+};
     }
 }
 

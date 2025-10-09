@@ -69,15 +69,19 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 listViewHDRAsignadas.Items.Add(it);
             }
 
-            foreach (var p in modelo.Transportistas.Where(x => string.IsNullOrWhiteSpace(x.Fletero)))
+            if (modelo.PorAsignarPorFletero.TryGetValue(fletero, out var pool) && pool != null)
             {
-                var it = new ListViewItem(p.HojaDeRuta);
-                it.SubItems.Add(p.NroGuia);
-                it.SubItems.Add("Pendiente");
-                it.Tag = p;
-                listViewAsignarHDR.Items.Add(it);
+                foreach (var p in pool)
+                {
+                    var it = new ListViewItem(p.HojaDeRuta);
+                    it.SubItems.Add(p.NroGuia);
+                    it.SubItems.Add("Pendiente");
+                    it.Tag = p;
+                    listViewAsignarHDR.Items.Add(it);
+                }
             }
         }
+
 
         public RecepcionFleterosForm()
         {
@@ -168,6 +172,13 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 return;
             }
 
+            if (!modelo.PorAsignarPorFletero.TryGetValue(fletero, out var pool) || pool == null)
+            {
+                MessageBox.Show("No hay hojas de ruta por asignar para este fletero.", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             var seleccionadas = listViewAsignarHDR.SelectedItems.Cast<ListViewItem>().ToList();
 
             var clavesAsignadas = new HashSet<string>(
@@ -182,7 +193,8 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 string guia = src.SubItems[1].Text;
                 string clave = $"{hdr}|{guia}";
 
-                modelo.Transportistas.RemoveAll(t => t.HojaDeRuta == hdr && t.NroGuia == guia);
+                var idx = pool.FindIndex(t => t.HojaDeRuta == hdr && t.NroGuia == guia);
+                if (idx >= 0) pool.RemoveAt(idx);
 
                 if (!clavesAsignadas.Contains(clave))
                 {
@@ -207,6 +219,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             MessageBox.Show("Hojas de ruta asignadas correctamente.", "OK",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
         private void buttonAceptarRecepcion_Click(object sender, EventArgs e)
         {
         

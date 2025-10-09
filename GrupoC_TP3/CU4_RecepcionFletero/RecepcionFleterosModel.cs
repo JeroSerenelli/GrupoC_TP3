@@ -7,15 +7,27 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.CU4_RecepcionFletero
 {
-    internal class RecepcionFleterosModel
+    public class RecepcionFleterosModel
     {
-        public List<HojasdeRutaAsignadas> Fleteros { get; } = new()
+        public List<HojasDeRutaAsignadas> Fleteros { get; } = new()
         {
-            new HojasdeRutaAsignadas { Fletero = "Juan", HojaDeRuta = "12345", NroGuia = "12312314" , Estado = "Cumplido"},
-            new HojasdeRutaAsignadas{ Fletero = "Juan", HojaDeRuta = "12345", NroGuia = "12312314", Estado = "Cumplido"},
-             new HojasdeRutaAsignadas{ Fletero = "Juan", HojaDeRuta = "12345", NroGuia = "12312314", Estado = "No Cumplido"},
-            new HojasdeRutaAsignadas { Fletero = "Osvaldo", HojaDeRuta = "5612", NroGuia = "87321123", Estado = "Cumplido"},
+            new HojasDeRutaAsignadas { Fletero = "Juan",   HojaDeRuta = "6254", NroGuia = "17397", Estado = "Cumplido"},
+            new HojasDeRutaAsignadas { Fletero = "Pedro",  HojaDeRuta = "6255", NroGuia = "17398", Estado = "Cumplido"},
+            new HojasDeRutaAsignadas { Fletero = "Daniel", HojaDeRuta = "6256", NroGuia = "17399", Estado = "No Cumplido"},
+            new HojasDeRutaAsignadas { Fletero = "Osvaldo",HojaDeRuta = "6257", NroGuia = "17400", Estado = "No Cumplido"},
+        };
+
+        public List<HojasDeRutaPorAsignar> Transportistas { get; } = new()
+        {
+            new HojasDeRutaPorAsignar { Fletero = "", HojaDeRuta = "6258", NroGuia = "17401" },
+            new HojasDeRutaPorAsignar { Fletero = "", HojaDeRuta = "6259", NroGuia = "17402" },
+            new HojasDeRutaPorAsignar { Fletero = "", HojaDeRuta = "6260", NroGuia = "17403" },
+            new HojasDeRutaPorAsignar { Fletero = "", HojaDeRuta = "6261", NroGuia = "17404" },
         };
     }
 }
+
+
+
+
 

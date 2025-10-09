@@ -16,7 +16,8 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
     {
         private readonly ResultadoCostosVsVentasModel modelo = new();
 
-        Resultado resultados;
+        
+
         public ResultadoCostosVsVentasForm()
         {
             InitializeComponent();
@@ -37,29 +38,59 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
         private void buttonBuscar_Click_1(object sender, EventArgs e)
         {
 
-            if (IniciodateTimePicker.Value > FindateTimePicker.Value)
+            if (dateTimePickerInicio.Value > dateTimePickerFin.Value)
             {
                 MessageBox.Show("La fecha de inicio no puede ser superior a la fecha de fin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            foreach (var Resultado in modelo.Resultados)
+            DateTime fechaInicio = dateTimePickerInicio.Value.Date;
+            DateTime fechaFin = dateTimePickerFin.Value.Date;
+
+            // NECESITO RESOLVER ESTO PARA IMPLEMENTAR EL FILTRO DE FECHAS
+            var filtrados = modelo.Resultados1
+                .Where(r => r.Fecha >= fechaInicio && r.Fecha <= fechaFin)
+                .ToList();
+
+            CargarListView(filtrados);
+            
+
+            //foreach (var Resultado in modelo.Resultados1)
+            //{
+            //    var listItem = new ListViewItem();
+            //    listItem.Text = Resultado.EmpresaTransporte;
+            //    listItem.SubItems.Add(Resultado.Venta.ToString());
+            //    listItem.SubItems.Add(Resultado.Costo.ToString());
+            //    listItem.SubItems.Add(Resultado.ResultadoCV.ToString());
+            //    listViewResultados.Items.Add(listItem);
+
+
+
+
+            //    //    /*else
+            //    //    {
+            //    //        MessageBox.Show("El numero de guia ingresado no corresponde a una encomienda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    //        return;
+            //    //        //Cuando busco uno que existe, tambien aparece. 
+            //    //    }*/
+            //    //}
+            //}
+        }
+
+
+        // Método para cargar datos en el ListView
+        private void CargarListView(List<Resultado> lista)
+        {
+            listViewResultados.Items.Clear();
+
+            foreach (var r in lista)
             {
-                var listItem = new ListViewItem();
-                listItem.Text = Resultado.EmpresaTransporte;
-                listItem.SubItems.Add(Resultado.Venta.ToString());
-                listItem.SubItems.Add(Resultado.Costo.ToString());
-                listItem.SubItems.Add(Resultado.ResultadoCV.ToString());
-                listView1.Items.Add(listItem);
-
-
-
-                /*else
-                {
-                    MessageBox.Show("El numero de guia ingresado no corresponde a una encomienda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                    //Cuando busco uno que existe, tambien aparece. 
-                }*/
+                var item = new ListViewItem(r.EmpresaTransporte);
+                item.SubItems.Add(r.Venta.ToString());
+                item.SubItems.Add(r.Costo.ToString());
+                item.SubItems.Add(r.ResultadoCV.ToString());
+                listViewResultados.Items.Add(item);
             }
         }
+
     }
 }

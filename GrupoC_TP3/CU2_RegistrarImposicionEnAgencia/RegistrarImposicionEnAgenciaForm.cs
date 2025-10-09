@@ -110,6 +110,11 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                 MessageBox.Show("El Codigo Postal ingresado es invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (labelCdDestino.Text == "Centro de distribución no encontrado") //Lvl 2?
+            {
+                MessageBox.Show("No existe un centro de distribucion para el CP ingresado. Ingrese otro codigo postal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!int.TryParse(textBoxCantidadCajas.Text, out int cantidadCajas))
             {
                 MessageBox.Show("La cantidad de cajas ingresadas es invalida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -118,7 +123,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 
             if (cantidadCajas <= 0)
             {
-                MessageBox.Show("La cantidad de cajas ingresadas es invalido, debe ser al menos 1 caja", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La cantidad de cajas ingresadas es invalida, debe ser al menos 1 caja", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -184,7 +189,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 
         private void comboBoxMetodoEntrega_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxMetodoEntrega.Text == "Retiro en CD Destino" )
+            if (comboBoxMetodoEntrega.Text == "Retiro en CD Destino")
             {
                 labelDomicilioDestino.Visible = false;
                 textBoxDomicilioDestinatario.Visible = false;
@@ -201,6 +206,11 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                 labelDomicilioDestino.Visible = true;
                 textBoxDomicilioDestinatario.Visible = true;
             }
+        }
+
+        private void textBoxCUITCUIL_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

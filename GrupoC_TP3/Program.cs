@@ -26,8 +26,7 @@ namespace GrupoC_TP3
             //Application.Run(new CU10_ResultadoCostosVsVentas.ResultadoCostosVsVentasForm());
             //Application.Run(new RegistrarImposicionRetiroPorDomicilioForm());
             //Application.Run(new CU4_RecepcionFletero.RecepcionFleterosForm());
-            Application.Run(new RegistrarImposicionRetiroPorDomicilioForm());
-
+            Application.Run(new CU8_EmisionFacturas.EmisionFacturasForm()); 
         }
     }
 }

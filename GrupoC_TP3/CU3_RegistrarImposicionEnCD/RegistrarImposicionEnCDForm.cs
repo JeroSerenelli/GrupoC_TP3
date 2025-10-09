@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static GrupoC_TP3.CU3_RegistrarImposicionEnCD.ProvinciasLocalidades;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
@@ -16,11 +17,18 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
     {
 
         private readonly RegistrarImposicionEnCDFormModel modelo = new();
+        private Ubicacion ubicacion;
+
 
 
         public RegistrarImposicionEnCDForm()
         {
             InitializeComponent();
+            ubicacion = new Ubicacion();
+            cmbBoxProvDst.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
+            cmbBoxProvDst.SelectedIndex = -1;
+            cmbBoxLocalidadDst.SelectedIndex = -1;
+            cmbBoxLocalidadDst.Enabled = false; // hasata que no elija la provincia de destino
         }
 
 
@@ -40,49 +48,8 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
         //ACA PODEMOS VER DE AGREGAR LA LISTA Y VINCULARLAS
 
-        private void RegistrarImposicionEnCDForm_Load(object sender, EventArgs e)
-        {
-            ///carga inicial del form
-            comboBox1.Items.Add("Cordoba");
-            comboBox1.Items.Add("Mendoza");
-        }
-
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-            comboBox2.Items.Clear();
-            var Eleccion = comboBox1.GetItemText(item: comboBox1.SelectedItem);
-
-            switch
-                (Eleccion)
-            {
-                case "Cordoba":
-                    comboBox2.Items.Add("Villa Maria");
-                    comboBox2.Items.Add("Rio Cuarto");
-                    break;
-                case "Mendoza":
-                    comboBox2.Items.Add("San Rafael");
-                    comboBox2.Items.Add("San Martin");
-                    break;
-
-                case "Neuquen":
-                    comboBox2.Items.Add("Bariloche");
-                    comboBox2.Items.Add("San Martin de los Andes");
-                    break;
-                default:
-                    break;
-            }
-        }
 
 
-        //ACA ESTA EL BOTOON    PARA GENERAR EL NUMERO DE GUIA
-        private void buttonGenerarNumeroGuia_Click_1(object sender, EventArgs e)
-        {
-            // ValidarCodigoPostal();
-            //FALTA SABER COMO GENERO NUMERO DE GUIA
-
-
-        }
 
         //ACA ESTA EL BOTON PARA ACEPTAR LA IMPOSICION 
         private void buttonNuevaSolicitudLimpiar_Click(object sender, EventArgs e)
@@ -137,7 +104,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
         }
 
-        private void ValidarCodigoPostal()
+        private void ValidarCodigoPostal() // Queda desafectado
         {
             //Codigo Postal
             if (string.IsNullOrEmpty(textBoxCodPostDestino.Text))
@@ -171,19 +138,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             //MOSTRAMOS UN MENSJAE DE VALIDACION CORRECTA
             MessageBox.Show("Codigo Postal valido.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        private void ValidarCDDestino()
-        {
-            //CD Destino //Uso solo esta porque falta ver el Caso de uso
-            var CDDestino = textBoxCDDestino.Text;
-            if (string.IsNullOrEmpty(CDDestino))
-            {
-                MessageBox.Show("El campo CD Destino no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxCDDestino.Focus();
-                return;
-            }
-            //MOSTRAMOS UN MENSJAE DE VALIDACION CORRECTA
-            /*MessageBox.Show("CD Destino valido.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
-        }
+
 
         private void ValidarDomicilio()
         {
@@ -289,15 +244,12 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
         //HAGO QUE ME VALIDE EL CODIGO POSTAL CUANDO SALGO DE LA CELDA
         private void textBoxCodPostDestino_Leave_1(object sender, EventArgs e)
         {
-            ValidarCodigoPostal();
+            //ValidarCodigoPostal();
         }
 
 
         //HAGO QUE ME VALIDE EL CD DESTINO CUANDO SALGO DE LA CELDA
-        private void textBoxCDDestino_Leave(object sender, EventArgs e)
-        {
-            ValidarCDDestino();
-        }
+
 
         //hAGO QUE ME VALIDE EL DOMICILIO CUANDO SALGO DE LA CELDA 
         private void textBoxDomicilioDestinatario_Leave(object sender, EventArgs e)
@@ -326,7 +278,49 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string provinciaSeleccionada = cmbBoxProvDst.Text;
 
+            // Limpiar combo de localidad
+            cmbBoxLocalidadDst.DataSource = null;
+
+            if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
+            {
+                cmbBoxLocalidadDst.Enabled = true;
+                cmbBoxLocalidadDst.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
+            }
         }
+
+        private void comboBoxMetodoEntrega_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxMetodoEntrega.Text == "Retiro en CD Destino")
+            {
+                labelDomicilioDestino.Visible = false;
+                textBoxDomicilioDestinatario.Visible = false;
+
+            }
+            else if (comboBoxMetodoEntrega.Text == "Retiro en Agencia")
+            {
+                labelDomicilioDestino.Visible = false;
+                textBoxDomicilioDestinatario.Visible = false;
+
+            }
+            else
+            {
+                labelDomicilioDestino.Visible = true;
+                textBoxDomicilioDestinatario.Visible = true;
+            }
+        }
+
+        private void textBoxCodPostDestino_TextChanged(object sender, EventArgs e)
+        {
+            //Obtengo CD Destino
+            string codigoPostal = textBoxCodPostDestino.Text.Trim();
+
+            Ubicacion ubicacion = new Ubicacion();
+            string centro = ubicacion.ObtenerCentroDistribucion(codigoPostal);
+            labelCdDestino.Text = centro;
+        }
+
+      
     }
 }

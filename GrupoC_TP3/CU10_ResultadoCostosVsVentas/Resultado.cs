@@ -12,5 +12,7 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
         public int Venta { get; set; }
         public int Costo { get; set; }
         public int ResultadoCV { get; set; } = 0;
+
+        public DateTime Fecha { get; set; }
     }
 }

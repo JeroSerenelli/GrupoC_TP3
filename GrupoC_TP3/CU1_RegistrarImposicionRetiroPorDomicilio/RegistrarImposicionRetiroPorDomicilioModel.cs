@@ -20,44 +20,50 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
             { "Tucumán", new List<string> { "San Miguel de Tucumán", "Tafí Viejo", "Yerba Buena" } }
         };
 
-        public int[] listaClientes = new int[] { 123456789, 99999999 };
+        public long[] listaClientes = new long[] { 123456789, 99999999 };
         public List<Cliente> Clientes { get; } = new()
         {
             new Cliente { CUITCUIL = 2037840186},
-            new Cliente { CUITCUIL = 123456789 }
+            new Cliente { CUITCUIL = 123456789 },
+            new Cliente { CUITCUIL = 11111111111},
+            new Cliente { CUITCUIL = 1111},
+
         };
 
         internal void ValidarCliente(ValidarCliente validarCliente)
         {
+            if (!listaClientes.Contains(validarCliente.CUITCUIL))
+            {
+                MessageBox.Show("El cliente no se encuentra registrado");
+                return;
+            }
 
-            //if (listaClientes.Contains(validarCliente.CUITCUIL))
-            //{
-            //    MessageBox.Show("Cliente valido - puede continuar con la operacion");
-            //    return;
-            //}
-
-            //else
-            //{
-            //    MessageBox.Show("El cliente no se encuentra registrado");
-            //    return;
-            //}
-
+            else
+            {
+                MessageBox.Show("Cliente valido - puede continuar con la operacion");
+                return;
+            }
 
 
+        }
 
+        internal void CrearEncomienda(Encomienda encomiendas, int cantCajas)
+        {
+            //A este metodo le tenemos que pasar la cantidad de cajas para uqe genere una guía por caja.
+            //encomiendas.NumeroGuia = encomiendas.NumeroGuia;
 
-            //};
+            int contador = 100;
+            List<int> nroGuias = new List<int>();
 
+            for (int i = 0; i < cantCajas; i++)
+            {
+                nroGuias.Add(contador);
+                contador += 1;
+            }
+            
+            MessageBox.Show("Encomienda creada con exito - numero de guia " + String.Join(", ", nroGuias));
 
-            //internal void ImponerEncomienda(EncomiendasImpuestas nuevaEncomienda)
-            // {
-            /*Sigue validando*/
-            //DNI unico en los almacenes?
-
-
-            /*Y finalmente realiza la operacion.*/
-            /*Por ejemplo, lo graba en un almacen.*/
-
+            
         }
     }
 }

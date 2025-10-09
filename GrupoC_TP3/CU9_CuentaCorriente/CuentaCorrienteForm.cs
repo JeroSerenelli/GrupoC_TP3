@@ -12,6 +12,9 @@ namespace GrupoC_TP3
 {
     public partial class Facturas : Form
     {
+        public int Nro_Guia { get; internal set; }
+        public decimal Subtotal { get; internal set; }
+
         public Facturas()
         {
             InitializeComponent();

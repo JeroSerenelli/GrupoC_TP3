@@ -276,6 +276,12 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
                 textBoxDomicilioDestinatario.Visible = false;
 
             }
+            else if (comboBoxMetodoEntrega.Text == "Retiro en Agencia")
+            {
+                labelDomicilioDestino.Visible = false;
+                textBoxDomicilioDestinatario.Visible = false;
+
+            }
             else
             {
                 labelDomicilioDestino.Visible = true;

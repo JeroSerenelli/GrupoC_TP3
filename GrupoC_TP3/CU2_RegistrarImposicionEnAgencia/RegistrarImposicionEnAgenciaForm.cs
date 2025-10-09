@@ -9,18 +9,27 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio.ProvinciaLocalidades;
+using static GrupoC_TP3.CU2_RegistrarImposicionEnAgencia.ProvinciaLocalidades;
+
 
 namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 {
     public partial class RegistrarImposicionEnAgenciaForm : Form
     {
         private readonly RegistrarImposicionEnAgenciaModel modelo = new();
+        private Ubicacion ubicacion;
 
         //private Ubicacion ubicacion;
         public RegistrarImposicionEnAgenciaForm()
         {
             InitializeComponent();
+
+            ubicacion = new Ubicacion();
+            cmbBoxProvDst.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
+            cmbBoxProvDst.SelectedIndex = -1;
+            cmbBoxLocalidadDst.SelectedIndex = -1;
+            cmbBoxLocalidadDst.Enabled = false; // hasata que no elija la provincia de destino
+
         }
 
 
@@ -28,19 +37,19 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
         {
             buttonGenerarNumeroGuia.Enabled = false;
         }
-     
+
         private void cmbBoxProvDst_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //string provinciaSeleccionada = cmbBoxProvDst.Text;
+            string provinciaSeleccionada = cmbBoxProvDst.Text;
 
-            //// Limpiar combo de localidad
-            //cmbBoxLocalidadDst.DataSource = null;
+            // Limpiar combo de localidad
+            cmbBoxLocalidadDst.DataSource = null;
 
-            //if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
-            //{
-            //    cmbBoxLocalidadDst.Enabled = true;
-            //    cmbBoxLocalidadDst.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
-            //}
+            if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
+            {
+                cmbBoxLocalidadDst.Enabled = true;
+                cmbBoxLocalidadDst.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
+            }
         }
 
         private void buttonGenerarNumeroGuia_Click(object sender, EventArgs e)
@@ -134,7 +143,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
             modelo.CrearEncomienda(new Encomienda
             {
                 Provincia = cmbBoxProvDst.Text,
-                NumeroGuia = long.Parse(textBoxCodigoAgencia.Text),
+                NumeroGuia = long.Parse(textBoxCodigoAgencia.Text)
 
             });
 
@@ -163,7 +172,36 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
             buttonGenerarNumeroGuia.Enabled = true;
         }
 
-        
+        private void textBoxCodPostDestino_TextChanged(object sender, EventArgs e)
+        {
+            //Obtengo CD Destino
+            string codigoPostal = textBoxCodPostDestino.Text.Trim();
+
+            Ubicacion ubicacion = new Ubicacion();
+            string centro = ubicacion.ObtenerCentroDistribucion(codigoPostal);
+            labelCdDestino.Text = centro;
+        }
+
+        private void comboBoxMetodoEntrega_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxMetodoEntrega.Text == "Retiro en CD Destino" )
+            {
+                labelDomicilioDestino.Visible = false;
+                textBoxDomicilioDestinatario.Visible = false;
+
+            }
+            else if (comboBoxMetodoEntrega.Text == "Retiro en Agencia")
+            {
+                labelDomicilioDestino.Visible = false;
+                textBoxDomicilioDestinatario.Visible = false;
+
+            }
+            else
+            {
+                labelDomicilioDestino.Visible = true;
+                textBoxDomicilioDestinatario.Visible = true;
+            }
+        }
     }
 
 }

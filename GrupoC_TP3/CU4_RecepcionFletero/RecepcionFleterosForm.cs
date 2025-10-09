@@ -70,7 +70,8 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
         private void buttonImprimirDetalle_Click(object sender, EventArgs e)
         {
             //listViewHDRAsignadas.SelectedItems;
-            MessageBox.Show($"Estos son los items seleccionados {}");
+            //MessageBox.Show($"Estos son los items seleccionados {}");
+            
         }
     }
 }

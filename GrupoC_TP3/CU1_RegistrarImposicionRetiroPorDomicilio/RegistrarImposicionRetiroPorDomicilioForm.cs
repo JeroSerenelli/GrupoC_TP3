@@ -224,8 +224,8 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
 
             if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
             {
-                cmbBoxLocalidadRetiro.Enabled = true;
-                cmbBoxLocalidadRetiro.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
+                cmbBoxLocalidadDst.Enabled = true;
+                cmbBoxLocalidadDst.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
             }
 
         }

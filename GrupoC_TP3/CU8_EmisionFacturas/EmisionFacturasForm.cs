@@ -76,6 +76,8 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
                 return;
             }
 
+
+            //Cualquier NUMERO DE CUIL VALIDO va a traer los mismos datos de prueba
             // Corrección: Iterar sobre la lista de facturas del modelo y mostrarlo en el ListView
             PedidosAFacturarListView.Items.Clear();
             foreach (var factura in Facturas.Fac)

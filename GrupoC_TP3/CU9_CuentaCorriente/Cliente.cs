@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrupoC_TP3.CU2_CuentaCorriente
+namespace GrupoC_TP3.CU9_CuentaCorriente
 {
-    internal class Cliente
+    public class Cliente
     {
-
+        public string CUITCUIL { get; set; } = "";
+        public string RazonSocial { get; set; } = "";
+        public List<MovimientoCC> Movimientos { get; set; } = new();
     }
 }
+

@@ -1,6 +1,6 @@
-﻿namespace GrupoC_TP3
+﻿namespace GrupoC_TP3.CU9_CuentaCorriente
 {
-    partial class Facturas
+    partial class CuentaCorrienteForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,20 +30,20 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
-            comboBox1 = new ComboBox();
+            comboBoxCuitCuil = new ComboBox();
             label3 = new Label();
             label2 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            button1 = new Button();
+            dateTimePickerInicio = new DateTimePicker();
+            dateTimePickerFin = new DateTimePicker();
+            buttonBuscar = new Button();
             groupBox2 = new GroupBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            textBoxFin = new TextBox();
+            textBoxInicio = new TextBox();
+            textBoxCliente = new TextBox();
             label7 = new Label();
             label6 = new Label();
             label8 = new Label();
-            cuentaCorrienteLstView = new ListView();
+            listViewCuentaCorriente = new ListView();
             FechaHeader = new ColumnHeader();
             MontoHeader = new ColumnHeader();
             SaldoHeader = new ColumnHeader();
@@ -63,16 +63,15 @@
             label1.Size = new Size(65, 15);
             label1.TabIndex = 0;
             label1.Text = "CUIT/CUIL:";
-            label1.Click += label1_Click;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(comboBoxCuitCuil);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(dateTimePicker2);
-            groupBox1.Controls.Add(dateTimePicker1);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(dateTimePickerInicio);
+            groupBox1.Controls.Add(dateTimePickerFin);
+            groupBox1.Controls.Add(buttonBuscar);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(17, 58);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
@@ -82,15 +81,14 @@
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Búsqueda de Cliente";
-            groupBox1.Enter += groupBox1_Enter;
             // 
-            // comboBox1
+            // comboBoxCuitCuil
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(127, 26);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(219, 23);
-            comboBox1.TabIndex = 14;
+            comboBoxCuitCuil.FormattingEnabled = true;
+            comboBoxCuitCuil.Location = new Point(127, 26);
+            comboBoxCuitCuil.Name = "comboBoxCuitCuil";
+            comboBoxCuitCuil.Size = new Size(219, 23);
+            comboBoxCuitCuil.TabIndex = 14;
             // 
             // label3
             // 
@@ -109,46 +107,45 @@
             label2.Size = new Size(99, 15);
             label2.TabIndex = 12;
             label2.Text = "Inicio de Periodo:";
-            label2.Click += label2_Click;
             // 
-            // dateTimePicker2
+            // dateTimePickerInicio
             // 
-            dateTimePicker2.Location = new Point(127, 59);
-            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(219, 23);
-            dateTimePicker2.TabIndex = 10;
-            dateTimePicker2.Value = new DateTime(2025, 9, 2, 0, 0, 0, 0);
+            dateTimePickerInicio.Location = new Point(127, 59);
+            dateTimePickerInicio.Margin = new Padding(3, 2, 3, 2);
+            dateTimePickerInicio.Name = "dateTimePickerInicio";
+            dateTimePickerInicio.Size = new Size(219, 23);
+            dateTimePickerInicio.TabIndex = 10;
+            dateTimePickerInicio.Value = new DateTime(2025, 9, 2, 0, 0, 0, 0);
             // 
-            // dateTimePicker1
+            // dateTimePickerFin
             // 
-            dateTimePicker1.Location = new Point(127, 88);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(219, 23);
-            dateTimePicker1.TabIndex = 9;
-            dateTimePicker1.Value = new DateTime(2025, 10, 2, 0, 0, 0, 0);
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            dateTimePickerFin.Location = new Point(127, 88);
+            dateTimePickerFin.Margin = new Padding(3, 2, 3, 2);
+            dateTimePickerFin.Name = "dateTimePickerFin";
+            dateTimePickerFin.Size = new Size(219, 23);
+            dateTimePickerFin.TabIndex = 9;
+            dateTimePickerFin.Value = new DateTime(2025, 10, 2, 0, 0, 0, 0);
             // 
-            // button1
+            // buttonBuscar
             // 
-            button1.Location = new Point(264, 128);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 22);
-            button1.TabIndex = 2;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            buttonBuscar.Location = new Point(264, 128);
+            buttonBuscar.Margin = new Padding(3, 2, 3, 2);
+            buttonBuscar.Name = "buttonBuscar";
+            buttonBuscar.Size = new Size(82, 22);
+            buttonBuscar.TabIndex = 2;
+            buttonBuscar.Text = "Buscar";
+            buttonBuscar.UseVisualStyleBackColor = true;
+            buttonBuscar.Click += buttonBuscar_Click;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox3);
-            groupBox2.Controls.Add(textBox2);
-            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(textBoxFin);
+            groupBox2.Controls.Add(textBoxInicio);
+            groupBox2.Controls.Add(textBoxCliente);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(cuentaCorrienteLstView);
+            groupBox2.Controls.Add(listViewCuentaCorriente);
             groupBox2.Location = new Point(17, 225);
             groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
@@ -158,29 +155,29 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Cuenta Corriente";
             // 
-            // textBox3
+            // textBoxFin
             // 
-            textBox3.Location = new Point(423, 66);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(180, 23);
-            textBox3.TabIndex = 19;
+            textBoxFin.Location = new Point(423, 66);
+            textBoxFin.Name = "textBoxFin";
+            textBoxFin.ReadOnly = true;
+            textBoxFin.Size = new Size(180, 23);
+            textBoxFin.TabIndex = 19;
             // 
-            // textBox2
+            // textBoxInicio
             // 
-            textBox2.Location = new Point(423, 35);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(180, 23);
-            textBox2.TabIndex = 18;
+            textBoxInicio.Location = new Point(423, 35);
+            textBoxInicio.Name = "textBoxInicio";
+            textBoxInicio.ReadOnly = true;
+            textBoxInicio.Size = new Size(180, 23);
+            textBoxInicio.TabIndex = 18;
             // 
-            // textBox1
+            // textBoxCliente
             // 
-            textBox1.Location = new Point(59, 35);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(230, 23);
-            textBox1.TabIndex = 17;
+            textBoxCliente.Location = new Point(59, 35);
+            textBoxCliente.Name = "textBoxCliente";
+            textBoxCliente.ReadOnly = true;
+            textBoxCliente.Size = new Size(230, 23);
+            textBoxCliente.TabIndex = 17;
             // 
             // label7
             // 
@@ -209,16 +206,16 @@
             label8.TabIndex = 15;
             label8.Text = "Inicio de Periodo:";
             // 
-            // cuentaCorrienteLstView
+            // listViewCuentaCorriente
             // 
-            cuentaCorrienteLstView.Columns.AddRange(new ColumnHeader[] { FechaHeader, MontoHeader, SaldoHeader });
-            cuentaCorrienteLstView.Location = new Point(6, 99);
-            cuentaCorrienteLstView.Margin = new Padding(3, 2, 3, 2);
-            cuentaCorrienteLstView.Name = "cuentaCorrienteLstView";
-            cuentaCorrienteLstView.Size = new Size(597, 116);
-            cuentaCorrienteLstView.TabIndex = 2;
-            cuentaCorrienteLstView.UseCompatibleStateImageBehavior = false;
-            cuentaCorrienteLstView.View = View.Details;
+            listViewCuentaCorriente.Columns.AddRange(new ColumnHeader[] { FechaHeader, MontoHeader, SaldoHeader });
+            listViewCuentaCorriente.Location = new Point(6, 99);
+            listViewCuentaCorriente.Margin = new Padding(3, 2, 3, 2);
+            listViewCuentaCorriente.Name = "listViewCuentaCorriente";
+            listViewCuentaCorriente.Size = new Size(597, 116);
+            listViewCuentaCorriente.TabIndex = 2;
+            listViewCuentaCorriente.UseCompatibleStateImageBehavior = false;
+            listViewCuentaCorriente.View = View.Details;
             // 
             // FechaHeader
             // 
@@ -260,7 +257,7 @@
             label5.TabIndex = 9;
             label5.Text = "TUTASA";
             // 
-            // Facturas
+            // CuentaCorriente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -270,7 +267,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "Facturas";
+            Name = "CuentaCorriente";
             Text = "Estado de Cuenta Corriente";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -286,22 +283,22 @@
         private Label label1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private Button button1;
-        private ListView cuentaCorrienteLstView;
+        private Button buttonBuscar;
+        private ListView listViewCuentaCorriente;
         private ColumnHeader MontoHeader;
         private Label label2;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePickerInicio;
+        private DateTimePicker dateTimePickerFin;
         private Label label3;
         private FileSystemWatcher fileSystemWatcher1;
         private ColumnHeader FechaHeader;
         private ColumnHeader SaldoHeader;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxCuitCuil;
         private Label label4;
         private Label label5;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox textBoxFin;
+        private TextBox textBoxInicio;
+        private TextBox textBoxCliente;
         private Label label7;
         private Label label6;
         private Label label8;

@@ -3,6 +3,7 @@
 using GrupoC_TP3.CU3_RegistrarImposicionEnCD;
 using GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio;
 using GrupoC_TP3.CU4_RecepcionFletero;
+using GrupoC_TP3.CU9_CuentaCorriente;
 
 namespace GrupoC_TP3
 {
@@ -26,8 +27,9 @@ namespace GrupoC_TP3
             //Application.Run(new CU3_RegistrarImposicionEnCD.RegistrarImposicionEnCDForm());
             //Application.Run(new CU10_ResultadoCostosVsVentas.ResultadoCostosVsVentasForm());
             //Application.Run(new RegistrarImposicionRetiroPorDomicilioForm());
-            Application.Run(new CU4_RecepcionFletero.RecepcionFleterosForm());
-            //Application.Run(new CU8_EmisionFacturas.EmisionFacturasForm()); 
+            //Application.Run(new CU4_RecepcionFletero.RecepcionFleterosForm());
+            //Application.Run(new CU8_EmisionFacturas.EmisionFacturasForm());
+            Application.Run(new CU9_CuentaCorriente.CuentaCorrienteForm()); 
 
 
         }

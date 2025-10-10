@@ -1,9 +1,4 @@
-
-
-using GrupoC_TP3.CU3_RegistrarImposicionEnCD;
-using GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio;
-using GrupoC_TP3.CU4_RecepcionFletero;
-using GrupoC_TP3.CU9_CuentaCorriente;
+using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
 
 namespace GrupoC_TP3
 {

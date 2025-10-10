@@ -1,7 +1,4 @@
-﻿using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
-using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
-using GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +8,8 @@ using System.Security.Cryptography.Pkcs;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio.ProvinciaLocalidades;
 
-namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
+namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 {
     public partial class RegistrarImposicionRetiroPorDomicilioForm : Form
     {
@@ -249,13 +245,14 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
-            modelo.CrearEncomienda(new Encomienda
+            //TODO: corregir. En esta carpeta esta clase no existe.
+            /*
+            modelo.CrearEncomienda(new EncomiendasImpuestas
             {
-
-                Provincia = cmbBoxProvDestino.Text,
+                //Provincia = cmbBoxProvDestino.Text,
                 //NumeroGuia = long.Parse(textBoxCodigoAgencia.Text)
 
-            }, cajas);
+            }, cajas);*/
 
 
             /*FORMULARIO: Valida TIPO y el rango de ser necesario.*/

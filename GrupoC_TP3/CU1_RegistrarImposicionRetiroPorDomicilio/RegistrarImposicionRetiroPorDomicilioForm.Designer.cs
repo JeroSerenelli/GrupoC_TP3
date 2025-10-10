@@ -1,4 +1,4 @@
-﻿namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
+﻿namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 { 
     partial class RegistrarImposicionRetiroPorDomicilioForm
     {

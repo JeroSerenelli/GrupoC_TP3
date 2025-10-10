@@ -1,12 +1,6 @@
-﻿using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
-using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
 
-namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
+namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 {
     internal class RegistrarImposicionRetiroPorDomicilioModel
     {
@@ -60,10 +54,10 @@ namespace GrupoC_TP3.RegistrarImposicionRetiroPorDomicilio
                 nroGuias.Add(contador);
                 contador += 1;
             }
-            
+
             MessageBox.Show("Encomienda creada con exito - numero de guia " + String.Join(", ", nroGuias));
 
-            
+
         }
     }
 }

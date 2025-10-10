@@ -9,23 +9,19 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static GrupoC_TP3.CU2_RegistrarImposicionEnAgencia.ProvinciaLocalidades;
-
 
 namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 {
     public partial class RegistrarImposicionEnAgenciaForm : Form
     {
         private readonly RegistrarImposicionEnAgenciaModel modelo = new();
-        private Ubicacion ubicacion;
-        private ValidarCliente validarCliente;
 
         //private Ubicacion ubicacion;
         public RegistrarImposicionEnAgenciaForm()
         {
             InitializeComponent();
 
-            ubicacion = new Ubicacion();
+            var ubicacion = modelo.ObtenerUbicacion();
             cmbBoxProvDst.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
             cmbBoxProvDst.SelectedIndex = -1;
             cmbBoxLocalidadDst.SelectedIndex = -1;
@@ -46,6 +42,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
             // Limpiar combo de localidad
             cmbBoxLocalidadDst.DataSource = null;
 
+            var ubicacion = modelo.ObtenerUbicacion();  
             if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
             {
                 cmbBoxLocalidadDst.Enabled = true;

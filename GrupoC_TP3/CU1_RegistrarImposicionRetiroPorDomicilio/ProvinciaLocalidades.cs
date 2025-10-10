@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 {
-    internal class ProvinciaLocalidades
+    public class Ubicacion
     {
-        public class Ubicacion
-        {
-            public Dictionary<string, List<string>> ProvinciasYLocalidades { get; set; }
-            public Dictionary<string, string> CodigoPostalCentroDistribucion { get; set; }
+        public Dictionary<string, List<string>> ProvinciasYLocalidades { get; set; }
+        public Dictionary<string, string> CodigoPostalCentroDistribucion { get; set; }
 
-            public Ubicacion()
-            {
-                ProvinciasYLocalidades = new Dictionary<string, List<string>>
+        public Ubicacion()
+        {
+            ProvinciasYLocalidades = new Dictionary<string, List<string>>
                 {
                     { "Buenos Aires", new List<string> { "La Plata", "Mar del Plata", "Bahía Blanca" } },
                     { "Córdoba", new List<string> { "Córdoba Capital", "Villa María", "Río Cuarto" } },
@@ -23,7 +21,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
                 };
 
-                CodigoPostalCentroDistribucion = new Dictionary<string, string>
+            CodigoPostalCentroDistribucion = new Dictionary<string, string>
                 {
                     { "1900", "Centro La Plata" },
                     { "7600", "Centro Mar del Plata" },
@@ -35,23 +33,20 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                     { "3000", "Centro Santa Fe Capital" },
                     { "2300", "Centro Rafaela" }
                 };
-            }
+        }
 
-            public string ObtenerCentroDistribucion(string codigoPostal)
+        public string ObtenerCentroDistribucion(string codigoPostal)
+        {
+            if (CodigoPostalCentroDistribucion.TryGetValue(codigoPostal, out string centro))
             {
-                if (CodigoPostalCentroDistribucion.TryGetValue(codigoPostal, out string centro))
-                {
-                    return centro;
-                }
-                else
-                {
-                    return "Centro de distribución no encontrado";
-                }
-                    
+                return centro;
+            }
+            else
+            {
+                return "Centro de distribución no encontrado";
             }
 
         }
 
-
-    }            
+    }
 }

@@ -18,6 +18,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
     {
         private readonly RegistrarImposicionEnAgenciaModel modelo = new();
         private Ubicacion ubicacion;
+        private ValidarCliente validarCliente;
 
         //private Ubicacion ubicacion;
         public RegistrarImposicionEnAgenciaForm()
@@ -68,36 +69,12 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                 return;
             }
 
-            //SEA POSITIVO 
-            if (validarCliente <= 0) //Lvl 2
-            {
-                MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
-            }
-            //SEA DE 8 DIGITOS
-            if (validarCliente.ToString().Length != 11)
-            {
-                MessageBox.Show("El campo CUIT/CUIL debe tener 11 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
-            }
-
-
-
             modelo.ValidarCliente(new ValidarCliente
             {
                 CUITCUIL = validarCliente,
             });
 
             buttonGenerarNumeroGuia.Enabled = true;
-        
-
-
-
-
-
-
 
             if (string.IsNullOrEmpty(cmbBoxLocalidadDst.Text))
             {
@@ -183,7 +160,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                 return;
             }
 
-            if (dniDestinatario < 100000 || dniDestinatario > 99999999)
+            /*if (dniDestinatario < 100000 || dniDestinatario > 99999999)
             {
                 MessageBox.Show("El DNI del destinatario ingresado es invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -193,10 +170,13 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
             {
                 MessageBox.Show("El Codigo Postal ingresado es invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
+            }*/
 
             modelo.CrearEncomienda(new Encomienda
             {
+                CantidadCajas = cantidadCajas,
+                DNI = dniDestinatario,
+                CodigoPostal = codigoPostalDestino,
                 Provincia = cmbBoxProvDst.Text,
                 NumeroGuia = long.Parse(textBoxCodigoAgencia.Text)
 
@@ -220,23 +200,6 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                 MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            //SEA POSITIVO 
-            if (validarCliente <= 0) //Lvl 2
-            {
-                MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
-            }
-            //SEA DE 8 DIGITOS
-            if (validarCliente.ToString().Length != 11)
-            {
-                MessageBox.Show("El campo CUIT/CUIL debe tener 11 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
-            }
-
-
 
             modelo.ValidarCliente(new ValidarCliente
             {

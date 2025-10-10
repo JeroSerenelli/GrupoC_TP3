@@ -69,11 +69,6 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                 return;
             }
 
-            modelo.ValidarCliente(new ValidarCliente
-            {
-                CUITCUIL = validarCliente,
-            });
-
             buttonGenerarNumeroGuia.Enabled = true;
 
             if (string.IsNullOrEmpty(cmbBoxLocalidadDst.Text))
@@ -174,12 +169,19 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 
             modelo.CrearEncomienda(new Encomienda
             {
-                CantidadCajas = cantidadCajas,
-                DNI = dniDestinatario,
-                CodigoPostal = codigoPostalDestino,
+                Cliente = validarCliente,
                 Provincia = cmbBoxProvDst.Text,
-                NumeroGuia = long.Parse(textBoxCodigoAgencia.Text)
-
+                Localidad = cmbBoxLocalidadDst.Text,
+                MetodoEntrega = comboBoxMetodoEntrega.Text,
+                CodigoPostal = codigoPostalDestino,
+                CentroDistribucionDestino = labelCdDestino.Text,
+                Domicilio = textBoxDomicilioDestinatario.Text,
+                CantidadCajas = cantidadCajas,
+                TipoCaja = comboBoxTipoCaja.Text,
+                NombreDestinatario = textBoxNombreDestinatario.Text,
+                ApellidoDestinatario = textBoxApellidoDestinatario.Text,
+                DNI = dniDestinatario,
+                CodigoAgencia = int.Parse(textBoxCodigoAgencia.Text)
             });
 
 

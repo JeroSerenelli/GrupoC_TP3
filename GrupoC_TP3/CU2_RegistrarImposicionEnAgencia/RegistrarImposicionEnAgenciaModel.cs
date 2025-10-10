@@ -17,7 +17,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 
         internal void ValidarCliente(ValidarCliente validarCliente)
         {
-            if (validarCliente.CUITCUIL <= 0) //Lvl 2
+            if (validarCliente.CUITCUIL <= 0)
             {
                 MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
@@ -42,29 +42,13 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                 MessageBox.Show("Cliente valido", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
-            /*foreach(long Cliente in Clientes)
-            {
-                if (Cliente != validarCliente.CUITCUIL)
-                {
-                    MessageBox.Show("El cliente no se encuentra registrado");
-                }
-            }*/
-
-
-
-            /*if (Clientes. != cliente.CUITCUIL);
-            {
-                MessageBox.Show("El cliente ingresado no existe");
-                return;
-            }*/
         }
 
         
         internal void CrearEncomienda(Encomienda encomiendas)
         {
             //A este metodo le tenemos que pasar la cantidad de cajas para uqe genere una guía por caja.
-            encomiendas.NumeroGuia = encomiendas.NumeroGuia;
+            //encomiendas.NumeroGuia = encomiendas.NumeroGuia;
 
             if (encomiendas.DNI < 100000 || encomiendas.DNI > 99999999)
             {
@@ -78,26 +62,46 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                 return;
             }
 
-            //int contador = 1;
-
-            int contador = 1000;
-            /*List<int> nroGuias = new List<int>();
-
-            for (int i = 0; i < encomiendas.CantidadCajas; i++)
+            if (encomiendas.Cliente <= 0) 
             {
-                nroGuias.Add(contador);
-                contador += 1;
+                MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
             }
 
-            MessageBox.Show("Encomienda creada con exito - numero de guia " + String.Join(", ", encomiendas.NumeroGuia.ToString() + nroGuias));*/
+            if (encomiendas.Cliente.ToString().Length != 11)
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe tener 11 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            MessageBox.Show("Encomienda creada con exito - numero de guia " + encomiendas.NumeroGuia.ToString() + contador.ToString());
+                return;
+            }
 
-            contador += 1;
+            if (!listaClientes.Contains(encomiendas.Cliente))
+            {
+                MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            //Generar numero de guia//
+            encomiendas.NumeroGuia = (encomiendas.CodigoAgencia.ToString() + ((DateTime.Now.Ticks)).ToString());
+            //Fin generar numero de guia//
+
+            var listItem = new ListViewItem(encomiendas.NumeroGuia);
+            listItem.SubItems.Add(encomiendas.Provincia);
+            listItem.SubItems.Add(encomiendas.Localidad);
+            listItem.SubItems.Add(encomiendas.MetodoEntrega);
+            listItem.SubItems.Add(encomiendas.CodigoPostal.ToString());
+            listItem.SubItems.Add(encomiendas.CentroDistribucionDestino);
+            listItem.SubItems.Add(encomiendas.Domicilio);
+            listItem.SubItems.Add(encomiendas.CantidadCajas.ToString());
+            listItem.SubItems.Add(encomiendas.TipoCaja);
+            listItem.SubItems.Add(encomiendas.NombreDestinatario);
+            listItem.SubItems.Add(encomiendas.ApellidoDestinatario);
+            listItem.SubItems.Add(encomiendas.DNI.ToString());
+            listItem.SubItems.Add(encomiendas.CodigoAgencia.ToString());
+
+            MessageBox.Show("Guia generada exitosamente: " + encomiendas.NumeroGuia);
         }
-
-        
     }
-
-    
 }

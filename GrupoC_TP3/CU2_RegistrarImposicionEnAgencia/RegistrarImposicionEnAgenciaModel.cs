@@ -20,13 +20,13 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 
             if (!listaClientes.Contains(validarCliente.CUITCUIL))
             {
-                MessageBox.Show("El cliente no se encuentra registrado");
+                MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             else
             {
-                MessageBox.Show("Cliente valido - puede continuar con la operacion");
+                MessageBox.Show("Cliente valido", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 

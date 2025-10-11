@@ -8,6 +8,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 {
     public class Ubicacion
     {
+        //TODO: Esto no se debería ir al modelo? Que hago con la declaracion de los diccionarios?
         public Dictionary<string, List<string>> ProvinciasYLocalidades { get; set; }
         public Dictionary<string, string> CodigoPostalCentroDistribucion { get; set; }
 

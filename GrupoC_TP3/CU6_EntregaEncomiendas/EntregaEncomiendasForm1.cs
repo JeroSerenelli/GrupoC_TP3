@@ -16,9 +16,6 @@ namespace GrupoC_TP3.CU6_EntregaEncomiendas
     public partial class EntregaEncomiendasForm1 : Form
     {
         private EntregaEncomiendasModel modelo = new();
-        
-        private Encomienda Encomiendas;
-
 
         public EntregaEncomiendasForm1()
         {

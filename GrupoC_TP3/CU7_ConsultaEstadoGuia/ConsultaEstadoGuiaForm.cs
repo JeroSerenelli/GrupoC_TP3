@@ -15,8 +15,6 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
     {
         private ConsultaEstadoGuiaModel modelo = new();
 
-        public Guia guias;
-
         public ConsultaEstadoGuiaForm()
         {
             InitializeComponent();

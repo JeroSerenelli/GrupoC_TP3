@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 {
-    internal class Clientes
+    internal class ValidacionClientes
     {
-        public int CUITCUIL { get; set; }
+        public long CUITCUIL { get; set; }
     }
 }

@@ -51,35 +51,35 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
         
 
-        public EncomiendasImpuestas(int CUITCUIL, string provDestino, string localidadDestino, string metodoEntrega, int cpDestino, string cdDestino, string domicilioDestinatario, int cantCajas, string tipoCaja, string provinciaRetiro, string localidadRetiro, int cpRetiro, string cdOrigen, string domicilioRetiro, string nombreDestinatario, string apellidoDestinatario, int dniDestinatario)
-        {
-            //Datos Destino
-            NroCUITCUIL = CUITCUIL;
-            ProvinciaDestino = provDestino;
-            LocalidadDestino = localidadDestino;
-            MetodoEntrega = metodoEntrega;
-            CPDestino = cpDestino;
-            DomicilioDestinatario = domicilioDestinatario;
-            //Datos Encomienda
-            CantCajas = cantCajas;
-            TipoCaja = tipoCaja; 
+        //public EncomiendasImpuestas(int CUITCUIL, string provDestino, string localidadDestino, string metodoEntrega, int cpDestino, string cdDestino, string domicilioDestinatario, int cantCajas, string tipoCaja, string provinciaRetiro, string localidadRetiro, int cpRetiro, string cdOrigen, string domicilioRetiro, string nombreDestinatario, string apellidoDestinatario, int dniDestinatario)
+        //{
+        //    //Datos Destino
+        //    NroCUITCUIL = CUITCUIL;
+        //    ProvinciaDestino = provDestino;
+        //    LocalidadDestino = localidadDestino;
+        //    MetodoEntrega = metodoEntrega;
+        //    CPDestino = cpDestino;
+        //    DomicilioDestinatario = domicilioDestinatario;
+        //    //Datos Encomienda
+        //    CantCajas = cantCajas;
+        //    TipoCaja = tipoCaja; 
 
-            //Datos Retiro
-            ProvinciaRetiro = provinciaRetiro;
-            LocalidadRetiro = localidadRetiro;
-            CPRetiro = cpRetiro;
-            CdOrigen = cdOrigen;
-            DomicilioRetiro = domicilioRetiro;
+        //    //Datos Retiro
+        //    ProvinciaRetiro = provinciaRetiro;
+        //    LocalidadRetiro = localidadRetiro;
+        //    CPRetiro = cpRetiro;
+        //    CdOrigen = cdOrigen;
+        //    DomicilioRetiro = domicilioRetiro;
 
-            //Datos Destinatario
-            NombreDestinatario = nombreDestinatario;
-            ApellidoDestinatario = apellidoDestinatario;
-            DNIDestinatario = dniDestinatario; 
+        //    //Datos Destinatario
+        //    NombreDestinatario = nombreDestinatario;
+        //    ApellidoDestinatario = apellidoDestinatario;
+        //    DNIDestinatario = dniDestinatario; 
 
 
-        }
+        //}
 
-        List<EncomiendasImpuestas> encomienda = new List<EncomiendasImpuestas> ();
+        //List<EncomiendasImpuestas> encomienda = new List<EncomiendasImpuestas> ();
 
 
     }

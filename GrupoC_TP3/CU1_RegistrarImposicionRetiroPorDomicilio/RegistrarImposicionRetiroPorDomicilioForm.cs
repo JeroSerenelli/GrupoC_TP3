@@ -15,15 +15,13 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
     {
         private RegistrarImposicionRetiroPorDomicilioModel modelo = new();
 
-        private object provinciasLocalidades; // por sugerencia del debugger
-        private Ubicacion ubicacion;
 
 
         public RegistrarImposicionRetiroPorDomicilioForm()
         {
             InitializeComponent();
 
-            ubicacion = new Ubicacion();
+            var ubicacion = modelo.ObtenerUbicacion1();
             cmbBoxProvDestino.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
             cmbBoxProvDestino.SelectedIndex = -1;
             cmbBoxLocalidadDestino.SelectedIndex = -1;
@@ -34,6 +32,8 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             cmbBoxLocalidadRetiro.SelectedIndex = -1;
             cmbBoxLocalidadRetiro.Enabled = false; // hasata que no elija la provincia de destino
 
+
+            //TODO: Nice-To-Have. ASEGURARSE que esto este bien implementado. Debe estar habilitado solo cuando el DNI ingresado sea valido y la casilla esté completa
             buttonGenerarNumeroGuia.Enabled = false; //Desactivo el boton generar nro de guia hasta que esten las validaciones completadas
 
 
@@ -52,40 +52,28 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             }
 
             string limpio = textBoxCUITCUIL.Text.Replace("-", "");
-
-            if (!int.TryParse(limpio, out int clienteValido)) //Lvl 1
+            
+            
+            if (!long.TryParse(limpio, out long clienteValido)) //Lvl 1
             {
                 MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //SEA POSITIVO 
-            if (clienteValido <= 0) //Lvl 2
-            {
-                MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
-            }
-            //SEA DE 8 DIGITOS
-            if (clienteValido.ToString().Length != 1)
-            {
-                MessageBox.Show("El campo CUIT/CUIL debe tener 1 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
-            }
+            buttonGenerarNumeroGuia.Enabled = true;
 
             //Informacion Destino
             // Val - Provincia
             if (string.IsNullOrEmpty(cmbBoxProvDestino.Text)) //Lvl 0
             {
-                MessageBox.Show("Seleccione una provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //E01 
+                MessageBox.Show("Seleccione una provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);  
                 return;
             }
 
             // Val - Localidad
             if (string.IsNullOrEmpty(cmbBoxLocalidadDestino.Text)) //Lvl 0
             {
-                MessageBox.Show("Seleccione una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //E01
+                MessageBox.Show("Seleccione una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
                 return;
             }
 
@@ -103,13 +91,18 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
-            if (!int.TryParse(textBoxCPDestino.Text, out int cpRetiro)) //Lvl 1
+            if (!int.TryParse(textBoxCPDestino.Text, out int cpDestino)) //Lvl 1
             {
                 MessageBox.Show("El codigo postal ingresado no es un numero entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             
+            modelo.ValidacionDestino(new EncomiendasImpuestas
+            {
+                CPDestino = cpDestino,
+            });
+
             if (labelCdDestino.Text == "Centro de distribución no encontrado") //Lvl 2?
             {
                 MessageBox.Show("No existe un centro de distribucion para el CP ingresado. Ingrese otro codigo postal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -141,17 +134,16 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
             if (!int.TryParse(textBoxCantidadCajas.Text, out int cajas)) //Lvl 1
             {
-                MessageBox.Show("La cantidad de cajas ingresadas es invalida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese un valor numérico para indicar la cantidad de cajas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (cajas <= 0) //Lvl 2
+            modelo.ValidacionDatosEncomienda(new EncomiendasImpuestas
             {
-                MessageBox.Show("La cantidad de cajas ingresadas es invalido, debe ser al menos 1 caja", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                CantCajas = cajas,
+            });
 
-            //Val - Tipo de Caja 
+            //Val - Tipo de Caja
             if (string.IsNullOrEmpty(comboBoxTipoCaja.Text)) //Lvl 0
             {
                 MessageBox.Show("Seleccione el tipo de caja.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -182,11 +174,17 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             }
 
 
-            //if (!int.TryParse(textBoxCpRetiro.Text, out int cpRetiro)) //Lvl 1
-            //{
-            //    MessageBox.Show("El codigo postal ingresado no es un numero entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (!int.TryParse(textBoxCpRetiro.Text, out int cpRetiro)) //Lvl 1
+            {
+                MessageBox.Show("El codigo postal ingresado no es un numero entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            
+            modelo.ValidacionesDatosRetiro(new EncomiendasImpuestas
+            {
+                CPRetiro = cpRetiro,
+            });
 
             //Val- CD Destino
             if (labelCdDestino.Text == "Centro de distribución no encontrado") //Lvl 2
@@ -230,22 +228,15 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 //textBoxDNIDestinatario.Focus();
                 return;
             }
-            //SEA POSITIVO
-            if (DNI <= 0)
-            {
-                MessageBox.Show("El campo DNI debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
-            }
-            //SEA DE 8 DIGITOS
-            if (DNI.ToString().Length != 8)
-            {
-                MessageBox.Show("El campo DNI debe tener 8 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
-            }
 
-            //TODO: corregir. En esta carpeta esta clase no existe.
+            modelo.ValidacionDatosDestinatario(new EncomiendasImpuestas 
+            {
+                DNIDestinatario = DNI,
+            });
+
+            
+
+            //TODO: FALTA CREAR LA ENCOMIENDA FINAL Y PRINTEAR 
             /*
             modelo.CrearEncomienda(new EncomiendasImpuestas
             {
@@ -268,6 +259,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             // Limpiar combo de localidad
             cmbBoxLocalidadRetiro.DataSource = null;
 
+            var ubicacion = modelo.ObtenerUbicacion1();
             if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
             {
                 cmbBoxLocalidadDestino.Enabled = true;
@@ -282,7 +274,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
             // Limpiar combo de localidad
             cmbBoxLocalidadRetiro.DataSource = null;
-
+            var ubicacion = modelo.ObtenerUbicacion1();
             if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
             {
                 cmbBoxLocalidadRetiro.Enabled = true;
@@ -292,9 +284,10 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
         private void textBoxCpRetiro_TextChanged(object sender, EventArgs e)
         {
+            var ubicacion = modelo.ObtenerUbicacion1();
+            
             //Obtengo CD Origen
             string codigoPostal1 = textBoxCpRetiro.Text.Trim();
-            Ubicacion ubicacion1 = new Ubicacion();
             string centro1 = ubicacion.ObtenerCentroDistribucion(codigoPostal1);
             labelCdOrigen.Text = centro1;
         }
@@ -305,7 +298,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             //Obtengo CD Destino
             string codigoPostal = textBoxCPDestino.Text.Trim();
 
-            Ubicacion ubicacion = new Ubicacion();
+            var ubicacion = modelo.ObtenerUbicacion1();
             string centro = ubicacion.ObtenerCentroDistribucion(codigoPostal);
             labelCdDestino.Text = centro;
 
@@ -350,32 +343,18 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
             string limpio = textBoxCUITCUIL.Text.Replace("-", "");
 
-            if (!int.TryParse(limpio, out int clienteValido)) //Lvl 1
+            if (!long.TryParse(limpio, out long clienteValido)) //Lvl 1
             {
                 MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //SEA POSITIVO 
-            if (clienteValido <= 0) //Lvl 2
-            {
-                MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
-            }
-            //SEA DE 8 DIGITOS
-            if (clienteValido.ToString().Length != 1)
-            {
-                MessageBox.Show("El campo CUIT/CUIL debe tener 1 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
-            }
 
 
-            //modelo.cliente(new Clientes
-            //{
-            //    CUITCUIL = clienteValido,
-            //});
+            modelo.ValidacionCliente(new ValidacionClientes
+            {
+                CUITCUIL = clienteValido,
+            });
 
             buttonGenerarNumeroGuia.Enabled = true;
         }

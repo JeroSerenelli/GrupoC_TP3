@@ -69,7 +69,6 @@
             buttonBuscarMicro.TabIndex = 2;
             buttonBuscarMicro.Text = "Buscar";
             buttonBuscarMicro.UseVisualStyleBackColor = true;
-            buttonBuscarMicro.Click += buttonBuscarMicro_Click;
             // 
             // textBox1
             // 
@@ -147,7 +146,6 @@
             button1.TabIndex = 3;
             button1.Text = "Aceptar";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // groupBox3
             // 
@@ -188,7 +186,6 @@
             button2.TabIndex = 3;
             button2.Text = "Actualizar";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // GestionCentroDeDistribucionForm
             // 

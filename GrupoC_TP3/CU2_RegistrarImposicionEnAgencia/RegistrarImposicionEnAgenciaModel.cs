@@ -83,25 +83,33 @@ internal class RegistrarImposicionEnAgenciaModel
         }
 
 
-        //Generar numero de guia//
-        encomiendas.NumeroGuia = (encomiendas.CodigoAgencia.ToString() + ((DateTime.Now.Ticks)).ToString());
-        //Fin generar numero de guia//
+        for (int i = 0; i < encomiendas.CantidadCajas; i++)
+        {
+            var listItem = new ListViewItem();
+            //Generar numero de guia//
+            encomiendas.NumeroGuia = (encomiendas.CodigoAgencia.ToString() + ((DateTime.Now.Ticks)).ToString());
+            //Fin generar numero de guia//
 
-        var listItem = new ListViewItem(encomiendas.NumeroGuia);
-        listItem.SubItems.Add(encomiendas.Provincia);
-        listItem.SubItems.Add(encomiendas.Localidad);
-        listItem.SubItems.Add(encomiendas.MetodoEntrega);
-        listItem.SubItems.Add(encomiendas.CodigoPostal.ToString());
-        listItem.SubItems.Add(encomiendas.CentroDistribucionDestino);
-        listItem.SubItems.Add(encomiendas.Domicilio);
-        listItem.SubItems.Add(encomiendas.CantidadCajas.ToString());
-        listItem.SubItems.Add(encomiendas.TipoCaja);
-        listItem.SubItems.Add(encomiendas.NombreDestinatario);
-        listItem.SubItems.Add(encomiendas.ApellidoDestinatario);
-        listItem.SubItems.Add(encomiendas.DNI.ToString());
-        listItem.SubItems.Add(encomiendas.CodigoAgencia.ToString());
+            listItem.Text = encomiendas.NumeroGuia;
+            listItem.SubItems.Add(encomiendas.Provincia);
+            listItem.SubItems.Add(encomiendas.Localidad);
+            listItem.SubItems.Add(encomiendas.MetodoEntrega);
+            listItem.SubItems.Add(encomiendas.CodigoPostal.ToString());
+            listItem.SubItems.Add(encomiendas.CentroDistribucionDestino);
+            listItem.SubItems.Add(encomiendas.Domicilio);
+            listItem.SubItems.Add(encomiendas.CantidadCajas.ToString());
+            listItem.SubItems.Add(encomiendas.TipoCaja);
+            listItem.SubItems.Add(encomiendas.NombreDestinatario);
+            listItem.SubItems.Add(encomiendas.ApellidoDestinatario);
+            listItem.SubItems.Add(encomiendas.DNI.ToString());
+            listItem.SubItems.Add(encomiendas.CodigoAgencia.ToString());
 
-        MessageBox.Show("Guia generada exitosamente: " + encomiendas.NumeroGuia);
+            MessageBox.Show("Guia generada exitosamente: " + encomiendas.NumeroGuia);
+
+            //ListViewItem.Item
+
+
+        }
     }
 
 

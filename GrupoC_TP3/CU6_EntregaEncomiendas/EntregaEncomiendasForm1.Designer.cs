@@ -35,7 +35,7 @@
             labelApellido = new Label();
             label3 = new Label();
             label2 = new Label();
-            buttonConfirmar = new Button();
+            buttonConfirmarEntrega = new Button();
             listViewEncomiendasARetirarAgencia = new ListView();
             nroGuia = new ColumnHeader();
             columnEstado = new ColumnHeader();
@@ -73,7 +73,7 @@
             groupBox2.Controls.Add(labelApellido);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(buttonConfirmar);
+            groupBox2.Controls.Add(buttonConfirmarEntrega);
             groupBox2.Controls.Add(listViewEncomiendasARetirarAgencia);
             groupBox2.Location = new Point(38, 252);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
@@ -120,15 +120,16 @@
             label2.TabIndex = 6;
             label2.Text = "Nombre:";
             // 
-            // buttonConfirmar
+            // buttonConfirmarEntrega
             // 
-            buttonConfirmar.Location = new Point(270, 340);
-            buttonConfirmar.Margin = new Padding(3, 4, 3, 4);
-            buttonConfirmar.Name = "buttonConfirmar";
-            buttonConfirmar.Size = new Size(139, 31);
-            buttonConfirmar.TabIndex = 5;
-            buttonConfirmar.Text = "Confirmar Entrega";
-            buttonConfirmar.UseVisualStyleBackColor = true;
+            buttonConfirmarEntrega.Location = new Point(270, 340);
+            buttonConfirmarEntrega.Margin = new Padding(3, 4, 3, 4);
+            buttonConfirmarEntrega.Name = "buttonConfirmarEntrega";
+            buttonConfirmarEntrega.Size = new Size(139, 31);
+            buttonConfirmarEntrega.TabIndex = 5;
+            buttonConfirmarEntrega.Text = "Confirmar Entrega";
+            buttonConfirmarEntrega.UseVisualStyleBackColor = true;
+            buttonConfirmarEntrega.Click += buttonConfirmarEntrega_Click;
             // 
             // listViewEncomiendasARetirarAgencia
             // 
@@ -222,7 +223,7 @@
         private GroupBox groupBox2;
         private Label label3;
         private Label label2;
-        private Button buttonConfirmar;
+        private Button buttonConfirmarEntrega;
         private ListView listViewEncomiendasARetirarAgencia;
         private ColumnHeader nroGuia;
         private GroupBox groupBox1;

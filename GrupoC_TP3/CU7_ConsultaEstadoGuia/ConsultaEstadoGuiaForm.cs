@@ -30,35 +30,6 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 
         }
 
-        /*private void buttonBuscar_Click(object sender, EventArgs e, Guia guia)
-        {
-            if (string.IsNullOrEmpty(textBoxNumeroGuiaConsulta.Text))
-            {
-                MessageBox.Show("Para realizar una busqueda, ingrese un numero de guia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!long.TryParse(textBoxNumeroGuiaConsulta.Text, out long numeroGuiaConsulta))
-            {
-                MessageBox.Show("El numero de guia ingresado es invalido, por favor revise", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            foreach (var Guias in modelo.Guias) 
-            {
-                if (Guias.NumeroGuia == numeroGuiaConsulta)
-                {
-                    var listItem = new ListViewItem();
-                    listItem.Text = Guias.NumeroGuia.ToString();
-                    listItem.SubItems.Add(Guias.EstadoGuia.ToString());
-                    listView1.Items.Add(listItem);
-                }
-
-            }
-            
-
-
-        }*/
-
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
@@ -72,7 +43,15 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
             if (!long.TryParse(textBoxNumeroGuiaConsulta.Text, out long numeroGuiaConsulta))
             {
                 MessageBox.Show("El numero de guia ingresado es invalido, por favor revise", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            modelo.ValidacionGuia(new Guia
+            {
+                NumeroGuia = numeroGuiaConsulta,
+            });
+
+
 
             foreach (var Guias in modelo.Guias)
             {
@@ -83,15 +62,26 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
                     listItem.SubItems.Add(Guias.UltActualizacion.ToString());
                     listView1.Items.Add(listItem);
                 }
-
-                /*else
+                else
                 {
-                    MessageBox.Show("El numero de guia ingresado no corresponde a una encomienda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+
                     //Cuando busco uno que existe, tambien aparece. 
-                }*/
+                }
             }
 
+        }
+
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show(
+                "Gracias",
+                "Gracias por usar el sistema.",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+
+            this.Close();
         }
     }
 }

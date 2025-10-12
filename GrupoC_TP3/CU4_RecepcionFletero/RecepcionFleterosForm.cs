@@ -18,8 +18,6 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
     {
         private RecepcionFleterosModel modelo = new();
 
-        public HojasDeRutaAsignadas HojasdeRutaAsignadas;
-
         private bool _listasInicializadas = false;
         private void InicializarListViewsSiHaceFalta()
         {

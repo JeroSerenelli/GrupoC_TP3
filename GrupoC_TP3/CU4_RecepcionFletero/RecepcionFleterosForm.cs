@@ -222,8 +222,8 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
         {
         
             MessageBox.Show(
-                "Datos cargados correctamente.",
-                "Gracias por usar el sistema.",
+                "Gracias",
+                "Gracias por usar el sistema",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );

@@ -42,7 +42,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
             // Limpiar combo de localidad
             cmbBoxLocalidadDst.DataSource = null;
 
-            var ubicacion = modelo.ObtenerUbicacion();  
+            var ubicacion = modelo.ObtenerUbicacion();
             if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
             {
                 cmbBoxLocalidadDst.Enabled = true;
@@ -97,7 +97,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                     return;
                 }
             }
-        
+
             if (string.IsNullOrEmpty(textBoxCantidadCajas.Text))
             {
                 MessageBox.Show("Seleccione una cantidad de cajas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -242,6 +242,18 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
         private void textBoxCUITCUIL_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Gracias",
+                "Gracias por usar el sistema.",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+
+            this.Close();
         }
     }
 

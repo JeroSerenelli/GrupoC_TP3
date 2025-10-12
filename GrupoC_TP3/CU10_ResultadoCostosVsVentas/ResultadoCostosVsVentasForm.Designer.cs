@@ -42,6 +42,7 @@
             columnHeader4 = new ColumnHeader();
             label17 = new Label();
             label18 = new Label();
+            buttonAceptar = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -55,7 +56,7 @@
             groupBox1.Controls.Add(buttonBuscar);
             groupBox1.Location = new Point(29, 83);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(544, 145);
+            groupBox1.Size = new Size(493, 145);
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
             groupBox1.Text = "Periodo de busqueda";
@@ -103,9 +104,9 @@
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Location = new Point(443, 111);
+            buttonBuscar.Location = new Point(379, 110);
             buttonBuscar.Name = "buttonBuscar";
-            buttonBuscar.Size = new Size(94, 29);
+            buttonBuscar.Size = new Size(108, 29);
             buttonBuscar.TabIndex = 2;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = true;
@@ -116,7 +117,7 @@
             groupBox2.Controls.Add(listViewResultados);
             groupBox2.Location = new Point(29, 249);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(544, 163);
+            groupBox2.Size = new Size(493, 166);
             groupBox2.TabIndex = 12;
             groupBox2.TabStop = false;
             groupBox2.Text = "Estado de Resultados";
@@ -127,7 +128,7 @@
             listViewResultados.Location = new Point(9, 27);
             listViewResultados.Margin = new Padding(3, 4, 3, 4);
             listViewResultados.Name = "listViewResultados";
-            listViewResultados.Size = new Size(524, 128);
+            listViewResultados.Size = new Size(470, 128);
             listViewResultados.TabIndex = 0;
             listViewResultados.UseCompatibleStateImageBehavior = false;
             listViewResultados.View = View.Details;
@@ -172,11 +173,22 @@
             label18.TabIndex = 49;
             label18.Text = "TUTASA";
             // 
+            // buttonAceptar
+            // 
+            buttonAceptar.Location = new Point(414, 430);
+            buttonAceptar.Name = "buttonAceptar";
+            buttonAceptar.Size = new Size(108, 29);
+            buttonAceptar.TabIndex = 14;
+            buttonAceptar.Text = "Aceptar";
+            buttonAceptar.UseVisualStyleBackColor = true;
+            buttonAceptar.Click += buttonAceptar_Click;
+            // 
             // ResultadoCostosVsVentasForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(627, 453);
+            ClientSize = new Size(545, 471);
+            Controls.Add(buttonAceptar);
             Controls.Add(label17);
             Controls.Add(label18);
             Controls.Add(groupBox2);
@@ -205,5 +217,6 @@
         private ColumnHeader columnHeader4;
         private Label label17;
         private Label label18;
+        private Button buttonAceptar;
     }
 }

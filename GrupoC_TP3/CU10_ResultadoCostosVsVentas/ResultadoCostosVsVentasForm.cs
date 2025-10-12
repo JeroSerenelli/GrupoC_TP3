@@ -16,7 +16,7 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
     {
         private readonly ResultadoCostosVsVentasModel modelo = new();
 
-        
+
 
         public ResultadoCostosVsVentasForm()
         {
@@ -28,7 +28,7 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
 
         }
 
-        
+
 
         private void IniciodateTimePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -52,7 +52,7 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
                 .ToList();
 
             CargarListView(filtrados);
-            
+
         }
 
 
@@ -71,5 +71,16 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
             }
         }
 
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Gracias",
+                "Gracias por usar el sistema.",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+
+            this.Close();
+        }
     }
 }

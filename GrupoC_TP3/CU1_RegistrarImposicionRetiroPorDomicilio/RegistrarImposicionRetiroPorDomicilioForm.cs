@@ -52,8 +52,8 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             }
 
             string limpio = textBoxCUITCUIL.Text.Replace("-", "");
-            
-            
+
+
             if (!long.TryParse(limpio, out long clienteValido)) //Lvl 1
             {
                 MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -66,14 +66,14 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             // Val - Provincia
             if (string.IsNullOrEmpty(cmbBoxProvDestino.Text)) //Lvl 0
             {
-                MessageBox.Show("Seleccione una provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);  
+                MessageBox.Show("Seleccione una provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Val - Localidad
             if (string.IsNullOrEmpty(cmbBoxLocalidadDestino.Text)) //Lvl 0
             {
-                MessageBox.Show("Seleccione una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                MessageBox.Show("Seleccione una localidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -97,7 +97,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
-            
+
             modelo.ValidacionDestino(new EncomiendasImpuestas
             {
                 CPDestino = cpDestino,
@@ -120,7 +120,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 }
                 return;
             }
- 
+
 
             //Datos Encomienda
             // Val - Cant. Cajas
@@ -180,7 +180,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
-            
+
             modelo.ValidacionesDatosRetiro(new EncomiendasImpuestas
             {
                 CPRetiro = cpRetiro,
@@ -229,12 +229,12 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
-            modelo.ValidacionDatosDestinatario(new EncomiendasImpuestas 
+            modelo.ValidacionDatosDestinatario(new EncomiendasImpuestas
             {
                 DNIDestinatario = DNI,
             });
 
-            
+
 
             //TODO: FALTA CREAR LA ENCOMIENDA FINAL Y PRINTEAR 
             /*
@@ -285,7 +285,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
         private void textBoxCpRetiro_TextChanged(object sender, EventArgs e)
         {
             var ubicacion = modelo.ObtenerUbicacion1();
-            
+
             //Obtengo CD Origen
             string codigoPostal1 = textBoxCpRetiro.Text.Trim();
             string centro1 = ubicacion.ObtenerCentroDistribucion(codigoPostal1);
@@ -358,6 +358,19 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
             buttonGenerarNumeroGuia.Enabled = true;
         }
+
+        private void buttonNuevaSolicitudLimpiar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Gracias",
+                "Gracias por usar el sistema",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+
+            this.Close();
+        }
     }
+    
 }
     

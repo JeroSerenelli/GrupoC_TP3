@@ -54,8 +54,15 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
         //ACA ESTA EL BOTON PARA ACEPTAR LA IMPOSICION 
         private void buttonNuevaSolicitudLimpiar_Click(object sender, EventArgs e)
         {
-            //ACA SE VA A ACEPTAR SIEMPRE Y CUANDO ESTE EL NUMERO DE GUIA GENERADO
-            MessageBox.Show("Imposicion Aceptada.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            MessageBox.Show(
+                "Gracias",
+                "Gracias por usar el sistema.",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+
+            this.Close();
         }
 
         //ACA ESTAN TODAS LAS VALIDACIONES DE LOS CAMPOS

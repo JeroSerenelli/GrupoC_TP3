@@ -76,7 +76,7 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 
             MessageBox.Show(
                 "Gracias",
-                "Gracias por usar el sistema.",
+                "Gracias por usar el sistema",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );

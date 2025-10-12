@@ -248,6 +248,7 @@
             buttonNuevaSolicitudLimpiar.TabIndex = 59;
             buttonNuevaSolicitudLimpiar.Text = "Aceptar";
             buttonNuevaSolicitudLimpiar.UseVisualStyleBackColor = true;
+            buttonNuevaSolicitudLimpiar.Click += buttonNuevaSolicitudLimpiar_Click;
             // 
             // label15
             // 

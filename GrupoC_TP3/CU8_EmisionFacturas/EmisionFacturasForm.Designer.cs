@@ -41,6 +41,7 @@ partial class EmisionFacturasForm
         Total = new ColumnHeader();
         label3 = new Label();
         label2 = new Label();
+        buttonAceptar = new Button();
         groupBox1.SuspendLayout();
         groupBox2.SuspendLayout();
         SuspendLayout();
@@ -53,7 +54,6 @@ partial class EmisionFacturasForm
         label1.Size = new Size(66, 15);
         label1.TabIndex = 0;
         label1.Text = "CUIT/CUIL:";
-        label1.Click += label1_Click;
         // 
         // groupBox1
         // 
@@ -68,7 +68,6 @@ partial class EmisionFacturasForm
         groupBox1.TabIndex = 2;
         groupBox1.TabStop = false;
         groupBox1.Text = "Cliente";
-        groupBox1.Enter += groupBox1_Enter;
         // 
         // textBoxCuilCliente
         // 
@@ -141,7 +140,7 @@ partial class EmisionFacturasForm
         PedidosAFacturarListView.TabIndex = 2;
         PedidosAFacturarListView.UseCompatibleStateImageBehavior = false;
         PedidosAFacturarListView.View = View.Details;
-        PedidosAFacturarListView.SelectedIndexChanged += cuentaCorrienteLstView_SelectedIndexChanged;
+        PedidosAFacturarListView.SelectedIndexChanged += PedidosAFacturarListView_SelectedIndexChanged;
         // 
         // Nro_Guia
         // 
@@ -172,11 +171,23 @@ partial class EmisionFacturasForm
         label2.TabIndex = 7;
         label2.Text = "TUTASA";
         // 
+        // buttonAceptar
+        // 
+        buttonAceptar.Location = new Point(284, 454);
+        buttonAceptar.Margin = new Padding(3, 2, 3, 2);
+        buttonAceptar.Name = "buttonAceptar";
+        buttonAceptar.Size = new Size(105, 22);
+        buttonAceptar.TabIndex = 6;
+        buttonAceptar.Text = "Aceptar";
+        buttonAceptar.UseVisualStyleBackColor = true;
+        buttonAceptar.Click += buttonAceptar_Click;
+        // 
         // EmisionFacturasForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(425, 451);
+        ClientSize = new Size(480, 526);
+        Controls.Add(buttonAceptar);
         Controls.Add(label3);
         Controls.Add(label2);
         Controls.Add(groupBox2);
@@ -184,7 +195,6 @@ partial class EmisionFacturasForm
         Margin = new Padding(3, 2, 3, 2);
         Name = "EmisionFacturasForm";
         Text = "Facturacion Clientes";
-        Load += EmisionFacturas_Load;
         groupBox1.ResumeLayout(false);
         groupBox1.PerformLayout();
         groupBox2.ResumeLayout(false);
@@ -208,4 +218,5 @@ partial class EmisionFacturasForm
     private Label label4;
     private TextBox textBoxCuilCliente;
     private TextBox textBoxTotalFactura;
+    private Button buttonAceptar;
 }

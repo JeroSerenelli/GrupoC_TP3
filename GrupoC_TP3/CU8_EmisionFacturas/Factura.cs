@@ -8,7 +8,7 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
 {
     public class Factura
     {
-        public long? Cuil { get; set; }
+        public long Cuil { get; set; }
         
         public long? NroGuia { get; set; }
 

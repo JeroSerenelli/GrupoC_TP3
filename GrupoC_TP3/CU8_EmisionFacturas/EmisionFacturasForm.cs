@@ -8,50 +8,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static GrupoC_TP3.CU8_EmisionFacturas.Factura;
 
 namespace GrupoC_TP3.CU8_EmisionFacturas
 {
     public partial class EmisionFacturasForm : Form
 
     {
-        //private  EmisionFacturasForm modelo = new();
 
 
-        private EmisionFacturasModel Facturas = new();
+        private EmisionFacturasModel modelo = new();
 
 
         public EmisionFacturasForm()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cuentaCorrienteLstView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EmisionFacturas_Load(object sender, EventArgs e)
-        {
-
+            //Preguntar a Jero si es traer las listas
+            PedidosAFacturarListView.View = View.Details;
+            PedidosAFacturarListView.FullRowSelect = true;
+            PedidosAFacturarListView.CheckBoxes = false;
         }
 
         private void buttonBuscarCuilCliente_Click(object sender, EventArgs e)
         {
+            PedidosAFacturarListView.Items.Clear();
+
             if (string.IsNullOrEmpty(textBoxCuilCliente.Text))
             {
                 MessageBox.Show("Para realizar una busqueda, ingrese un CUIL/CUIT", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -59,50 +40,76 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
                 textBoxCuilCliente.Focus();
                 return;
             }
-            // Validar que el CUIL/CUIT sea un numero valido
-            if (!long.TryParse(textBoxCuilCliente.Text, out long cuilCliente))
+            if (!long.TryParse(textBoxCuilCliente.Text, out long salida))
             {
-                MessageBox.Show("El CUIT/CUIL es un campo numerico, por favor remueva letras y caracteres especiales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El numero de CUIT/CUIL ingresado es invalido, por favor revise", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //Con esto hacemos que se quede en esta parte
                 textBoxCuilCliente.Focus();
                 return;
             }
-            //Validamos que el cuil sea de 11 digitos
-            if (textBoxCuilCliente.Text.Length != 11)
+
+            modelo.ValidacionCuil(new Factura
             {
-                MessageBox.Show("El CUIL/CUIT debe tener 11 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //Con esto hacemos que se quede en esta parte
-                textBoxCuilCliente.Focus();
-                return;
-            }
+                Cuil = salida,
+            });
+
 
 
             //Cualquier NUMERO DE CUIL VALIDO va a traer los mismos datos de prueba
             // Corrección: Iterar sobre la lista de facturas del modelo y mostrarlo en el ListView
-            PedidosAFacturarListView.Items.Clear();
-            foreach (var factura in Facturas.Fac)
+
+            foreach (var CuilValido in modelo.CuilValido)
             {
-                var listItem = new ListViewItem();
-                listItem.Text = factura.NroGuia.ToString();
-                listItem.SubItems.Add(factura.SubTotal.ToString("C")); // Formatear como moneda
-                PedidosAFacturarListView.Items.Add(listItem);
+                if (CuilValido.Cuil == salida)
+                {
+                    var listItem = new ListViewItem();
+                    listItem.Text = CuilValido.NroGuia.ToString();
+                    listItem.SubItems.Add(CuilValido.SubTotal.ToString("C")); // Formatear como moneda
+                    listItem.Tag = CuilValido; // Guardamos el objeto para usarlo luego
+                    PedidosAFacturarListView.Items.Add(listItem);
+                }
+
             }
 
             //Ahora vamos a sumar los subtotales y mostrar el total en el textbox
-            decimal totalFactura = Facturas.Fac.Sum(f => f.SubTotal);
+            decimal totalFactura = modelo.CuilValido.Sum(f => f.SubTotal);
             textBoxTotalFactura.Text = totalFactura.ToString("C"); // Formatear como moneda
 
         }
 
         private void buttonEmitirFactura_Click(object sender, EventArgs e)
         {
+            var seleccionadas = PedidosAFacturarListView.Items.Cast<ListViewItem>().ToList();
             //Vamos a emitir la factura si hay items en el listview
+            /*if (PedidosAFacturarListView.Items.Count > 0)
+            {
+                var GuiasAEmitir = seleccionadas.Select(item => item.Text).ToList();
+            }
+            */
+
             if (PedidosAFacturarListView.Items.Count == 0)
             {
                 MessageBox.Show("No hay pedidos para facturar, por favor realice una busqueda valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             MessageBox.Show("Factura emitida con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
+
+        private void PedidosAFacturarListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+              "Gracias",
+              "Gracias por usar el sistema",
+              MessageBoxButtons.OK,
+              MessageBoxIcon.Information
+          );
+
             this.Close();
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -237,16 +238,10 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
 
             //TODO: FALTA CREAR LA ENCOMIENDA FINAL Y PRINTEAR 
-            /*
             modelo.CrearEncomienda(new EncomiendasImpuestas
             {
-                //Provincia = cmbBoxProvDestino.Text,
-                //NumeroGuia = long.Parse(textBoxCodigoAgencia.Text)
-
-            }, cajas);*/
-
-
-            /*FORMULARIO: Valida TIPO y el rango de ser necesario.*/
+                CantCajas = cajas
+            });
 
         }
 

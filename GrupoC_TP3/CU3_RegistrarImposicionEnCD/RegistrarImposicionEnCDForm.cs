@@ -54,7 +54,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
         //ACA ESTA EL BOTON PARA ACEPTAR LA IMPOSICION 
         private void buttonNuevaSolicitudLimpiar_Click(object sender, EventArgs e)
         {
-            
+
             MessageBox.Show(
                 "Gracias",
                 "Gracias por usar el sistema.",
@@ -328,6 +328,9 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             labelCdDestino.Text = centro;
         }
 
-      
+        private void buttonGenerarNumeroGuia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

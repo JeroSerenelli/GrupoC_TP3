@@ -56,7 +56,6 @@
             textBoxNombreDestinatario = new TextBox();
             textBoxApellidoDestinatario = new TextBox();
             label17 = new Label();
-            textBoxNumeroDeGuia = new TextBox();
             buttonGenerarNumeroGuia = new Button();
             groupBox1 = new GroupBox();
             buttonValidarCuil = new Button();
@@ -84,20 +83,19 @@
             // cmbBoxLocalidadDst
             // 
             cmbBoxLocalidadDst.FormattingEnabled = true;
-            cmbBoxLocalidadDst.Location = new Point(144, 60);
+            cmbBoxLocalidadDst.Location = new Point(172, 66);
             cmbBoxLocalidadDst.Margin = new Padding(3, 4, 3, 4);
             cmbBoxLocalidadDst.Name = "cmbBoxLocalidadDst";
-            cmbBoxLocalidadDst.Size = new Size(138, 28);
+            cmbBoxLocalidadDst.Size = new Size(223, 28);
             cmbBoxLocalidadDst.TabIndex = 48;
-
             // 
             // cmbBoxProvDst
             // 
             cmbBoxProvDst.FormattingEnabled = true;
-            cmbBoxProvDst.Location = new Point(144, 25);
+            cmbBoxProvDst.Location = new Point(172, 28);
             cmbBoxProvDst.Margin = new Padding(3, 4, 3, 4);
             cmbBoxProvDst.Name = "cmbBoxProvDst";
-            cmbBoxProvDst.Size = new Size(138, 28);
+            cmbBoxProvDst.Size = new Size(223, 28);
             cmbBoxProvDst.TabIndex = 47;
             cmbBoxProvDst.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -128,7 +126,7 @@
             groupBox4.Margin = new Padding(3, 4, 3, 4);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(3, 4, 3, 4);
-            groupBox4.Size = new Size(439, 285);
+            groupBox4.Size = new Size(418, 270);
             groupBox4.TabIndex = 68;
             groupBox4.TabStop = false;
             groupBox4.Text = "Informacion Destino";
@@ -152,10 +150,10 @@
             // 
             // textBoxDomicilioDestinatario
             // 
-            textBoxDomicilioDestinatario.Location = new Point(145, 225);
+            textBoxDomicilioDestinatario.Location = new Point(172, 224);
             textBoxDomicilioDestinatario.Margin = new Padding(3, 4, 3, 4);
             textBoxDomicilioDestinatario.Name = "textBoxDomicilioDestinatario";
-            textBoxDomicilioDestinatario.Size = new Size(281, 27);
+            textBoxDomicilioDestinatario.Size = new Size(223, 27);
             textBoxDomicilioDestinatario.TabIndex = 25;
             textBoxDomicilioDestinatario.Leave += textBoxDomicilioDestinatario_Leave;
             // 
@@ -163,10 +161,10 @@
             // 
             comboBoxMetodoEntrega.FormattingEnabled = true;
             comboBoxMetodoEntrega.Items.AddRange(new object[] { "Entrega en Domicilio", "Retiro en Agencia", "Retiro en CD Destino" });
-            comboBoxMetodoEntrega.Location = new Point(161, 104);
+            comboBoxMetodoEntrega.Location = new Point(172, 104);
             comboBoxMetodoEntrega.Margin = new Padding(3, 4, 3, 4);
             comboBoxMetodoEntrega.Name = "comboBoxMetodoEntrega";
-            comboBoxMetodoEntrega.Size = new Size(171, 28);
+            comboBoxMetodoEntrega.Size = new Size(223, 28);
             comboBoxMetodoEntrega.TabIndex = 45;
             comboBoxMetodoEntrega.SelectedIndexChanged += comboBoxMetodoEntrega_SelectedIndexChanged;
             // 
@@ -181,10 +179,10 @@
             // 
             // textBoxCodPostDestino
             // 
-            textBoxCodPostDestino.Location = new Point(144, 140);
+            textBoxCodPostDestino.Location = new Point(172, 140);
             textBoxCodPostDestino.Margin = new Padding(3, 4, 3, 4);
             textBoxCodPostDestino.Name = "textBoxCodPostDestino";
-            textBoxCodPostDestino.Size = new Size(138, 27);
+            textBoxCodPostDestino.Size = new Size(223, 27);
             textBoxCodPostDestino.TabIndex = 38;
             textBoxCodPostDestino.TextChanged += textBoxCodPostDestino_TextChanged;
             textBoxCodPostDestino.Leave += textBoxCodPostDestino_Leave_1;
@@ -235,7 +233,7 @@
             // 
             // buttonNuevaSolicitudLimpiar
             // 
-            buttonNuevaSolicitudLimpiar.Location = new Point(456, 839);
+            buttonNuevaSolicitudLimpiar.Location = new Point(334, 772);
             buttonNuevaSolicitudLimpiar.Margin = new Padding(3, 4, 3, 4);
             buttonNuevaSolicitudLimpiar.Name = "buttonNuevaSolicitudLimpiar";
             buttonNuevaSolicitudLimpiar.Size = new Size(98, 31);
@@ -278,21 +276,21 @@
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(textBoxNombreDestinatario);
             groupBox2.Controls.Add(textBoxApellidoDestinatario);
-            groupBox2.Location = new Point(16, 636);
+            groupBox2.Location = new Point(14, 607);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(439, 148);
+            groupBox2.Size = new Size(418, 148);
             groupBox2.TabIndex = 64;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Destinatario";
             // 
             // textBoxDNIDestinatario
             // 
-            textBoxDNIDestinatario.Location = new Point(159, 99);
+            textBoxDNIDestinatario.Location = new Point(172, 99);
             textBoxDNIDestinatario.Margin = new Padding(3, 4, 3, 4);
             textBoxDNIDestinatario.Name = "textBoxDNIDestinatario";
-            textBoxDNIDestinatario.Size = new Size(241, 27);
+            textBoxDNIDestinatario.Size = new Size(228, 27);
             textBoxDNIDestinatario.TabIndex = 23;
             textBoxDNIDestinatario.Leave += textBoxDNIDestinatario_Leave;
             // 
@@ -325,19 +323,19 @@
             // 
             // textBoxNombreDestinatario
             // 
-            textBoxNombreDestinatario.Location = new Point(159, 25);
+            textBoxNombreDestinatario.Location = new Point(172, 25);
             textBoxNombreDestinatario.Margin = new Padding(3, 4, 3, 4);
             textBoxNombreDestinatario.Name = "textBoxNombreDestinatario";
-            textBoxNombreDestinatario.Size = new Size(241, 27);
+            textBoxNombreDestinatario.Size = new Size(228, 27);
             textBoxNombreDestinatario.TabIndex = 21;
             textBoxNombreDestinatario.Leave += textBoxNombreDestinatario_Leave;
             // 
             // textBoxApellidoDestinatario
             // 
-            textBoxApellidoDestinatario.Location = new Point(159, 60);
+            textBoxApellidoDestinatario.Location = new Point(172, 60);
             textBoxApellidoDestinatario.Margin = new Padding(3, 4, 3, 4);
             textBoxApellidoDestinatario.Name = "textBoxApellidoDestinatario";
-            textBoxApellidoDestinatario.Size = new Size(241, 27);
+            textBoxApellidoDestinatario.Size = new Size(228, 27);
             textBoxApellidoDestinatario.TabIndex = 22;
             textBoxApellidoDestinatario.Leave += textBoxApellidoDestinatario_Leave;
             // 
@@ -345,30 +343,22 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(128, 47);
+            label17.Location = new Point(49, 45);
             label17.Name = "label17";
             label17.Size = new Size(342, 20);
             label17.TabIndex = 62;
             label17.Text = "Transportes Urbanos Terrestres Argentinos S.A.";
             // 
-            // textBoxNumeroDeGuia
-            // 
-            textBoxNumeroDeGuia.Location = new Point(222, 839);
-            textBoxNumeroDeGuia.Margin = new Padding(3, 4, 3, 4);
-            textBoxNumeroDeGuia.Name = "textBoxNumeroDeGuia";
-            textBoxNumeroDeGuia.ReadOnly = true;
-            textBoxNumeroDeGuia.Size = new Size(194, 27);
-            textBoxNumeroDeGuia.TabIndex = 58;
-            // 
             // buttonGenerarNumeroGuia
             // 
-            buttonGenerarNumeroGuia.Location = new Point(16, 839);
+            buttonGenerarNumeroGuia.Location = new Point(199, 772);
             buttonGenerarNumeroGuia.Margin = new Padding(3, 4, 3, 4);
             buttonGenerarNumeroGuia.Name = "buttonGenerarNumeroGuia";
-            buttonGenerarNumeroGuia.Size = new Size(199, 31);
+            buttonGenerarNumeroGuia.Size = new Size(125, 31);
             buttonGenerarNumeroGuia.TabIndex = 56;
-            buttonGenerarNumeroGuia.Text = "Generar Numero de Guia";
+            buttonGenerarNumeroGuia.Text = "Generar Guia";
             buttonGenerarNumeroGuia.UseVisualStyleBackColor = true;
+            buttonGenerarNumeroGuia.Click += buttonGenerarNumeroGuia_Click;
             // 
             // groupBox1
             // 
@@ -379,14 +369,14 @@
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(441, 113);
+            groupBox1.Size = new Size(421, 113);
             groupBox1.TabIndex = 63;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Solicitante";
             // 
             // buttonValidarCuil
             // 
-            buttonValidarCuil.Location = new Point(321, 75);
+            buttonValidarCuil.Location = new Point(297, 74);
             buttonValidarCuil.Margin = new Padding(3, 4, 3, 4);
             buttonValidarCuil.Name = "buttonValidarCuil";
             buttonValidarCuil.Size = new Size(106, 31);
@@ -397,16 +387,16 @@
             // 
             // textBoxCUITCUIL
             // 
-            textBoxCUITCUIL.Location = new Point(110, 33);
+            textBoxCUITCUIL.Location = new Point(175, 33);
             textBoxCUITCUIL.Margin = new Padding(3, 4, 3, 4);
             textBoxCUITCUIL.Name = "textBoxCUITCUIL";
-            textBoxCUITCUIL.Size = new Size(317, 27);
+            textBoxCUITCUIL.Size = new Size(228, 27);
             textBoxCUITCUIL.TabIndex = 20;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(11, 37);
+            label4.Location = new Point(16, 40);
             label4.Name = "label4";
             label4.Size = new Size(79, 20);
             label4.TabIndex = 3;
@@ -418,11 +408,11 @@
             groupBox3.Controls.Add(label12);
             groupBox3.Controls.Add(textBoxCantidadCajas);
             groupBox3.Controls.Add(comboBoxTipoCaja);
-            groupBox3.Location = new Point(16, 501);
+            groupBox3.Location = new Point(16, 486);
             groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(3, 4, 3, 4);
-            groupBox3.Size = new Size(439, 113);
+            groupBox3.Size = new Size(416, 113);
             groupBox3.TabIndex = 65;
             groupBox3.TabStop = false;
             groupBox3.Text = "Datos Encomienda";
@@ -431,7 +421,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.Location = new Point(240, 20);
+            label18.Location = new Point(175, 9);
             label18.Name = "label18";
             label18.Size = new Size(84, 25);
             label18.TabIndex = 61;
@@ -460,7 +450,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(573, 887);
+            ClientSize = new Size(458, 812);
             Controls.Add(textBoxCodigoAgencia);
             Controls.Add(label22);
             Controls.Add(groupBox4);
@@ -469,7 +459,6 @@
             Controls.Add(label16);
             Controls.Add(groupBox2);
             Controls.Add(label17);
-            Controls.Add(textBoxNumeroDeGuia);
             Controls.Add(buttonGenerarNumeroGuia);
             Controls.Add(groupBox1);
             Controls.Add(groupBox3);
@@ -518,7 +507,6 @@
         private TextBox textBoxNombreDestinatario;
         private TextBox textBoxApellidoDestinatario;
         private Label label17;
-        private TextBox textBoxNumeroDeGuia;
         private Button buttonGenerarNumeroGuia;
         private GroupBox groupBox1;
         private Button buttonValidarCuil;

@@ -117,22 +117,21 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
         }
 
 
-        internal void CrearEncomienda(Encomienda encomiendas, int cantCajas)
+        internal void CrearEncomienda(EncomiendasImpuestas encomiendas)
         {
             //A este metodo le tenemos que pasar la cantidad de cajas para uqe genere una guía por caja.
             //encomiendas.NumeroGuia = encomiendas.NumeroGuia;
 
-            int contador = 100;
-            List<int> nroGuias = new List<int>();
+            //TODO: NO FUNCIONA
+            List<string> nroGuias = new List<string>();
 
-            for (int i = 0; i < cantCajas; i++)
+            for (int i = 0; i < encomiendas.CantCajas; i++)
             {
-                nroGuias.Add(contador);
-                contador += 1;
+                var guiaGenerada = Guid.NewGuid().ToString();
+                nroGuias.Add(guiaGenerada);
+                
             }
-
-            MessageBox.Show("Encomienda creada con exito - numero de guia " + String.Join(", ", nroGuias));
-
+            MessageBox.Show("Guia generada exitosamente: " + String.Join(", ", nroGuias));
 
         }
     }

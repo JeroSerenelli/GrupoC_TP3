@@ -36,6 +36,7 @@ namespace GrupoC_TP3.CU5_GestionCD
             //VALIDACION 1: Que el campo no esté vacío - mensaje de error "Por favor ingrese un valor en el campo "Patente" para realizar una busqueda".
            
             listViewEncomiendasARecibir.Items.Clear();
+            listViewEncomiendasADespachar.Items.Clear();
 
             if (string.IsNullOrEmpty(textBoxPatente.Text))
             {
@@ -47,7 +48,7 @@ namespace GrupoC_TP3.CU5_GestionCD
 
             modelo.ValidacionPatente(new EncomiendasEnTransporte
             {
-                Patente = textBoxPatente.Text,
+                Patente = textBoxPatente.Text.ToUpper(),
 
             });
 
@@ -55,7 +56,7 @@ namespace GrupoC_TP3.CU5_GestionCD
 
             foreach (var EncomiendasEnTransporte in modelo.paquetesRecibidos)
             {
-                if (EncomiendasEnTransporte.Patente == textBoxPatente.Text)
+                if (EncomiendasEnTransporte.Patente == textBoxPatente.Text.ToUpper())
                 {
                     var listItem = new ListViewItem();
                     listItem.Text = EncomiendasEnTransporte.HojaDeRuta.ToString();
@@ -67,7 +68,7 @@ namespace GrupoC_TP3.CU5_GestionCD
 
             foreach (var EncomiendasEnTransporte in modelo.paquetesParaEntregar)
             {
-                if (EncomiendasEnTransporte.Patente == textBoxPatente.Text)
+                if (EncomiendasEnTransporte.Patente == textBoxPatente.Text.ToUpper())
                 {
                     var listItem = new ListViewItem();
                     listItem.Text = EncomiendasEnTransporte.HojaDeRuta.ToString();

@@ -207,7 +207,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "EntregaEncomiendasForm1";
-            Text = "EntregaEncomiendasForm1";
+            Text = "Entrega de Encomiendas";
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);

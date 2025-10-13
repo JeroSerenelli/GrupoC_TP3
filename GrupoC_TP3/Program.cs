@@ -21,7 +21,7 @@ namespace GrupoC_TP3
             Application.Run(new CU5_GestionCD.GestionCentroDeDistribucionForm());
             //Application.Run(new CU6_EntregaEncomiendas.EntregaEncomiendasForm1());
             //Application.Run(new CU7_ConsultaEstadoGuia.ConsultaEstadoGuiaForm());
-            Application.Run(new CU8_EmisionFacturas.EmisionFacturasForm());
+            //Application.Run(new CU8_EmisionFacturas.EmisionFacturasForm());
             //Application.Run(new CU9_CuentaCorriente.CuentaCorrienteForm());
             //Application.Run(new CU10_ResultadoCostosVsVentas.ResultadoCostosVsVentasForm());
             //Application.Run(new CU10_ResultadoCostosVsVentas.ResultadoCostosVsVentasForm());

@@ -32,7 +32,7 @@ namespace GrupoC_TP3.CU5_GestionCD
 
         internal void ValidacionPatente(EncomiendasEnTransporte encomiendasEnTransporte)
         {
-            bool recibir = paquetesRecibidos.Any(g => g.Patente == encomiendasEnTransporte.Patente);
+            bool recibir = paquetesRecibidos.Any(g => g.Patente == encomiendasEnTransporte.Patente.ToUpper());
 
             if (!recibir)
             {
@@ -40,7 +40,7 @@ namespace GrupoC_TP3.CU5_GestionCD
                 return;
             }
 
-            bool entregar = paquetesParaEntregar.Any(e => e.Patente == encomiendasEnTransporte.Patente);
+            bool entregar = paquetesParaEntregar.Any(e => e.Patente == encomiendasEnTransporte.Patente.ToUpper());
             if (!entregar)
             {
                 MessageBox.Show($"No hay encomiendas para entregar al vehiculo {encomiendasEnTransporte}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

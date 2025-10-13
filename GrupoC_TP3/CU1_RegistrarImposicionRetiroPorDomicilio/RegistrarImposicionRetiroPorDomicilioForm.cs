@@ -1,4 +1,5 @@
 ﻿using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
+using GrupoC_TP3.CU7_ConsultaEstadoGuia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,7 +120,6 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                     MessageBox.Show("Ingrese el domicilio del destinatario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                return;
             }
 
 
@@ -132,6 +132,8 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 MessageBox.Show("Ingrese la cantidad de cajas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+
 
             if (!int.TryParse(textBoxCantidadCajas.Text, out int cajas)) //Lvl 1
             {
@@ -234,8 +236,6 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             {
                 DNIDestinatario = DNI,
             });
-
-
 
             //TODO: FALTA CREAR LA ENCOMIENDA FINAL Y PRINTEAR 
             modelo.CrearEncomienda(new EncomiendasImpuestas

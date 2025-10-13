@@ -124,12 +124,15 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
             //TODO: NO FUNCIONA
             List<string> nroGuias = new List<string>();
+            int contador = 0;
 
             for (int i = 0; i < encomiendas.CantCajas; i++)
             {
-                var guiaGenerada = Guid.NewGuid().ToString();
-                nroGuias.Add(guiaGenerada);
                 
+                //var guiaGenerada = "1000" + ((DateTime.Now.Ticks)).ToString())
+                string guia = "1000" + contador.ToString();
+                nroGuias.Add(guia);
+                contador++;
             }
             MessageBox.Show("Guia generada exitosamente: " + String.Join(", ", nroGuias));
 

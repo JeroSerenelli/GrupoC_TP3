@@ -42,7 +42,7 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
             //Validamos que no pueda ingresar caracteres especiales
             if (Cuil.Cuil.ToString().Any(ch => !char.IsDigit(ch)))
             {
-                MessageBox.Show("El CUIT/CUIL caracteres especiales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El CUIT/CUIL no debe contener caracteres especiales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

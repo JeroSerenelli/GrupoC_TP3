@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 {
-    internal class ImposicionEnCD
+    internal class ClienteImposicionCD
     {
+        public long CUITCUIL { get; set; }
+
     }
 }

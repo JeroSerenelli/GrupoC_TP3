@@ -71,10 +71,15 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
 
             }
 
+            //Ahora vamos a sumar los subtotales de los indices que trae, no el total de la lista
+            var totalFactura = modelo.CuilValido.Where(f => f.Cuil == salida).Sum(f => f.SubTotal);
+            textBoxTotalFactura.Text = totalFactura.ToString("C"); // Formatear como moneda
+
+            /*
             //Ahora vamos a sumar los subtotales y mostrar el total en el textbox
             decimal totalFactura = modelo.CuilValido.Sum(f => f.SubTotal);
             textBoxTotalFactura.Text = totalFactura.ToString("C"); // Formatear como moneda
-
+            */
         }
 
         private void buttonEmitirFactura_Click(object sender, EventArgs e)
@@ -93,7 +98,7 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
                 return;
             }
             MessageBox.Show("Factura emitida con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            
         }
 
         private void PedidosAFacturarListView_SelectedIndexChanged(object sender, EventArgs e)

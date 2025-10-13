@@ -15,7 +15,9 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
         public List<Factura> CuilValido { get; } = new List<Factura>()
         {
             new Factura {Cuil = 12345678910,NroGuia= 123, SubTotal= 2500 },
-            new Factura {Cuil = 12345678911, NroGuia= 456, SubTotal= 1500}
+            new Factura {Cuil = 12345678910, NroGuia= 789, SubTotal= 3500},
+            new Factura {Cuil = 12345678911, NroGuia= 456, SubTotal= 1500},
+            new Factura {Cuil = 12345678911, NroGuia= 101, SubTotal= 5000},
         };
 
        //vamos a vincular el numero de cuil con un listado de numeros de guia nuevos 

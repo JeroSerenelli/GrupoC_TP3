@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
+using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,293 +10,188 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static GrupoC_TP3.CU3_RegistrarImposicionEnCD.ProvinciasLocalidades;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 {
     public partial class RegistrarImposicionEnCDForm : Form
     {
-
         private readonly RegistrarImposicionEnCDFormModel modelo = new();
-        private Ubicacion ubicacion;
 
-
-
+        //private Ubicacion ubicacion;
         public RegistrarImposicionEnCDForm()
         {
             InitializeComponent();
-            ubicacion = new Ubicacion();
+
+            var ubicacion = modelo.ObtenerUbicacion();
             cmbBoxProvDst.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
             cmbBoxProvDst.SelectedIndex = -1;
             cmbBoxLocalidadDst.SelectedIndex = -1;
             cmbBoxLocalidadDst.Enabled = false; // hasata que no elija la provincia de destino
+            cmbBoxLocalidadDst.DropDownStyle = ComboBoxStyle.DropDownList;
+            //aca voy a bloquear el combo de provincia para que no se pueda escribir
+            cmbBoxProvDst.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMetodoEntrega.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxTipoCaja.DropDownStyle = ComboBoxStyle.DropDownList;
+
+
         }
 
 
-
-
-
-
-
-        // ACA HACEMOS QUE EL BOTON VALIDE
-        private void buttonValidarCuil_Click_1(object sender, EventArgs e)
+        private void buttonGenerarNumeroGuia_Click(object sender, EventArgs e)
         {
-            Validar();
-        }
+            buttonGenerarNumeroGuia.Enabled = false;
 
-
-
-
-        //ACA PODEMOS VER DE AGREGAR LA LISTA Y VINCULARLAS
-
-
-
-
-        //ACA ESTA EL BOTON PARA ACEPTAR LA IMPOSICION 
-        private void buttonNuevaSolicitudLimpiar_Click(object sender, EventArgs e)
-        {
-
-            MessageBox.Show(
-                "Gracias",
-                "Gracias por usar el sistema.",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
-
-            this.Close();
-        }
-
-        //ACA ESTAN TODAS LAS VALIDACIONES DE LOS CAMPOS
-        private void Validar()
-        {
-
-            //NIVEL 0= Validamos que el cuil no sea nulo
-            if (string.IsNullOrEmpty(textBoxCUITCUIL.Text))
+            if (string.IsNullOrEmpty(textBoxCUITCUIL.Text)) //Lvl 0
             {
-                MessageBox.Show("El campo CUIT/CUIL no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxCUITCUIL.Focus();
+                MessageBox.Show("Ingrese un CUIT/CUIL de cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            //VALIDAMOS QUE TENGA SOLO NUMEROS
-            if (!textBoxCUITCUIL.Text.ToString().All(char.IsDigit))
+
+            string limpio = textBoxCUITCUIL.Text.Replace("-", "");
+
+            if (!long.TryParse(limpio, out long validarCliente)) //Lvl 1
             {
-                MessageBox.Show("El campo CUIT/CUIL debe contener solo numeros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxCUITCUIL.Focus();
                 return;
             }
 
-            //var Cuil = long.Parse(textBoxCUITCUIL.Text);
-            /* //VALIDAMOS QUE SEA ENTERO Y QUE TENGA 11 DIGITOS
-             if (!int.TryParse(textBoxCUITCUIL.Text, out int Cuil))
-             {
-                 MessageBox.Show("El campo CUIT/CUIL debe ser un numero entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 return;
-             }*/
-            //VALIDAMOS QUE TENGA 11 DIGITOS
-            if (textBoxCUITCUIL.Text.Length != 11)
+            buttonGenerarNumeroGuia.Enabled = true;
+
+            
+            if (string.IsNullOrEmpty(cmbBoxProvDst.Text))
             {
-                MessageBox.Show("El campo CUIT/CUIL debe tener 11 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione una Provincia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmbBoxProvDst.Focus();
                 return;
             }
-            //VALIDAMOS QUE SEA POSITIVO
-            var Cuil = long.Parse(textBoxCUITCUIL.Text);
-            if (Cuil <= 0)
+            if (string.IsNullOrEmpty(cmbBoxLocalidadDst.Text))
             {
-                MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione una Localidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmbBoxLocalidadDst.Focus();
                 return;
             }
-
-            //MOSTRAMOS UN MENSJAE DE VALIDACION CORRECTA
-            //MessageBox.Show("CUIT/CUIL valido.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-        }
-
-        private void ValidarCodigoPostal() // Queda desafectado
-        {
-            //Codigo Postal
+            
+            if (string.IsNullOrEmpty(comboBoxMetodoEntrega.Text))
+            {
+                MessageBox.Show("Seleccione un metodo de entrega", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBoxMetodoEntrega.Focus();
+                return;
+            }
             if (string.IsNullOrEmpty(textBoxCodPostDestino.Text))
             {
-                MessageBox.Show("El campo Codigo Postal no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //Para que se mantenga en la celda
-                textBoxCodPostDestino.Focus();
-                return;
-
-            }
-            if (!int.TryParse(textBoxCodPostDestino.Text, out int CodigoPostal))
-            {
-                MessageBox.Show("El campo Codigo Postal debe ser un numero entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese un Codigo Postal numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxCodPostDestino.Focus();
                 return;
             }
-            //VALIDAMOS QUE TENGA 4 DIGITOS
-            if (CodigoPostal.ToString().Length != 4)
+
+            if (comboBoxMetodoEntrega.Text == "Entrega en Domicilio")
             {
-                MessageBox.Show("El campo Codigo Postal debe tener 4 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxCodPostDestino.Focus();
+                if (string.IsNullOrEmpty(textBoxDomicilioDestinatario.Text))
+                {
+                    MessageBox.Show("Seleccione un domicilio de destino", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBoxDomicilioDestinatario.Focus();
+                    return;
+                }
+            }
+
+            if (string.IsNullOrEmpty(textBoxCantidadCajas.Text))
+            {
+                MessageBox.Show("Seleccione una cantidad de cajas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxCantidadCajas.Focus();
                 return;
             }
-            //VALIDAMOS QUE SEA POSITIVO
-            if (CodigoPostal <= 0)
+            if (string.IsNullOrEmpty(comboBoxTipoCaja.Text))
             {
-                MessageBox.Show("El campo Codigo Postal debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxCodPostDestino.Focus();
+                MessageBox.Show("Seleccione un tipo de caja", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBoxTipoCaja.Focus();
                 return;
             }
-            //MOSTRAMOS UN MENSJAE DE VALIDACION CORRECTA
-            MessageBox.Show("Codigo Postal valido.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-
-        private void ValidarDomicilio()
-        {
-            //Domicilio
-            if (string.IsNullOrEmpty(textBoxDomicilioDestinatario.Text))
-            {
-                MessageBox.Show("El campo Domicilio no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxDomicilioDestinatario.Focus();
-                return;
-            }
-            //MOSTRAMOS UN MENSJAE DE VALIDACION CORRECTA
-            /*MessageBox.Show("Domicilio valido.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
-        }
-        //Faltaria Validar el Tema cantidad de CAJAS
-
-        private void ValidarNombreDestinanario()
-        {
-            //Nombre destinatario
             if (string.IsNullOrEmpty(textBoxNombreDestinatario.Text))
             {
-                MessageBox.Show("El campo Nombre Destinatario no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione el nombre del destinatario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxNombreDestinatario.Focus();
                 return;
             }
-            //VALIDAMOS QUE TENGA SOLO LETRAS
-            if (!textBoxNombreDestinatario.Text.ToString().All(char.IsLetter))
-            {
-                MessageBox.Show("El campo Nombre Destinatario debe contener solo letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxNombreDestinatario.Focus();
-
-                return;
-            }
-            //MOSTRAMOS UN MENSJAE DE VALIDACION CORRECTA
-            // MessageBox.Show("Nombre Destinatario valido.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void ValidarApellidoDestinatario()
-        {
-            //Apellido destinatario
             if (string.IsNullOrEmpty(textBoxApellidoDestinatario.Text))
             {
-                MessageBox.Show("El campo Apellido Destinatario no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione el apellido del destinatario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxApellidoDestinatario.Focus();
                 return;
             }
-            //VALIDAMOS QUE TENGA SOLO LETRAS
-            if (!textBoxApellidoDestinatario.Text.ToString().All(char.IsLetter))
-            {
-                MessageBox.Show("El campo Apellido Destinatario debe contener solo letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxApellidoDestinatario.Focus();
-                return;
-            }
-            //MOSTRAMOS UN MENSJAE DE VALIDACION CORRECTA
-            //MessageBox.Show("Apellido Destinatario valido.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void ValidarDNI()
-        {
-            //DNI
-            //NO SEA NULO
             if (string.IsNullOrEmpty(textBoxDNIDestinatario.Text))
             {
-                MessageBox.Show("El campo DNI no puede estar vacio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese el DNI del destinatario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxDNIDestinatario.Focus();
                 return;
             }
-            //SEA UN NUMERO ENTERO
-            if (!int.TryParse(textBoxDNIDestinatario.Text, out int DNI))
+
+            if (!int.TryParse(textBoxCodPostDestino.Text, out int codigoPostalDestino))
             {
-                MessageBox.Show("El campo DNI debe ser un numero entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxDNIDestinatario.Focus();
+                MessageBox.Show("El Codigo Postal ingresado es invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxCodPostDestino.Focus();
                 return;
             }
-            //SEA POSITIVO
-            if (DNI <= 0)
+            if (labelCdDestino.Text == "Centro de distribución no encontrado") //Lvl 2?
             {
-                MessageBox.Show("El campo DNI debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxDNIDestinatario.Focus();
+                MessageBox.Show("No existe un centro de distribucion para el CP ingresado. Ingrese otro codigo postal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                labelCdDestino.Focus();
                 return;
             }
-            //SEA DE 8 DIGITOS
-            if (DNI.ToString().Length != 8)
+            if (!int.TryParse(textBoxCantidadCajas.Text, out int cantidadCajas))
             {
-                MessageBox.Show("El campo DNI debe tener 8 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxDNIDestinatario.Focus();
+                MessageBox.Show("La cantidad de cajas ingresadas es invalida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxCantidadCajas.Focus();
                 return;
             }
-            //valide el dni con numeros y no con letras
-            if (!DNI.ToString().All(char.IsDigit))
+
+            if (cantidadCajas <= 0)
             {
-                MessageBox.Show("El campo DNI debe contener solo numeros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxDNIDestinatario.Focus();
+                MessageBox.Show("La cantidad de cajas ingresadas es invalida, debe ser al menos 1 caja", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxCantidadCajas.Focus();   
                 return;
             }
-            //MOSTRAMOS UN MENSJAE DE VALIDACION CORRECTA
-            //MessageBox.Show("DNI valido.", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
 
-        /* private void textBoxCodPostDestino_Leave(object sender, EventArgs e)
-         {
-             ValidarCodigoPostal();
-         }*/
-
-
-        //HAGO QUE ME VALIDE EL CODIGO POSTAL CUANDO SALGO DE LA CELDA
-        private void textBoxCodPostDestino_Leave_1(object sender, EventArgs e)
-        {
-            //ValidarCodigoPostal();
-        }
-
-
-        //HAGO QUE ME VALIDE EL CD DESTINO CUANDO SALGO DE LA CELDA
-
-
-        //hAGO QUE ME VALIDE EL DOMICILIO CUANDO SALGO DE LA CELDA 
-        private void textBoxDomicilioDestinatario_Leave(object sender, EventArgs e)
-        {
-            ValidarDomicilio();
-        }
-
-        //HAGO QUE ME VALIDE EL NOMBRE DEL DESTINATARIO CUANDO SALGO DE LA CELDA
-
-        private void textBoxNombreDestinatario_Leave(object sender, EventArgs e)
-        {
-            ValidarNombreDestinanario();
-        }
-
-        //HAGO QUE ME VALIDE EL APELLIDO DEL DESTINATARIO CUANDO SALGO DE LA CELDA
-        private void textBoxApellidoDestinatario_Leave(object sender, EventArgs e)
-        {
-            ValidarApellidoDestinatario();
-        }
-
-        //HAGO QUE ME VALIDE EL DNI DEL DESTINATARIO CUANDO SALGO DE LA CELDA
-        private void textBoxDNIDestinatario_Leave(object sender, EventArgs e)
-        {
-            ValidarDNI();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string provinciaSeleccionada = cmbBoxProvDst.Text;
-
-            // Limpiar combo de localidad
-            cmbBoxLocalidadDst.DataSource = null;
-
-            if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
+            if (!int.TryParse(textBoxDNIDestinatario.Text, out int dniDestinatario))
             {
-                cmbBoxLocalidadDst.Enabled = true;
-                cmbBoxLocalidadDst.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
+                MessageBox.Show("El DNI del destinatario ingresado es invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxDNIDestinatario.Focus(); 
+                return;
             }
+
+        
+
+            modelo.CrearEncomienda(new Encomienda
+            {
+                Cliente = validarCliente,
+                Provincia = cmbBoxProvDst.Text,
+                Localidad = cmbBoxLocalidadDst.Text,
+                MetodoEntrega = comboBoxMetodoEntrega.Text,
+                CodigoPostal = codigoPostalDestino,
+                CentroDistribucionDestino = labelCdDestino.Text,
+                Domicilio = textBoxDomicilioDestinatario.Text,
+                CantidadCajas = cantidadCajas,
+                TipoCaja = comboBoxTipoCaja.Text,
+                NombreDestinatario = textBoxNombreDestinatario.Text,
+                ApellidoDestinatario = textBoxApellidoDestinatario.Text,
+                DNI = dniDestinatario,
+                CodigoAgencia = int.Parse(textBoxCodigoAgencia.Text),
+                
+            });
+
+
+        }
+
+
+        private void textBoxCodPostDestino_TextChanged(object sender, EventArgs e)
+        {
+            //Obtengo CD Destino
+            string codigoPostal = textBoxCodPostDestino.Text.Trim();
+            // textBoxCodPostDestino
+            var ubicacion = modelo.ObtenerUbicacion();
+            string centro = ubicacion.ObtenerCentroDistribucion(codigoPostal);
+            labelCdDestino.Text = centro;
         }
 
         private void comboBoxMetodoEntrega_SelectedIndexChanged(object sender, EventArgs e)
@@ -318,19 +215,59 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             }
         }
 
-        private void textBoxCodPostDestino_TextChanged(object sender, EventArgs e)
-        {
-            //Obtengo CD Destino
-            string codigoPostal = textBoxCodPostDestino.Text.Trim();
+     
 
-            Ubicacion ubicacion = new Ubicacion();
-            string centro = ubicacion.ObtenerCentroDistribucion(codigoPostal);
-            labelCdDestino.Text = centro;
+        private void buttonValidarCuil_Click(object sender, EventArgs e)
+        {
+            // Validacion - CUIT/CUIL
+            if (string.IsNullOrEmpty(textBoxCUITCUIL.Text)) //Lvl 0
+            {
+                MessageBox.Show("Ingrese un CUIT/CUIL de cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string limpio = textBoxCUITCUIL.Text.Replace("-", "");
+
+            if (!long.TryParse(limpio, out long validarCliente)) //Lvl 1
+            {
+                MessageBox.Show("El CUIT/CUIL ingresado no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxCUITCUIL.Focus();
+                return;
+            }
+
+            modelo.ValidarCl(new ClienteImposicionCD
+            {
+                CUITCUIL = validarCliente,
+            });
+
+            buttonGenerarNumeroGuia.Enabled = true;
         }
 
-        private void buttonGenerarNumeroGuia_Click(object sender, EventArgs e)
+        private void cmbBoxProvDst_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            string provinciaSeleccionada = cmbBoxProvDst.Text;
 
+            // Limpiar combo de localidad
+            cmbBoxLocalidadDst.DataSource = null;
+
+            var ubicacion = modelo.ObtenerUbicacion();
+            if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
+            {
+                cmbBoxLocalidadDst.Enabled = true;
+                cmbBoxLocalidadDst.DataSource = ubicacion.ProvinciasYLocalidades[provinciaSeleccionada];
+            }
+        }
+
+        private void buttonNuevaSolicitudLimpiar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+              "Gracias",
+              "Gracias por usar el sistema.",
+              MessageBoxButtons.OK,
+              MessageBoxIcon.Information
+          );
+
+            this.Close();
         }
     }
 }

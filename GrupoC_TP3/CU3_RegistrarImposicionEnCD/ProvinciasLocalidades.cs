@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GrupoC_TP3.CU3_RegistrarImposicionEnCD;
 
 namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 {
-    internal class ProvinciasLocalidades
-    {
+   
         public class Ubicacion
         {
             public Dictionary<string, List<string>> ProvinciasYLocalidades { get; set; }
@@ -55,5 +53,5 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
 
     }
-}
+
 

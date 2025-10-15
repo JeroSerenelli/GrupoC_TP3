@@ -23,6 +23,14 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
         {
             InitializeComponent();
 
+            //Desactivo la escritura en los combo box
+            cmbBoxProvDst.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxLocalidadDst.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboBoxMetodoEntrega.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboBoxTipoCaja.DropDownStyle = ComboBoxStyle.DropDownList;
+
             var ubicacion = modelo.ObtenerUbicacion();
             cmbBoxProvDst.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
             cmbBoxProvDst.SelectedIndex = -1;

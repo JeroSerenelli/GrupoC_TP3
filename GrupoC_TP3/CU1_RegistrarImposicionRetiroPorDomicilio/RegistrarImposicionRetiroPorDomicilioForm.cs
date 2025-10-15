@@ -10,6 +10,7 @@ using System.Security.Cryptography.Pkcs;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 {
@@ -22,6 +23,18 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
         public RegistrarImposicionRetiroPorDomicilioForm()
         {
             InitializeComponent();
+
+            //Desactivo la escritura en los combo box
+            cmbBoxProvDestino.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxLocalidadDestino.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboBoxMetodoEntrega.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboBoxTipoCaja.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            cmbBoxProvRetiro.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxLocalidadRetiro.DropDownStyle = ComboBoxStyle.DropDownList;
+
 
             var ubicacion = modelo.ObtenerUbicacion1();
             cmbBoxProvDestino.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();

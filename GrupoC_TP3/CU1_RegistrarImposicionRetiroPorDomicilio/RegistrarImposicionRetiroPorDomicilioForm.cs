@@ -113,10 +113,15 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             }
 
 
-            modelo.ValidacionDestino(new EncomiendasImpuestas
+            var valDestino = modelo.ValidacionDestino(new EncomiendasImpuestas
             {
                 CPDestino = cpDestino,
             });
+
+            if(valDestino)
+            {
+                return;
+            }
 
             if (labelCdDestino.Text == "Centro de distribución no encontrado") //Lvl 2?
             {
@@ -154,10 +159,15 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
-            modelo.ValidacionDatosEncomienda(new EncomiendasImpuestas
+            var valDatosEncomiendas = modelo.ValidacionDatosEncomienda(new EncomiendasImpuestas
             {
                 CantCajas = cajas,
             });
+
+            if(valDatosEncomiendas)
+            {
+                return; 
+            }
 
             //Val - Tipo de Caja
             if (string.IsNullOrEmpty(comboBoxTipoCaja.Text)) //Lvl 0
@@ -197,10 +207,15 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             }
 
 
-            modelo.ValidacionesDatosRetiro(new EncomiendasImpuestas
+            var valDatosRetiro = modelo.ValidacionesDatosRetiro(new EncomiendasImpuestas
             {
                 CPRetiro = cpRetiro,
             });
+
+            if(valDatosRetiro)
+            {
+                return;
+            }
 
             //Val- CD Destino
             if (labelCdDestino.Text == "Centro de distribución no encontrado") //Lvl 2
@@ -245,10 +260,17 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
-            modelo.ValidacionDatosDestinatario(new EncomiendasImpuestas
+             var valDatosDestinatario = modelo.ValidacionDatosDestinatario(new EncomiendasImpuestas
             {
                 DNIDestinatario = DNI,
+
             });
+
+            if (valDatosDestinatario)
+            {
+                return;
+            }
+
 
             //TODO: FALTA CREAR LA ENCOMIENDA FINAL Y PRINTEAR 
             modelo.CrearEncomienda(new EncomiendasImpuestas

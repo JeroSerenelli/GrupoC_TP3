@@ -70,50 +70,56 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             }
         }
 
-        internal void ValidacionDestino(EncomiendasImpuestas infoDestino)
+        internal bool ValidacionDestino(EncomiendasImpuestas infoDestino)
         {
             if (infoDestino.CPDestino.ToString().Length != 4)
             {
                 MessageBox.Show("El codigo postal destino debe tener 4 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
+            return false;
         }
 
-        internal void ValidacionDatosEncomienda(EncomiendasImpuestas encomiendas)
+        internal bool ValidacionDatosEncomienda(EncomiendasImpuestas encomiendas)
         {
             if (encomiendas.CantCajas <= 0) //Lvl 2
             {
                 MessageBox.Show("La cantidad de cajas ingresadas es invalido, debe ser al menos 1 caja", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
+            return false;
 
         }
 
-        internal void ValidacionesDatosRetiro(EncomiendasImpuestas infoRetiro)
+        internal bool ValidacionesDatosRetiro(EncomiendasImpuestas infoRetiro)
         {
             if (infoRetiro.CPRetiro.ToString().Length != 4)
             {
                 MessageBox.Show("El codigo postal destino debe tener 4 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return true;
             }
-        }
+            return false;
+        }   
         
-        internal void ValidacionDatosDestinatario(EncomiendasImpuestas datosDestinatario)
+        internal bool ValidacionDatosDestinatario(EncomiendasImpuestas datosDestinatario)
         {
+            
             //SEA POSITIVO
             if (datosDestinatario.DNIDestinatario <= 0)
             {
                 MessageBox.Show("El campo DNI debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
+                
+                return true; 
             }
             //SEA DE 8 DIGITOS
             if (datosDestinatario.DNIDestinatario.ToString().Length != 8)
             {
                 MessageBox.Show("El campo DNI debe tener 8 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
+                
+                return true;
             }
+            return false; 
+
         }
 
 

@@ -92,10 +92,21 @@ namespace GrupoC_TP3.CU5_GestionCD
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonActualizar_Click(object sender, EventArgs e)
         {
             //VALIDACION 4: Que se haya seleccionado una fila de la lista - mensaje de error "No se ha selecccionado ninguna Hoja de Ruta para ser despachada".
 
+            foreach (ListViewItem item in listViewEncomiendasARecibir.Items)
+            {
+                item.SubItems[2].Text = "Recibido en CD";
+            }
+
+            foreach ( ListViewItem item in listViewEncomiendasADespachar.Items)
+            {
+                item.SubItems[2].Text = "Entregado. En transporte.";                 
+            }
+
+           MessageBox.Show("Actualizado con exito.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

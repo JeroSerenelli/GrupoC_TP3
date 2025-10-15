@@ -44,7 +44,7 @@
             columnHeader1 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
-            button2 = new Button();
+            buttonActualizar = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -117,6 +117,7 @@
             // columnHeader5
             // 
             columnHeader5.Text = "Estado";
+            columnHeader5.Width = 180;
             // 
             // label18
             // 
@@ -155,7 +156,7 @@
             // 
             groupBox3.Controls.Add(listViewEncomiendasADespachar);
             groupBox3.Controls.Add(buttonAceptar);
-            groupBox3.Controls.Add(button2);
+            groupBox3.Controls.Add(buttonActualizar);
             groupBox3.Location = new Point(18, 402);
             groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
@@ -189,17 +190,18 @@
             // columnHeader6
             // 
             columnHeader6.Text = "Estado";
+            columnHeader6.Width = 180;
             // 
-            // button2
+            // buttonActualizar
             // 
-            button2.Location = new Point(289, 174);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(86, 31);
-            button2.TabIndex = 3;
-            button2.Text = "Actualizar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            buttonActualizar.Location = new Point(289, 174);
+            buttonActualizar.Margin = new Padding(3, 4, 3, 4);
+            buttonActualizar.Name = "buttonActualizar";
+            buttonActualizar.Size = new Size(86, 31);
+            buttonActualizar.TabIndex = 3;
+            buttonActualizar.Text = "Actualizar";
+            buttonActualizar.UseVisualStyleBackColor = true;
+            buttonActualizar.Click += buttonActualizar_Click;
             // 
             // GestionCentroDeDistribucionForm
             // 
@@ -237,7 +239,7 @@
         private ListView listViewEncomiendasADespachar;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader3;
-        private Button button2;
+        private Button buttonActualizar;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
     }

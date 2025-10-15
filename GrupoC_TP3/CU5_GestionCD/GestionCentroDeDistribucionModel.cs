@@ -36,14 +36,14 @@ namespace GrupoC_TP3.CU5_GestionCD
 
             if (!recibir)
             {
-                MessageBox.Show($"No hay encomiendas para recibir del vehiculo {encomiendasEnTransporte}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"No hay encomiendas para recibir del vehiculo {encomiendasEnTransporte.Patente}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             bool entregar = paquetesParaEntregar.Any(e => e.Patente == encomiendasEnTransporte.Patente.ToUpper());
             if (!entregar)
             {
-                MessageBox.Show($"No hay encomiendas para entregar al vehiculo {encomiendasEnTransporte}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"No hay encomiendas para entregar al vehiculo {encomiendasEnTransporte.Patente}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             return;

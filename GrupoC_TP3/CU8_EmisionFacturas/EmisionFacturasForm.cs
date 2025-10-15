@@ -27,6 +27,8 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
             PedidosAFacturarListView.View = View.Details;
             PedidosAFacturarListView.FullRowSelect = true;
             PedidosAFacturarListView.CheckBoxes = false;
+            //el txtbox del total no se puede editar
+            textBoxTotalFactura.ReadOnly = true;
         }
 
         private void buttonBuscarCuilCliente_Click(object sender, EventArgs e)
@@ -98,7 +100,10 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
                 return;
             }
             MessageBox.Show("Factura emitida con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+            //Vamos a hacer que se borren los items del listview y el total
+            PedidosAFacturarListView.Items.Clear();
+            textBoxTotalFactura.Clear();
+            textBoxCuilCliente.Clear();
         }
 
         private void PedidosAFacturarListView_SelectedIndexChanged(object sender, EventArgs e)

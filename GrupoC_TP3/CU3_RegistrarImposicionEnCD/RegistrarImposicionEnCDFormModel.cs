@@ -9,7 +9,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 {
     internal class RegistrarImposicionEnCDFormModel
     {
-        private long[] listaClientes = new long[] { 12345678910, 99999999 };
+        private long[] listaClientes = new long[] { 12345678910, 12345678911 };
         /*public List<Cliente> Clientes { get; } = new()
     {
         new Cliente { CUITCUIL = 20378401861},

@@ -43,7 +43,7 @@ namespace GrupoC_TP3.CU6_EntregaEncomiendas
 
             if (!int.TryParse(textBoxDNI.Text, out int salida))
             {
-                MessageBox.Show("El numero de guia ingresado es invalido, por favor revise", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El DNI ingresado es invalido, por favor revise", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

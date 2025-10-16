@@ -38,6 +38,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             listViewAsignarHDR.View = View.Details;
             listViewAsignarHDR.FullRowSelect = true;
             listViewAsignarHDR.MultiSelect = true;
+            listViewHDRAsignadas.CheckBoxes = true;
 
             if (listViewAsignarHDR.Columns.Count == 0)
             {
@@ -73,10 +74,18 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 {
                     var it = new ListViewItem(p.HojaDeRuta);
                     it.SubItems.Add(p.NroGuia);
-                    it.SubItems.Add("Pendiente");
+                    it.SubItems.Add("No Cumplida");
                     it.Tag = p;
                     listViewAsignarHDR.Items.Add(it);
                 }
+            }
+            foreach (var h in modelo.Fleteros.Where(x => x.Fletero == fletero && !string.Equals(x.Estado, "Cumplida", StringComparison.OrdinalIgnoreCase)))
+            {
+                var it = new ListViewItem(h.HojaDeRuta);
+                it.SubItems.Add(h.NroGuia);
+                it.SubItems.Add(h.Estado ?? "No Cumplida");
+                it.Tag = h;
+                listViewHDRAsignadas.Items.Add(it);
             }
         }
 
@@ -86,24 +95,57 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             InitializeComponent();
             InicializarListViewsSiHaceFalta();
 
-            comboBoxFletero.SelectedIndexChanged += (s, e) => CargarParaFletero(comboBoxFletero.Text?.Trim());
+            comboBoxFletero.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            ConstruirFleterosValidos();
+            PoblarComboFletero();
+
+            //comboBoxFletero.SelectedIndexChanged += (s, e) => CargarParaFletero(comboBoxFletero.Text?.Trim());
+        }
+        private HashSet<string> _fleterosValidos = new();
+
+        private void ConstruirFleterosValidos()
+        {
+            _fleterosValidos = new HashSet<string>(
+                modelo.Fleteros.Select(f => f.Fletero)
+                .Concat(modelo.PorAsignarPorFletero.Keys),
+                StringComparer.OrdinalIgnoreCase
+            );
         }
 
+        private void PoblarComboFletero()
+        {
+            comboBoxFletero.Items.Clear();
+            foreach (var nombre in _fleterosValidos.OrderBy(x => x))
+                comboBoxFletero.Items.Add(nombre);
+
+            comboBoxFletero.SelectedIndex = -1;
+        }
         private void button1_Click(object sender, EventArgs e) { }
         private void groupBox1_Enter(object sender, EventArgs e) { }
 
         private void buttonBuscarFletero_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(comboBoxFletero.Text))
+            if (comboBoxFletero.SelectedItem is null)
             {
-                MessageBox.Show("Ingrese fletero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione un fletero de la lista.", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var fletero = comboBoxFletero.Text.Trim();
-            CargarParaFletero(fletero);
+            var fletero = comboBoxFletero.SelectedItem.ToString();
 
-            // comboBoxFletero.Enabled = false;
+            if (_fleterosValidos == null || _fleterosValidos.Count == 0)
+                ConstruirFleterosValidos();
+
+            if (!_fleterosValidos.Contains(fletero))
+            {
+                MessageBox.Show("El fletero seleccionado no es válido.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            CargarParaFletero(fletero);
         }
         private void buttonImprimirDetalle_Click(object sender, EventArgs e)
         {
@@ -147,7 +189,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 
             MessageBox.Show(
                 sb.ToString(),
-                "Detalle de HDR tildadas",
+                "Detalle de HDR asignadas",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );
@@ -210,7 +252,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 
                 var dst = new ListViewItem(hdr);
                 dst.SubItems.Add(guia);
-                dst.SubItems.Add("Pendiente");
+                dst.SubItems.Add("No Cumplida");
                 listViewHDRAsignadas.Items.Add(dst);
             }
 
@@ -220,7 +262,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 
         private void buttonAceptarRecepcion_Click(object sender, EventArgs e)
         {
-        
+
             MessageBox.Show(
                 "Gracias",
                 "Gracias por usar el sistema",
@@ -232,5 +274,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
         }
     }
 }
+
+
 
 

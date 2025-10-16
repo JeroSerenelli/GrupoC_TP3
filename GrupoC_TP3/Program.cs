@@ -15,8 +15,8 @@ namespace GrupoC_TP3
             ApplicationConfiguration.Initialize();
             //Application.Run(new CU1_RegistrarImposicionRetiroPorDomicilio.RegistrarImposicionRetiroPorDomicilioForm());
             //Application.Run(new CU2_RegistrarImposicionEnAgencia.RegistrarImposicionEnAgenciaForm());
-            //Application.Run(new CU3_RegistrarImposicionEnCD.RegistrarImposicionEnCDForm());
-            Application.Run(new CU4_RecepcionFletero.RecepcionFleterosForm());
+            Application.Run(new CU3_RegistrarImposicionEnCD.RegistrarImposicionEnCDForm());
+           // Application.Run(new CU4_RecepcionFletero.RecepcionFleterosForm());
             //Application.Run(new CU5_GestionCD.GestionCentroDeDistribucionForm());
             //Application.Run(new CU6_EntregaEncomiendas.EntregaEncomiendasForm1());
             //Application.Run(new CU7_ConsultaEstadoGuia.ConsultaEstadoGuiaForm());

@@ -18,20 +18,14 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
     {
         private readonly RegistrarImposicionEnCDFormModel modelo = new();
         //VAMOS A TRAER EL LISTADO PARA PODER VALIDAR EL CUIT/CUIL Y BLOQUEAR AL VALIDAR
-        private long[] listaClientes = new long[] { 12345678910, 12345678911 };
+        //private long[] listaClientes = new long[] { 12345678910, 12345678911 };
 
         //private Ubicacion ubicacion;
         public RegistrarImposicionEnCDForm()
         {
             InitializeComponent();
 
-            //Desactivo la escritura en los combo box
-            cmbBoxProvDst.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbBoxLocalidadDst.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            comboBoxMetodoEntrega.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            comboBoxTipoCaja.DropDownStyle = ComboBoxStyle.DropDownList;
+            
 
             var ubicacion = modelo.ObtenerUbicacion();
             cmbBoxProvDst.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
@@ -190,23 +184,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 
             });
 
-            //VAMOS A LIMPIAR TODOS LOS CAMPOS PARA UNA NUEVA SOLICITUD
-            textBoxCUITCUIL.Enabled = true;
-            buttonValidarCuil.Enabled = true;
-            textBoxCUITCUIL.Text = "";
-            cmbBoxProvDst.SelectedIndex = -1;
-            cmbBoxLocalidadDst.SelectedIndex = -1;
-            cmbBoxLocalidadDst.Enabled = false;
-            comboBoxMetodoEntrega.SelectedIndex = -1;
-            textBoxCodPostDestino.Text = "";
-            labelCdDestino.Text = null;
-            textBoxDomicilioDestinatario.Text = "";
-            textBoxCantidadCajas.Text = "";
-            comboBoxTipoCaja.SelectedIndex = -1;
-            textBoxNombreDestinatario.Text = "";
-            textBoxApellidoDestinatario.Text = "";
-            textBoxDNIDestinatario.Text = "";
-            buttonGenerarNumeroGuia.Enabled = false;
+            
 
 
         }
@@ -271,12 +249,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             buttonGenerarNumeroGuia.Enabled = true;
 
 
-            //VAMOS A BLOQUEAR EL CAMPO TEXTBOX CUITCUIL CUANDO SE HAYA VALIDADO CORRECTAMENTE
-            if (listaClientes.Contains(validarCliente))
-            {
-                textBoxCUITCUIL.Enabled = false;
-                buttonValidarCuil.Enabled = false;
-            }
+            
         }
 
         private void cmbBoxProvDst_SelectedIndexChanged_1(object sender, EventArgs e)

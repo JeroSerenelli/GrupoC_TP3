@@ -10,11 +10,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
     internal class RegistrarImposicionEnCDFormModel
     {
         private long[] listaClientes = new long[] { 12345678910, 12345678911 };
-        /*public List<Cliente> Clientes { get; } = new()
-    {
-        new Cliente { CUITCUIL = 20378401861},
-        new Cliente { CUITCUIL = 7312345653 }
-    };*/
+        
 
         internal void ValidarCl(ClienteImposicionCD validarCliente)
         {
@@ -78,9 +74,31 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             {
                 MessageBox.Show("El Codigo Postal es un valor numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-                }
+               
+            }
 
-            
+            if (encomiendas.Cliente <= 0)
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
+            if (encomiendas.Cliente.ToString().Length != 11)
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe tener 11 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
+            if (!listaClientes.Contains(encomiendas.Cliente))
+            {
+                MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
 
 
             for (int i = 0; i < encomiendas.CantidadCajas; i++)

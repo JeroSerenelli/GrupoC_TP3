@@ -15,14 +15,14 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             new HojasDeRutaAsignadas { Fletero = "Pedro",  HojaDeRuta = "6255", NroGuia = "17398", Estado = "No Cumplida"},
             new HojasDeRutaAsignadas { Fletero = "Daniel", HojaDeRuta = "6256", NroGuia = "17399", Estado = "No Cumplida"},
             new HojasDeRutaAsignadas { Fletero = "Osvaldo",HojaDeRuta = "6257", NroGuia = "17400", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Juan",   HojaDeRuta = "6277", NroGuia = "17397", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Pedro",  HojaDeRuta = "6278", NroGuia = "17398", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Pedro",  HojaDeRuta = "6279", NroGuia = "17398", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Daniel", HojaDeRuta = "6280", NroGuia = "17399", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Daniel", HojaDeRuta = "6281", NroGuia = "17400", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Daniel", HojaDeRuta = "6282", NroGuia = "17401", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Osvaldo",HojaDeRuta = "6283", NroGuia = "17402", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Osvaldo",HojaDeRuta = "6284", NroGuia = "17403", Estado = "No Cumplida"}
+            new HojasDeRutaAsignadas { Fletero = "Juan",   HojaDeRuta = "6258", NroGuia = "17401", Estado = "No Cumplida"},
+            new HojasDeRutaAsignadas { Fletero = "Pedro",  HojaDeRuta = "6259", NroGuia = "17402", Estado = "No Cumplida"},
+            new HojasDeRutaAsignadas { Fletero = "Pedro",  HojaDeRuta = "6260", NroGuia = "17403", Estado = "No Cumplida"},
+            new HojasDeRutaAsignadas { Fletero = "Daniel", HojaDeRuta = "6261", NroGuia = "17404", Estado = "No Cumplida"},
+            new HojasDeRutaAsignadas { Fletero = "Daniel", HojaDeRuta = "6262", NroGuia = "17405", Estado = "No Cumplida"},
+            new HojasDeRutaAsignadas { Fletero = "Daniel", HojaDeRuta = "6263", NroGuia = "17406", Estado = "No Cumplida"},
+            new HojasDeRutaAsignadas { Fletero = "Osvaldo",HojaDeRuta = "6264", NroGuia = "17407", Estado = "No Cumplida"},
+            new HojasDeRutaAsignadas { Fletero = "Osvaldo",HojaDeRuta = "6265", NroGuia = "17408", Estado = "No Cumplida"}
         };
         public Dictionary<string, List<HojasDeRutaPorAsignar>> PorAsignarPorFletero { get; } = new()
 {

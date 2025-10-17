@@ -59,16 +59,25 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 
             if (string.IsNullOrWhiteSpace(fletero)) return;
 
-            foreach (var h in modelo.Fleteros.Where(x => x.Fletero == fletero))
+            foreach (var h in modelo.Fleteros.Where(x => x.Fletero == fletero && !string.Equals(x.Estado, "Cumplida", StringComparison.OrdinalIgnoreCase)))
             {
                 var it = new ListViewItem(h.HojaDeRuta);
                 it.SubItems.Add(h.NroGuia);
-                it.SubItems.Add(h.Estado ?? "");
+                it.SubItems.Add(h.Estado ?? "No Cumplida");
                 it.Tag = h;
                 listViewHDRAsignadas.Items.Add(it);
             }
+           
+            List<HojasDeRutaPorAsignar> pool = null;
 
-            if (modelo.PorAsignarPorFletero.TryGetValue(fletero, out var pool) && pool != null)
+            if (!modelo.PorAsignarPorFletero.TryGetValue(fletero, out pool) || pool == null)
+            {
+                var kv = modelo.PorAsignarPorFletero
+                    .FirstOrDefault(kvp => string.Equals(kvp.Key, fletero, StringComparison.OrdinalIgnoreCase));
+                pool = kv.Value;
+            }
+
+            if (pool != null)
             {
                 foreach (var p in pool)
                 {
@@ -78,14 +87,6 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     it.Tag = p;
                     listViewAsignarHDR.Items.Add(it);
                 }
-            }
-            foreach (var h in modelo.Fleteros.Where(x => x.Fletero == fletero && !string.Equals(x.Estado, "Cumplida", StringComparison.OrdinalIgnoreCase)))
-            {
-                var it = new ListViewItem(h.HojaDeRuta);
-                it.SubItems.Add(h.NroGuia);
-                it.SubItems.Add(h.Estado ?? "No Cumplida");
-                it.Tag = h;
-                listViewHDRAsignadas.Items.Add(it);
             }
         }
 
@@ -100,7 +101,11 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             ConstruirFleterosValidos();
             PoblarComboFletero();
 
-            //comboBoxFletero.SelectedIndexChanged += (s, e) => CargarParaFletero(comboBoxFletero.Text?.Trim());
+            comboBoxFletero.SelectedIndexChanged += (s, e) =>
+            {
+                listViewHDRAsignadas.Items.Clear();
+                listViewAsignarHDR.Items.Clear();
+            };
         }
         private HashSet<string> _fleterosValidos = new();
 
@@ -147,6 +152,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 
             CargarParaFletero(fletero);
         }
+
         private void buttonImprimirDetalle_Click(object sender, EventArgs e)
         {
             if (listViewHDRAsignadas.CheckedItems.Count == 0)
@@ -160,6 +166,10 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 return;
             }
 
+            var chequeadas = listViewHDRAsignadas.CheckedItems
+                .Cast<ListViewItem>()
+                .ToList();
+
             var sb = new StringBuilder();
 
             if (listViewHDRAsignadas.Columns.Count > 0)
@@ -172,19 +182,15 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 sb.AppendLine(new string('-', Math.Max(20, header.Length)));
             }
 
-            foreach (ListViewItem it in listViewHDRAsignadas.CheckedItems)
+            foreach (var it in chequeadas)
             {
-                if (it.SubItems.Count > 1)
-                {
-                    var celdas = it.SubItems
-                        .Cast<ListViewItem.ListViewSubItem>()
-                        .Select(si => (si.Text ?? "").Trim());
-                    sb.AppendLine(string.Join(" | ", celdas));
-                }
-                else
-                {
-                    sb.AppendLine((it.Text ?? "").Trim());
-                }
+                string hdr = it.SubItems.Count > 0 ? (it.SubItems[0].Text ?? "").Trim() : (it.Text ?? "").Trim();
+                string guia = it.SubItems.Count > 1 ? (it.SubItems[1].Text ?? "").Trim() : "";
+
+                string linea = $"{hdr} | {guia} | Cumplida";
+                sb.AppendLine(linea);
+
+                listViewHDRAsignadas.Items.Remove(it);
             }
 
             MessageBox.Show(
@@ -194,6 +200,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 MessageBoxIcon.Information
             );
         }
+
 
         private void buttonAsignarHDR_Click(object sender, EventArgs e)
         {

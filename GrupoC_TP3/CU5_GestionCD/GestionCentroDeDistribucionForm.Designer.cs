@@ -55,21 +55,18 @@
             groupBox1.Controls.Add(buttonBuscarMicro);
             groupBox1.Controls.Add(textBoxPatente);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(18, 79);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(16, 59);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(487, 98);
+            groupBox1.Size = new Size(426, 74);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Busqueda de Unidad";
             // 
             // buttonBuscarMicro
             // 
-            buttonBuscarMicro.Location = new Point(354, 47);
-            buttonBuscarMicro.Margin = new Padding(3, 4, 3, 4);
+            buttonBuscarMicro.Location = new Point(310, 35);
             buttonBuscarMicro.Name = "buttonBuscarMicro";
-            buttonBuscarMicro.Size = new Size(86, 31);
+            buttonBuscarMicro.Size = new Size(75, 23);
             buttonBuscarMicro.TabIndex = 2;
             buttonBuscarMicro.Text = "Buscar";
             buttonBuscarMicro.UseVisualStyleBackColor = true;
@@ -77,28 +74,27 @@
             // 
             // textBoxPatente
             // 
-            textBoxPatente.Location = new Point(80, 47);
-            textBoxPatente.Margin = new Padding(3, 4, 3, 4);
+            textBoxPatente.Location = new Point(70, 35);
             textBoxPatente.Name = "textBoxPatente";
-            textBoxPatente.Size = new Size(250, 27);
+            textBoxPatente.Size = new Size(219, 23);
             textBoxPatente.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(13, 51);
+            label1.Location = new Point(11, 38);
             label1.Name = "label1";
-            label1.Size = new Size(61, 20);
+            label1.Size = new Size(50, 15);
             label1.TabIndex = 0;
             label1.Text = "Patente:";
             // 
             // listViewEncomiendasARecibir
             // 
             listViewEncomiendasARecibir.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader2, columnHeader5 });
-            listViewEncomiendasARecibir.Location = new Point(9, 29);
-            listViewEncomiendasARecibir.Margin = new Padding(3, 4, 3, 4);
+            listViewEncomiendasARecibir.GridLines = true;
+            listViewEncomiendasARecibir.Location = new Point(8, 22);
             listViewEncomiendasARecibir.Name = "listViewEncomiendasARecibir";
-            listViewEncomiendasARecibir.Size = new Size(454, 131);
+            listViewEncomiendasARecibir.Size = new Size(398, 99);
             listViewEncomiendasARecibir.TabIndex = 3;
             listViewEncomiendasARecibir.UseCompatibleStateImageBehavior = false;
             listViewEncomiendasARecibir.View = View.Details;
@@ -123,30 +119,27 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.Location = new Point(204, 25);
+            label18.Location = new Point(178, 19);
             label18.Name = "label18";
-            label18.Size = new Size(84, 25);
+            label18.Size = new Size(67, 20);
             label18.TabIndex = 65;
             label18.Text = "TUTASA";
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(listViewEncomiendasARecibir);
-            groupBox2.Location = new Point(18, 200);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Location = new Point(16, 150);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(487, 182);
+            groupBox2.Size = new Size(426, 136);
             groupBox2.TabIndex = 67;
             groupBox2.TabStop = false;
             groupBox2.Text = "Descargar y recibir en CD";
             // 
             // buttonAceptar
             // 
-            buttonAceptar.Location = new Point(381, 174);
-            buttonAceptar.Margin = new Padding(3, 4, 3, 4);
+            buttonAceptar.Location = new Point(333, 130);
             buttonAceptar.Name = "buttonAceptar";
-            buttonAceptar.Size = new Size(86, 31);
+            buttonAceptar.Size = new Size(75, 23);
             buttonAceptar.TabIndex = 3;
             buttonAceptar.Text = "Aceptar";
             buttonAceptar.UseVisualStyleBackColor = true;
@@ -157,11 +150,9 @@
             groupBox3.Controls.Add(listViewEncomiendasADespachar);
             groupBox3.Controls.Add(buttonAceptar);
             groupBox3.Controls.Add(buttonActualizar);
-            groupBox3.Location = new Point(18, 402);
-            groupBox3.Margin = new Padding(3, 4, 3, 4);
+            groupBox3.Location = new Point(16, 302);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(3, 4, 3, 4);
-            groupBox3.Size = new Size(487, 221);
+            groupBox3.Size = new Size(426, 166);
             groupBox3.TabIndex = 68;
             groupBox3.TabStop = false;
             groupBox3.Text = "Despachar desde CD";
@@ -169,10 +160,10 @@
             // listViewEncomiendasADespachar
             // 
             listViewEncomiendasADespachar.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader3, columnHeader6 });
-            listViewEncomiendasADespachar.Location = new Point(9, 29);
-            listViewEncomiendasADespachar.Margin = new Padding(3, 4, 3, 4);
+            listViewEncomiendasADespachar.GridLines = true;
+            listViewEncomiendasADespachar.Location = new Point(8, 22);
             listViewEncomiendasADespachar.Name = "listViewEncomiendasADespachar";
-            listViewEncomiendasADespachar.Size = new Size(458, 137);
+            listViewEncomiendasADespachar.Size = new Size(401, 104);
             listViewEncomiendasADespachar.TabIndex = 3;
             listViewEncomiendasADespachar.UseCompatibleStateImageBehavior = false;
             listViewEncomiendasADespachar.View = View.Details;
@@ -194,10 +185,9 @@
             // 
             // buttonActualizar
             // 
-            buttonActualizar.Location = new Point(289, 174);
-            buttonActualizar.Margin = new Padding(3, 4, 3, 4);
+            buttonActualizar.Location = new Point(253, 130);
             buttonActualizar.Name = "buttonActualizar";
-            buttonActualizar.Size = new Size(86, 31);
+            buttonActualizar.Size = new Size(75, 23);
             buttonActualizar.TabIndex = 3;
             buttonActualizar.Text = "Actualizar";
             buttonActualizar.UseVisualStyleBackColor = true;
@@ -205,14 +195,13 @@
             // 
             // GestionCentroDeDistribucionForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(523, 636);
+            ClientSize = new Size(458, 477);
             Controls.Add(groupBox3);
             Controls.Add(label18);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "GestionCentroDeDistribucionForm";
             Text = "Gestion de Centro de Distribucion";
             groupBox1.ResumeLayout(false);

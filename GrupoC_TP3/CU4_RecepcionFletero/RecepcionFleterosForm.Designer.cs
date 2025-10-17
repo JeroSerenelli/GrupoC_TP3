@@ -128,6 +128,7 @@
             listViewHDRAsignadas.CheckBoxes = true;
             listViewHDRAsignadas.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
             listViewHDRAsignadas.FullRowSelect = true;
+            listViewHDRAsignadas.GridLines = true;
             listViewItem1.StateImageIndex = 0;
             listViewHDRAsignadas.Items.AddRange(new ListViewItem[] { listViewItem1 });
             listViewHDRAsignadas.Location = new Point(8, 22);
@@ -234,6 +235,7 @@
             // listViewAsignarHDR
             // 
             listViewAsignarHDR.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader8 });
+            listViewAsignarHDR.GridLines = true;
             listViewAsignarHDR.Items.AddRange(new ListViewItem[] { listViewItem2 });
             listViewAsignarHDR.Location = new Point(6, 22);
             listViewAsignarHDR.Name = "listViewAsignarHDR";

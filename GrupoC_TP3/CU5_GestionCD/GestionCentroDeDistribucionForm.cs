@@ -107,6 +107,9 @@ namespace GrupoC_TP3.CU5_GestionCD
             }
 
            MessageBox.Show("Actualizado con exito.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            listViewEncomiendasARecibir.Items.Clear();
+            listViewEncomiendasADespachar.Items.Clear();
         }
     }
 }

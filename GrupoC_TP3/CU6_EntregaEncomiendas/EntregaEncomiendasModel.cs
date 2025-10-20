@@ -46,7 +46,7 @@ namespace GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia
 
             if (!existe)
             {
-                MessageBox.Show("El cliente ingresado no tiene paquetes para retirar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El DNI ingresado no tiene paquetes para retirar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             return;

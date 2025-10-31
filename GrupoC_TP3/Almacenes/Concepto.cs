@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.Almacenes
 {
-    internal class AdicionalesYComisionesEntidad
+    public enum Concepto
     {
-        public Enum Concepto { get; set; }
-        public decimal Monto { get; set; }
-
+        RetiroDomicilio,
+        EntregaDomicilio,
+        EntregaAgencia,
+        ComisionFleteroPorBulto
     }
 }

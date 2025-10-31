@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.Almacenes
 {
-    internal class AdicionalesYComisionesEntidad
+    internal class Autorizados
     {
-        public Enum Concepto { get; set; }
-        public decimal Monto { get; set; }
+        public int CUILAutorizado { get; set; }
+        public string NombreApellido { get; set; }
 
     }
 }

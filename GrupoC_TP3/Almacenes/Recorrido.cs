@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.Almacenes
 {
-    internal class TarifaEntidad
+    internal class Recorrido
     {
-        public Enum TamañoCaja { get; set; }
-        public int CentroDistribucionOrigen { get; set; }
+        public DateTime FechaSalida { get; set; }
+        public DateTime FechaLlegada { get; set; }
         public int CentroDistribucionDestino { get; set; }
-        public decimal Importe { get; set; }
+        public int CentroDistribucionOrigen { get; set; }
 
     }
 }

@@ -8,5 +8,7 @@ namespace GrupoC_TP3.Almacenes
 {
     internal class CronogramaOmnibusEntidad
     {
+        public string PatenteMicro { get; set; }
+        public List<Recorrido> Recorridos { get; set; } = new List<Recorrido>();
     }
 }

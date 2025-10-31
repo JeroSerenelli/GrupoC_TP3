@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.Almacenes
 {
-    public enum EstadoEncomiendaEnum
+    public enum EstadoEncomienda
     {
         ListoParaRetirarEnDomicilio,
         ListoParaRetirarEnAgencia,

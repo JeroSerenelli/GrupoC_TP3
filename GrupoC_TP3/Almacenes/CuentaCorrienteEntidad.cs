@@ -8,5 +8,10 @@ namespace GrupoC_TP3.Almacenes
 {
     internal class CuentaCorrienteEntidad
     {
+        public int CUITCUIL { get; set; }
+
+        public DateTime FechaMovimiento { get; set; }
+        public decimal Monto { get; set; }
+        
     }
 }

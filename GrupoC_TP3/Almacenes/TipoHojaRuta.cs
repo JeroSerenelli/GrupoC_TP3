@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.Almacenes
 {
-    internal class AdicionalesYComisionesEntidad
+    public enum TipoHojaRuta
     {
-        public Enum Concepto { get; set; }
-        public decimal Monto { get; set; }
-
+        Entrega,
+        Retiro
     }
 }

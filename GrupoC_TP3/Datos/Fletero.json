@@ -1,0 +1,98 @@
+[
+  {
+    "DNIFletero": 12345678,
+    "NombreFletero": "Homero",
+    "ApellidoFletero": "Thompson",
+    "CodPostalActividad": 1636
+  },
+  {
+    "DNIFletero": 20123456,
+    "NombreFletero": "Juan",
+    "ApellidoFletero": "Pérez",
+    "CodPostalActividad": 1636
+  },
+  {
+    "DNIFletero": 27345678,
+    "NombreFletero": "María",
+    "ApellidoFletero": "González",
+    "CodPostalActividad": 5900
+  },
+  {
+    "DNIFletero": 31567890,
+    "NombreFletero": "Pedro",
+    "ApellidoFletero": "García",
+    "CodPostalActividad": 5900
+  },
+  {
+    "DNIFletero": 28901234,
+    "NombreFletero": "Lucía",
+    "ApellidoFletero": "Ramírez",
+    "CodPostalActividad": 5000
+  },
+  {
+    "DNIFletero": 24111222,
+    "NombreFletero": "Diego",
+    "ApellidoFletero": "Fernández",
+    "CodPostalActividad": 5900
+  },
+  {
+    "DNIFletero": 33344555,
+    "NombreFletero": "Sofía",
+    "ApellidoFletero": "López",
+    "CodPostalActividad": 5800
+  },
+  {
+    "DNIFletero": 19876543,
+    "NombreFletero": "Carlos",
+    "ApellidoFletero": "Martínez",
+    "CodPostalActividad": 1636
+  },
+  {
+    "DNIFletero": 22678901,
+    "NombreFletero": "Ana",
+    "ApellidoFletero": "Giménez",
+    "CodPostalActividad": 1636
+  },
+  {
+    "DNIFletero": 25600112,
+    "NombreFletero": "Hugo",
+    "ApellidoFletero": "Ruiz",
+    "CodPostalActividad": 2300
+  },
+  {
+    "DNIFletero": 21234567,
+    "NombreFletero": "Verónica",
+    "ApellidoFletero": "Sosa",
+    "CodPostalActividad": 6000
+  },
+  {
+    "DNIFletero": 27788990,
+    "NombreFletero": "Oscar",
+    "ApellidoFletero": "Benítez",
+    "CodPostalActividad": 1400
+  },
+  {
+    "DNIFletero": 29933445,
+    "NombreFletero": "Elena",
+    "ApellidoFletero": "Domínguez",
+    "CodPostalActividad": 7200
+  },
+  {
+    "DNIFletero": 23004567,
+    "NombreFletero": "Raúl",
+    "ApellidoFletero": "Morales",
+    "CodPostalActividad": 4100
+  },
+  {
+    "DNIFletero": 24321987,
+    "NombreFletero": "Marta",
+    "ApellidoFletero": "Castro",
+    "CodPostalActividad": 5500
+  },
+  {
+    "DNIFletero": 26457890,
+    "NombreFletero": "Federico",
+    "ApellidoFletero": "Alvarez",
+    "CodPostalActividad": 2800
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "CUITEmpresaOmnibus": 30701234567,
+    "EmpresaOmnibus": "Expreso del Sur S.A.",
+    "PrecioDeArrendamiento": 65000.0,
+    "Unidades": [
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA374CY"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG372DB"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG649RK"
+      }
+    ]
+  },
+  {
+    "CUITEmpresaOmnibus": 30709876543,
+    "EmpresaOmnibus": "Transporte Andino SRL",
+    "PrecioDeArrendamiento": 70000.0,
+    "Unidades": [
+      {
+        "CUITEmpresasOmnibus": 30709876543,
+        "PatenteMicro": "AF972BF"
+      },
+      {
+        "CUITEmpresasOmnibus": 30709876543,
+        "PatenteMicro": "AC445RK"
+      },
+      {
+        "CUITEmpresasOmnibus": 30709876543,
+        "PatenteMicro": "AD267AN"
+      }
+    ]
+  },
+  {
+    "CUITEmpresaOmnibus": 30512345678,
+    "EmpresaOmnibus": "Rutas Argentinas S.A.",
+    "PrecioDeArrendamiento": 55000.0,
+    "Unidades": [
+      {
+        "CUITEmpresasOmnibus": 30512345678,
+        "PatenteMicro": "AB999TM"
+      },
+      {
+        "CUITEmpresasOmnibus": 30512345678,
+        "PatenteMicro": "AB106KX"
+      },
+      {
+        "CUITEmpresasOmnibus": 30512345678,
+        "PatenteMicro": "AH204BC"
+      }
+    ]
+  },
+  {
+    "CUITEmpresaOmnibus": 30900112233,
+    "EmpresaOmnibus": "El Pampeano SRL",
+    "PrecioDeArrendamiento": 65000.0,
+    "Unidades": [
+      {
+        "CUITEmpresasOmnibus": 30900112233,
+        "PatenteMicro": "AC229ZA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30900112233,
+        "PatenteMicro": "AE540SP"
+      },
+      {
+        "CUITEmpresasOmnibus": 30900112233,
+        "PatenteMicro": "AE580BY"
+      }
+    ]
+  },
+  {
+    "CUITEmpresaOmnibus": 30456789012,
+    "EmpresaOmnibus": "Nueva Patagónica S.A.",
+    "PrecioDeArrendamiento": 55000.0,
+    "Unidades": [
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AE451QZ"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AH311TU"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AF112MY"
+      }
+    ]
+  }
+]

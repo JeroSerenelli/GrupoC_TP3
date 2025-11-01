@@ -1,0 +1,209 @@
+[
+  {
+    "PatenteMicro": "AA374CY",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T08:00:00",
+        "FechaLlegada": "2025-11-06T12:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG372DB",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T08:20:00",
+        "FechaLlegada": "2025-11-06T05:20:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG649RK",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T08:40:00",
+        "FechaLlegada": "2025-11-06T14:40:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF972BF",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T09:00:00",
+        "FechaLlegada": "2025-11-05T13:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC445RK",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T09:20:00",
+        "FechaLlegada": "2025-11-06T09:20:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD267AN",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T09:40:00",
+        "FechaLlegada": "2025-11-06T05:40:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB999TM",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T10:00:00",
+        "FechaLlegada": "2025-11-06T06:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB106KX",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T10:20:00",
+        "FechaLlegada": "2025-11-05T12:20:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH204BC",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T11:40:00",
+        "FechaLlegada": "2025-11-05T23:40:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1007
+      },
+      {
+        "FechaSalida": "2025-11-06T00:40:00",
+        "FechaLlegada": "2025-11-06T20:40:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC229ZA",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T12:00:00",
+        "FechaLlegada": "2025-11-06T10:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1000
+      },
+      {
+        "FechaSalida": "2025-11-06T11:00:00",
+        "FechaLlegada": "2025-11-07T21:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE540SP",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T12:20:00",
+        "FechaLlegada": "2025-11-05T22:20:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1004
+      },
+      {
+        "FechaSalida": "2025-11-05T23:20:00",
+        "FechaLlegada": "2025-11-06T11:20:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE580BY",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T12:40:00",
+        "FechaLlegada": "2025-11-05T20:40:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1006
+      },
+      {
+        "FechaSalida": "2025-11-05T21:40:00",
+        "FechaLlegada": "2025-11-06T09:40:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE451QZ",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T13:00:00",
+        "FechaLlegada": "2025-11-06T23:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1010
+      },
+      {
+        "FechaSalida": "2025-11-07T00:00:00",
+        "FechaLlegada": "2025-11-08T08:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH311TU",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T13:20:00",
+        "FechaLlegada": "2025-11-05T21:20:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1004
+      },
+      {
+        "FechaSalida": "2025-11-05T22:20:00",
+        "FechaLlegada": "2025-11-06T22:20:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF112MY",
+    "Recorrido": [
+      {
+        "FechaSalida": "2025-11-05T13:40:00",
+        "FechaLlegada": "2025-11-05T15:40:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1001
+      },
+      {
+        "FechaSalida": "2025-11-05T16:40:00",
+        "FechaLlegada": "2025-11-05T19:40:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  }
+]

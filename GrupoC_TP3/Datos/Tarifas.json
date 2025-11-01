@@ -1,0 +1,2402 @@
+[
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "S",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 5000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "M",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 7000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "L",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 9000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1002,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1004,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1005,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1006,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1007,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1008,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1009,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1000,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1001,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1002,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1004,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1005,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1006,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1007,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1008,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1009,
+    "Importe": 12000.0
+  },
+  {
+    "TamañoCaja": "XL",
+    "CentroDistribucionOrigen": 1010,
+    "CentroDistribucionDestino": 1010,
+    "Importe": 12000.0
+  }
+]

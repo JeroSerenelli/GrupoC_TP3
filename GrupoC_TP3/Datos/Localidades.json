@@ -1,0 +1,102 @@
+[
+  {
+    "CodLocalidad": 1,
+    "CodProv": 1,
+    "Nombre": "General San Martin",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1650
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 2,
+    "CodProv": 1,
+    "Nombre": "La Plata",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1904
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 3,
+    "CodProv": 1,
+    "Nombre": "Junin",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 3000
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 4,
+    "CodProv": 1,
+    "Nombre": "Mar del Plata",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 2223
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 5,
+    "CodProv": 5,
+    "Nombre": "Salsipuedes",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 5113
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 6,
+    "CodProv": 5,
+    "Nombre": "Villa Maria",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 5093
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 7,
+    "CodProv": 5,
+    "Nombre": "Cordoba Capital",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 5014
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 8,
+    "CodProv": 9,
+    "Nombre": "San Salvador de Jujuy",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 4400
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 9,
+    "CodProv": 9,
+    "Nombre": "Tilcara",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 4629
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 10,
+    "CodProv": 9,
+    "Nombre": "Purmamarca",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 4618
+      }
+    ]
+  }
+]

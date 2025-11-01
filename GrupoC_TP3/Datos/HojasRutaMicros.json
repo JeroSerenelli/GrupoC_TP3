@@ -1,0 +1,65 @@
+[
+  {
+    "HojaRutaMicro": 700001,
+    "CentroDistribucionDestino": 1001,
+    "NumeroGuiaMicro": [
+      {
+        "NumeroGuia": "",
+        "EstadoGuia": ""
+      },
+      {
+        "NumeroGuia": "",
+        "EstadoGuia": ""
+      },
+      {
+        "NumeroGuia": "",
+        "EstadoGuia": ""
+      }
+    ],
+    "PatenteMicro": "AA374CY",
+    "FechaEmisionHojaDeRuta": "2025-11-01T09:00:00",
+    "EstadoHojaRutaMicro": "LIstoParaDespacharEnCentroDeDistribucion"
+  },
+  {
+    "HojaRutaMicro": 700002,
+    "CentroDistribucionDestino": 1006,
+    "NumeroGuiaMicro": [
+      {
+        "NumeroGuia": "",
+        "EstadoGuia": ""
+      },
+      {
+        "NumeroGuia": "",
+        "EstadoGuia": ""
+      },
+      {
+        "NumeroGuia": "",
+        "EstadoGuia": ""
+      }
+    ],
+    "PatenteMicro": "AG372DB",
+    "FechaEmisionHojaDeRuta": "2025-11-01T09:00:00",
+    "EstadoHojaRutaMicro": "LIstoParaDespacharEnCentroDeDistribucion"
+  },
+  {
+    "HojaRutaMicro": 700003,
+    "CentroDistribucionDestino": 1010,
+    "NumeroGuiaMicro": [
+      {
+        "NumeroGuia": "",
+        "EstadoGuia": ""
+      },
+      {
+        "NumeroGuia": "",
+        "EstadoGuia": ""
+      },
+      {
+        "NumeroGuia": "",
+        "EstadoGuia": ""
+      }
+    ],
+    "PatenteMicro": "AG649RK",
+    "FechaEmisionHojaDeRuta": "2025-11-01T09:00:00",
+    "EstadoHojaRutaMicro": "LIstoParaDespacharEnCentroDeDistribucion"
+  }
+]

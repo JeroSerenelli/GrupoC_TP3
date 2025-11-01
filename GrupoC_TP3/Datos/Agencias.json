@@ -1,0 +1,52 @@
+[
+  {
+    "CodAgencia": 2000,
+    "CodPostalAgencia": 1650,
+    "CodCentroDist": 1000
+  },
+  {
+    "CodAgencia": 2001,
+    "CodPostalAgencia": 1904,
+    "CodCentroDist": 1001
+  },
+  {
+    "CodAgencia": 2003,
+    "CodPostalAgencia": 3000,
+    "CodCentroDist": 1002
+  },
+  {
+    "CodAgencia": 2004,
+    "CodPostalAgencia": 2223,
+    "CodCentroDist": 1004
+  },
+  {
+    "CodAgencia": 2005,
+    "CodPostalAgencia": 5113,
+    "CodCentroDist": 1005
+  },
+  {
+    "CodAgencia": 2006,
+    "CodPostalAgencia": 5093,
+    "CodCentroDist": 1006
+  },
+  {
+    "CodAgencia": 2007,
+    "CodPostalAgencia": 5014,
+    "CodCentroDist": 1007
+  },
+  {
+    "CodAgencia": 2008,
+    "CodPostalAgencia": 4400,
+    "CodCentroDist": 1008
+  },
+  {
+    "CodAgencia": 2009,
+    "CodPostalAgencia": 4629,
+    "CodCentroDist": 1009
+  },
+  {
+    "CodAgencia": 2010,
+    "CodPostalAgencia": 4618,
+    "CodCentroDist": 1010
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "CodCentroDist": 1000,
+    "CodLocal": 1,
+    "CodPostal": 1650,
+    "Nombre": "CD General San Martin"
+  },
+  {
+    "CodCentroDist": 1001,
+    "CodLocal": 2,
+    "CodPostal": 1904,
+    "Nombre": "CD La Plata"
+  },
+  {
+    "CodCentroDist": 1002,
+    "CodLocal": 3,
+    "CodPostal": 3000,
+    "Nombre": "CD Junin"
+  },
+  {
+    "CodCentroDist": 1004,
+    "CodLocal": 4,
+    "CodPostal": 2223,
+    "Nombre": "CD Mar del Plata"
+  },
+  {
+    "CodCentroDist": 1005,
+    "CodLocal": 5,
+    "CodPostal": 5113,
+    "Nombre": "CD Salsipuedes"
+  },
+  {
+    "CodCentroDist": 1006,
+    "CodLocal": 6,
+    "CodPostal": 5093,
+    "Nombre": "CD Villa Maria"
+  },
+  {
+    "CodCentroDist": 1007,
+    "CodLocal": 7,
+    "CodPostal": 5014,
+    "Nombre": "CD Cordoba Capital"
+  },
+  {
+    "CodCentroDist": 1008,
+    "CodLocal": 8,
+    "CodPostal": 4400,
+    "Nombre": "CD SS Jujuy"
+  },
+  {
+    "CodCentroDist": 1009,
+    "CodLocal": 9,
+    "CodPostal": 4629,
+    "Nombre": "CD Tilcara"
+  },
+  {
+    "CodCentroDist": 1010,
+    "CodLocal": 10,
+    "CodPostal": 4618,
+    "Nombre": "CD Purmamarca"
+  },
+  {
+    "CodCentroDist": 1011,
+    "CodLocal": 11,
+    "CodPostal": 1636,
+    "Nombre": "CD Olivos"
+  }
+]

@@ -53,13 +53,15 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
         private void CargarParaFletero(string fletero)
         {
             InicializarListViewsSiHaceFalta();
-
             listViewHDRAsignadas.Items.Clear();
             listViewAsignarHDR.Items.Clear();
 
             if (string.IsNullOrWhiteSpace(fletero)) return;
 
-            foreach (var h in modelo.Fleteros.Where(x => x.Fletero == fletero && !string.Equals(x.Estado, "Cumplida", StringComparison.OrdinalIgnoreCase)))
+            // buscar por nombre completo (case-insensitive)
+            foreach (var h in modelo.Fleteros.Where(x =>
+                string.Equals(x.Fletero?.Trim(), fletero.Trim(), StringComparison.OrdinalIgnoreCase)
+                && !string.Equals(x.Estado, "Cumplida", StringComparison.OrdinalIgnoreCase)))
             {
                 var it = new ListViewItem(h.HojaDeRuta);
                 it.SubItems.Add(h.NroGuia);
@@ -67,16 +69,11 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 it.Tag = h;
                 listViewHDRAsignadas.Items.Add(it);
             }
-           
-            List<HojasDeRutaPorAsignar> pool = null;
 
-            if (!modelo.PorAsignarPorFletero.TryGetValue(fletero, out pool) || pool == null)
-            {
-                var kv = modelo.PorAsignarPorFletero
-                    .FirstOrDefault(kvp => string.Equals(kvp.Key, fletero, StringComparison.OrdinalIgnoreCase));
-                pool = kv.Value;
-            }
-
+            // obtener pool por clave exacta (case-insensitive)
+            var poolKv = modelo.PorAsignarPorFletero
+                .FirstOrDefault(kvp => string.Equals(kvp.Key, fletero, StringComparison.OrdinalIgnoreCase));
+            var pool = poolKv.Value;
             if (pool != null)
             {
                 foreach (var p in pool)
@@ -112,20 +109,18 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
         private void ConstruirFleterosValidos()
         {
             _fleterosValidos = new HashSet<string>(
-                modelo.Fleteros.Select(f => f.Fletero)
-                .Concat(modelo.PorAsignarPorFletero.Keys),
+                modelo.ObtenerNombresFleteros(),
                 StringComparer.OrdinalIgnoreCase
             );
         }
 
         private void PoblarComboFletero()
         {
-            comboBoxFletero.Items.Clear();
-            foreach (var nombre in _fleterosValidos.OrderBy(x => x))
-                comboBoxFletero.Items.Add(nombre);
-
+            var nombres = modelo.ObtenerNombresFleteros().ToList();
+            comboBoxFletero.DataSource = nombres;
             comboBoxFletero.SelectedIndex = -1;
         }
+
         private void button1_Click(object sender, EventArgs e) { }
         private void groupBox1_Enter(object sender, EventArgs e) { }
 
@@ -281,6 +276,9 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
         }
     }
 }
+
+
+
 
 
 

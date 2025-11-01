@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static FleteroAlmacen()
         {
-            if (File.Exists("Fleteros.json"))
+            if (File.Exists(@"Datos\Fletero.json"))
             {
-                var fleteroJson = File.ReadAllText("Fleteros.json");
+                var fleteroJson = File.ReadAllText(@"Datos\Fletero.json");
                 fleteros = System.Text.Json.JsonSerializer.Deserialize<List<FleteroEntidad>>(fleteroJson) ?? new List<FleteroEntidad>();
             }
         }

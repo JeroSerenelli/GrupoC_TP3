@@ -90,7 +90,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             return ubicacion;
         }
 
-        
+
 
         internal void ValidacionCliente(ValidacionClientes cliente)
         {
@@ -109,23 +109,36 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
-
-
             //TODO: no me funciona esta busqueda. 
+            /*
+            bool ok = false;
             foreach (var c in ClienteAlmacen.clientes)
             {
                 if (cliente.CUITCUIL == c.CUITCUIL)
                 {
-                    MessageBox.Show("Cliente valido", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ok = true;
                     return;
-                }
-                else
-                {
-                    MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
                 }
             }
 
+            if (!ok)
+            {
+                MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+            }
+            else
+            {
+                MessageBox.Show("El cliente es válido.", "Éxitos!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }    */
+
+            //Versión corta:
+            if (!ClienteAlmacen.clientes.Any(c => c.CUITCUIL == cliente.CUITCUIL))
+            {
+                MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("El cliente es válido.", "Éxitos!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         internal bool ValidacionDestino(EncomiendasImpuestas infoDestino)
@@ -157,26 +170,26 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 return true;
             }
             return false;
-        }   
-        
+        }
+
         internal bool ValidacionDatosDestinatario(EncomiendasImpuestas datosDestinatario)
         {
-            
+
             //SEA POSITIVO
             if (datosDestinatario.DNIDestinatario <= 0)
             {
                 MessageBox.Show("El campo DNI debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-                return true; 
+
+                return true;
             }
             //SEA DE 8 DIGITOS
             if (datosDestinatario.DNIDestinatario.ToString().Length != 8)
             {
                 MessageBox.Show("El campo DNI debe tener 8 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
                 return true;
             }
-            return false; 
+            return false;
 
         }
         internal void CrearEncomienda(EncomiendasImpuestas encomiendas)
@@ -187,7 +200,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
             for (int i = 0; i < encomiendas.CantCajas; i++)
             {
-                
+
                 //var guiaGenerada = "1000" + ((DateTime.Now.Ticks)).ToString())
                 string guia = "1000" + contador.ToString();
                 nroGuias.Add(guia);

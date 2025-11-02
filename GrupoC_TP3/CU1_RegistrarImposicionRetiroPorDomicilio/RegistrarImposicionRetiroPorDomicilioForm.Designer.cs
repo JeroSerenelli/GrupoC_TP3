@@ -186,6 +186,7 @@
             textBoxCPDestino.Name = "textBoxCPDestino";
             textBoxCPDestino.Size = new Size(177, 23);
             textBoxCPDestino.TabIndex = 38;
+            textBoxCPDestino.TextChanged += textBoxCodPostDestino_TextChanged;
             // 
             // label6
             // 
@@ -219,7 +220,7 @@
             label12.AutoSize = true;
             label12.Location = new Point(6, 56);
             label12.Name = "label12";
-            label12.Size = new Size(76, 15);
+            label12.Size = new Size(75, 15);
             label12.TabIndex = 11;
             label12.Text = "Tipo de Caja:";
             // 
@@ -382,7 +383,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(10, 28);
             label4.Name = "label4";
-            label4.Size = new Size(66, 15);
+            label4.Size = new Size(65, 15);
             label4.TabIndex = 3;
             label4.Text = "CUIT/CUIL:";
             // 

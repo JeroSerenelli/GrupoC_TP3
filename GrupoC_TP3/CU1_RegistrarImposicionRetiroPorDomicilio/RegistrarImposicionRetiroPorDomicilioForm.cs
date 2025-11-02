@@ -330,8 +330,6 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             var ubicacion = modelo.ObtenerUbicacion1();
             string centro = ubicacion.ObtenerCentroDistribucion(codigoPostal);
             labelCdDestino.Text = centro;
-
-
         }
 
 
@@ -348,7 +346,6 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             {
                 labelDomicilioDestino.Visible = false;
                 textBoxDomicilioDestinatario.Visible = false;
-
             }
             else
             {

@@ -1,8 +1,4 @@
 ﻿using GrupoC_TP3.Almacenes;
-using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
-using GrupoC_TP3.CU9_CuentaCorriente;
-using System.Net;
-using static GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio.Ubicacion;
 
 namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 {
@@ -57,35 +53,18 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
         {
             var ubicacion = new Ubicacion
             {
-                ProvinciasYLocalidades = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase),
-                CodigoPostalCentroDistribucion = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+                ProvinciasYLocalidades = ProvinciaAlmacen.provincias.Select(p => new
+                {
+                    p.Nombre,
+                    Localidades = LocalidadAlmacen.localidades.Where(l => l.CodProv == p.CodProv)
+                                                              .Select(l => l.Nombre)
+                                                              .OrderBy(n => n)
+                                                              .ToList()
+                }).ToDictionary(p => p.Nombre, v => v.Localidades),
+
+                CodigoPostalCentroDistribucion = CentroDistribucionAlmacen.centrosDistribucion
+                                                                          .ToDictionary(cd => cd.CodPostal.ToString("0000"), cd => cd.Nombre)
             };
-
-            // Traigo provincias desde el json de provincias
-            var provincias = ProvinciaAlmacen.provincias ?? new List<ProvinciaEntidad>();
-
-            // Traigo Localidades desde el json de localidades
-            var localidades = LocalidadAlmacen.localidades ?? new List<LocalidadEntidad>();
-
-            // Mapeo Provincia -> Localidades
-            foreach (var p in provincias.OrderBy(p => p.Nombre))
-            {
-                var locs = localidades
-                 .Where(l => l.CodProv == p.CodProv)
-                .OrderBy(l => l.Nombre)
-                .Select(l => l.Nombre)
-                .Distinct(StringComparer.OrdinalIgnoreCase)
-                .ToList();
-
-                ubicacion.ProvinciasYLocalidades[p.Nombre] = locs;
-            }
-
-            foreach (var cd in (CentroDistribucionAlmacen.centrosDistribucion ?? new List<CentroDistribucionEntidad>()))
-            {
-                var cp = cd.CodPostal.ToString("0000");
-                if (!ubicacion.CodigoPostalCentroDistribucion.ContainsKey(cp))
-                    ubicacion.CodigoPostalCentroDistribucion[cp] = cd.Nombre;
-            }
 
             return ubicacion;
         }

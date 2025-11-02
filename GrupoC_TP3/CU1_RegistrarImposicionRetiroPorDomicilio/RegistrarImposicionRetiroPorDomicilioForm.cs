@@ -118,7 +118,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 CPDestino = cpDestino,
             });
 
-            if(valDestino)
+            if (valDestino)
             {
                 return;
             }
@@ -164,9 +164,9 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 CantCajas = cajas,
             });
 
-            if(valDatosEncomiendas)
+            if (valDatosEncomiendas)
             {
-                return; 
+                return;
             }
 
             //Val - Tipo de Caja
@@ -212,7 +212,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 CPRetiro = cpRetiro,
             });
 
-            if(valDatosRetiro)
+            if (valDatosRetiro)
             {
                 return;
             }
@@ -260,7 +260,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
-             var valDatosDestinatario = modelo.ValidacionDatosDestinatario(new EncomiendasImpuestas
+            var valDatosDestinatario = modelo.ValidacionDatosDestinatario(new EncomiendasImpuestas
             {
                 DNIDestinatario = DNI,
 
@@ -280,8 +280,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
         }
 
-
-
+       
         private void cmbBoxProvDst_SelectedIndexChanged(object sender, EventArgs e)
         {
             string provinciaSeleccionada = cmbBoxProvDestino.Text;
@@ -400,7 +399,12 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
             this.Close();
         }
+
+        private void RegistrarImposicionRetiroPorDomicilioForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
-    
+
 }
     

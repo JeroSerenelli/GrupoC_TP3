@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.Almacenes
 {
-    internal class NumeroGuiaFlete
+    public enum CondicionCliente
     {
-        public int NumeroGuia { get; set; }
-        public EstadoEncomienda EstadoEncomienda { get; set; }
-
+        ResponsableInscripto,
+        Monotributista,
+        Exento,
+        NoResponsable,
+        ConsumidorFinal
     }
 }

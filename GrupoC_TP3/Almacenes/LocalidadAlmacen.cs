@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static LocalidadAlmacen()
         {
-            if (File.Exists("Localidades.json"))
+            if (File.Exists(@"Datos\Localidades.json"))
             {
-                var localidadJson = File.ReadAllText("Localidades.json");
+                var localidadJson = File.ReadAllText(@"Datos\Localidades.json");
                 localidades = System.Text.Json.JsonSerializer.Deserialize<List<LocalidadEntidad>>(localidadJson) ?? new List<LocalidadEntidad>();
             }
         }

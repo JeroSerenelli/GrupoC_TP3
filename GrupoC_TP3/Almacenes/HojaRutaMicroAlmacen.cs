@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static HojaRutaMicroAlmacen()
         {
-            if (File.Exists("HojasRutaMicros.json"))
+            if (File.Exists(@"Datos\HojasRutaMicros.json"))
             {
-                var hojasRutaMicrosJson = File.ReadAllText("HojasRutaMicros.json");
+                var hojasRutaMicrosJson = File.ReadAllText(@"Datos\HojasRutaMicros.json");
                 hojasRutaMicros = System.Text.Json.JsonSerializer.Deserialize<List<HojaRutaMicroEntidad>>(hojasRutaMicrosJson) ?? new List<HojaRutaMicroEntidad>();
             }
         }
@@ -22,7 +22,7 @@ namespace GrupoC_TP3.Almacenes
         public static void GuardarHojaDeRutaMicro()
         {
             var hojasRutaMicrosJson = System.Text.Json.JsonSerializer.Serialize(hojasRutaMicros);
-            File.WriteAllText("HojasRutaMicros.json", hojasRutaMicrosJson);
+            File.WriteAllText(@"Datos\HojasRutaMicros.json", hojasRutaMicrosJson);
 
         }
     }

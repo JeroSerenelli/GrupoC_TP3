@@ -8,7 +8,7 @@ namespace GrupoC_TP3.Almacenes
 {
     internal class Autorizados
     {
-        public int CUILAutorizado { get; set; }
+        public long CUILAutorizado { get; set; }
         public string NombreApellido { get; set; }
 
     }

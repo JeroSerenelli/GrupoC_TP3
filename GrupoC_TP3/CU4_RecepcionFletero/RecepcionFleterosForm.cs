@@ -274,6 +274,11 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 
             this.Close();
         }
+
+        private void RecepcionFleterosForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

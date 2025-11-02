@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static FacturaAlmacen()
         {
-            if (File.Exists("Facturas.json"))
+            if (File.Exists(@"Datos\Facturas.json"))
             {
-                var facturaJson = File.ReadAllText("Facturas.json");
+                var facturaJson = File.ReadAllText(@"Datos\Facturas.json");
                 facturas = System.Text.Json.JsonSerializer.Deserialize<List<FacturaEntidad>>(facturaJson) ?? new List<FacturaEntidad>();
             }
         }
@@ -22,7 +22,7 @@ namespace GrupoC_TP3.Almacenes
         public static void GuardarFacturas()
         {
             var facturaJson = System.Text.Json.JsonSerializer.Serialize(facturas);
-            File.WriteAllText("Facturas.json", facturaJson);
+            File.WriteAllText(@"Datos\Facturas.json", facturaJson);
 
         }
     }

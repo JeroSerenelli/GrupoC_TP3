@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static EmpresaOmnibusAlmacen()
         {
-            if (File.Exists("EmpresasOmnibus.json"))
+            if (File.Exists(@"Datos\EmpresasOmnibus.json"))
             {
-                var empresaOmnibusJson = File.ReadAllText("EmpresasOmnibus.json");
+                var empresaOmnibusJson = File.ReadAllText(@"Datos\EmpresasOmnibus.json");
                 empresasOmnibus = System.Text.Json.JsonSerializer.Deserialize<List<EmpresaOmnibusEntidad>>(empresaOmnibusJson) ?? new List<EmpresaOmnibusEntidad>();
             }
         }

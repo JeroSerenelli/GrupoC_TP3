@@ -11,9 +11,9 @@ namespace GrupoC_TP3.Almacenes
         public int NumeroFactura { get; set; }
         public int CUITCUIL { get; set; }
         public decimal Total { get; set; }
-        public Enum TipoFactura { get; set; }
+        public TipoFactura TipoFactura { get; set; }
         public DateTime FechaEmision { get; set; }
-        public Enum EstadoFactura { get; set; }
+        public EstadoFactura EstadoFactura { get; set; }
 
     }
 }

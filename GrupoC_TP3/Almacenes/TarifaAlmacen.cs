@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static TarifaAlmacen()
         {
-            if (File.Exists("Tarifas.json"))
+            if (File.Exists(@"Datos\Tarifas.json"))
             {
-                var tarifaJson = File.ReadAllText("Tarifas.json");
+                var tarifaJson = File.ReadAllText(@"Datos\Tarifas.json");
                 tarifas = System.Text.Json.JsonSerializer.Deserialize<List<TarifaEntidad>>(tarifaJson) ?? new List<TarifaEntidad>();
             }
         }

@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
         public int NumeroGuia { get; set; }
         public int CUITCUIL { get; set; }
         public int CodPostalDest { get; set; }
-        public Enum MetodoEntrega { get; set; }
+        public MetodoEntrega MetodoEntrega { get; set; }
         public string DomicilioDest { get; set; }
-        public Enum TamañoCaja { get; set; }
+        public TamañoCaja TamañoCaja { get; set; }
         public int CodPostalOrig { get; set; }
         public int DomicilioOrigen { get; set; }
         public string NombreDestinatario { get; set; }
@@ -25,7 +25,7 @@ namespace GrupoC_TP3.Almacenes
         public int CargosAgencia { get; set; }
         public int CodAgenciaOrigen { get; set; }
         public int CodCentroDistOrigen { get; set; }
-        public Enum EstadoEncomienda { get; set; }
+        public EstadoEncomienda EstadoEncomienda { get; set; }
         public List<HistorialEstadoGuia> HistorialEstadosGuia { get; set; } = new List<HistorialEstadoGuia>();  
 
     }

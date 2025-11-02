@@ -13,6 +13,6 @@ namespace GrupoC_TP3.Almacenes
         public List<NumeroGuiaMicro> NumerosGuiaMicro { get; set; } = new List<NumeroGuiaMicro>();
         public string PatenteMicro { get; set; }
         public DateTime FechaEmisionHojaDeRuta { get; set; }
-        public Enum EstadoHojaRutaMicro { get; set; }
+        public EstadoHojaRutaMicro EstadoHojaRutaMicro { get; set; }
     }
 }

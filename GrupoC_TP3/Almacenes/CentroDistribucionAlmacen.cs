@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static CentroDistribucionAlmacen()
         {
-            if (File.Exists("CentrosDistribucion.json"))
+            if (File.Exists(@"Datos\CentrosDistribucion.json"))
             {
-                var centroDistribucionJson = File.ReadAllText("CentrosDistribucion.json");
+                var centroDistribucionJson = File.ReadAllText(@"Datos\CentrosDistribucion.json");
                 centrosDistribucion = System.Text.Json.JsonSerializer.Deserialize<List<CentroDistribucionEntidad>>(centroDistribucionJson) ?? new List<CentroDistribucionEntidad>();
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoC_TP3.Almacenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
         public Ubicacion()
         {
-            ProvinciasYLocalidades = new Dictionary<string, List<string>>
+            /*ProvinciasYLocalidades = new Dictionary<string, List<string>>
                 {
                     { "Buenos Aires", new List<string> { "La Plata", "Mar del Plata", "Bahía Blanca" } },
                     { "Córdoba", new List<string> { "Córdoba Capital", "Villa María", "Río Cuarto" } },
@@ -33,7 +34,32 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                     { "2000", "Centro Rosario" },
                     { "3000", "Centro Santa Fe Capital" },
                     { "2300", "Centro Rafaela" }
-                };
+                };*/
+        }
+
+        public static class ProvinciasLocalidades
+        {
+            // Índice: CP -> Centro de Distribución (se construye una sola vez)
+            private static Dictionary<int, CentroDistribucionEntidad> _cdPorCp;
+            private static bool _indiceCdConstruido;
+
+            private static void AsegurarIndiceCentrosDistribucion()
+            {
+                if (_indiceCdConstruido) return;
+                var cds = CentroDistribucionAlmacen.centrosDistribucion ?? new List<CentroDistribucionEntidad>();
+                _cdPorCp = cds
+                    .Where(cd => cd != null)
+                    .GroupBy(cd => cd.CodPostal)
+                    .ToDictionary(g => g.Key, g => g.First());
+                _indiceCdConstruido = true;
+            }
+
+            /*public static CentroDistribucionEntidad ObtenerCentroDistribucion(int cp)
+            {
+              
+                AsegurarIndiceCentrosDistribucion();
+                return _cdPorCp.TryGetValue(cp, out var cd) ? cd : null;
+            }*/
         }
 
         public string ObtenerCentroDistribucion(string codigoPostal)

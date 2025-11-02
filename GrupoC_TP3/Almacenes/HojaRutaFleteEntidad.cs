@@ -15,5 +15,5 @@ namespace GrupoC_TP3.Almacenes
         public Enum TipoHojaRuta { get; set; }
         public int CodPostal { get; set; }
 
-}
+    }
 }

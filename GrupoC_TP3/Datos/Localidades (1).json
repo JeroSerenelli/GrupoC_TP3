@@ -1,0 +1,626 @@
+[
+  {
+    "CodLocalidad": 1,
+    "CodProv": 1,
+    "Nombre": "Mar del Plata",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1000
+      },
+      {
+        "CodigoPostal": 1001
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 2,
+    "CodProv": 1,
+    "Nombre": "Bahía Blanca",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1002
+      },
+      {
+        "CodigoPostal": 1003
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 3,
+    "CodProv": 2,
+    "Nombre": "San Fernando del Valle de Catamarca",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1004
+      },
+      {
+        "CodigoPostal": 1005
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 4,
+    "CodProv": 2,
+    "Nombre": "Belén",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1006
+      },
+      {
+        "CodigoPostal": 1007
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 5,
+    "CodProv": 3,
+    "Nombre": "Resistencia",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1008
+      },
+      {
+        "CodigoPostal": 1009
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 6,
+    "CodProv": 3,
+    "Nombre": "Presidencia Roque Sáenz Peña",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1010
+      },
+      {
+        "CodigoPostal": 1011
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 7,
+    "CodProv": 4,
+    "Nombre": "Comodoro Rivadavia",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1012
+      },
+      {
+        "CodigoPostal": 1013
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 8,
+    "CodProv": 4,
+    "Nombre": "Puerto Madryn",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1014
+      },
+      {
+        "CodigoPostal": 1015
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 9,
+    "CodProv": 5,
+    "Nombre": "Córdoba",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1016
+      },
+      {
+        "CodigoPostal": 1017
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 10,
+    "CodProv": 5,
+    "Nombre": "Villa María",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1018
+      },
+      {
+        "CodigoPostal": 1019
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 11,
+    "CodProv": 6,
+    "Nombre": "Corrientes",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1020
+      },
+      {
+        "CodigoPostal": 1021
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 12,
+    "CodProv": 6,
+    "Nombre": "Goya",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1022
+      },
+      {
+        "CodigoPostal": 1023
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 13,
+    "CodProv": 7,
+    "Nombre": "Paraná",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1024
+      },
+      {
+        "CodigoPostal": 1025
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 14,
+    "CodProv": 7,
+    "Nombre": "Concordia",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1026
+      },
+      {
+        "CodigoPostal": 1027
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 15,
+    "CodProv": 8,
+    "Nombre": "Formosa",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1028
+      },
+      {
+        "CodigoPostal": 1029
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 16,
+    "CodProv": 8,
+    "Nombre": "Clorinda",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1030
+      },
+      {
+        "CodigoPostal": 1031
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 17,
+    "CodProv": 9,
+    "Nombre": "San Salvador de Jujuy",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1032
+      },
+      {
+        "CodigoPostal": 1033
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 18,
+    "CodProv": 9,
+    "Nombre": "Palpalá",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1034
+      },
+      {
+        "CodigoPostal": 1035
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 19,
+    "CodProv": 10,
+    "Nombre": "Santa Rosa",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1036
+      },
+      {
+        "CodigoPostal": 1037
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 20,
+    "CodProv": 10,
+    "Nombre": "General Pico",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1038
+      },
+      {
+        "CodigoPostal": 1039
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 21,
+    "CodProv": 11,
+    "Nombre": "La Rioja",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1040
+      },
+      {
+        "CodigoPostal": 1041
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 22,
+    "CodProv": 11,
+    "Nombre": "Chilecito",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1042
+      },
+      {
+        "CodigoPostal": 1043
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 23,
+    "CodProv": 12,
+    "Nombre": "Mendoza",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1044
+      },
+      {
+        "CodigoPostal": 1045
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 24,
+    "CodProv": 12,
+    "Nombre": "San Rafael",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1046
+      },
+      {
+        "CodigoPostal": 1047
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 25,
+    "CodProv": 13,
+    "Nombre": "Posadas",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1048
+      },
+      {
+        "CodigoPostal": 1049
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 26,
+    "CodProv": 13,
+    "Nombre": "Oberá",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1050
+      },
+      {
+        "CodigoPostal": 1051
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 27,
+    "CodProv": 14,
+    "Nombre": "Neuquén",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1052
+      },
+      {
+        "CodigoPostal": 1053
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 28,
+    "CodProv": 14,
+    "Nombre": "San Martín de los Andes",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1054
+      },
+      {
+        "CodigoPostal": 1055
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 29,
+    "CodProv": 15,
+    "Nombre": "Viedma",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1056
+      },
+      {
+        "CodigoPostal": 1057
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 30,
+    "CodProv": 15,
+    "Nombre": "San Carlos de Bariloche",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1058
+      },
+      {
+        "CodigoPostal": 1059
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 31,
+    "CodProv": 16,
+    "Nombre": "Salta",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1060
+      },
+      {
+        "CodigoPostal": 1061
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 32,
+    "CodProv": 16,
+    "Nombre": "San Ramón de la Nueva Orán",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1062
+      },
+      {
+        "CodigoPostal": 1063
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 33,
+    "CodProv": 17,
+    "Nombre": "San Juan",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1064
+      },
+      {
+        "CodigoPostal": 1065
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 34,
+    "CodProv": 17,
+    "Nombre": "Jáchal",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1066
+      },
+      {
+        "CodigoPostal": 1067
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 35,
+    "CodProv": 18,
+    "Nombre": "San Luis",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1068
+      },
+      {
+        "CodigoPostal": 1069
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 36,
+    "CodProv": 18,
+    "Nombre": "Villa Mercedes",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1070
+      },
+      {
+        "CodigoPostal": 1071
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 37,
+    "CodProv": 19,
+    "Nombre": "Río Gallegos",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1072
+      },
+      {
+        "CodigoPostal": 1073
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 38,
+    "CodProv": 19,
+    "Nombre": "Caleta Olivia",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1074
+      },
+      {
+        "CodigoPostal": 1075
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 39,
+    "CodProv": 20,
+    "Nombre": "Santa Fe",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1076
+      },
+      {
+        "CodigoPostal": 1077
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 40,
+    "CodProv": 20,
+    "Nombre": "Rosario",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1078
+      },
+      {
+        "CodigoPostal": 1079
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 41,
+    "CodProv": 21,
+    "Nombre": "Santiago del Estero",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1080
+      },
+      {
+        "CodigoPostal": 1081
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 42,
+    "CodProv": 21,
+    "Nombre": "La Banda",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1082
+      },
+      {
+        "CodigoPostal": 1083
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 43,
+    "CodProv": 22,
+    "Nombre": "Ushuaia",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1084
+      },
+      {
+        "CodigoPostal": 1085
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 44,
+    "CodProv": 22,
+    "Nombre": "Río Grande",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1086
+      },
+      {
+        "CodigoPostal": 1087
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 45,
+    "CodProv": 23,
+    "Nombre": "San Miguel de Tucumán",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1088
+      },
+      {
+        "CodigoPostal": 1089
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 46,
+    "CodProv": 23,
+    "Nombre": "Tafí Viejo",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1090
+      },
+      {
+        "CodigoPostal": 1091
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 47,
+    "CodProv": 24,
+    "Nombre": "Buenos Aires",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1092
+      },
+      {
+        "CodigoPostal": 1093
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 48,
+    "CodProv": 24,
+    "Nombre": "Villa Lugano",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 1094
+      },
+      {
+        "CodigoPostal": 1095
+      }
+    ]
+  }
+]

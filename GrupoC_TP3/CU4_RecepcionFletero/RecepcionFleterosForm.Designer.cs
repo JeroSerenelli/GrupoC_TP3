@@ -297,6 +297,7 @@
             Controls.Add(groupBox1);
             Name = "RecepcionFleterosForm";
             Text = "Recepcion Fleteros";
+            Load += RecepcionFleterosForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

@@ -1,4 +1,5 @@
-﻿using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
+﻿using GrupoC_TP3.Almacenes;
+using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
 using GrupoC_TP3.CU9_CuentaCorriente;
 using System.Net;
 
@@ -57,8 +58,23 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
-            if (!listaClientes.Contains(cliente.CUITCUIL))
+            foreach (var c in ClienteAlmacen.clientes)
             {
+                if (cliente.CUITCUIL == c.CUITCUIL)
+                {
+                    MessageBox.Show("Cliente valido", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            
+            
+            /*if (!listaClientes.Contains(cliente.CUITCUIL))*/
+            /*{
                 MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -67,7 +83,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             {
                 MessageBox.Show("Cliente valido", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
-            }
+            }*/
         }
 
         internal bool ValidacionDestino(EncomiendasImpuestas infoDestino)

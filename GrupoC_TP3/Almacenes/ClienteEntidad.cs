@@ -8,9 +8,9 @@ namespace GrupoC_TP3.Almacenes
 {
     internal class ClienteEntidad
     {
-        public int CUITCUIL { get; set; }
+        public long CUITCUIL { get; set; }
         public string RazonSocial { get; set; }
-        public Enum CondicionCliente { get; set; }
+        public CondicionCliente CondicionCliente { get; set; }
         public List<Autorizados> AutorizadosImposicion { get; set; } = new List<Autorizados>();
 
     }

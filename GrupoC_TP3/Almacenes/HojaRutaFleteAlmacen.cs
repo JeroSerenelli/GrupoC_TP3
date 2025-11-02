@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static HojaRutaFleteAlmacen()
         {
-            if (File.Exists("HojaRutaFlete.json"))
+            if (File.Exists(@"Datos\HojaRutaFlete.json"))
             {
-                var hojaRutaFleteJson = File.ReadAllText("HojaRutaFlete.json");
+                var hojaRutaFleteJson = File.ReadAllText(@"Datos\HojaRutaFlete.json");
                 hojasRutaFletes = System.Text.Json.JsonSerializer.Deserialize<List<HojaRutaFleteEntidad>>(hojaRutaFleteJson) ?? new List<HojaRutaFleteEntidad>();
             }
         }
@@ -22,7 +22,7 @@ namespace GrupoC_TP3.Almacenes
         public static void GuardarHojaDeRutaFlete()
         {
             var hojaRutaFleteJson = System.Text.Json.JsonSerializer.Serialize(hojasRutaFletes);
-            File.WriteAllText("HojaRutaFlete.json", hojaRutaFleteJson);
+            File.WriteAllText(@"Datos\HojaRutaFlete.json", hojaRutaFleteJson);
 
         }
     }

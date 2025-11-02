@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static CronogramaOmnibusAlmacen()
         {
-            if (File.Exists("CronogramaOmnibus.json"))
+            if (File.Exists(@"Datos\CronogramaOmnibus.json"))
             {
-                var cronogramaOmnibusJson = File.ReadAllText("CronogramaOmnibus.json");
+                var cronogramaOmnibusJson = File.ReadAllText(@"Datos\CronogramaOmnibus.json");
                 cronogramasOmnibus = System.Text.Json.JsonSerializer.Deserialize<List<CronogramaOmnibusEntidad>>(cronogramaOmnibusJson) ?? new List<CronogramaOmnibusEntidad>();
             }
         }

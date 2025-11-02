@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static ProvinciaAlmacen()
         {
-            if (File.Exists("Provincias.json"))
+            if (File.Exists(@"Datos\Provincias.json"))
             {
-                var provinciaJson = File.ReadAllText("Provincias.json");
+                var provinciaJson = File.ReadAllText(@"Datos\Provincias.json");
                 provincias = System.Text.Json.JsonSerializer.Deserialize<List<ProvinciaEntidad>>(provinciaJson) ?? new List<ProvinciaEntidad>();
             }
         }

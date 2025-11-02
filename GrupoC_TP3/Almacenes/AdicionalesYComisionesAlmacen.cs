@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static AdicionalesYComisionesAlmacen()
         {
-            if (File.Exists("AdicionalesComisiones.json"))
+            if (File.Exists(@"Datos\AdicionalesComisiones.json"))
             {
-                var adicionalesComisionesJson = File.ReadAllText("AdicionalesComisiones.json");
+                var adicionalesComisionesJson = File.ReadAllText(@"Datos\AdicionalesComisiones.json");
                 adicionalesComisiones = System.Text.Json.JsonSerializer.Deserialize<List<AdicionalesYComisionesEntidad>>(adicionalesComisionesJson) ?? new List<AdicionalesYComisionesEntidad>();
             }
         }

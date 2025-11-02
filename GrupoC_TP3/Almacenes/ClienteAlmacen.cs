@@ -17,6 +17,7 @@ namespace GrupoC_TP3.Almacenes
             if (File.Exists(@"Datos\Clientes.json"))
             {
                 var clienteJson = File.ReadAllText(@"Datos\Clientes.json");
+                //TODO: tuve que agregar esto porque no reconocia los enums como strings
                 var options = new JsonSerializerOptions();
                 options.Converters.Add(new JsonStringEnumConverter());
                 clientes = System.Text.Json.JsonSerializer.Deserialize<List<ClienteEntidad>>(clienteJson, options) ?? new List<ClienteEntidad>();

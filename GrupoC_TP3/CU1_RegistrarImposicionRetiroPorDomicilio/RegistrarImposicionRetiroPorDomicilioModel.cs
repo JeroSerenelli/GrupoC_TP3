@@ -20,12 +20,10 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             var provincias = ProvinciaAlmacen.provincias ?? new List<ProvinciaEntidad>();
             var localidades = LocalidadAlmacen.localidades ?? new List<LocalidadEntidad>();
 
-            // nombre provincia -> CodProv (case-insensitive)
             _codProvPorNombre = provincias
                 .GroupBy(p => p.Nombre, StringComparer.OrdinalIgnoreCase)
                 .ToDictionary(g => g.Key, g => g.First().CodProv, StringComparer.OrdinalIgnoreCase);
 
-            // CodProv -> lista de Localidades ordenadas
             _localidadesPorCodProv = localidades
                 .GroupBy(l => l.CodProv)
                 .ToDictionary(
@@ -55,25 +53,6 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                        .ToList();
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // Nivel de clase (para que puedas accederlo desde cualquier método del formulario)
-
-        //public long[] listaClientes = new long[] { 123456789, 99999999, 12345678910 };
-
         public Ubicacion ObtenerUbicacion1()
         {
             var ubicacion = new Ubicacion
@@ -82,13 +61,13 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 CodigoPostalCentroDistribucion = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
             };
 
-            // 1) Provincias desde Provincias.json
+            // Traigo provincias desde el json de provincias
             var provincias = ProvinciaAlmacen.provincias ?? new List<ProvinciaEntidad>();
 
-            // 2) Localidades desde Localidades.json
+            // Traigo Localidades desde el json de localidades
             var localidades = LocalidadAlmacen.localidades ?? new List<LocalidadEntidad>();
 
-            // 3) Armar mapa Provincia -> [Localidades]
+            // Mapeo Provincia -> Localidades
             foreach (var p in provincias.OrderBy(p => p.Nombre))
             {
                 var locs = localidades
@@ -101,13 +80,9 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 ubicacion.ProvinciasYLocalidades[p.Nombre] = locs;
             }
 
-
-
-
-            // 4) (opcional pero útil) CP -> Centro de Distribución desde CentrosDistribucion.json
             foreach (var cd in (CentroDistribucionAlmacen.centrosDistribucion ?? new List<CentroDistribucionEntidad>()))
             {
-                var cp = cd.CodPostal.ToString("0000"); // el modelo valida CP de 4 dígitos
+                var cp = cd.CodPostal.ToString("0000");
                 if (!ubicacion.CodigoPostalCentroDistribucion.ContainsKey(cp))
                     ubicacion.CodigoPostalCentroDistribucion[cp] = cd.Nombre;
             }
@@ -115,6 +90,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             return ubicacion;
         }
 
+        
 
         internal void ValidacionCliente(ValidacionClientes cliente)
         {
@@ -133,6 +109,9 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 return;
             }
 
+
+
+            //TODO: no me funciona esta busqueda. 
             foreach (var c in ClienteAlmacen.clientes)
             {
                 if (cliente.CUITCUIL == c.CUITCUIL)
@@ -143,22 +122,10 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 else
                 {
                     MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    
                 }
             }
-            
-            
-            /*if (!listaClientes.Contains(cliente.CUITCUIL))*/
-            /*{
-                MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
-            else
-            {
-                MessageBox.Show("Cliente valido", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }*/
         }
 
         internal bool ValidacionDestino(EncomiendasImpuestas infoDestino)
@@ -212,14 +179,8 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             return false; 
 
         }
-
-        
-
         internal void CrearEncomienda(EncomiendasImpuestas encomiendas)
         {
-            //A este metodo le tenemos que pasar la cantidad de cajas para uqe genere una guía por caja.
-            //encomiendas.NumeroGuia = encomiendas.NumeroGuia;
-
             //TODO: NO FUNCIONA
             List<string> nroGuias = new List<string>();
             int contador = 0;

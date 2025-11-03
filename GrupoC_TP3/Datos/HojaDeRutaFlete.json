@@ -114,5 +114,17 @@
     "EstadoHojaRutaFlete": "Cumplida",
     "TipoHojaRuta": "Entrega",
     "CodPostal": 1019
+  },
+  {
+    "HojaRutaFlete": 11,
+    "NumerosGuiaFlete": [
+      { "NumeroGuia": 451319 },
+      { "NumeroGuia": 798364 },
+      { "NumeroGuia": 730112 }
+    ],
+    "DNIFletero": 42629238,
+    "EstadoHojaRutaFlete": "NoCumplida",
+    "TipoHojaRuta": "Entrega",
+    "CodPostal": 1017
   }
 ]

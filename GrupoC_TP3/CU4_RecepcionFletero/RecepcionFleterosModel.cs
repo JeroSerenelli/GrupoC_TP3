@@ -10,65 +10,65 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 {
     public class RecepcionFleterosModel
     {
-        // Ahora usamos "Nombre Apellido" para todas las referencias internas
+        // Hardcodeado para coincidir con Datos\HojaDeRutaFlete.json:
+        // sólo incluyo las HDR con Estado "NoCumplida" (mapeadas a "No Cumplida")
         public List<HojasDeRutaAsignadas> Fleteros { get; } = new()
         {
-            new HojasDeRutaAsignadas { Fletero = "Juan Pérez",    HojaDeRuta = "6254", NroGuia = "17397", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Pedro García",  HojaDeRuta = "6255", NroGuia = "17398", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "María González",HojaDeRuta = "6256", NroGuia = "17399", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Lucía Ramírez", HojaDeRuta = "6257", NroGuia = "17400", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Juan Pérez",    HojaDeRuta = "6258", NroGuia = "17401", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Pedro García",  HojaDeRuta = "6259", NroGuia = "17402", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Pedro García",  HojaDeRuta = "6260", NroGuia = "17403", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "María González",HojaDeRuta = "6261", NroGuia = "17404", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "María González",HojaDeRuta = "6262", NroGuia = "17405", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "María González",HojaDeRuta = "6263", NroGuia = "17406", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Lucía Ramírez", HojaDeRuta = "6264", NroGuia = "17407", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Lucía Ramírez", HojaDeRuta = "6265", NroGuia = "17408", Estado = "No Cumplida"},
-            new HojasDeRutaAsignadas { Fletero = "Homero Thompson", HojaDeRuta = "6266", NroGuia = "17409", Estado = "No Cumplida"}
+            // HojaRutaFlete 1 - DNIFletero 33190535 -> Agustina Herrera (NoCumplida)
+            new HojasDeRutaAsignadas { Fletero = "Agustina Herrera", HojaDeRuta = "1", NroGuia = "147929", Estado = "No Cumplida" },
+            new HojasDeRutaAsignadas { Fletero = "Agustina Herrera", HojaDeRuta = "1", NroGuia = "641739", Estado = "No Cumplida" },
+            new HojasDeRutaAsignadas { Fletero = "Agustina Herrera", HojaDeRuta = "1", NroGuia = "438715", Estado = "No Cumplida" },
+
+            // HojaRutaFlete 4 - DNIFletero 24807375 -> Agustina Flores (NoCumplida)
+            new HojasDeRutaAsignadas { Fletero = "Agustina Flores", HojaDeRuta = "4", NroGuia = "800051", Estado = "No Cumplida" },
+            new HojasDeRutaAsignadas { Fletero = "Agustina Flores", HojaDeRuta = "4", NroGuia = "958537", Estado = "No Cumplida" },
+            
+            // HojaRutaFlete 11 - DNIFletero 42629238 -> Julieta Rodríguez (NoCumplida)
+            new HojasDeRutaAsignadas { Fletero = "Julieta Rodríguez", HojaDeRuta = "11", NroGuia = "451319", Estado = "No Cumplida" },
+            new HojasDeRutaAsignadas { Fletero = "Julieta Rodríguez", HojaDeRuta = "11", NroGuia = "798364", Estado = "No Cumplida" },
+            new HojasDeRutaAsignadas { Fletero = "Julieta Rodríguez", HojaDeRuta = "11", NroGuia = "730112", Estado = "No Cumplida" },
         };
 
+        // Hardcodeado con las HDR que en HojaDeRutaFlete.json están en "PendienteAsignación"
         public Dictionary<string, List<HojasDeRutaPorAsignar>> PorAsignarPorFletero { get; } = new()
         {
-            { "Juan Pérez", new List<HojasDeRutaPorAsignar> {
-                new() { Fletero = "Juan Pérez", HojaDeRuta = "7001", NroGuia = "20001" },
-                new() { Fletero = "Juan Pérez", HojaDeRuta = "7002", NroGuia = "20002" },
+            // HojaRutaFlete 2 - DNIFletero 28373390 -> Carlos Castro (PendienteAsignación)
+            { "Carlos Castro", new List<HojasDeRutaPorAsignar> {
+                new() { Fletero = "Carlos Castro", HojaDeRuta = "2", NroGuia = "407192" },
+                new() { Fletero = "Carlos Castro", HojaDeRuta = "2", NroGuia = "171993" },
+                new() { Fletero = "Carlos Castro", HojaDeRuta = "2", NroGuia = "595934" },
             }},
-            { "Pedro García", new List<HojasDeRutaPorAsignar> {
-                new() { Fletero = "Pedro García", HojaDeRuta = "7101", NroGuia = "21001" },
-                new() { Fletero = "Pedro García", HojaDeRuta = "7102", NroGuia = "21002" },
+
+            // HojaRutaFlete 7 - DNIFletero 21295377 -> Lucía Suárez (PendienteAsignación)
+            { "Lucía Suárez", new List<HojasDeRutaPorAsignar> {
+                new() { Fletero = "Lucía Suárez", HojaDeRuta = "7", NroGuia = "724514" },
+                new() { Fletero = "Lucía Suárez", HojaDeRuta = "7", NroGuia = "469329" },
             }},
-            { "María González", new List<HojasDeRutaPorAsignar> {
-                new() { Fletero = "María González", HojaDeRuta = "7201", NroGuia = "22001" },
+
+            // HojaRutaFlete 8 - DNIFletero 35589539 -> Juan Alvarez (PendienteAsignación)
+            { "Juan Alvarez", new List<HojasDeRutaPorAsignar> {
+                new() { Fletero = "Juan Alvarez", HojaDeRuta = "8", NroGuia = "199267" },
+                new() { Fletero = "Juan Alvarez", HojaDeRuta = "8", NroGuia = "584117" },
             }},
-            { "Lucía Ramírez", new List<HojasDeRutaPorAsignar> {
-                new() { Fletero = "Lucía Ramírez", HojaDeRuta = "7301", NroGuia = "23001" },
-                new() { Fletero = "Lucía Ramírez", HojaDeRuta = "7302", NroGuia = "23002" },
-                new() { Fletero = "Lucía Ramírez", HojaDeRuta = "7303", NroGuia = "23003" },
-            }},
-            { "Homero Thompson", new List<HojasDeRutaPorAsignar> {
-                new() { Fletero = "Homero Thompson", HojaDeRuta = "7401", NroGuia = "24001" },
+
+            // HojaRutaFlete 9 - DNIFletero 42629238 -> Julieta Rodríguez (PendienteAsignación)
+            { "Julieta Rodríguez", new List<HojasDeRutaPorAsignar> {
+                new() { Fletero = "Julieta Rodríguez", HojaDeRuta = "9", NroGuia = "551319" },
+                new() { Fletero = "Julieta Rodríguez", HojaDeRuta = "9", NroGuia = "788364" },
+                new() { Fletero = "Julieta Rodríguez", HojaDeRuta = "9", NroGuia = "710112" },
             }},
         };
 
+        // Devuelve TODOS los fleteros definidos en FleteroAlmacen (Nombre + Apellido)
+        // No filtramos por estado, esto siempre trae el listado completo del JSON.
         public List<string> ObtenerNombresFleteros()
         {
-            var desdeAlmacen = FleteroAlmacen.fleteros
+            return FleteroAlmacen.fleteros
                 .Where(f => !string.IsNullOrWhiteSpace(f.NombreFletero))
-                .Select(f => ($"{f.NombreFletero} {f.ApellidoFletero}").Trim());
-
-            var desdeModelo = Fleteros
-                .Where(f => !string.IsNullOrWhiteSpace(f.Fletero))
-                .Select(f => f.Fletero.Trim());
-
-            var clavesPorAsignar = PorAsignarPorFletero?.Keys ?? Enumerable.Empty<string>();
-
-            var conjunto = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            foreach (var n in desdeAlmacen) conjunto.Add(n);
-            foreach (var n in desdeModelo) conjunto.Add(n);
-            foreach (var n in clavesPorAsignar) conjunto.Add(n);
-
-            return conjunto.OrderBy(n => n, StringComparer.OrdinalIgnoreCase).ToList();
+                .Select(f => ($"{f.NombreFletero} {f.ApellidoFletero}").Trim())
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .OrderBy(n => n, StringComparer.OrdinalIgnoreCase)
+                .ToList();
         }
     }
 }

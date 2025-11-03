@@ -10,13 +10,13 @@ namespace GrupoC_TP3.Almacenes
     internal class GuiaEntidad
     {
         public int NumeroGuia { get; set; }
-        public int CUITCUIL { get; set; }
+        public long CUITCUIL { get; set; }
         public int CodPostalDest { get; set; }
         public MetodoEntrega MetodoEntrega { get; set; }
         public string DomicilioDest { get; set; }
         public TamañoCaja TamañoCaja { get; set; }
         public int CodPostalOrig { get; set; }
-        public int DomicilioOrigen { get; set; }
+        public string DomicilioOrigen { get; set; }
         public string NombreDestinatario { get; set; }
         public string ApellidoDestinatario { get; set; }
         public int DNIDestinatario { get; set; }

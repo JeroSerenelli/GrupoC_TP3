@@ -1,0 +1,81 @@
+[
+  {
+    "NumeroGuia": 1240,
+    "CUITCUIL": 20304567891,
+    "CodPostalDest": 1650,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Av. Siempre Viva 742",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Luis",
+    "ApellidoDestinatario": "Lopez",
+    "DNIDestinatario": 12345678,
+    "Importe": 1000.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 2000,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 6,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 6,
+        "Fecha": "2025-11-02T12:00:00",
+        "Descripcion": "Listo para retiro en agencia"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 1241,
+    "CUITCUIL": 20304567891,
+    "CodPostalDest": 1650,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Av. Siempre Viva 742",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Luis",
+    "ApellidoDestinatario": "Lopez",
+    "DNIDestinatario": 12345678,
+    "Importe": 1000.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 2000,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 6,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 6,
+        "Fecha": "2025-11-02T12:05:00",
+        "Descripcion": "Listo para retiro en agencia"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 1242,
+    "CUITCUIL": 20304567891,
+    "CodPostalDest": 1650,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Av. Siempre Viva 742",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Jorge",
+    "ApellidoDestinatario": "Perez",
+    "DNIDestinatario": 11111111,
+    "Importe": 1000.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 2000,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T12:05:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+
+      }
+    ]
+  }
+]

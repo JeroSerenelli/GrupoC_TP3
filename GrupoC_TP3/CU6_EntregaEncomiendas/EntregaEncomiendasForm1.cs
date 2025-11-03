@@ -47,7 +47,7 @@ namespace GrupoC_TP3.CU6_EntregaEncomiendas
                 return;
             }
 
-            modelo.ValidacionCliente(new Encomienda
+            modelo.ConsultaDNI(new Encomienda
             {
                 Dni = salida,
 
@@ -69,15 +69,13 @@ namespace GrupoC_TP3.CU6_EntregaEncomiendas
                 }
             }
 
-
-
-
-
-
         }
 
+        // VIEJO CODIGO DEL BOTON CONFIRMAR, LO COMENTO PARA REMPLAZARLO CON LA LLAMADA AL METODO CONFIRMAR ENTREGA DEL MODELO CON LA LOGICA DE JSON
+        /*
         private void buttonConfirmarEntrega_Click(object sender, EventArgs e)
         {
+            
             var seleccionadas = listViewEncomiendasARetirarAgencia.Items.Cast<ListViewItem>().ToList();
 
             if (listViewEncomiendasARetirarAgencia.Items.Count > 0)
@@ -97,7 +95,38 @@ namespace GrupoC_TP3.CU6_EntregaEncomiendas
             labelNombre.Text = "";
             labelApellido.Text = "";
             textBoxDNI.Text = "";
+            */
+
+        private void buttonConfirmarEntrega_Click(object sender, EventArgs e)
+        {
+            // Verificar que haya encomiendas para entregar. REVISA DIRECTAMENTE EL LISTVIEW, SI NO TIENE ITEMS, NO HAY NADA QUE ENTREGAR Y DIRECTAMENTE RETORNA Y SALTEA EL RESTO
+            if (listViewEncomiendasARetirarAgencia.Items.Count == 0)
+                return;
+
+            // Números de guía a entregar
+            // Esto toma la coleccion de items del listview, los convierte en una lista de objetos de tipo ListViewItem, luego toma el Tag (que es la encomienda), obtiene su NroGuia, lo convierte a int, elimina duplicados y lo convierte a lista
+            var numerosGuia = listViewEncomiendasARetirarAgencia.Items
+                .Cast<ListViewItem>()
+                .Select(item => ((Encomienda)item.Tag).NroGuia)
+                .Select(nro => int.Parse(nro))
+                .Distinct()
+                .ToList();
+
+            // Metodo para actualizar estado e historial en JSON
+            modelo.ConfirmarEntrega(numerosGuia);
+
+            string mensaje = $"Las encomiendas fueron entregadas:\n\n- {string.Join("\n- ", numerosGuia)}";
+            MessageBox.Show(mensaje, "Encomiendas Entregadas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Limpiar pantalla
+            listViewEncomiendasARetirarAgencia.Items.Clear();
+            labelNombre.Text = "";
+            labelApellido.Text = "";
+            textBoxDNI.Text = "";
+            buttonConfirmarEntrega.Enabled = false;
+
 
         }
+
     }
 }

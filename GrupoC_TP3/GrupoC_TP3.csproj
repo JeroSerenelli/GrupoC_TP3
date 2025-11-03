@@ -42,6 +42,9 @@
     <None Update="Datos\Fletero.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="DATOS\Guias.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Datos\HojasRutaMicros.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

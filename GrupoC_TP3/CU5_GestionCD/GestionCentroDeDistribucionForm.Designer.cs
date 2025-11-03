@@ -38,13 +38,13 @@
             columnHeader5 = new ColumnHeader();
             label18 = new Label();
             groupBox2 = new GroupBox();
-            buttonAceptar = new Button();
             groupBox3 = new GroupBox();
             listViewEncomiendasADespachar = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
             buttonActualizar = new Button();
+            buttonAceptar = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -135,16 +135,6 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Descargar y recibir en CD";
             // 
-            // buttonAceptar
-            // 
-            buttonAceptar.Location = new Point(333, 130);
-            buttonAceptar.Name = "buttonAceptar";
-            buttonAceptar.Size = new Size(75, 23);
-            buttonAceptar.TabIndex = 3;
-            buttonAceptar.Text = "Aceptar";
-            buttonAceptar.UseVisualStyleBackColor = true;
-            buttonAceptar.Click += buttonAceptar_Click;
-            // 
             // groupBox3
             // 
             groupBox3.Controls.Add(listViewEncomiendasADespachar);
@@ -193,6 +183,16 @@
             buttonActualizar.UseVisualStyleBackColor = true;
             buttonActualizar.Click += buttonActualizar_Click;
             // 
+            // buttonAceptar
+            // 
+            buttonAceptar.Location = new Point(333, 130);
+            buttonAceptar.Name = "buttonAceptar";
+            buttonAceptar.Size = new Size(75, 23);
+            buttonAceptar.TabIndex = 3;
+            buttonAceptar.Text = "Aceptar";
+            buttonAceptar.UseVisualStyleBackColor = true;
+            buttonAceptar.Click += buttonAceptar_Click;
+            // 
             // GestionCentroDeDistribucionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -223,7 +223,6 @@
         private ColumnHeader columnHeader4;
         private Label label18;
         private GroupBox groupBox2;
-        private Button buttonAceptar;
         private GroupBox groupBox3;
         private ListView listViewEncomiendasADespachar;
         private ColumnHeader columnHeader1;
@@ -231,5 +230,6 @@
         private Button buttonActualizar;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
+        private Button buttonAceptar;
     }
 }

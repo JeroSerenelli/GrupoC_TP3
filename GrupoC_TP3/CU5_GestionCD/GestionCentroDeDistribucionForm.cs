@@ -34,7 +34,7 @@ namespace GrupoC_TP3.CU5_GestionCD
         private void buttonBuscarMicro_Click(object sender, EventArgs e)
         {
             //VALIDACION 1: Que el campo no esté vacío - mensaje de error "Por favor ingrese un valor en el campo "Patente" para realizar una busqueda".
-           
+
             listViewEncomiendasARecibir.Items.Clear();
             listViewEncomiendasADespachar.Items.Clear();
 
@@ -43,7 +43,7 @@ namespace GrupoC_TP3.CU5_GestionCD
                 MessageBox.Show("Ingrese una patente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             //VALIDACION 2: Que la patente este registrada ".
 
             modelo.ValidacionPatente(new EncomiendasEnTransporte
@@ -52,7 +52,7 @@ namespace GrupoC_TP3.CU5_GestionCD
 
             });
 
-            
+
 
             foreach (var EncomiendasEnTransporte in modelo.paquetesRecibidos)
             {
@@ -96,17 +96,19 @@ namespace GrupoC_TP3.CU5_GestionCD
         {
             //VALIDACION 4: Que se haya seleccionado una fila de la lista - mensaje de error "No se ha selecccionado ninguna Hoja de Ruta para ser despachada".
 
+            modelo.Actualizar();
+
             foreach (ListViewItem item in listViewEncomiendasARecibir.Items)
             {
                 item.SubItems[2].Text = "Recibido en CD";
             }
 
-            foreach ( ListViewItem item in listViewEncomiendasADespachar.Items)
+            foreach (ListViewItem item in listViewEncomiendasADespachar.Items)
             {
-                item.SubItems[2].Text = "Entregado. En transporte.";                 
+                item.SubItems[2].Text = "Entregado. En transporte.";
             }
 
-           MessageBox.Show("Actualizado con exito.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Actualizado con exito.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             listViewEncomiendasARecibir.Items.Clear();
             listViewEncomiendasADespachar.Items.Clear();

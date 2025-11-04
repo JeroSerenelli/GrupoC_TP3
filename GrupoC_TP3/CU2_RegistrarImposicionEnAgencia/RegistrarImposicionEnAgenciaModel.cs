@@ -75,8 +75,6 @@ internal class RegistrarImposicionEnAgenciaModel
         return ubicacion;
     }
 
-
-
     internal void ValidarCliente(ValidarCliente validarCliente)
     {
         if (validarCliente.CUITCUIL <= 0)
@@ -103,7 +101,6 @@ internal class RegistrarImposicionEnAgenciaModel
             MessageBox.Show("El cliente es válido.", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
-
 
     internal void CrearEncomienda(Encomienda encomiendas)
     {
@@ -136,37 +133,72 @@ internal class RegistrarImposicionEnAgenciaModel
             return;
         }
 
-        /*if (!listaClientes.Contains(encomiendas.Cliente))
+        if(!ClienteAlmacen.clientes.Any(c => c.CUITCUIL == encomiendas.Cliente))
         {
             MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
-        }*/
+        }
+
+        int codAgencia = 2006; //Hardcodeamos la agencia//
+
+        int codCentroDistribucionOrigen = AgenciaAlmacen.agencias
+            .Where(a => a.CodAgencia == codAgencia)
+            .Select(a => a.CodCentroDist)
+            .FirstOrDefault();
+
+        int codCentroDistribucionDestino = CentroDistribucionAlmacen.centrosDistribucion
+            .Where(cd => cd.Nombre.Equals(encomiendas.CentroDistribucionDestino, StringComparison.OrdinalIgnoreCase))
+            .Select(cd => cd.CodCentroDist)
+            .FirstOrDefault();
+
+
 
 
         for (int i = 0; i < encomiendas.CantidadCajas; i++)
         {
-            var listItem = new ListViewItem();
-            //Generar numero de guia//
-            encomiendas.NumeroGuia = (encomiendas.CodigoAgencia.ToString() + ((DateTime.Now.Ticks)).ToString());
-            //Fin generar numero de guia//
+            var tamañoSeleccionado = Enum.Parse<TamañoCaja>(encomiendas.TipoCaja?.Trim(), ignoreCase: true);
 
-            listItem.Text = encomiendas.NumeroGuia;
-            listItem.SubItems.Add(encomiendas.Provincia);
-            listItem.SubItems.Add(encomiendas.Localidad);
-            listItem.SubItems.Add(encomiendas.MetodoEntrega);
-            listItem.SubItems.Add(encomiendas.CodigoPostal.ToString());
-            listItem.SubItems.Add(encomiendas.CentroDistribucionDestino);
-            listItem.SubItems.Add(encomiendas.Domicilio);
-            listItem.SubItems.Add(encomiendas.CantidadCajas.ToString());
-            listItem.SubItems.Add(encomiendas.TipoCaja);
-            listItem.SubItems.Add(encomiendas.NombreDestinatario);
-            listItem.SubItems.Add(encomiendas.ApellidoDestinatario);
-            listItem.SubItems.Add(encomiendas.DNI.ToString());
-            listItem.SubItems.Add(encomiendas.CodigoAgencia.ToString());
+            decimal importe = TarifaAlmacen.tarifas
+                         .Where(t => t.TamañoCaja == tamañoSeleccionado
+                             && t.CentroDistribucionOrigen == codCentroDistribucionOrigen
+                             && t.CentroDistribucionDestino == codCentroDistribucionDestino)
+                             .Select(t => t.Importe)
+                             .Single();
+            GuiaAlmacen.guias.Add(new GuiaEntidad
+            {
+                NumeroGuia = int.Parse(codAgencia.ToString() + ((DateTime.Now.Ticks)).ToString()[^5..]),
+                CUITCUIL = encomiendas.Cliente,
+                CodPostalDest = encomiendas.CodigoPostal,
+                //MetodoEntrega = Enum.Parse<MetodoEntrega>(encomiendas.MetodoEntrega.Trim(), ignoreCase: true),
+                DomicilioDest = encomiendas.Domicilio,
+                //TamañoCaja = Enum.Parse<TamañoCaja>(encomiendas.TipoCaja.Trim(), ignoreCase: true),
+                CodPostalOrig = AgenciaAlmacen.agencias
+                                    .Where(a => a.CodAgencia == codAgencia)
+                                    .Select(a => a.CodPostalAgencia)
+                                    .FirstOrDefault(),
+                DomicilioOrigen = "Retiro en Agencia",
+                NombreDestinatario = encomiendas.NombreDestinatario,
+                ApellidoDestinatario = encomiendas.ApellidoDestinatario,
+                DNIDestinatario = encomiendas.DNI,
+                Importe = importe,
+                CargosFleteros = 0,//TODO: falta almacen
+                CargosAgencia = 0,//TODO: falta almacen
+                CodAgenciaOrigen = codAgencia,
+                CodCentroDistOrigen = codCentroDistribucionOrigen,
+                EstadoEncomienda = EstadoEncomienda.ListoParaRetirarEnAgencia,
+                HistorialEstadosGuia = new List<HistorialEstadoGuia>
+                {
+                    new HistorialEstadoGuia
+                    {
+                        EstadoGuiaEnum = EstadoEncomienda.ListoParaRetirarEnAgencia,
+                        Fecha = DateTime.Now,
+                        Descripcion = "Encomienda creada y lista para ser retirada en agencia."
+                    }
+                }
+            });
 
-            MessageBox.Show("Guia generada exitosamente: " + encomiendas.NumeroGuia);
-
-            //ListViewItem.Item
+            MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("El importe a cobrar por la encomienda es: $" + GuiaAlmacen.guias.Last().Importe.ToString("F2"), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); //Queria ver si el numero estaba ok
 
 
         }

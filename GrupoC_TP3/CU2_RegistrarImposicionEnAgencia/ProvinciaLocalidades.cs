@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoC_TP3.Almacenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 
         public Ubicacion()
         {
-            ProvinciasYLocalidades = new Dictionary<string, List<string>>
+            /*ProvinciasYLocalidades = new Dictionary<string, List<string>>
                 {
                     { "Buenos Aires", new List<string> { "La Plata", "Mar del Plata", "Bahía Blanca" } },
                     { "Córdoba", new List<string> { "Córdoba Capital", "Villa María", "Río Cuarto" } },
@@ -32,8 +33,17 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                     { "2000", "Centro Rosario" },
                     { "3000", "Centro Santa Fe Capital" },
                     { "2300", "Centro Rafaela" }
-                };
+                };*/
         }
+
+        public static class ProvinciasLocalidades
+        {
+            // Índice: CP -> Centro de Distribución (se construye una sola vez)
+            private static Dictionary<int, CentroDistribucionEntidad> _cdPorCp;
+            private static bool _indiceCdConstruido;
+        }
+
+
 
         public string ObtenerCentroDistribucion(string codigoPostal)
         {

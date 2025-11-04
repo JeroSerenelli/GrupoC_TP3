@@ -29,20 +29,20 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 
             comboBoxTipoCaja.DropDownStyle = ComboBoxStyle.DropDownList;
 
-           
 
-            var ubicacion = modelo.ObtenerUbicacion();
+
+            var ubicacion = modelo.ObtenerUbicacion1();
             cmbBoxProvDst.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
             cmbBoxProvDst.SelectedIndex = -1;
             cmbBoxLocalidadDst.SelectedIndex = -1;
             cmbBoxLocalidadDst.Enabled = false; // hasata que no elija la provincia de destino
-
+            buttonGenerarNumeroGuia.Enabled = false;
         }
 
 
         private void RegistrarImposicionEnAgenciaForm_Load(object sender, EventArgs e)
         {
-            buttonGenerarNumeroGuia.Enabled = false;
+            
         }
 
         private void cmbBoxProvDst_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
             // Limpiar combo de localidad
             cmbBoxLocalidadDst.DataSource = null;
 
-            var ubicacion = modelo.ObtenerUbicacion();
+            var ubicacion = modelo.ObtenerUbicacion1();
             if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
             {
                 cmbBoxLocalidadDst.Enabled = true;
@@ -223,9 +223,12 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
             //Obtengo CD Destino
             string codigoPostal = textBoxCodPostDestino.Text.Trim();
 
-            Ubicacion ubicacion = new Ubicacion();
+            var ubicacion = modelo.ObtenerUbicacion1();
             string centro = ubicacion.ObtenerCentroDistribucion(codigoPostal);
             labelCdDestino.Text = centro;
+            /*Ubicacion ubicacion = new Ubicacion();
+            string centro = ubicacion.ObtenerCentroDistribucion(codigoPostal);
+            labelCdDestino.Text = centro;*/
         }
 
         private void comboBoxMetodoEntrega_SelectedIndexChanged(object sender, EventArgs e)
@@ -264,6 +267,11 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
             );
 
             this.Close();
+        }
+
+        private void RegistrarImposicionEnAgenciaForm_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 

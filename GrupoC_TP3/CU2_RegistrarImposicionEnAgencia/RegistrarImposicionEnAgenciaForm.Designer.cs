@@ -440,6 +440,7 @@
             Controls.Add(buttonGenerarNumeroGuia);
             Name = "RegistrarImposicionEnAgenciaForm";
             Text = "Imposicion - Agencias";
+            Load += RegistrarImposicionEnAgenciaForm_Load_1;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);

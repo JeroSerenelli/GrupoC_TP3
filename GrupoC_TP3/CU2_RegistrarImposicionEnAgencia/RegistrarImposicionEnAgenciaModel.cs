@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoC_TP3.Almacenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,73 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
 
 internal class RegistrarImposicionEnAgenciaModel
 {
-    private long[] listaClientes = new long[] { 12345678910, 99999999 };
-    /*public List<Cliente> Clientes { get; } = new()
-{
-    new Cliente { CUITCUIL = 20378401861},
-    new Cliente { CUITCUIL = 7312345653 }
-};*/
+    //private long[] listaClientes = new long[] { 12345678910, 99999999 };
+
+
+    private Dictionary<int, List<LocalidadEntidad>> _localidadesPorCodProv;
+    private Dictionary<string, int> _codProvPorNombre;
+    private bool _indicesConstruidos;
+
+    private void ConstruirIndicesProvinciasYLocalidades()
+    {
+        if (_indicesConstruidos) return;
+
+        var provincias = ProvinciaAlmacen.provincias ?? new List<ProvinciaEntidad>();
+        var localidades = LocalidadAlmacen.localidades ?? new List<LocalidadEntidad>();
+
+        _codProvPorNombre = provincias
+            .GroupBy(p => p.Nombre, StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(g => g.Key, g => g.First().CodProv, StringComparer.OrdinalIgnoreCase);
+
+        _localidadesPorCodProv = localidades
+            .GroupBy(l => l.CodProv)
+            .ToDictionary(
+                g => g.Key,
+                g => g.OrderBy(l => l.Nombre).ToList()
+            );
+
+        _indicesConstruidos = true;
+    }
+
+    public List<string> LocalidadesDeProvincia(string nombreProvincia)
+    {
+        ConstruirIndicesProvinciasYLocalidades();
+
+        if (string.IsNullOrWhiteSpace(nombreProvincia))
+            return new List<string>();
+
+        if (!_codProvPorNombre.TryGetValue(nombreProvincia, out var codProv))
+            return new List<string>();
+
+        if (!_localidadesPorCodProv.TryGetValue(codProv, out var locs))
+            return new List<string>();
+
+        return locs.Select(l => l.Nombre)
+                   .Distinct(StringComparer.OrdinalIgnoreCase)
+                   .OrderBy(n => n, StringComparer.OrdinalIgnoreCase)
+                   .ToList();
+    }
+    public Ubicacion ObtenerUbicacion1()
+    {
+        var ubicacion = new Ubicacion
+        {
+            ProvinciasYLocalidades = ProvinciaAlmacen.provincias.Select(p => new
+            {
+                p.Nombre,
+                Localidades = LocalidadAlmacen.localidades.Where(l => l.CodProv == p.CodProv)
+                                                          .Select(l => l.Nombre)
+                                                          .OrderBy(n => n)
+                                                          .ToList()
+            }).ToDictionary(p => p.Nombre, v => v.Localidades),
+
+            CodigoPostalCentroDistribucion = CentroDistribucionAlmacen.centrosDistribucion
+                                                                      .ToDictionary(cd => cd.CodPostal.ToString("0000"), cd => cd.Nombre)
+        };
+
+        return ubicacion;
+    }
+
+
 
     internal void ValidarCliente(ValidarCliente validarCliente)
     {
@@ -31,16 +93,14 @@ internal class RegistrarImposicionEnAgenciaModel
             return;
         }
 
-        if (!listaClientes.Contains(validarCliente.CUITCUIL))
+
+        if (!ClienteAlmacen.clientes.Any(c => c.CUITCUIL == validarCliente.CUITCUIL))
         {
             MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
         }
-
         else
         {
-            MessageBox.Show("Cliente valido", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return;
+            MessageBox.Show("El cliente es válido.", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 
@@ -76,11 +136,11 @@ internal class RegistrarImposicionEnAgenciaModel
             return;
         }
 
-        if (!listaClientes.Contains(encomiendas.Cliente))
+        /*if (!listaClientes.Contains(encomiendas.Cliente))
         {
             MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
-        }
+        }*/
 
 
         for (int i = 0; i < encomiendas.CantidadCajas; i++)

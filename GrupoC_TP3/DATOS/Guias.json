@@ -5,7 +5,7 @@
     "CodPostalDest": 1650,
     "MetodoEntrega": 1,
     "DomicilioDest": "Av. Siempre Viva 742",
-    "TamañoCaja": 0,
+    "TamaÃ±oCaja": 0,
     "CodPostalOrig": 1650,
     "DomicilioOrigen": "Beiro 1125",
     "NombreDestinatario": "Luis",
@@ -31,7 +31,7 @@
     "CodPostalDest": 1650,
     "MetodoEntrega": 1,
     "DomicilioDest": "Av. Siempre Viva 742",
-    "TamañoCaja": 0,
+    "TamaÃ±oCaja": 0,
     "CodPostalOrig": 1650,
     "DomicilioOrigen": "Beiro 1125",
     "NombreDestinatario": "Luis",
@@ -57,7 +57,7 @@
     "CodPostalDest": 1650,
     "MetodoEntrega": 1,
     "DomicilioDest": "Av. Siempre Viva 742",
-    "TamañoCaja": 0,
+    "TamaÃ±oCaja": 0,
     "CodPostalOrig": 1650,
     "DomicilioOrigen": "Beiro 1125",
     "NombreDestinatario": "Jorge",
@@ -74,7 +74,474 @@
         "Estado": 5,
         "Fecha": "2025-11-02T12:05:00",
         "Descripcion": "Recibido En Centro Distribucion Destino"
-
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 147929,
+    "CUITCUIL": 27222333444,
+    "CodPostalDest": 1000,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Calle Falsa 123",
+    "TamaÃ±oCaja": 1,
+    "CodPostalOrig": 1000,
+    "DomicilioOrigen": "Origen 45",
+    "NombreDestinatario": "MarÃ­a",
+    "ApellidoDestinatario": "GonzÃ¡lez",
+    "DNIDestinatario": 30123456,
+    "Importe": 550.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 100,
+    "CodCentroDistOrigen": 10,
+    "EstadoEncomienda": 7,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T08:30:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 171993,
+    "CUITCUIL": 27445566778,
+    "CodPostalDest": 1002,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Corrientes 890",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1002,
+    "DomicilioOrigen": "Origen 22",
+    "NombreDestinatario": "Roberto",
+    "ApellidoDestinatario": "Fernandez",
+    "DNIDestinatario": 32456789,
+    "Importe": 380.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 108,
+    "CodCentroDistOrigen": 18,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T09:00:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 199267,
+    "CUITCUIL": 27998877665,
+    "CodPostalDest": 1015,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Lavalle 450",
+    "TamaÃ±oCaja": 1,
+    "CodPostalOrig": 1015,
+    "DomicilioOrigen": "Origen 88",
+    "NombreDestinatario": "Marta",
+    "ApellidoDestinatario": "Silva",
+    "DNIDestinatario": 29876543,
+    "Importe": 670.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 109,
+    "CodCentroDistOrigen": 19,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T10:30:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 407192,
+    "CUITCUIL": 28111222333,
+    "CodPostalDest": 1002,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Santa Fe 1234",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1002,
+    "DomicilioOrigen": "Origen 90",
+    "NombreDestinatario": "Patricia",
+    "ApellidoDestinatario": "Moreno",
+    "DNIDestinatario": 31234567,
+    "Importe": 520.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 110,
+    "CodCentroDistOrigen": 20,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T08:45:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 438715,
+    "CUITCUIL": 20399888776,
+    "CodPostalDest": 1000,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Rivadavia 200",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1000,
+    "DomicilioOrigen": "Origen 12",
+    "NombreDestinatario": "Pedro",
+    "ApellidoDestinatario": "Alvarez",
+    "DNIDestinatario": 28900765,
+    "Importe": 420.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 101,
+    "CodCentroDistOrigen": 11,
+    "EstadoEncomienda": 7,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T09:10:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 451319,
+    "CUITCUIL": 27111222333,
+    "CodPostalDest": 1017,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Belgrano 555",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1017,
+    "DomicilioOrigen": "Origen 78",
+    "NombreDestinatario": "LucÃ­a",
+    "ApellidoDestinatario": "RodrÃ­guez",
+    "DNIDestinatario": 42629238,
+    "Importe": 750.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 102,
+    "CodCentroDistOrigen": 12,
+    "EstadoEncomienda": 7,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T10:15:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 469329,
+    "CUITCUIL": 28333444555,
+    "CodPostalDest": 1013,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Callao 678",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1013,
+    "DomicilioOrigen": "Origen 55",
+    "NombreDestinatario": "Esteban",
+    "ApellidoDestinatario": "Ramirez",
+    "DNIDestinatario": 33445566,
+    "Importe": 490.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 111,
+    "CodCentroDistOrigen": 21,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T11:15:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 551319,
+    "CUITCUIL": 27889900111,
+    "CodPostalDest": 1017,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Acoyte 234",
+    "TamaÃ±oCaja": 1,
+    "CodPostalOrig": 1017,
+    "DomicilioOrigen": "Origen 99",
+    "NombreDestinatario": "Gabriela",
+    "ApellidoDestinatario": "Medina",
+    "DNIDestinatario": 34567890,
+    "Importe": 820.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 112,
+    "CodCentroDistOrigen": 22,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T09:30:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 584117,
+    "CUITCUIL": 28556677889,
+    "CodPostalDest": 1015,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Uriburu 890",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1015,
+    "DomicilioOrigen": "Origen 66",
+    "NombreDestinatario": "Fernando",
+    "ApellidoDestinatario": "Torres",
+    "DNIDestinatario": 28765432,
+    "Importe": 540.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 113,
+    "CodCentroDistOrigen": 23,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T10:45:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 595934,
+    "CUITCUIL": 27667788990,
+    "CodPostalDest": 1002,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Pueyrredon 345",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1002,
+    "DomicilioOrigen": "Origen 77",
+    "NombreDestinatario": "Valeria",
+    "ApellidoDestinatario": "Diaz",
+    "DNIDestinatario": 30987654,
+    "Importe": 600.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 114,
+    "CodCentroDistOrigen": 24,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T09:20:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 641739,
+    "CUITCUIL": 27655444333,
+    "CodPostalDest": 1000,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "San MartÃ­n 88",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1000,
+    "DomicilioOrigen": "Origen 21",
+    "NombreDestinatario": "Carlos",
+    "ApellidoDestinatario": "Castro",
+    "DNIDestinatario": 28373390,
+    "Importe": 630.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 103,
+    "CodCentroDistOrigen": 13,
+    "EstadoEncomienda": 7,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T11:00:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 710112,
+    "CUITCUIL": 28223344556,
+    "CodPostalDest": 1017,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Juncal 123",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1017,
+    "DomicilioOrigen": "Origen 111",
+    "NombreDestinatario": "Sandra",
+    "ApellidoDestinatario": "Vega",
+    "DNIDestinatario": 35678901,
+    "Importe": 710.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 115,
+    "CodCentroDistOrigen": 25,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T10:00:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 724514,
+    "CUITCUIL": 27778899001,
+    "CodPostalDest": 1013,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Paraguay 567",
+    "TamaÃ±oCaja": 1,
+    "CodPostalOrig": 1013,
+    "DomicilioOrigen": "Origen 123",
+    "NombreDestinatario": "Diego",
+    "ApellidoDestinatario": "Ortiz",
+    "DNIDestinatario": 32109876,
+    "Importe": 880.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 116,
+    "CodCentroDistOrigen": 26,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T11:30:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 730112,
+    "CUITCUIL": 27900111222,
+    "CodPostalDest": 1017,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Alvear 77",
+    "TamaÃ±oCaja": 1,
+    "CodPostalOrig": 1017,
+    "DomicilioOrigen": "Origen 33",
+    "NombreDestinatario": "Julieta",
+    "ApellidoDestinatario": "RodrÃ­guez",
+    "DNIDestinatario": 42629238,
+    "Importe": 810.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 104,
+    "CodCentroDistOrigen": 14,
+    "EstadoEncomienda": 7,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T11:20:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 788364,
+    "CUITCUIL": 28445566778,
+    "CodPostalDest": 1017,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Scalabrini Ortiz 901",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1017,
+    "DomicilioOrigen": "Origen 145",
+    "NombreDestinatario": "Monica",
+    "ApellidoDestinatario": "Benitez",
+    "DNIDestinatario": 29654321,
+    "Importe": 590.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 117,
+    "CodCentroDistOrigen": 27,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T09:45:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 798364,
+    "CUITCUIL": 28099877655,
+    "CodPostalDest": 1017,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Mitre 401",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1017,
+    "DomicilioOrigen": "Origen 44",
+    "NombreDestinatario": "Ana",
+    "ApellidoDestinatario": "FernÃ¡ndez",
+    "DNIDestinatario": 35261035,
+    "Importe": 470.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 105,
+    "CodCentroDistOrigen": 15,
+    "EstadoEncomienda": 7,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T11:45:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 800051,
+    "CUITCUIL": 28122333444,
+    "CodPostalDest": 1007,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Dorrego 290",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1007,
+    "DomicilioOrigen": "Origen 50",
+    "NombreDestinatario": "Agustina",
+    "ApellidoDestinatario": "Flores",
+    "DNIDestinatario": 24807375,
+    "Importe": 690.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 106,
+    "CodCentroDistOrigen": 16,
+    "EstadoEncomienda": 7,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T12:05:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 958537,
+    "CUITCUIL": 28233444555,
+    "CodPostalDest": 1007,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "9 de Julio 100",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1007,
+    "DomicilioOrigen": "Origen 66",
+    "NombreDestinatario": "Agustina",
+    "ApellidoDestinatario": "Flores",
+    "DNIDestinatario": 24807375,
+    "Importe": 730.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 107,
+    "CodCentroDistOrigen": 17,
+    "EstadoEncomienda": 7,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T12:10:00",
+        "Descripcion": "Asignada a fletero"
       }
     ]
   }

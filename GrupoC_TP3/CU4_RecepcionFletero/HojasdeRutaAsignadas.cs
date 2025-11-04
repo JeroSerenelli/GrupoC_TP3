@@ -8,9 +8,9 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 {
     public class HojasDeRutaAsignadas
     {
-        public string Fletero { get; set; }
+        public int DNIFletero { get; set; } 
         public string HojaDeRuta { get; set; }
         public string NroGuia { get; set; }
-        public string Estado {  get; set; }
+        public string Estado { get; set; }
     }
 }

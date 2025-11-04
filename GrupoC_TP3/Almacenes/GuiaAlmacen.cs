@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GrupoC_TP3.Almacenes
@@ -15,7 +17,9 @@ namespace GrupoC_TP3.Almacenes
             if (File.Exists(@"Datos\Guias.json"))
             {
                 var guiaJson = File.ReadAllText(@"Datos\Guias.json");
-                guias = System.Text.Json.JsonSerializer.Deserialize<List<GuiaEntidad>>(guiaJson) ?? new List<GuiaEntidad>();
+                var options = new JsonSerializerOptions();
+                options.Converters.Add(new JsonStringEnumConverter());
+                guias = System.Text.Json.JsonSerializer.Deserialize<List<GuiaEntidad>>(guiaJson,options) ?? new List<GuiaEntidad>();
             }
         }
 

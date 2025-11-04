@@ -169,10 +169,9 @@ internal class RegistrarImposicionEnAgenciaModel
                 NumeroGuia = int.Parse(codAgencia.ToString() + ((DateTime.Now.Ticks)).ToString()[^5..]),
                 CUITCUIL = encomiendas.Cliente,
                 CodPostalDest = encomiendas.CodigoPostal,
-                //MetodoEntrega = Enum.Parse<MetodoEntrega>(encomiendas.MetodoEntrega.Trim(), ignoreCase: true),
+                
                 DomicilioDest = encomiendas.Domicilio,
-                //TamañoCaja = Enum.Parse<TamañoCaja>(encomiendas.TipoCaja.Trim(), ignoreCase: true),
-                CodPostalOrig = AgenciaAlmacen.agencias
+                                CodPostalOrig = AgenciaAlmacen.agencias
                                     .Where(a => a.CodAgencia == codAgencia)
                                     .Select(a => a.CodPostalAgencia)
                                     .FirstOrDefault(),

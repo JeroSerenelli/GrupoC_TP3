@@ -545,7 +545,7 @@
       }
     ]
   },
-  { // Guias de prueba CU5 - Jero
+  { 
     "NumeroGuia": 105966,
     "CUITCUIL": 21368503374,
     "CodPostalDest": 1000,
@@ -669,5 +669,5 @@
         "Estado": "Creada"
       }
     ]
-  } // CU5 - Hasta aha llegan las guias de Jero
+  } 
 ]

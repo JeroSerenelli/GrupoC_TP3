@@ -1,74 +1,380 @@
-﻿using GrupoC_TP3.CU7_ConsultaEstadoGuia;
-using GrupoC_TP3.Almacenes;
+﻿using GrupoC_TP3.Almacenes;
+using GrupoC_TP3.CU7_ConsultaEstadoGuia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 
 namespace GrupoC_TP3.CU4_RecepcionFletero
 {
     public class RecepcionFleterosModel
     {
-        // Hardcodeado para coincidir con Datos\HojaDeRutaFlete.json:
-        // sólo incluyo las HDR con Estado "NoCumplida" (mapeadas a "No Cumplida")
-        public List<HojasDeRutaAsignadas> Fleteros { get; } = new()
+        // Dictionary ahora usa DNI (int) como clave en lugar de nombre (string)
+        public List<HojasDeRutaAsignadas> Fleteros { get; } = new();
+        public Dictionary<int, List<HojasDeRutaPorAsignar>> PorAsignarPorFletero { get; } = new();
+
+        public RecepcionFleterosModel()
         {
-            // HojaRutaFlete 1 - DNIFletero 33190535 -> Agustina Herrera (NoCumplida)
-            new HojasDeRutaAsignadas { Fletero = "Agustina Herrera", HojaDeRuta = "1", NroGuia = "147929", Estado = "No Cumplida" },
-            new HojasDeRutaAsignadas { Fletero = "Agustina Herrera", HojaDeRuta = "1", NroGuia = "641739", Estado = "No Cumplida" },
-            new HojasDeRutaAsignadas { Fletero = "Agustina Herrera", HojaDeRuta = "1", NroGuia = "438715", Estado = "No Cumplida" },
+            Refresh();
+        }
 
-            // HojaRutaFlete 4 - DNIFletero 24807375 -> Agustina Flores (NoCumplida)
-            new HojasDeRutaAsignadas { Fletero = "Agustina Flores", HojaDeRuta = "4", NroGuia = "800051", Estado = "No Cumplida" },
-            new HojasDeRutaAsignadas { Fletero = "Agustina Flores", HojaDeRuta = "4", NroGuia = "958537", Estado = "No Cumplida" },
-            
-            // HojaRutaFlete 11 - DNIFletero 42629238 -> Julieta Rodríguez (NoCumplida)
-            new HojasDeRutaAsignadas { Fletero = "Julieta Rodríguez", HojaDeRuta = "11", NroGuia = "451319", Estado = "No Cumplida" },
-            new HojasDeRutaAsignadas { Fletero = "Julieta Rodríguez", HojaDeRuta = "11", NroGuia = "798364", Estado = "No Cumplida" },
-            new HojasDeRutaAsignadas { Fletero = "Julieta Rodríguez", HojaDeRuta = "11", NroGuia = "730112", Estado = "No Cumplida" },
-        };
-
-        // Hardcodeado con las HDR que en HojaDeRutaFlete.json están en "PendienteAsignación"
-        public Dictionary<string, List<HojasDeRutaPorAsignar>> PorAsignarPorFletero { get; } = new()
+        public void Refresh()
         {
-            // HojaRutaFlete 2 - DNIFletero 28373390 -> Carlos Castro (PendienteAsignación)
-            { "Carlos Castro", new List<HojasDeRutaPorAsignar> {
-                new() { Fletero = "Carlos Castro", HojaDeRuta = "2", NroGuia = "407192" },
-                new() { Fletero = "Carlos Castro", HojaDeRuta = "2", NroGuia = "171993" },
-                new() { Fletero = "Carlos Castro", HojaDeRuta = "2", NroGuia = "595934" },
-            }},
+            RefreshFleterosDesdeAlmacen();
+            RefreshPorAsignarDesdeAlmacen();
+        }
 
-            // HojaRutaFlete 7 - DNIFletero 21295377 -> Lucía Suárez (PendienteAsignación)
-            { "Lucía Suárez", new List<HojasDeRutaPorAsignar> {
-                new() { Fletero = "Lucía Suárez", HojaDeRuta = "7", NroGuia = "724514" },
-                new() { Fletero = "Lucía Suárez", HojaDeRuta = "7", NroGuia = "469329" },
-            }},
+        private void RefreshFleterosDesdeAlmacen()
+        {
+            Fleteros.Clear();
 
-            // HojaRutaFlete 8 - DNIFletero 35589539 -> Juan Alvarez (PendienteAsignación)
-            { "Juan Alvarez", new List<HojasDeRutaPorAsignar> {
-                new() { Fletero = "Juan Alvarez", HojaDeRuta = "8", NroGuia = "199267" },
-                new() { Fletero = "Juan Alvarez", HojaDeRuta = "8", NroGuia = "584117" },
-            }},
+            var hojas = HojaRutaFleteAlmacen.hojasRutaFletes ?? new List<HojaRutaFleteEntidad>();
+            var guias = GuiaAlmacen.guias ?? new List<GuiaEntidad>();
 
-            // HojaRutaFlete 9 - DNIFletero 42629238 -> Julieta Rodríguez (PendienteAsignación)
-            { "Julieta Rodríguez", new List<HojasDeRutaPorAsignar> {
-                new() { Fletero = "Julieta Rodríguez", HojaDeRuta = "9", NroGuia = "551319" },
-                new() { Fletero = "Julieta Rodríguez", HojaDeRuta = "9", NroGuia = "788364" },
-                new() { Fletero = "Julieta Rodríguez", HojaDeRuta = "9", NroGuia = "710112" },
-            }},
-        };
+            foreach (var hdr in hojas.Where(h => h.EstadoHojaRutaFlete == EstadoHojaRutaFlete.NoCumplida))
+            {
+                string estadoStr = hdr.EstadoHojaRutaFlete == EstadoHojaRutaFlete.Cumplida ? "Cumplida" : "No Cumplida";
 
-        // Devuelve TODOS los fleteros definidos en FleteroAlmacen (Nombre + Apellido)
-        // No filtramos por estado, esto siempre trae el listado completo del JSON.
-        public List<string> ObtenerNombresFleteros()
+                foreach (var num in hdr.NumerosGuiaFlete)
+                {
+                    var guia = guias.FirstOrDefault(g => g.NumeroGuia == num.NumeroGuia);
+                    if (guia == null) continue;
+
+                    Fleteros.Add(new HojasDeRutaAsignadas
+                    {
+                        DNIFletero = hdr.DNIFletero,  // Ahora guardamos DNI
+                        HojaDeRuta = hdr.HojaRutaFlete.ToString(),
+                        NroGuia = num.NumeroGuia.ToString(),
+                        Estado = estadoStr
+                    });
+                }
+            }
+        }
+
+        private void RefreshPorAsignarDesdeAlmacen()
+        {
+            PorAsignarPorFletero.Clear();
+
+            var hojas = HojaRutaFleteAlmacen.hojasRutaFletes ?? new List<HojaRutaFleteEntidad>();
+            var guias = GuiaAlmacen.guias ?? new List<GuiaEntidad>();
+            var fleterosAlmacen = FleteroAlmacen.fleteros ?? new List<FleteroEntidad>();
+
+            foreach (var hdr in hojas.Where(h => h.EstadoHojaRutaFlete == EstadoHojaRutaFlete.PendienteAsignacion))
+            {
+                var candidatosDNI = fleterosAlmacen
+                    .Where(f => f.CodPostalActividad == hdr.CodPostal)
+                    .Select(f => f.DNIFletero)
+                    .Distinct()
+                    .ToList();
+
+                if (!candidatosDNI.Any()) continue;
+
+                foreach (var dni in candidatosDNI)
+                {
+                    if (!PorAsignarPorFletero.TryGetValue(dni, out var list))
+                    {
+                        list = new List<HojasDeRutaPorAsignar>();
+                        PorAsignarPorFletero[dni] = list;
+                    }
+
+                    foreach (var num in hdr.NumerosGuiaFlete)
+                    {
+                        var guia = guias.FirstOrDefault(g => g.NumeroGuia == num.NumeroGuia);
+                        if (guia == null) continue;
+
+                        list.Add(new HojasDeRutaPorAsignar
+                        {
+                            DNIFletero = dni,
+                            HojaDeRuta = hdr.HojaRutaFlete.ToString(),
+                            NroGuia = num.NumeroGuia.ToString()
+                        });
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Devuelve TODOS los fleteros (entidades completas) para poblar el combo
+        /// </summary>
+        internal List<FleteroEntidad> ObtenerTodosLosFleteros()
         {
             return FleteroAlmacen.fleteros
-                .Where(f => !string.IsNullOrWhiteSpace(f.NombreFletero))
-                .Select(f => ($"{f.NombreFletero} {f.ApellidoFletero}").Trim())
-                .Distinct(StringComparer.OrdinalIgnoreCase)
-                .OrderBy(n => n, StringComparer.OrdinalIgnoreCase)
+                .DistinctBy(f => f.DNIFletero)        //Filtrar duplicados por DNI
+                .OrderBy(f => f.NombreFletero)
+                .ThenBy(f => f.ApellidoFletero)
                 .ToList();
+        }
+
+        /// <summary>
+        /// Botón "IMPRIMIR DETALLE"
+        /// Actualiza HDR -> Cumplida y TODAS las guías de esa HDR -> Entregado
+        /// </summary>
+        public void ImprimirDetalleHDRAsignadas(List<HojasDeRutaAsignadas> hojasSeleccionadas)
+        {
+            if (hojasSeleccionadas == null || !hojasSeleccionadas.Any())
+                throw new ArgumentException("Debe tildar al menos una Hoja de Ruta asignada");
+
+            // Obtener IDs únicos de las HDR seleccionadas
+            var hojasIds = hojasSeleccionadas
+                .Select(h => h.HojaDeRuta)
+                .Where(s => int.TryParse(s, out _))
+                .Select(int.Parse)
+                .Distinct()
+                .ToList();
+
+            var hojasAlmacen = HojaRutaFleteAlmacen.hojasRutaFletes;
+            var guiasAlmacen = GuiaAlmacen.guias;
+
+            // Obtener TODAS las guías de las HDR seleccionadas (no solo las tildadas)
+            var todasLasGuiasDeHDR = new List<int>();
+            foreach (var id in hojasIds)
+            {
+                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
+                if (hdr != null)
+                {
+                    todasLasGuiasDeHDR.AddRange(hdr.NumerosGuiaFlete.Select(n => n.NumeroGuia));
+                }
+            }
+
+            // ========== DEBUG TEMPORAL - ANTES ==========
+            System.Diagnostics.Debug.WriteLine("╔════════════════════════════════════════════╗");
+            System.Diagnostics.Debug.WriteLine("║       ANTES DE ACTUALIZAR                  ║");
+            System.Diagnostics.Debug.WriteLine("╚════════════════════════════════════════════╝");
+
+            // Mostrar estado de HDR
+            System.Diagnostics.Debug.WriteLine("\n--- HOJAS DE RUTA ---");
+            foreach (var id in hojasIds)
+            {
+                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
+                System.Diagnostics.Debug.WriteLine($"HDR {id}: Estado = {hdr?.EstadoHojaRutaFlete}");
+                if (hdr != null)
+                {
+                    System.Diagnostics.Debug.WriteLine($"  Guías en esta HDR: {string.Join(", ", hdr.NumerosGuiaFlete.Select(n => n.NumeroGuia))}");
+                }
+            }
+
+            // Mostrar estado de TODAS las Guías de las HDR
+            System.Diagnostics.Debug.WriteLine("\n--- GUÍAS (TODAS LAS DE LAS HDR SELECCIONADAS) ---");
+            foreach (var nro in todasLasGuiasDeHDR)
+            {
+                var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
+                if (guia == null)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: NO ENCONTRADA");
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: Estado = {guia.EstadoEncomienda}");
+                    System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
+                    foreach (var hist in guia.HistorialEstadosGuia)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuiaEnum} - {hist.Descripcion}");
+                    }
+                }
+            }
+            // ============================================
+
+            // Actualizar HDR a Cumplida
+            foreach (var id in hojasIds)
+            {
+                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
+                if (hdr != null && hdr.EstadoHojaRutaFlete == EstadoHojaRutaFlete.NoCumplida)
+                {
+                    hdr.EstadoHojaRutaFlete = EstadoHojaRutaFlete.Cumplida;
+                }
+            }
+            HojaRutaFleteAlmacen.GuardarHojaDeRutaFlete();
+
+            // Actualizar TODAS las guías de las HDR seleccionadas (no solo las tildadas)
+            foreach (var nro in todasLasGuiasDeHDR)
+            {
+                var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
+                if (guia == null) continue;
+
+                guia.EstadoEncomienda = EstadoEncomienda.Entregado;
+                guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+                {
+                    EstadoGuiaEnum = EstadoEncomienda.Entregado,
+                    Fecha = DateTime.Now,
+                    Descripcion = "Entregado por fletero"
+                });
+            }
+            GuiaAlmacen.GuardarGuia();
+
+            // ========== DEBUG TEMPORAL - DESPUÉS ==========
+            System.Diagnostics.Debug.WriteLine("\n╔════════════════════════════════════════════╗");
+            System.Diagnostics.Debug.WriteLine("║       DESPUÉS DE ACTUALIZAR                ║");
+            System.Diagnostics.Debug.WriteLine("╚════════════════════════════════════════════╝");
+
+            // Mostrar estado de HDR
+            System.Diagnostics.Debug.WriteLine("\n--- HOJAS DE RUTA ---");
+            foreach (var id in hojasIds)
+            {
+                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
+                System.Diagnostics.Debug.WriteLine($"HDR {id}: Estado = {hdr?.EstadoHojaRutaFlete}");
+            }
+
+            // Mostrar estado de TODAS las Guías
+            System.Diagnostics.Debug.WriteLine("\n--- GUÍAS (TODAS LAS DE LAS HDR SELECCIONADAS) ---");
+            foreach (var nro in todasLasGuiasDeHDR)
+            {
+                var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
+                if (guia == null)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: NO ENCONTRADA");
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: Estado = {guia.EstadoEncomienda}");
+                    System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
+                    foreach (var hist in guia.HistorialEstadosGuia)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuiaEnum} - {hist.Descripcion}");
+                    }
+                }
+            }
+            System.Diagnostics.Debug.WriteLine("\n════════════════════════════════════════════\n");
+            // =============================================
+
+            // refrescar listas públicas para que UI vea los cambios
+            Refresh();
+        }
+
+        /// <summary>
+        /// Botón "ASIGNAR"
+        /// Asigna HDR pendientes al fletero y actualiza TODAS las guías de esa HDR
+        /// </summary>
+        public void AsignarHojasDeRutaAFletero(int dniFletero, List<HojasDeRutaPorAsignar> hojasSeleccionadas)
+        {
+            if (hojasSeleccionadas == null || !hojasSeleccionadas.Any())
+                throw new ArgumentException("Debe seleccionar al menos una Hoja de Ruta para asignar");
+
+            // Obtener IDs únicos de las HDR seleccionadas
+            var hojasIds = hojasSeleccionadas
+                .Select(h => h.HojaDeRuta)
+                .Where(s => int.TryParse(s, out _))
+                .Select(int.Parse)
+                .Distinct()
+                .ToList();
+
+            var hojasAlmacen = HojaRutaFleteAlmacen.hojasRutaFletes;
+            var guiasAlmacen = GuiaAlmacen.guias;
+
+            // Obtener TODAS las guías de las HDR seleccionadas (no solo las seleccionadas en el ListView)
+            var todasLasGuiasDeHDR = new List<int>();
+            foreach (var id in hojasIds)
+            {
+                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
+                if (hdr != null)
+                {
+                    todasLasGuiasDeHDR.AddRange(hdr.NumerosGuiaFlete.Select(n => n.NumeroGuia));
+                }
+            }
+
+            // ========== DEBUG TEMPORAL - ANTES ==========
+            System.Diagnostics.Debug.WriteLine("╔════════════════════════════════════════════╗");
+            System.Diagnostics.Debug.WriteLine("║       ANTES DE ASIGNAR                     ║");
+            System.Diagnostics.Debug.WriteLine("╚════════════════════════════════════════════╝");
+            System.Diagnostics.Debug.WriteLine($"DNI Fletero a asignar: {dniFletero}");
+
+            // Mostrar estado de HDR
+            System.Diagnostics.Debug.WriteLine("\n--- HOJAS DE RUTA ---");
+            foreach (var id in hojasIds)
+            {
+                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
+                System.Diagnostics.Debug.WriteLine($"HDR {id}: Estado = {hdr?.EstadoHojaRutaFlete}, DNI = {hdr?.DNIFletero}");
+                if (hdr != null)
+                {
+                    System.Diagnostics.Debug.WriteLine($"  Guías en esta HDR: {string.Join(", ", hdr.NumerosGuiaFlete.Select(n => n.NumeroGuia))}");
+                }
+            }
+
+            // Mostrar estado de TODAS las Guías de las HDR
+            System.Diagnostics.Debug.WriteLine("\n--- GUÍAS (TODAS LAS DE LAS HDR SELECCIONADAS) ---");
+            foreach (var nro in todasLasGuiasDeHDR)
+            {
+                var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
+                if (guia == null)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: NO ENCONTRADA");
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: Estado = {guia.EstadoEncomienda}");
+                    System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
+                    foreach (var hist in guia.HistorialEstadosGuia)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuiaEnum} - {hist.Descripcion}");
+                    }
+                }
+            }
+            // ============================================
+
+            // Actualizar HDR: PendienteAsignacion -> NoCumplida + asignar DNI
+            foreach (var id in hojasIds)
+            {
+                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
+                if (hdr != null && hdr.EstadoHojaRutaFlete == EstadoHojaRutaFlete.PendienteAsignacion)
+                {
+                    hdr.EstadoHojaRutaFlete = EstadoHojaRutaFlete.NoCumplida;
+                    hdr.DNIFletero = dniFletero;
+                }
+            }
+            HojaRutaFleteAlmacen.GuardarHojaDeRutaFlete();
+
+            // Actualizar TODAS las guías de las HDR seleccionadas
+            foreach (var nro in todasLasGuiasDeHDR)
+            {
+                var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
+                if (guia == null) continue;
+
+                guia.EstadoEncomienda = EstadoEncomienda.EnCaminoADomicilioDestino;
+                guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+                {
+                    EstadoGuiaEnum = EstadoEncomienda.EnCaminoADomicilioDestino,
+                    Fecha = DateTime.Now,
+                    Descripcion = "Asignado a fletero"
+                });
+            }
+            GuiaAlmacen.GuardarGuia();
+
+            // ========== DEBUG TEMPORAL - DESPUÉS ==========
+            System.Diagnostics.Debug.WriteLine("\n╔════════════════════════════════════════════╗");
+            System.Diagnostics.Debug.WriteLine("║       DESPUÉS DE ASIGNAR                   ║");
+            System.Diagnostics.Debug.WriteLine("╚════════════════════════════════════════════╝");
+
+            // Mostrar estado de HDR
+            System.Diagnostics.Debug.WriteLine("\n--- HOJAS DE RUTA ---");
+            foreach (var id in hojasIds)
+            {
+                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
+                System.Diagnostics.Debug.WriteLine($"HDR {id}: Estado = {hdr?.EstadoHojaRutaFlete}, DNI = {hdr?.DNIFletero}");
+            }
+
+            // Mostrar estado de TODAS las Guías
+            System.Diagnostics.Debug.WriteLine("\n--- GUÍAS (TODAS LAS DE LAS HDR SELECCIONADAS) ---");
+            foreach (var nro in todasLasGuiasDeHDR)
+            {
+                var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
+                if (guia == null)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: NO ENCONTRADA");
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: Estado = {guia.EstadoEncomienda}");
+                    System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
+                    foreach (var hist in guia.HistorialEstadosGuia)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuiaEnum} - {hist.Descripcion}");
+                    }
+                }
+            }
+            System.Diagnostics.Debug.WriteLine("\n════════════════════════════════════════════\n");
+            // =============================================
+
+            // refrescar listas públicas para que UI vea los cambios
+            Refresh();
         }
     }
 }

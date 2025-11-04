@@ -1,10 +1,10 @@
 ﻿using GrupoC_TP3.Almacenes;
+using System.Text.Json;
 
 namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 {
     internal class RegistrarImposicionRetiroPorDomicilioModel
     {
-        // Índices en memoria (solo del modelo)
         private Dictionary<int, List<LocalidadEntidad>> _localidadesPorCodProv;
         private Dictionary<string, int> _codProvPorNombre;
         private bool _indicesConstruidos;
@@ -48,7 +48,6 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                        .OrderBy(n => n, StringComparer.OrdinalIgnoreCase)
                        .ToList();
         }
-
         public Ubicacion ObtenerUbicacion1()
         {
             var ubicacion = new Ubicacion
@@ -69,9 +68,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             return ubicacion;
         }
 
-
-
-        internal void ValidacionCliente(ValidacionClientes cliente)
+        public void ValidacionCliente(ValidacionClientes cliente)
         {
             //SEA POSITIVO 
             if (cliente.CUITCUIL <= 0) //Lvl 2
@@ -87,27 +84,6 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 //textBoxDNIDestinatario.Focus();
                 return;
             }
-
-            //TODO: no me funciona esta busqueda. 
-            /*
-            bool ok = false;
-            foreach (var c in ClienteAlmacen.clientes)
-            {
-                if (cliente.CUITCUIL == c.CUITCUIL)
-                {
-                    ok = true;
-                    return;
-                }
-            }
-
-            if (!ok)
-            {
-                MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                
-            }
-            else
-            {
-                MessageBox.Show("El cliente es válido.", "Éxitos!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }    */
 
             //Versión corta:
             if (!ClienteAlmacen.clientes.Any(c => c.CUITCUIL == cliente.CUITCUIL))
@@ -173,20 +149,84 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
         }
         internal void CrearEncomienda(EncomiendasImpuestas encomiendas)
         {
-            //TODO: NO FUNCIONA
-            List<string> nroGuias = new List<string>();
-            int contador = 0;
+            if (encomiendas.CPDestino == encomiendas.CPRetiro)
+            {
+                MessageBox.Show("El codigo postal de destino no puede ser igual al de retiro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (encomiendas.NroCUITCUIL <= 0) //Lvl 2
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //SEA DE 11 DIGITOS
+            if (encomiendas.NroCUITCUIL.ToString().Length != 11)
+            {
+                MessageBox.Show("El campo CUIT/CUIL debe tener 11 digitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!ClienteAlmacen.clientes.Any(c => c.CUITCUIL == encomiendas.NroCUITCUIL))
+            {
+                MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int codCentroDistribucionOrigen = CentroDistribucionAlmacen.centrosDistribucion
+                .Where(x => x.CodPostal == encomiendas.CPRetiro)
+                .Select(x => x.CodCentroDist)
+                .FirstOrDefault();
+
+            int codCentroDistribucionDestino = CentroDistribucionAlmacen.centrosDistribucion
+                .Where(x => x.CodPostal == encomiendas.CPDestino)
+                .Select(x => x.CodCentroDist)
+                .FirstOrDefault();
 
             for (int i = 0; i < encomiendas.CantCajas; i++)
             {
+                var tamañoSeleccionado = Enum.Parse<TamañoCaja>(encomiendas.TipoCaja?.Trim(), ignoreCase: true);
 
-                //var guiaGenerada = "1000" + ((DateTime.Now.Ticks)).ToString())
-                string guia = "1000" + contador.ToString();
-                nroGuias.Add(guia);
-                contador++;
-            }
-            MessageBox.Show("Guia generada exitosamente: " + String.Join(", ", nroGuias));
+                decimal importe = TarifaAlmacen.tarifas
+                         .Where(t => t.TamañoCaja == tamañoSeleccionado
+                             && t.CentroDistribucionOrigen == codCentroDistribucionOrigen
+                             && t.CentroDistribucionDestino == codCentroDistribucionDestino)
+                             .Select(t => t.Importe)
+                             .Single();
 
+                GuiaAlmacen.guias.Add(new GuiaEntidad
+                {
+                    NumeroGuia = int.Parse(codCentroDistribucionOrigen.ToString() + DateTime.Now.Ticks.ToString()[^5..]),
+                    CUITCUIL = encomiendas.NroCUITCUIL,
+                    CodPostalDest = encomiendas.CdDestino,
+                    //MetodoEntrega = encomiendas.MetodoEntrega, TODO: no se como convertirlo
+                    DomicilioDest = encomiendas.DomicilioDestinatario,
+                    //TamañoCaja = encomiendas.TipoCaja, TODO: idem, no se trabajar con el enum
+                    CodPostalOrig = encomiendas.CPRetiro,
+                    DomicilioOrigen = encomiendas.DomicilioRetiro,
+                    NombreDestinatario = encomiendas.NombreDestinatario,
+                    ApellidoDestinatario = encomiendas.ApellidoDestinatario,
+                    DNIDestinatario = encomiendas.DNIDestinatario,
+                    Importe = importe,
+                    CargosFleteros = 0, //TODO: calcular, falta almacen
+                    CargosAgencia = 0, //TODO: calcular, falta almacen
+                    CodAgenciaOrigen = 0, //no lo necesito, es imposicion por telefono
+                    CodCentroDistOrigen = codCentroDistribucionOrigen,
+                    EstadoEncomienda = EstadoEncomienda.ListoParaRetirarEnDomicilio,
+                    HistorialEstadosGuia = new List<HistorialEstadoGuia>
+                    {
+                        new HistorialEstadoGuia
+                        {
+                            Fecha = DateTime.Now,
+                            EstadoGuiaEnum = EstadoEncomienda.ListoParaRetirarEnDomicilio,
+                            Descripcion = "Encomienda creada y lista para ser retirada en domicilio."
+                        }
+                    }
+                });
+
+                MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+                MessageBox.Show("El importe a cobrar por la encomienda es: $" + GuiaAlmacen.guias.Last().Importe.ToString("F2"), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); //Queria ver si el numero estaba ok
+            }  
         }
     }
 }

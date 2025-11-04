@@ -20,7 +20,7 @@
       { "NumeroGuia": 595934 }
     ],
     "DNIFletero": 28373390,
-    "EstadoHojaRutaFlete": "PendienteAsignación",
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
     "TipoHojaRuta": "Entrega",
     "CodPostal": 1002
   },
@@ -77,7 +77,7 @@
       { "NumeroGuia": 469329 }
     ],
     "DNIFletero": 21295377,
-    "EstadoHojaRutaFlete": "PendienteAsignación",
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
     "TipoHojaRuta": "Entrega",
     "CodPostal": 1013
   },
@@ -88,7 +88,7 @@
       { "NumeroGuia": 584117 }
     ],
     "DNIFletero": 35589539,
-    "EstadoHojaRutaFlete": "PendienteAsignación",
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
     "TipoHojaRuta": "Entrega",
     "CodPostal": 1015
   },
@@ -100,7 +100,7 @@
       { "NumeroGuia": 710112 }
     ],
     "DNIFletero": 42629238,
-    "EstadoHojaRutaFlete": "PendienteAsignación",
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
     "TipoHojaRuta": "Entrega",
     "CodPostal": 1017
   },

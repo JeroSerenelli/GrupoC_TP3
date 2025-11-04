@@ -1,3 +1,4 @@
+using GrupoC_TP3.Almacenes;
 using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
 
 namespace GrupoC_TP3
@@ -24,6 +25,7 @@ namespace GrupoC_TP3
             //Application.Run(new CU9_CuentaCorriente.CuentaCorrienteForm());
             //Application.Run(new CU10_ResultadoCostosVsVentas.ResultadoCostosVsVentasForm());
             Application.Run(new LauncherForm());
+            GuiaAlmacen.GuardarGuia();
         }
     }
 }

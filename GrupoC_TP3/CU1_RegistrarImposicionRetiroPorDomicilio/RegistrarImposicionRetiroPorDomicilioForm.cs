@@ -81,7 +81,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             // Val - Provincia
             if (string.IsNullOrEmpty(cmbBoxProvDestino.Text)) //Lvl 0
             {
-                MessageBox.Show("Seleccione una provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione wuna provincia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -275,7 +275,23 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             //TODO: FALTA CREAR LA ENCOMIENDA FINAL Y PRINTEAR 
             modelo.CrearEncomienda(new EncomiendasImpuestas
             {
-                CantCajas = cajas
+                NroCUITCUIL = clienteValido,
+                ProvinciaDestino = cmbBoxProvDestino.Text,
+                LocalidadDestino = cmbBoxLocalidadDestino.Text,
+                MetodoEntrega = comboBoxMetodoEntrega.Text,
+                CPDestino = cpDestino,
+                //CdDestino = labelCdDestino.Text,
+                DomicilioDestinatario = textBoxDomicilioDestinatario.Text,
+                CantCajas = cajas,
+                TipoCaja = comboBoxTipoCaja.Text,
+                ProvinciaRetiro = cmbBoxProvRetiro.Text,
+                LocalidadRetiro = cmbBoxLocalidadRetiro.Text,
+                CPRetiro = cpRetiro,
+                CdOrigen = labelCdOrigen.Text,
+                DomicilioRetiro = textBoxDomicilioRetiro.Text,
+                NombreDestinatario = textBoxNombreDestinatario.Text,
+                ApellidoDestinatario = textBoxApellidoDestinatario.Text,
+                DNIDestinatario = DNI,
             });
 
         }

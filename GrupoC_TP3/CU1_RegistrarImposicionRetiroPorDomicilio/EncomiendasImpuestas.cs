@@ -11,7 +11,8 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
          // CUIT/CUIL
 
-         public int NroCUITCUIL {  get; set; }
+        public int NumeroGUia { get; set; }
+        public long NroCUITCUIL {  get; set; }
 
         //Informacion Destino
         public string ProvinciaDestino { get; set; }
@@ -21,7 +22,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
         public int CPDestino { get; set; }
 
-        public string CdDestino { get; set; }
+        public int CdDestino { get; set; }
 
         public string DomicilioDestinatario { get; set; }
 

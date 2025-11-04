@@ -27,6 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Datos\AdicionalesComisiones.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Datos\Agencias.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

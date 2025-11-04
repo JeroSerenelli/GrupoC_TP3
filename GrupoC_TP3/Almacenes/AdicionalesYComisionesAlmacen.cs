@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GrupoC_TP3.Almacenes
@@ -15,7 +17,9 @@ namespace GrupoC_TP3.Almacenes
             if (File.Exists(@"Datos\AdicionalesComisiones.json"))
             {
                 var adicionalesComisionesJson = File.ReadAllText(@"Datos\AdicionalesComisiones.json");
-                adicionalesComisiones = System.Text.Json.JsonSerializer.Deserialize<List<AdicionalesYComisionesEntidad>>(adicionalesComisionesJson) ?? new List<AdicionalesYComisionesEntidad>();
+                var options = new JsonSerializerOptions();
+                options.Converters.Add(new JsonStringEnumConverter());
+                adicionalesComisiones = System.Text.Json.JsonSerializer.Deserialize<List<AdicionalesYComisionesEntidad>>(adicionalesComisionesJson, options) ?? new List<AdicionalesYComisionesEntidad>();
             }
         }
 

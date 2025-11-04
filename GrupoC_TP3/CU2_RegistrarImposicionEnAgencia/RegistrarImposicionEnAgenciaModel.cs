@@ -158,12 +158,38 @@ internal class RegistrarImposicionEnAgenciaModel
         {
             var tamañoSeleccionado = Enum.Parse<TamañoCaja>(encomiendas.TipoCaja?.Trim(), ignoreCase: true);
 
-            decimal importe = TarifaAlmacen.tarifas
+            decimal importeBase = TarifaAlmacen.tarifas
                          .Where(t => t.TamañoCaja == tamañoSeleccionado
                              && t.CentroDistribucionOrigen == codCentroDistribucionOrigen
                              && t.CentroDistribucionDestino == codCentroDistribucionDestino)
                              .Select(t => t.Importe)
                              .Single();
+
+            if (encomiendas.MetodoEntrega.Equals("Entrega en Domicilio", StringComparison.OrdinalIgnoreCase))
+            {
+                importeBase += AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                    .Where(a => a.Concepto == Concepto.EntregaDomicilio)
+                                    .Select(a => a.Monto)
+                                    .Sum();
+            }
+
+            if (encomiendas.MetodoEntrega.Equals("Retiro en Agencia", StringComparison.OrdinalIgnoreCase))
+            {
+                importeBase += AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                    .Where(a => a.Concepto == Concepto.EntregaAgencia)
+                                    .Select(a => a.Monto)
+                                    .Sum();
+            }
+
+            decimal importe = importeBase;
+
+            decimal cargoFlete = AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                .Where(f => f.Concepto == Concepto.ComisionFleteroPorBulto)
+                                .Select(f => f.Monto).Single();
+
+            decimal cargoAgencia = 500; //Falta almacenarlo en algun lado
+
+
             GuiaAlmacen.guias.Add(new GuiaEntidad
             {
                 NumeroGuia = int.Parse(codAgencia.ToString() + ((DateTime.Now.Ticks)).ToString()[^5..]),
@@ -180,8 +206,8 @@ internal class RegistrarImposicionEnAgenciaModel
                 ApellidoDestinatario = encomiendas.ApellidoDestinatario,
                 DNIDestinatario = encomiendas.DNI,
                 Importe = importe,
-                CargosFleteros = 0,//TODO: falta almacen
-                CargosAgencia = 0,//TODO: falta almacen
+                CargosFleteros = cargoFlete,
+                CargosAgencia = cargoAgencia,
                 CodAgenciaOrigen = codAgencia,
                 CodCentroDistOrigen = codCentroDistribucionOrigen,
                 EstadoEncomienda = EstadoEncomienda.ListoParaRetirarEnAgencia,

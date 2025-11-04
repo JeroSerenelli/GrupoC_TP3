@@ -1,89 +1,111 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GrupoC_TP3.Almacenes;
+using GrupoC_TP3.CU9_CuentaCorriente;       
 
-using System.Globalization;
-
-namespace GrupoC_TP3.CU9_CuentaCorriente
+namespace GrupoC_TP3.CU9_CuentaCorriente     // ⚠ Ajustá al namespace de tu proyecto
 {
     internal class CuentaCorrienteModel
     {
-        private readonly List<Cliente> _clientes;
+        // -------------------------
+        // Helpers
+        // -------------------------
+        private static string Digitos(string s) =>
+            new string((s ?? string.Empty).Where(char.IsDigit).ToArray());
 
-        public CuentaCorrienteModel()
+        private static bool TryCuitToLong(string? cuit, out long value)
         {
-            _clientes = new List<Cliente>
-            {
-                new Cliente
-                {
-                    CUITCUIL = "20-12345678-9",
-                    RazonSocial = "Jorgito SRL",
-                    Movimientos = new List<MovimientoCC>
-                    {
-                        new MovimientoCC{ Fecha = new DateTime(2025, 9, 20), Importe =  5400},
-                        new MovimientoCC{ Fecha = new DateTime(2025, 9, 22), Importe = 12000},
-                        new MovimientoCC{ Fecha = new DateTime(2025, 9, 22), Importe = 3800},
-                        new MovimientoCC{ Fecha = new DateTime(2025, 10, 02), Importe =  9000},
-                        new MovimientoCC{ Fecha = new DateTime(2025, 10, 05), Importe = 2500},
-                    }
-                },
-                new Cliente
-                {
-                    CUITCUIL = "27-98765432-1",
-                    RazonSocial = "Racing Club SA",
-                    Movimientos = new List<MovimientoCC>
-                    {
-                        new MovimientoCC{ Fecha = new DateTime(2025, 9, 25), Importe = 3000},
-                        new MovimientoCC{ Fecha = new DateTime(2025, 9, 27), Importe =  7800},
-                        new MovimientoCC{ Fecha = new DateTime(2025, 10,10), Importe = 6500},
-                    }
-                }
-            };
+            var digits = Digitos(cuit ?? "");
+            return long.TryParse(digits, out value);
         }
 
-        public IEnumerable<string> GetCuits() => _clientes.Select(c => c.CUITCUIL);
-
-        public Cliente? GetClienteByCuit(string cuit) =>
-            _clientes.FirstOrDefault(c => string.Equals(c.CUITCUIL, cuit, StringComparison.OrdinalIgnoreCase));
-
+        // -------------------------
+        // Validaciones
+        // -------------------------
         public bool IsValidCuitSelected(string? cuit) =>
             !string.IsNullOrWhiteSpace(cuit);
 
         public bool IsValidDateRange(DateTime inicio, DateTime fin) =>
             fin.Date >= inicio.Date;
 
+        // -------------------------
+        // Datos para la UI
+        // -------------------------
+        public IEnumerable<string> GetCuits()
+        {
+            // Devuelve CUITs como vienen de los almacenes (solo dígitos)
+            return ClienteAlmacen.clientes
+                .Select(c => c.CUITCUIL.ToString())
+                .Distinct()
+                .OrderBy(c => c);
+        }
 
+        public Cliente? GetClienteByCuit(string cuit)
+        {
+            if (!TryCuitToLong(cuit, out var cuitNum))
+                return null;
+
+            // Comparación NUMÉRICA con la entidad del almacén
+            var ce = ClienteAlmacen.clientes
+                .FirstOrDefault(c => c.CUITCUIL == cuitNum);
+
+            if (ce is null) return null;
+
+            // Map Entidad → Clase del CU9
+            return new Cliente
+            {
+                CUITCUIL = ce.CUITCUIL.ToString(),
+                RazonSocial = ce.RazonSocial
+            };
+        }
+
+        // -------------------------
+        // Cálculo principal
+        // -------------------------
         public EstadoCuentaPeriodo CalcularEstadoCuenta(string cuit, DateTime inicio, DateTime fin)
         {
-            var cli = GetClienteByCuit(cuit) ?? throw new InvalidOperationException("CUIT inexistente.");
+                    var cliente = GetClienteByCuit(cuit)
+                ?? throw new InvalidOperationException("CUIT inexistente.");
 
-            var saldoInicial = cli.Movimientos
-                                  .Where(m => m.Fecha.Date < inicio.Date)
-                                  .Sum(m => m.Importe);
+            if (!TryCuitToLong(cuit, out var cuitNum))
+                throw new InvalidOperationException("CUIT inválido.");
 
-            var movsPeriodo = cli.Movimientos
-                                 .Where(m => m.Fecha.Date >= inicio.Date && m.Fecha.Date <= fin.Date)
-                                 .OrderBy(m => m.Fecha)
-                                 .ToList();
+            // 1) Todos los movimientos del cliente (comparación numérica)
+            var movsCliente = CuentaCorrienteAlmacen.cuentasCorrientes
+                .Where(m => m.CUITCUIL == cuitNum)
+                .OrderBy(m => m.FechaMovimiento)
+                .ToList();
 
+            // 2) Saldo anterior al período
+            decimal saldoInicial = movsCliente
+                .Where(m => m.FechaMovimiento.Date < inicio.Date)
+                .Sum(m => m.Monto);
+
+            // 3) Movimientos dentro del período (inclusive)
+            var movsPeriodo = movsCliente
+                .Where(m => m.FechaMovimiento.Date >= inicio.Date &&
+                            m.FechaMovimiento.Date <= fin.Date)
+                .ToList();
+
+            // 4) Construcción de items con saldo acumulado
             var items = new List<EstadoCuentaItem>();
             decimal saldo = saldoInicial;
+
             foreach (var m in movsPeriodo)
             {
-                saldo += m.Importe;
+                saldo += m.Monto;
                 items.Add(new EstadoCuentaItem
                 {
-                    Fecha = m.Fecha.Date,
-                    Monto = m.Importe,
-                    Saldo = saldo,
+                    Fecha = m.FechaMovimiento.Date,
+                    Monto = m.Monto,
+                    Saldo = saldo
                 });
             }
 
             return new EstadoCuentaPeriodo
             {
-                Cliente = cli,
+                Cliente = cliente,
                 InicioPeriodo = inicio.Date,
                 FinPeriodo = fin.Date,
                 SaldoInicial = saldoInicial,
@@ -93,5 +115,3 @@ namespace GrupoC_TP3.CU9_CuentaCorriente
         }
     }
 }
-
-

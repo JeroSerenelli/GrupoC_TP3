@@ -77,5 +77,130 @@
 
       }
     ]
-  }
+  },
+  { // Guias de prueba CU5 - Jero
+    "NumeroGuia": 105966,
+    "CUITCUIL": 21368503374,
+    "CodPostalDest": 1000,
+    "MetodoEntrega": "EntregaEnDomicilio",
+    "DomicilioDest": "Calle 205 #437",
+    "TamañoCaja": "M",
+    "CodPostalOrig": 2223,
+    "DomicilioOrigen": "Avenida 9 #374",
+    "NombreDestinatario": "Julián",
+    "ApellidoDestinatario": "Martínez",
+    "DNIDestinatario": 32373903,
+    "Importe": 4099.72,
+    "CargosFleteros": 117,
+    "CargosAgencia": 230,
+    "CodAgenciaOrigen": 7,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "EnTransporteEntreCentroDeDistribucion",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-11-04T01:43:12.290709",
+        "Estado": "Creada"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 605414,
+    "CUITCUIL": 21634945556,
+    "CodPostalDest": 1000,
+    "MetodoEntrega": "EntregaEnDomicilio",
+    "DomicilioDest": "Calle 538 #813",
+    "TamañoCaja": "S",
+    "CodPostalOrig": 2223,
+    "DomicilioOrigen": "Avenida 808 #354",
+    "NombreDestinatario": "Julián",
+    "ApellidoDestinatario": "Martínez",
+    "DNIDestinatario": 40084021,
+    "Importe": 2221.41,
+    "CargosFleteros": 420,
+    "CargosAgencia": 431,
+    "CodAgenciaOrigen": 2,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "EnTransporteEntreCentroDeDistribucion",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-11-04T01:43:12.290738",
+        "Estado": "Creada"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 255095,
+    "CUITCUIL": 22465821507,
+    "CodPostalDest": 1001,
+    "MetodoEntrega": "EntregaEnDomicilio",
+    "DomicilioDest": "Calle 871 #476",
+    "TamañoCaja": "M",
+    "CodPostalOrig": 2223,
+    "DomicilioOrigen": "Avenida 20 #377",
+    "NombreDestinatario": "Lucía",
+    "ApellidoDestinatario": "Pérez",
+    "DNIDestinatario": 41221265,
+    "Importe": 1784.69,
+    "CargosFleteros": 422,
+    "CargosAgencia": 337,
+    "CodAgenciaOrigen": 7,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "EntregadoEnCentroDeDistribucion",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-11-04T01:43:12.290757",
+        "Estado": "Creada"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 231830,
+    "CUITCUIL": 21248718892,
+    "CodPostalDest": 1001,
+    "MetodoEntrega": "EntregaEnDomicilio",
+    "DomicilioDest": "Calle 871 #476",
+    "TamañoCaja": "L",
+    "CodPostalOrig": 2223,
+    "DomicilioOrigen": "Avenida 20 #377",
+    "NombreDestinatario": "Lucía",
+    "ApellidoDestinatario": "Pérez",
+    "DNIDestinatario": 44097725,
+    "Importe": 1829.99,
+    "CargosFleteros": 500,
+    "CargosAgencia": 293,
+    "CodAgenciaOrigen": 1,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "EntregadoEnCentroDeDistribucion",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-11-04T01:43:12.290775",
+        "Estado": "Creada"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 323875,
+    "CUITCUIL": 21300459339,
+    "CodPostalDest": 1001,
+    "MetodoEntrega": "EntregaEnDomicilio",
+    "DomicilioDest": "Calle 871 #476",
+    "TamañoCaja": "S",
+    "CodPostalOrig": 2223,
+    "DomicilioOrigen": "Avenida 20 #377",
+    "NombreDestinatario": "Lucía",
+    "ApellidoDestinatario": "Pérez",
+    "DNIDestinatario": 21127548,
+    "Importe": 1868.22,
+    "CargosFleteros": 429,
+    "CargosAgencia": 145,
+    "CodAgenciaOrigen": 8,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "EntregadoEnCentroDeDistribucion",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-11-04T01:43:12.290792",
+        "Estado": "Creada"
+      }
+    ]
+  } // CU5 - Hasta aha llegan las guias de Jero
 ]

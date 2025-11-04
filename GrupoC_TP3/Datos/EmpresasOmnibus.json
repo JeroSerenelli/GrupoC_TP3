@@ -93,5 +93,20 @@
         "PatenteMicro": "AF112MY"
       }
     ]
+  },
+  { // Data Testeo para CU5 - Jero
+    "CUITEmpresaOmnibus": 30456789012,
+    "EmpresaOmnibus": "FlechaBUS S.A.",
+    "PrecioDeArrendamiento": 55000.0,
+    "Unidades": [
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "ABC123"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "ABC321"
+      }
+    ]
   }
 ]

@@ -61,5 +61,29 @@
     "PatenteMicro": "AG649RK",
     "FechaEmisionHojaDeRuta": "2025-11-01T09:00:00",
     "EstadoHojaRutaMicro": "LIstoParaDespacharEnCentroDeDistribucion"
+  },
+  { // Las Hojas de Ruta que arranquen con 800... Son de Jero
+    "HojaRutaMicro": 800000,
+    "CentroDistribucionDestino": 1000,
+    "NumerosGuiaMicro": [
+      { "NumeroGuia": 105966 },
+      { "NumeroGuia": 605414 }
+    ],
+    "PatenteMicro": "ABC123",
+    "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
+    "EstadoHojaRutaMicro": "EnCaminoACentroDeDistribuciónDestino"
+  },
+  {
+    "HojaRutaMicro": 800001,
+    "CentroDistribucionDestino": 1001,
+    "NumerosGuiaMicro": [
+      { "NumeroGuia": 255095 },
+      { "NumeroGuia": 231830 },
+      { "NumeroGuia": 323875 }
+    ],
+    "PatenteMicro": "ABC123",
+    "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352741",
+    "EstadoHojaRutaMicro": "ListoParaDespacharEnCentroDeDistribucion"
   }
+
 ]

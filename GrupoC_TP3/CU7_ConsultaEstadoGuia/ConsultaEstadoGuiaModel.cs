@@ -62,7 +62,7 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 
             var historial = guia.HistorialEstadosGuia
                 .OrderByDescending(h => h.Fecha)
-                .Select(h => new EstadoGuiaDTO(h.EstadoGuiaEnum.ToString(), h.Fecha))
+                .Select(h => new EstadoGuiaDTO(h.Descripcion, h.Fecha))
                 .ToList();
 
             return historial;

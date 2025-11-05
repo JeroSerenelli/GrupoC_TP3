@@ -175,7 +175,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 return;
             }
 
-            int codCentroDistribucionOrigen = 1006;
+            int codCentroDistribucionOrigen = 1010;
 
             int codCentroDistribucionDestino = CentroDistribucionAlmacen.centrosDistribucion
             .Where(cd => cd.Nombre.Equals(encomiendas.CentroDistribucionDestino, StringComparison.OrdinalIgnoreCase))

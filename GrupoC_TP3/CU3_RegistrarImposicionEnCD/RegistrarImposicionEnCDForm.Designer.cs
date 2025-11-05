@@ -408,7 +408,8 @@
             textBoxCodigoAgencia.ReadOnly = true;
             textBoxCodigoAgencia.Size = new Size(36, 23);
             textBoxCodigoAgencia.TabIndex = 70;
-            textBoxCodigoAgencia.Text = "1006";
+            textBoxCodigoAgencia.Text = "1010";
+            textBoxCodigoAgencia.TextChanged += textBoxCodigoAgencia_TextChanged;
             // 
             // label22
             // 

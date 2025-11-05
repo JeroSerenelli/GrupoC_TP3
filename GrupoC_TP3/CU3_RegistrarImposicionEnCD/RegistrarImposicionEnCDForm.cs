@@ -23,9 +23,9 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
         //private Ubicacion ubicacion;
 
-        
 
-       
+
+
 
         public RegistrarImposicionEnCDForm()
         {
@@ -287,6 +287,11 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
         }
 
         private void textBoxCUITCUIL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxCodigoAgencia_TextChanged(object sender, EventArgs e)
         {
 
         }

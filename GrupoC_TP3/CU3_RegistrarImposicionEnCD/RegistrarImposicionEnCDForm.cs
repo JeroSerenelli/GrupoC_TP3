@@ -266,7 +266,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             // Limpiar combo de localidad
             cmbBoxLocalidadDst.DataSource = null;
 
-            var ubicacion = modelo.ObtenerUbicacion();
+            var ubicacion = modelo.ObtenerUbicacion1();
             if (ubicacion.ProvinciasYLocalidades.ContainsKey(provinciaSeleccionada))
             {
                 cmbBoxLocalidadDst.Enabled = true;

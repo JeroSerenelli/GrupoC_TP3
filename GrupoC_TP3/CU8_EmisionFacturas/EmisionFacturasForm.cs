@@ -15,12 +15,9 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
     public partial class EmisionFacturasForm : Form
 
     {
-
-
         private EmisionFacturasModel modelo = new();
 
-
-        public EmisionFacturasForm()
+         public EmisionFacturasForm()
         {
             InitializeComponent();
             //Preguntar a Jero si es traer las listas
@@ -33,8 +30,11 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
 
         private void buttonBuscarCuilCliente_Click(object sender, EventArgs e)
         {
+
+            //COMENZAMOS QUE LA LISTA ESTA VACIA
             PedidosAFacturarListView.Items.Clear();
 
+            //BUSCAMOS QUE COLOQUEN UN CUIL Y NO QUEDE VACIO
             if (string.IsNullOrEmpty(textBoxCuilCliente.Text))
             {
                 MessageBox.Show("Para realizar una busqueda, ingrese un CUIL/CUIT", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -42,83 +42,74 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
                 textBoxCuilCliente.Focus();
                 return;
             }
-            if (!long.TryParse(textBoxCuilCliente.Text, out long salida))
+           
+            //VALIDAMOS EL CUIL CON LOS PARAMETROS QUE CONSIDERAMOS CORRECTOS
+            if (!modelo.ValidacionCuil(textBoxCuilCliente.Text))
             {
-                MessageBox.Show("El numero de CUIT/CUIL ingresado es invalido, por favor revise", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //Con esto hacemos que se quede en esta parte
                 textBoxCuilCliente.Focus();
-                return;
             }
-
-            modelo.ValidacionCuil(new Factura
+            //SI ESTA BIEN, ENTONCES VAMOS A SOLICITAR LAS GUIAS VINCULADAS A ESE CUIL
+            else
             {
-                Cuil = salida,
-            });
-
-
-
-            //Cualquier NUMERO DE CUIL VALIDO va a traer los mismos datos de prueba
-            // Corrección: Iterar sobre la lista de facturas del modelo y mostrarlo en el ListView
-
-            foreach (var CuilValido in modelo.CuilValido)
-            {
-                if (CuilValido.Cuil == salida)
+                decimal totalFactura = 0;
+                //RECORREMOS LA LISTA DE GUIAS QUE NOS DEVUELVE EL MODELO
+                foreach (var guia in modelo.ObtenerGuia(Convert.ToInt64(textBoxCuilCliente.Text)))
                 {
                     var listItem = new ListViewItem();
-                    listItem.Text = CuilValido.NroGuia.ToString();
-                    listItem.SubItems.Add(CuilValido.SubTotal.ToString("C")); // Formatear como moneda
-                    listItem.Tag = CuilValido; // Guardamos el objeto para usarlo luego
+                    listItem.Text = guia.NumeroGuia.ToString();
+                    listItem.SubItems.Add(guia.Importe.ToString("C")); // Formatear como moneda
+                    listItem.Tag = guia; // Guardamos el objeto para usarlo luego
                     PedidosAFacturarListView.Items.Add(listItem);
+
+                    totalFactura += guia.Importe;
                 }
 
+                textBoxTotalFactura.Text = totalFactura.ToString("C"); // Formatear como moneda
             }
-
-            //Ahora vamos a sumar los subtotales de los indices que trae, no el total de la lista
-            var totalFactura = modelo.CuilValido.Where(f => f.Cuil == salida).Sum(f => f.SubTotal);
-            textBoxTotalFactura.Text = totalFactura.ToString("C"); // Formatear como moneda
-
-            /*
-            //Ahora vamos a sumar los subtotales y mostrar el total en el textbox
-            decimal totalFactura = modelo.CuilValido.Sum(f => f.SubTotal);
-            textBoxTotalFactura.Text = totalFactura.ToString("C"); // Formatear como moneda
-            */
         }
 
         private void buttonEmitirFactura_Click(object sender, EventArgs e)
         {
-            var seleccionadas = PedidosAFacturarListView.Items.Cast<ListViewItem>().ToList();
-            //Vamos a emitir la factura si hay items en el listview
-            /*if (PedidosAFacturarListView.Items.Count > 0)
+            //VAMOS A LLAMAR NUEVAMENTE AL METODO PARA VALIDAR EL CUIL, EN CASO QUE SE HAYA CAMBIADO, Y VAMOS A SALIR
+            if (!modelo.ValidacionCuil(textBoxCuilCliente.Text))
             {
-                var GuiasAEmitir = seleccionadas.Select(item => item.Text).ToList();
+                return;
             }
-            */
 
+            //VERIFICAMOS QUE HAYA PEDIDOS PARA FACTURAR, EN CASO QUE NO, DAMOS UN MENSAJE DE ERROR
             if (PedidosAFacturarListView.Items.Count == 0)
             {
                 MessageBox.Show("No hay pedidos para facturar, por favor realice una busqueda valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            MessageBox.Show("Factura emitida con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //Vamos a hacer que se borren los items del listview y el total
-            PedidosAFacturarListView.Items.Clear();
-            textBoxTotalFactura.Clear();
-            textBoxCuilCliente.Clear();
-        }
 
-        private void PedidosAFacturarListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            //VAMOS A CONVERTIR EL IMPORTE EN DECIMAL, SACANDO LOS CARACTERES ESPECIALES COMO EL $ Y EL ESPACIO
+            decimal Importe = Convert.ToDecimal(textBoxTotalFactura.Text.Replace("$", ""));
 
+            //AHORA, VAMOS A EMITIR LA FACTURA Y VAMOS A LIMPIAR TODOS LOS CAMPOS
+            if (modelo.GenerarFactura(Convert.ToInt64(textBoxCuilCliente.Text), Importe))
+            {
+                MessageBox.Show("Factura emitida con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Vamos a hacer que se borren los items del listview y el total
+                PedidosAFacturarListView.Items.Clear();
+                textBoxTotalFactura.Clear();
+                textBoxCuilCliente.Clear();
+            }
+            /* NO ESTA EN EL SECUENCIA, CAPAZ LO PUEDO OMITIR 
+             * else
+            {
+                MessageBox.Show("Error al emitir la factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
         }
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
+
             MessageBox.Show(
               "Gracias",
               "Gracias por usar el sistema",
               MessageBoxButtons.OK,
-              MessageBoxIcon.Information
-          );
+              MessageBoxIcon.Information);
 
             this.Close();
         }

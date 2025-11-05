@@ -254,10 +254,10 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
         }
 
 
-        public Ubicacion ObtenerUbicacion()
+        /*public Ubicacion ObtenerUbicacion()
         {
 
-            var ubicacion = new Ubicacion
+            /*var ubicacion = new Ubicacion
             {
                 ProvinciasYLocalidades = new Dictionary<string, List<string>>
             {
@@ -282,7 +282,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             };
 
             return ubicacion;
-        }
+        }*/
 
     }
 }

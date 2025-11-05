@@ -21,8 +21,8 @@ namespace GrupoC_TP3.Almacenes
         public string ApellidoDestinatario { get; set; }
         public int DNIDestinatario { get; set; }
         public decimal Importe { get; set; }
-        public int CargosFleteros { get; set; }
-        public int CargosAgencia { get; set; }
+        public decimal CargosFleteros { get; set; }
+        public decimal CargosAgencia { get; set; }
         public int CodAgenciaOrigen { get; set; }
         public int CodCentroDistOrigen { get; set; }
         public EstadoEncomienda EstadoEncomienda { get; set; }

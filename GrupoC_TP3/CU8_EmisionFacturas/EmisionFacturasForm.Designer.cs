@@ -140,7 +140,6 @@ partial class EmisionFacturasForm
         PedidosAFacturarListView.TabIndex = 2;
         PedidosAFacturarListView.UseCompatibleStateImageBehavior = false;
         PedidosAFacturarListView.View = View.Details;
-        PedidosAFacturarListView.SelectedIndexChanged += PedidosAFacturarListView_SelectedIndexChanged;
         // 
         // Nro_Guia
         // 

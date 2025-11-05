@@ -1,0 +1,18 @@
+[
+  {
+    "Concepto": "RetiroDomicilio",
+    "Monto": 1500.0
+  },
+  {
+    "Concepto": "EntregaDomicilio",
+    "Monto": 1500.0
+  },
+  {
+    "Concepto": "EntregaAgencia",
+    "Monto": 1000.0
+  },
+  {
+    "Concepto": "ComisionFleteroPorBulto",
+    "Monto": 500.0
+  }
+]

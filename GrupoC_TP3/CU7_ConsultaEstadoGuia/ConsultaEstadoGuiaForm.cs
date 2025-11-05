@@ -34,42 +34,55 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
         {
             listView1.Items.Clear();
 
-            if (string.IsNullOrEmpty(textBoxNumeroGuiaConsulta.Text))
+            if (string.IsNullOrWhiteSpace(textBoxNumeroGuiaConsulta.Text))
             {
-                MessageBox.Show("Para realizar una busqueda, ingrese un numero de guia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Para realizar una búsqueda, ingrese un número de guía",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!long.TryParse(textBoxNumeroGuiaConsulta.Text, out long numeroGuiaConsulta))
+            if (!long.TryParse(textBoxNumeroGuiaConsulta.Text, out long numeroGuia))
             {
-                MessageBox.Show("El numero de guia ingresado es invalido, por favor revise", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El número de guía ingresado es inválido.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            modelo.ValidacionGuia(new Guia
+            try
             {
-                NumeroGuia = numeroGuiaConsulta,
-            });
+                var historial = modelo.ObtenerHistorialPorNumero(numeroGuia);
 
-
-
-            foreach (var Guias in modelo.Guias)
-            {
-                if (Guias.NumeroGuia == numeroGuiaConsulta)
+                listView1.BeginUpdate();
+                foreach (var h in historial)
                 {
-                    var listItem = new ListViewItem();
-                    listItem.Text = Guias.EstadoGuia.ToString();
-                    listItem.SubItems.Add(Guias.UltActualizacion.ToString());
-                    listView1.Items.Add(listItem);
+                    var item = new ListViewItem(h.EstadoEncomienda);
+                    item.SubItems.Add(h.FechaActualizacion.ToString("yyyy-MM-dd HH:mm"));
+                    listView1.Items.Add(item);
                 }
-                else
-                {
+                listView1.EndUpdate();
 
-                    //Cuando busco uno que existe, tambien aparece. 
+                if (historial.Count == 0)
+                {
+                    MessageBox.Show("La guía no tiene historial de estados.",
+                        "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
             }
-
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al consultar la guía.\n" + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GrupoC_TP3.Almacenes
@@ -15,7 +17,9 @@ namespace GrupoC_TP3.Almacenes
             if (File.Exists(@"Datos\EmpresasOmnibus.json"))
             {
                 var empresaOmnibusJson = File.ReadAllText(@"Datos\EmpresasOmnibus.json");
-                empresasOmnibus = System.Text.Json.JsonSerializer.Deserialize<List<EmpresaOmnibusEntidad>>(empresaOmnibusJson) ?? new List<EmpresaOmnibusEntidad>();
+                var options = new JsonSerializerOptions();
+                options.Converters.Add(new JsonStringEnumConverter());
+                empresasOmnibus = System.Text.Json.JsonSerializer.Deserialize<List<EmpresaOmnibusEntidad>>(empresaOmnibusJson, options) ?? new List<EmpresaOmnibusEntidad>();
             }
         }
 

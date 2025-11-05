@@ -353,7 +353,8 @@
             textBoxCodigoAgencia.ReadOnly = true;
             textBoxCodigoAgencia.Size = new Size(36, 23);
             textBoxCodigoAgencia.TabIndex = 53;
-            textBoxCodigoAgencia.Text = "1234";
+            textBoxCodigoAgencia.Text = "2006";
+            textBoxCodigoAgencia.TextChanged += textBoxCodigoAgencia_TextChanged;
             // 
             // groupBox4
             // 

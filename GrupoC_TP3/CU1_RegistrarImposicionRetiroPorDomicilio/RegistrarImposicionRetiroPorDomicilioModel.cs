@@ -187,12 +187,42 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             {
                 var tamañoSeleccionado = Enum.Parse<TamañoCaja>(encomiendas.TipoCaja?.Trim(), ignoreCase: true);
 
-                decimal importe = TarifaAlmacen.tarifas
+                decimal importeBase = TarifaAlmacen.tarifas
                          .Where(t => t.TamañoCaja == tamañoSeleccionado
                              && t.CentroDistribucionOrigen == codCentroDistribucionOrigen
                              && t.CentroDistribucionDestino == codCentroDistribucionDestino)
                              .Select(t => t.Importe)
                              .Single();
+
+
+
+
+                decimal importeRetiroDomicilio = importeBase + AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                    .Where(a => a.Concepto == Concepto.RetiroDomicilio)
+                                    .Select(a => a.Monto)
+                                    .Sum();
+
+                if(encomiendas.MetodoEntrega.Equals("Entrega en Domicilio", StringComparison.OrdinalIgnoreCase))
+                {
+                    importeRetiroDomicilio += AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                        .Where(a => a.Concepto == Concepto.EntregaDomicilio)
+                                        .Select(a => a.Monto)
+                                        .Sum();
+                }
+
+                if (encomiendas.MetodoEntrega.Equals("Retiro en Agencia", StringComparison.OrdinalIgnoreCase))
+                {
+                    importeRetiroDomicilio += AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                        .Where(a => a.Concepto == Concepto.EntregaAgencia)
+                                        .Select(a => a.Monto)
+                                        .Sum();
+                }
+
+                decimal importe = importeRetiroDomicilio;
+
+                decimal cargoFlete = AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                    .Where(f => f.Concepto == Concepto.ComisionFleteroPorBulto)
+                                    .Select(f => f.Monto).Single();
 
                 GuiaAlmacen.guias.Add(new GuiaEntidad
                 {
@@ -208,7 +238,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                     ApellidoDestinatario = encomiendas.ApellidoDestinatario,
                     DNIDestinatario = encomiendas.DNIDestinatario,
                     Importe = importe,
-                    CargosFleteros = 0, //TODO: calcular, falta almacen
+                    CargosFleteros = cargoFlete,
                     CargosAgencia = 0, //TODO: calcular, falta almacen
                     CodAgenciaOrigen = 0, //no lo necesito, es imposicion por telefono
                     CodCentroDistOrigen = codCentroDistribucionOrigen,

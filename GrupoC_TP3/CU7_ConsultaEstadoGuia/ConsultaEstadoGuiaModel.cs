@@ -1,4 +1,5 @@
-﻿using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
+﻿using GrupoC_TP3.Almacenes;
+using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
 using GrupoC_TP3.CU7_ConsultaEstadoGuia;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,17 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 {
+    public class EstadoGuiaDTO
+    {
+        public string EstadoEncomienda { get; set; }
+        public DateTime FechaActualizacion { get; set; }
+
+        public EstadoGuiaDTO(string estado, DateTime fecha)
+        {
+            EstadoEncomienda = estado;
+            FechaActualizacion = fecha;
+        }
+    }
     internal class ConsultaEstadoGuiaModel
     {
 
@@ -38,11 +50,25 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
                 MessageBox.Show("El numero de guia ingresado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-
-                
-
         }
+        public List<EstadoGuiaDTO> ObtenerHistorialPorNumero(long numeroGuia)
+        {
+            if (numeroGuia <= 0)
+                throw new ArgumentException("El número de guía debe ser positivo.");
+
+            var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == (int)numeroGuia);
+            if (guia == null)
+                throw new KeyNotFoundException("El número de guía ingresado no existe.");
+
+            var historial = guia.HistorialEstadosGuia
+                .OrderByDescending(h => h.Fecha)
+                .Select(h => new EstadoGuiaDTO(h.Descripcion, h.Fecha))
+                .ToList();
+
+            return historial;
+        }
+
 
     }
 }
+

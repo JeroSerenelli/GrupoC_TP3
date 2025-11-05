@@ -16,12 +16,12 @@
     "CargosAgencia": 0,
     "CodAgenciaOrigen": 2000,
     "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 6,
+    "EstadoEncomienda": 9,
     "HistorialEstadosGuia": [
       {
-        "Estado": 6,
+        "Estado": 9,
         "Fecha": "2025-11-02T12:00:00",
-        "Descripcion": "Listo para retiro en agencia"
+        "Descripcion": "Entregado"
       }
     ]
   },
@@ -545,7 +545,7 @@
       }
     ]
   },
-  { 
+  {
     "NumeroGuia": 105966,
     "CUITCUIL": 21368503374,
     "CodPostalDest": 1000,
@@ -669,5 +669,30 @@
         "Estado": "Creada"
       }
     ]
-  } 
+  },
+  {
+    "NumeroGuia": 252685,
+    "CUITCUIL": 21300459339,
+    "CodPostalDest": 1001,
+    "MetodoEntrega": 2,
+    "DomicilioDest": "Calle 871 #476",
+    "TamañoCaja": "S",
+    "CodPostalOrig": 2223,
+    "DomicilioOrigen": "Avenida 20 #377",
+    "NombreDestinatario": "Lucía",
+    "ApellidoDestinatario": "Pérez",
+    "DNIDestinatario": 21127548,
+    "Importe": 1868.22,
+    "CargosFleteros": 429,
+    "CargosAgencia": 145,
+    "CodAgenciaOrigen": 8,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "RecibidoEnCentroDistribucionDestino",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-11-04T01:43:12.290792",
+        "Estado": "Creada"
+      }
+    ]
+  }
 ]

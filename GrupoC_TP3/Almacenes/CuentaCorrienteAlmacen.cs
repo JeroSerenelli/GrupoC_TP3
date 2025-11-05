@@ -12,9 +12,9 @@ namespace GrupoC_TP3.Almacenes
 
         static CuentaCorrienteAlmacen()
         {
-            if (File.Exists(@"Datos\CuentasCorrientes.json"))
+            if (File.Exists(@"Datos\CuentaCorriente.json"))
             {
-                var cuentaCorrienteJson = File.ReadAllText(@"Datos\CuentasCorrientes.json");
+                var cuentaCorrienteJson = File.ReadAllText(@"Datos\CuentaCorriente.json");
                 cuentasCorrientes = System.Text.Json.JsonSerializer.Deserialize<List<CuentaCorrienteEntidad>>(cuentaCorrienteJson) ?? new List<CuentaCorrienteEntidad>();
             }
         }
@@ -22,7 +22,7 @@ namespace GrupoC_TP3.Almacenes
         public static void GuardarCuentaCorriente()
         {
             var cuentaCorrienteJson = System.Text.Json.JsonSerializer.Serialize(cuentasCorrientes);
-            File.WriteAllText(@"Datos\CuentasCorrientes.json", cuentaCorrienteJson);
+            File.WriteAllText(@"Datos\CuentaCorriente.json", cuentaCorrienteJson);
 
         }
     }

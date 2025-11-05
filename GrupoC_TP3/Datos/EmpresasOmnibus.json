@@ -94,7 +94,7 @@
       }
     ]
   },
-  { // Data Testeo para CU5 - Jero
+  { 
     "CUITEmpresaOmnibus": 30456789012,
     "EmpresaOmnibus": "FlechaBUS S.A.",
     "PrecioDeArrendamiento": 55000.0,

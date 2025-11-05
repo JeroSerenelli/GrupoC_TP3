@@ -222,6 +222,8 @@ internal class RegistrarImposicionEnAgenciaModel
                 }
             });
 
+            GuiaAlmacen.GuardarGuia();
+
             MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             MessageBox.Show("El importe a cobrar por la encomienda es: $" + GuiaAlmacen.guias.Last().Importe.ToString("F2"), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); //Queria ver si el numero estaba ok
 

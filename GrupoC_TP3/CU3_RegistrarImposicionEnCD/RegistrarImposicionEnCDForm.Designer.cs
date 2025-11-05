@@ -367,6 +367,7 @@
             textBoxCUITCUIL.Name = "textBoxCUITCUIL";
             textBoxCUITCUIL.Size = new Size(200, 23);
             textBoxCUITCUIL.TabIndex = 20;
+            textBoxCUITCUIL.TextChanged += textBoxCUITCUIL_TextChanged;
             // 
             // label4
             // 

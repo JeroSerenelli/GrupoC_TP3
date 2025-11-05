@@ -1,4 +1,5 @@
-﻿using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
+﻿using GrupoC_TP3.Almacenes;
+using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,71 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
     internal class RegistrarImposicionEnCDFormModel
     {
         private long[] listaClientes = new long[] { 12345678910, 12345678911 };
-        
+
+        private Dictionary<int, List<LocalidadEntidad>> _localidadesPorCodProv;
+        private Dictionary<string, int> _codProvPorNombre;
+        private bool _indicesConstruidos;
+
+        private void ConstruirIndicesProvinciasYLocalidades()
+        {
+            if (_indicesConstruidos) return;
+
+            var provincias = ProvinciaAlmacen.provincias ?? new List<ProvinciaEntidad>();
+            var localidades = LocalidadAlmacen.localidades ?? new List<LocalidadEntidad>();
+
+            _codProvPorNombre = provincias
+                .GroupBy(p => p.Nombre, StringComparer.OrdinalIgnoreCase)
+                .ToDictionary(g => g.Key, g => g.First().CodProv, StringComparer.OrdinalIgnoreCase);
+
+            _localidadesPorCodProv = localidades
+                .GroupBy(l => l.CodProv)
+                .ToDictionary(
+                    g => g.Key,
+                    g => g.OrderBy(l => l.Nombre).ToList()
+                );
+
+            _indicesConstruidos = true;
+        }
+
+        public List<string> LocalidadesDeProvincia(string nombreProvincia)
+        {
+            ConstruirIndicesProvinciasYLocalidades();
+
+            if (string.IsNullOrWhiteSpace(nombreProvincia))
+                return new List<string>();
+
+            if (!_codProvPorNombre.TryGetValue(nombreProvincia, out var codProv))
+                return new List<string>();
+
+            if (!_localidadesPorCodProv.TryGetValue(codProv, out var locs))
+                return new List<string>();
+
+            return locs.Select(l => l.Nombre)
+                       .Distinct(StringComparer.OrdinalIgnoreCase)
+                       .OrderBy(n => n, StringComparer.OrdinalIgnoreCase)
+                       .ToList();
+        }
+
+        public Ubicacion ObtenerUbicacion1()
+        {
+            var ubicacion = new Ubicacion
+        {
+            ProvinciasYLocalidades = ProvinciaAlmacen.provincias.Select(p => new
+            {
+                p.Nombre,
+                Localidades = LocalidadAlmacen.localidades.Where(l => l.CodProv == p.CodProv)
+                                                          .Select(l => l.Nombre)
+                                                          .OrderBy(n => n)
+                                                          .ToList()
+            }).ToDictionary(p => p.Nombre, v => v.Localidades),
+
+            CodigoPostalCentroDistribucion = CentroDistribucionAlmacen.centrosDistribucion
+                                                                      .ToDictionary(cd => cd.CodPostal.ToString("0000"), cd => cd.Nombre)
+            };
+
+            return ubicacion;
+            
+        }
 
         internal void ValidarCl(ClienteImposicionCD validarCliente)
         {
@@ -33,7 +98,20 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 return;
             }
 
-            if (!listaClientes.Contains(validarCliente.CUITCUIL))
+
+            if (!ClienteAlmacen.clientes.Any(c => c.CUITCUIL == validarCliente.CUITCUIL))
+            {
+                MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Cliente valido", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
+            /*if (!listaClientes.Contains(validarCliente.CUITCUIL))
             {
                 MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -43,7 +121,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             {
                 MessageBox.Show("Cliente valido", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
-            }
+            }*/
         }
 
 
@@ -91,42 +169,87 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 return;
             }
 
-            if (!listaClientes.Contains(encomiendas.Cliente))
+            if(!ClienteAlmacen.clientes.Any(c => c.CUITCUIL == encomiendas.Cliente))
             {
                 MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            int codCentroDistribucionOrigen = 1006;
 
-
+            int codCentroDistribucionDestino = CentroDistribucionAlmacen.centrosDistribucion
+            .Where(cd => cd.Nombre.Equals(encomiendas.CentroDistribucionDestino, StringComparison.OrdinalIgnoreCase))
+            .Select(cd => cd.CodCentroDist)
+            .FirstOrDefault();
 
 
             for (int i = 0; i < encomiendas.CantidadCajas; i++)
             {
-                var listItem = new ListViewItem();
-                //Generar numero de guia//
-                encomiendas.NumeroGuia = (encomiendas.CodigoAgencia.ToString() + ((DateTime.Now.Ticks)).ToString());
-                //Fin generar numero de guia//
+                var tamañoSeleccionado = Enum.Parse<TamañoCaja>(encomiendas.TipoCaja?.Trim(), ignoreCase: true);
 
-                listItem.Text = encomiendas.NumeroGuia;
-                listItem.SubItems.Add(encomiendas.Provincia);
-                listItem.SubItems.Add(encomiendas.Localidad);
-                listItem.SubItems.Add(encomiendas.MetodoEntrega);
-                listItem.SubItems.Add(encomiendas.CodigoPostal.ToString());
-                listItem.SubItems.Add(encomiendas.CentroDistribucionDestino);
-                listItem.SubItems.Add(encomiendas.Domicilio);
-                listItem.SubItems.Add(encomiendas.CantidadCajas.ToString());
-                listItem.SubItems.Add(encomiendas.TipoCaja);
-                listItem.SubItems.Add(encomiendas.NombreDestinatario);
-                listItem.SubItems.Add(encomiendas.ApellidoDestinatario);
-                listItem.SubItems.Add(encomiendas.DNI.ToString());
-                listItem.SubItems.Add(encomiendas.CodigoAgencia.ToString());
+                decimal importeBase = TarifaAlmacen.tarifas
+                             .Where(t => t.TamañoCaja == tamañoSeleccionado
+                                 && t.CentroDistribucionOrigen == codCentroDistribucionOrigen
+                                 && t.CentroDistribucionDestino == codCentroDistribucionDestino)
+                                 .Select(t => t.Importe)
+                                 .Single();
 
-                MessageBox.Show("Guia generada exitosamente: " + encomiendas.NumeroGuia);
-                return;
-                //ListViewItem.Item
+                if (encomiendas.MetodoEntrega.Equals("Entrega en Domicilio", StringComparison.OrdinalIgnoreCase))
+                {
+                    importeBase += AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                        .Where(a => a.Concepto == Concepto.EntregaDomicilio)
+                                        .Select(a => a.Monto)
+                                        .Sum();
+                }
 
+                if (encomiendas.MetodoEntrega.Equals("Retiro en Agencia", StringComparison.OrdinalIgnoreCase))
+                {
+                    importeBase += AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                        .Where(a => a.Concepto == Concepto.EntregaAgencia)
+                                        .Select(a => a.Monto)
+                                        .Sum();
+                }
 
+                decimal importe = importeBase;
+
+                decimal cargoFlete = AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                    .Where(f => f.Concepto == Concepto.ComisionFleteroPorBulto)
+                                    .Select(f => f.Monto).Single();
+
+                GuiaAlmacen.guias.Add(new GuiaEntidad
+                {
+                    NumeroGuia = int.Parse(codCentroDistribucionOrigen.ToString() + ((DateTime.Now.Ticks)).ToString()[^5..]),
+                    CUITCUIL = encomiendas.Cliente,
+                    CodPostalDest = encomiendas.CodigoPostal,
+
+                    DomicilioDest = encomiendas.Domicilio,
+                    CodPostalOrig = CentroDistribucionAlmacen.centrosDistribucion
+                                    .Where(a => a.CodCentroDist == codCentroDistribucionOrigen)
+                                    .Select(a => a.CodPostal)
+                                    .FirstOrDefault(),
+                    DomicilioOrigen = "Imposicion en CD",
+                    NombreDestinatario = encomiendas.NombreDestinatario,
+                    ApellidoDestinatario = encomiendas.ApellidoDestinatario,
+                    DNIDestinatario = encomiendas.DNI,
+                    Importe = importe,
+                    CargosFleteros = cargoFlete,
+                    CargosAgencia = 0,
+                    CodAgenciaOrigen = 0,
+                    CodCentroDistOrigen = codCentroDistribucionOrigen,
+                    EstadoEncomienda = EstadoEncomienda.EntregadoEnCentroDeDistribucion,
+                    HistorialEstadosGuia = new List<HistorialEstadoGuia>
+                {
+                    new HistorialEstadoGuia
+                    {
+                        EstadoGuiaEnum = EstadoEncomienda.EntregadoEnCentroDeDistribucion,
+                        Fecha = DateTime.Now,
+                        Descripcion = "Encomienda creada y disponible en Centro de Distribucion."
+                    }
+                }
+                });
+
+                MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El importe a cobrar por la encomienda es: $" + GuiaAlmacen.guias.Last().Importe.ToString("F2"), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); //Queria ver si el numero estaba ok
             }
         }
 

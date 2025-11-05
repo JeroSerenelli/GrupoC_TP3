@@ -1,4 +1,5 @@
-﻿using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
+﻿using GrupoC_TP3.Almacenes;
+using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
 using GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
 using System;
 using System.Collections.Generic;
@@ -21,13 +22,18 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
         //private long[] listaClientes = new long[] { 12345678910, 12345678911 };
 
         //private Ubicacion ubicacion;
+
+        
+
+       
+
         public RegistrarImposicionEnCDForm()
         {
             InitializeComponent();
 
-            
 
-            var ubicacion = modelo.ObtenerUbicacion();
+
+            var ubicacion = modelo.ObtenerUbicacion1();
             cmbBoxProvDst.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
             cmbBoxProvDst.SelectedIndex = -1;
             cmbBoxLocalidadDst.SelectedIndex = -1;
@@ -37,6 +43,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             cmbBoxProvDst.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMetodoEntrega.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTipoCaja.DropDownStyle = ComboBoxStyle.DropDownList;
+            buttonGenerarNumeroGuia.Enabled = false;
 
 
         }
@@ -63,7 +70,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
             buttonGenerarNumeroGuia.Enabled = true;
 
-            
+
             if (string.IsNullOrEmpty(cmbBoxProvDst.Text))
             {
                 MessageBox.Show("Seleccione una Provincia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -76,7 +83,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 cmbBoxLocalidadDst.Focus();
                 return;
             }
-            
+
             if (string.IsNullOrEmpty(comboBoxMetodoEntrega.Text))
             {
                 MessageBox.Show("Seleccione un metodo de entrega", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -153,18 +160,18 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             if (cantidadCajas <= 0)
             {
                 MessageBox.Show("La cantidad de cajas ingresadas es invalida, debe ser al menos 1 caja", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxCantidadCajas.Focus();   
+                textBoxCantidadCajas.Focus();
                 return;
             }
 
             if (!int.TryParse(textBoxDNIDestinatario.Text, out int dniDestinatario))
             {
                 MessageBox.Show("El DNI del destinatario ingresado es invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxDNIDestinatario.Focus(); 
+                textBoxDNIDestinatario.Focus();
                 return;
             }
 
-        
+
 
             modelo.CrearEncomienda(new Encomienda
             {
@@ -181,10 +188,10 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 ApellidoDestinatario = textBoxApellidoDestinatario.Text,
                 DNI = dniDestinatario,
                 CodigoAgencia = int.Parse(textBoxCodigoAgencia.Text),
-                
+
             });
 
-            
+
 
 
         }
@@ -195,7 +202,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             //Obtengo CD Destino
             string codigoPostal = textBoxCodPostDestino.Text.Trim();
             // textBoxCodPostDestino
-            var ubicacion = modelo.ObtenerUbicacion();
+            var ubicacion = modelo.ObtenerUbicacion1();
             string centro = ubicacion.ObtenerCentroDistribucion(codigoPostal);
             labelCdDestino.Text = centro;
         }
@@ -221,7 +228,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             }
         }
 
-     
+
 
         private void buttonValidarCuil_Click(object sender, EventArgs e)
         {
@@ -249,7 +256,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             buttonGenerarNumeroGuia.Enabled = true;
 
 
-            
+
         }
 
         private void cmbBoxProvDst_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -277,6 +284,11 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
           );
 
             this.Close();
+        }
+
+        private void textBoxCUITCUIL_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

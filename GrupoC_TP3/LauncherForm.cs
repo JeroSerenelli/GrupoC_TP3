@@ -66,7 +66,7 @@ namespace GrupoC_TP3
             var form = CreateFormInstance(typeName);
             if (form == null)
             {
-                MessageBox.Show($"No se encontró o no se pudo crear el formulario:\n{typeName}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"No se encontrï¿½ o no se pudo crear el formulario:\n{typeName}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

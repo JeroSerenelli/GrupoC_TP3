@@ -34,7 +34,19 @@ namespace GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia
         */
         
 
-        public List<Encomienda> Encomiendas { get; set; } = new List<Encomienda> ();
+        public List<Encomienda> Encomiendas { get; private set; } = new List<Encomienda> ();
+
+        private static string TextoEstado(EstadoEncomienda estado)
+        {
+            return estado switch
+            {
+                EstadoEncomienda.ListoParaRetiroEnAgencia => "Listo para retiro en agencia",
+                EstadoEncomienda.RecibidoEnCentroDistribucionDestino => "Recibido en centro de distribución destino",
+                EstadoEncomienda.Entregado => "Entregado",
+                _ => estado.ToString() // valor por defecto
+            };
+        }
+
 
         internal void ConsultaDNI(Encomienda cliente)
         {
@@ -63,12 +75,23 @@ namespace GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia
             }
             return;
             */
-            
 
-            // Buscar en el JSON las guías con ese DNI y estado "ListoParaRetiroEnAgencia". Compara el DNI recibido del FORM con el DNI de las guías en el almacen JSON y a su vez que tenga el estado de lista para retirar en agencia
+
+
+
+            // Buscar en el JSON las guías con ese DNI y que tengan como metodo de entrega "EntregaEnAgencia Y estado "ListoParaRetiroEnAgencia" O metodo de entrega "EntregaEnCentroDeDistribucion" Y estado "RecibidoEnCentroDistribucionDestino"
             var guiasCliente = GuiaAlmacen.guias
                 .Where(g => g.DNIDestinatario == cliente.Dni
-                         && g.EstadoEncomienda == EstadoEncomienda.ListoParaRetiroEnAgencia)
+                        && (
+                            (g.MetodoEntrega == MetodoEntrega.EntregaEnAgencia
+                            &&
+                            g.EstadoEncomienda == EstadoEncomienda.ListoParaRetiroEnAgencia)
+                            ||
+                            (g.MetodoEntrega == MetodoEntrega.EntregaEnCentroDeDistribucion
+                            &&
+                            g.EstadoEncomienda == EstadoEncomienda.RecibidoEnCentroDistribucionDestino)
+                            )
+                )
                 .ToList();
 
             // Error de si no hay guías que concuerden
@@ -86,7 +109,7 @@ namespace GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia
                 Nombre = g.NombreDestinatario,
                 Apellido = g.ApellidoDestinatario,
                 NroGuia = g.NumeroGuia.ToString(),
-                Estado = "Listo para Retiro en Agencia"
+                Estado = TextoEstado(g.EstadoEncomienda)
             }).ToList();
 
         }
@@ -113,12 +136,12 @@ namespace GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia
                 {
                     EstadoGuiaEnum = EstadoEncomienda.Entregado,
                     Fecha = HoraActual,
-                    Descripcion = "Entrega confirmada en agencia"
+                    Descripcion = "Entrega confirmada en agencia/CD"
                 });
             }
 
             // Guardar cambios en el JSON
-            // ESTO LUEGO HAY QUE PASARLO AL CODIGO DEL PROGRAM Y QUE LO GUARDE CUANDO SE CIERRE LA APLICACION. AHORA LO HICE ASI PARA PROBARLO SIN NECESIDAD DE QUE ESTE HECHO EL CU1, CU2, CU3 QUE GENERAN LAS GUIAS.
+            // TODO: ESTO LUEGO HAY QUE PASARLO AL CODIGO DEL PROGRAM Y QUE LO GUARDE CUANDO SE CIERRE LA APLICACION. AHORA LO HICE ASI PARA PROBARLO SIN NECESIDAD DE QUE ESTE HECHO EL CU1, CU2, CU3 QUE GENERAN LAS GUIAS.
             GuiaAlmacen.GuardarGuia();
 
             // Quitar de la lista local las entregadas (para refrescar UI)

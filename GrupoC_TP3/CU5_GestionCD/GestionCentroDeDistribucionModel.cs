@@ -12,7 +12,7 @@ namespace GrupoC_TP3.CU5_GestionCD
     {
 
 
-        public List<EncomiendasEnTransporte> paquetesRecibidos { get; private set; }
+        public List<EncomiendasEnTransporte>? paquetesRecibidos { get; private set; }
 
         /*= new List<EncomiendasEnTransporte>()
     {
@@ -23,7 +23,7 @@ namespace GrupoC_TP3.CU5_GestionCD
     };*/
 
 
-        public List<EncomiendasEnTransporte> paquetesParaEntregar { get; private set; } /*= new List<EncomiendasEnTransporte>()
+        public List<EncomiendasEnTransporte>? paquetesParaEntregar { get; private set; } /*= new List<EncomiendasEnTransporte>()
         {
             new EncomiendasEnTransporte { Patente = "ABC123", Empresa = "El Rapido", HojaDeRuta = "HDR010", NroGuia = 2001, Estado = "En CD. Listo para despachar." },
             new EncomiendasEnTransporte { Patente = "ABC123", Empresa = "El Rapido", HojaDeRuta = "HDR011", NroGuia = 2002, Estado = "En CD. Listo para despachar." },
@@ -33,40 +33,106 @@ namespace GrupoC_TP3.CU5_GestionCD
 
         internal void ValidacionPatente(EncomiendasEnTransporte encomiendasEnTransporte)
         {
-            bool recibir = paquetesRecibidos.Any(g => g.Patente == encomiendasEnTransporte.Patente.ToUpper());
 
-            if (!recibir)
+
+            //{ Patente = "ABC123", Empresa = "El Rapido", HojaDeRuta = "HDR010", NroGuia = 2001, Estado = "En CD. Listo para despachar." }
+
+            //Busco cada campo de requerido para llenar las listas
+
+            var patente = encomiendasEnTransporte.Patente?.ToUpperInvariant();
+
+            // Buscar la empresa asociada a la patente
+            //var empresa = EmpresaOmnibusAlmacen.empresasOmnibus
+            //    .FirstOrDefault(e => e.Unidades.Any(u => u.PatenteMicro.ToUpperInvariant() == patente));
+            var empresa = EmpresaOmnibusAlmacen.empresasOmnibus
+                                              .Where(e => e.Unidades.Any(u => u.PatenteMicro == encomiendasEnTransporte.Patente))
+                                              ;
+
+
+            if (empresa == null)
+            {
+                MessageBox.Show($"La patente {patente} no está asociada a ninguna empresa registrada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Buscar hojas de ruta del micro con esa patente
+            var hojasDeRuta = HojaRutaMicroAlmacen.hojasRutaMicros
+                .Where(h => h.PatenteMicro.ToUpperInvariant() == patente)
+                .ToList();
+
+            if (!hojasDeRuta.Any())
+            {
+                MessageBox.Show($"No se encontraron hojas de ruta asociadas a la patente {patente}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //Función local para obtener paquetes según su estado
+
+
+
+            List<EncomiendasEnTransporte> ObtenerPaquetesPorEstado(EstadoEncomienda estado, string estadoTexto)
+            {
+                return hojasDeRuta
+                    .SelectMany(h => h.NumerosGuiaMicro
+                        .Select(g => GuiaAlmacen.guias
+                            .FirstOrDefault(ga => ga.NumeroGuia == g.NumeroGuia))
+                        .Where(ga => ga != null && ga.EstadoEncomienda == estado)
+                        .Select(ga => new EncomiendasEnTransporte
+                        {
+                            Patente = patente,
+                            Empresa = empresa.EmpresaOmnibus,
+                            HojaDeRuta = h.HojaRutaMicro.ToString(),
+                            NroGuia = ga.NumeroGuia,
+                            Estado = estadoTexto
+                        })
+                    )
+                    .ToList();
+            }
+
+            // Construir las dos listas
+
+            paquetesRecibidos = ObtenerPaquetesPorEstado(
+            EstadoEncomienda.EnTransporteEntreCentroDeDistribucion,
+            "En camino al CD"
+            );
+
+            paquetesParaEntregar = ObtenerPaquetesPorEstado(
+            EstadoEncomienda.EntregadoEnCentroDeDistribucion,
+            "Entregado en CD"
+            );
+
+            if (!paquetesRecibidos.Any())
+            {
+                MessageBox.Show($"No hay encomiendas para recibir del vehículo {patente}.", "Información",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (!paquetesParaEntregar.Any())
+            {
+                MessageBox.Show($"No hay encomiendas para entregar al vehículo {patente}.", "Información",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // COdigo Andres
+
+            // ahora valido si hay encomiendas para recibir o entregar
+
+            /*
+            if (!paquetesRecibidos.Any())
             {
                 MessageBox.Show($"No hay encomiendas para recibir del vehiculo {encomiendasEnTransporte.Patente}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            bool entregar = paquetesParaEntregar.Any(e => e.Patente == encomiendasEnTransporte.Patente.ToUpper());
-            if (!entregar)
+            
+            if (!paquetesParaEntregar.Any())
             {
                 MessageBox.Show($"No hay encomiendas para entregar al vehiculo {encomiendasEnTransporte.Patente}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //TODO: con los datos que me vienen en encomiendasEnTranspore tengo que llenar las listas paquetesRecibidos y paquetesParaEntregar            
-
-            /*            
-                        EmpresaOmnibusEntidad empresaEntidad = null;
-                        foreach (var empresa in EmpresaOmnibusAlmacen.empresasOmnibus)
-                        {
-                            foreach (var unidad in empresa.Unidades)
-                            {
-                                if (unidad.PatenteMicro == encomiendasEnTransporte.Patente)
-                                {
-                                    empresaEntidad = empresa;
-                                }
-                            }
-                        }
-            */
-            //Acá empresaEntidad tiene la empresa que corresponde a la patente
-
-
-            //{ Patente = "ABC123", Empresa = "El Rapido", HojaDeRuta = "HDR010", NroGuia = 2001, Estado = "En CD. Listo para despachar." }
 
             var empresa = EmpresaOmnibusAlmacen.empresasOmnibus
                                                .Where(e => e.Unidades.Any(u => u.PatenteMicro == encomiendasEnTransporte.Patente))
@@ -115,7 +181,9 @@ namespace GrupoC_TP3.CU5_GestionCD
                 NroGuia = h.NumeroGuia,
                 Estado = "En camino al CD"
             }).ToList();
+            */
 
+           
 
 
 

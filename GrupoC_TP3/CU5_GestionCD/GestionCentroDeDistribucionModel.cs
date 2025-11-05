@@ -42,10 +42,10 @@ namespace GrupoC_TP3.CU5_GestionCD
             var patente = encomiendasEnTransporte.Patente?.ToUpperInvariant();
 
             // Buscar la empresa asociada a la patente
-            //var empresa = EmpresaOmnibusAlmacen.empresasOmnibus
-            //    .FirstOrDefault(e => e.Unidades.Any(u => u.PatenteMicro.ToUpperInvariant() == patente));
             var empresa = EmpresaOmnibusAlmacen.empresasOmnibus
-                                              .Where(e => e.Unidades.Any(u => u.PatenteMicro == encomiendasEnTransporte.Patente))
+                .FirstOrDefault(e => e.Unidades.Any(u => u.PatenteMicro.ToUpperInvariant() == patente));
+            //var empresa = EmpresaOmnibusAlmacen.empresasOmnibus
+            //                                  .Where(e => e.Unidades.Any(u => u.PatenteMicro == encomiendasEnTransporte.Patente))
                                               ;
 
 
@@ -100,6 +100,8 @@ namespace GrupoC_TP3.CU5_GestionCD
             EstadoEncomienda.EntregadoEnCentroDeDistribucion,
             "Entregado en CD"
             );
+
+
 
             if (!paquetesRecibidos.Any())
             {
@@ -181,11 +183,21 @@ namespace GrupoC_TP3.CU5_GestionCD
                 NroGuia = h.NumeroGuia,
                 Estado = "En camino al CD"
             }).ToList();
+
+            if (!paquetesRecibidos.Any())
+            {
+                MessageBox.Show($"No hay encomiendas para recibir del vehículo {patente}.", "Información",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (!paquetesParaEntregar.Any())
+            {
+                MessageBox.Show($"No hay encomiendas para entregar al vehículo {patente}.", "Información",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             */
-
-           
-
-
 
             return;
         }
@@ -193,35 +205,85 @@ namespace GrupoC_TP3.CU5_GestionCD
 
         internal void Actualizar()
         {
-            //recibir todos los "paquetes recibidos"
             foreach (var paquete in paquetesRecibidos)
             {
-                var nroGuia = paquete.NroGuia;
-                var guia = GuiaAlmacen.guias.Single(g => g.NumeroGuia == nroGuia);
-                guia.EstadoEncomienda = EstadoEncomienda.EntregadoEnCentroDeDistribucion;
-                //TODO: verificar si el historial se graba antes o despues.
-                guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+                var guia = GuiaAlmacen.guias.SingleOrDefault(g => g.NumeroGuia == paquete.NroGuia);
+                if (guia == null) continue;//Si no se encontró la guía en el almacén, paso al siguiente paquete
+
+
+                var hojaRuta = HojaRutaMicroAlmacen.hojasRutaMicros
+                    .FirstOrDefault(h => h.HojaRutaMicro.ToString() == paquete.HojaDeRuta);
+                if (hojaRuta == null) continue; //Si no encuentro la hoja de ruta correspondiente, salto este paquete
+
+
+                var centroDestino = CentroDistribucionAlmacen.centrosDistribucion
+                    .FirstOrDefault(cd => cd.CodCentroDist == hojaRuta.CentroDistribucionDestino);
+                
+                if (centroDestino == null)  //Si la hoja de ruta apunta a un centro de distribución que no existe, también lo salto
                 {
-                    Descripcion = "En camino a domicilio o agencia.",
-                    Fecha = DateTime.Now,
-                    EstadoGuiaEnum = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion
-                });
+                    MessageBox.Show($"No se encontró el centro de distribución destino (Código: {hojaRuta.CentroDistribucionDestino}) " +
+                                    $"para la hoja de ruta {hojaRuta.HojaRutaMicro}.",
+                        "Advertencia - Centro de distribución no encontrado",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    continue;
+                }
+
+                int codigoPostalCDActual = centroDestino.CodPostal;
+
+                if (codigoPostalCDActual == guia.CodPostalDest)
+                {
+                    guia.EstadoEncomienda = EstadoEncomienda.RecibidoEnCentroDistribucionDestino;
+                    guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+                    {
+                        EstadoGuiaEnum = EstadoEncomienda.RecibidoEnCentroDistribucionDestino,
+                        Fecha = DateTime.Now,
+                        Descripcion = $"Recibido en centro de distribución destino (CD {centroDestino.Nombre})."
+                    });
+                }
+                else
+                {
+                    guia.EstadoEncomienda = EstadoEncomienda.EntregadoEnCentroDeDistribucion;
+                    guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+                    {
+                        EstadoGuiaEnum = EstadoEncomienda.EntregadoEnCentroDeDistribucion,
+                        Fecha = DateTime.Now,
+                        Descripcion = $"Recibido en centro de distribución intermedio (CD {centroDestino.Nombre})."
+                    });
+                }
             }
 
 
-            foreach (var paquete in paquetesParaEntregar)
-            {
-                var nroGuia = paquete.NroGuia;
-                var guia = GuiaAlmacen.guias.Single(g => g.NumeroGuia == nroGuia);
-                guia.EstadoEncomienda = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion;
-                //TODO: verificar si el historial se graba antes o despues.
-                guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
-                {
-                    Descripcion = "En transporte entre centros de distribucion",
-                    Fecha = DateTime.Now,
-                    EstadoGuiaEnum = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion
-                });
-            }
+
+            //CODIGO ANTERIOR DE ANDRES
+            //recibir todos los "paquetes recibidos"
+            //foreach (var paquete in paquetesRecibidos)
+            //{
+            //    var nroGuia = paquete.NroGuia;
+            //    var guia = GuiaAlmacen.guias.Single(g => g.NumeroGuia == nroGuia);
+            //    guia.EstadoEncomienda = EstadoEncomienda.EntregadoEnCentroDeDistribucion;
+            //    //TODO: verificar si el historial se graba antes o despues.
+            //    guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+            //    {
+            //        Descripcion = "En camino a domicilio o agencia.",
+            //        Fecha = DateTime.Now,
+            //        EstadoGuiaEnum = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion
+            //    });
+            //}
+
+
+            //foreach (var paquete in paquetesParaEntregar)
+            //{
+            //    var nroGuia = paquete.NroGuia;
+            //    var guia = GuiaAlmacen.guias.Single(g => g.NumeroGuia == nroGuia);
+            //    guia.EstadoEncomienda = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion;
+            //    //TODO: verificar si el historial se graba antes o despues.
+            //    guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+            //    {
+            //        Descripcion = "En transporte entre centros de distribucion",
+            //        Fecha = DateTime.Now,
+            //        EstadoGuiaEnum = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion
+            //    });
+            //}
 
 
             //... y eso es todo amigos?

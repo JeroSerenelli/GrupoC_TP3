@@ -47,9 +47,9 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
             DateTime fechaFin = dateTimePickerFin.Value.Date;
 
             // NECESITO RESOLVER ESTO PARA IMPLEMENTAR EL FILTRO DE FECHAS
-            var filtrados = modelo.Resultados1
-                .Where(r => r.Fecha >= fechaInicio && r.Fecha <= fechaFin)
-                .ToList();
+            var filtrados = modelo.Resultados1;
+                //.Where(r => r.Fecha >= fechaInicio && r.Fecha <= fechaFin)
+                //.ToList();
 
             CargarListView(filtrados);
 

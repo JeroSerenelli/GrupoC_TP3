@@ -16,12 +16,12 @@
     "CargosAgencia": 0,
     "CodAgenciaOrigen": 2000,
     "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 6,
+    "EstadoEncomienda": 9,
     "HistorialEstadosGuia": [
       {
-        "Estado": 6,
+        "Estado": 9,
         "Fecha": "2025-11-02T12:00:00",
-        "Descripcion": "Listo para retiro en agencia"
+        "Descripcion": "Entregado"
       }
     ]
   },

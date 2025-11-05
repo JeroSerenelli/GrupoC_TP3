@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GrupoC_TP3.Almacenes
@@ -15,7 +17,9 @@ namespace GrupoC_TP3.Almacenes
             if (File.Exists(@"Datos\HojasRutaMicros.json"))
             {
                 var hojasRutaMicrosJson = File.ReadAllText(@"Datos\HojasRutaMicros.json");
-                hojasRutaMicros = System.Text.Json.JsonSerializer.Deserialize<List<HojaRutaMicroEntidad>>(hojasRutaMicrosJson) ?? new List<HojaRutaMicroEntidad>();
+                var options = new JsonSerializerOptions();
+                options.Converters.Add(new JsonStringEnumConverter());
+                hojasRutaMicros = System.Text.Json.JsonSerializer.Deserialize<List<HojaRutaMicroEntidad>>(hojasRutaMicrosJson, options) ?? new List<HojaRutaMicroEntidad>();
             }
         }
 

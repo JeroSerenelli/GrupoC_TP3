@@ -34,6 +34,8 @@ namespace GrupoC_TP3.CU6_EntregaEncomiendas
         private void buttonConsultar_Click(object sender, EventArgs e)
         {
             listViewEncomiendasARetirarAgencia.Items.Clear();
+            labelNombre.Text = "";
+            labelApellido.Text = "";
 
             if (string.IsNullOrEmpty(textBoxDNI.Text))
             {

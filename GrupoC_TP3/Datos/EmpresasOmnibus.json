@@ -91,6 +91,14 @@
       {
         "CUITEmpresasOmnibus": 30456789012,
         "PatenteMicro": "AF112MY"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "ABC337"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "ABC338"
       }
     ]
   },
@@ -106,6 +114,10 @@
       {
         "CUITEmpresasOmnibus": 30456789012,
         "PatenteMicro": "ABC321"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "ABC336"
       }
     ]
   }

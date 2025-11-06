@@ -547,25 +547,25 @@
   },
   {
     "NumeroGuia": 105966,
-    "CUITCUIL": 21368503374,
-    "CodPostalDest": 1000,
+    "CUITCUIL": 1000,
+    "CodPostalDest": 1904,
     "MetodoEntrega": "EntregaEnDomicilio",
-    "DomicilioDest": "Calle 205 #437",
+    "DomicilioDest": "Calle 538 #813",
     "TamañoCaja": "M",
     "CodPostalOrig": 2223,
-    "DomicilioOrigen": "Avenida 9 #374",
+    "DomicilioOrigen": "Avenida 808 #354",
     "NombreDestinatario": "Julián",
     "ApellidoDestinatario": "Martínez",
-    "DNIDestinatario": 32373903,
+    "DNIDestinatario": 40084021,
     "Importe": 4099.72,
     "CargosFleteros": 117,
-    "CargosAgencia": 230,
-    "CodAgenciaOrigen": 7,
+    "CargosAgencia": 431,
+    "CodAgenciaOrigen": 2,
     "CodCentroDistOrigen": 1004,
     "EstadoEncomienda": "EnTransporteEntreCentroDeDistribucion",
     "HistorialEstadosGuia": [
       {
-        "Fecha": "2025-11-04T01:43:12.290709",
+        "Fecha": "2025-10-04T01:43:12.290709",
         "Estado": "Creada"
       }
     ]
@@ -573,7 +573,7 @@
   {
     "NumeroGuia": 605414,
     "CUITCUIL": 21634945556,
-    "CodPostalDest": 1000,
+    "CodPostalDest": 1650,
     "MetodoEntrega": "EntregaEnDomicilio",
     "DomicilioDest": "Calle 538 #813",
     "TamañoCaja": "S",
@@ -587,10 +587,10 @@
     "CargosAgencia": 431,
     "CodAgenciaOrigen": 2,
     "CodCentroDistOrigen": 1004,
-    "EstadoEncomienda": "EnTransporteEntreCentroDeDistribucion",
+    "EstadoEncomienda": "EntregadoEnCentroDeDistribucion",
     "HistorialEstadosGuia": [
       {
-        "Fecha": "2025-11-04T01:43:12.290738",
+        "Fecha": "2025-10-04T01:43:12.290738",
         "Estado": "Creada"
       }
     ]
@@ -598,14 +598,14 @@
   {
     "NumeroGuia": 255095,
     "CUITCUIL": 22465821507,
-    "CodPostalDest": 1001,
+    "CodPostalDest": 2223,
     "MetodoEntrega": "EntregaEnDomicilio",
     "DomicilioDest": "Calle 871 #476",
     "TamañoCaja": "M",
-    "CodPostalOrig": 2223,
+    "CodPostalOrig": 1636,
     "DomicilioOrigen": "Avenida 20 #377",
-    "NombreDestinatario": "Lucía",
-    "ApellidoDestinatario": "Pérez",
+    "NombreDestinatario": "Capitan",
+    "ApellidoDestinatario": "John",
     "DNIDestinatario": 41221265,
     "Importe": 1784.69,
     "CargosFleteros": 422,

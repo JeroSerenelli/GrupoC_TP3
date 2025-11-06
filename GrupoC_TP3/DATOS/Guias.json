@@ -334,6 +334,11 @@
         "Estado": 5,
         "Fecha": "2025-11-02T09:20:00",
         "Descripcion": "Recibido En Centro Distribucion Destino"
+      },
+      {
+        "Estado": 1,
+        "Fecha": "2025-11-01T09:20:00",
+        "Descripcion": "Listo para retirar en Domicilio"
       }
     ]
   },

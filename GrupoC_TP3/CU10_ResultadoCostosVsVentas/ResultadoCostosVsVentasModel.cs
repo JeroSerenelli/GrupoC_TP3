@@ -17,7 +17,7 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
             EmpresaTransporte = empresa.EmpresaOmnibus,
             Venta = empresa.Unidades
                 .SelectMany(u => HojaRutaMicroAlmacen.hojasRutaMicros
-                    .Where(h => h.PatenteMicro == u.PatenteMicro) //TODO: no funciona bien el tema de sumar ventas. Es un tema de la info que estoy trayendo quizas?
+                    .Where(h => h.PatenteMicro == u.PatenteMicro) 
                     .SelectMany(h => h.NumerosGuiaMicro)
                     .Select(gm => GuiaAlmacen.guias
                         .FirstOrDefault(g => g.NumeroGuia == gm.NumeroGuia && g.EstadoEncomienda == EstadoEncomienda.Entregado))

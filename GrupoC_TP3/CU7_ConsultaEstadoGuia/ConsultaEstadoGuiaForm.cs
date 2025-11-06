@@ -53,10 +53,10 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
                 var historial = modelo.ObtenerHistorialPorNumero(numeroGuia);
 
                 listView1.BeginUpdate();
-                foreach (var h in historial)
+                foreach (var g in historial) 
                 {
-                    var item = new ListViewItem(h.EstadoEncomienda);
-                    item.SubItems.Add(h.FechaActualizacion.ToString("yyyy-MM-dd HH:mm"));
+                    var item = new ListViewItem(g.EstadoGuia); 
+                    item.SubItems.Add(g.UltActualizacion);      
                     listView1.Items.Add(item);
                 }
                 listView1.EndUpdate();
@@ -66,7 +66,6 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
                     MessageBox.Show("La guía no tiene historial de estados.",
                         "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
             catch (ArgumentException ex)
             {
@@ -82,7 +81,6 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {

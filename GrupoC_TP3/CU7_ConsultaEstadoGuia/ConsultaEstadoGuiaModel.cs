@@ -10,48 +10,9 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 {
-    public class EstadoGuiaDTO
-    {
-        public string EstadoEncomienda { get; set; }
-        public DateTime FechaActualizacion { get; set; }
-
-        public EstadoGuiaDTO(string estado, DateTime fecha)
-        {
-            EstadoEncomienda = estado;
-            FechaActualizacion = fecha;
-        }
-    }
     internal class ConsultaEstadoGuiaModel
     {
-
-        public List<Guia> Guias { get; set; } = new()
-        {
-            new Guia { NumeroGuia = 1111, EstadoGuia = "Entregado", UltActualizacion = "2025-10-08" },
-            new Guia { NumeroGuia = 1111, EstadoGuia = "En camino a CD", UltActualizacion = "2025-10-07" },
-            new Guia { NumeroGuia = 4444, EstadoGuia = "En Agencia", UltActualizacion = "2023-10-08" },
-        };
-
-
-        internal void ValidacionGuia(Guia guias)
-        {
-            //SEA POSITIVO 
-            if (guias.NumeroGuia <= 0) //Lvl 2
-            {
-                MessageBox.Show("El numero de guía debe ser un numero positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //textBoxDNIDestinatario.Focus();
-                return;
-            }
-
-            //Que exista el nro de guia ingresado
-            bool existe = Guias.Any(g => g.NumeroGuia == guias.NumeroGuia);
-
-            if (existe == false)
-            {
-                MessageBox.Show("El numero de guia ingresado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-        public List<EstadoGuiaDTO> ObtenerHistorialPorNumero(long numeroGuia)
+        public List<Guia> ObtenerHistorialPorNumero(long numeroGuia)
         {
             if (numeroGuia <= 0)
                 throw new ArgumentException("El número de guía debe ser positivo.");
@@ -62,13 +23,19 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 
             var historial = guia.HistorialEstadosGuia
                 .OrderByDescending(h => h.Fecha)
-                .Select(h => new EstadoGuiaDTO(h.Descripcion, h.Fecha))
+                .Select(h => new Guia
+                {
+                    NumeroGuia = numeroGuia,                       
+                    EstadoGuia = h.Descripcion,                    
+                    UltActualizacion = h.Fecha.ToString("yyyy-MM-dd HH:mm")
+                })
                 .ToList();
 
             return historial;
         }
-
-
     }
+
 }
+
+
 

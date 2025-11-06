@@ -164,6 +164,8 @@ internal class RegistrarImposicionEnAgenciaModel
                              && t.CentroDistribucionDestino == codCentroDistribucionDestino)
                              .Select(t => t.Importe)
                              .Single();
+            
+            decimal cargoAgencia = 0;
 
             if (encomiendas.MetodoEntrega.Equals("Entrega en Domicilio", StringComparison.OrdinalIgnoreCase))
             {
@@ -179,15 +181,19 @@ internal class RegistrarImposicionEnAgenciaModel
                                     .Where(a => a.Concepto == Concepto.EntregaAgencia)
                                     .Select(a => a.Monto)
                                     .Sum();
+
+                cargoAgencia += AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                    .Where(a => a.Concepto == Concepto.EntregaAgencia)
+                                    .Select(a => a.Monto).Single();
             }
+
+            decimal finalAgencia = cargoAgencia;
 
             decimal importe = importeBase;
 
             decimal cargoFlete = AdicionalesYComisionesAlmacen.adicionalesComisiones
                                 .Where(f => f.Concepto == Concepto.ComisionFleteroPorBulto)
                                 .Select(f => f.Monto).Single();
-
-            decimal cargoAgencia = 500; //Falta almacenarlo en algun lado
 
 
             GuiaAlmacen.guias.Add(new GuiaEntidad
@@ -207,7 +213,7 @@ internal class RegistrarImposicionEnAgenciaModel
                 DNIDestinatario = encomiendas.DNI,
                 Importe = importe,
                 CargosFleteros = cargoFlete,
-                CargosAgencia = cargoAgencia,
+                CargosAgencia = finalAgencia,
                 CodAgenciaOrigen = codAgencia,
                 CodCentroDistOrigen = codCentroDistribucionOrigen,
                 EstadoEncomienda = EstadoEncomienda.ListoParaRetirarEnAgencia,

@@ -27,7 +27,6 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
         public string ObtenerCentroDistribucion(string codigoPostal)
         {
-            //TODO: como puedo hacer que esto use el almacen pero que funcione igual?
             if (CodigoPostalCentroDistribucion.TryGetValue(codigoPostal, out string centro))
             {
                 return centro;

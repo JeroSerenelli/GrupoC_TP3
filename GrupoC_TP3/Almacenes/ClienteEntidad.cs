@@ -8,7 +8,7 @@ namespace GrupoC_TP3.Almacenes
 {
     internal class ClienteEntidad
     {
-        public long CUITCUIL { get; set; } //TODO: tuve que cambiar a long porque los CUIT son muy grandes para ser int
+        public long CUITCUIL { get; set; }
         public string RazonSocial { get; set; }
         public CondicionCliente CondicionCliente { get; set; }
         public List<Autorizados> AutorizadosImposicion { get; set; } = new List<Autorizados>();

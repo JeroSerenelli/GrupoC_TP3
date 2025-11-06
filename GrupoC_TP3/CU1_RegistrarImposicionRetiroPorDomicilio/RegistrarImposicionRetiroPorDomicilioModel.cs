@@ -202,6 +202,8 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                                     .Select(a => a.Monto)
                                     .Sum();
 
+                decimal cargoAgencia = 0;
+
                 if(encomiendas.MetodoEntrega.Equals("Entrega en Domicilio", StringComparison.OrdinalIgnoreCase))
                 {
                     importeRetiroDomicilio += AdicionalesYComisionesAlmacen.adicionalesComisiones
@@ -216,8 +218,14 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                                         .Where(a => a.Concepto == Concepto.EntregaAgencia)
                                         .Select(a => a.Monto)
                                         .Sum();
+
+                    cargoAgencia += AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                        .Where(a => a.Concepto == Concepto.EntregaAgencia)
+                                        .Select(a => a.Monto).Single();
                 }
 
+                decimal finalAgencia = cargoAgencia / 2m;
+                
                 decimal importe = importeRetiroDomicilio;
 
                 decimal cargoFlete = AdicionalesYComisionesAlmacen.adicionalesComisiones
@@ -229,9 +237,11 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                     NumeroGuia = int.Parse(codCentroDistribucionOrigen.ToString() + DateTime.Now.Ticks.ToString()[^5..]),
                     CUITCUIL = encomiendas.NroCUITCUIL,
                     CodPostalDest = encomiendas.CdDestino,
-                    //MetodoEntrega = encomiendas.MetodoEntrega, TODO: no se como convertirlo
+                    //MetodoEntrega = encomiendas.MetodoEntrega, 
+                    //TODO: no se como convertirlo
                     DomicilioDest = encomiendas.DomicilioDestinatario,
-                    //TamañoCaja = encomiendas.TipoCaja, TODO: idem, no se trabajar con el enum
+                    //TamañoCaja = encomiendas.TipoCaja, 
+                    //TODO: idem, no se trabajar con el enum
                     CodPostalOrig = encomiendas.CPRetiro,
                     DomicilioOrigen = encomiendas.DomicilioRetiro,
                     NombreDestinatario = encomiendas.NombreDestinatario,
@@ -239,7 +249,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                     DNIDestinatario = encomiendas.DNIDestinatario,
                     Importe = importe,
                     CargosFleteros = cargoFlete,
-                    CargosAgencia = 0, //TODO: calcular, falta almacen
+                    CargosAgencia = finalAgencia,
                     CodAgenciaOrigen = 0, //no lo necesito, es imposicion por telefono
                     CodCentroDistOrigen = codCentroDistribucionOrigen,
                     EstadoEncomienda = EstadoEncomienda.ListoParaRetirarEnDomicilio,
@@ -256,6 +266,8 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
                 MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);   
                 MessageBox.Show("El importe a cobrar por la encomienda es: $" + GuiaAlmacen.guias.Last().Importe.ToString("F2"), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); //Queria ver si el numero estaba ok
+                MessageBox.Show("Importe base: " + importeBase.ToString());
+                MessageBox.Show("El importe a pagar a la agencia es de: $" + GuiaAlmacen.guias.Last().CargosAgencia.ToString("F3"), "Exito");
             }  
         }
     }

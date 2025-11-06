@@ -45,10 +45,9 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             cmbBoxProvRetiro.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
             cmbBoxProvRetiro.SelectedIndex = -1;
             cmbBoxLocalidadRetiro.SelectedIndex = -1;
-            cmbBoxLocalidadRetiro.Enabled = false; // hasata que no elija la provincia de destino
+            cmbBoxLocalidadRetiro.Enabled = false; // hasta que no elija la provincia de destino
 
 
-            //TODO: Nice-To-Have. ASEGURARSE que esto este bien implementado. Debe estar habilitado solo cuando el DNI ingresado sea valido y la casilla esté completa
             buttonGenerarNumeroGuia.Enabled = false; //Desactivo el boton generar nro de guia hasta que esten las validaciones completadas
 
 
@@ -272,7 +271,6 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             }
 
 
-            //TODO: FALTA CREAR LA ENCOMIENDA FINAL Y PRINTEAR 
             modelo.CrearEncomienda(new EncomiendasImpuestas
             {
                 NroCUITCUIL = clienteValido,

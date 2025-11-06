@@ -17,7 +17,6 @@ namespace GrupoC_TP3.Almacenes
             if (File.Exists(@"Datos\Facturas.json"))
             {
                 var facturaJson = File.ReadAllText(@"Datos\Facturas.json");
-                //TODO: tuve que agregar esto porque no reconocia los enums como strings
                 var options = new JsonSerializerOptions();
                 options.Converters.Add(new JsonStringEnumConverter());
                 facturas = System.Text.Json.JsonSerializer.Deserialize<List<FacturaEntidad>>(facturaJson, options) ?? new List<FacturaEntidad>();

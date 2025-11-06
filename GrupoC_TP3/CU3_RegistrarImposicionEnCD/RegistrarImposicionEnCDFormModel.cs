@@ -182,6 +182,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             .Select(cd => cd.CodCentroDist)
             .FirstOrDefault();
 
+            decimal cargoAgencia = 0;
 
             for (int i = 0; i < encomiendas.CantidadCajas; i++)
             {
@@ -208,7 +209,14 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                                         .Where(a => a.Concepto == Concepto.EntregaAgencia)
                                         .Select(a => a.Monto)
                                         .Sum();
+
+                    cargoAgencia += AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                        .Where(a => a.Concepto == Concepto.EntregaAgencia)
+                                        .Select(a => a.Monto).Single();
+
                 }
+
+                decimal finalAgencia = cargoAgencia / 2m;
 
                 decimal importe = importeBase;
 
@@ -233,7 +241,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                     DNIDestinatario = encomiendas.DNI,
                     Importe = importe,
                     CargosFleteros = cargoFlete,
-                    CargosAgencia = 0,
+                    CargosAgencia = finalAgencia,
                     CodAgenciaOrigen = 0,
                     CodCentroDistOrigen = codCentroDistribucionOrigen,
                     EstadoEncomienda = EstadoEncomienda.EntregadoEnCentroDeDistribucion,

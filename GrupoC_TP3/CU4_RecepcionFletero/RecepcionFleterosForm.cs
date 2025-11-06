@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using GrupoC_TP3.Almacenes;
+using GrupoC_TP3.CU4_RecepcionFletero;
 
 namespace GrupoC_TP3.CU4_RecepcionFletero
 {
     public partial class RecepcionFleterosForm : Form
     {
         private RecepcionFleterosModel modelo;
-        private FleteroEntidad fleteroSeleccionado;
+        // Ya no referenciamos FleteroEntidad
+        private int? fleteroDniSeleccionado;
+        private string fleteroNombreSeleccionado;
 
         public RecepcionFleterosForm()
         {
@@ -30,30 +32,21 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
         }
 
         /// <summary>
-        /// Carga TODOS los fleteros en el combo al iniciar
+        /// Carga TODOS los fleteros en el combo al iniciar (usando el modelo, que devuelve DTOs simples)
         /// </summary>
         private void CargarTodosLosFleteros()
         {
             try
             {
-                var fleteros = modelo.ObtenerTodosLosFleteros();
+                var fleteros = modelo.ObtenerTodosLosFleterosView(); // List<KeyValuePair<int,string>>
 
                 comboBoxFletero.Items.Clear();
-                comboBoxFletero.DisplayMember = "";
+                comboBoxFletero.DisplayMember = "Value";
 
-                foreach (var fletero in fleteros)
+                foreach (var f in fleteros)
                 {
-                    comboBoxFletero.Items.Add(fletero);
+                    comboBoxFletero.Items.Add(f);
                 }
-
-                // Configurar cómo se muestra en el combo
-                comboBoxFletero.Format += (s, e) =>
-                {
-                    if (e.ListItem is FleteroEntidad f)
-                    {
-                        e.Value = $"{f.NombreFletero} {f.ApellidoFletero}".Trim();
-                    }
-                };
 
                 comboBoxFletero.SelectedIndex = -1;
             }
@@ -81,9 +74,11 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     return;
                 }
 
-                // Obtener el fletero seleccionado
-                fleteroSeleccionado = (FleteroEntidad)comboBoxFletero.SelectedItem;
-                int dniFletero = fleteroSeleccionado.DNIFletero;
+                // Obtener el fletero seleccionado desde el KeyValuePair (DNI, Nombre)
+                var kv = (KeyValuePair<int, string>)comboBoxFletero.SelectedItem;
+                fleteroDniSeleccionado = kv.Key;
+                fleteroNombreSeleccionado = kv.Value;
+                int dniFletero = fleteroDniSeleccionado.Value;
 
                 // Limpiar listas
                 listViewHDRAsignadas.Items.Clear();
@@ -99,7 +94,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     var item = new ListViewItem(hoja.HojaDeRuta);
                     item.SubItems.Add(hoja.NroGuia);
                     item.SubItems.Add(hoja.Estado);
-                    item.Tag = hoja; // Guardar el objeto completo
+                    item.Tag = hoja; // Guardar el objeto completo (clase HojasDeRutaAsignadas)
                     listViewHDRAsignadas.Items.Add(item);
                 }
 
@@ -110,7 +105,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     {
                         var item = new ListViewItem(hoja.HojaDeRuta);
                         item.SubItems.Add(hoja.NroGuia);
-                        item.Tag = hoja; // Guardar el objeto completo
+                        item.Tag = hoja; // Guardar el objeto completo (clase HojasDeRutaPorAsignar)
                         listViewAsignarHDR.Items.Add(item);
                     }
                 }
@@ -137,7 +132,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             try
             {
                 // Validación: debe haber un fletero seleccionado
-                if (fleteroSeleccionado == null)
+                if (fleteroDniSeleccionado == null)
                 {
                     MessageBox.Show("Primero debe buscar un fletero.", "Validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -171,7 +166,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 {
                     // Buscar todas las guías de esta HDR en el modelo
                     var guiasDeLaHDR = modelo.Fleteros
-                        .Where(h => h.HojaDeRuta == hdrId && h.DNIFletero == fleteroSeleccionado.DNIFletero)
+                        .Where(h => h.HojaDeRuta == hdrId && h.DNIFletero == fleteroDniSeleccionado.Value)
                         .Select(h => (h.HojaDeRuta, h.NroGuia))
                         .ToList();
 
@@ -186,8 +181,8 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 sb.AppendLine("═══════════════════════════════════════════════════");
                 sb.AppendLine("        DETALLE DE RECEPCIÓN DE HOJAS DE RUTA");
                 sb.AppendLine("═══════════════════════════════════════════════════");
-                sb.AppendLine($"Fletero: {fleteroSeleccionado.NombreFletero} {fleteroSeleccionado.ApellidoFletero}");
-                sb.AppendLine($"DNI: {fleteroSeleccionado.DNIFletero}");
+                sb.AppendLine($"Fletero: {fleteroNombreSeleccionado}");
+                sb.AppendLine($"DNI: {fleteroDniSeleccionado.Value}");
                 sb.AppendLine("───────────────────────────────────────────────────");
                 sb.AppendLine($"{"Hoja de Ruta",-15} {"Nro Guía",-15} {"Estado",-20}");
                 sb.AppendLine("───────────────────────────────────────────────────");
@@ -222,7 +217,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             try
             {
                 // Validación: debe haber un fletero seleccionado
-                if (fleteroSeleccionado == null)
+                if (fleteroDniSeleccionado == null)
                 {
                     MessageBox.Show("Primero debe buscar un fletero.", "Validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -244,7 +239,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     .ToList();
 
                 // Asignar usando el DNI del fletero seleccionado
-                modelo.AsignarHojasDeRutaAFletero(fleteroSeleccionado.DNIFletero, hojasParaAsignar);
+                modelo.AsignarHojasDeRutaAFletero(fleteroDniSeleccionado.Value, hojasParaAsignar);
 
                 MessageBox.Show("Hojas de ruta asignadas correctamente.", "Éxito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

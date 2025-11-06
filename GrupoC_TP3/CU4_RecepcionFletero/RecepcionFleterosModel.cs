@@ -106,6 +106,21 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
         }
 
         /// <summary>
+        /// Nueva: Devuelve datos de presentación (DNI + NombreCompleto) para la UI.
+        /// El Form debe usar este método en lugar de manipular entidades.
+        /// </summary>
+        internal List<KeyValuePair<int, string>> ObtenerTodosLosFleterosView()
+        {
+            var fleteros = FleteroAlmacen.fleteros ?? new List<FleteroEntidad>();
+            return fleteros
+                .DistinctBy(f => f.DNIFletero)
+                .OrderBy(f => f.NombreFletero)
+                .ThenBy(f => f.ApellidoFletero)
+                .Select(f => new KeyValuePair<int, string>(f.DNIFletero, $"{f.NombreFletero} {f.ApellidoFletero}".Trim()))
+                .ToList();
+        }
+
+        /// <summary>
         /// Botón "IMPRIMIR DETALLE"
         /// Actualiza HDR -> Cumplida y TODAS las guías de esa HDR -> Entregado
         /// </summary>

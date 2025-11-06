@@ -8,6 +8,8 @@ namespace GrupoC_TP3.Almacenes
 {
     static class AgenciaAlmacen
     {
+        public static AgenciaEntidad AgenciaActual { get; set; }
+
         public static List<AgenciaEntidad> agencias = new List<AgenciaEntidad>();
 
         static AgenciaAlmacen()

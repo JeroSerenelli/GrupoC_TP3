@@ -8,6 +8,8 @@ namespace GrupoC_TP3.Almacenes
 {
     static class CentroDistribucionAlmacen
     {
+        public static CentroDistribucionEntidad centroDistribucionActual { get; set; }
+
         public static List<CentroDistribucionEntidad> centrosDistribucion = new List<CentroDistribucionEntidad>();
 
         static CentroDistribucionAlmacen()

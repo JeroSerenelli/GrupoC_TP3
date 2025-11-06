@@ -19,6 +19,7 @@ namespace GrupoC_TP3.Almacenes
                 var hojasRutaMicrosJson = File.ReadAllText(@"Datos\HojasRutaMicros.json");
                 var options = new JsonSerializerOptions();
                 options.Converters.Add(new JsonStringEnumConverter());
+                options.UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow;
                 hojasRutaMicros = System.Text.Json.JsonSerializer.Deserialize<List<HojaRutaMicroEntidad>>(hojasRutaMicrosJson, options) ?? new List<HojaRutaMicroEntidad>();
             }
         }

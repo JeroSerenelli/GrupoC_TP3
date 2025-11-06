@@ -37,6 +37,8 @@ internal class RegistrarImposicionEnAgenciaModel
         _indicesConstruidos = true;
     }
 
+    public int CodigoAgenciaActual => AgenciaAlmacen.AgenciaActual?.CodAgencia ?? 0;
+
     public List<string> LocalidadesDeProvincia(string nombreProvincia)
     {
         ConstruirIndicesProvinciasYLocalidades();
@@ -139,7 +141,7 @@ internal class RegistrarImposicionEnAgenciaModel
             return;
         }
 
-        int codAgencia = 2006; //Hardcodeamos la agencia//
+        int codAgencia = AgenciaAlmacen.AgenciaActual.CodAgencia; //Hardcodeamos la agencia//
 
         int codCentroDistribucionOrigen = AgenciaAlmacen.agencias
             .Where(a => a.CodAgencia == codAgencia)

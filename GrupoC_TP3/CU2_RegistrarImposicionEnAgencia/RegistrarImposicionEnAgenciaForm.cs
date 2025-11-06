@@ -40,11 +40,6 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
         }
 
 
-        private void RegistrarImposicionEnAgenciaForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void cmbBoxProvDst_SelectedIndexChanged(object sender, EventArgs e)
         {
             string provinciaSeleccionada = cmbBoxProvDst.Text;
@@ -271,7 +266,7 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
 
         private void RegistrarImposicionEnAgenciaForm_Load_1(object sender, EventArgs e)
         {
-
+            textBoxCodigoAgencia.Text = modelo.CodigoAgenciaActual.ToString();
         }
 
         private void textBoxCodigoAgencia_TextChanged(object sender, EventArgs e)

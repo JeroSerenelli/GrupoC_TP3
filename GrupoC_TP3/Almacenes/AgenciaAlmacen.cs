@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace GrupoC_TP3.Almacenes
 {
@@ -17,7 +20,9 @@ namespace GrupoC_TP3.Almacenes
             if (File.Exists(@"Datos\Agencias.json"))
             {
                 var agenciaJson = File.ReadAllText(@"Datos\Agencias.json");
-                agencias = System.Text.Json.JsonSerializer.Deserialize<List<AgenciaEntidad>>(agenciaJson) ?? new List<AgenciaEntidad>();
+                var options = new JsonSerializerOptions();
+                options.UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow;
+                agencias = System.Text.Json.JsonSerializer.Deserialize<List<AgenciaEntidad>>(agenciaJson, options) ?? new List<AgenciaEntidad>();
             }
         }
 

@@ -1,3 +1,4 @@
+using GrupoC_TP3.Almacenes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,12 @@ namespace GrupoC_TP3
         private ListBox listBox;
         private Button runButton;
         private Button cancelarButton;
+        private Panel panel1;
+        private ComboBox CdActualCombo;
+        private ComboBox AgenciaActualCombo;
+        private Label label2;
+        private Label label1;
+        private Panel panel2;
 
         // Display name -> full type name (namespace + type)
         private readonly Dictionary<string, string> formMap = new()
@@ -29,9 +36,11 @@ namespace GrupoC_TP3
 
         public LauncherForm()
         {
+            InitializeComponent();
+
             Text = "Seleccionar Formulario";
-            Width = 480;
-            Height = 360;
+            Width = 550;
+            Height = 560;
             StartPosition = FormStartPosition.CenterScreen;
 
             listBox = new ListBox { Dock = DockStyle.Top, Height = 240 };
@@ -49,8 +58,14 @@ namespace GrupoC_TP3
             panel.Controls.Add(runButton);
             panel.Controls.Add(cancelarButton);
 
-            Controls.Add(listBox);
-            Controls.Add(panel);
+            panel2.Controls.Add(listBox);
+            panel2.Controls.Add(panel);
+
+            CdActualCombo.DisplayMember = "Nombre";
+            CdActualCombo.Items.AddRange(CentroDistribucionAlmacen.centrosDistribucion.OrderBy(c => c.Nombre).ToArray());
+
+            AgenciaActualCombo.DisplayMember = "CodAgencia";
+            AgenciaActualCombo.Items.AddRange(AgenciaAlmacen.agencias.OrderBy(a => a.CodAgencia).ToArray());
         }
 
         private void RunSelectedForm(object? sender, EventArgs e)
@@ -85,6 +100,85 @@ namespace GrupoC_TP3
             }
         }
 
+        private void InitializeComponent()
+        {
+            panel1 = new Panel();
+            CdActualCombo = new ComboBox();
+            AgenciaActualCombo = new ComboBox();
+            label2 = new Label();
+            label1 = new Label();
+            panel2 = new Panel();
+            panel1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(CdActualCombo);
+            panel1.Controls.Add(AgenciaActualCombo);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(494, 80);
+            panel1.TabIndex = 0;
+            // 
+            // CdActualCombo
+            // 
+            CdActualCombo.FormattingEnabled = true;
+            CdActualCombo.Location = new Point(114, 39);
+            CdActualCombo.Name = "CdActualCombo";
+            CdActualCombo.Size = new Size(368, 23);
+            CdActualCombo.TabIndex = 3;
+            CdActualCombo.SelectedIndexChanged += CdActualCombo_SelectedIndexChanged;
+            // 
+            // AgenciaActualCombo
+            // 
+            AgenciaActualCombo.FormattingEnabled = true;
+            AgenciaActualCombo.Location = new Point(114, 10);
+            AgenciaActualCombo.Name = "AgenciaActualCombo";
+            AgenciaActualCombo.Size = new Size(368, 23);
+            AgenciaActualCombo.TabIndex = 2;
+            AgenciaActualCombo.SelectedIndexChanged += AgenciaActualCombo_SelectedIndexChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(14, 39);
+            label2.Name = "label2";
+            label2.Size = new Size(57, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Cd actual";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 13);
+            label1.Name = "label1";
+            label1.Size = new Size(85, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Agencia actual";
+            // 
+            // panel2
+            // 
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 80);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(494, 355);
+            panel2.TabIndex = 1;
+            // 
+            // LauncherForm
+            // 
+            ClientSize = new Size(494, 435);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Name = "LauncherForm";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
+
+        }
+
         private Form? CreateFormInstance(string typeFullName)
         {
             // Try to locate the type in loaded assemblies
@@ -115,6 +209,16 @@ namespace GrupoC_TP3
             {
                 return null;
             }
+        }
+
+        private void AgenciaActualCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AgenciaAlmacen.AgenciaActual = AgenciaActualCombo.SelectedItem as AgenciaEntidad;
+        }
+
+        private void CdActualCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CentroDistribucionAlmacen.centroDistribucionActual = CdActualCombo.SelectedItem as CentroDistribucionEntidad;
         }
     }
 }

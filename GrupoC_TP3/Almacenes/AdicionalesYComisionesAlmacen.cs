@@ -19,6 +19,7 @@ namespace GrupoC_TP3.Almacenes
                 var adicionalesComisionesJson = File.ReadAllText(@"Datos\AdicionalesComisiones.json");
                 var options = new JsonSerializerOptions();
                 options.Converters.Add(new JsonStringEnumConverter());
+                options.UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow;
                 adicionalesComisiones = System.Text.Json.JsonSerializer.Deserialize<List<AdicionalesYComisionesEntidad>>(adicionalesComisionesJson, options) ?? new List<AdicionalesYComisionesEntidad>();
             }
         }

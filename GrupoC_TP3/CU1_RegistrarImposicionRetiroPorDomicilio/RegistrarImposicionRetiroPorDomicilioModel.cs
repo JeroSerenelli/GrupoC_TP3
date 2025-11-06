@@ -204,7 +204,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
                 decimal cargoAgencia = 0;
 
-                if(encomiendas.MetodoEntrega.Equals("Entrega en Domicilio", StringComparison.OrdinalIgnoreCase))
+                if (encomiendas.MetodoEntrega.Equals("Entrega en Domicilio", StringComparison.OrdinalIgnoreCase))
                 {
                     importeRetiroDomicilio += AdicionalesYComisionesAlmacen.adicionalesComisiones
                                         .Where(a => a.Concepto == Concepto.EntregaDomicilio)
@@ -225,7 +225,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 }
 
                 decimal finalAgencia = cargoAgencia / 2m;
-                
+
                 decimal importe = importeRetiroDomicilio;
 
                 decimal cargoFlete = AdicionalesYComisionesAlmacen.adicionalesComisiones
@@ -237,7 +237,13 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                     NumeroGuia = int.Parse(codCentroDistribucionOrigen.ToString() + DateTime.Now.Ticks.ToString()[^5..]),
                     CUITCUIL = encomiendas.NroCUITCUIL,
                     CodPostalDest = encomiendas.CdDestino,
-                    //MetodoEntrega = encomiendas.MetodoEntrega, 
+                    MetodoEntrega = encomiendas.MetodoEntrega switch
+                    {
+                        "Entrega en Domicilio" => MetodoEntrega.EntregaEnDomicilio,
+                        "Retiro en Agencia" => MetodoEntrega.EntregaEnAgencia,
+                        "Retiro en CD Destino" => MetodoEntrega.EntregaEnCentroDeDistribucion,
+                        _ => throw new ArgumentException($"Método de entrega inválido: {encomiendas.MetodoEntrega}"),
+                    }, 
                     //TODO: no se como convertirlo
                     DomicilioDest = encomiendas.DomicilioDestinatario,
                     //TamañoCaja = encomiendas.TipoCaja, 
@@ -264,11 +270,11 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                     }
                 });
 
-                MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+                MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MessageBox.Show("El importe a cobrar por la encomienda es: $" + GuiaAlmacen.guias.Last().Importe.ToString("F2"), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); //Queria ver si el numero estaba ok
                 MessageBox.Show("Importe base: " + importeBase.ToString());
                 MessageBox.Show("El importe a pagar a la agencia es de: $" + GuiaAlmacen.guias.Last().CargosAgencia.ToString("F3"), "Exito");
-            }  
+            }
         }
     }
 }

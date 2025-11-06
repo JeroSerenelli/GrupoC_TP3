@@ -2,129 +2,150 @@
   {
     "HojaRutaMicro": 700001,
     "CentroDistribucionDestino": 1001,
-    "NumeroGuiaMicro": [
+    "NumerosGuiaMicro": [
       {
-        "NumeroGuia": "",
-        "EstadoGuia": 9
+        "NumeroGuia": 0,
+        "EstadoEncomienda": 9
       },
       {
-        "NumeroGuia": "",
-        "EstadoGuia": ""
+        "NumeroGuia": 0,
+        "EstadoEncomienda": 0
       },
       {
-        "NumeroGuia": "",
-        "EstadoGuia": ""
+        "NumeroGuia": 0,
+        "EstadoEncomienda": 0
       }
     ],
     "PatenteMicro": "AA374CY",
     "FechaEmisionHojaDeRuta": "2025-11-01T09:00:00",
-    "EstadoHojaRutaMicro": "ListoParaDespacharEnCentroDeDistribucion"
+    "EstadoHojaRutaMicro": 0
   },
   {
     "HojaRutaMicro": 700002,
     "CentroDistribucionDestino": 1006,
-    "NumeroGuiaMicro": [
+    "NumerosGuiaMicro": [
       {
-        "NumeroGuia": "",
-        "EstadoGuia": ""
+        "NumeroGuia": 0,
+        "EstadoEncomienda": 0
       },
       {
-        "NumeroGuia": "",
-        "EstadoGuia": ""
+        "NumeroGuia": 0,
+        "EstadoEncomienda": 0
       },
       {
-        "NumeroGuia": "",
-        "EstadoGuia": ""
+        "NumeroGuia": 0,
+        "EstadoEncomienda": 0
       }
     ],
     "PatenteMicro": "AG372DB",
     "FechaEmisionHojaDeRuta": "2025-11-01T09:00:00",
-    "EstadoHojaRutaMicro": "ListoParaDespacharEnCentroDeDistribucion"
+    "EstadoHojaRutaMicro": 0
   },
   {
     "HojaRutaMicro": 700003,
     "CentroDistribucionDestino": 1010,
-    "NumeroGuiaMicro": [
+    "NumerosGuiaMicro": [
       {
-        "NumeroGuia": "1240",
-        "EstadoGuia": 9
+        "NumeroGuia": 1240,
+        "EstadoEncomienda": 9
       },
       {
-        "NumeroGuia": "",
-        "EstadoGuia": ""
+        "NumeroGuia": 0,
+        "EstadoEncomienda": 0
       },
       {
-        "NumeroGuia": "",
-        "EstadoGuia": ""
+        "NumeroGuia": 0,
+        "EstadoEncomienda": 0
       }
     ],
     "PatenteMicro": "AG649RK",
     "FechaEmisionHojaDeRuta": "2025-11-01T09:00:00",
-    "EstadoHojaRutaMicro": "ListoParaDespacharEnCentroDeDistribucion"
+    "EstadoHojaRutaMicro": 0
   },
   {
     "HojaRutaMicro": 800000,
     "CentroDistribucionDestino": 1001,
     "NumerosGuiaMicro": [
-      { "NumeroGuia": 105966 }
+      {
+        "NumeroGuia": 105966,
+        "EstadoEncomienda": 0
+      }
     ],
     "PatenteMicro": "ABC123",
     "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
-    "EstadoHojaRutaMicro": "EnCaminoACentroDeDistribucionDestino"
+    "EstadoHojaRutaMicro": 1
   },
   {
     "HojaRutaMicro": 800001,
     "CentroDistribucionDestino": 1001,
     "NumerosGuiaMicro": [
-      { "NumeroGuia": 255095 },
-      { "NumeroGuia": 231830 },
-      { "NumeroGuia": 323875 }
+      {
+        "NumeroGuia": 255095,
+        "EstadoEncomienda": 0
+      },
+      {
+        "NumeroGuia": 231830,
+        "EstadoEncomienda": 0
+      },
+      {
+        "NumeroGuia": 323875,
+        "EstadoEncomienda": 0
+      }
     ],
     "PatenteMicro": "ABC321",
     "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352741",
-    "EstadoHojaRutaMicro": "ListoParaDespacharEnCentroDeDistribucion"
+    "EstadoHojaRutaMicro": 0
   },
   {
     "HojaRutaMicro": 800002,
     "CentroDistribucionDestino": 1000,
     "NumerosGuiaMicro": [
-      { "NumeroGuia": 605414 }
+      {
+        "NumeroGuia": 605414,
+        "EstadoEncomienda": 0
+      }
     ],
     "PatenteMicro": "ABC123",
     "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
-    "EstadoHojaRutaMicro": "ListoParaDespacharEnCentroDeDistribucion"
+    "EstadoHojaRutaMicro": 0
   },
   {
     "HojaRutaMicro": 800003,
     "CentroDistribucionDestino": 1000,
     "NumerosGuiaMicro": [
-      { "NumeroGuia": 255095 }
+      {
+        "NumeroGuia": 255095,
+        "EstadoEncomienda": 0
+      }
     ],
     "PatenteMicro": "ABC336",
     "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
-    "EstadoHojaRutaMicro": "ListoParaDespacharEnCentroDeDistribucion"
+    "EstadoHojaRutaMicro": 0
   },
   {
     "HojaRutaMicro": 800004,
     "CentroDistribucionDestino": 1001,
     "NumerosGuiaMicro": [
-      { "NumeroGuia": 255095 }
+      {
+        "NumeroGuia": 255095,
+        "EstadoEncomienda": 0
+      }
     ],
     "PatenteMicro": "ABC337",
     "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
-    "EstadoHojaRutaMicro": "ListoParaDespacharEnCentroDeDistribucion"
+    "EstadoHojaRutaMicro": 0
   },
   {
     "HojaRutaMicro": 800005,
     "CentroDistribucionDestino": 1004,
     "NumerosGuiaMicro": [
-      { "NumeroGuia": 255095 }
+      {
+        "NumeroGuia": 255095,
+        "EstadoEncomienda": 0
+      }
     ],
     "PatenteMicro": "ABC338",
     "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
-    "EstadoHojaRutaMicro": "ListoParaDespacharEnCentroDeDistribucion"
+    "EstadoHojaRutaMicro": 0
   }
-
-
-
 ]

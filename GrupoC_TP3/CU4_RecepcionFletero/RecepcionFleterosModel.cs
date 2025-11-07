@@ -122,7 +122,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 
         /// <summary>
         /// Botón "IMPRIMIR DETALLE"
-        /// Actualiza HDR -> Cumplida y TODAS las guías de esa HDR -> Entregado
+        /// Actualiza HDR -> Cumplida y TODAS las guías de esa HDR -> avanza estado según reglas
         /// </summary>
         public void ImprimirDetalleHDRAsignadas(List<HojasDeRutaAsignadas> hojasSeleccionadas)
         {
@@ -200,19 +200,24 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             }
             HojaRutaFleteAlmacen.GuardarHojaDeRutaFlete();
 
-            // Actualizar TODAS las guías de las HDR seleccionadas (no solo las tildadas)
+            // Actualizar TODAS las guías de las HDR seleccionadas (avanzando estado según reglas)
             foreach (var nro in todasLasGuiasDeHDR)
             {
                 var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
                 if (guia == null) continue;
 
-                guia.EstadoEncomienda = EstadoEncomienda.Entregado;
-                guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+                var previo = guia.EstadoEncomienda;
+                var siguiente = CalcularSiguienteEstadoAlImprimir(previo);
+                if (siguiente.HasValue)
                 {
-                    EstadoGuiaEnum = EstadoEncomienda.Entregado,
-                    Fecha = DateTime.Now,
-                    Descripcion = "Entregado por fletero"
-                });
+                    guia.EstadoEncomienda = siguiente.Value;
+                    guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+                    {
+                        EstadoGuiaEnum = siguiente.Value,
+                        Fecha = DateTime.Now,
+                        Descripcion = $"Impresión detalle HDR: {previo} -> {siguiente.Value}"
+                    });
+                }
             }
             GuiaAlmacen.GuardarGuia();
 
@@ -337,19 +342,24 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             }
             HojaRutaFleteAlmacen.GuardarHojaDeRutaFlete();
 
-            // Actualizar TODAS las guías de las HDR seleccionadas
+            // Actualizar TODAS las guías de las HDR seleccionadas (según estado previo)
             foreach (var nro in todasLasGuiasDeHDR)
             {
                 var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
                 if (guia == null) continue;
 
-                guia.EstadoEncomienda = EstadoEncomienda.EnCaminoADomicilioDestino;
-                guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+                var previo = guia.EstadoEncomienda;
+                var siguiente = CalcularSiguienteEstadoAlAsignar(previo);
+                if (siguiente.HasValue)
                 {
-                    EstadoGuiaEnum = EstadoEncomienda.EnCaminoADomicilioDestino,
-                    Fecha = DateTime.Now,
-                    Descripcion = "Asignado a fletero"
-                });
+                    guia.EstadoEncomienda = siguiente.Value;
+                    guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+                    {
+                        EstadoGuiaEnum = siguiente.Value,
+                        Fecha = DateTime.Now,
+                        Descripcion = $"Asignado a fletero: {previo} -> {siguiente.Value}"
+                    });
+                }
             }
             GuiaAlmacen.GuardarGuia();
 
@@ -390,6 +400,44 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 
             // refrescar listas públicas para que UI vea los cambios
             Refresh();
+        }
+
+        // ----------------- HELPERS DE TRANSICIÓN DE ESTADO -----------------
+
+        /// <summary>
+        /// Calcula el siguiente estado válido cuando una guía se asigna a un fletero.
+        /// Reglas:
+        /// - ListoParaRetirarEnDomicilio | ListoParaRetirarEnAgencia -> EnCaminoADomcilicioOAgencia
+        /// - RecibidoEnCentroDistribucionDestino | EntregadoEnCentroDeDistribucion -> EnCaminoADomicilioDestino
+        /// - En otros casos devuelve null (sin cambio)
+        /// </summary>
+        private EstadoEncomienda? CalcularSiguienteEstadoAlAsignar(EstadoEncomienda actual)
+        {
+            return actual switch
+            {
+                EstadoEncomienda.ListoParaRetirarEnDomicilio => EstadoEncomienda.EnCaminoADomcilicioOAgencia,
+                EstadoEncomienda.ListoParaRetirarEnAgencia => EstadoEncomienda.EnCaminoADomcilicioOAgencia,
+                EstadoEncomienda.RecibidoEnCentroDistribucionDestino => EstadoEncomienda.EnCaminoADomicilioDestino,
+                EstadoEncomienda.EntregadoEnCentroDeDistribucion => EstadoEncomienda.EnCaminoADomicilioDestino,
+                _ => null
+            };
+        }
+
+        /// <summary>
+        /// Calcula el siguiente estado válido cuando se imprime el detalle (se cierra la HDR).
+        /// Reglas:
+        /// - EnCaminoADomcilicioOAgencia -> EntregadoEnCentroDeDistribucion
+        /// - EnCaminoADomicilioDestino -> Entregado
+        /// - En otros casos devuelve null (sin cambio)
+        /// </summary>
+        private EstadoEncomienda? CalcularSiguienteEstadoAlImprimir(EstadoEncomienda actual)
+        {
+            return actual switch
+            {
+                EstadoEncomienda.EnCaminoADomcilicioOAgencia => EstadoEncomienda.EntregadoEnCentroDeDistribucion,
+                EstadoEncomienda.EnCaminoADomicilioDestino => EstadoEncomienda.Entregado,
+                _ => null
+            };
         }
     }
 }

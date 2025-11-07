@@ -137,23 +137,496 @@
       },
       {
         "Estado": 5,
-        "Fecha": "2025-10-27T08:00:00",
-        "Descripcion": "En camino a Centro de Distribucion de destino"
-      },
+        "Fecha": "2025-11-02T09:45:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 798364,
+    "CUITCUIL": 28099877655,
+    "CodPostalDest": 1017,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Mitre 401",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1017,
+    "DomicilioOrigen": "Origen 44",
+    "NombreDestinatario": "Ana",
+    "ApellidoDestinatario": "Fernández",
+    "DNIDestinatario": 35261035,
+    "Importe": 470.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 105,
+    "CodCentroDistOrigen": 15,
+    "EstadoEncomienda": 7,
+    "HistorialEstadosGuia": [
       {
-        "Estado": 4,
-        "Fecha": "2025-10-25T08:00:00",
-        "Descripcion": "En transporte entre Centros de Distribucion"
-      },
+        "Estado": 7,
+        "Fecha": "2025-11-02T11:45:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 800051,
+    "CUITCUIL": 28122333444,
+    "CodPostalDest": 1007,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Dorrego 290",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1007,
+    "DomicilioOrigen": "Origen 50",
+    "NombreDestinatario": "Agustina",
+    "ApellidoDestinatario": "Flores",
+    "DNIDestinatario": 24807375,
+    "Importe": 690.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 106,
+    "CodCentroDistOrigen": 16,
+    "EstadoEncomienda": 7,
+    "HistorialEstadosGuia": [
       {
-        "Estado": 3,
-        "Fecha": "2025-10-24T08:00:00",
-        "Descripcion": "Entregado en Centro de Distribucion de origen"
-      },
+        "Estado": 7,
+        "Fecha": "2025-11-02T12:05:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 958537,
+    "CUITCUIL": 28233444555,
+    "CodPostalDest": 1007,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "9 de Julio 100",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1007,
+    "DomicilioOrigen": "Origen 66",
+    "NombreDestinatario": "Agustina",
+    "ApellidoDestinatario": "Flores",
+    "DNIDestinatario": 24807375,
+    "Importe": 730.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 107,
+    "CodCentroDistOrigen": 17,
+    "EstadoEncomienda": 3,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T12:10:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 958538,
+    "CUITCUIL": 28233444555,
+    "CodPostalDest": 1007,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "9 de Julio 101",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1007,
+    "DomicilioOrigen": "Origen 66",
+    "NombreDestinatario": "Agustina",
+    "ApellidoDestinatario": "Flores",
+    "DNIDestinatario": 24807375,
+    "Importe": 730.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 107,
+    "CodCentroDistOrigen": 17,
+    "EstadoEncomienda": 1,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T12:10:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 958539,
+    "CUITCUIL": 28233444555,
+    "CodPostalDest": 1007,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "9 de Julio 102",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1007,
+    "DomicilioOrigen": "Origen 66",
+    "NombreDestinatario": "Agustina",
+    "ApellidoDestinatario": "Flores",
+    "DNIDestinatario": 24807375,
+    "Importe": 730.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 107,
+    "CodCentroDistOrigen": 17,
+    "EstadoEncomienda": 2,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T12:10:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 958540,
+    "CUITCUIL": 28233444555,
+    "CodPostalDest": 1007,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "9 de Julio 101",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1007,
+    "DomicilioOrigen": "Origen 66",
+    "NombreDestinatario": "Agustina",
+    "ApellidoDestinatario": "Flores",
+    "DNIDestinatario": 24807375,
+    "Importe": 730.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 107,
+    "CodCentroDistOrigen": 17,
+    "EstadoEncomienda": 6,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T12:10:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 958541,
+    "CUITCUIL": 28233444555,
+    "CodPostalDest": 1007,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "9 de Julio 101",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1007,
+    "DomicilioOrigen": "Origen 66",
+    "NombreDestinatario": "Agustina",
+    "ApellidoDestinatario": "Flores",
+    "DNIDestinatario": 24807375,
+    "Importe": 730.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 107,
+    "CodCentroDistOrigen": 17,
+    "EstadoEncomienda": 4,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-02T12:10:00",
+        "Descripcion": "Asignada a fletero"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 105966,
+    "CUITCUIL": 1000,
+    "CodPostalDest": 1904,
+    "MetodoEntrega": "EntregaEnDomicilio",
+    "DomicilioDest": "Calle 538 #813",
+    "Tama�oCaja": "M",
+    "CodPostalOrig": 2223,
+    "DomicilioOrigen": "Avenida 808 #354",
+    "NombreDestinatario": "Juli�n",
+    "ApellidoDestinatario": "Mart�nez",
+    "DNIDestinatario": 40084021,
+    "Importe": 4099.72,
+    "CargosFleteros": 117,
+    "CargosAgencia": 431,
+    "CodAgenciaOrigen": 2,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "EnTransporteEntreCentroDeDistribucion",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-10-04T01:43:12.290709",
+        "Estado": "Creada"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 605414,
+    "CUITCUIL": 21634945556,
+    "CodPostalDest": 1650,
+    "MetodoEntrega": "EntregaEnDomicilio",
+    "DomicilioDest": "Calle 538 #813",
+    "Tama�oCaja": "S",
+    "CodPostalOrig": 2223,
+    "DomicilioOrigen": "Avenida 808 #354",
+    "NombreDestinatario": "Juli�n",
+    "ApellidoDestinatario": "Mart�nez",
+    "DNIDestinatario": 40084021,
+    "Importe": 2221.41,
+    "CargosFleteros": 420,
+    "CargosAgencia": 431,
+    "CodAgenciaOrigen": 2,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "EntregadoEnCentroDeDistribucion",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-10-04T01:43:12.290738",
+        "Estado": "Creada"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 255095,
+    "CUITCUIL": 22465821507,
+    "CodPostalDest": 2223,
+    "MetodoEntrega": "EntregaEnDomicilio",
+    "DomicilioDest": "Calle 871 #476",
+    "Tama�oCaja": "M",
+    "CodPostalOrig": 1636,
+    "DomicilioOrigen": "Avenida 20 #377",
+    "NombreDestinatario": "Capitan",
+    "ApellidoDestinatario": "John",
+    "DNIDestinatario": 41221265,
+    "Importe": 1784.69,
+    "CargosFleteros": 422,
+    "CargosAgencia": 337,
+    "CodAgenciaOrigen": 7,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "EntregadoEnCentroDeDistribucion",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-11-04T01:43:12.290757",
+        "Estado": "Creada"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 231830,
+    "CUITCUIL": 21248718892,
+    "CodPostalDest": 1001,
+    "MetodoEntrega": "EntregaEnDomicilio",
+    "DomicilioDest": "Calle 871 #476",
+    "Tama�oCaja": "L",
+    "CodPostalOrig": 2223,
+    "DomicilioOrigen": "Avenida 20 #377",
+    "NombreDestinatario": "Luc�a",
+    "ApellidoDestinatario": "P�rez",
+    "DNIDestinatario": 44097725,
+    "Importe": 1829.99,
+    "CargosFleteros": 500,
+    "CargosAgencia": 293,
+    "CodAgenciaOrigen": 1,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "EntregadoEnCentroDeDistribucion",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-11-04T01:43:12.290775",
+        "Estado": "Creada"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 323875,
+    "CUITCUIL": 21300459339,
+    "CodPostalDest": 1001,
+    "MetodoEntrega": "EntregaEnDomicilio",
+    "DomicilioDest": "Calle 871 #476",
+    "Tama�oCaja": "S",
+    "CodPostalOrig": 2223,
+    "DomicilioOrigen": "Avenida 20 #377",
+    "NombreDestinatario": "Luc�a",
+    "ApellidoDestinatario": "P�rez",
+    "DNIDestinatario": 21127548,
+    "Importe": 1868.22,
+    "CargosFleteros": 429,
+    "CargosAgencia": 145,
+    "CodAgenciaOrigen": 8,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "EntregadoEnCentroDeDistribucion",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-11-04T01:43:12.290792",
+        "Estado": "Creada"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 252685,
+    "CUITCUIL": 21300459339,
+    "CodPostalDest": 1001,
+    "MetodoEntrega": 2,
+    "DomicilioDest": "Calle 871 #476",
+    "Tama�oCaja": "S",
+    "CodPostalOrig": 2223,
+    "DomicilioOrigen": "Avenida 20 #377",
+    "NombreDestinatario": "Luc�a",
+    "ApellidoDestinatario": "P�rez",
+    "DNIDestinatario": 21127548,
+    "Importe": 1868.22,
+    "CargosFleteros": 429,
+    "CargosAgencia": 145,
+    "CodAgenciaOrigen": 8,
+    "CodCentroDistOrigen": 1004,
+    "EstadoEncomienda": "RecibidoEnCentroDistribucionDestino",
+    "HistorialEstadosGuia": [
+      {
+        "Fecha": "2025-11-04T01:43:12.290792",
+        "Estado": "Creada"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 900001,
+    "CUITCUIL": 20123456789,
+    "CodPostalDest": 1000,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Calle Test 1",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1000,
+    "DomicilioOrigen": "Origen Test 1",
+    "NombreDestinatario": "Ana",
+    "ApellidoDestinatario": "Gomez",
+    "DNIDestinatario": 20111222,
+    "Importe": 100.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 100,
+    "CodCentroDistOrigen": 10,
+    "EstadoEncomienda": 0,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 0,
+        "Fecha": "2025-11-06T10:00:00",
+        "Descripcion": "ListoParaRetirarEnDomicilio"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 900002,
+    "CUITCUIL": 20223456789,
+    "CodPostalDest": 1001,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Calle Test 2",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1001,
+    "DomicilioOrigen": "Origen Test 2",
+    "NombreDestinatario": "Bruno",
+    "ApellidoDestinatario": "Martinez",
+    "DNIDestinatario": 20222333,
+    "Importe": 150.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 101,
+    "CodCentroDistOrigen": 11,
+    "EstadoEncomienda": 1,
+    "HistorialEstadosGuia": [
       {
         "Estado": 1,
-        "Fecha": "2025-10-22T08:00:00",
-        "Descripcion": "Listo para retirar en domicilio"
+        "Fecha": "2025-11-06T10:05:00",
+        "Descripcion": "ListoParaRetirarEnAgencia"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 900003,
+    "CUITCUIL": 20323456789,
+    "CodPostalDest": 1002,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Calle Test 3",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1002,
+    "DomicilioOrigen": "Origen Test 3",
+    "NombreDestinatario": "Carla",
+    "ApellidoDestinatario": "Suarez",
+    "DNIDestinatario": 20333444,
+    "Importe": 200.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 102,
+    "CodCentroDistOrigen": 12,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-06T11:00:00",
+        "Descripcion": "RecibidoEnCentroDistribucionDestino"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 900004,
+    "CUITCUIL": 20423456789,
+    "CodPostalDest": 1003,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Calle Test 4",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1003,
+    "DomicilioOrigen": "Origen Test 4",
+    "NombreDestinatario": "Diego",
+    "ApellidoDestinatario": "Lopez",
+    "DNIDestinatario": 20444555,
+    "Importe": 250.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 103,
+    "CodCentroDistOrigen": 13,
+    "EstadoEncomienda": 3,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 3,
+        "Fecha": "2025-11-06T11:10:00",
+        "Descripcion": "EntregadoEnCentroDeDistribucion"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 900005,
+    "CUITCUIL": 20523456789,
+    "CodPostalDest": 1004,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Calle Test 5",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1004,
+    "DomicilioOrigen": "Origen Test 5",
+    "NombreDestinatario": "Elena",
+    "ApellidoDestinatario": "Diaz",
+    "DNIDestinatario": 20555666,
+    "Importe": 300.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 104,
+    "CodCentroDistOrigen": 14,
+    "EstadoEncomienda": 2,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 2,
+        "Fecha": "2025-11-06T11:20:00",
+        "Descripcion": "EnCaminoADomcilicioOAgencia"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 900006,
+    "CUITCUIL": 20623456789,
+    "CodPostalDest": 1005,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Calle Test 6",
+    "TamaÃ±oCaja": 0,
+    "CodPostalOrig": 1005,
+    "DomicilioOrigen": "Origen Test 6",
+    "NombreDestinatario": "Federico",
+    "ApellidoDestinatario": "Rossi",
+    "DNIDestinatario": 20666777,
+    "Importe": 350.0,
+    "CargosFleteros": 0,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 105,
+    "CodCentroDistOrigen": 15,
+    "EstadoEncomienda": 7,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 7,
+        "Fecha": "2025-11-06T11:30:00",
+        "Descripcion": "EnCaminoADomicilioDestino"
       }
     ]
   }

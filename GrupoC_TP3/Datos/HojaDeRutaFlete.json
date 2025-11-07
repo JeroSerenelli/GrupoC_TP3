@@ -2,27 +2,23 @@
   {
     "HojaRutaFlete": 1,
     "NumerosGuiaFlete": [
-      { "NumeroGuia": 147929 },
-      { "NumeroGuia": 641739 },
-      { "NumeroGuia": 438715 }
+      { "NumeroGuia": 100000008 }
     ],
     "DNIFletero": 33190535,
 
-    "EstadoHojaRutaFlete": "NoCumplida",
-    "TipoHojaRuta": "Entrega",
-    "CodPostal": 1000
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
+    "TipoHojaRuta": "Retiro",
+    "CodPostal": 1650
   },
   {
     "HojaRutaFlete": 2,
     "NumerosGuiaFlete": [
-      { "NumeroGuia": 407192 },
-      { "NumeroGuia": 171993 },
-      { "NumeroGuia": 595934 }
+      { "NumeroGuia": 100000008 }
     ],
     "DNIFletero": 28373390,
     "EstadoHojaRutaFlete": "PendienteAsignacion",
     "TipoHojaRuta": "Entrega",
-    "CodPostal": 1002
+    "CodPostal": 4618
   },
   {
     "HojaRutaFlete": 3,

@@ -1,4 +1,3 @@
-
 [
   {
     "CodCentroDist": 1000,
@@ -9,50 +8,56 @@
   {
     "CodCentroDist": 1001,
     "CodLocal": 2,
-    "CodPostal": 1904,
-    "Nombre": "CD La Plata"
+    "CodPostal": 3099,
+    "Nombre": "CD Bahia Blanca"
   },
   {
     "CodCentroDist": 1002,
     "CodLocal": 3,
-    "CodPostal": 3000,
-    "Nombre": "CD Junin"
+    "CodPostal": 4726,
+    "Nombre": "CD SFV Catamarca"
+  },
+  {
+    "CodCentroDist": 1003,
+    "CodLocal": 4,
+    "CodPostal": 5162,
+    "Nombre": "CD Belen"
   },
   {
     "CodCentroDist": 1004,
-    "CodLocal": 4,
-    "CodPostal": 2223,
-    "Nombre": "CD Mar del Plata"
-  },
-  {
-    "CodCentroDist": 1005,
-    "CodLocal": 5,
-    "CodPostal": 5113,
-    "Nombre": "CD Salsipuedes"
-  },
-  {
-    "CodCentroDist": 1006,
-    "CodLocal": 6,
+    "CodLocal": 10,
     "CodPostal": 5093,
     "Nombre": "CD Villa Maria"
   },
   {
-    "CodCentroDist": 1007,
-    "CodLocal": 7,
-    "CodPostal": 5014,
-    "Nombre": "CD Cordoba Capital"
-  },
-  {
-    "CodCentroDist": 1008,
-    "CodLocal": 8,
-    "CodPostal": 4400,
+    "CodCentroDist": 1005,
+    "CodLocal": 17,
+    "CodPostal": 4600,
     "Nombre": "CD SS Jujuy"
   },
   {
+    "CodCentroDist": 1006,
+    "CodLocal": 19,
+    "CodPostal": 2300,
+    "Nombre": "CD Santa Rosa"
+  },
+  {
+    "CodCentroDist": 1007,
+    "CodLocal": 29,
+    "CodPostal": 8504,
+    "Nombre": "CD Viedma"
+  },
+  {
+    "CodCentroDist": 1008,
+    "CodLocal": 40,
+    "CodPostal": 2003,
+    "Nombre": "CD Rosario"
+  },
+  {
     "CodCentroDist": 1009,
-    "CodLocal": 9,
-    "CodPostal": 4629,
-    "Nombre": "CD Tilcara"
+    "CodLocal": 46,
+    "CodPostal": 4203,
+    "Nombre": "CD Tafi Viejo"
   },
   {
     "CodCentroDist": 1010,
@@ -62,8 +67,8 @@
   },
   {
     "CodCentroDist": 1011,
-    "CodLocal": 11,
-    "CodPostal": 1636,
-    "Nombre": "CD Olivos"
+    "CodLocal": 48,
+    "CodPostal": 1426,
+    "Nombre": "CD CABA Palermo"
   }
 ]

@@ -2,13 +2,13 @@
   {
     "CodLocalidad": 1,
     "CodProv": 1,
-    "Nombre": "Mar del Plata",
+    "Nombre": "General San Martin",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1000
+        "CodigoPostal": 1650
       },
       {
-        "CodigoPostal": 1001
+        "CodigoPostal": 1651
       }
     ]
   },
@@ -18,10 +18,10 @@
     "Nombre": "Bahía Blanca",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1002
+        "CodigoPostal": 3099
       },
       {
-        "CodigoPostal": 1003
+        "CodigoPostal": 4498
       }
     ]
   },
@@ -31,10 +31,10 @@
     "Nombre": "San Fernando del Valle de Catamarca",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1004
+        "CodigoPostal": 1150
       },
       {
-        "CodigoPostal": 1005
+        "CodigoPostal": 4726
       }
     ]
   },
@@ -44,10 +44,10 @@
     "Nombre": "Belén",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1006
+        "CodigoPostal": 4750
       },
       {
-        "CodigoPostal": 1007
+        "CodigoPostal": 5261
       }
     ]
   },
@@ -57,10 +57,10 @@
     "Nombre": "Resistencia",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1008
+        "CodigoPostal": 3500
       },
       {
-        "CodigoPostal": 1009
+        "CodigoPostal": 3501
       }
     ]
   },
@@ -70,10 +70,10 @@
     "Nombre": "Presidencia Roque Sáenz Peña",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1010
+        "CodigoPostal": 2199
       },
       {
-        "CodigoPostal": 1011
+        "CodigoPostal": 3700
       }
     ]
   },
@@ -83,10 +83,10 @@
     "Nombre": "Comodoro Rivadavia",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1012
+        "CodigoPostal": 2956
       },
       {
-        "CodigoPostal": 1013
+        "CodigoPostal": 8326
       }
     ]
   },
@@ -96,10 +96,10 @@
     "Nombre": "Puerto Madryn",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1014
+        "CodigoPostal": 1198
       },
       {
-        "CodigoPostal": 1015
+        "CodigoPostal": 9130
       }
     ]
   },
@@ -109,10 +109,10 @@
     "Nombre": "Córdoba",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1016
+        "CodigoPostal": 1128
       },
       {
-        "CodigoPostal": 1017
+        "CodigoPostal": 1299
       }
     ]
   },
@@ -122,10 +122,10 @@
     "Nombre": "Villa María",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1018
+        "CodigoPostal": 1398
       },
       {
-        "CodigoPostal": 1019
+        "CodigoPostal": 5093
       }
     ]
   },
@@ -135,10 +135,10 @@
     "Nombre": "Corrientes",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1020
+        "CodigoPostal": 3197
       },
       {
-        "CodigoPostal": 1021
+        "CodigoPostal": 3400
       }
     ]
   },
@@ -148,10 +148,10 @@
     "Nombre": "Goya",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1022
+        "CodigoPostal": 3444
       },
       {
-        "CodigoPostal": 1023
+        "CodigoPostal": 3540
       }
     ]
   },
@@ -161,10 +161,10 @@
     "Nombre": "Paraná",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1024
+        "CodigoPostal": 2000
       },
       {
-        "CodigoPostal": 1025
+        "CodigoPostal": 2400
       }
     ]
   },
@@ -174,10 +174,10 @@
     "Nombre": "Concordia",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1026
+        "CodigoPostal": 3201
       },
       {
-        "CodigoPostal": 1027
+        "CodigoPostal": 4400
       }
     ]
   },
@@ -187,10 +187,10 @@
     "Nombre": "Formosa",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1028
+        "CodigoPostal": 3409
       },
       {
-        "CodigoPostal": 1029
+        "CodigoPostal": 3630
       }
     ]
   },
@@ -200,10 +200,10 @@
     "Nombre": "Clorinda",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1030
+        "CodigoPostal": 3450
       },
       {
-        "CodigoPostal": 1031
+        "CodigoPostal": 3718
       }
     ]
   },
@@ -213,10 +213,10 @@
     "Nombre": "San Salvador de Jujuy",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1032
+        "CodigoPostal": 4406
       },
       {
-        "CodigoPostal": 1033
+        "CodigoPostal": 4600
       }
     ]
   },
@@ -226,10 +226,10 @@
     "Nombre": "Palpalá",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1034
+        "CodigoPostal": 4613
       },
       {
-        "CodigoPostal": 1035
+        "CodigoPostal": 4617
       }
     ]
   },
@@ -239,10 +239,10 @@
     "Nombre": "Santa Rosa",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1036
+        "CodigoPostal": 1918
       },
       {
-        "CodigoPostal": 1037
+        "CodigoPostal": 2300
       }
     ]
   },
@@ -252,10 +252,10 @@
     "Nombre": "General Pico",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1038
+        "CodigoPostal": 6063
       },
       {
-        "CodigoPostal": 1039
+        "CodigoPostal": 6460
       }
     ]
   },
@@ -265,10 +265,10 @@
     "Nombre": "La Rioja",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1040
+        "CodigoPostal": 5305
       },
       {
-        "CodigoPostal": 1041
+        "CodigoPostal": 5309
       }
     ]
   },
@@ -278,10 +278,10 @@
     "Nombre": "Chilecito",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1042
+        "CodigoPostal": 5360
       },
       {
-        "CodigoPostal": 1043
+        "CodigoPostal": 5429
       }
     ]
   },
@@ -291,10 +291,10 @@
     "Nombre": "Mendoza",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1044
+        "CodigoPostal": 5500
       },
       {
-        "CodigoPostal": 1045
+        "CodigoPostal": 5506
       }
     ]
   },
@@ -304,10 +304,10 @@
     "Nombre": "San Rafael",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1046
+        "CodigoPostal": 5604
       },
       {
-        "CodigoPostal": 1047
+        "CodigoPostal": 5800
       }
     ]
   },
@@ -317,10 +317,10 @@
     "Nombre": "Posadas",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1048
+        "CodigoPostal": 2395
       },
       {
-        "CodigoPostal": 1049
+        "CodigoPostal": 3030
       }
     ]
   },
@@ -330,10 +330,10 @@
     "Nombre": "Oberá",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1050
+        "CodigoPostal": 3330
       },
       {
-        "CodigoPostal": 1051
+        "CodigoPostal": 3360
       }
     ]
   },
@@ -343,10 +343,10 @@
     "Nombre": "Neuquén",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1052
+        "CodigoPostal": 7500
       },
       {
-        "CodigoPostal": 1053
+        "CodigoPostal": 8300
       }
     ]
   },
@@ -356,10 +356,10 @@
     "Nombre": "San Martín de los Andes",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1054
+        "CodigoPostal": 8730
       },
       {
-        "CodigoPostal": 1055
+        "CodigoPostal": 8970
       }
     ]
   },
@@ -369,10 +369,10 @@
     "Nombre": "Viedma",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1056
+        "CodigoPostal": 8500
       },
       {
-        "CodigoPostal": 1057
+        "CodigoPostal": 8504
       }
     ]
   },
@@ -382,10 +382,10 @@
     "Nombre": "San Carlos de Bariloche",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1058
+        "CodigoPostal": 8400
       },
       {
-        "CodigoPostal": 1059
+        "CodigoPostal": 8405
       }
     ]
   },
@@ -395,10 +395,10 @@
     "Nombre": "Salta",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1060
+        "CodigoPostal": 1296
       },
       {
-        "CodigoPostal": 1061
+        "CodigoPostal": 1326
       }
     ]
   },
@@ -408,10 +408,10 @@
     "Nombre": "San Ramón de la Nueva Orán",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1062
+        "CodigoPostal": 4520
       },
       {
-        "CodigoPostal": 1063
+        "CodigoPostal": 4530
       }
     ]
   },
@@ -421,10 +421,10 @@
     "Nombre": "San Juan",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1064
+        "CodigoPostal": 5100
       },
       {
-        "CodigoPostal": 1065
+        "CodigoPostal": 5400
       }
     ]
   },
@@ -434,10 +434,10 @@
     "Nombre": "Jáchal",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1066
+        "CodigoPostal": 5460
       },
       {
-        "CodigoPostal": 1067
+        "CodigoPostal": 5461
       }
     ]
   },
@@ -447,10 +447,10 @@
     "Nombre": "San Luis",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1068
+        "CodigoPostal": 5701
       },
       {
-        "CodigoPostal": 1069
+        "CodigoPostal": 5731
       }
     ]
   },
@@ -460,10 +460,10 @@
     "Nombre": "Villa Mercedes",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1070
+        "CodigoPostal": 5370
       },
       {
-        "CodigoPostal": 1071
+        "CodigoPostal": 5570
       }
     ]
   },
@@ -473,10 +473,10 @@
     "Nombre": "Río Gallegos",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1072
+        "CodigoPostal": 9000
       },
       {
-        "CodigoPostal": 1073
+        "CodigoPostal": 9403
       }
     ]
   },
@@ -486,10 +486,10 @@
     "Nombre": "Caleta Olivia",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1074
+        "CodigoPostal": 9011
       },
       {
-        "CodigoPostal": 1075
+        "CodigoPostal": 9022
       }
     ]
   },
@@ -499,10 +499,10 @@
     "Nombre": "Santa Fe",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1076
+        "CodigoPostal": 2328
       },
       {
-        "CodigoPostal": 1077
+        "CodigoPostal": 2348
       }
     ]
   },
@@ -512,10 +512,10 @@
     "Nombre": "Rosario",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1078
+        "CodigoPostal": 1982
       },
       {
-        "CodigoPostal": 1079
+        "CodigoPostal": 2003
       }
     ]
   },
@@ -525,10 +525,10 @@
     "Nombre": "Santiago del Estero",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1080
+        "CodigoPostal": 1764
       },
       {
-        "CodigoPostal": 1081
+        "CodigoPostal": 3200
       }
     ]
   },
@@ -538,10 +538,10 @@
     "Nombre": "La Banda",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1082
+        "CodigoPostal": 1878
       },
       {
-        "CodigoPostal": 1083
+        "CodigoPostal": 1900
       }
     ]
   },
@@ -551,10 +551,10 @@
     "Nombre": "Ushuaia",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1084
+        "CodigoPostal": 9400
       },
       {
-        "CodigoPostal": 1085
+        "CodigoPostal": 9410
       }
     ]
   },
@@ -564,10 +564,10 @@
     "Nombre": "Río Grande",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1086
+        "CodigoPostal": 9204
       },
       {
-        "CodigoPostal": 1087
+        "CodigoPostal": 9464
       }
     ]
   },
@@ -577,10 +577,10 @@
     "Nombre": "San Miguel de Tucumán",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1088
+        "CodigoPostal": 1667
       },
       {
-        "CodigoPostal": 1089
+        "CodigoPostal": 1849
       }
     ]
   },
@@ -590,36 +590,36 @@
     "Nombre": "Tafí Viejo",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1090
+        "CodigoPostal": 4130
       },
       {
-        "CodigoPostal": 1091
+        "CodigoPostal": 4203
       }
     ]
   },
   {
     "CodLocalidad": 47,
     "CodProv": 24,
-    "Nombre": "Buenos Aires",
+    "Nombre": "CABA Urquiza",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1092
+        "CodigoPostal": 1430
       },
       {
-        "CodigoPostal": 1093
+        "CodigoPostal": 1431
       }
     ]
   },
   {
     "CodLocalidad": 48,
     "CodProv": 24,
-    "Nombre": "Villa Lugano",
+    "Nombre": "CABA Palermo",
     "CodigosPostales": [
       {
-        "CodigoPostal": 1094
+        "CodigoPostal": 1425
       },
       {
-        "CodigoPostal": 1095
+        "CodigoPostal": 1426
       }
     ]
   }

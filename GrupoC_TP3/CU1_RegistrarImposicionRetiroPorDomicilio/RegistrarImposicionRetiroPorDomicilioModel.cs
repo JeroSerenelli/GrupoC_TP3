@@ -187,7 +187,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
             {
                 int ultimoNumeroGuia = GuiaAlmacen.guias.LastOrDefault()?.NumeroGuia ?? 0;
 
-                ultimoNumeroGuia += 0;
+                ultimoNumeroGuia += 1;
 
                 string ultimosCincoDigitos = (ultimoNumeroGuia % 100000).ToString("D5");
 

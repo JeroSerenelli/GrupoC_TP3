@@ -185,6 +185,12 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
             for (int i = 0; i < encomiendas.CantCajas; i++)
             {
+                int ultimoNumeroGuia = GuiaAlmacen.guias.LastOrDefault()?.NumeroGuia ?? 0;
+
+                ultimoNumeroGuia += 0;
+
+                string ultimosCincoDigitos = (ultimoNumeroGuia % 100000).ToString("D5");
+
                 var tamañoSeleccionado = Enum.Parse<TamañoCaja>(encomiendas.TipoCaja?.Trim(), ignoreCase: true);
 
                 decimal importeBase = TarifaAlmacen.tarifas
@@ -193,9 +199,6 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                              && t.CentroDistribucionDestino == codCentroDistribucionDestino)
                              .Select(t => t.Importe)
                              .Single();
-
-
-
 
                 decimal importeRetiroDomicilio = importeBase + AdicionalesYComisionesAlmacen.adicionalesComisiones
                                     .Where(a => a.Concepto == Concepto.RetiroDomicilio)
@@ -234,7 +237,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
                 GuiaAlmacen.guias.Add(new GuiaEntidad
                 {
-                    NumeroGuia = int.Parse(codCentroDistribucionOrigen.ToString() + DateTime.Now.Ticks.ToString()[^5..]),
+                    NumeroGuia = int.Parse(codCentroDistribucionOrigen.ToString() + ultimosCincoDigitos),
                     CUITCUIL = encomiendas.NroCUITCUIL,
                     CodPostalDest = encomiendas.CdDestino,
                     MetodoEntrega = encomiendas.MetodoEntrega switch
@@ -244,10 +247,14 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                         "Retiro en CD Destino" => MetodoEntrega.EntregaEnCentroDeDistribucion,
                         _ => throw new ArgumentException($"Método de entrega inválido: {encomiendas.MetodoEntrega}"),
                     }, 
-                    //TODO: no se como convertirlo
                     DomicilioDest = encomiendas.DomicilioDestinatario,
-                    //TamañoCaja = encomiendas.TipoCaja, 
-                    //TODO: idem, no se trabajar con el enum
+                    TamañoCaja = encomiendas.TipoCaja switch
+                    {
+                        "S" => TamañoCaja.S,
+                        "M" => TamañoCaja.M,
+                        "L" => TamañoCaja.L,
+                        "XL" => TamañoCaja.XL
+                    },
                     CodPostalOrig = encomiendas.CPRetiro,
                     DomicilioOrigen = encomiendas.DomicilioRetiro,
                     NombreDestinatario = encomiendas.NombreDestinatario,
@@ -270,10 +277,9 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                     }
                 });
 
+
+
                 MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MessageBox.Show("El importe a cobrar por la encomienda es: $" + GuiaAlmacen.guias.Last().Importe.ToString("F2"), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); //Queria ver si el numero estaba ok
-                MessageBox.Show("Importe base: " + importeBase.ToString());
-                MessageBox.Show("El importe a pagar a la agencia es de: $" + GuiaAlmacen.guias.Last().CargosAgencia.ToString("F3"), "Exito");
             }
         }
     }

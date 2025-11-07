@@ -10,8 +10,6 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 {
     internal class RegistrarImposicionEnCDFormModel
     {
-        private long[] listaClientes = new long[] { 12345678910, 12345678911 };
-
         private Dictionary<int, List<LocalidadEntidad>> _localidadesPorCodProv;
         private Dictionary<string, int> _codProvPorNombre;
         private bool _indicesConstruidos;
@@ -36,6 +34,8 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
             _indicesConstruidos = true;
         }
+
+        public int CodigoCentroDistribucionActual => CentroDistribucionAlmacen.centroDistribucionActual?.CodCentroDist ?? 0;
 
         public List<string> LocalidadesDeProvincia(string nombreProvincia)
         {
@@ -74,7 +74,6 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             };
 
             return ubicacion;
-            
         }
 
         internal void ValidarCl(ClienteImposicionCD validarCliente)
@@ -109,28 +108,11 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 MessageBox.Show("Cliente valido", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
-
-            /*if (!listaClientes.Contains(validarCliente.CUITCUIL))
-            {
-                MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            else
-            {
-                MessageBox.Show("Cliente valido", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }*/
         }
 
 
         internal void CrearEncomienda(Encomienda encomiendas)
         {
-            //A este metodo le tenemos que pasar la cantidad de cajas para uqe genere una guía por caja.
-            //encomiendas.NumeroGuia = encomiendas.NumeroGuia;
-
-
             if (encomiendas.DNI < 100000 || encomiendas.DNI > 99999999)
             {
                 MessageBox.Show("El DNI del destinatario ingresado es invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -175,7 +157,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 return;
             }
 
-            int codCentroDistribucionOrigen = 1010;
+            int codCentroDistribucionOrigen = CentroDistribucionAlmacen.centroDistribucionActual.CodCentroDist;
 
             int codCentroDistribucionDestino = CentroDistribucionAlmacen.centrosDistribucion
             .Where(cd => cd.Nombre.Equals(encomiendas.CentroDistribucionDestino, StringComparison.OrdinalIgnoreCase))
@@ -186,6 +168,12 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
             for (int i = 0; i < encomiendas.CantidadCajas; i++)
             {
+                int ultimoNumeroGuia = GuiaAlmacen.guias.LastOrDefault()?.NumeroGuia ?? 0;
+
+                ultimoNumeroGuia += 1;
+
+                string ultimosCincoDigitos = (ultimoNumeroGuia % 100000).ToString("D5");
+
                 var tamañoSeleccionado = Enum.Parse<TamañoCaja>(encomiendas.TipoCaja?.Trim(), ignoreCase: true);
 
                 decimal importeBase = TarifaAlmacen.tarifas
@@ -226,11 +214,23 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
                 GuiaAlmacen.guias.Add(new GuiaEntidad
                 {
-                    NumeroGuia = int.Parse(codCentroDistribucionOrigen.ToString() + ((DateTime.Now.Ticks)).ToString()[^5..]),
+                    NumeroGuia = int.Parse(codCentroDistribucionOrigen.ToString() + ultimosCincoDigitos),
                     CUITCUIL = encomiendas.Cliente,
                     CodPostalDest = encomiendas.CodigoPostal,
-
+                    MetodoEntrega = encomiendas.MetodoEntrega switch
+                    {
+                        "Retiro en Agencia" => MetodoEntrega.EntregaEnAgencia,
+                        "Entrega en Domicilio" => MetodoEntrega.EntregaEnDomicilio,
+                        "Retiro en CD Destino" => MetodoEntrega.EntregaEnCentroDeDistribucion
+                    },
                     DomicilioDest = encomiendas.Domicilio,
+                    TamañoCaja = encomiendas.TipoCaja switch
+                    {
+                        "S" => TamañoCaja.S,
+                        "M" => TamañoCaja.M,
+                        "L" => TamañoCaja.L,
+                        "XL" => TamañoCaja.XL
+                    },
                     CodPostalOrig = CentroDistribucionAlmacen.centrosDistribucion
                                     .Where(a => a.CodCentroDist == codCentroDistribucionOrigen)
                                     .Select(a => a.CodPostal)
@@ -257,40 +257,8 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 });
 
                 MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MessageBox.Show("El importe a cobrar por la encomienda es: $" + GuiaAlmacen.guias.Last().Importe.ToString("F2"), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); //Queria ver si el numero estaba ok
             }
         }
-
-
-        /*public Ubicacion ObtenerUbicacion()
-        {
-
-            /*var ubicacion = new Ubicacion
-            {
-                ProvinciasYLocalidades = new Dictionary<string, List<string>>
-            {
-                { "Buenos Aires", new List<string> { "La Plata", "Mar del Plata", "Bahía Blanca" } },
-                { "Córdoba", new List<string> { "Córdoba Capital", "Villa María", "Río Cuarto" } },
-                { "Santa Fe", new List<string> { "Rosario", "Santa Fe Capital", "Rafaela" } },
-
-            },
-
-                CodigoPostalCentroDistribucion = new Dictionary<string, string>
-            {
-                { "1900", "Centro La Plata" },
-                { "7600", "Centro Mar del Plata" },
-                { "8000", "Centro Bahía Blanca" },
-                { "5000", "Centro Córdoba Capital" },
-                { "5900", "Centro Villa María" },
-                { "5800", "Centro Río Cuarto" },
-                { "2000", "Centro Rosario" },
-                { "3000", "Centro Santa Fe Capital" },
-                { "2300", "Centro Rafaela" }
-            }
-            };
-
-            return ubicacion;
-        }*/
 
     }
 }

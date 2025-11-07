@@ -4,12 +4,12 @@
     "CentroDistribucionDestino": 1001,
     "NumerosGuiaMicro": [
       {
-        "NumeroGuia": 0,
-        "EstadoEncomienda": 9
+        "NumeroGuia": 100000002,
+        "EstadoEncomienda": 8
       },
       {
-        "NumeroGuia": 0,
-        "EstadoEncomienda": 0
+        "NumeroGuia": 100000003,
+        "EstadoEncomienda": 8
       },
       {
         "NumeroGuia": 0,

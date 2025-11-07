@@ -9,9 +9,6 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia;
 
 internal class RegistrarImposicionEnAgenciaModel
 {
-    //private long[] listaClientes = new long[] { 12345678910, 99999999 };
-
-
     private Dictionary<int, List<LocalidadEntidad>> _localidadesPorCodProv;
     private Dictionary<string, int> _codProvPorNombre;
     private bool _indicesConstruidos;
@@ -106,9 +103,6 @@ internal class RegistrarImposicionEnAgenciaModel
 
     internal void CrearEncomienda(Encomienda encomiendas)
     {
-        //A este metodo le tenemos que pasar la cantidad de cajas para uqe genere una guía por caja.
-        //encomiendas.NumeroGuia = encomiendas.NumeroGuia;
-
         if (encomiendas.DNI < 100000 || encomiendas.DNI > 99999999)
         {
             MessageBox.Show("El DNI del destinatario ingresado es invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -141,7 +135,7 @@ internal class RegistrarImposicionEnAgenciaModel
             return;
         }
 
-        int codAgencia = AgenciaAlmacen.AgenciaActual.CodAgencia; //Hardcodeamos la agencia//
+        int codAgencia = AgenciaAlmacen.AgenciaActual.CodAgencia;
 
         int codCentroDistribucionOrigen = AgenciaAlmacen.agencias
             .Where(a => a.CodAgencia == codAgencia)
@@ -153,11 +147,14 @@ internal class RegistrarImposicionEnAgenciaModel
             .Select(cd => cd.CodCentroDist)
             .FirstOrDefault();
 
-
-
-
         for (int i = 0; i < encomiendas.CantidadCajas; i++)
         {
+            int ultimoNumeroGuia = GuiaAlmacen.guias.LastOrDefault()?.NumeroGuia ?? 0;
+
+            ultimoNumeroGuia += 1;
+
+            string ultimosCincoDigitos = (ultimoNumeroGuia % 100000).ToString("D5");
+
             var tamañoSeleccionado = Enum.Parse<TamañoCaja>(encomiendas.TipoCaja?.Trim(), ignoreCase: true);
 
             decimal importeBase = TarifaAlmacen.tarifas
@@ -189,7 +186,11 @@ internal class RegistrarImposicionEnAgenciaModel
                                     .Select(a => a.Monto).Single();
             }
 
-            decimal finalAgencia = cargoAgencia;
+            cargoAgencia += AdicionalesYComisionesAlmacen.adicionalesComisiones
+                                .Where(c => c.Concepto == Concepto.EntregaAgencia)
+                                .Select(c => c.Monto).Single(); 
+
+            decimal finalAgencia = cargoAgencia / 2m;
 
             decimal importe = importeBase;
 
@@ -200,12 +201,24 @@ internal class RegistrarImposicionEnAgenciaModel
 
             GuiaAlmacen.guias.Add(new GuiaEntidad
             {
-                NumeroGuia = int.Parse(codAgencia.ToString() + ((DateTime.Now.Ticks)).ToString()[^5..]),
+                NumeroGuia = int.Parse(codAgencia.ToString() + ultimosCincoDigitos),
                 CUITCUIL = encomiendas.Cliente,
                 CodPostalDest = encomiendas.CodigoPostal,
-                
+                MetodoEntrega = encomiendas.MetodoEntrega switch
+                {
+                    "Retiro en Agencia" => MetodoEntrega.EntregaEnAgencia,
+                    "Entrega en Domicilio" => MetodoEntrega.EntregaEnDomicilio,
+                    "Retiro en CD Destino"=> MetodoEntrega.EntregaEnCentroDeDistribucion
+                },
                 DomicilioDest = encomiendas.Domicilio,
-                                CodPostalOrig = AgenciaAlmacen.agencias
+                TamañoCaja = encomiendas.TipoCaja switch
+                {
+                    "S" => TamañoCaja.S,
+                    "M" => TamañoCaja.M,
+                    "L" => TamañoCaja.L,
+                    "XL" => TamañoCaja.XL
+                },
+                CodPostalOrig = AgenciaAlmacen.agencias
                                     .Where(a => a.CodAgencia == codAgencia)
                                     .Select(a => a.CodPostalAgencia)
                                     .FirstOrDefault(),
@@ -230,43 +243,7 @@ internal class RegistrarImposicionEnAgenciaModel
                 }
             });
 
-            GuiaAlmacen.GuardarGuia();
-
             MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MessageBox.Show("El importe a cobrar por la encomienda es: $" + GuiaAlmacen.guias.Last().Importe.ToString("F2"), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information); //Queria ver si el numero estaba ok
-
-
         }
-    }
-
-
-    public Ubicacion ObtenerUbicacion()
-    {
-
-        var ubicacion = new Ubicacion
-        {
-            ProvinciasYLocalidades = new Dictionary<string, List<string>>
-            {
-                { "Buenos Aires", new List<string> { "La Plata", "Mar del Plata", "Bahía Blanca" } },
-                { "Córdoba", new List<string> { "Córdoba Capital", "Villa María", "Río Cuarto" } },
-                { "Santa Fe", new List<string> { "Rosario", "Santa Fe Capital", "Rafaela" } },
-
-            },
-
-            CodigoPostalCentroDistribucion = new Dictionary<string, string>
-            {
-                { "1900", "Centro La Plata" },
-                { "7600", "Centro Mar del Plata" },
-                { "8000", "Centro Bahía Blanca" },
-                { "5000", "Centro Córdoba Capital" },
-                { "5900", "Centro Villa María" },
-                { "5800", "Centro Río Cuarto" },
-                { "2000", "Centro Rosario" },
-                { "3000", "Centro Santa Fe Capital" },
-                { "2300", "Centro Rafaela" }
-            }
-        };
-
-        return ubicacion;
     }
 }

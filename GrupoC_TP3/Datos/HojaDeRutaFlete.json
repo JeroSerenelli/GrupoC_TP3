@@ -126,5 +126,51 @@
     "EstadoHojaRutaFlete": "NoCumplida",
     "TipoHojaRuta": "Entrega",
     "CodPostal": 1017
+  },
+  {
+    "HojaRutaFlete": 12,
+    "NumerosGuiaFlete": [
+      { "NumeroGuia": 958538 },
+      { "NumeroGuia": 958539 }
+    ],
+    "DNIFletero": 24807375,
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
+    "TipoHojaRuta": "Entrega",
+    "CodPostal": 1007
+  },
+  {
+    "HojaRutaFlete": 13,
+    "NumerosGuiaFlete": [
+      { "NumeroGuia": 958540 },
+      { "NumeroGuia": 958541 }
+    ],
+    "DNIFletero": 24807375,
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
+    "TipoHojaRuta": "Entrega",
+    "CodPostal": 1007
+  },
+  {
+    "HojaRutaFlete": 14,
+    "NumerosGuiaFlete": [
+      { "NumeroGuia": 900001 },
+      { "NumeroGuia": 900002 },
+      { "NumeroGuia": 900003 },
+      { "NumeroGuia": 900004 }
+    ],
+    "DNIFletero": 0,
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
+    "TipoHojaRuta": "Entrega",
+    "CodPostal": 1007
+  },
+  {
+    "HojaRutaFlete": 15,
+    "NumerosGuiaFlete": [
+      { "NumeroGuia": 900005 },
+      { "NumeroGuia": 900006 }
+    ],
+    "DNIFletero": 24807375,
+    "EstadoHojaRutaFlete": "NoCumplida",
+    "TipoHojaRuta": "Entrega",
+    "CodPostal": 1007
   }
 ]

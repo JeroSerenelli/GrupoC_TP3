@@ -63,7 +63,7 @@
             label4 = new Label();
             groupBox3 = new GroupBox();
             label18 = new Label();
-            textBoxCodigoAgencia = new TextBox();
+            textBoxCodigoCDActual = new TextBox();
             label22 = new Label();
             groupBox4.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -401,15 +401,14 @@
             label18.TabIndex = 61;
             label18.Text = "TUTASA";
             // 
-            // textBoxCodigoAgencia
+            // textBoxCodigoCDActual
             // 
-            textBoxCodigoAgencia.Location = new Point(77, 5);
-            textBoxCodigoAgencia.Name = "textBoxCodigoAgencia";
-            textBoxCodigoAgencia.ReadOnly = true;
-            textBoxCodigoAgencia.Size = new Size(36, 23);
-            textBoxCodigoAgencia.TabIndex = 70;
-            textBoxCodigoAgencia.Text = "1010";
-            textBoxCodigoAgencia.TextChanged += textBoxCodigoAgencia_TextChanged;
+            textBoxCodigoCDActual.Location = new Point(77, 5);
+            textBoxCodigoCDActual.Name = "textBoxCodigoCDActual";
+            textBoxCodigoCDActual.ReadOnly = true;
+            textBoxCodigoCDActual.Size = new Size(36, 23);
+            textBoxCodigoCDActual.TabIndex = 70;
+            textBoxCodigoCDActual.TextChanged += textBoxCodigoCDActual_TextChanged;
             // 
             // label22
             // 
@@ -425,7 +424,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(401, 609);
-            Controls.Add(textBoxCodigoAgencia);
+            Controls.Add(textBoxCodigoCDActual);
             Controls.Add(label22);
             Controls.Add(groupBox4);
             Controls.Add(buttonNuevaSolicitudLimpiar);
@@ -487,7 +486,7 @@
         private Label label4;
         private GroupBox groupBox3;
         private Label label18;
-        private TextBox textBoxCodigoAgencia;
+        private TextBox textBoxCodigoCDActual;
         private Label label22;
         private Label labelCdDestino;
     }

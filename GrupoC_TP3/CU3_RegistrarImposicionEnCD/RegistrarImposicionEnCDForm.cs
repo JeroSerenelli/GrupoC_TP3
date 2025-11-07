@@ -187,13 +187,18 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 NombreDestinatario = textBoxNombreDestinatario.Text,
                 ApellidoDestinatario = textBoxApellidoDestinatario.Text,
                 DNI = dniDestinatario,
-                CodigoAgencia = int.Parse(textBoxCodigoAgencia.Text),
+                CodigoAgencia = int.Parse(textBoxCodigoCDActual.Text),
 
             });
 
 
 
 
+        }
+
+        public void mostrarCDActual()
+        {
+            textBoxCodigoCDActual.Text = modelo.CodigoCentroDistribucionActual.ToString();
         }
 
 
@@ -291,9 +296,9 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
         }
 
-        private void textBoxCodigoAgencia_TextChanged(object sender, EventArgs e)
+        private void textBoxCodigoCDActual_TextChanged(object sender, EventArgs e)
         {
-
+            textBoxCodigoCDActual.Text = modelo.CodigoCentroDistribucionActual.ToString();
         }
     }
 }

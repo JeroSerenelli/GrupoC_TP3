@@ -21,7 +21,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
         public string ApellidoDestinatario { get; set; }
         public int DNI { get; set; }
         public string NumeroGuia { get; set; }
-        public int CodigoAgencia { get; set; }
+        public int CodCDOrigen { get; set; }
 
     }
 }

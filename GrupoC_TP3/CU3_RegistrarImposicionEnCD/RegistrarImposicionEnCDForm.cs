@@ -32,7 +32,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
             InitializeComponent();
 
 
-
+            textBoxCodigoCDActual.Text = modelo.CodigoCentroDistribucionActual.ToString();
             var ubicacion = modelo.ObtenerUbicacion1();
             cmbBoxProvDst.DataSource = ubicacion.ProvinciasYLocalidades.Keys.ToList();
             cmbBoxProvDst.SelectedIndex = -1;
@@ -187,7 +187,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 NombreDestinatario = textBoxNombreDestinatario.Text,
                 ApellidoDestinatario = textBoxApellidoDestinatario.Text,
                 DNI = dniDestinatario,
-                CodigoAgencia = int.Parse(textBoxCodigoCDActual.Text),
+                CodCDOrigen = int.Parse(textBoxCodigoCDActual.Text),
 
             });
 
@@ -298,7 +298,7 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
 
         private void textBoxCodigoCDActual_TextChanged(object sender, EventArgs e)
         {
-            textBoxCodigoCDActual.Text = modelo.CodigoCentroDistribucionActual.ToString();
+            
         }
     }
 }

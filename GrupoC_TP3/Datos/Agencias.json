@@ -10,13 +10,18 @@
     "CodCentroDist": 1001
   },
   {
-    "CodAgencia": 2003,
+    "CodAgencia": 2002,
     "CodPostalAgencia": 4726,
     "CodCentroDist": 1002
   },
   {
-    "CodAgencia": 2004,
+    "CodAgencia": 2003,
     "CodPostalAgencia": 5162,
+    "CodCentroDist": 1003
+  },
+  {
+    "CodAgencia": 2004,
+    "CodPostalAgencia": 5093,
     "CodCentroDist": 1004
   },
   {

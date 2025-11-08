@@ -157,17 +157,6 @@ namespace GrupoC_TP3.CU2_RegistrarImposicionEnAgencia
                 return;
             }
 
-            /*if (dniDestinatario < 100000 || dniDestinatario > 99999999)
-            {
-                MessageBox.Show("El DNI del destinatario ingresado es invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (codigoPostalDestino < 1000)
-            {
-                MessageBox.Show("El Codigo Postal ingresado es invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }*/
 
             modelo.CrearEncomienda(new Encomienda
             {

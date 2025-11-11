@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static GrupoC_TP3.CU8_EmisionFacturas.Factura;
 
+
 namespace GrupoC_TP3.CU8_EmisionFacturas
 {
     public partial class EmisionFacturasForm : Form
@@ -95,6 +96,8 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
                 textBoxTotalFactura.Clear();
                 textBoxCuilCliente.Clear();
             }
+
+            
             /* NO ESTA EN EL SECUENCIA, CAPAZ LO PUEDO OMITIR 
              * else
             {

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static GrupoC_TP3.CU8_EmisionFacturas.Factura;
 
+
 namespace GrupoC_TP3.CU3_EmisionFacturas
 {
     internal class EmisionFacturasModel
@@ -27,6 +28,10 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
 
             //CREO LA NUEVA FACTURA Y LE ASIGNO LOS VALORES CORRESPONDIENTES
             Almacenes.FacturaEntidad FacturaNueva = new();
+
+            Almacenes.GuiaEntidad GuiasActualizadas = new();
+            
+
             //COMIENZO A ASIGNAR LOS VALORES
             FacturaNueva.NumeroFactura = NumeroFactura;
             FacturaNueva.TipoFactura = Cliente.CondicionCliente == CondicionCliente.ResponsableInscripto ? TipoFactura.A : TipoFactura.B;
@@ -34,11 +39,18 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
             FacturaNueva.Total = Importe;   
             FacturaNueva.FechaEmision = DateTime.Now;   
             FacturaNueva.EstadoFactura = EstadoFactura.Emitida;
+            
             //AHORA LO AÑADO AL ALMACEN DE FACTURAS Y GUARDO LOS CAMBIOS
             Almacenes.FacturaAlmacen.facturas.Add(FacturaNueva);
             //LLAMO AL METODO DE GUARDAR FACTURAS YA CREADO ANTERIORMENTE EN EL ALMACEN
-            Almacenes.FacturaAlmacen.GuardarFacturas();
 
+            Almacenes.FacturaAlmacen.GuardarFacturas();
+            //AHORA VAMOS A CAMBIAR EL ESTADO DE LAS GUIAS QUE USAMOS A FACTURADO
+            
+            foreach (var guia in Almacenes.GuiaAlmacen.guias.Where(g => g.CUITCUIL == Cuit && g.EstadoEncomienda == EstadoEncomienda.Entregado))
+            {
+                guia.EstadoEncomienda = EstadoEncomienda.Facturado;
+            }
             return true;
             
         }

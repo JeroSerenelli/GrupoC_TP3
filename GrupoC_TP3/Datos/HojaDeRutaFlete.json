@@ -1,8 +1,15 @@
 [
   {
-    "HojaRutaFlete": 1,
+    "HojaRutaFlete": 50000,
     "NumerosGuiaFlete": [
-      { "NumeroGuia": 100000008 }
+      {
+        "NumeroGuia": 100000004,
+        "EstadoEncomienda": 0
+      },
+      {
+        "NumeroGuia": 100000005,
+        "EstadoEncomienda": 0
+      }
     ],
     "DNIFletero": 33190535,
 
@@ -11,162 +18,182 @@
     "CodPostal": 1650
   },
   {
-    "HojaRutaFlete": 2,
+    "HojaRutaFlete": 70000,
     "NumerosGuiaFlete": [
-      { "NumeroGuia": 100000008 }
+      {
+        "NumeroGuia": 100000004,
+        "EstadoEncomienda": 5
+      },
+      {
+        "NumeroGuia": 100000005,
+        "EstadoEncomienda": 5
+      }
     ],
     "DNIFletero": 28373390,
     "EstadoHojaRutaFlete": "PendienteAsignacion",
     "TipoHojaRuta": "Entrega",
-    "CodPostal": 4618
+    "CodPostal": 4726
   },
   {
-    "HojaRutaFlete": 3,
+    "HojaRutaFlete": 50001,
     "NumerosGuiaFlete": [
-      { "NumeroGuia": 490006 },
-      { "NumeroGuia": 701414 },
-      { "NumeroGuia": 880365 }
+      {
+        "NumeroGuia": 100500006,
+        "EstadoEncomienda": 0
+      },
+      {
+        "NumeroGuia": 100500007,
+        "EstadoEncomienda": 0
+      }
     ],
-    "DNIFletero": 42362329,
-    "EstadoHojaRutaFlete": "Cumplida",
-    "TipoHojaRuta": "Entrega",
-    "CodPostal": 1004
-  },
-  {
-    "HojaRutaFlete": 4,
-    "NumerosGuiaFlete": [
-      { "NumeroGuia": 800051 },
-      { "NumeroGuia": 958537 }
-    ],
-    "DNIFletero": 24807375,
-    "EstadoHojaRutaFlete": "NoCumplida",
-    "TipoHojaRuta": "Entrega",
-    "CodPostal": 1007
-  },
-  {
-    "HojaRutaFlete": 5,
-    "NumerosGuiaFlete": [
-      { "NumeroGuia": 904281 },
-      { "NumeroGuia": 572716 }
-    ],
-    "DNIFletero": 31369274,
-    "EstadoHojaRutaFlete": "Cumplida",
-    "TipoHojaRuta": "Entrega",
-    "CodPostal": 1008
-  },
-  {
-    "HojaRutaFlete": 6,
-    "NumerosGuiaFlete": [
-      { "NumeroGuia": 177189 },
-      { "NumeroGuia": 833170 },
-      { "NumeroGuia": 601597 }
-    ],
-    "DNIFletero": 33873730,
-    "EstadoHojaRutaFlete": "Cumplida",
+    "DNIFletero": 35589539,
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
     "TipoHojaRuta": "Retiro",
-    "CodPostal": 1011
+    "CodPostal": 4600
   },
   {
-    "HojaRutaFlete": 7,
+    "HojaRutaFlete": 70001,
     "NumerosGuiaFlete": [
-      { "NumeroGuia": 724514 },
-      { "NumeroGuia": 469329 }
+      {
+        "NumeroGuia": 100500006,
+        "EstadoEncomienda": 5
+      },
+      {
+        "NumeroGuia": 100500007,
+        "EstadoEncomienda": 5
+      }
     ],
-    "DNIFletero": 21295377,
+    "DNIFletero": 35261035,
     "EstadoHojaRutaFlete": "PendienteAsignacion",
     "TipoHojaRuta": "Entrega",
-    "CodPostal": 1013
+    "CodPostal": 4203
   },
   {
-    "HojaRutaFlete": 8,
+    "HojaRutaFlete": 50002,
     "NumerosGuiaFlete": [
-      { "NumeroGuia": 199267 },
-      { "NumeroGuia": 584117 }
+      {
+        "NumeroGuia": 100800008,
+        "EstadoEncomienda": 0
+      }
+    ],
+    "DNIFletero": 34825591,
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
+    "TipoHojaRuta": "Retiro",
+    "CodPostal": 2003
+  },
+  {
+    "HojaRutaFlete": 50003,
+    "NumerosGuiaFlete": [
+      {
+        "NumeroGuia": 200000009,
+        "EstadoEncomienda": 1
+      },
+      {
+        "NumeroGuia": 200000010,
+        "EstadoEncomienda": 1
+      }
+    ],
+    "DNIFletero": 33190535,
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
+    "TipoHojaRuta": "Retiro",
+    "CodPostal": 1650
+  },
+  {
+    "HojaRutaFlete": 70002,
+    "NumerosGuiaFlete": [
+      {
+        "NumeroGuia": 200000009,
+        "EstadoEncomienda": 5
+      },
+      {
+        "NumeroGuia": 200000010,
+        "EstadoEncomienda": 5
+      }
+    ],
+    "DNIFletero": 28373390,
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
+    "TipoHojaRuta": "Entrega",
+    "CodPostal": 4726
+  },
+  {
+    "HojaRutaFlete": 50004,
+    "NumerosGuiaFlete": [
+      {
+        "NumeroGuia": 200200011,
+        "EstadoEncomienda": 1
+      },
+      {
+        "NumeroGuia": 200200012,
+        "EstadoEncomienda": 1
+      }
+    ],
+    "DNIFletero": 28373390,
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
+    "TipoHojaRuta": "Retiro",
+    "CodPostal": 4726
+  },
+  {
+    "HojaRutaFlete": 70003,
+    "NumerosGuiaFlete": [
+      {
+        "NumeroGuia": 200200011,
+        "EstadoEncomienda": 5
+      },
+      {
+        "NumeroGuia": 200200012,
+        "EstadoEncomienda": 5
+      }
+    ],
+    "DNIFletero": 36933831,
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
+    "TipoHojaRuta": "Entrega",
+    "CodPostal": 3099
+  },
+  {
+    "HojaRutaFlete": 50005,
+    "NumerosGuiaFlete": [
+      {
+        "NumeroGuia": 200900013,
+        "EstadoEncomienda": 1
+      }
+    ],
+    "DNIFletero": 35261035,
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
+    "TipoHojaRuta": "Retiro",
+    "CodPostal": 4203
+  },
+  {
+    "HojaRutaFlete": 70004,
+    "NumerosGuiaFlete": [
+      {
+        "NumeroGuia": 100000014,
+        "EstadoEncomienda": 5
+      },
+      {
+        "NumeroGuia": 100000015,
+        "EstadoEncomienda": 5
+      }
+    ],
+    "DNIFletero": 36933831,
+    "EstadoHojaRutaFlete": "PendienteAsignacion",
+    "TipoHojaRuta": "Entrega",
+    "CodPostal": 3099
+  },
+  {
+    "HojaRutaFlete": 70005,
+    "NumerosGuiaFlete": [
+      {
+        "NumeroGuia": 100900016,
+        "EstadoEncomienda": 5
+      },
+      {
+        "NumeroGuia": 100900017,
+        "EstadoEncomienda": 5
+      }
     ],
     "DNIFletero": 35589539,
     "EstadoHojaRutaFlete": "PendienteAsignacion",
     "TipoHojaRuta": "Entrega",
-    "CodPostal": 1015
-  },
-  {
-    "HojaRutaFlete": 9,
-    "NumerosGuiaFlete": [
-      { "NumeroGuia": 551319 },
-      { "NumeroGuia": 788364 },
-      { "NumeroGuia": 710112 }
-    ],
-    "DNIFletero": 42629238,
-    "EstadoHojaRutaFlete": "PendienteAsignacion",
-    "TipoHojaRuta": "Entrega",
-    "CodPostal": 1017
-  },
-  {
-    "HojaRutaFlete": 10,
-    "NumerosGuiaFlete": [
-      { "NumeroGuia": 455317 },
-      { "NumeroGuia": 699185 }
-    ],
-    "DNIFletero": 35261035,
-    "EstadoHojaRutaFlete": "Cumplida",
-    "TipoHojaRuta": "Entrega",
-    "CodPostal": 1019
-  },
-  {
-    "HojaRutaFlete": 11,
-    "NumerosGuiaFlete": [
-      { "NumeroGuia": 451319 },
-      { "NumeroGuia": 798364 },
-      { "NumeroGuia": 730112 }
-    ],
-    "DNIFletero": 42629238,
-    "EstadoHojaRutaFlete": "NoCumplida",
-    "TipoHojaRuta": "Entrega",
-    "CodPostal": 1017
-  },
-  {
-    "HojaRutaFlete": 12,
-    "NumerosGuiaFlete": [
-      { "NumeroGuia": 958538 },
-      { "NumeroGuia": 958539 }
-    ],
-    "DNIFletero": 24807375,
-    "EstadoHojaRutaFlete": "PendienteAsignacion",
-    "TipoHojaRuta": "Entrega",
-    "CodPostal": 1007
-  },
-  {
-    "HojaRutaFlete": 13,
-    "NumerosGuiaFlete": [
-      { "NumeroGuia": 958540 },
-      { "NumeroGuia": 958541 }
-    ],
-    "DNIFletero": 24807375,
-    "EstadoHojaRutaFlete": "PendienteAsignacion",
-    "TipoHojaRuta": "Entrega",
-    "CodPostal": 1007
-  },
-  {
-    "HojaRutaFlete": 14,
-    "NumerosGuiaFlete": [
-      { "NumeroGuia": 900001 },
-      { "NumeroGuia": 900002 },
-      { "NumeroGuia": 900003 },
-      { "NumeroGuia": 900004 }
-    ],
-    "DNIFletero": 0,
-    "EstadoHojaRutaFlete": "PendienteAsignacion",
-    "TipoHojaRuta": "Entrega",
-    "CodPostal": 1007
-  },
-  {
-    "HojaRutaFlete": 15,
-    "NumerosGuiaFlete": [
-      { "NumeroGuia": 900005 },
-      { "NumeroGuia": 900006 }
-    ],
-    "DNIFletero": 24807375,
-    "EstadoHojaRutaFlete": "NoCumplida",
-    "TipoHojaRuta": "Entrega",
-    "CodPostal": 1007
+    "CodPostal": 4600
   }
 ]

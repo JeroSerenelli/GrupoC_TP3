@@ -94,10 +94,20 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
 
         }
 
-        //CREO UNA LISTA DE GUIAS QUE VINCULA EL CUIL CON LAS GUIAS
+        //CREO UNA LISTA DE GUIAS QUE VINCULA EL CUIL CON LAS GUIAS ENTREGADAS
+
+
         internal List<Almacenes.GuiaEntidad> ObtenerGuia(long cuit)
         {
-            return Almacenes.GuiaAlmacen.guias.Where(g => g.CUITCUIL == cuit).ToList();
+            return Almacenes.GuiaAlmacen.guias.Where(g => g.CUITCUIL == cuit && g.EstadoEncomienda== EstadoEncomienda.Entregado).ToList();
         }
+
+        //CREO UNA LISTA DE FACTURAS QUE VINCULA EL CUIL CON LAS FACTURAS EMITIDAS
+        internal List<Almacenes.FacturaEntidad> ObtenerFactura(long cuit)
+        {
+            return Almacenes.FacturaAlmacen.facturas.Where(f => f.CUITCUIL == cuit).ToList();
+        }
+        //haceme el condicional where para filtrar las facturas por estado emitida y ordenalas por fecha de emision descendente
+
     }
 }

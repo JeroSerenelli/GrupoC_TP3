@@ -25,11 +25,11 @@
     "Unidades": [
       {
         "CUITEmpresasOmnibus": 30709876543,
-        "PatenteMicro": "AF972BF"
+        "PatenteMicro": "ABC700"
       },
       {
         "CUITEmpresasOmnibus": 30709876543,
-        "PatenteMicro": "AC445RK"
+        "PatenteMicro": "ABC600"
       },
       {
         "CUITEmpresasOmnibus": 30709876543,
@@ -52,7 +52,7 @@
       },
       {
         "CUITEmpresasOmnibus": 30512345678,
-        "PatenteMicro": "AH204BC"
+        "PatenteMicro": "ABC500"
       }
     ]
   },
@@ -67,11 +67,11 @@
       },
       {
         "CUITEmpresasOmnibus": 30900112233,
-        "PatenteMicro": "AE540SP"
+        "PatenteMicro": "ABC400"
       },
       {
         "CUITEmpresasOmnibus": 30900112233,
-        "PatenteMicro": "AE580BY"
+        "PatenteMicro": "ABC300"
       }
     ]
   },
@@ -86,11 +86,11 @@
       },
       {
         "CUITEmpresasOmnibus": 30456789012,
-        "PatenteMicro": "AH311TU"
+        "PatenteMicro": "ABC200"
       },
       {
         "CUITEmpresasOmnibus": 30456789012,
-        "PatenteMicro": "AF112MY"
+        "PatenteMicro": "ABC100"
       },
       {
         "CUITEmpresasOmnibus": 30456789012,

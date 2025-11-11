@@ -141,11 +141,11 @@
     "NumerosGuiaMicro": [
       {
         "NumeroGuia": 100000004,
-        "EstadoEncomienda": 0
+        "EstadoEncomienda": 3
       },
       {
         "NumeroGuia": 100000005,
-        "EstadoEncomienda": 0
+        "EstadoEncomienda": 3
       },
       {
         "NumeroGuia": 200000009,
@@ -183,7 +183,7 @@
     "NumerosGuiaMicro": [
       {
         "NumeroGuia": 100800008,
-        "EstadoEncomienda": 0
+        "EstadoEncomienda": 3
       }
     ],
     "PatenteMicro": "ABC300",

@@ -83,7 +83,13 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
                 MessageBox.Show("El CUIL/CUIT ingresado no tiene pedidos para facturar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            
+            //BUSCAMOS EN EL ALMACEN DE GUIA ALMACEN SI LA GUIA TIENE ESTADO ENTREGADO
+            if (!GuiaAlmacen.guias.Any(g => g.CUITCUIL == salida && g.EstadoEncomienda == EstadoEncomienda.Entregado))
+            {
+                MessageBox.Show("El CUIL/CUIT ingresado no tiene pedidos entregados para facturar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
             return true;
 
         }

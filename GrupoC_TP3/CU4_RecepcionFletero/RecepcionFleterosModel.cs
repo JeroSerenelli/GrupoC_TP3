@@ -415,9 +415,11 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
         {
             return actual switch
             {
+                //ABM: creo que aca hay un problema; no veo cuando cambia de "En camino a domicilio o agencia" a "Entregado en CD". Falta ese pasaje. Ademas, el pasaje hacia En camino a domicilio destino deberia
+                //ABM: ser desde Recibido en CD Destino. 
                 EstadoEncomienda.ListoParaRetirarEnDomicilio => EstadoEncomienda.EnCaminoADomcilicioOAgencia,
                 EstadoEncomienda.ListoParaRetirarEnAgencia => EstadoEncomienda.EnCaminoADomcilicioOAgencia,
-                EstadoEncomienda.RecibidoEnCentroDistribucionDestino => EstadoEncomienda.EnCaminoADomicilioDestino,
+                EstadoEncomienda.RecibidoEnCentroDistribucionDestino => EstadoEncomienda.EnCaminoADomicilioDestino, 
                 EstadoEncomienda.EntregadoEnCentroDeDistribucion => EstadoEncomienda.EnCaminoADomicilioDestino,
                 _ => null
             };

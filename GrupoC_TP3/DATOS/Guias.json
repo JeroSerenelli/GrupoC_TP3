@@ -151,5 +151,47 @@
         "Descripcion": "Recibido En Centro Distribucion Destino"
       }
     ]
+  },
+  {
+    "NumeroGuia": 100000020,
+    "CUITCUIL": 27311222334,
+    "CodPostalDest": 8504,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Av. Siempre Viva 742",
+    "TamanoCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Luis",
+    "ApellidoDestinatario": "Lopez",
+    "DNIDestinatario": 37840186,
+    "Importe": 8000,
+    "CargosFleteros": 500,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 2000,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 9,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 9,
+        "Fecha": "2025-11-04T12:00:00",
+        "Descripcion": "Facturado"
+      },
+      {
+        "Estado": 8,
+        "Fecha": "2025-10-31T12:00:00",
+        "Descripcion": "Entregado"
+      },
+      {
+        "Estado": 7,
+        "Fecha": "2025-10-31T08:00:00",
+        "Descripcion": "En camino a domicilio"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T09:45:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
+      }
+    ]
   }
+
 ]

@@ -10,22 +10,22 @@
 
   <ItemGroup>
     <Compile Update="Almacenes\FacturaAlmacen.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="Almacenes\FacturaEntidad.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="Almacenes\GuiaAlmacen.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="Almacenes\GuiaEntidad.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="CU8_EmisionFacturas\EmisionFacturasModel.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="CU8_EmisionFacturas\Factura.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -64,7 +64,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="DATOS\Facturas.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Datos\Fletero.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -73,7 +73,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="DATOS\Guias.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Datos\HojaDeRutaFlete.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

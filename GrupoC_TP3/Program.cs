@@ -25,8 +25,6 @@ namespace GrupoC_TP3
             //Application.Run(new CU9_CuentaCorriente.CuentaCorrienteForm());
             //Application.Run(new CU10_ResultadoCostosVsVentas.ResultadoCostosVsVentasForm());
             Application.Run(new LauncherForm());
-
-            GuiaAlmacen.GuardarGuia();
         }
     }
 }

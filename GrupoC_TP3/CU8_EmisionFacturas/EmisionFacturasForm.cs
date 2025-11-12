@@ -31,7 +31,6 @@ namespace GrupoC_TP3.CU8_EmisionFacturas
 
         private void buttonBuscarCuilCliente_Click(object sender, EventArgs e)
         {
-
             //COMENZAMOS QUE LA LISTA ESTA VACIA
             PedidosAFacturarListView.Items.Clear();
 

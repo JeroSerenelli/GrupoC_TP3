@@ -27,7 +27,6 @@ namespace GrupoC_TP3.Almacenes
         {
             var clienteJson = System.Text.Json.JsonSerializer.Serialize(clientes);
             File.WriteAllText(@"Datos\Clientes.json", clienteJson);
-
         }
     }
 }

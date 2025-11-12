@@ -1,4 +1,5 @@
 ﻿using GrupoC_TP3.Almacenes;
+using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
 using GrupoC_TP3.CU8_EmisionFacturas;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
     {
         internal bool GenerarFactura(long Cuit, decimal Importe)
         {
+
             //NO SE COMO ES EL TEMA DE NUMERO DE FACTURA, SE ME OCURRIO ESTA IDEA DE AGARRAR LA ULTIMA FACTURA Y SUMARLE 1, EL CODIGO LO HIZO CHATGPT
             int NumeroFactura = Almacenes.FacturaAlmacen.facturas.Max(f => f.NumeroFactura) + 1;
 
@@ -50,7 +52,17 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
             foreach (var guia in Almacenes.GuiaAlmacen.guias.Where(g => g.CUITCUIL == Cuit && g.EstadoEncomienda == EstadoEncomienda.Entregado))
             {
                 guia.EstadoEncomienda = EstadoEncomienda.Facturado;
+                guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
+                {
+                    EstadoGuiaEnum = EstadoEncomienda.Facturado,
+                    Fecha = DateTime.Now,
+                    Descripcion = "Facturada."
+                });
             }
+
+            //GRABO LAS GUIAS MODIFICADAS
+            Almacenes.GuiaAlmacen.GuardarGuia();
+
             return true;
             
         }
@@ -59,7 +71,6 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
 
         internal bool ValidacionCuil(string Cuil)
         {
-            
             //Que sea un NUMERO
             if (!long.TryParse(Cuil, out long salida))
             {
@@ -109,17 +120,69 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
         //CREO UNA LISTA DE GUIAS QUE VINCULA EL CUIL CON LAS GUIAS ENTREGADAS
 
 
-        internal List<Almacenes.GuiaEntidad> ObtenerGuia(long cuit)
+       /* internal List<Almacenes.GuiaEntidad> ObtenerGuia(long cuit)
         {
             return Almacenes.GuiaAlmacen.guias.Where(g => g.CUITCUIL == cuit && g.EstadoEncomienda== EstadoEncomienda.Entregado).ToList();
-        }
+        }*/
 
         //CREO UNA LISTA DE FACTURAS QUE VINCULA EL CUIL CON LAS FACTURAS EMITIDAS
-        internal List<Almacenes.FacturaEntidad> ObtenerFactura(long cuit)
+        /*internal List<Almacenes.FacturaEntidad> ObtenerFactura(long cuit)
         {
             return Almacenes.FacturaAlmacen.facturas.Where(f => f.CUITCUIL == cuit).ToList();
         }
         //haceme el condicional where para filtrar las facturas por estado emitida y ordenalas por fecha de emision descendente
 
+        */
+       /* internal List <Factura> ObtenerFacturas(long cuit)
+        {
+            List<Almacenes.FacturaEntidad> AuxFactura = Almacenes.FacturaAlmacen.facturas.Where(f => f.CUITCUIL == cuit).ToList();
+
+            List<Factura> FacturasFiltradas = new List<Factura>();
+                foreach (var f in AuxFactura)
+                {
+                    FacturasFiltradas.Add(new Factura
+                    {
+                        NumeroFactura = f.NumeroFactura,
+                        CUITCUIL = f.CUITCUIL,
+                        Total = f.Total,
+                        TipoFactura = f.TipoFactura,
+                        EstadoFactura = f.EstadoFactura
+                    });
+                }
+                return FacturasFiltradas;
+            
+        }*/
+
+
+        internal List<Guia>? ObtenerGuia(long cuit)
+        {
+            List<Almacenes.GuiaEntidad> AuxGuia = Almacenes.GuiaAlmacen.guias.Where(g => g.CUITCUIL == cuit && g.EstadoEncomienda == EstadoEncomienda.Entregado).ToList();
+            Almacenes.ClienteEntidad AuxCliente = Almacenes.ClienteAlmacen.clientes.Where(c => c.CUITCUIL == cuit).FirstOrDefault();
+
+
+            if (AuxGuia.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                List<Guia> GuiasFiltradas = new List<Guia>();
+
+                foreach (var f in AuxGuia)
+                {
+                    GuiasFiltradas.Add(new Guia
+                    {
+                        NumeroGuia = f.NumeroGuia,
+                        CUITCUIL = f.CUITCUIL,
+                        RazonSocial = AuxCliente.RazonSocial,
+                        CodPostalDest = f.CodPostalDest,
+                        DomicilioDest = f.DomicilioDest,
+                        Importe = f.Importe
+                    });
+                }
+
+                return GuiasFiltradas;
+            }
+        }
     }
 }

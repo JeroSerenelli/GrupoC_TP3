@@ -256,6 +256,8 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                 }
                 });
 
+                GuiaAlmacen.GuardarGuia();
+
                 MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

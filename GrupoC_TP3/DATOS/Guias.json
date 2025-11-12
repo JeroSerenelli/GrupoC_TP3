@@ -72,8 +72,13 @@
     "CargosAgencia": 0,
     "CodAgenciaOrigen": 2000,
     "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 8,
+    "EstadoEncomienda": 9,
     "HistorialEstadosGuia": [
+      {
+        "Estado": 9,
+        "Fecha": "2025-11-04T12:00:00",
+        "Descripcion": "Facturado"
+      },
       {
         "Estado": 8,
         "Fecha": "2025-10-31T12:00:00",
@@ -123,8 +128,13 @@
     "CargosAgencia": 0,
     "CodAgenciaOrigen": 2000,
     "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 8,
+    "EstadoEncomienda": 9,
     "HistorialEstadosGuia": [
+      {
+        "Estado": 9,
+        "Fecha": "2025-11-04T12:00:00",
+        "Descripcion": "Facturado"
+      },
       {
         "Estado": 8,
         "Fecha": "2025-10-31T12:00:00",

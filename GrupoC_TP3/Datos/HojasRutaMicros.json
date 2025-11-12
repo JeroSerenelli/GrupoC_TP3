@@ -239,11 +239,50 @@
   },
   {
     "HojaRutaMicro": 900007,
+    "CentroDistribucionDestino": 1000,
+    "NumerosGuiaMicro": [
+      {
+        "NumeroGuia": 100100004,
+        "EstadoEncomienda": 4
+      }
+    ],
+    "PatenteMicro": "ABC700",
+    "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
+    "EstadoHojaRutaMicro": 0
+  },
+  {
+    "HojaRutaMicro": 900008,
+    "CentroDistribucionDestino": 1000,
+    "NumerosGuiaMicro": [
+      {
+        "NumeroGuia": 100100005,
+        "EstadoEncomienda": 3
+      }
+    ],
+    "PatenteMicro": "ABC700",
+    "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
+    "EstadoHojaRutaMicro": 0
+  },
+  {
+    "HojaRutaMicro": 900009,
     "CentroDistribucionDestino": 1005,
     "NumerosGuiaMicro": [
       {
-        "NumeroGuia": 100100018,
-        "EstadoEncomienda": 0
+        "NumeroGuia": 100100006,
+        "EstadoEncomienda": 4
+      }
+    ],
+    "PatenteMicro": "ABC700",
+    "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
+    "EstadoHojaRutaMicro": 1
+  },
+  {
+    "HojaRutaMicro": 900010,
+    "CentroDistribucionDestino": 1000,
+    "NumerosGuiaMicro": [
+      {
+        "NumeroGuia": 100100007,
+        "EstadoEncomienda": 3
       }
     ],
     "PatenteMicro": "ABC700",

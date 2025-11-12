@@ -27,9 +27,9 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
                                                                             .SelectMany(h => h.NumerosGuiaMicro)
                                                                             .Select(gm => GuiaAlmacen.guias
                                                                                                      .Where(g => g.HistorialEstadosGuia
-                                                                                                                  .Where(h => h.EstadoGuiaEnum == EstadoEncomienda.Entregado && h.Fecha >= fechaInicio && h.Fecha < fechaFin)
+                                                                                                                  .Where(h => h.EstadoGuiaEnum == EstadoEncomienda.Facturado && h.Fecha >= fechaInicio && h.Fecha < fechaFin)
                                                                                                                   .Any())
-                                                                                                     .FirstOrDefault(g => g.NumeroGuia == gm.NumeroGuia && g.EstadoEncomienda == EstadoEncomienda.Entregado))
+                                                                                                     .FirstOrDefault(g => g.NumeroGuia == gm.NumeroGuia && g.EstadoEncomienda == EstadoEncomienda.Facturado))
                                                                             .Where(g => g != null)
                                                                             .Select(g => g.Importe))
                                        .Sum(),
@@ -40,7 +40,7 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
                                 .Where(h => h.PatenteMicro == u.PatenteMicro)
                                 .SelectMany(h => h.NumerosGuiaMicro)
                                 .Select(gm => GuiaAlmacen.guias
-                                    .FirstOrDefault(g => g.NumeroGuia == gm.NumeroGuia && g.EstadoEncomienda == EstadoEncomienda.Entregado))
+                                    .FirstOrDefault(g => g.NumeroGuia == gm.NumeroGuia && g.EstadoEncomienda == EstadoEncomienda.Facturado))
                                 .Where(g => g != null)
                                 .Select(g => g.Importe))
                             .Sum() - (

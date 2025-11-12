@@ -1,0 +1,79 @@
+﻿01-IMPTEL-ENTDOM-BUE-CAT 
+
+CU1_RegistrarImposicionRetiroPorDomicilio 
+
+1 - CUITCUIL: 27311222334 
+2 - Botón ‘Validar’ 
+VERIFICAR: mensaje “Cliente valido” 
+3 - Provincia “Catamarca” 
+4 - Localidad “San Fernando del Valle de Catamarca” 
+5 - Método de entrega “Entrega en Domicilio” 
+6 - Código postal 4726 
+VERIFICAR: centro de distribución “CD SFV Catamarca” 
+7 – Domicilio: Combate de los Pozos 709 
+8 - Cantidad cajas 2 
+9 - Tamaño cajas: S 
+10 - Provincia “Buenos Aires” 
+11 - Localidad “General San Martin” 
+12 - Código Postal 1650 
+VERIFICAR: centro de distribución “CD General San Martin” 
+13- Domicilio de retiro: “Las Heras 2900” 
+14- Nombre Destinatario: Roberto 
+15 - Apellido Destinatario: López 
+16 - DNI 37890177 
+17 - Botón ‘Generar Guía’ 
+VERIFICAR:  
+- mensaje de confirmación en pantalla (x2). Números de guía generados: 100000004 y 100000005. 
+- verificar bin/Debug/Datos/Guias.JSON: estado guías debe ser ‘0’.  
+ 
+
+CU4_RecepcionFletero (Retiro) 
+
+1 - Fletero: Agustina Herrera 
+2 - Botón ‘Buscar’ 
+VERIFICAR: hoja de ruta 50000 existe en ‘Asignar Hoja de Ruta’ 
+3 - Seleccionar hoja de ruta 50000 
+4 - Botón ‘Asignar’ 
+VERIFICAR:  
+- hoja de ruta 50000 se mueve a ‘Hojas de Ruta Asignadas’		      
+- verificar bin/Debug/Datos/HojasDeRutaFlete.JSON: estado hoja de ruta 50000 debe ser ‘NoCumplida’. 
+- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000004 y 100000005 debe ser ‘2’ 
+5 - Seleccionar hoja de ruta 50000 en ‘Hojas de Ruta Asignadas’ 
+6 - Botón ‘Imprimir Detalle’ 
+VERIFICAR:  
+- mensaje de confirmación en pantalla 
+- verificar bin/Debug/Datos/HojasDeRutaFlete.JSON: estado hoja de ruta 50000 debe ser ‘Cumplida’ 
+- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000004 y 100000005 debe ser ‘3’ 
+ 
+
+CU5_GestionCD 
+
+TBD
+
+
+CU7_ConsultaEstadoGuia 
+
+1 - Numero de guía 100000004 
+2 - Botón ‘Buscar’ 
+VERIFICAR: resultado de consulta muestra dos entradas (“Encomienda creada…” y “Asignado a fletero….”) 
+3 - Numero de guía 100000005 
+4 - Botón ‘Buscar’ 
+VERIFICAR: resultado de consulta muestra dos entradas (“Encomienda creada…” y “Asignado a fletero….”) 
+  
+
+CU4_RecepcionFletero (Entrega) 
+
+1 - Fletero: Carlos Castro 
+2 - Botón ‘Buscar’ 
+VERIFICAR: hoja de ruta 70000 existe en ‘Asignar Hoja de Ruta’ 
+3 - Seleccionar hoja de ruta 70000 
+4 - Botón ‘Asignar’ 
+VERIFICAR:  
+- hoja de ruta 70000 se mueve a ‘Hojas de Ruta Asignadas’ - verificar bin/Debug/Datos/HojasDeRutaFlete.JSON: estado hoja de ruta 70000 debe ser ‘NoCumplida’. 
+- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000004 y 100000005 debe ser ‘7’ 
+5 - Seleccionar hoja de ruta 70000 en ‘Hojas de Ruta Asignadas’ 
+6 - Botón ‘Imprimir Detalle’ 
+VERIFICAR:  
+- mensaje de confirmación en pantalla 
+- verificar bin/Debug/Datos/HojasDeRutaFlete.JSON: estado hoja de ruta 70000 debe ser ‘Cumplida’ 
+- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000004 y 100000005 debe ser ‘8’ 

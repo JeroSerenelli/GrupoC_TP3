@@ -95,6 +95,10 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Casos de Prueba\" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>

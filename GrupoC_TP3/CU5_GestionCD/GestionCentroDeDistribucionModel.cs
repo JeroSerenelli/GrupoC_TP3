@@ -1,20 +1,14 @@
 ﻿using GrupoC_TP3.Almacenes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GrupoC_TP3.CU5_GestionCD
 {
     internal class GestionCentroDeDistribucionModel
     {
+        public int CodigoCDActual => CentroDistribucionAlmacen.centroDistribucionActual?.CodCentroDist ?? 0;
+
         public List<EncomiendasEnTransporte>? paquetesRecibidos { get; private set; }
 
-        public List<EncomiendasEnTransporte>? paquetesParaEntregar { get; private set; } 
-
-        public int CodigoCDActual => CentroDistribucionAlmacen.centroDistribucionActual?.CodCentroDist ?? 0;
+        public List<EncomiendasEnTransporte>? paquetesParaEntregar { get; private set; }
 
         internal void ValidacionPatente(EncomiendasEnTransporte encomiendasEnTransporte)
         {
@@ -30,9 +24,9 @@ namespace GrupoC_TP3.CU5_GestionCD
             // Buscar la empresa asociada a la patente
             var empresa = EmpresaOmnibusAlmacen.empresasOmnibus
                 .FirstOrDefault(e => e.Unidades.Any(u => u.PatenteMicro.ToUpperInvariant() == patente));
+
             //var empresa = EmpresaOmnibusAlmacen.empresasOmnibus
-            //                                  .Where(e => e.Unidades.Any(u => u.PatenteMicro == encomiendasEnTransporte.Patente))
-                                              ;
+            //                                  .Where(e => e.Unidades.Any(u => u.PatenteMicro == encomiendasEnTransporte.Patente));
 
 
             if (empresa == null)
@@ -55,57 +49,33 @@ namespace GrupoC_TP3.CU5_GestionCD
             //Función local para obtener paquetes según su estado
 
 
+            paquetesRecibidos = hojasDeRutaFiltradas
+                                    .Where(h => h.CentroDistribucionDestino == CodigoCDActual)
+                                    .SelectMany(h => h.NumerosGuiaMicro
+                                                            .Select(g => GuiaAlmacen.guias.First(ga => ga.NumeroGuia == g.NumeroGuia))
+                                                            .Select(ga => new EncomiendasEnTransporte
+                                                            {
+                                                                Patente = patente,
+                                                                Empresa = empresa.EmpresaOmnibus,
+                                                                HojaDeRuta = h.HojaRutaMicro.ToString(),
+                                                                NroGuia = ga.NumeroGuia,
+                                                                Estado = "En transpote a CD"
+                                                            }))
+                                    .ToList();
 
-            List<EncomiendasEnTransporte> ObtenerPaquetesPorDespachar(EstadoEncomienda estado, string estadoTexto)
-            {
-                //EstadoEncomienda estadoCodigo = (EstadoEncomienda)4; // Convertimos el enum a int
-
-                return hojasDeRutaFiltradas
-                    .SelectMany(h => h.NumerosGuiaMicro
-                        .Select(g => GuiaAlmacen.guias
-                            .FirstOrDefault(ga => ga.NumeroGuia == g.NumeroGuia))
-                        .Where(ga => ga != null && ga.EstadoEncomienda == estado)
-                        .Select(ga => new EncomiendasEnTransporte
-                        {
-                            Patente = patente,
-                            Empresa = empresa.EmpresaOmnibus,
-                            HojaDeRuta = h.HojaRutaMicro.ToString(),
-                            NroGuia = ga.NumeroGuia,
-                            Estado = estadoTexto
-                        })
-                    )
-                    .ToList();
-            }
-
-            List<EncomiendasEnTransporte> ObtenerPaquetesParaCD(EstadoEncomienda estado, string estadoTexto)
-            {
-                //EstadoEncomienda estadoCodigo = (EstadoEncomienda)4; // Convertimos el enum a int
-
-                return hojasDeRutaFiltradas
-                    .Where(h => h.CentroDistribucionDestino == CodigoCDActual)
-                    .SelectMany(h => h.NumerosGuiaMicro
-                        .Select(g => GuiaAlmacen.guias
-                            .FirstOrDefault(ga => ga.NumeroGuia == g.NumeroGuia))
-                        .Where(ga => ga != null && ga.EstadoEncomienda == estado)
-                        .Select(ga => new EncomiendasEnTransporte
-                        {
-                            Patente = patente,
-                            Empresa = empresa.EmpresaOmnibus,
-                            HojaDeRuta = h.HojaRutaMicro.ToString(),
-                            NroGuia = ga.NumeroGuia,
-                            Estado = estadoTexto
-                        })
-                    )
-                    .ToList();
-            }
-
-            // Construir las dos listas
-
-            paquetesRecibidos = ObtenerPaquetesPorDespachar((EstadoEncomienda)4,"En transpote a CD");
-
-            paquetesParaEntregar = ObtenerPaquetesParaCD((EstadoEncomienda)3, "Listo para descpachar en CD");
-
-
+            paquetesParaEntregar = hojasDeRutaFiltradas
+                                        .Where(h => h.EstadoHojaRutaMicro == EstadoHojaRutaMicro.ListoParaDespacharEnCentroDeDistribucion)
+                                        .Where(h => h.CentroDistribucionOrigen == CodigoCDActual)
+                                        .SelectMany(h => h.NumerosGuiaMicro.Select(g => GuiaAlmacen.guias.First(ga => ga.NumeroGuia == g.NumeroGuia))
+                                                                           .Select(ga => new EncomiendasEnTransporte
+                                                                           {
+                                                                               Patente = patente,
+                                                                               Empresa = empresa.EmpresaOmnibus,
+                                                                               HojaDeRuta = h.HojaRutaMicro.ToString(),
+                                                                               NroGuia = ga.NumeroGuia,
+                                                                               Estado = "Listo para descpachar en CD"
+                                                                           }))
+                                        .ToList();
 
             if (!paquetesRecibidos.Any())
             {
@@ -222,7 +192,7 @@ namespace GrupoC_TP3.CU5_GestionCD
 
                 var centroDestino = CentroDistribucionAlmacen.centrosDistribucion
                     .FirstOrDefault(cd => cd.CodCentroDist == hojaRuta.CentroDistribucionDestino);
-                
+
                 if (centroDestino == null)  //Si la hoja de ruta apunta a un centro de distribución que no existe, también lo salto
                 {
                     MessageBox.Show($"No se encontró el centro de distribución destino (Código: {hojaRuta.CentroDistribucionDestino}) " +
@@ -249,7 +219,7 @@ namespace GrupoC_TP3.CU5_GestionCD
                     //Descripcion = $"Recibido en centro de distribución destino (CD {centroDestino.Nombre})."
                 });
 
-                
+
             }
 
             foreach (var paquete in paquetesParaEntregar)

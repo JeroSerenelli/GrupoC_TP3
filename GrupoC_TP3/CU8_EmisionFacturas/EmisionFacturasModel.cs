@@ -59,6 +59,31 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
                     Descripcion = "Facturada."
                 });
             }
+            
+            //CREO UNA NUEVA CUENTA CORRIENTE PARA EL CLIENTE
+            Almacenes.CuentaCorrienteEntidad CuentaCorrientNueva = new();
+
+           
+                //AHORA VAMOS A ACTUALIZAR LA CUENTA CORRIENTE DEL CLIENTE RESTANDOLE EL IMPORTE FACTURADO
+               
+                CuentaCorrientNueva.CUITCUIL = Cuit;
+                CuentaCorrientNueva.FechaMovimiento = DateTime.Now;
+                //HACEMOS IMPORTE VEIJO DE LA CUENTA CORRIENTE MAS IMPORTE NUEVO
+                //TRAIGO EL VALOR DE IMPORTES EN UNA VARIABLE
+
+                /*decimal importeNuevo = Convert.ToDecimal(Importe);
+                decimal importeViejo = Convert.ToDecimal(CuentaCorrientNueva.Monto);
+                */
+                CuentaCorrientNueva.Monto = Importe;
+
+
+            
+
+            Almacenes.CuentaCorrienteAlmacen.cuentasCorrientes.Add(CuentaCorrientNueva);
+
+            Almacenes.CuentaCorrienteAlmacen.GuardarCuentaCorriente();
+
+
 
             //GRABO LAS GUIAS MODIFICADAS
             Almacenes.GuiaAlmacen.GuardarGuia();
@@ -180,6 +205,8 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
                         Importe = f.Importe
                     });
                 }
+
+               
 
                 return GuiasFiltradas;
             }

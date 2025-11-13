@@ -286,6 +286,109 @@
         "Descripcion": "Recibido En Centro Distribucion Destino"
       }
     ]
+  },
+  {
+    "NumeroGuia": 100000098,
+    "CUITCUIL": 27311222334,
+    "CodPostalDest": 0,
+    "MetodoEntrega": 0,
+    "DomicilioDest": "Combate de Los Pozos 700",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Las Heras 2900",
+    "NombreDestinatario": "Roberto",
+    "ApellidoDestinatario": "Lòpez",
+    "DNIDestinatario": 37890177,
+    "Importe": 8000,
+    "CargosFleteros": 500,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 0,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 0,
+    "HistorialEstadosGuia": [
+      {
+        "EstadoGuiaEnum": 0,
+        "Fecha": "2025-11-12T21:31:58.0987834-03:00",
+        "Descripcion": "Encomienda creada y lista para ser retirada en domicilio."
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100000099,
+    "CUITCUIL": 27311222334,
+    "CodPostalDest": 0,
+    "MetodoEntrega": 0,
+    "DomicilioDest": "Combate de Los Pozos 700",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Las Heras 2900",
+    "NombreDestinatario": "Roberto",
+    "ApellidoDestinatario": "Lòpez",
+    "DNIDestinatario": 37890177,
+    "Importe": 8000,
+    "CargosFleteros": 500,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 0,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 0,
+    "HistorialEstadosGuia": [
+      {
+        "EstadoGuiaEnum": 0,
+        "Fecha": "2025-11-12T21:32:03.0819431-03:00",
+        "Descripcion": "Encomienda creada y lista para ser retirada en domicilio."
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 200200098,
+    "CUITCUIL": 27222333445,
+    "CodPostalDest": 3099,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "",
+    "TamañoCaja": 3,
+    "CodPostalOrig": 4726,
+    "DomicilioOrigen": "Retiro en Agencia",
+    "NombreDestinatario": "Lucas",
+    "ApellidoDestinatario": "Perez",
+    "DNIDestinatario": 17899666,
+    "Importe": 13000,
+    "CargosFleteros": 500,
+    "CargosAgencia": 1000,
+    "CodAgenciaOrigen": 2002,
+    "CodCentroDistOrigen": 1002,
+    "EstadoEncomienda": 1,
+    "HistorialEstadosGuia": [
+      {
+        "EstadoGuiaEnum": 1,
+        "Fecha": "2025-11-12T22:25:19.5045705-03:00",
+        "Descripcion": "Encomienda creada y lista para ser retirada en agencia."
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 200200099,
+    "CUITCUIL": 27222333445,
+    "CodPostalDest": 3099,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "",
+    "TamañoCaja": 3,
+    "CodPostalOrig": 4726,
+    "DomicilioOrigen": "Retiro en Agencia",
+    "NombreDestinatario": "Lucas",
+    "ApellidoDestinatario": "Perez",
+    "DNIDestinatario": 17899666,
+    "Importe": 13000,
+    "CargosFleteros": 500,
+    "CargosAgencia": 1000,
+    "CodAgenciaOrigen": 2002,
+    "CodCentroDistOrigen": 1002,
+    "EstadoEncomienda": 1,
+    "HistorialEstadosGuia": [
+      {
+        "EstadoGuiaEnum": 1,
+        "Fecha": "2025-11-12T22:25:21.6917184-03:00",
+        "Descripcion": "Encomienda creada y lista para ser retirada en agencia."
+      }
+    ]
   }
-
 ]

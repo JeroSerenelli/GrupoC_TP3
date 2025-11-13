@@ -25,8 +25,12 @@ namespace GrupoC_TP3.Almacenes
 
         public static void GuardarGuia()
         {
-            var guiaJson = System.Text.Json.JsonSerializer.Serialize(guias);
-            File.WriteAllText(@"Datos\Guias.json", guiaJson);
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            var guiaJson = JsonSerializer.Serialize(guias, options);
+            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Datos", "Guias.json");
+            var dir = Path.GetDirectoryName(path);
+            if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir)) Directory.CreateDirectory(dir);
+            File.WriteAllText(path, guiaJson);
 
         }
     }

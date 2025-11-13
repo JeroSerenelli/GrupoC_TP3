@@ -257,6 +257,57 @@
     ]
   },
   {
+    "NumeroGuia": 100000030,
+    "CUITCUIL": 27111222334,
+    "CodPostalDest": 1650,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Av. Siempre Viva 742",
+    "TamanoCaja": 0,
+    "CodPostalOrig": 2300,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Luis",
+    "ApellidoDestinatario": "Lopez",
+    "DNIDestinatario": 12345678,
+    "Importe": 1000,
+    "CargosFleteros": 500,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 2000,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 8,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 8,
+        "Fecha": "2025-10-31T12:00:00",
+        "Descripcion": "Entregado"
+      },
+      {
+        "Estado": 7,
+        "Fecha": "2025-10-31T08:00:00",
+        "Descripcion": "En camino a domicilio"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2025-10-27T08:00:00",
+        "Descripcion": "En camino a Centro de Distribucion de destino"
+      },
+      {
+        "Estado": 4,
+        "Fecha": "2025-10-25T08:00:00",
+        "Descripcion": "En transporte entre Centros de Distribucion"
+      },
+      {
+        "Estado": 3,
+        "Fecha": "2025-10-24T08:00:00",
+        "Descripcion": "Entregado en Centro de Distribucion de origen"
+      },
+      {
+        "Estado": 1,
+        "Fecha": "2025-10-22T08:00:00",
+        "Descripcion": "Listo para retirar en domicilio"
+      }
+    ]
+  },
+  {
     "NumeroGuia": 100000098,
     "CUITCUIL": 27311222334,
     "CodPostalDest": 0,

@@ -19,6 +19,21 @@
     ]
   },
   {
+    "CUITCUIL": 27111222334,
+    "RazonSocial": "BusBondi S.A.",
+    "CondicionCliente": "Exento",
+    "AutorizadosImposicion": [
+      {
+        "CUILAutorizado": 35000000039,
+        "NombreApellido": "Lucas Perez"
+      },
+      {
+        "CUILAutorizado": 35000000040,
+        "NombreApellido": "Lucas Orsini"
+      }
+    ]
+  },
+  {
     "CUITCUIL": 27311222334,
     "RazonSocial": "Agropecuaria San Martín SRL",
     "CondicionCliente": "NoResponsable",

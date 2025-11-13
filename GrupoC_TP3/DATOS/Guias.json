@@ -489,54 +489,146 @@
     ]
   },
   {
-    "NumeroGuia": 100000098,
-    "CUITCUIL": 27311222334,
-    "CodPostalDest": 0,
-    "MetodoEntrega": 0,
-    "DomicilioDest": "Combate de Los Pozos 700",
-    "TamañoCaja": 0,
-    "CodPostalOrig": 1650,
-    "DomicilioOrigen": "Las Heras 2900",
-    "NombreDestinatario": "Roberto",
-    "ApellidoDestinatario": "Lòpez",
-    "DNIDestinatario": 37890177,
-    "Importe": 8000,
+    "NumeroGuia": 100000092,
+    "CUITCUIL": 27222333445,
+    "CodPostalDest": 3099,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "",
+    "Tama\u00F1oCaja": 3,
+    "CodPostalOrig": 4726,
+    "DomicilioOrigen": "Retiro en Agencia",
+    "NombreDestinatario": "Lucas",
+    "ApellidoDestinatario": "Perez",
+    "DNIDestinatario": 17899666,
+    "Importe": 13000,
     "CargosFleteros": 500,
-    "CargosAgencia": 0,
-    "CodAgenciaOrigen": 0,
-    "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 0,
+    "CargosAgencia": 1000,
+    "CodAgenciaOrigen": 2002,
+    "CodCentroDistOrigen": 1002,
+    "EstadoEncomienda": 3,
     "HistorialEstadosGuia": [
       {
-        "EstadoGuiaEnum": 0,
-        "Fecha": "2025-11-12T21:31:58.0987834-03:00",
-        "Descripcion": "Encomienda creada y lista para ser retirada en domicilio."
+        "EstadoGuia": 0,
+        "Fecha": "2025-11-12T22:25:19.5045705-03:00",
+        "Descripcion": "Encomienda creada y lista para ser retirada en agencia."
+      },
+      {
+        "EstadoGuia": 2,
+        "Fecha": "2025-11-13T20:33:16.1991973-03:00",
+        "Descripcion": "Asignado a fletero: Estado Anterior: ListoParaRetirarEnAgencia -\u003E Estado Actual: EnCaminoADomcilicioOAgencia"
+      },
+      {
+        "EstadoGuia": 3,
+        "Fecha": "2025-11-13T20:33:26.1301987-03:00",
+        "Descripcion": "Cambio de Estado de Encomienda (por actividad del Fletero): Estado Anterior: EnCaminoADomcilicioOAgencia -\u003E Estado Actual: EntregadoEnCentroDeDistribucion"
       }
     ]
   },
   {
-    "NumeroGuia": 100000099,
+    "NumeroGuia": 100000093,
+    "CUITCUIL": 27222333445,
+    "CodPostalDest": 3099,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "",
+    "Tama\u00F1oCaja": 3,
+    "CodPostalOrig": 4726,
+    "DomicilioOrigen": "Retiro en Agencia",
+    "NombreDestinatario": "Lucas",
+    "ApellidoDestinatario": "Perez",
+    "DNIDestinatario": 17899666,
+    "Importe": 13000,
+    "CargosFleteros": 500,
+    "CargosAgencia": 1000,
+    "CodAgenciaOrigen": 2002,
+    "CodCentroDistOrigen": 1002,
+    "EstadoEncomienda": 3,
+    "HistorialEstadosGuia": [
+      {
+        "EstadoGuia": 0,
+        "Fecha": "2025-11-12T22:25:21.6917184-03:00",
+        "Descripcion": "Encomienda creada y lista para ser retirada en agencia."
+      },
+      {
+        "EstadoGuia": 2,
+        "Fecha": "2025-11-13T20:33:16.1993826-03:00",
+        "Descripcion": "Asignado a fletero: Estado Anterior: ListoParaRetirarEnAgencia -\u003E Estado Actual: EnCaminoADomcilicioOAgencia"
+      },
+      {
+        "EstadoGuia": 3,
+        "Fecha": "2025-11-13T20:33:26.1302107-03:00",
+        "Descripcion": "Cambio de Estado de Encomienda (por actividad del Fletero): Estado Anterior: EnCaminoADomcilicioOAgencia -\u003E Estado Actual: EntregadoEnCentroDeDistribucion"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100000094,
     "CUITCUIL": 27311222334,
     "CodPostalDest": 0,
     "MetodoEntrega": 0,
     "DomicilioDest": "Combate de Los Pozos 700",
-    "TamañoCaja": 0,
+    "Tama\u00F1oCaja": 0,
     "CodPostalOrig": 1650,
     "DomicilioOrigen": "Las Heras 2900",
     "NombreDestinatario": "Roberto",
-    "ApellidoDestinatario": "Lòpez",
+    "ApellidoDestinatario": "L\u00F2pez",
     "DNIDestinatario": 37890177,
     "Importe": 8000,
     "CargosFleteros": 500,
     "CargosAgencia": 0,
     "CodAgenciaOrigen": 0,
     "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 0,
+    "EstadoEncomienda": 3,
     "HistorialEstadosGuia": [
       {
-        "EstadoGuiaEnum": 0,
+        "EstadoGuia": 0,
+        "Fecha": "2025-11-12T21:31:58.0987834-03:00",
+        "Descripcion": "Encomienda creada y lista para ser retirada en domicilio."
+      },
+      {
+        "EstadoGuia": 2,
+        "Fecha": "2025-11-13T20:28:41.7524157-03:00",
+        "Descripcion": "Asignado a fletero: Estado Anterior: ListoParaRetirarEnDomicilio -\u003E Estado Actual: EnCaminoADomcilicioOAgencia"
+      },
+      {
+        "EstadoGuia": 3,
+        "Fecha": "2025-11-13T20:28:46.4029511-03:00",
+        "Descripcion": "Cambio de Estado de Encomienda (por actividad del Fletero): Estado Anterior: EnCaminoADomcilicioOAgencia -\u003E Estado Actual: EntregadoEnCentroDeDistribucion"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100000095,
+    "CUITCUIL": 27311222334,
+    "CodPostalDest": 0,
+    "MetodoEntrega": 0,
+    "DomicilioDest": "Combate de Los Pozos 700",
+    "Tama\u00F1oCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Las Heras 2900",
+    "NombreDestinatario": "Roberto",
+    "ApellidoDestinatario": "L\u00F2pez",
+    "DNIDestinatario": 37890177,
+    "Importe": 8000,
+    "CargosFleteros": 500,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 0,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 3,
+    "HistorialEstadosGuia": [
+      {
+        "EstadoGuia": 0,
         "Fecha": "2025-11-12T21:32:03.0819431-03:00",
         "Descripcion": "Encomienda creada y lista para ser retirada en domicilio."
+      },
+      {
+        "EstadoGuia": 2,
+        "Fecha": "2025-11-13T20:28:41.7526143-03:00",
+        "Descripcion": "Asignado a fletero: Estado Anterior: ListoParaRetirarEnDomicilio -\u003E Estado Actual: EnCaminoADomcilicioOAgencia"
+      },
+      {
+        "EstadoGuia": 3,
+        "Fecha": "2025-11-13T20:28:46.4029833-03:00",
+        "Descripcion": "Cambio de Estado de Encomienda (por actividad del Fletero): Estado Anterior: EnCaminoADomcilicioOAgencia -\u003E Estado Actual: EntregadoEnCentroDeDistribucion"
       }
     ]
   },
@@ -589,6 +681,58 @@
         "EstadoGuiaEnum": 1,
         "Fecha": "2025-11-12T22:25:21.6917184-03:00",
         "Descripcion": "Encomienda creada y lista para ser retirada en agencia."
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100000098,
+    "CUITCUIL": 27311222334,
+    "CodPostalDest": 0,
+    "MetodoEntrega": 0,
+    "DomicilioDest": "Combate de Los Pozos 700",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Las Heras 2900",
+    "NombreDestinatario": "Roberto",
+    "ApellidoDestinatario": "Lòpez",
+    "DNIDestinatario": 37890177,
+    "Importe": 8000,
+    "CargosFleteros": 500,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 0,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 0,
+    "HistorialEstadosGuia": [
+      {
+        "EstadoGuiaEnum": 0,
+        "Fecha": "2025-11-12T21:31:58.0987834-03:00",
+        "Descripcion": "Encomienda creada y lista para ser retirada en domicilio."
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100000099,
+    "CUITCUIL": 27311222334,
+    "CodPostalDest": 0,
+    "MetodoEntrega": 0,
+    "DomicilioDest": "Combate de Los Pozos 700",
+    "TamañoCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Las Heras 2900",
+    "NombreDestinatario": "Roberto",
+    "ApellidoDestinatario": "Lòpez",
+    "DNIDestinatario": 37890177,
+    "Importe": 8000,
+    "CargosFleteros": 500,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 0,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 0,
+    "HistorialEstadosGuia": [
+      {
+        "EstadoGuiaEnum": 0,
+        "Fecha": "2025-11-12T21:32:03.0819431-03:00",
+        "Descripcion": "Encomienda creada y lista para ser retirada en domicilio."
       }
     ]
   },

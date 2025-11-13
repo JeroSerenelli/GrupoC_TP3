@@ -10,7 +10,6 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
     public partial class RecepcionFleterosForm : Form
     {
         private RecepcionFleterosModel modelo;
-        // Ya no referenciamos FleteroEntidad
         private int? fleteroDniSeleccionado;
         private string fleteroNombreSeleccionado;
 
@@ -59,9 +58,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 
         private void groupBox1_Enter(object sender, EventArgs e) { }
 
-        /// <summary>
         /// BOTÓN "BUSCAR" - Busca HDR asignadas y por asignar del fletero
-        /// </summary>
         private void buttonBuscarFletero_Click(object sender, EventArgs e)
         {
             try
@@ -124,9 +121,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             }
         }
 
-        /// <summary>
         /// BOTÓN "IMPRIMIR DETALLE"
-        /// </summary>
         private void buttonImprimirDetalle_Click(object sender, EventArgs e)
         {
             try
@@ -209,9 +204,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             }
         }
 
-        /// <summary>
         /// BOTÓN "ASIGNAR" - Asigna HDR pendientes al fletero
-        /// </summary>
         private void buttonAsignarHDR_Click(object sender, EventArgs e)
         {
             try

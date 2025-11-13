@@ -239,7 +239,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 {
                     NumeroGuia = int.Parse(codCentroDistribucionOrigen.ToString() + ultimosCincoDigitos),
                     CUITCUIL = encomiendas.NroCUITCUIL,
-                    CodPostalDest = encomiendas.CdDestino,
+                    CodPostalDest = encomiendas.CPDestino,
                     MetodoEntrega = encomiendas.MetodoEntrega switch
                     {
                         "Entrega en Domicilio" => MetodoEntrega.EntregaEnDomicilio,

@@ -144,7 +144,7 @@
     ],
     "PatenteMicro": "ABC100",
     "FechaEmisionHojaDeRuta": "2025-11-11T08:00:00",
-    "EstadoHojaRutaMicro": "RecibidoEnCentroDeDistribucionDestino"
+    "EstadoHojaRutaMicro": 2
   },
   {
     "HojaRutaMicro": 900002,
@@ -156,7 +156,7 @@
     ],
     "PatenteMicro": "ABC100",
     "FechaEmisionHojaDeRuta": "2025-11-12T08:00:00",
-    "EstadoHojaRutaMicro": "ListoParaDespacharEnCentroDeDistribucion"
+    "EstadoHojaRutaMicro": 0
   },
   {
     "HojaRutaMicro": 900003,
@@ -167,7 +167,7 @@
     ],
     "PatenteMicro": "ABC200",
     "FechaEmisionHojaDeRuta": "2025-11-12T09:00:00",
-    "EstadoHojaRutaMicro": "EnCaminoACentroDeDistribucionDestino"
+    "EstadoHojaRutaMicro": 1
   },
   {
     "HojaRutaMicro": 900004,
@@ -178,7 +178,7 @@
     ],
     "PatenteMicro": "ABC300",
     "FechaEmisionHojaDeRuta": "2025-11-13T07:30:00",
-    "EstadoHojaRutaMicro": "ListoParaDespacharEnCentroDeDistribucion"
+    "EstadoHojaRutaMicro": 0
   },
   {
     "HojaRutaMicro": 900005,
@@ -189,6 +189,6 @@
     ],
     "PatenteMicro": "ABC300",
     "FechaEmisionHojaDeRuta": "2025-11-13T08:15:00",
-    "EstadoHojaRutaMicro": "EnCaminoACentroDeDistribucionDestino"
+    "EstadoHojaRutaMicro": 1
   }
 ]

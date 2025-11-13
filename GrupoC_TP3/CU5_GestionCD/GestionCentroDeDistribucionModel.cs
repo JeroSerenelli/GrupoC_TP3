@@ -209,10 +209,12 @@ namespace GrupoC_TP3.CU5_GestionCD
                     Fecha = DateTime.Now,
                     Descripcion = "Recibido En Centro Distribucion Destino"                   
                 });
-                //Pasa del estado EnCaminoACentroDeDistribucionDestino
-                hojaRuta.EstadoHojaRutaMicro = EstadoHojaRutaMicro.RecibidoEnCentroDeDistribucionDestino;
+                //Pasa del estado EnCaminoACentroDeDistribucionDestino a RecibidoEnCentroDeDistribucionDestino
+                hojaRuta.EstadoHojaRutaMicro = (EstadoHojaRutaMicro)2;
 
-                MessageBox.Show(guia.EstadoEncomienda.ToString() + "\n" + guia.HistorialEstadosGuia + "\n" + hojaRuta.EstadoHojaRutaMicro);
+
+
+                //MessageBox.Show(guia.EstadoEncomienda.ToString() + "\n" + guia.HistorialEstadosGuia + "\n" + hojaRuta.EstadoHojaRutaMicro);
 
             }
 
@@ -242,23 +244,25 @@ namespace GrupoC_TP3.CU5_GestionCD
                     continue;
                 }
 
-                guia.EstadoEncomienda = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion;
+                guia.EstadoEncomienda = (EstadoEncomienda)4;
                 guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
                 {
-                    EstadoGuiaEnum = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion,
+                    EstadoGuiaEnum = (EstadoEncomienda)4,
                     Fecha = DateTime.Now,
                     Descripcion = "En Transporte Entre Centro De Distribucion."
 
                 });
 
+                //Pasa del estado ListoParaDespacharEnCentroDeDistribucion a EnCaminoACentroDeDistribucionDestino
+
+                hojaRuta.EstadoHojaRutaMicro = (EstadoHojaRutaMicro)1;
+
                 GuiaAlmacen.GuardarGuia();
                 HojaRutaMicroAlmacen.GuardarHojaDeRutaMicro();
 
-                //Pasa del estado ListoParaDespacharEnCentroDeDistribucion a EnCaminoACentroDeDistribucionDestino
+                
 
-                hojaRuta.EstadoHojaRutaMicro = EstadoHojaRutaMicro.EnCaminoACentroDeDistribucionDestino;
-
-                MessageBox.Show(guia.EstadoEncomienda.ToString()+ "\n"+ guia.HistorialEstadosGuia + "\n" + hojaRuta.EstadoHojaRutaMicro);
+                //MessageBox.Show(guia.EstadoEncomienda.ToString()+ "\n"+ guia.HistorialEstadosGuia + "\n" + hojaRuta.EstadoHojaRutaMicro);
 
 
                 ;

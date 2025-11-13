@@ -257,37 +257,6 @@
     ]
   },
   {
-    "NumeroGuia": 100000100,
-    "CUITCUIL": 27311222334,
-    "CodPostalDest": 8504,
-    "MetodoEntrega": 1,
-    "DomicilioDest": "Av. Siempre Viva 742",
-    "TamanoCaja": 0,
-    "CodPostalOrig": 1650,
-    "DomicilioOrigen": "Beiro 1125",
-    "NombreDestinatario": "Luis",
-    "ApellidoDestinatario": "Lopez",
-    "DNIDestinatario": 37841126,
-    "Importe": 8000,
-    "CargosFleteros": 500,
-    "CargosAgencia": 0,
-    "CodAgenciaOrigen": 2000,
-    "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 6,
-    "HistorialEstadosGuia": [
-      {
-        "Estado": 6,
-        "Fecha": "2025-11-04T12:00:00",
-        "Descripcion": "Listo para retirar en Agencia"
-      },
-      {
-        "Estado": 5,
-        "Fecha": "2025-11-02T09:45:00",
-        "Descripcion": "Recibido En Centro Distribucion Destino"
-      }
-    ]
-  },
-  {
     "NumeroGuia": 100000098,
     "CUITCUIL": 27311222334,
     "CodPostalDest": 0,
@@ -340,7 +309,7 @@
     ]
   },
   {
-    "NumeroGuia": 200200098,
+    "NumeroGuia": 100000096,
     "CUITCUIL": 27222333445,
     "CodPostalDest": 3099,
     "MetodoEntrega": 1,
@@ -366,7 +335,7 @@
     ]
   },
   {
-    "NumeroGuia": 200200099,
+    "NumeroGuia": 100000097,
     "CUITCUIL": 27222333445,
     "CodPostalDest": 3099,
     "MetodoEntrega": 1,
@@ -388,6 +357,37 @@
         "EstadoGuiaEnum": 1,
         "Fecha": "2025-11-12T22:25:21.6917184-03:00",
         "Descripcion": "Encomienda creada y lista para ser retirada en agencia."
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100000100,
+    "CUITCUIL": 27311222334,
+    "CodPostalDest": 8504,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Av. Siempre Viva 742",
+    "TamanoCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Luis",
+    "ApellidoDestinatario": "Lopez",
+    "DNIDestinatario": 37841126,
+    "Importe": 8000,
+    "CargosFleteros": 500,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 2000,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 6,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 6,
+        "Fecha": "2025-11-04T12:00:00",
+        "Descripcion": "Listo para retirar en Agencia"
+      },
+      {
+        "Estado": 5,
+        "Fecha": "2025-11-02T09:45:00",
+        "Descripcion": "Recibido En Centro Distribucion Destino"
       }
     ]
   }

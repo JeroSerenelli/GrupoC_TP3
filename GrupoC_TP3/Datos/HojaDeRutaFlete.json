@@ -119,15 +119,15 @@
     "HojaRutaFlete": 50004,
     "NumerosGuiaFlete": [
       {
-        "NumeroGuia": 200200098,
+        "NumeroGuia": 100000096,
         "EstadoEncomienda": 1
       },
       {
-        "NumeroGuia": 200200099,
+        "NumeroGuia": 100000097,
         "EstadoEncomienda": 1
       }
     ],
-    "DNIFletero": 28373390,
+    "DNIFletero": 0,
     "EstadoHojaRutaFlete": "PendienteAsignacion",
     "TipoHojaRuta": "Retiro",
     "CodPostal": 4726
@@ -166,15 +166,15 @@
     "HojaRutaFlete": 70004,
     "NumerosGuiaFlete": [
       {
-        "NumeroGuia": 200200098,
+        "NumeroGuia": 100000096,
         "EstadoEncomienda": 5
       },
       {
-        "NumeroGuia": 200200099,
+        "NumeroGuia": 100000097,
         "EstadoEncomienda": 5
       }
     ],
-    "DNIFletero": 36933831,
+    "DNIFletero": 0,
     "EstadoHojaRutaFlete": "PendienteAsignacion",
     "TipoHojaRuta": "Entrega",
     "CodPostal": 3099

@@ -202,22 +202,16 @@ namespace GrupoC_TP3.CU5_GestionCD
                     continue;
                 }
 
-                //TODO: Cambiar CP Actual por el que seleccionamos en el launcher,
-                // Añadir filtro para mostrar paquetes a entregar SOLO en CD actual
-                // Crear otro loop para paquetesParaEntregar --> Listo.
-                //Actualizar estado encomiendas --> Listo.
-                // Asegurarse que paquetes despachados no puedan ser vistos nuevamente en el mismo CD Y que se puedan visualizar desde otros CD. 
-
-
 
                 guia.EstadoEncomienda = (EstadoEncomienda)5;
                 guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
                 {
                     EstadoGuiaEnum = (EstadoEncomienda)5,
                     Fecha = DateTime.Now,
-                    Descripcion = "Recibido En Centro Distribucion Destino"
-                    //Descripcion = $"Recibido en centro de distribución destino (CD {centroDestino.Nombre})."
+                    Descripcion = "Recibido En Centro Distribucion Destino"                   
                 });
+                //Pasa del estado EnCaminoACentroDeDistribucionDestino
+                hojaRuta.EstadoHojaRutaMicro = EstadoHojaRutaMicro.RecibidoEnCentroDeDistribucionDestino;
 
 
             }
@@ -250,9 +244,16 @@ namespace GrupoC_TP3.CU5_GestionCD
                 {
                     EstadoGuiaEnum = (EstadoEncomienda)4,
                     Fecha = DateTime.Now,
-                    Descripcion = "Recibido En Centro Distribucion Destino"
-                    //Descripcion = $"Recibido en centro de distribución destino (CD {centroDestino.Nombre})."
+                    Descripcion = "En Transporte Entre Centro De Distribucion."
+
                 });
+                //Pasa del estado ListoParaDespacharEnCentroDeDistribucion a EnCaminoACentroDeDistribucionDestino
+
+                hojaRuta.EstadoHojaRutaMicro = EstadoHojaRutaMicro.EnCaminoACentroDeDistribucionDestino;
+
+
+;
+
 
                 /* ESTE CONDICIONAL SIRVE PARA VALIDAR CP CD vs CP Destino de Guia y seleccionar el estado correcto en caso de multiples CDs
                  int codigoPostalCDActual = centroDestino.CodPostal;

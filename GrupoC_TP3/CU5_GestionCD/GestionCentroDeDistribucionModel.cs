@@ -175,6 +175,7 @@ namespace GrupoC_TP3.CU5_GestionCD
         }
 
 
+
         internal void Actualizar()
         {
             foreach (var paquete in paquetesRecibidos)
@@ -211,8 +212,12 @@ namespace GrupoC_TP3.CU5_GestionCD
                 //Pasa del estado EnCaminoACentroDeDistribucionDestino
                 hojaRuta.EstadoHojaRutaMicro = EstadoHojaRutaMicro.RecibidoEnCentroDeDistribucionDestino;
 
+                MessageBox.Show(guia.EstadoEncomienda.ToString() + "\n" + guia.HistorialEstadosGuia + "\n" + hojaRuta.EstadoHojaRutaMicro);
 
             }
+
+            GuiaAlmacen.GuardarGuia();
+            HojaRutaMicroAlmacen.GuardarHojaDeRutaMicro();
 
             foreach (var paquete in paquetesParaEntregar)
             {
@@ -237,20 +242,26 @@ namespace GrupoC_TP3.CU5_GestionCD
                     continue;
                 }
 
-                guia.EstadoEncomienda = (EstadoEncomienda)4;
+                guia.EstadoEncomienda = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion;
                 guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
                 {
-                    EstadoGuiaEnum = (EstadoEncomienda)4,
+                    EstadoGuiaEnum = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion,
                     Fecha = DateTime.Now,
                     Descripcion = "En Transporte Entre Centro De Distribucion."
 
                 });
+
+                GuiaAlmacen.GuardarGuia();
+                HojaRutaMicroAlmacen.GuardarHojaDeRutaMicro();
+
                 //Pasa del estado ListoParaDespacharEnCentroDeDistribucion a EnCaminoACentroDeDistribucionDestino
 
                 hojaRuta.EstadoHojaRutaMicro = EstadoHojaRutaMicro.EnCaminoACentroDeDistribucionDestino;
 
+                MessageBox.Show(guia.EstadoEncomienda.ToString()+ "\n"+ guia.HistorialEstadosGuia + "\n" + hojaRuta.EstadoHojaRutaMicro);
 
-;
+
+                ;
 
 
                 /* ESTE CONDICIONAL SIRVE PARA VALIDAR CP CD vs CP Destino de Guia y seleccionar el estado correcto en caso de multiples CDs

@@ -42,7 +42,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
 
                     Fleteros.Add(new HojasDeRutaAsignadas
                     {
-                        DNIFletero = hdr.DNIFletero,  // Ahora guardamos DNI
+                        DNIFletero = hdr.DNIFletero,  
                         HojaDeRuta = hdr.HojaRutaFlete.ToString(),
                         NroGuia = num.NumeroGuia.ToString(),
                         Estado = estadoStr
@@ -93,9 +93,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             }
         }
 
-        /// <summary>
         /// Devuelve TODOS los fleteros (entidades completas) para poblar el combo
-        /// </summary>
         internal List<FleteroEntidad> ObtenerTodosLosFleteros()
         {
             return FleteroAlmacen.fleteros
@@ -105,10 +103,9 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 .ToList();
         }
 
-        /// <summary>
+
         /// Nueva: Devuelve datos de presentación (DNI + NombreCompleto) para la UI.
-        /// El Form debe usar este método en lugar de manipular entidades.
-        /// </summary>
+
         internal List<KeyValuePair<int, string>> ObtenerTodosLosFleterosView()
         {
             var fleteros = FleteroAlmacen.fleteros ?? new List<FleteroEntidad>();
@@ -120,10 +117,8 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 .ToList();
         }
 
-        /// <summary>
-        /// Botón "IMPRIMIR DETALLE"
+        /// Botón "IMPRIMIR DETALLE" (del form)
         /// Actualiza HDR -> Cumplida y TODAS las guías de esa HDR -> avanza estado según reglas
-        /// </summary>
         public void ImprimirDetalleHDRAsignadas(List<HojasDeRutaAsignadas> hojasSeleccionadas)
         {
             if (hojasSeleccionadas == null || !hojasSeleccionadas.Any())
@@ -215,7 +210,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     {
                         EstadoGuia = siguiente.Value,
                         Fecha = DateTime.Now,
-                        Descripcion = $"Impresión detalle HDR: {previo} -> {siguiente.Value}"
+                        Descripcion = $"Cambio de Estado de Encomienda (por actividad del Fletero): Estado Anterior: {previo} -> Estado Actual: {siguiente.Value}"
                     });
                 }
             }
@@ -260,10 +255,8 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             Refresh();
         }
 
-        /// <summary>
         /// Botón "ASIGNAR"
         /// Asigna HDR pendientes al fletero y actualiza TODAS las guías de esa HDR
-        /// </summary>
         public void AsignarHojasDeRutaAFletero(int dniFletero, List<HojasDeRutaPorAsignar> hojasSeleccionadas)
         {
             if (hojasSeleccionadas == null || !hojasSeleccionadas.Any())
@@ -357,7 +350,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     {
                         EstadoGuia = siguiente.Value,
                         Fecha = DateTime.Now,
-                        Descripcion = $"Asignado a fletero: {previo} -> {siguiente.Value}"
+                        Descripcion = $"Asignado a fletero: Estado Anterior: {previo} -> Estado Actual: {siguiente.Value}"
                     });
                 }
             }
@@ -402,9 +395,8 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             Refresh();
         }
 
-        // ----------------- HELPERS DE TRANSICIÓN DE ESTADO -----------------
+        // ----------------- MÉTODO PARA TRANSICIÓN DE ESTADO -----------------
 
-        /// <summary>
         /// Calcula el siguiente estado válido cuando una guía se asigna a un fletero.
         /// Reglas:
         /// - ListoParaRetirarEnDomicilio | ListoParaRetirarEnAgencia -> EnCaminoADomcilicioOAgencia
@@ -425,7 +417,6 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             };
         }
 
-        /// <summary>
         /// Calcula el siguiente estado válido cuando se imprime el detalle (se cierra la HDR).
         /// Reglas:
         /// - EnCaminoADomcilicioOAgencia -> EntregadoEnCentroDeDistribucion

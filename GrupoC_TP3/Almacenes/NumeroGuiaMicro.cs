@@ -9,6 +9,6 @@ namespace GrupoC_TP3.Almacenes
     internal class NumeroGuiaMicro
     {
         public int NumeroGuia { get; set; }
-        public EstadoEncomienda EstadoEncomienda { get; set; }
+        public EstadoEncomiendaEnum EstadoEncomienda { get; set; }
     }
 }

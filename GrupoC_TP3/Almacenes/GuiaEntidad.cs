@@ -25,7 +25,7 @@ namespace GrupoC_TP3.Almacenes
         public decimal CargosAgencia { get; set; }
         public int CodAgenciaOrigen { get; set; }
         public int CodCentroDistOrigen { get; set; }
-        public EstadoEncomienda EstadoEncomienda { get; set; }
+        public EstadoEncomiendaEnum EstadoEncomienda { get; set; }
         public List<HistorialEstadoGuia> HistorialEstadosGuia { get; set; } = new List<HistorialEstadoGuia>();  
 
     }

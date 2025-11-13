@@ -13,8 +13,8 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
 
         internal List<Resultado> ObtenerResultados(DateTime inicio, DateTime fin)
         {
-            var fechaInicio = inicio.Date;
-            var fechaFin = fin.Date.AddDays(1);
+            var fechaInicio = inicio.Date.AddDays(-inicio.Date.Day + 1);
+            var fechaFin = fin.Date.AddDays(-fin.Date.Day + 1).AddMonths(1);
 
             return EmpresaOmnibusAlmacen
                     .empresasOmnibus
@@ -27,9 +27,9 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
                                                                             .SelectMany(h => h.NumerosGuiaMicro)
                                                                             .Select(gm => GuiaAlmacen.guias
                                                                                                      .Where(g => g.HistorialEstadosGuia
-                                                                                                                  .Where(h => h.EstadoGuiaEnum == EstadoEncomienda.Facturado && h.Fecha >= fechaInicio && h.Fecha < fechaFin)
+                                                                                                                  .Where(h => h.EstadoGuia == EstadoEncomiendaEnum.Facturado && h.Fecha >= fechaInicio && h.Fecha < fechaFin)
                                                                                                                   .Any())
-                                                                                                     .FirstOrDefault(g => g.NumeroGuia == gm.NumeroGuia && g.EstadoEncomienda == EstadoEncomienda.Facturado))
+                                                                                                     .FirstOrDefault(g => g.NumeroGuia == gm.NumeroGuia && g.EstadoEncomienda == EstadoEncomiendaEnum.Facturado))
                                                                             .Where(g => g != null)
                                                                             .Select(g => g.Importe))
                                        .Sum(),
@@ -40,13 +40,12 @@ namespace GrupoC_TP3.CU10_ResultadoCostosVsVentas
                                 .Where(h => h.PatenteMicro == u.PatenteMicro)
                                 .SelectMany(h => h.NumerosGuiaMicro)
                                 .Select(gm => GuiaAlmacen.guias
-                                    .FirstOrDefault(g => g.NumeroGuia == gm.NumeroGuia && g.EstadoEncomienda == EstadoEncomienda.Facturado))
+                                    .FirstOrDefault(g => g.NumeroGuia == gm.NumeroGuia && g.EstadoEncomienda == EstadoEncomiendaEnum.Facturado))
                                 .Where(g => g != null)
                                 .Select(g => g.Importe))
-                            .Sum() - (
-                            empresa.PrecioDeArrendamiento),
+                            .Sum() - (empresa.PrecioDeArrendamiento),
                         Fecha = DateTime.Now //TODO: no se como manejar esta fecha
-                                         })
+                    })
                     .ToList();
 
         }

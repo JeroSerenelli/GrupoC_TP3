@@ -202,10 +202,10 @@ namespace GrupoC_TP3.CU5_GestionCD
                 }
 
 
-                guia.EstadoEncomienda = (EstadoEncomienda)5;
+                guia.EstadoEncomienda = (EstadoEncomiendaEnum)5;
                 guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
                 {
-                    EstadoGuiaEnum = (EstadoEncomienda)5,
+                    EstadoGuia = (EstadoEncomiendaEnum)5,
                     Fecha = DateTime.Now,
                     Descripcion = "Recibido En Centro Distribucion Destino"                   
                 });
@@ -244,10 +244,10 @@ namespace GrupoC_TP3.CU5_GestionCD
                     continue;
                 }
 
-                guia.EstadoEncomienda = (EstadoEncomienda)4;
+                guia.EstadoEncomienda = (EstadoEncomiendaEnum)4;
                 guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
                 {
-                    EstadoGuiaEnum = (EstadoEncomienda)4,
+                    EstadoGuia = (EstadoEncomiendaEnum)4,
                     Fecha = DateTime.Now,
                     Descripcion = "En Transporte Entre Centro De Distribucion."
 

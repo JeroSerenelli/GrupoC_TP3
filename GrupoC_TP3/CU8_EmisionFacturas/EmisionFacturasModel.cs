@@ -49,12 +49,12 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
             Almacenes.FacturaAlmacen.GuardarFacturas();
             //AHORA VAMOS A CAMBIAR EL ESTADO DE LAS GUIAS QUE USAMOS A FACTURADO
             
-            foreach (var guia in Almacenes.GuiaAlmacen.guias.Where(g => g.CUITCUIL == Cuit && g.EstadoEncomienda == EstadoEncomienda.Entregado))
+            foreach (var guia in Almacenes.GuiaAlmacen.guias.Where(g => g.CUITCUIL == Cuit && g.EstadoEncomienda == EstadoEncomiendaEnum.Entregado))
             {
-                guia.EstadoEncomienda = EstadoEncomienda.Facturado;
+                guia.EstadoEncomienda = EstadoEncomiendaEnum.Facturado;
                 guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
                 {
-                    EstadoGuiaEnum = EstadoEncomienda.Facturado,
+                    EstadoGuia = EstadoEncomiendaEnum.Facturado,
                     Fecha = DateTime.Now,
                     Descripcion = "Facturada."
                 });
@@ -132,7 +132,7 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
                 return false;
             }
             //BUSCAMOS EN EL ALMACEN DE GUIA ALMACEN SI LA GUIA TIENE ESTADO ENTREGADO
-            if (!GuiaAlmacen.guias.Any(g => g.CUITCUIL == salida && g.EstadoEncomienda == EstadoEncomienda.Entregado))
+            if (!GuiaAlmacen.guias.Any(g => g.CUITCUIL == salida && g.EstadoEncomienda == EstadoEncomiendaEnum.Entregado))
             {
                 MessageBox.Show("El CUIL/CUIT ingresado no tiene pedidos entregados para facturar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -181,7 +181,7 @@ namespace GrupoC_TP3.CU3_EmisionFacturas
 
         internal List<Guia>? ObtenerGuia(long cuit)
         {
-            List<Almacenes.GuiaEntidad> AuxGuia = Almacenes.GuiaAlmacen.guias.Where(g => g.CUITCUIL == cuit && g.EstadoEncomienda == EstadoEncomienda.Entregado).ToList();
+            List<Almacenes.GuiaEntidad> AuxGuia = Almacenes.GuiaAlmacen.guias.Where(g => g.CUITCUIL == cuit && g.EstadoEncomienda == EstadoEncomiendaEnum.Entregado).ToList();
             Almacenes.ClienteEntidad AuxCliente = Almacenes.ClienteAlmacen.clientes.Where(c => c.CUITCUIL == cuit).FirstOrDefault();
 
 

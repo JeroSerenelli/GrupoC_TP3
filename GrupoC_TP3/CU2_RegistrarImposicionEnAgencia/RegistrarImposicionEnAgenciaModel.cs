@@ -231,12 +231,12 @@ internal class RegistrarImposicionEnAgenciaModel
                 CargosAgencia = finalAgencia,
                 CodAgenciaOrigen = codAgencia,
                 CodCentroDistOrigen = codCentroDistribucionOrigen,
-                EstadoEncomienda = EstadoEncomienda.ListoParaRetirarEnAgencia,
+                EstadoEncomienda = EstadoEncomiendaEnum.ListoParaRetirarEnAgencia,
                 HistorialEstadosGuia = new List<HistorialEstadoGuia>
                 {
                     new HistorialEstadoGuia
                     {
-                        EstadoGuiaEnum = EstadoEncomienda.ListoParaRetirarEnAgencia,
+                        EstadoGuia = EstadoEncomiendaEnum.ListoParaRetirarEnAgencia,
                         Fecha = DateTime.Now,
                         Descripcion = "Encomienda creada y lista para ser retirada en agencia."
                     }

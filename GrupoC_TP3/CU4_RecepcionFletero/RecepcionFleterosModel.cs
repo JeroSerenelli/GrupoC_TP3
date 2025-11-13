@@ -183,7 +183,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
                     foreach (var hist in guia.HistorialEstadosGuia)
                     {
-                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuiaEnum} - {hist.Descripcion}");
+                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuia} - {hist.Descripcion}");
                     }
                 }
             }
@@ -213,7 +213,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     guia.EstadoEncomienda = siguiente.Value;
                     guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
                     {
-                        EstadoGuiaEnum = siguiente.Value,
+                        EstadoGuia = siguiente.Value,
                         Fecha = DateTime.Now,
                         Descripcion = $"Impresión detalle HDR: {previo} -> {siguiente.Value}"
                     });
@@ -249,7 +249,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
                     foreach (var hist in guia.HistorialEstadosGuia)
                     {
-                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuiaEnum} - {hist.Descripcion}");
+                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuia} - {hist.Descripcion}");
                     }
                 }
             }
@@ -324,7 +324,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
                     foreach (var hist in guia.HistorialEstadosGuia)
                     {
-                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuiaEnum} - {hist.Descripcion}");
+                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuia} - {hist.Descripcion}");
                     }
                 }
             }
@@ -355,7 +355,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     guia.EstadoEncomienda = siguiente.Value;
                     guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
                     {
-                        EstadoGuiaEnum = siguiente.Value,
+                        EstadoGuia = siguiente.Value,
                         Fecha = DateTime.Now,
                         Descripcion = $"Asignado a fletero: {previo} -> {siguiente.Value}"
                     });
@@ -391,7 +391,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                     System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
                     foreach (var hist in guia.HistorialEstadosGuia)
                     {
-                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuiaEnum} - {hist.Descripcion}");
+                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuia} - {hist.Descripcion}");
                     }
                 }
             }
@@ -411,16 +411,16 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
         /// - RecibidoEnCentroDistribucionDestino | EntregadoEnCentroDeDistribucion -> EnCaminoADomicilioDestino
         /// - En otros casos devuelve null (sin cambio)
         /// </summary>
-        private EstadoEncomienda? CalcularSiguienteEstadoAlAsignar(EstadoEncomienda actual)
+        private EstadoEncomiendaEnum? CalcularSiguienteEstadoAlAsignar(EstadoEncomiendaEnum actual)
         {
             return actual switch
             {
                 //ABM: creo que aca hay un problema; no veo cuando cambia de "En camino a domicilio o agencia" a "Entregado en CD". Falta ese pasaje. Ademas, el pasaje hacia En camino a domicilio destino deberia
                 //ABM: ser desde Recibido en CD Destino. 
-                EstadoEncomienda.ListoParaRetirarEnDomicilio => EstadoEncomienda.EnCaminoADomcilicioOAgencia,
-                EstadoEncomienda.ListoParaRetirarEnAgencia => EstadoEncomienda.EnCaminoADomcilicioOAgencia,
-                EstadoEncomienda.RecibidoEnCentroDistribucionDestino => EstadoEncomienda.EnCaminoADomicilioDestino, 
-                EstadoEncomienda.EntregadoEnCentroDeDistribucion => EstadoEncomienda.EnCaminoADomicilioDestino,
+                EstadoEncomiendaEnum.ListoParaRetirarEnDomicilio => EstadoEncomiendaEnum.EnCaminoADomcilicioOAgencia,
+                EstadoEncomiendaEnum.ListoParaRetirarEnAgencia => EstadoEncomiendaEnum.EnCaminoADomcilicioOAgencia,
+                EstadoEncomiendaEnum.RecibidoEnCentroDistribucionDestino => EstadoEncomiendaEnum.EnCaminoADomicilioDestino, 
+                EstadoEncomiendaEnum.EntregadoEnCentroDeDistribucion => EstadoEncomiendaEnum.EnCaminoADomicilioDestino,
                 _ => null
             };
         }
@@ -432,12 +432,12 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
         /// - EnCaminoADomicilioDestino -> Entregado
         /// - En otros casos devuelve null (sin cambio)
         /// </summary>
-        private EstadoEncomienda? CalcularSiguienteEstadoAlImprimir(EstadoEncomienda actual)
+        private EstadoEncomiendaEnum? CalcularSiguienteEstadoAlImprimir(EstadoEncomiendaEnum actual)
         {
             return actual switch
             {
-                EstadoEncomienda.EnCaminoADomcilicioOAgencia => EstadoEncomienda.EntregadoEnCentroDeDistribucion,
-                EstadoEncomienda.EnCaminoADomicilioDestino => EstadoEncomienda.Entregado,
+                EstadoEncomiendaEnum.EnCaminoADomcilicioOAgencia => EstadoEncomiendaEnum.EntregadoEnCentroDeDistribucion,
+                EstadoEncomiendaEnum.EnCaminoADomicilioDestino => EstadoEncomiendaEnum.Entregado,
                 _ => null
             };
         }

@@ -244,12 +244,12 @@ namespace GrupoC_TP3.CU3_RegistrarImposicionEnCD
                     CargosAgencia = finalAgencia,
                     CodAgenciaOrigen = 0,
                     CodCentroDistOrigen = codCentroDistribucionOrigen,
-                    EstadoEncomienda = EstadoEncomienda.EntregadoEnCentroDeDistribucion,
+                    EstadoEncomienda = EstadoEncomiendaEnum.EntregadoEnCentroDeDistribucion,
                     HistorialEstadosGuia = new List<HistorialEstadoGuia>
                 {
                     new HistorialEstadoGuia
                     {
-                        EstadoGuiaEnum = EstadoEncomienda.EntregadoEnCentroDeDistribucion,
+                        EstadoGuia = EstadoEncomiendaEnum.EntregadoEnCentroDeDistribucion,
                         Fecha = DateTime.Now,
                         Descripcion = "Encomienda creada y disponible en Centro de Distribucion."
                     }

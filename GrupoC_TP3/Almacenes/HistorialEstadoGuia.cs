@@ -8,7 +8,7 @@ namespace GrupoC_TP3.Almacenes
 {
     internal class HistorialEstadoGuia
     {
-        public EstadoEncomienda EstadoGuiaEnum { get; set; }
+        public EstadoEncomiendaEnum EstadoGuia { get; set; }
         public DateTime Fecha { get; set; }
         public string Descripcion { get; set; }
 

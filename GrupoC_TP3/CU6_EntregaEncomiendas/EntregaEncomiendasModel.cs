@@ -36,13 +36,13 @@ namespace GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia
 
         public List<Encomienda> Encomiendas { get; private set; } = new List<Encomienda> ();
 
-        private static string TextoEstado(EstadoEncomienda estado)
+        private static string TextoEstado(EstadoEncomiendaEnum estado)
         {
             return estado switch
             {
-                EstadoEncomienda.ListoParaRetiroEnAgencia => "Listo para retiro en agencia",
-                EstadoEncomienda.RecibidoEnCentroDistribucionDestino => "Recibido en centro de distribución destino",
-                EstadoEncomienda.Entregado => "Entregado",
+                EstadoEncomiendaEnum.ListoParaRetiroEnAgencia => "Listo para retiro en agencia",
+                EstadoEncomiendaEnum.RecibidoEnCentroDistribucionDestino => "Recibido en centro de distribución destino",
+                EstadoEncomiendaEnum.Entregado => "Entregado",
                 _ => estado.ToString() // valor por defecto
             };
         }
@@ -85,11 +85,11 @@ namespace GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia
                         && (
                             (g.MetodoEntrega == MetodoEntrega.EntregaEnAgencia
                             &&
-                            g.EstadoEncomienda == EstadoEncomienda.ListoParaRetiroEnAgencia)
+                            g.EstadoEncomienda == EstadoEncomiendaEnum.ListoParaRetiroEnAgencia)
                             ||
                             (g.MetodoEntrega == MetodoEntrega.EntregaEnCentroDeDistribucion
                             &&
-                            g.EstadoEncomienda == EstadoEncomienda.RecibidoEnCentroDistribucionDestino)
+                            g.EstadoEncomienda == EstadoEncomiendaEnum.RecibidoEnCentroDistribucionDestino)
                             )
                 )
                 .ToList();
@@ -129,12 +129,12 @@ namespace GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia
             foreach (var g in GuiaAlmacen.guias.Where(x => set.Contains(x.NumeroGuia)))
             {
                 // Cambiar el estado de la guía
-                g.EstadoEncomienda = EstadoEncomienda.Entregado;
+                g.EstadoEncomienda = EstadoEncomiendaEnum.Entregado;
 
                 // Registrar en el historial
                 g.HistorialEstadosGuia.Add(new HistorialEstadoGuia
                 {
-                    EstadoGuiaEnum = EstadoEncomienda.Entregado,
+                    EstadoGuia = EstadoEncomiendaEnum.Entregado,
                     Fecha = HoraActual,
                     Descripcion = "Entrega confirmada en agencia/CD"
                 });

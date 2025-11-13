@@ -9,7 +9,7 @@ namespace GrupoC_TP3.Almacenes
     internal class NumeroGuiaFlete
     {
         public int NumeroGuia { get; set; }
-        public EstadoEncomienda EstadoEncomienda { get; set; }
+        public EstadoEncomiendaEnum EstadoEncomienda { get; set; }
 
     }
 }

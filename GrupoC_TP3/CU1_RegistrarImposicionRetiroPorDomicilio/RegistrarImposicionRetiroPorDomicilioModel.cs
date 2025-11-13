@@ -265,13 +265,13 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                     CargosAgencia = finalAgencia,
                     CodAgenciaOrigen = 0, //no lo necesito, es imposicion por telefono
                     CodCentroDistOrigen = codCentroDistribucionOrigen,
-                    EstadoEncomienda = EstadoEncomienda.ListoParaRetirarEnDomicilio,
+                    EstadoEncomienda = EstadoEncomiendaEnum.ListoParaRetirarEnDomicilio,
                     HistorialEstadosGuia = new List<HistorialEstadoGuia>
                     {
                         new HistorialEstadoGuia
                         {
                             Fecha = DateTime.Now,
-                            EstadoGuiaEnum = EstadoEncomienda.ListoParaRetirarEnDomicilio,
+                            EstadoGuia = EstadoEncomiendaEnum.ListoParaRetirarEnDomicilio,
                             Descripcion = "Encomienda creada y lista para ser retirada en domicilio."
                         }
                     }

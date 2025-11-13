@@ -1,5 +1,186 @@
 [
   {
+    "NumeroGuia": 100000050,
+    "CUITCUIL": 20304567891,
+    "CodPostalDest": 2003,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Av. Siempre Viva 742",
+    "TamanoCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Luis",
+    "ApellidoDestinatario": "Lopez",
+    "DNIDestinatario": 12345678,
+    "Importe": 6500,
+    "CargosFleteros": 500,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 2000,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 5,
+        "Fecha": "2025-10-27T08:00:00",
+        "Descripcion": "Recibido En Centro Distibucion Destino"
+      },
+      {
+        "Estado": 4,
+        "Fecha": "2025-10-25T08:00:00",
+        "Descripcion": "En transporte entre Centros de Distribucion"
+      },
+      {
+        "Estado": 3,
+        "Fecha": "2025-10-24T08:00:00",
+        "Descripcion": "Entregado en Centro de Distribucion de origen"
+      },
+      {
+        "Estado": 1,
+        "Fecha": "2025-10-22T08:00:00",
+        "Descripcion": "Listo para retirar en domicilio"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100000051,
+    "CUITCUIL": 27311222334,
+    "CodPostalDest": 2003,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Av. Siempre Viva 742",
+    "TamanoCaja": 0,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "María",
+    "ApellidoDestinatario": "González",
+    "DNIDestinatario": 32133455,
+    "Importe": 4800,
+    "CargosFleteros": 350,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 2000,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 3,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 3,
+        "Fecha": "2025-10-24T08:00:00",
+        "Descripcion": "Entregado en Centro de Distribucion de origen"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100000052,
+    "CUITCUIL": 30112233445,
+    "CodPostalDest": 2003,
+    "MetodoEntrega": 2,
+    "DomicilioDest": "Calle Falsa 456",
+    "TamanoCaja": 1,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Jorge",
+    "ApellidoDestinatario": "Fernández",
+    "DNIDestinatario": 27777888,
+    "Importe": 7300,
+    "CargosFleteros": 600,
+    "CargosAgencia": 50,
+    "CodAgenciaOrigen": 2000,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 3,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 3,
+        "Fecha": "2025-10-24T08:00:00",
+        "Descripcion": "Entregado en Centro de Distribucion de origen"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100500053,
+    "CUITCUIL": 30112233445,
+    "CodPostalDest": 4726,
+    "MetodoEntrega": 2,
+    "DomicilioDest": "Calle Falsa 456",
+    "TamanoCaja": 1,
+    "CodPostalOrig": 4600,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Jorge",
+    "ApellidoDestinatario": "Fernández",
+    "DNIDestinatario": 27777888,
+    "Importe": 7300,
+    "CargosFleteros": 600,
+    "CargosAgencia": 50,
+    "CodAgenciaOrigen": 2005,
+    "CodCentroDistOrigen": 1005,
+    "EstadoEncomienda": 4,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 4,
+        "Fecha": "2025-10-24T08:00:00",
+        "Descripcion": "En transporte entre Centros de Distribucion"
+      },
+      {
+        "Estado": 3,
+        "Fecha": "2025-10-24T08:00:00",
+        "Descripcion": "Entregado en Centro de Distribucion de origen"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100100054,
+    "CUITCUIL": 30112233445,
+    "CodPostalDest": 4726,
+    "MetodoEntrega": 2,
+    "DomicilioDest": "Calle Falsa 456",
+    "TamanoCaja": 1,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Jorge",
+    "ApellidoDestinatario": "Fernández",
+    "DNIDestinatario": 27777888,
+    "Importe": 7300,
+    "CargosFleteros": 600,
+    "CargosAgencia": 50,
+    "CodAgenciaOrigen": 2000,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 3,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 3,
+        "Fecha": "2025-10-24T08:00:00",
+        "Descripcion": "Entregado en Centro de Distribucion de origen"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100000055,
+    "CUITCUIL": 30112233445,
+    "CodPostalDest": 1650,
+    "MetodoEntrega": 2,
+    "DomicilioDest": "Calle Falsa 456",
+    "TamanoCaja": 1,
+    "CodPostalOrig": 3099,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Jorge",
+    "ApellidoDestinatario": "Fernández",
+    "DNIDestinatario": 27777888,
+    "Importe": 7300,
+    "CargosFleteros": 600,
+    "CargosAgencia": 50,
+    "CodAgenciaOrigen": 2001,
+    "CodCentroDistOrigen": 1001,
+    "EstadoEncomienda": 4,
+    "HistorialEstadosGuia": [
+      {
+        "Estado": 4,
+        "Fecha": "2025-10-24T08:00:00",
+        "Descripcion": "En transporte entre Centros de Distribucion"
+      },
+      {
+        "Estado": 3,
+        "Fecha": "2025-10-24T08:00:00",
+        "Descripcion": "Entregado en Centro de Distribucion de origen"
+      }
+    ]
+  },
+  {
     "NumeroGuia": 101000001,
     "CUITCUIL": 20304567891,
     "CodPostalDest": 4600,

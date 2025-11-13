@@ -171,8 +171,8 @@
   },
   {
     "HojaRutaMicro": 900004,
-    "CentroDistribucionOrigen": 1001,
-    "CentroDistribucionDestino": 1000,
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1002,
     "NumerosGuiaMicro": [
       { "NumeroGuia": 100100054 }
     ],
@@ -182,8 +182,8 @@
   },
   {
     "HojaRutaMicro": 900005,
-    "CentroDistribucionOrigen": 1000,
-    "CentroDistribucionDestino": 1002,
+    "CentroDistribucionOrigen": 1001,
+    "CentroDistribucionDestino": 1000,
     "NumerosGuiaMicro": [
       { "NumeroGuia": 100000055 }
     ],

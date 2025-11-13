@@ -14,8 +14,6 @@ namespace GrupoC_TP3.CU5_GestionCD
         {
             //Marco el codigo del CD actual
             int CodigoCDActual = CentroDistribucionAlmacen.centroDistribucionActual.CodCentroDist;
-            MessageBox.Show($"CD Actual: {CodigoCDActual}");
-
 
             //Busco cada campo de requerido para llenar las listas
 

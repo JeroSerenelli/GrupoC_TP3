@@ -1,0 +1,58 @@
+04-FACT-CC-ESTRESULT 
+
+CU8_EmisionFacturas 
+
+1 - CUIT/CUIL: 27111222334  
+2 -Botón ‘Buscar’ 
+VERIFICAR: Numero de guía = 100000030, Subtotal = 1.000, Total a facturar: 1.000 
+3 - Botón ‘Emitir Factura’ 
+VERIFICAR:  
+- Mensaje de confirmación en pantalla (´Factura emitida con exito´) 
+- Listview ‘Servicios a facturar’ queda vacío 
+- bin/debug/DATOS/Facturas.JSON: NumeroFactura ‘1022’ 
+- bin/debug/DATOS/Guias.JSON: EstadoEnumGuia 100000030 debe ser ‘9’. 
+4 - Botón “Aceptar”. 
+VERIFICAR:  
+- mensaje de confirmación “Gracias” en pantalla 
+- vuelta al menú principal 
+ 
+-------------------------------------------------------
+
+CU9_CuentaCorriente 
+
+1 – Seleccionar el CUIT/CUIL 20304567891 
+2 – Seleccionar Inicio de Periodo 01/03/2025 
+3 – Seleccionar Fin de Periodo 01/03/2026 
+4 - Botón ‘Buscar’ 
+VERIFICAR:  
+- Cliente: Transportes del Sur S.A., 
+- Inicio de periodo: 01/03/2025,  
+- Fin de periodo: 01/03/2026,  
+- En listView:  
+Fecha 01/03/2025, Monto: ---,Saldo: 0.00 
+Fecha 12/03/2025, Monto: 15,419.24,Saldo: 15,419.24;  
+Fecha 24/03/2025, Monto -40,977.74, Saldo: -25,558.40. 
+Fecha 01/03/2026, Monto: ---,Saldo: 25,558.40. 
+5 – Cerrar pantalla con el botón ‘X’ 
+
+-------------------------------------------------------
+
+CU10_ResultadoCostosVsVentas 
+
+1 – Seleccionar Inicio de Periodo Septiembre 2025 
+2 – Seleccionar Fin de Periodo Diciembre 2025 
+3 - Botón ‘Buscar’ 
+VERIFICAR:  
+- listView ‘Estado de Resultados: 
+Línea 1: Empresa de Transporte: Expreso Del Sur S.A, Venta: 32000, Costo: 65000, Resultado: -33.000 
+Línea 2: Empresa de Transporte: Transporte Andino SRL, Venta: 0, Costo: 7.000, Resultado: -7.000 
+Línea 3: Empresa de Transporte: Rutas Argentinas S.A, Venta: 0, Costo: 55.000, Resultado: -55.000 
+Línea 4: Empresa de Transporte: El Pampeano S.A, Venta: 0, Costo: 65.000, Resultado: -65.000 
+Línea 5: Empresa de Transporte: Nueva Patagónica S.A, Venta: 0, Costo: 55.000, Resultado: -55.000 
+Línea 6: Empresa de Transporte: FlechaBus S.A, Venta: 19500, Costo: 55.000, Resultado: -35.500 
+4 - Botón “Aceptar”. 
+VERIFICAR:  
+- mensaje de confirmación “Gracias” en pantalla 
+- vuelta al menú principal 
+ 
+FIN CASO DE PRUEBA 04-FACT-CC-ESTRESULT

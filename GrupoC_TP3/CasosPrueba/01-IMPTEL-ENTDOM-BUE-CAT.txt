@@ -23,57 +23,128 @@ VERIFICAR: centro de distribución “CD General San Martin”
 16 - DNI 37890177 
 17 - Botón ‘Generar Guía’ 
 VERIFICAR:  
-- mensaje de confirmación en pantalla (x2). Números de guía generados: 100000004 y 100000005. 
-- verificar bin/Debug/Datos/Guias.JSON: estado guías debe ser ‘0’.  
- 
+- mensaje de confirmación en pantalla (x2). Números de guía generados: 100000101 y 100000102. 
+- verificar bin/Debug/Datos/Guias.JSON: guías 100000101 y 100000102 deben contar con la siguiente información: MetodoEntrega = 0; Importe = 8000; CD Origen = 1000; EstadoEncomienda = 0; HistorialEstadoGuia (EstadoGuiaEnum = 0; Fecha = fecha en la cual se crea la guia; Descripcion = “Encomienda creada y lista para ser retirada en domicilio”).  
+18 - Botón “Aceptar”. 
+VERIFICAR:  
+- mensaje de confirmación “Gracias” en pantalla 
+- vuelta al menú principal 
+	  
+----------------------------------------------------
 
 CU4_RecepcionFletero (Retiro) 
 
-1 - Fletero: Agustina Herrera 
-2 - Botón ‘Buscar’ 
-VERIFICAR: hoja de ruta 50000 existe en ‘Asignar Hoja de Ruta’ 
-3 - Seleccionar hoja de ruta 50000 
-4 - Botón ‘Asignar’ 
+1 – Seleccionar el fletero: “Agustina Herrera” 
+2 – Hacer click en el botón ‘Buscar’ 
+VERIFICAR: hoja de ruta 50000 existe en el listview derecho ‘Asignar Hoja de Ruta’ 
+3 - Del listview derecho con título “Asignar Hojas de Ruta”, seleccionar cualquiera de las 2 guías que tienen como identificador “Hoja de Ruta = 50000”. 
+4 - Hacer click en el botón ‘Asignar’ 
 VERIFICAR:  
-- hoja de ruta 50000 se mueve a ‘Hojas de Ruta Asignadas’		      
-- verificar bin/Debug/Datos/HojasDeRutaFlete.JSON: estado hoja de ruta 50000 debe ser ‘NoCumplida’. 
-- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000004 y 100000005 debe ser ‘2’ 
-5 - Seleccionar hoja de ruta 50000 en ‘Hojas de Ruta Asignadas’ 
-6 - Botón ‘Imprimir Detalle’ 
+- Que las guías 100000098 y 100000099 de la hoja de ruta 50000 se muevan al listview izquierdo ‘Hojas de Ruta Asignadas’
+- Verificar bin/Debug/Datos/HojasDeRutaFlete.JSON: estado hoja de ruta 50000 debe ser ‘NoCumplida’. 
+- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000098 y 100000099 debe ser ‘2’ 
+5 - Seleccionar ambas guías (100000098 y 100000099) de la hoja de ruta 50000 en ‘Hojas de Ruta Asignadas’ 
+6 - Hacer click en el botón ‘Imprimir’ 
 VERIFICAR:  
 - mensaje de confirmación en pantalla 
 - verificar bin/Debug/Datos/HojasDeRutaFlete.JSON: estado hoja de ruta 50000 debe ser ‘Cumplida’ 
-- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000004 y 100000005 debe ser ‘3’ 
+- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000098 y 100000099 debe ser ‘3’ 
+7 – Hacer click en “Aceptar” para salir de la pantalla. 
+VERIFICAR:  
+- mensaje de confirmación “Gracias” en pantalla 
+- vuelta al menú principal 
+
+----------------------------------------------------
  
+CU5_GestionCD (Origen) 
+PREVIO A EJECUCION; en Launcher, usando el drop-down, seleccionar CD Actual = CD General San Martin. Luego, seleccionar el formulario “CU5 - GestionCD” y hacer click en boton ‘Abrir’ 
 
-CU5_GestionCD 
-
-TBD
-
+1 – Ingreso Patente ‘ABC100’ 
+2 – Botón ‘Buscar’ 
+VERIFICAR. Mensaje “No hay encomiendas para recibir del vehículo ABC100.” 
+3 – Click en boton ‘OK’ 
+VERIFICAR: resultado de consulta muestra en lista ‘Despachar desde CD’: 
+- Hoja de Ruta 900002 – Guía 100000051 - Estado ‘Listo para despachar en CD’ 
+- Hoja de Ruta 900002 – Guía 100000052 - Estado ‘Listo para despachar en CD’ 
+4 – Click en botón ‘Actualizar’ 
+VERIFICAR: 
+- Mensaje en pantalla “Actualizado con exito”. 
+- Estado de Guía 100000051 & 100000052 es modificado a ‘Recibido en CD’ en la lista. 
+- Verificar bin/Debug/Datos/HojasDeRutaMicros.JSON: estado hoja de ruta micro 900002 debe ser 1. 
+- Verificar bin/Debug/Datos/Guia.JSON: estadoEncomienda las guias 100000051 & 100000052 debe ser 4; HistorialEstadosGuia debe tener, para cada una, EstadoGuiaEnum = 4; Fecha = fecha en la cual se actualizo el estado y Descripcion = "En Transporte Entre Centro De Distribucion." 
+6 - Click en boton ‘OK’ 
+VERIFICAR: Resultado de la consulta desaparece de la pantalla 
+7 - Click en botón “Aceptar” para salir de la pantalla. 
+VERIFICAR:  
+- mensaje de confirmación “Gracias” en pantalla 
+- vuelta al menú principal 
+ 
+----------------------------------------------------
 
 CU7_ConsultaEstadoGuia 
 
-1 - Numero de guía 100000004 
+1 - Numero de guía 200900004 
 2 - Botón ‘Buscar’ 
-VERIFICAR: resultado de consulta muestra dos entradas (“Encomienda creada…” y “Asignado a fletero….”) 
-3 - Numero de guía 100000005 
-4 - Botón ‘Buscar’ 
-VERIFICAR: resultado de consulta muestra dos entradas (“Encomienda creada…” y “Asignado a fletero….”) 
-  
-
-CU4_RecepcionFletero (Entrega) 
-
-1 - Fletero: Carlos Castro 
-2 - Botón ‘Buscar’ 
-VERIFICAR: hoja de ruta 70000 existe en ‘Asignar Hoja de Ruta’ 
-3 - Seleccionar hoja de ruta 70000 
-4 - Botón ‘Asignar’ 
+VERIFICAR: resultado de consulta muestra cuatro entradas con sus respectivas fechas.  
+- Listo para retirar en Agencia 2025-10-22 
+- En camino a Agencia o Domicilio 2025-10-24 
+- Entregado en Centro de Distribución de origen 2025-10-25 
+- En transporte entre Centros de Distribución 2025-10-31 
+3 - Botón “Aceptar”. 
 VERIFICAR:  
-- hoja de ruta 70000 se mueve a ‘Hojas de Ruta Asignadas’ - verificar bin/Debug/Datos/HojasDeRutaFlete.JSON: estado hoja de ruta 70000 debe ser ‘NoCumplida’. 
-- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000004 y 100000005 debe ser ‘7’ 
-5 - Seleccionar hoja de ruta 70000 en ‘Hojas de Ruta Asignadas’ 
-6 - Botón ‘Imprimir Detalle’ 
+- mensaje de confirmación “Gracias” en pantalla 
+- vuelta al menú principal 
+ 
+----------------------------------------------------
+ 
+CU5_GestionCD (Destino) 
+PREVIO A EJECUCION; en Launcher, usando el drop-down, seleccionar CD Actual = CD SFV Catamarca. Luego, seleccionar el formulario “CU5 - GestionCD” y hacer click en boton ‘Abrir’ 
+
+1- Ingreso Patente ‘ABC101’ 
+2 – Botón ‘Buscar’ 
+VERIFICAR. Mensaje “No hay encomiendas para entregar al vehículo ABC101.” 
+3 – Click en boton ‘OK’ 
+VERIFICAR: resultado de consulta muestra en lista ‘Descargar y recibir en CD: 
+- Hoja de Ruta 900001 – Guía 100000050 - Estado ‘En transporte a CD’ 
+4 – Click en botón ‘Actualizar’ 
+VERIFICAR:  
+- Mensaje “Actualizado con exito”. 
+- Estado de Guía 100000050 es modificado a ‘Recibido en CD’ en la lista. 
+- Verificar bin/Debug/Datos/HojasDeRutaMicros.JSON: estado hoja de ruta micro 900001 debe ser 2. 
+- Verificar bin/Debug/Datos/Guia.JSON: estadoEncomienda las guias 100000050  debe ser 5; HistorialEstadosGuia debe tener EstadoGuiaEnum = 5; Fecha = fecha en la cual se actualizo el estado y Descripcion = "Recibido en Centro De Distribucion Destino" 
+6 – Click en boton ‘OK’ 
+VERIFICAR: Resultado de la consulta desaparece de la pantalla 
+7 – Click en botón “Aceptar” para salir de la pantalla. 
+VERIFICAR:  
+- mensaje de confirmación “Gracias” en pantalla 
+- vuelta al menú principal 
+ 
+---------------------------------------------------- 
+
+CU4_RecepcionFletero (Entrega)  
+
+1 – Seleccionar el fletero: “Carlos Castro” 
+2 – Hacer click en el botón ‘Buscar’ 
+VERIFICAR: hoja de ruta 70000 existe en el listview derecho ‘Asignar Hoja de Ruta’ 
+3 - Del listview derecho con título “Asignar Hojas de Ruta”, seleccionar cualquiera de las 2 guías que tienen como identificador “Hoja de Ruta = 70000”. 
+4 - Hacer click en el botón ‘Asignar’ 
+VERIFICAR:  
+- Que las guías 100000094 y 100000095 de la hoja de ruta 70000 se muevan al listview izquierdo ‘Hojas de Ruta Asignadas’
+- Verificar bin/Debug/Datos/HojasDeRutaFlete.JSON: estado hoja de ruta 70000 debe ser ‘NoCumplida’. 
+- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000094 y 100000095 debe ser ‘7’ 
+5 - Seleccionar ambas guías (100000094 y 100000095) de la hoja de ruta 70000 en ‘Hojas de Ruta Asignadas’ 
+6 - Hacer click en el botón ‘Imprimir’ 
 VERIFICAR:  
 - mensaje de confirmación en pantalla 
 - verificar bin/Debug/Datos/HojasDeRutaFlete.JSON: estado hoja de ruta 70000 debe ser ‘Cumplida’ 
-- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000004 y 100000005 debe ser ‘8’ 
+- verificar bin/Debug/Datos/Guias.JSON: estado guías 100000094 y 100000095 debe ser ‘8’ 
+7 – Hacer click en “Aceptar” para salir de la pantalla. 
+VERIFICAR:  
+- mensaje de confirmación “Gracias” en pantalla 
+- vuelta al menú principal 
+
+
+
+
+FIN CASO DE PRUEBA 01-IMPTEL-ENTDOM-BUE-CAT 
+ 

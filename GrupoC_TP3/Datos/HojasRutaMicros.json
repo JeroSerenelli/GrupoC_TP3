@@ -25,7 +25,7 @@
     "CentroDistribucionDestino": 1006,
     "NumerosGuiaMicro": [
       {
-        "NumeroGuia": 0,
+        "NumeroGuia": 100000072,
         "EstadoEncomienda": 0
       },
       {
@@ -46,7 +46,7 @@
     "CentroDistribucionDestino": 1010,
     "NumerosGuiaMicro": [
       {
-        "NumeroGuia": 1240,
+        "NumeroGuia": 100000071,
         "EstadoEncomienda": 9
       },
       {
@@ -67,7 +67,7 @@
     "CentroDistribucionDestino": 1001,
     "NumerosGuiaMicro": [
       {
-        "NumeroGuia": 105966,
+        "NumeroGuia": 100000075,
         "EstadoEncomienda": 0
       }
     ],

@@ -146,44 +146,6 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 }
             }
 
-            // ========== DEBUG TEMPORAL - ANTES ==========
-            System.Diagnostics.Debug.WriteLine("╔════════════════════════════════════════════╗");
-            System.Diagnostics.Debug.WriteLine("║       ANTES DE ACTUALIZAR                  ║");
-            System.Diagnostics.Debug.WriteLine("╚════════════════════════════════════════════╝");
-
-            // Mostrar estado de HDR
-            System.Diagnostics.Debug.WriteLine("\n--- HOJAS DE RUTA ---");
-            foreach (var id in hojasIds)
-            {
-                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
-                System.Diagnostics.Debug.WriteLine($"HDR {id}: Estado = {hdr?.EstadoHojaRutaFlete}");
-                if (hdr != null)
-                {
-                    System.Diagnostics.Debug.WriteLine($"  Guías en esta HDR: {string.Join(", ", hdr.NumerosGuiaFlete.Select(n => n.NumeroGuia))}");
-                }
-            }
-
-            // Mostrar estado de TODAS las Guías de las HDR
-            System.Diagnostics.Debug.WriteLine("\n--- GUÍAS (TODAS LAS DE LAS HDR SELECCIONADAS) ---");
-            foreach (var nro in todasLasGuiasDeHDR)
-            {
-                var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
-                if (guia == null)
-                {
-                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: NO ENCONTRADA");
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: Estado = {guia.EstadoEncomienda}");
-                    System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
-                    foreach (var hist in guia.HistorialEstadosGuia)
-                    {
-                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuia} - {hist.Descripcion}");
-                    }
-                }
-            }
-            // ============================================
-
             // Actualizar HDR a Cumplida
             foreach (var id in hojasIds)
             {
@@ -216,40 +178,6 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
             }
             GuiaAlmacen.GuardarGuia();
 
-            // ========== DEBUG TEMPORAL - DESPUÉS ==========
-            System.Diagnostics.Debug.WriteLine("\n╔════════════════════════════════════════════╗");
-            System.Diagnostics.Debug.WriteLine("║       DESPUÉS DE ACTUALIZAR                ║");
-            System.Diagnostics.Debug.WriteLine("╚════════════════════════════════════════════╝");
-
-            // Mostrar estado de HDR
-            System.Diagnostics.Debug.WriteLine("\n--- HOJAS DE RUTA ---");
-            foreach (var id in hojasIds)
-            {
-                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
-                System.Diagnostics.Debug.WriteLine($"HDR {id}: Estado = {hdr?.EstadoHojaRutaFlete}");
-            }
-
-            // Mostrar estado de TODAS las Guías
-            System.Diagnostics.Debug.WriteLine("\n--- GUÍAS (TODAS LAS DE LAS HDR SELECCIONADAS) ---");
-            foreach (var nro in todasLasGuiasDeHDR)
-            {
-                var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
-                if (guia == null)
-                {
-                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: NO ENCONTRADA");
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: Estado = {guia.EstadoEncomienda}");
-                    System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
-                    foreach (var hist in guia.HistorialEstadosGuia)
-                    {
-                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuia} - {hist.Descripcion}");
-                    }
-                }
-            }
-            System.Diagnostics.Debug.WriteLine("\n════════════════════════════════════════════\n");
-            // =============================================
 
             // refrescar listas públicas para que UI vea los cambios
             Refresh();
@@ -284,44 +212,7 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 }
             }
 
-            // ========== DEBUG TEMPORAL - ANTES ==========
-            System.Diagnostics.Debug.WriteLine("╔════════════════════════════════════════════╗");
-            System.Diagnostics.Debug.WriteLine("║       ANTES DE ASIGNAR                     ║");
-            System.Diagnostics.Debug.WriteLine("╚════════════════════════════════════════════╝");
-            System.Diagnostics.Debug.WriteLine($"DNI Fletero a asignar: {dniFletero}");
 
-            // Mostrar estado de HDR
-            System.Diagnostics.Debug.WriteLine("\n--- HOJAS DE RUTA ---");
-            foreach (var id in hojasIds)
-            {
-                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
-                System.Diagnostics.Debug.WriteLine($"HDR {id}: Estado = {hdr?.EstadoHojaRutaFlete}, DNI = {hdr?.DNIFletero}");
-                if (hdr != null)
-                {
-                    System.Diagnostics.Debug.WriteLine($"  Guías en esta HDR: {string.Join(", ", hdr.NumerosGuiaFlete.Select(n => n.NumeroGuia))}");
-                }
-            }
-
-            // Mostrar estado de TODAS las Guías de las HDR
-            System.Diagnostics.Debug.WriteLine("\n--- GUÍAS (TODAS LAS DE LAS HDR SELECCIONADAS) ---");
-            foreach (var nro in todasLasGuiasDeHDR)
-            {
-                var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
-                if (guia == null)
-                {
-                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: NO ENCONTRADA");
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: Estado = {guia.EstadoEncomienda}");
-                    System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
-                    foreach (var hist in guia.HistorialEstadosGuia)
-                    {
-                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuia} - {hist.Descripcion}");
-                    }
-                }
-            }
-            // ============================================
 
             // Actualizar HDR: PendienteAsignacion -> NoCumplida + asignar DNI
             foreach (var id in hojasIds)
@@ -355,41 +246,6 @@ namespace GrupoC_TP3.CU4_RecepcionFletero
                 }
             }
             GuiaAlmacen.GuardarGuia();
-
-            // ========== DEBUG TEMPORAL - DESPUÉS ==========
-            System.Diagnostics.Debug.WriteLine("\n╔════════════════════════════════════════════╗");
-            System.Diagnostics.Debug.WriteLine("║       DESPUÉS DE ASIGNAR                   ║");
-            System.Diagnostics.Debug.WriteLine("╚════════════════════════════════════════════╝");
-
-            // Mostrar estado de HDR
-            System.Diagnostics.Debug.WriteLine("\n--- HOJAS DE RUTA ---");
-            foreach (var id in hojasIds)
-            {
-                var hdr = hojasAlmacen.FirstOrDefault(h => h.HojaRutaFlete == id);
-                System.Diagnostics.Debug.WriteLine($"HDR {id}: Estado = {hdr?.EstadoHojaRutaFlete}, DNI = {hdr?.DNIFletero}");
-            }
-
-            // Mostrar estado de TODAS las Guías
-            System.Diagnostics.Debug.WriteLine("\n--- GUÍAS (TODAS LAS DE LAS HDR SELECCIONADAS) ---");
-            foreach (var nro in todasLasGuiasDeHDR)
-            {
-                var guia = guiasAlmacen.FirstOrDefault(g => g.NumeroGuia == nro);
-                if (guia == null)
-                {
-                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: NO ENCONTRADA");
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine($"Guía {nro}: Estado = {guia.EstadoEncomienda}");
-                    System.Diagnostics.Debug.WriteLine($"  Historial ({guia.HistorialEstadosGuia.Count} entradas):");
-                    foreach (var hist in guia.HistorialEstadosGuia)
-                    {
-                        System.Diagnostics.Debug.WriteLine($"    - {hist.Fecha:yyyy-MM-dd HH:mm:ss}: {hist.EstadoGuia} - {hist.Descripcion}");
-                    }
-                }
-            }
-            System.Diagnostics.Debug.WriteLine("\n════════════════════════════════════════════\n");
-            // =============================================
 
             // refrescar listas públicas para que UI vea los cambios
             Refresh();

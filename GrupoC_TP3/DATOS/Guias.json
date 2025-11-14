@@ -152,11 +152,11 @@
   {
     "NumeroGuia": 100000055,
     "CUITCUIL": 30112233445,
-    "CodPostalDest": 1650,
+    "CodPostalDest": 4600,
     "MetodoEntrega": 2,
     "DomicilioDest": "Calle Falsa 456",
     "TamanoCaja": 1,
-    "CodPostalOrig": 3099,
+    "CodPostalOrig": 1650,
     "DomicilioOrigen": "Beiro 1125",
     "NombreDestinatario": "Jorge",
     "ApellidoDestinatario": "Fernández",
@@ -164,15 +164,36 @@
     "Importe": 7300,
     "CargosFleteros": 600,
     "CargosAgencia": 50,
-    "CodAgenciaOrigen": 2001,
-    "CodCentroDistOrigen": 1001,
-    "EstadoEncomienda": 4,
+    "CodAgenciaOrigen": 2005,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 3,
     "HistorialEstadosGuia": [
       {
-        "EstadoGuia": 4,
+        "EstadoGuia": 3,
         "Fecha": "2025-10-24T08:00:00",
-        "Descripcion": "En transporte entre Centros de Distribucion"
-      },
+        "Descripcion": "Entregado en Centro de Distribucion de origen"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 100005556,
+    "CUITCUIL": 30112233445,
+    "CodPostalDest": 4600,
+    "MetodoEntrega": 2,
+    "DomicilioDest": "Calle Falsa 456",
+    "TamanoCaja": 1,
+    "CodPostalOrig": 1650,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Jorge",
+    "ApellidoDestinatario": "Fernández",
+    "DNIDestinatario": 27777888,
+    "Importe": 7300,
+    "CargosFleteros": 600,
+    "CargosAgencia": 50,
+    "CodAgenciaOrigen": 2005,
+    "CodCentroDistOrigen": 1000,
+    "EstadoEncomienda": 3,
+    "HistorialEstadosGuia": [
       {
         "EstadoGuia": 3,
         "Fecha": "2025-10-24T08:00:00",

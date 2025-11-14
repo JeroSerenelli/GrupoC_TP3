@@ -39,13 +39,24 @@
     ]
   },
   {
-    "PatenteMicro": "ABC500",
+    "PatenteMicro": "ABC400",
     "Recorridos": [
       {
         "FechaSalida": "2025-11-13T08:15:00",
         "FechaLlegada": "2025-11-13T18:00:00",
         "CentroDistribucionOrigen": 1000,
-        "CentroDistribucionDestino": 1002
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "ABC401",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-11-13T08:15:00",
+        "FechaLlegada": "2025-11-13T18:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1005
       }
     ]
   }

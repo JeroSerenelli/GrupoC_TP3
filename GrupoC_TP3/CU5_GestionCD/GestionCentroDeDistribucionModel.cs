@@ -48,6 +48,7 @@ namespace GrupoC_TP3.CU5_GestionCD
 
 
             paquetesRecibidos = hojasDeRutaFiltradas
+                                    .Where(h => h.EstadoHojaRutaMicro == EstadoHojaRutaMicro.EnCaminoACentroDeDistribucionDestino)
                                     .Where(h => h.CentroDistribucionDestino == CodigoCDActual)
                                     .SelectMany(h => h.NumerosGuiaMicro
                                                             .Select(g => GuiaAlmacen.guias.First(ga => ga.NumeroGuia == g.NumeroGuia))

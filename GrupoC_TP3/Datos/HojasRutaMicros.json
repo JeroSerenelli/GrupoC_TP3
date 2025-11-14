@@ -182,12 +182,23 @@
   },
   {
     "HojaRutaMicro": 900005,
-    "CentroDistribucionOrigen": 1001,
-    "CentroDistribucionDestino": 1000,
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1005,
     "NumerosGuiaMicro": [
       { "NumeroGuia": 100000055 }
     ],
-    "PatenteMicro": "ABC300",
+    "PatenteMicro": "ABC400",
+    "FechaEmisionHojaDeRuta": "2025-11-13T08:15:00",
+    "EstadoHojaRutaMicro": 0
+  },
+  {
+    "HojaRutaMicro": 900006,
+    "CentroDistribucionOrigen": 1000,
+    "CentroDistribucionDestino": 1005,
+    "NumerosGuiaMicro": [
+      { "NumeroGuia": 100005556 }
+    ],
+    "PatenteMicro": "ABC401",
     "FechaEmisionHojaDeRuta": "2025-11-13T08:15:00",
     "EstadoHojaRutaMicro": 1
   }

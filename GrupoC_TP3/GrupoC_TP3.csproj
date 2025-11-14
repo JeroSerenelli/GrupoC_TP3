@@ -96,7 +96,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Casos de Prueba\" />
+    <Folder Include="CasosPrueba\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>

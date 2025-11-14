@@ -212,7 +212,7 @@ namespace GrupoC_TP3.CU5_GestionCD
                 });
                 //Pasa del estado EnCaminoACentroDeDistribucionDestino a RecibidoEnCentroDeDistribucionDestino
                 hojaRuta.EstadoHojaRutaMicro = (EstadoHojaRutaMicro)2;
-                MessageBox.Show(hojaRuta.EstadoHojaRutaMicro.ToString());
+                //MessageBox.Show(hojaRuta.EstadoHojaRutaMicro.ToString());
 
 
                 //MessageBox.Show(guia.EstadoEncomienda.ToString() + "\n" + guia.HistorialEstadosGuia + "\n" + hojaRuta.EstadoHojaRutaMicro);

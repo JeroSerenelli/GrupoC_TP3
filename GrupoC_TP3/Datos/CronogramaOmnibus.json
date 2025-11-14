@@ -6,13 +6,24 @@
         "FechaSalida": "2025-11-11T08:00:00",
         "FechaLlegada": "2025-11-11T20:00:00",
         "CentroDistribucionOrigen": 1000,
-        "CentroDistribucionDestino": 1008
+        "CentroDistribucionDestino": 1002
       },
       {
         "FechaSalida": "2025-11-12T08:00:00",
         "FechaLlegada": "2025-11-12T20:00:00",
         "CentroDistribucionOrigen": 1000,
-        "CentroDistribucionDestino": 1008
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "ABC101",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-11-12T08:00:00",
+        "FechaLlegada": "2025-11-12T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1002
       }
     ]
   },
@@ -22,8 +33,19 @@
       {
         "FechaSalida": "2025-11-12T09:00:00",
         "FechaLlegada": "2025-11-12T19:30:00",
-        "CentroDistribucionOrigen": 1005,
-        "CentroDistribucionDestino": 1002
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "ABC201",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-11-12T09:00:00",
+        "FechaLlegada": "2025-11-12T19:30:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1000
       }
     ]
   },

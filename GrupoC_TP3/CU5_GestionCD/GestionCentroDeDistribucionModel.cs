@@ -58,7 +58,7 @@ namespace GrupoC_TP3.CU5_GestionCD
                                                                 Empresa = empresa.EmpresaOmnibus,
                                                                 HojaDeRuta = h.HojaRutaMicro.ToString(),
                                                                 NroGuia = ga.NumeroGuia,
-                                                                Estado = "En transpote a CD"
+                                                                Estado = "En transporte a CD"
                                                             }))
                                     .ToList();
 
@@ -72,7 +72,7 @@ namespace GrupoC_TP3.CU5_GestionCD
                                                                                Empresa = empresa.EmpresaOmnibus,
                                                                                HojaDeRuta = h.HojaRutaMicro.ToString(),
                                                                                NroGuia = ga.NumeroGuia,
-                                                                               Estado = "Listo para descpachar en CD"
+                                                                               Estado = "Listo para despachar en CD"
                                                                            }))
                                         .ToList();
 
@@ -212,15 +212,17 @@ namespace GrupoC_TP3.CU5_GestionCD
                 });
                 //Pasa del estado EnCaminoACentroDeDistribucionDestino a RecibidoEnCentroDeDistribucionDestino
                 hojaRuta.EstadoHojaRutaMicro = (EstadoHojaRutaMicro)2;
-
+                MessageBox.Show(hojaRuta.EstadoHojaRutaMicro.ToString());
 
 
                 //MessageBox.Show(guia.EstadoEncomienda.ToString() + "\n" + guia.HistorialEstadosGuia + "\n" + hojaRuta.EstadoHojaRutaMicro);
+               
 
             }
 
             GuiaAlmacen.GuardarGuia();
             HojaRutaMicroAlmacen.GuardarHojaDeRutaMicro();
+
 
             foreach (var paquete in paquetesParaEntregar)
             {

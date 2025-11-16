@@ -1,4 +1,5 @@
 ﻿using GrupoC_TP3.Almacenes;
+using GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -129,7 +130,7 @@ internal class RegistrarImposicionEnAgenciaModel
             return;
         }
 
-        if(!ClienteAlmacen.clientes.Any(c => c.CUITCUIL == encomiendas.Cliente))
+        if (!ClienteAlmacen.clientes.Any(c => c.CUITCUIL == encomiendas.Cliente))
         {
             MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
@@ -147,6 +148,10 @@ internal class RegistrarImposicionEnAgenciaModel
             .Select(cd => cd.CodCentroDist)
             .FirstOrDefault();
 
+        var numerosCreados = new List<int>();
+
+        
+
         for (int i = 0; i < encomiendas.CantidadCajas; i++)
         {
             int ultimoNumeroGuia = GuiaAlmacen.guias.LastOrDefault()?.NumeroGuia ?? 0;
@@ -163,7 +168,7 @@ internal class RegistrarImposicionEnAgenciaModel
                              && t.CentroDistribucionDestino == codCentroDistribucionDestino)
                              .Select(t => t.Importe)
                              .Single();
-            
+
             decimal cargoAgencia = 0;
 
             if (encomiendas.MetodoEntrega.Equals("Entrega en Domicilio", StringComparison.OrdinalIgnoreCase))
@@ -188,7 +193,7 @@ internal class RegistrarImposicionEnAgenciaModel
 
             cargoAgencia += AdicionalesYComisionesAlmacen.adicionalesComisiones
                                 .Where(c => c.Concepto == Concepto.EntregaAgencia)
-                                .Select(c => c.Monto).Single(); 
+                                .Select(c => c.Monto).Single();
 
             decimal finalAgencia = cargoAgencia / 2m;
 
@@ -208,7 +213,7 @@ internal class RegistrarImposicionEnAgenciaModel
                 {
                     "Retiro en Agencia" => MetodoEntrega.EntregaEnAgencia,
                     "Entrega en Domicilio" => MetodoEntrega.EntregaEnDomicilio,
-                    "Retiro en CD Destino"=> MetodoEntrega.EntregaEnCentroDeDistribucion
+                    "Retiro en CD Destino" => MetodoEntrega.EntregaEnCentroDeDistribucion
                 },
                 DomicilioDest = encomiendas.Domicilio,
                 TamañoCaja = encomiendas.TipoCaja switch
@@ -245,7 +250,96 @@ internal class RegistrarImposicionEnAgenciaModel
 
             GuiaAlmacen.GuardarGuia();
 
+            numerosCreados.Add(GuiaAlmacen.guias.Last().NumeroGuia);
+
             MessageBox.Show("La encomienda ha sido creada con exito. El numero de guia es: " + GuiaAlmacen.guias.Last().NumeroGuia.ToString(), "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        GenerarHojaDeRutaFleteParaRetiro(encomiendas, numerosCreados);
+        GenerarHojaDeRutaFleteParaEntrega(encomiendas, numerosCreados);
+    }
+
+
+    internal void GenerarHojaDeRutaFleteParaRetiro(Encomienda encomiendas, List<int> numerosGuiasCreadas)
+        {
+            if (numerosGuiasCreadas == null || numerosGuiasCreadas.Count == 0) return;
+
+            // 1) Número de hoja de ruta: último + 1
+            int nuevoNumeroHoja = (HojaRutaFleteAlmacen.hojasRutaFletes.LastOrDefault()?.HojaRutaFlete ?? 0) + 1;
+
+            // 2) DNI del fletero por CP de ORIGEN de la encomienda
+            int cpOrigen = encomiendas.CodigoPostal; // <-- usa el CP de la encomienda
+            int dniFletero = FleteroAlmacen.fleteros
+                                .FirstOrDefault(f => f.CodPostalActividad == cpOrigen)?.DNIFletero ?? 0;
+
+            // 3) Armar los NumerosGuiaFlete con estado inicial apropiado
+            var numerosGuiaFlete = numerosGuiasCreadas
+                .Distinct()
+                .Select(n => new NumeroGuiaFlete
+                {
+                    NumeroGuia = n,
+                    // Para retiros por domicilio recién creados:
+                    EstadoEncomienda = EstadoEncomiendaEnum.ListoParaRetirarEnDomicilio
+                })
+                .ToList();
+
+            // 4) Crear entidad y persistir
+            var hoja = new HojaRutaFleteEntidad
+            {
+                HojaRutaFlete = nuevoNumeroHoja,
+                NumerosGuiaFlete = numerosGuiaFlete,
+                DNIFletero = dniFletero,                       // puede quedar 0 si no hay fletero para ese CP
+                EstadoHojaRutaFlete = EstadoHojaRutaFlete.PendienteAsignacion,
+                TipoHojaRuta = TipoHojaRuta.Retiro,
+                CodPostal = cpOrigen
+            };
+
+            HojaRutaFleteAlmacen.hojasRutaFletes.Add(hoja);
+            HojaRutaFleteAlmacen.GuardarHojaDeRutaFlete();
+        }
+
+        internal void GenerarHojaDeRutaFleteParaEntrega(Encomienda encomiendas, List<int> numerosGuiasCreadas)
+        {
+            if (encomiendas.MetodoEntrega == "Entrega en Domicilio")
+            {
+
+                if (numerosGuiasCreadas == null || numerosGuiasCreadas.Count == 0) return;
+
+                // 1) Número de hoja de ruta: último + 1
+                int nuevoNumeroHoja = (HojaRutaFleteAlmacen.hojasRutaFletes.LastOrDefault()?.HojaRutaFlete ?? 0) + 1;
+
+                // 2) DNI del fletero por CP de ORIGEN de la encomienda
+                int cpDestino = AgenciaAlmacen.agencias
+                                    .Where(a => a.CodAgencia == encomiendas.CodigoAgencia)
+                                    .Select(a => a.CodPostalAgencia)
+                                    .FirstOrDefault(); // <-- usa el CP de la encomienda
+                int dniFletero = FleteroAlmacen.fleteros
+                                    .FirstOrDefault(f => f.CodPostalActividad == cpDestino)?.DNIFletero ?? 0;
+
+                // 3) Armar los NumerosGuiaFlete con estado inicial apropiado
+                var numerosGuiaFlete = numerosGuiasCreadas
+                    .Distinct()
+                    .Select(n => new NumeroGuiaFlete
+                    {
+                        NumeroGuia = n,
+                        // Para retiros por domicilio recién creados:
+                        EstadoEncomienda = EstadoEncomiendaEnum.ListoParaRetirarEnDomicilio
+                    })
+                    .ToList();
+
+                // 4) Crear entidad y persistir
+                var hoja = new HojaRutaFleteEntidad
+                {
+                    HojaRutaFlete = nuevoNumeroHoja,
+                    NumerosGuiaFlete = numerosGuiaFlete,
+                    DNIFletero = dniFletero,                       // puede quedar 0 si no hay fletero para ese CP
+                    EstadoHojaRutaFlete = EstadoHojaRutaFlete.PendienteAsignacion,
+                    TipoHojaRuta = TipoHojaRuta.Entrega,
+                    CodPostal = cpDestino
+                };
+
+                HojaRutaFleteAlmacen.hojasRutaFletes.Add(hoja);
+                HojaRutaFleteAlmacen.GuardarHojaDeRutaFlete();
+            }
     }
 }

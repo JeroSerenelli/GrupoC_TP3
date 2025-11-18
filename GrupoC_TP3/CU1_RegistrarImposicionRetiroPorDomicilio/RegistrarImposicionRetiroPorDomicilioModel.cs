@@ -8,6 +8,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
         private Dictionary<int, List<LocalidadEntidad>> _localidadesPorCodProv;
         private Dictionary<string, int> _codProvPorNombre;
         private bool _indicesConstruidos;
+        private Recorrido cdDestino;
 
         private void ConstruirIndicesProvinciasYLocalidades()
         {
@@ -288,6 +289,7 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
 
             GenerarHojaDeRutaFleteParaRetiro(encomiendas, numerosCreados);
             GenerarHojaDeRutaFleteParaEntrega(encomiendas, numerosCreados);
+            GenerarHojaDeRutaMicro(encomiendas, numerosCreados);
 
         }
 
@@ -369,6 +371,103 @@ namespace GrupoC_TP3.CU1_RegistrarImposicionRetiroPorDomicilio
                 HojaRutaFleteAlmacen.hojasRutaFletes.Add(hoja);
                 HojaRutaFleteAlmacen.GuardarHojaDeRutaFlete();
             }
+
+        }
+
+        internal void GenerarHojaDeRutaMicro(EncomiendasImpuestas encomiendas, List<int> numerosGuiasCreadas)
+        {
+
+
+            if (numerosGuiasCreadas == null || numerosGuiasCreadas.Count == 0) return;
+
+            // 1) Número de hoja de ruta: último + 1
+            int nuevoNumeroHoja = (HojaRutaMicroAlmacen.hojasRutaMicros.LastOrDefault()?.HojaRutaMicro ?? 0) + 1;
+
+            // 2) DNI del fletero por CP de ORIGEN de la encomienda
+            //int cpDestino = encomiendas.CPDestino; // <-- usa el CP de la encomienda
+            //int dniFletero = FleteroAlmacen.fleteros
+            //                 .FirstOrDefault(f => f.CodPostalActividad == cpDestino)?.DNIFletero ?? 0;
+
+            // 3) Armar los NumerosGuiaFlete con estado inicial apropiado
+            var numerosGuiaMicro = numerosGuiasCreadas
+                .Distinct()
+                .Select(n => new NumeroGuiaMicro
+                {
+                    NumeroGuia = n,
+                    // Para retiros por domicilio recién creados:
+                    EstadoEncomienda = EstadoEncomiendaEnum.EntregadoEnCentroDeDistribucion
+                })
+                .ToList();
+
+            static DateTime ProximaFecha(IReadOnlyCollection<DayOfWeek> dias, TimeSpan hora, DateTime refNow)
+            {
+                // Asume que 'hora' es la hora en que el micro inicia su cronograma (primer CD del recorrido).
+                // Si tu cronograma guarda hora "en cada parada", reemplazalo por esa hora en el origen.
+                for (int i = 0; i <= 7; i++)
+                {
+                    var d = refNow.Date.AddDays(i);
+                    if (dias.Contains(d.DayOfWeek))
+                    {
+                        var candidato = d + hora;
+                        if (candidato >= refNow) return candidato;
+                    }
+                }
+                // En teoría no llega acá, pero por las dudas:
+                return refNow;
+            }
+
+            // --- 3) Buscar el mejor micro que haga DIRECTO origen -> destino ---
+            var candidato = CronogramaOmnibusAlmacen.cronogramasOmnibus
+                .Select(c => new
+                {
+                    Crono = c,
+                    IdxO = CentroDistribucionAlmacen.centrosDistribucion
+                                                            .First(cd => cd.CodPostal == encomiendas.CPRetiro)
+                                                            .CodCentroDist,
+                    IdxD = CentroDistribucionAlmacen.centrosDistribucion
+                                                            .First(cd => cd.CodPostal == encomiendas.CPDestino)
+                                                            .CodCentroDist,
+
+                })
+                .Where(x => x.IdxO >= 0 && x.IdxD >= 0) // respeta el sentido
+                .Select(x =>
+                {
+                    // Si tuvieras tiempos por tramo, podés sumar el offset al llegar al origen:
+                    // var offset = TimeSpan.FromMinutes(x.IdxO * MINUTOS_PROMEDIO_POR_TRAMO);
+                      // ej. TimeSpan 08:00
+                     // + offset si corresponde
+                    return new
+                    {
+                        x.Crono.PatenteMicro,
+                       
+                       
+                    };
+                })
+                    // (tie-break: el que arranca más cerca del origen)
+                .FirstOrDefault();
+
+            //var patenteMicro = CronogramaOmnibusAlmacen.cronogramasOmnibus
+            //   .Select(e => e.PatenteMicro)
+            // .Where(e => CronogramaOmnibusAlmacen.reco)
+
+            // 4) Crear entidad y persistir
+            var hoja = new HojaRutaMicroEntidad
+            {
+                HojaRutaMicro = nuevoNumeroHoja,
+                NumerosGuiaMicro = numerosGuiaMicro,
+                PatenteMicro = candidato.PatenteMicro,
+                FechaEmisionHojaDeRuta = DateTime.Now,
+                EstadoHojaRutaMicro = EstadoHojaRutaMicro.ListoParaDespacharEnCentroDeDistribucion,
+                CentroDistribucionDestino = CentroDistribucionAlmacen.centrosDistribucion
+                                                            .First(cd => cd.CodPostal == encomiendas.CPDestino)
+                                                            .CodCentroDist,
+                CentroDistribucionOrigen = CentroDistribucionAlmacen.centrosDistribucion
+                                                            .First(cd => cd.CodPostal == encomiendas.CPRetiro)
+                                                            .CodCentroDist,
+            };
+
+            HojaRutaMicroAlmacen.hojasRutaMicros.Add(hoja);
+            HojaRutaMicroAlmacen.GuardarHojaDeRutaMicro();
         }
     }
 }

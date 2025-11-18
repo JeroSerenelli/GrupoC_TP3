@@ -65,7 +65,8 @@ namespace GrupoC_TP3.CU5_GestionCD
             paquetesParaEntregar = hojasDeRutaFiltradas
                                         .Where(h => h.EstadoHojaRutaMicro == EstadoHojaRutaMicro.ListoParaDespacharEnCentroDeDistribucion)
                                         .Where(h => h.CentroDistribucionOrigen == CodigoCDActual)
-                                        .SelectMany(h => h.NumerosGuiaMicro.Select(g => GuiaAlmacen.guias.First(ga => ga.NumeroGuia == g.NumeroGuia))
+                                        .SelectMany(h => h.NumerosGuiaMicro.Select(g => GuiaAlmacen.guias.First(ga => ga.NumeroGuia == g.NumeroGuia &&
+                                                                                                                ga.EstadoEncomienda == EstadoEncomiendaEnum.EntregadoEnCentroDeDistribucion))
                                                                            .Select(ga => new EncomiendasEnTransporte
                                                                            {
                                                                                Patente = patente,
@@ -90,87 +91,7 @@ namespace GrupoC_TP3.CU5_GestionCD
                 return;
             }
 
-            // COdigo Andres
-
-            // ahora valido si hay encomiendas para recibir o entregar
-
-            /*
-            if (!paquetesRecibidos.Any())
-            {
-                MessageBox.Show($"No hay encomiendas para recibir del vehiculo {encomiendasEnTransporte.Patente}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            
-            if (!paquetesParaEntregar.Any())
-            {
-                MessageBox.Show($"No hay encomiendas para entregar al vehiculo {encomiendasEnTransporte.Patente}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-
-            var empresa = EmpresaOmnibusAlmacen.empresasOmnibus
-                                               .Where(e => e.Unidades.Any(u => u.PatenteMicro == encomiendasEnTransporte.Patente))
-                                               .Single();
-
-            var hojaDeRutaDeMicro = HojaRutaMicroAlmacen.hojasRutaMicros
-                                                .Where(p => p.PatenteMicro == encomiendasEnTransporte.Patente)
-                                                .ToList();
-
-            paquetesRecibidos = hojaDeRutaDeMicro.Select(h => new
-            {
-                h.HojaRutaMicro,
-                Guias = h.NumerosGuiaMicro
-                            .Select(g => GuiaAlmacen.guias.Single(ga => ga.NumeroGuia == g.NumeroGuia))
-                            .Where(g => g.EstadoEncomienda == EstadoEncomienda.EnTransporteEntreCentroDeDistribucion)
-                            .ToList()
-            })
-            .Where(h => h.Guias.Any()) //las que tengan alguna guia a recibir.
-            .SelectMany(h => h.Guias.Select(hg => new { h.HojaRutaMicro, hg.NumeroGuia, hg.EstadoEncomienda }))
-            .Select(h => new EncomiendasEnTransporte
-            {
-                Patente = encomiendasEnTransporte.Patente,
-                Empresa = empresa.EmpresaOmnibus,
-                HojaDeRuta = h.HojaRutaMicro.ToString(),
-                NroGuia = h.NumeroGuia,
-                Estado = "En camino al CD"
-            }).ToList();
-
-
-
-            paquetesParaEntregar = hojaDeRutaDeMicro.Select(h => new
-            {
-                h.HojaRutaMicro,
-                Guias = h.NumerosGuiaMicro
-                            .Select(g => GuiaAlmacen.guias.Single(ga => ga.NumeroGuia == g.NumeroGuia))
-                            .Where(g => g.EstadoEncomienda == EstadoEncomienda.EntregadoEnCentroDeDistribucion)
-                            .ToList()
-            })
-            .Where(h => h.Guias.Any()) //las que tengan alguna guia a recibir.
-            .SelectMany(h => h.Guias.Select(hg => new { h.HojaRutaMicro, hg.NumeroGuia, hg.EstadoEncomienda }))
-            .Select(h => new EncomiendasEnTransporte
-            {
-                Patente = encomiendasEnTransporte.Patente,
-                Empresa = empresa.EmpresaOmnibus,
-                HojaDeRuta = h.HojaRutaMicro.ToString(),
-                NroGuia = h.NumeroGuia,
-                Estado = "En camino al CD"
-            }).ToList();
-
-            if (!paquetesRecibidos.Any())
-            {
-                MessageBox.Show($"No hay encomiendas para recibir del vehículo {patente}.", "Información",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            if (!paquetesParaEntregar.Any())
-            {
-                MessageBox.Show($"No hay encomiendas para entregar al vehículo {patente}.", "Información",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            */
+           
 
             return;
         }
@@ -271,70 +192,11 @@ namespace GrupoC_TP3.CU5_GestionCD
                 ;
 
 
-                /* ESTE CONDICIONAL SIRVE PARA VALIDAR CP CD vs CP Destino de Guia y seleccionar el estado correcto en caso de multiples CDs
-                 int codigoPostalCDActual = centroDestino.CodPostal;
-
-                 if (codigoPostalCDActual == guia.CodPostalDest)
-                 {
-                     guia.EstadoEncomienda = EstadoEncomienda.RecibidoEnCentroDistribucionDestino;
-                     guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
-                     {
-                         EstadoGuiaEnum = EstadoEncomienda.RecibidoEnCentroDistribucionDestino,
-                         Fecha = DateTime.Now,
-                         Descripcion = $"Recibido en centro de distribución destino (CD {centroDestino.Nombre})."
-                     });
-                 }
-                 else
-                 {
-                     guia.EstadoEncomienda = EstadoEncomienda.EntregadoEnCentroDeDistribucion;
-                     guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
-                     {
-                         EstadoGuiaEnum = EstadoEncomienda.EntregadoEnCentroDeDistribucion,
-                         Fecha = DateTime.Now,
-                         Descripcion = $"Recibido en centro de distribución intermedio (CD {centroDestino.Nombre})."
-                     });
-                 }*/
             }
 
 
 
 
-
-            //CODIGO ANTERIOR DE ANDRES
-            //recibir todos los "paquetes recibidos"
-            //foreach (var paquete in paquetesRecibidos)
-            //{
-            //    var nroGuia = paquete.NroGuia;
-            //    var guia = GuiaAlmacen.guias.Single(g => g.NumeroGuia == nroGuia);
-            //    guia.EstadoEncomienda = EstadoEncomienda.EntregadoEnCentroDeDistribucion;
-            //    
-            //Verificar si el historial se graba antes o despues.
-            //    guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
-            //    {
-            //        Descripcion = "En camino a domicilio o agencia.",
-            //        Fecha = DateTime.Now,
-            //        EstadoGuiaEnum = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion
-            //    });
-            //}
-
-
-            //foreach (var paquete in paquetesParaEntregar)
-            //{
-            //    var nroGuia = paquete.NroGuia;
-            //    var guia = GuiaAlmacen.guias.Single(g => g.NumeroGuia == nroGuia);
-            //    guia.EstadoEncomienda = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion;
-
-            //Verificar si el historial se graba antes o despues.    
-            //    guia.HistorialEstadosGuia.Add(new HistorialEstadoGuia
-            //    {
-            //        Descripcion = "En transporte entre centros de distribucion",
-            //        Fecha = DateTime.Now,
-            //        EstadoGuiaEnum = EstadoEncomienda.EnTransporteEntreCentroDeDistribucion
-            //    });
-            //}
-
-
-            //... y eso es todo amigos?
         }
 
     };

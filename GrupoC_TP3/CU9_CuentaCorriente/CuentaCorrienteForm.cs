@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using GrupoC_TP3.Almacenes;
 
 
     namespace GrupoC_TP3.CU9_CuentaCorriente
@@ -74,6 +75,7 @@ using System.Windows.Forms;
                     return;
                 }
 
+
                 var estado = _model.CalcularEstadoCuenta(cuit!, inicio, fin);
 
                 textBoxCliente.Text = estado.Cliente.RazonSocial;
@@ -104,6 +106,12 @@ using System.Windows.Forms;
                     itemFin.SubItems.Add(estado.SaldoFinal.ToString("N2"));
                     itemFin.SubItems.Add("Saldo final");
                     listViewCuentaCorriente.Items.Add(itemFin);
+                }
+
+                else
+                {
+                MessageBox.Show("El cliente no tiene operaciones en el periodo seleccionado", "No encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
                 }
 
                 listViewCuentaCorriente.EndUpdate();

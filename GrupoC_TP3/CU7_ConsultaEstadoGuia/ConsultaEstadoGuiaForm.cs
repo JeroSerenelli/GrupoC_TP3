@@ -50,7 +50,7 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 
             try
             {
-                var historial = modelo.ObtenerHistorialPorNumero(numeroGuia);
+                var historial = modelo.ObtenerHistorialEstados(numeroGuia);
 
                 listView1.BeginUpdate();
                 foreach (var g in historial) 

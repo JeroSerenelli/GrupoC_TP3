@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 {
-    public class Guia
+    public class EstadoGuiaHistorial
     {
         public long? NumeroGuia { get; set; } = null;
         public string EstadoGuia { get; set; }

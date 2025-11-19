@@ -12,7 +12,7 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 {
     internal class ConsultaEstadoGuiaModel
     {
-        public List<Guia> ObtenerHistorialPorNumero(long numeroGuia)
+        public List<EstadoGuiaHistorial> ObtenerHistorialEstados(long numeroGuia)
         {
             if (numeroGuia <= 0)
                 throw new ArgumentException("El número de guía debe ser positivo.");
@@ -23,7 +23,7 @@ namespace GrupoC_TP3.CU7_ConsultaEstadoGuia
 
             var historial = guia.HistorialEstadosGuia
                 .OrderByDescending(h => h.Fecha)
-                .Select(h => new Guia
+                .Select(h => new EstadoGuiaHistorial
                 {
                     NumeroGuia = numeroGuia,                       
                     EstadoGuia = h.Descripcion,                    

@@ -30,6 +30,8 @@ namespace GrupoC_TP3.CU5_GestionCD
 
         }
 
+
+
         private void buttonBuscarMicro_Click(object sender, EventArgs e)
         {
             //VALIDACION 1: Que el campo no esté vacío - mensaje de error "Por favor ingrese un valor en el campo "Patente" para realizar una busqueda".
@@ -53,27 +55,33 @@ namespace GrupoC_TP3.CU5_GestionCD
 
 
 
-            foreach (var EncomiendasEnTransporte in modelo.paquetesRecibidos)
+            if (modelo.paquetesRecibidos != null)
             {
-                if (EncomiendasEnTransporte != null && EncomiendasEnTransporte.Patente == textBoxPatente.Text.ToUpper())
+                foreach (var EncomiendasEnTransporte in modelo.paquetesRecibidos)
                 {
-                    var listItem = new ListViewItem();
-                    listItem.Text = EncomiendasEnTransporte.HojaDeRuta.ToString();
-                    listItem.SubItems.Add(EncomiendasEnTransporte.NroGuia.ToString());
-                    listItem.SubItems.Add(EncomiendasEnTransporte.Estado.ToString());
-                    listViewEncomiendasARecibir.Items.Add(listItem);
+                    if (EncomiendasEnTransporte != null && EncomiendasEnTransporte.Patente == textBoxPatente.Text.ToUpper())
+                    {
+                        var listItem = new ListViewItem();
+                        listItem.Text = EncomiendasEnTransporte.HojaDeRuta.ToString();
+                        listItem.SubItems.Add(EncomiendasEnTransporte.NroGuia.ToString());
+                        listItem.SubItems.Add(EncomiendasEnTransporte.Estado.ToString());
+                        listViewEncomiendasARecibir.Items.Add(listItem);
+                    }
                 }
             }
 
-            foreach (var EncomiendasEnTransporte in modelo.paquetesParaEntregar)
+            if (modelo.paquetesParaEntregar != null)
             {
-                if (EncomiendasEnTransporte != null && EncomiendasEnTransporte.Patente == textBoxPatente.Text.ToUpper())
+                foreach (var EncomiendasEnTransporte in modelo.paquetesParaEntregar)
                 {
-                    var listItem = new ListViewItem();
-                    listItem.Text = EncomiendasEnTransporte.HojaDeRuta.ToString();
-                    listItem.SubItems.Add(EncomiendasEnTransporte.NroGuia.ToString());
-                    listItem.SubItems.Add(EncomiendasEnTransporte.Estado.ToString());
-                    listViewEncomiendasADespachar.Items.Add(listItem);
+                    if (EncomiendasEnTransporte != null && EncomiendasEnTransporte.Patente == textBoxPatente.Text.ToUpper())
+                    {
+                        var listItem = new ListViewItem();
+                        listItem.Text = EncomiendasEnTransporte.HojaDeRuta.ToString();
+                        listItem.SubItems.Add(EncomiendasEnTransporte.NroGuia.ToString());
+                        listItem.SubItems.Add(EncomiendasEnTransporte.Estado.ToString());
+                        listViewEncomiendasADespachar.Items.Add(listItem);
+                    }
                 }
             }
         }

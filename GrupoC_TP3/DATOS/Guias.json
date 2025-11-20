@@ -1,42 +1,83 @@
 [
   {
-    "NumeroGuia": 100000049,
+    "NumeroGuia": 100293010,
     "CUITCUIL": 20304567891,
-    "CodPostalDest": 4726,
+    "CodPostalDest": 8504,
     "MetodoEntrega": 1,
     "DomicilioDest": "Av. Siempre Viva 742",
     "TamanoCaja": 0,
-    "CodPostalOrig": 1650,
+    "CodPostalOrig": 4203,
     "DomicilioOrigen": "Beiro 1125",
     "NombreDestinatario": "Luis",
     "ApellidoDestinatario": "Lopez",
-    "DNIDestinatario": 12345678,
-    "Importe": 6500,
+    "DNIDestinatario": 34566123,
+    "Importe": 32000,
     "CargosFleteros": 500,
     "CargosAgencia": 0,
-    "CodAgenciaOrigen": 2000,
-    "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 5,
+    "CodAgenciaOrigen": 2009,
+    "CodCentroDistOrigen": 1009,
+    "EstadoEncomienda": 9,
     "HistorialEstadosGuia": [
       {
-        "EstadoGuia": 5,
-        "Fecha": "2025-10-27T08:00:00",
-        "Descripcion": "Recibido En Centro Distibucion Destino"
+        "EstadoGuia": 9,
+        "Fecha": "2025-11-10T08:00:00",
+        "Descripcion": "Facturado"
       },
       {
-        "EstadoGuia": 4,
-        "Fecha": "2025-10-25T08:00:00",
-        "Descripcion": "En transporte entre Centros de Distribucion"
+        "EstadoGuia": 8,
+        "Fecha": "2025-10-25T09:45:00",
+        "Descripcion": "Entregado"
       },
       {
-        "EstadoGuia": 3,
+        "EstadoGuia": 2,
         "Fecha": "2025-10-24T08:00:00",
-        "Descripcion": "Entregado en Centro de Distribucion de origen"
+        "Descripcion": "En camino a Agencia o Domicilio"
       },
       {
         "EstadoGuia": 1,
         "Fecha": "2025-10-22T08:00:00",
-        "Descripcion": "Listo para retirar en domicilio"
+        "Descripcion": "Listo para retirar en Agencia"
+      }
+    ]
+  },
+  {
+    "NumeroGuia": 200900004,
+    "CUITCUIL": 20304567891,
+    "CodPostalDest": 8504,
+    "MetodoEntrega": 1,
+    "DomicilioDest": "Av. Siempre Viva 742",
+    "TamanoCaja": 0,
+    "CodPostalOrig": 4203,
+    "DomicilioOrigen": "Beiro 1125",
+    "NombreDestinatario": "Luis",
+    "ApellidoDestinatario": "Lopez",
+    "DNIDestinatario": 34566123,
+    "Importe": 8500,
+    "CargosFleteros": 500,
+    "CargosAgencia": 0,
+    "CodAgenciaOrigen": 2009,
+    "CodCentroDistOrigen": 1009,
+    "EstadoEncomienda": 5,
+    "HistorialEstadosGuia": [
+      {
+        "EstadoGuia": 5,
+        "Fecha": "2025-10-31T08:00:00",
+        "Descripcion": "En transporte entre Centros de Distribucion"
+      },
+      {
+        "EstadoGuia": 3,
+        "Fecha": "2025-10-25T09:45:00",
+        "Descripcion": "Entregado en Centro de Distribucion de origen"
+      },
+      {
+        "EstadoGuia": 2,
+        "Fecha": "2025-10-24T08:00:00",
+        "Descripcion": "En camino a Agencia o Domicilio"
+      },
+      {
+        "EstadoGuia": 1,
+        "Fecha": "2025-10-22T08:00:00",
+        "Descripcion": "Listo para retirar en Agencia"
       }
     ]
   },
@@ -186,32 +227,6 @@
     ]
   },
   {
-    "NumeroGuia": 100100054,
-    "CUITCUIL": 30112233445,
-    "CodPostalDest": 4726,
-    "MetodoEntrega": 2,
-    "DomicilioDest": "Calle Falsa 456",
-    "TamanoCaja": 1,
-    "CodPostalOrig": 1650,
-    "DomicilioOrigen": "Beiro 1125",
-    "NombreDestinatario": "Jorge",
-    "ApellidoDestinatario": "Fernández",
-    "DNIDestinatario": 27777888,
-    "Importe": 7300,
-    "CargosFleteros": 600,
-    "CargosAgencia": 50,
-    "CodAgenciaOrigen": 2000,
-    "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 3,
-    "HistorialEstadosGuia": [
-      {
-        "EstadoGuia": 3,
-        "Fecha": "2025-10-24T08:00:00",
-        "Descripcion": "Entregado en Centro de Distribucion de origen"
-      }
-    ]
-  },
-  {
     "NumeroGuia": 100000055,
     "CUITCUIL": 30112233445,
     "CodPostalDest": 4600,
@@ -260,379 +275,6 @@
         "EstadoGuia": 3,
         "Fecha": "2025-10-24T08:00:00",
         "Descripcion": "Entregado en Centro de Distribucion de origen"
-      }
-    ]
-  },
-  {
-    "NumeroGuia": 101000001,
-    "CUITCUIL": 20304567891,
-    "CodPostalDest": 4600,
-    "MetodoEntrega": 1,
-    "DomicilioDest": "Av. Siempre Viva 742",
-    "TamanoCaja": 0,
-    "CodPostalOrig": 3099,
-    "DomicilioOrigen": "Beiro 1125",
-    "NombreDestinatario": "Luis",
-    "ApellidoDestinatario": "Lopez",
-    "DNIDestinatario": 12345678,
-    "Importe": 6500,
-    "CargosFleteros": 500,
-    "CargosAgencia": 0,
-    "CodAgenciaOrigen": 2006,
-    "CodCentroDistOrigen": 1010,
-    "EstadoEncomienda": 9,
-    "HistorialEstadosGuia": [
-      {
-        "EstadoGuia": 9,
-        "Fecha": "2025-11-01T12:00:00",
-        "Descripcion": "Facturado"
-      },
-      {
-        "EstadoGuia": 8,
-        "Fecha": "2025-10-31T12:00:00",
-        "Descripcion": "Entregado"
-      },
-      {
-        "EstadoGuia": 7,
-        "Fecha": "2025-10-31T08:00:00",
-        "Descripcion": "En camino a domicilio"
-      },
-      {
-        "EstadoGuia": 5,
-        "Fecha": "2025-10-27T08:00:00",
-        "Descripcion": "En camino a Centro de Distribucion de destino"
-      },
-      {
-        "EstadoGuia": 4,
-        "Fecha": "2025-10-25T08:00:00",
-        "Descripcion": "En transporte entre Centros de Distribucion"
-      },
-      {
-        "EstadoGuia": 3,
-        "Fecha": "2025-10-24T08:00:00",
-        "Descripcion": "Entregado en Centro de Distribucion de origen"
-      },
-      {
-        "EstadoGuia": 1,
-        "Fecha": "2025-10-22T08:00:00",
-        "Descripcion": "Listo para retirar en domicilio"
-      }
-    ]
-  },
-  {
-    "NumeroGuia": 100000002,
-    "CUITCUIL": 27311222334,
-    "CodPostalDest": 1650,
-    "MetodoEntrega": 1,
-    "DomicilioDest": "Av. Siempre Viva 742",
-    "TamanoCaja": 0,
-    "CodPostalOrig": 2300,
-    "DomicilioOrigen": "Beiro 1125",
-    "NombreDestinatario": "Luis",
-    "ApellidoDestinatario": "Lopez",
-    "DNIDestinatario": 12345678,
-    "Importe": 6500,
-    "CargosFleteros": 500,
-    "CargosAgencia": 0,
-    "CodAgenciaOrigen": 2000,
-    "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 9,
-    "HistorialEstadosGuia": [
-      {
-        "EstadoGuia": 9,
-        "Fecha": "2025-11-04T12:00:00",
-        "Descripcion": "Facturado"
-      },
-      {
-        "EstadoGuia": 8,
-        "Fecha": "2025-10-31T12:00:00",
-        "Descripcion": "Entregado"
-      },
-      {
-        "EstadoGuia": 7,
-        "Fecha": "2025-10-31T08:00:00",
-        "Descripcion": "En camino a domicilio"
-      },
-      {
-        "EstadoGuia": 5,
-        "Fecha": "2025-10-27T08:00:00",
-        "Descripcion": "En camino a Centro de Distribucion de destino"
-      },
-      {
-        "EstadoGuia": 4,
-        "Fecha": "2025-10-25T08:00:00",
-        "Descripcion": "En transporte entre Centros de Distribucion"
-      },
-      {
-        "EstadoGuia": 3,
-        "Fecha": "2025-10-24T08:00:00",
-        "Descripcion": "Entregado en Centro de Distribucion de origen"
-      },
-      {
-        "EstadoGuia": 1,
-        "Fecha": "2025-10-22T08:00:00",
-        "Descripcion": "Listo para retirar en domicilio"
-      }
-    ]
-  },
-  {
-    "NumeroGuia": 100000072,
-    "CUITCUIL": 27311222334,
-    "CodPostalDest": 1650,
-    "MetodoEntrega": 1,
-    "DomicilioDest": "Av. Siempre Viva 742",
-    "TamanoCaja": 0,
-    "CodPostalOrig": 2300,
-    "DomicilioOrigen": "Beiro 1125",
-    "NombreDestinatario": "Luis",
-    "ApellidoDestinatario": "Lopez",
-    "DNIDestinatario": 12345678,
-    "Importe": 9500,
-    "CargosFleteros": 500,
-    "CargosAgencia": 0,
-    "CodAgenciaOrigen": 2000,
-    "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 9,
-    "HistorialEstadosGuia": [
-      {
-        "EstadoGuia": 9,
-        "Fecha": "2025-11-04T12:00:00",
-        "Descripcion": "Facturado"
-      },
-      {
-        "EstadoGuia": 8,
-        "Fecha": "2025-10-31T12:00:00",
-        "Descripcion": "Entregado"
-      },
-      {
-        "EstadoGuia": 7,
-        "Fecha": "2025-10-31T08:00:00",
-        "Descripcion": "En camino a domicilio"
-      },
-      {
-        "EstadoGuia": 5,
-        "Fecha": "2025-10-27T08:00:00",
-        "Descripcion": "En camino a Centro de Distribucion de destino"
-      },
-      {
-        "EstadoGuia": 4,
-        "Fecha": "2025-10-25T08:00:00",
-        "Descripcion": "En transporte entre Centros de Distribucion"
-      },
-      {
-        "EstadoGuia": 3,
-        "Fecha": "2025-10-24T08:00:00",
-        "Descripcion": "Entregado en Centro de Distribucion de origen"
-      },
-      {
-        "EstadoGuia": 1,
-        "Fecha": "2025-10-22T08:00:00",
-        "Descripcion": "Listo para retirar en domicilio"
-      }
-    ]
-  },
-  {
-    "NumeroGuia": 100000071,
-    "CUITCUIL": 27311222334,
-    "CodPostalDest": 1650,
-    "MetodoEntrega": 1,
-    "DomicilioDest": "Av. Siempre Viva 742",
-    "TamanoCaja": 0,
-    "CodPostalOrig": 2300,
-    "DomicilioOrigen": "Beiro 1125",
-    "NombreDestinatario": "Luis",
-    "ApellidoDestinatario": "Lopez",
-    "DNIDestinatario": 12345678,
-    "Importe": 9500,
-    "CargosFleteros": 500,
-    "CargosAgencia": 0,
-    "CodAgenciaOrigen": 2000,
-    "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 9,
-    "HistorialEstadosGuia": [
-      {
-        "EstadoGuia": 9,
-        "Fecha": "2025-11-04T12:00:00",
-        "Descripcion": "Facturado"
-      },
-      {
-        "EstadoGuia": 8,
-        "Fecha": "2025-10-31T12:00:00",
-        "Descripcion": "Entregado"
-      },
-      {
-        "EstadoGuia": 7,
-        "Fecha": "2025-10-31T08:00:00",
-        "Descripcion": "En camino a domicilio"
-      },
-      {
-        "EstadoGuia": 5,
-        "Fecha": "2025-10-27T08:00:00",
-        "Descripcion": "En camino a Centro de Distribucion de destino"
-      },
-      {
-        "EstadoGuia": 4,
-        "Fecha": "2025-10-25T08:00:00",
-        "Descripcion": "En transporte entre Centros de Distribucion"
-      },
-      {
-        "EstadoGuia": 3,
-        "Fecha": "2025-10-24T08:00:00",
-        "Descripcion": "Entregado en Centro de Distribucion de origen"
-      },
-      {
-        "EstadoGuia": 1,
-        "Fecha": "2025-10-22T08:00:00",
-        "Descripcion": "Listo para retirar en domicilio"
-      }
-    ]
-  },
-
-  {
-    "NumeroGuia": 100000075,
-    "CUITCUIL": 27311222334,
-    "CodPostalDest": 1650,
-    "MetodoEntrega": 1,
-    "DomicilioDest": "Av. Siempre Viva 742",
-    "TamanoCaja": 0,
-    "CodPostalOrig": 2300,
-    "DomicilioOrigen": "Beiro 1125",
-    "NombreDestinatario": "Luis",
-    "ApellidoDestinatario": "Lopez",
-    "DNIDestinatario": 12345678,
-    "Importe": 19500,
-    "CargosFleteros": 500,
-    "CargosAgencia": 0,
-    "CodAgenciaOrigen": 2000,
-    "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 9,
-    "HistorialEstadosGuia": [
-      {
-        "EstadoGuia": 9,
-        "Fecha": "2025-11-04T12:00:00",
-        "Descripcion": "Facturado"
-      },
-      {
-        "EstadoGuia": 8,
-        "Fecha": "2025-10-31T12:00:00",
-        "Descripcion": "Entregado"
-      },
-      {
-        "EstadoGuia": 7,
-        "Fecha": "2025-10-31T08:00:00",
-        "Descripcion": "En camino a domicilio"
-      },
-      {
-        "EstadoGuia": 5,
-        "Fecha": "2025-10-27T08:00:00",
-        "Descripcion": "En camino a Centro de Distribucion de destino"
-      },
-      {
-        "EstadoGuia": 4,
-        "Fecha": "2025-10-25T08:00:00",
-        "Descripcion": "En transporte entre Centros de Distribucion"
-      },
-      {
-        "EstadoGuia": 3,
-        "Fecha": "2025-10-24T08:00:00",
-        "Descripcion": "Entregado en Centro de Distribucion de origen"
-      },
-      {
-        "EstadoGuia": 1,
-        "Fecha": "2025-10-22T08:00:00",
-        "Descripcion": "Listo para retirar en domicilio"
-      }
-    ]
-  },
-  {
-    "NumeroGuia": 100000003,
-    "CUITCUIL": 27311222334,
-    "CodPostalDest": 8504,
-    "MetodoEntrega": 1,
-    "DomicilioDest": "Av. Siempre Viva 742",
-    "TamanoCaja": 0,
-    "CodPostalOrig": 1650,
-    "DomicilioOrigen": "Beiro 1125",
-    "NombreDestinatario": "Luis",
-    "ApellidoDestinatario": "Lopez",
-    "DNIDestinatario": 12345678,
-    "Importe": 6500,
-    "CargosFleteros": 500,
-    "CargosAgencia": 0,
-    "CodAgenciaOrigen": 2000,
-    "CodCentroDistOrigen": 1000,
-    "EstadoEncomienda": 9,
-    "HistorialEstadosGuia": [
-      {
-        "EstadoGuia": 9,
-        "Fecha": "2025-11-04T12:00:00",
-        "Descripcion": "Facturado"
-      },
-      {
-        "EstadoGuia": 8,
-        "Fecha": "2025-10-31T12:00:00",
-        "Descripcion": "Entregado"
-      },
-      {
-        "EstadoGuia": 7,
-        "Fecha": "2025-10-31T08:00:00",
-        "Descripcion": "En camino a domicilio"
-      },
-      {
-        "EstadoGuia": 3,
-        "Fecha": "2025-11-02T09:45:00",
-        "Descripcion": "Entregado en Centro de Distribucion de origen"
-      },
-      {
-        "EstadoGuia": 2,
-        "Fecha": "2025-10-24T08:00:00",
-        "Descripcion": "En camino a Agencia o Domicilio"
-      },
-      {
-        "EstadoGuia": 1,
-        "Fecha": "2025-10-22T08:00:00",
-        "Descripcion": "Listo para retirar en Agencia"
-      }
-    ]
-  },
-  {
-    "NumeroGuia": 200900004,
-    "CUITCUIL": 20304567891,
-    "CodPostalDest": 8504,
-    "MetodoEntrega": 1,
-    "DomicilioDest": "Av. Siempre Viva 742",
-    "TamanoCaja": 0,
-    "CodPostalOrig": 4203,
-    "DomicilioOrigen": "Beiro 1125",
-    "NombreDestinatario": "Luis",
-    "ApellidoDestinatario": "Lopez",
-    "DNIDestinatario": 34566123,
-    "Importe": 8500,
-    "CargosFleteros": 500,
-    "CargosAgencia": 0,
-    "CodAgenciaOrigen": 2009,
-    "CodCentroDistOrigen": 1009,
-    "EstadoEncomienda": 5,
-    "HistorialEstadosGuia": [
-      {
-        "EstadoGuia": 5,
-        "Fecha": "2025-10-31T08:00:00",
-        "Descripcion": "En transporte entre Centros de Distribucion"
-      },
-      {
-        "EstadoGuia": 3,
-        "Fecha": "2025-10-25T09:45:00",
-        "Descripcion": "Entregado en Centro de Distribucion de origen"
-      },
-      {
-        "EstadoGuia": 2,
-        "Fecha": "2025-10-24T08:00:00",
-        "Descripcion": "En camino a Agencia o Domicilio"
-      },
-      {
-        "EstadoGuia": 1,
-        "Fecha": "2025-10-22T08:00:00",
-        "Descripcion": "Listo para retirar en Agencia"
       }
     ]
   },

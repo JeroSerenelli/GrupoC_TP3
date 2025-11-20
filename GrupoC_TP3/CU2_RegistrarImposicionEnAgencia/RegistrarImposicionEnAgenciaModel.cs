@@ -280,7 +280,7 @@ internal class RegistrarImposicionEnAgenciaModel
                 {
                     NumeroGuia = n,
                     // Para retiros por domicilio recién creados:
-                    EstadoEncomienda = EstadoEncomiendaEnum.ListoParaRetirarEnDomicilio
+                    EstadoEncomienda = EstadoEncomiendaEnum.ListoParaRetirarEnAgencia
                 })
                 .ToList();
 
@@ -324,7 +324,7 @@ internal class RegistrarImposicionEnAgenciaModel
                 {
                     NumeroGuia = n,
                     // Para retiros por domicilio recién creados:
-                    EstadoEncomienda = EstadoEncomiendaEnum.ListoParaRetirarEnDomicilio
+                    EstadoEncomienda = EstadoEncomiendaEnum.ListoParaRetirarEnAgencia
                 })
                 .ToList();
 

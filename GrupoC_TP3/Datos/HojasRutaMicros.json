@@ -1,149 +1,13 @@
 [
   {
-    "HojaRutaMicro": 700001,
-    "CentroDistribucionDestino": 1001,
-    "NumerosGuiaMicro": [
-      {
-        "NumeroGuia": 100000002,
-        "EstadoEncomienda": 8
-      },
-      {
-        "NumeroGuia": 100000003,
-        "EstadoEncomienda": 8
-      },
-      {
-        "NumeroGuia": 0,
-        "EstadoEncomienda": 0
-      }
-    ],
-    "PatenteMicro": "AA374CY",
-    "FechaEmisionHojaDeRuta": "2025-11-01T09:00:00",
-    "EstadoHojaRutaMicro": 0
-  },
-  {
-    "HojaRutaMicro": 700002,
-    "CentroDistribucionDestino": 1006,
-    "NumerosGuiaMicro": [
-      {
-        "NumeroGuia": 100000072,
-        "EstadoEncomienda": 0
-      },
-      {
-        "NumeroGuia": 0,
-        "EstadoEncomienda": 0
-      },
-      {
-        "NumeroGuia": 0,
-        "EstadoEncomienda": 0
-      }
-    ],
-    "PatenteMicro": "AG372DB",
-    "FechaEmisionHojaDeRuta": "2025-11-01T09:00:00",
-    "EstadoHojaRutaMicro": 0
-  },
-  {
-    "HojaRutaMicro": 700003,
-    "CentroDistribucionDestino": 1010,
-    "NumerosGuiaMicro": [
-      {
-        "NumeroGuia": 100000071,
-        "EstadoEncomienda": 9
-      },
-      {
-        "NumeroGuia": 0,
-        "EstadoEncomienda": 0
-      },
-      {
-        "NumeroGuia": 0,
-        "EstadoEncomienda": 0
-      }
-    ],
-    "PatenteMicro": "AG649RK",
-    "FechaEmisionHojaDeRuta": "2025-11-01T09:00:00",
-    "EstadoHojaRutaMicro": 0
-  },
-  {
-    "HojaRutaMicro": 800000,
-    "CentroDistribucionDestino": 1001,
-    "NumerosGuiaMicro": [
-      {
-        "NumeroGuia": 100000075,
-        "EstadoEncomienda": 0
-      }
-    ],
-    "PatenteMicro": "ABC123",
-    "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
-    "EstadoHojaRutaMicro": 1
-  },
-  {
-    "HojaRutaMicro": 800001,
-    "CentroDistribucionDestino": 1001,
-    "NumerosGuiaMicro": [
-      {
-        "NumeroGuia": 255095,
-        "EstadoEncomienda": 0
-      },
-      {
-        "NumeroGuia": 231830,
-        "EstadoEncomienda": 0
-      },
-      {
-        "NumeroGuia": 323875,
-        "EstadoEncomienda": 0
-      }
-    ],
-    "PatenteMicro": "ABC321",
-    "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352741",
-    "EstadoHojaRutaMicro": 0
-  },
-  {
-    "HojaRutaMicro": 800002,
-    "CentroDistribucionDestino": 1000,
-    "NumerosGuiaMicro": [
-      {
-        "NumeroGuia": 605414,
-        "EstadoEncomienda": 0
-      }
-    ],
-    "PatenteMicro": "ABC123",
-    "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
-    "EstadoHojaRutaMicro": 0
-  },
-  {
-    "HojaRutaMicro": 800003,
-    "CentroDistribucionDestino": 1000,
-    "NumerosGuiaMicro": [
-      {
-        "NumeroGuia": 255095,
-        "EstadoEncomienda": 0
-      }
-    ],
-    "PatenteMicro": "ABC336",
-    "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
-    "EstadoHojaRutaMicro": 0
-  },
-  {
-    "HojaRutaMicro": 800004,
-    "CentroDistribucionDestino": 1001,
-    "NumerosGuiaMicro": [
-      {
-        "NumeroGuia": 255095,
-        "EstadoEncomienda": 0
-      }
-    ],
-    "PatenteMicro": "ABC337",
-    "FechaEmisionHojaDeRuta": "2025-11-04T01:24:03.352722",
-    "EstadoHojaRutaMicro": 0
-  },
-  {
-    "HojaRutaMicro": 900001,
+    "HojaRutaMicro": 509999,
     "CentroDistribucionOrigen": 1000,
     "CentroDistribucionDestino": 1002,
     "NumerosGuiaMicro": [
-      { "NumeroGuia": 100000049 }
+      { "NumeroGuia": 100293010 }
     ],
-    "PatenteMicro": "ABC100",
-    "FechaEmisionHojaDeRuta": "2025-11-11T08:00:00",
+    "PatenteMicro": "AB041FA",
+    "FechaEmisionHojaDeRuta": "2025-11-12T08:00:00",
     "EstadoHojaRutaMicro": 2
   },
   {
@@ -189,17 +53,6 @@
     ],
     "PatenteMicro": "ABC201",
     "FechaEmisionHojaDeRuta": "2025-11-12T09:00:00",
-    "EstadoHojaRutaMicro": 0
-  },
-  {
-    "HojaRutaMicro": 900004,
-    "CentroDistribucionOrigen": 1000,
-    "CentroDistribucionDestino": 1002,
-    "NumerosGuiaMicro": [
-      { "NumeroGuia": 100100054 }
-    ],
-    "PatenteMicro": "ABC300",
-    "FechaEmisionHojaDeRuta": "2025-11-13T07:30:00",
     "EstadoHojaRutaMicro": 0
   },
   {

@@ -1,5 +1,4 @@
-﻿
-using GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia;
+﻿using GrupoC_TP3.Entrega_de_Encomiendas_en_Agencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,7 +55,7 @@ namespace GrupoC_TP3.CU5_GestionCD
 
             foreach (var EncomiendasEnTransporte in modelo.paquetesRecibidos)
             {
-                if (EncomiendasEnTransporte.Patente == textBoxPatente.Text.ToUpper())
+                if (EncomiendasEnTransporte != null && EncomiendasEnTransporte.Patente == textBoxPatente.Text.ToUpper())
                 {
                     var listItem = new ListViewItem();
                     listItem.Text = EncomiendasEnTransporte.HojaDeRuta.ToString();
@@ -68,7 +67,7 @@ namespace GrupoC_TP3.CU5_GestionCD
 
             foreach (var EncomiendasEnTransporte in modelo.paquetesParaEntregar)
             {
-                if (EncomiendasEnTransporte.Patente == textBoxPatente.Text.ToUpper())
+                if (EncomiendasEnTransporte != null && EncomiendasEnTransporte.Patente == textBoxPatente.Text.ToUpper())
                 {
                     var listItem = new ListViewItem();
                     listItem.Text = EncomiendasEnTransporte.HojaDeRuta.ToString();

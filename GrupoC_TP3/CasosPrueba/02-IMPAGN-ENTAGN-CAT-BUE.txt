@@ -61,7 +61,7 @@ VERIFICAR: resultado de consulta muestra en lista ‘Despachar desde CD’:
 4 – Click en botón ‘Actualizar’ 
 VERIFICAR:  
 - Mensaje “Actualizado con exito”. 
-- Estado de Guía 100205353 & 100000052 es modificado a ‘Entregado. En transporte’ en la lista. 
+- Estado de Guía 100205353 es modificado a ‘Entregado. En transporte’ en la lista. 
 - Verificar bin/Debug/Datos/HojasDeRutaMicros.JSON: estado hoja de ruta micro 900003 debe ser 1. 
 - Verificar bin/Debug/Datos/Guia.JSON: estadoEncomienda las guias 100205353 debe ser 4; HistorialEstadosGuia debe tener, para cada una, EstadoGuiaEnum = 4; Fecha = fecha en la cual se actualizo el estado y Descripcion = "En Transporte Entre Centro De Distribucion." 
 6 – Click en boton ‘OK’ 
@@ -140,6 +140,6 @@ VERIFICAR:
 
 
 
-02-IMPAGN-ENTAGN-CAT-BUE
+FIN CASO DE PRUEBA 02-IMPAGN-ENTAGN-CAT-BUE
 
  

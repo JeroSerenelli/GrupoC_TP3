@@ -8,28 +8,8 @@
     "Nombre": "Catamarca"
   },
   {
-    "CodProv": 3,
-    "Nombre": "Chaco"
-  },
-  {
-    "CodProv": 4,
-    "Nombre": "Chubut"
-  },
-  {
     "CodProv": 5,
     "Nombre": "Córdoba"
-  },
-  {
-    "CodProv": 6,
-    "Nombre": "Corrientes"
-  },
-  {
-    "CodProv": 7,
-    "Nombre": "Entre Ríos"
-  },
-  {
-    "CodProv": 8,
-    "Nombre": "Formosa"
   },
   {
     "CodProv": 9,
@@ -40,52 +20,12 @@
     "Nombre": "La Pampa"
   },
   {
-    "CodProv": 11,
-    "Nombre": "La Rioja"
-  },
-  {
-    "CodProv": 12,
-    "Nombre": "Mendoza"
-  },
-  {
-    "CodProv": 13,
-    "Nombre": "Misiones"
-  },
-  {
-    "CodProv": 14,
-    "Nombre": "Neuquén"
-  },
-  {
     "CodProv": 15,
     "Nombre": "Río Negro"
   },
   {
-    "CodProv": 16,
-    "Nombre": "Salta"
-  },
-  {
-    "CodProv": 17,
-    "Nombre": "San Juan"
-  },
-  {
-    "CodProv": 18,
-    "Nombre": "San Luis"
-  },
-  {
-    "CodProv": 19,
-    "Nombre": "Santa Cruz"
-  },
-  {
     "CodProv": 20,
     "Nombre": "Santa Fe"
-  },
-  {
-    "CodProv": 21,
-    "Nombre": "Santiago del Estero"
-  },
-  {
-    "CodProv": 22,
-    "Nombre": "Tierra del Fuego, Antártida e Islas del Atlántico Sur"
   },
   {
     "CodProv": 23,

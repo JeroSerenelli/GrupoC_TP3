@@ -52,71 +52,6 @@
     ]
   },
   {
-    "CodLocalidad": 5,
-    "CodProv": 3,
-    "Nombre": "Resistencia",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 3500
-      },
-      {
-        "CodigoPostal": 3501
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 6,
-    "CodProv": 3,
-    "Nombre": "Presidencia Roque Sáenz Peña",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 2199
-      },
-      {
-        "CodigoPostal": 3700
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 7,
-    "CodProv": 4,
-    "Nombre": "Comodoro Rivadavia",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 2956
-      },
-      {
-        "CodigoPostal": 8326
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 8,
-    "CodProv": 4,
-    "Nombre": "Puerto Madryn",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 1198
-      },
-      {
-        "CodigoPostal": 9130
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 9,
-    "CodProv": 5,
-    "Nombre": "Córdoba",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 1128
-      },
-      {
-        "CodigoPostal": 1299
-      }
-    ]
-  },
-  {
     "CodLocalidad": 10,
     "CodProv": 5,
     "Nombre": "Villa María",
@@ -126,84 +61,6 @@
       },
       {
         "CodigoPostal": 5093
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 11,
-    "CodProv": 6,
-    "Nombre": "Corrientes",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 3197
-      },
-      {
-        "CodigoPostal": 3400
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 12,
-    "CodProv": 6,
-    "Nombre": "Goya",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 3444
-      },
-      {
-        "CodigoPostal": 3540
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 13,
-    "CodProv": 7,
-    "Nombre": "Paraná",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 2000
-      },
-      {
-        "CodigoPostal": 2400
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 14,
-    "CodProv": 7,
-    "Nombre": "Concordia",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 3201
-      },
-      {
-        "CodigoPostal": 4400
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 15,
-    "CodProv": 8,
-    "Nombre": "Formosa",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 3409
-      },
-      {
-        "CodigoPostal": 3630
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 16,
-    "CodProv": 8,
-    "Nombre": "Clorinda",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 3450
-      },
-      {
-        "CodigoPostal": 3718
       }
     ]
   },
@@ -221,19 +78,6 @@
     ]
   },
   {
-    "CodLocalidad": 18,
-    "CodProv": 9,
-    "Nombre": "Palpalá",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 4613
-      },
-      {
-        "CodigoPostal": 4617
-      }
-    ]
-  },
-  {
     "CodLocalidad": 19,
     "CodProv": 10,
     "Nombre": "Santa Rosa",
@@ -243,123 +87,6 @@
       },
       {
         "CodigoPostal": 2300
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 20,
-    "CodProv": 10,
-    "Nombre": "General Pico",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 6063
-      },
-      {
-        "CodigoPostal": 6460
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 21,
-    "CodProv": 11,
-    "Nombre": "La Rioja",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 5305
-      },
-      {
-        "CodigoPostal": 5309
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 22,
-    "CodProv": 11,
-    "Nombre": "Chilecito",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 5360
-      },
-      {
-        "CodigoPostal": 5429
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 23,
-    "CodProv": 12,
-    "Nombre": "Mendoza",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 5500
-      },
-      {
-        "CodigoPostal": 5506
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 24,
-    "CodProv": 12,
-    "Nombre": "San Rafael",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 5604
-      },
-      {
-        "CodigoPostal": 5800
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 25,
-    "CodProv": 13,
-    "Nombre": "Posadas",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 2395
-      },
-      {
-        "CodigoPostal": 3030
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 26,
-    "CodProv": 13,
-    "Nombre": "Oberá",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 3330
-      },
-      {
-        "CodigoPostal": 3360
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 27,
-    "CodProv": 14,
-    "Nombre": "Neuquén",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 7500
-      },
-      {
-        "CodigoPostal": 8300
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 28,
-    "CodProv": 14,
-    "Nombre": "San Martín de los Andes",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 8730
-      },
-      {
-        "CodigoPostal": 8970
       }
     ]
   },
@@ -377,136 +104,6 @@
     ]
   },
   {
-    "CodLocalidad": 30,
-    "CodProv": 15,
-    "Nombre": "San Carlos de Bariloche",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 8400
-      },
-      {
-        "CodigoPostal": 8405
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 31,
-    "CodProv": 16,
-    "Nombre": "Salta",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 1296
-      },
-      {
-        "CodigoPostal": 1326
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 32,
-    "CodProv": 16,
-    "Nombre": "San Ramón de la Nueva Orán",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 4520
-      },
-      {
-        "CodigoPostal": 4530
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 33,
-    "CodProv": 17,
-    "Nombre": "San Juan",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 5100
-      },
-      {
-        "CodigoPostal": 5400
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 34,
-    "CodProv": 17,
-    "Nombre": "Jáchal",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 5460
-      },
-      {
-        "CodigoPostal": 5461
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 35,
-    "CodProv": 18,
-    "Nombre": "San Luis",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 5701
-      },
-      {
-        "CodigoPostal": 5731
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 36,
-    "CodProv": 18,
-    "Nombre": "Villa Mercedes",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 5370
-      },
-      {
-        "CodigoPostal": 5570
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 37,
-    "CodProv": 19,
-    "Nombre": "Río Gallegos",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 9000
-      },
-      {
-        "CodigoPostal": 9403
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 38,
-    "CodProv": 19,
-    "Nombre": "Caleta Olivia",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 9011
-      },
-      {
-        "CodigoPostal": 9022
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 39,
-    "CodProv": 20,
-    "Nombre": "Santa Fe",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 2328
-      },
-      {
-        "CodigoPostal": 2348
-      }
-    ]
-  },
-  {
     "CodLocalidad": 40,
     "CodProv": 20,
     "Nombre": "Rosario",
@@ -516,71 +113,6 @@
       },
       {
         "CodigoPostal": 2003
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 41,
-    "CodProv": 21,
-    "Nombre": "Santiago del Estero",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 1764
-      },
-      {
-        "CodigoPostal": 3200
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 42,
-    "CodProv": 21,
-    "Nombre": "La Banda",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 1878
-      },
-      {
-        "CodigoPostal": 1900
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 43,
-    "CodProv": 22,
-    "Nombre": "Ushuaia",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 9400
-      },
-      {
-        "CodigoPostal": 9410
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 44,
-    "CodProv": 22,
-    "Nombre": "Río Grande",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 9204
-      },
-      {
-        "CodigoPostal": 9464
-      }
-    ]
-  },
-  {
-    "CodLocalidad": 45,
-    "CodProv": 23,
-    "Nombre": "San Miguel de Tucumán",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 1667
-      },
-      {
-        "CodigoPostal": 1849
       }
     ]
   },
@@ -598,19 +130,6 @@
     ]
   },
   {
-    "CodLocalidad": 47,
-    "CodProv": 24,
-    "Nombre": "CABA Urquiza",
-    "CodigosPostales": [
-      {
-        "CodigoPostal": 1430
-      },
-      {
-        "CodigoPostal": 1431
-      }
-    ]
-  },
-  {
     "CodLocalidad": 48,
     "CodProv": 24,
     "Nombre": "CABA Palermo",
@@ -620,6 +139,16 @@
       },
       {
         "CodigoPostal": 1426
+      }
+    ]
+  },
+  {
+    "CodLocalidad": 49,
+    "CodProv": 9,
+    "Nombre": "Purmamarca",
+    "CodigosPostales": [
+      {
+        "CodigoPostal": 4618
       }
     ]
   }

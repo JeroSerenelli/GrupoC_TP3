@@ -49,7 +49,7 @@ Línea 2: Empresa de Transporte: Transporte Andino SRL, Venta: 0, Costo: 7.000, R
 Línea 3: Empresa de Transporte: Rutas Argentinas S.A, Venta: 0, Costo: 55.000, Resultado: -55.000 
 Línea 4: Empresa de Transporte: El Pampeano S.A, Venta: 0, Costo: 65.000, Resultado: -65.000 
 Línea 5: Empresa de Transporte: Nueva Patagónica S.A, Venta: 0, Costo: 55.000, Resultado: -55.000 
-Línea 6: Empresa de Transporte: FlechaBus S.A, Venta: 19500, Costo: 55.000, Resultado: -35.500 
+Línea 6: Empresa de Transporte: FlechaBus S.A, Venta: 0, Costo: 55.000, Resultado: -35.500 
 4 - Botón “Aceptar”. 
 VERIFICAR:  
 - mensaje de confirmación “Gracias” en pantalla 

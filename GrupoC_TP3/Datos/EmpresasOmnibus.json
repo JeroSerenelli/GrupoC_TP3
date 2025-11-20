@@ -15,44 +15,406 @@
       {
         "CUITEmpresasOmnibus": 30701234567,
         "PatenteMicro": "AG649RK"
-      }
-    ]
-  },
-  {
-    "CUITEmpresaOmnibus": 30709876543,
-    "EmpresaOmnibus": "Transporte Andino SRL",
-    "PrecioDeArrendamiento": 70000.0,
-    "Unidades": [
-      {
-        "CUITEmpresasOmnibus": 30709876543,
-        "PatenteMicro": "ABC700"
       },
       {
-        "CUITEmpresasOmnibus": 30709876543,
-        "PatenteMicro": "ABC600"
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA032EA"
       },
       {
-        "CUITEmpresasOmnibus": 30709876543,
-        "PatenteMicro": "AD267AN"
-      }
-    ]
-  },
-  {
-    "CUITEmpresaOmnibus": 30512345678,
-    "EmpresaOmnibus": "Rutas Argentinas S.A.",
-    "PrecioDeArrendamiento": 55000.0,
-    "Unidades": [
-      {
-        "CUITEmpresasOmnibus": 30512345678,
-        "PatenteMicro": "AB999TM"
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB033EA"
       },
       {
-        "CUITEmpresasOmnibus": 30512345678,
-        "PatenteMicro": "AB106KX"
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC034EA"
       },
       {
-        "CUITEmpresasOmnibus": 30512345678,
-        "PatenteMicro": "ABC500"
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD035EA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE036EA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF037EA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG038EA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH039EA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA040FA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB041FA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC042FA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD043FA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE044FA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF045FA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG046FA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH047FA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA048GA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB049GA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC050GA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD051GA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE052GA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF053GA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG054GA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH055GA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA056HA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB057HA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC058HA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD059HA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE060HA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF061HA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG062HA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH063HA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA064IA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB065IA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC066IA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD067IA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE068IA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF069IA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG070IA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH071IA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA072JA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB073JA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC074JA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD075JA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE076JA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF077JA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG078JA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH079JA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA080KA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB081KA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC082KA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD083KA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE084KA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF085KA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG086KA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH087KA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA088LA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB089LA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC090LA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD091LA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE092LA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF093LA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG094LA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH095LA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA096MA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB097MA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC098MA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD099MA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE100MA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF101MA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG102MA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH103MA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA104NA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB105NA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC106NA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD107NA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE108NA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF109NA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG110NA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH111NA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA112OA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB113OA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC114OA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD115OA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE116OA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF117OA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG118OA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH119OA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA120PA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB121PA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC122PA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD123PA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AE124PA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AF125PA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AG126PA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AH127PA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AA128QA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AB129QA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AC130QA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30701234567,
+        "PatenteMicro": "AD131QA"
       }
     ]
   },
@@ -130,6 +492,134 @@
       {
         "CUITEmpresasOmnibus": 30456789012,
         "PatenteMicro": "ABC336"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AA000AA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AB001AA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AC002AA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AD003AA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AE004AA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AF005AA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AG006AA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AH007AA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AA008BA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AB009BA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AC010BA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AD011BA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AE012BA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AF013BA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AG014BA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AH015BA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AA016CA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AB017CA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AC018CA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AD019CA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AE020CA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AF021CA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AG022CA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AH023CA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AA024DA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AB025DA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AC026DA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AD027DA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AE028DA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AF029DA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AG030DA"
+      },
+      {
+        "CUITEmpresasOmnibus": 30456789012,
+        "PatenteMicro": "AH031DA"
       }
     ]
   }

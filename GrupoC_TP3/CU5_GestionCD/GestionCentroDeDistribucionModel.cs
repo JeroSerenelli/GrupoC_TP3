@@ -51,30 +51,30 @@ namespace GrupoC_TP3.CU5_GestionCD
                                     .Where(h => h.EstadoHojaRutaMicro == EstadoHojaRutaMicro.EnCaminoACentroDeDistribucionDestino)
                                     .Where(h => h.CentroDistribucionDestino == CodigoCDActual)
                                     .SelectMany(h => h.NumerosGuiaMicro
-                                                            .Select(g => GuiaAlmacen.guias.First(ga => ga.NumeroGuia == g.NumeroGuia))
-                                                            .Select(ga => new EncomiendasEnTransporte
+                                                            .Select(g => GuiaAlmacen.guias.FirstOrDefault(ga => ga.NumeroGuia == g.NumeroGuia))
+                                                            .Select(ga => ga != null ? new EncomiendasEnTransporte
                                                             {
                                                                 Patente = patente,
                                                                 Empresa = empresa.EmpresaOmnibus,
                                                                 HojaDeRuta = h.HojaRutaMicro.ToString(),
                                                                 NroGuia = ga.NumeroGuia,
                                                                 Estado = "En transporte a CD"
-                                                            }))
+                                                            } : null))
                                     .ToList();
 
             paquetesParaEntregar = hojasDeRutaFiltradas
                                         .Where(h => h.EstadoHojaRutaMicro == EstadoHojaRutaMicro.ListoParaDespacharEnCentroDeDistribucion)
                                         .Where(h => h.CentroDistribucionOrigen == CodigoCDActual)
-                                        .SelectMany(h => h.NumerosGuiaMicro.Select(g => GuiaAlmacen.guias.First(ga => ga.NumeroGuia == g.NumeroGuia &&
+                                        .SelectMany(h => h.NumerosGuiaMicro.Select(g => GuiaAlmacen.guias.FirstOrDefault(ga => ga.NumeroGuia == g.NumeroGuia &&
                                                                                                                 ga.EstadoEncomienda == EstadoEncomiendaEnum.EntregadoEnCentroDeDistribucion))
-                                                                           .Select(ga => new EncomiendasEnTransporte
+                                                                           .Select(g => g != null ? new EncomiendasEnTransporte
                                                                            {
                                                                                Patente = patente,
                                                                                Empresa = empresa.EmpresaOmnibus,
                                                                                HojaDeRuta = h.HojaRutaMicro.ToString(),
-                                                                               NroGuia = ga.NumeroGuia,
+                                                                               NroGuia = g.NumeroGuia,
                                                                                Estado = "Listo para despachar en CD"
-                                                                           }))
+                                                                           } : null))
                                         .ToList();
 
             if (!paquetesRecibidos.Any())

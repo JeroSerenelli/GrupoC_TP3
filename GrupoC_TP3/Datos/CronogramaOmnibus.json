@@ -1,5 +1,1457 @@
 [
   {
+    "PatenteMicro": "AA000AA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-11-24T08:00:00",
+        "FechaLlegada": "2025-11-24T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB001AA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-11-25T08:00:00",
+        "FechaLlegada": "2025-11-25T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC002AA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-11-26T08:00:00",
+        "FechaLlegada": "2025-11-26T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1003
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD003AA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-11-27T08:00:00",
+        "FechaLlegada": "2025-11-27T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE004AA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-11-28T08:00:00",
+        "FechaLlegada": "2025-11-28T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF005AA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-11-29T08:00:00",
+        "FechaLlegada": "2025-11-29T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1006
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG006AA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-11-30T08:00:00",
+        "FechaLlegada": "2025-11-30T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH007AA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-01T08:00:00",
+        "FechaLlegada": "2025-12-01T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1008
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA008BA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-02T08:00:00",
+        "FechaLlegada": "2025-12-02T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB009BA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-03T08:00:00",
+        "FechaLlegada": "2025-12-03T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC010BA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-04T08:00:00",
+        "FechaLlegada": "2025-12-04T20:00:00",
+        "CentroDistribucionOrigen": 1000,
+        "CentroDistribucionDestino": 1011
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD011BA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-05T08:00:00",
+        "FechaLlegada": "2025-12-05T20:00:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE012BA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-06T08:00:00",
+        "FechaLlegada": "2025-12-06T20:00:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF013BA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-07T08:00:00",
+        "FechaLlegada": "2025-12-07T20:00:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1003
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG014BA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-08T08:00:00",
+        "FechaLlegada": "2025-12-08T20:00:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH015BA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-09T08:00:00",
+        "FechaLlegada": "2025-12-09T20:00:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA016CA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-10T08:00:00",
+        "FechaLlegada": "2025-12-10T20:00:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1006
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB017CA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-11T08:00:00",
+        "FechaLlegada": "2025-12-11T20:00:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC018CA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-12T08:00:00",
+        "FechaLlegada": "2025-12-12T20:00:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1008
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD019CA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-13T08:00:00",
+        "FechaLlegada": "2025-12-13T20:00:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE020CA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-14T08:00:00",
+        "FechaLlegada": "2025-12-14T20:00:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF021CA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-15T08:00:00",
+        "FechaLlegada": "2025-12-15T20:00:00",
+        "CentroDistribucionOrigen": 1001,
+        "CentroDistribucionDestino": 1011
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG022CA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-16T08:00:00",
+        "FechaLlegada": "2025-12-16T20:00:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH023CA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-17T08:00:00",
+        "FechaLlegada": "2025-12-17T20:00:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA024DA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-18T08:00:00",
+        "FechaLlegada": "2025-12-18T20:00:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1003
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB025DA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-19T08:00:00",
+        "FechaLlegada": "2025-12-19T20:00:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC026DA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-20T08:00:00",
+        "FechaLlegada": "2025-12-20T20:00:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD027DA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-21T08:00:00",
+        "FechaLlegada": "2025-12-21T20:00:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1006
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE028DA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-22T08:00:00",
+        "FechaLlegada": "2025-12-22T20:00:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF029DA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-23T08:00:00",
+        "FechaLlegada": "2025-12-23T20:00:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1008
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG030DA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-24T08:00:00",
+        "FechaLlegada": "2025-12-24T20:00:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH031DA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-25T08:00:00",
+        "FechaLlegada": "2025-12-25T20:00:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA032EA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-26T08:00:00",
+        "FechaLlegada": "2025-12-26T20:00:00",
+        "CentroDistribucionOrigen": 1002,
+        "CentroDistribucionDestino": 1011
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB033EA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-27T08:00:00",
+        "FechaLlegada": "2025-12-27T20:00:00",
+        "CentroDistribucionOrigen": 1003,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC034EA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-28T08:00:00",
+        "FechaLlegada": "2025-12-28T20:00:00",
+        "CentroDistribucionOrigen": 1003,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD035EA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-29T08:00:00",
+        "FechaLlegada": "2025-12-29T20:00:00",
+        "CentroDistribucionOrigen": 1003,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE036EA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-30T08:00:00",
+        "FechaLlegada": "2025-12-30T20:00:00",
+        "CentroDistribucionOrigen": 1003,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF037EA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2025-12-31T08:00:00",
+        "FechaLlegada": "2025-12-31T20:00:00",
+        "CentroDistribucionOrigen": 1003,
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG038EA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-01T08:00:00",
+        "FechaLlegada": "2026-01-01T20:00:00",
+        "CentroDistribucionOrigen": 1003,
+        "CentroDistribucionDestino": 1006
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH039EA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-02T08:00:00",
+        "FechaLlegada": "2026-01-02T20:00:00",
+        "CentroDistribucionOrigen": 1003,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA040FA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-03T08:00:00",
+        "FechaLlegada": "2026-01-03T20:00:00",
+        "CentroDistribucionOrigen": 1003,
+        "CentroDistribucionDestino": 1008
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB041FA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-04T08:00:00",
+        "FechaLlegada": "2026-01-04T20:00:00",
+        "CentroDistribucionOrigen": 1003,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC042FA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-05T08:00:00",
+        "FechaLlegada": "2026-01-05T20:00:00",
+        "CentroDistribucionOrigen": 1003,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD043FA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-06T08:00:00",
+        "FechaLlegada": "2026-01-06T20:00:00",
+        "CentroDistribucionOrigen": 1003,
+        "CentroDistribucionDestino": 1011
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE044FA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-07T08:00:00",
+        "FechaLlegada": "2026-01-07T20:00:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF045FA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-08T08:00:00",
+        "FechaLlegada": "2026-01-08T20:00:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG046FA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-09T08:00:00",
+        "FechaLlegada": "2026-01-09T20:00:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH047FA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-10T08:00:00",
+        "FechaLlegada": "2026-01-10T20:00:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1003
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA048GA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-11T08:00:00",
+        "FechaLlegada": "2026-01-11T20:00:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB049GA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-12T08:00:00",
+        "FechaLlegada": "2026-01-12T20:00:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1006
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC050GA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-13T08:00:00",
+        "FechaLlegada": "2026-01-13T20:00:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD051GA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-14T08:00:00",
+        "FechaLlegada": "2026-01-14T20:00:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1008
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE052GA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-15T08:00:00",
+        "FechaLlegada": "2026-01-15T20:00:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF053GA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-16T08:00:00",
+        "FechaLlegada": "2026-01-16T20:00:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG054GA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-17T08:00:00",
+        "FechaLlegada": "2026-01-17T20:00:00",
+        "CentroDistribucionOrigen": 1004,
+        "CentroDistribucionDestino": 1011
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH055GA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-18T08:00:00",
+        "FechaLlegada": "2026-01-18T20:00:00",
+        "CentroDistribucionOrigen": 1005,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA056HA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-19T08:00:00",
+        "FechaLlegada": "2026-01-19T20:00:00",
+        "CentroDistribucionOrigen": 1005,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB057HA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-20T08:00:00",
+        "FechaLlegada": "2026-01-20T20:00:00",
+        "CentroDistribucionOrigen": 1005,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC058HA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-21T08:00:00",
+        "FechaLlegada": "2026-01-21T20:00:00",
+        "CentroDistribucionOrigen": 1005,
+        "CentroDistribucionDestino": 1003
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD059HA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-22T08:00:00",
+        "FechaLlegada": "2026-01-22T20:00:00",
+        "CentroDistribucionOrigen": 1005,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE060HA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-23T08:00:00",
+        "FechaLlegada": "2026-01-23T20:00:00",
+        "CentroDistribucionOrigen": 1005,
+        "CentroDistribucionDestino": 1006
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF061HA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-24T08:00:00",
+        "FechaLlegada": "2026-01-24T20:00:00",
+        "CentroDistribucionOrigen": 1005,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG062HA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-25T08:00:00",
+        "FechaLlegada": "2026-01-25T20:00:00",
+        "CentroDistribucionOrigen": 1005,
+        "CentroDistribucionDestino": 1008
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH063HA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-26T08:00:00",
+        "FechaLlegada": "2026-01-26T20:00:00",
+        "CentroDistribucionOrigen": 1005,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA064IA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-27T08:00:00",
+        "FechaLlegada": "2026-01-27T20:00:00",
+        "CentroDistribucionOrigen": 1005,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB065IA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-28T08:00:00",
+        "FechaLlegada": "2026-01-28T20:00:00",
+        "CentroDistribucionOrigen": 1005,
+        "CentroDistribucionDestino": 1011
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC066IA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-29T08:00:00",
+        "FechaLlegada": "2026-01-29T20:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD067IA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-30T08:00:00",
+        "FechaLlegada": "2026-01-30T20:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE068IA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-01-31T08:00:00",
+        "FechaLlegada": "2026-01-31T20:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF069IA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-01T08:00:00",
+        "FechaLlegada": "2026-02-01T20:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1003
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG070IA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-02T08:00:00",
+        "FechaLlegada": "2026-02-02T20:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH071IA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-03T08:00:00",
+        "FechaLlegada": "2026-02-03T20:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA072JA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-04T08:00:00",
+        "FechaLlegada": "2026-02-04T20:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB073JA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-05T08:00:00",
+        "FechaLlegada": "2026-02-05T20:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1008
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC074JA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-06T08:00:00",
+        "FechaLlegada": "2026-02-06T20:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD075JA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-07T08:00:00",
+        "FechaLlegada": "2026-02-07T20:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE076JA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-08T08:00:00",
+        "FechaLlegada": "2026-02-08T20:00:00",
+        "CentroDistribucionOrigen": 1006,
+        "CentroDistribucionDestino": 1011
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF077JA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-09T08:00:00",
+        "FechaLlegada": "2026-02-09T20:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG078JA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-10T08:00:00",
+        "FechaLlegada": "2026-02-10T20:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH079JA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-11T08:00:00",
+        "FechaLlegada": "2026-02-11T20:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA080KA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-12T08:00:00",
+        "FechaLlegada": "2026-02-12T20:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1003
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB081KA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-13T08:00:00",
+        "FechaLlegada": "2026-02-13T20:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC082KA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-14T08:00:00",
+        "FechaLlegada": "2026-02-14T20:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD083KA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-15T08:00:00",
+        "FechaLlegada": "2026-02-15T20:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1006
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE084KA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-16T08:00:00",
+        "FechaLlegada": "2026-02-16T20:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1008
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF085KA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-17T08:00:00",
+        "FechaLlegada": "2026-02-17T20:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG086KA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-18T08:00:00",
+        "FechaLlegada": "2026-02-18T20:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH087KA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-19T08:00:00",
+        "FechaLlegada": "2026-02-19T20:00:00",
+        "CentroDistribucionOrigen": 1007,
+        "CentroDistribucionDestino": 1011
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA088LA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-20T08:00:00",
+        "FechaLlegada": "2026-02-20T20:00:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB089LA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-21T08:00:00",
+        "FechaLlegada": "2026-02-21T20:00:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC090LA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-22T08:00:00",
+        "FechaLlegada": "2026-02-22T20:00:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD091LA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-23T08:00:00",
+        "FechaLlegada": "2026-02-23T20:00:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1003
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE092LA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-24T08:00:00",
+        "FechaLlegada": "2026-02-24T20:00:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF093LA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-25T08:00:00",
+        "FechaLlegada": "2026-02-25T20:00:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG094LA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-26T08:00:00",
+        "FechaLlegada": "2026-02-26T20:00:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1006
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH095LA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-27T08:00:00",
+        "FechaLlegada": "2026-02-27T20:00:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA096MA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-02-28T08:00:00",
+        "FechaLlegada": "2026-02-28T20:00:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB097MA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-01T08:00:00",
+        "FechaLlegada": "2026-03-01T20:00:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC098MA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-02T08:00:00",
+        "FechaLlegada": "2026-03-02T20:00:00",
+        "CentroDistribucionOrigen": 1008,
+        "CentroDistribucionDestino": 1011
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD099MA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-03T08:00:00",
+        "FechaLlegada": "2026-03-03T20:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE100MA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-04T08:00:00",
+        "FechaLlegada": "2026-03-04T20:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF101MA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-05T08:00:00",
+        "FechaLlegada": "2026-03-05T20:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG102MA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-06T08:00:00",
+        "FechaLlegada": "2026-03-06T20:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1003
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH103MA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-07T08:00:00",
+        "FechaLlegada": "2026-03-07T20:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA104NA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-08T08:00:00",
+        "FechaLlegada": "2026-03-08T20:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB105NA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-09T08:00:00",
+        "FechaLlegada": "2026-03-09T20:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1006
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC106NA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-10T08:00:00",
+        "FechaLlegada": "2026-03-10T20:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD107NA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-11T08:00:00",
+        "FechaLlegada": "2026-03-11T20:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1008
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE108NA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-12T08:00:00",
+        "FechaLlegada": "2026-03-12T20:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF109NA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-13T08:00:00",
+        "FechaLlegada": "2026-03-13T20:00:00",
+        "CentroDistribucionOrigen": 1009,
+        "CentroDistribucionDestino": 1011
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG110NA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-14T08:00:00",
+        "FechaLlegada": "2026-03-14T20:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH111NA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-15T08:00:00",
+        "FechaLlegada": "2026-03-15T20:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA112OA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-16T08:00:00",
+        "FechaLlegada": "2026-03-16T20:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB113OA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-17T08:00:00",
+        "FechaLlegada": "2026-03-17T20:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1003
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC114OA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-18T08:00:00",
+        "FechaLlegada": "2026-03-18T20:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD115OA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-19T08:00:00",
+        "FechaLlegada": "2026-03-19T20:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE116OA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-20T08:00:00",
+        "FechaLlegada": "2026-03-20T20:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1006
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF117OA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-21T08:00:00",
+        "FechaLlegada": "2026-03-21T20:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG118OA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-22T08:00:00",
+        "FechaLlegada": "2026-03-22T20:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1008
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH119OA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-23T08:00:00",
+        "FechaLlegada": "2026-03-23T20:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA120PA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-24T08:00:00",
+        "FechaLlegada": "2026-03-24T20:00:00",
+        "CentroDistribucionOrigen": 1010,
+        "CentroDistribucionDestino": 1011
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB121PA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-25T08:00:00",
+        "FechaLlegada": "2026-03-25T20:00:00",
+        "CentroDistribucionOrigen": 1011,
+        "CentroDistribucionDestino": 1000
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC122PA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-26T08:00:00",
+        "FechaLlegada": "2026-03-26T20:00:00",
+        "CentroDistribucionOrigen": 1011,
+        "CentroDistribucionDestino": 1001
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD123PA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-27T08:00:00",
+        "FechaLlegada": "2026-03-27T20:00:00",
+        "CentroDistribucionOrigen": 1011,
+        "CentroDistribucionDestino": 1002
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AE124PA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-28T08:00:00",
+        "FechaLlegada": "2026-03-28T20:00:00",
+        "CentroDistribucionOrigen": 1011,
+        "CentroDistribucionDestino": 1003
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AF125PA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-29T08:00:00",
+        "FechaLlegada": "2026-03-29T20:00:00",
+        "CentroDistribucionOrigen": 1011,
+        "CentroDistribucionDestino": 1004
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AG126PA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-30T08:00:00",
+        "FechaLlegada": "2026-03-30T20:00:00",
+        "CentroDistribucionOrigen": 1011,
+        "CentroDistribucionDestino": 1005
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AH127PA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-03-31T08:00:00",
+        "FechaLlegada": "2026-03-31T20:00:00",
+        "CentroDistribucionOrigen": 1011,
+        "CentroDistribucionDestino": 1006
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AA128QA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-04-01T08:00:00",
+        "FechaLlegada": "2026-04-01T20:00:00",
+        "CentroDistribucionOrigen": 1011,
+        "CentroDistribucionDestino": 1007
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AB129QA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-04-02T08:00:00",
+        "FechaLlegada": "2026-04-02T20:00:00",
+        "CentroDistribucionOrigen": 1011,
+        "CentroDistribucionDestino": 1008
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AC130QA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-04-03T08:00:00",
+        "FechaLlegada": "2026-04-03T20:00:00",
+        "CentroDistribucionOrigen": 1011,
+        "CentroDistribucionDestino": 1009
+      }
+    ]
+  },
+  {
+    "PatenteMicro": "AD131QA",
+    "Recorridos": [
+      {
+        "FechaSalida": "2026-04-04T08:00:00",
+        "FechaLlegada": "2026-04-04T20:00:00",
+        "CentroDistribucionOrigen": 1011,
+        "CentroDistribucionDestino": 1010
+      }
+    ]
+  },
+  {
     "PatenteMicro": "ABC100",
     "Recorridos": [
       {
